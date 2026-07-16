@@ -319,7 +319,22 @@ class GenerationService:
                 if prev_candidate.parsed_output_json:
                     ctx_req.critic_report = json.loads(prev_candidate.parsed_output_json)
                 if prev_step.selected_issue_ids_json:
-                    ctx_req.selected_issues = json.loads(prev_step.selected_issue_ids_json)
+                    selected_ids = json.loads(prev_step.selected_issue_ids_json)
+                    operation_by_issue = json.loads(
+                        prev_step.selected_issue_operations_json or "{}"
+                    )
+                    issues_by_id = {
+                        issue.get("issue_id"): issue
+                        for issue in ctx_req.critic_report.get("issues", [])
+                    }
+                    ctx_req.selected_issues = [
+                        {
+                            **issues_by_id[issue_id],
+                            "selected_operation": operation_by_issue[issue_id],
+                        }
+                        for issue_id in selected_ids
+                        if issue_id in issues_by_id and issue_id in operation_by_issue
+                    ]
             elif prev_stage == "reviser":
                 ctx_req.revised_text = prev_candidate.text_output or prev_candidate.raw_response
 

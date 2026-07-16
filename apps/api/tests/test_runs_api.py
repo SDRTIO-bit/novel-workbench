@@ -300,6 +300,26 @@ class TestFullWorkflow:
         assert unselected.json()["error"]["code"] == "ISSUE_OPERATION_NOT_SELECTED"
 
     @pytest.mark.asyncio
+    async def test_reviser_context_contains_selected_issue_and_author_operation(self, api_client):
+        run_id = await _run_to_selected_critic(api_client)
+        selected = await api_client.post(
+            f"/api/runs/{run_id}/critic/select-issues",
+            json={
+                "issue_ids": ["I01"],
+                "operation_by_issue": {"I01": "voice_align"},
+            },
+        )
+        assert selected.status_code == 200
+
+        preview = await api_client.post(f"/api/runs/{run_id}/steps/reviser/preview", json={})
+        assert preview.status_code == 200
+        prompt = preview.json()["rendered_user_prompt"]
+        selected_section = prompt.split("## 本次需修改的问题\n", maxsplit=1)[1]
+        assert '"issue_id": "I01"' in selected_section
+        assert '"selected_operation": "voice_align"' in selected_section
+        assert '"issue_id": "I02"' not in selected_section
+
+    @pytest.mark.asyncio
     async def test_accept_creates_chapter_version(self, api_client):
         project_id = await _create_project(api_client)
         chapter_id = await _create_chapter(api_client, project_id)
