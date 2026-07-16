@@ -114,6 +114,7 @@ export default function WorkflowPanel({ projectId, chapterId, onAccept }: Props)
         })}
       </div>
 
+      {renderJudgeVerdict(run)}
       {writerHasOutput(run) && (
         <div className="p-3 border-t border-gray-200 bg-white shrink-0">
           <button
@@ -144,4 +145,53 @@ function findCurrentStage(run: GenerationRun) {
 function writerHasOutput(run: GenerationRun) {
   const step = run.steps.find((s) => s.stage === 'writer')
   return step?.candidates?.some((c) => c.is_selected && c.text_output)
+}
+
+const JUDGE_LABELS: Record<string, string> = {
+  accept_original: '建议保留初稿',
+  accept_revision: '建议采用修订稿',
+  accept_merged: '建议合并',
+  manual_review: '需要人工判断',
+}
+
+function renderJudgeVerdict(run: GenerationRun) {
+  const judgeStep = run.steps.find((s) => s.stage === 'judge')
+  const judgeCandidate = judgeStep?.candidates.find((c) => c.is_selected)
+  if (!judgeCandidate?.parsed_output_json) return null
+
+  let parsed: unknown = judgeCandidate.parsed_output_json
+  if (typeof parsed === 'string') {
+    try { parsed = JSON.parse(parsed) } catch { return null }
+  }
+  const obj = parsed as Record<string, unknown>
+  const decision = String(obj.decision ?? '')
+  const label = JUDGE_LABELS[decision] ?? decision
+  const issueResults = obj.issue_results as unknown[] | undefined
+
+  return (
+    <div className="p-3 border-t border-gray-200 bg-white shrink-0">
+      <div className="flex items-center gap-2 mb-1">
+        <span className="text-xs font-medium text-gray-600">审稿决策:</span>
+        <span className="px-2 py-0.5 text-xs font-medium rounded-full bg-indigo-100 text-indigo-700">
+          {label || '暂无判决'}
+        </span>
+      </div>
+      {issueResults && issueResults.length > 0 && (
+        <div className="space-y-1 mt-1">
+          <p className="text-xs font-medium text-gray-500">问题处理结果:</p>
+          {issueResults.map((r, i) => {
+            const ir = r as Record<string, unknown>
+            return (
+              <div key={i} className="flex items-center gap-2 text-xs text-gray-600">
+                <span className={`w-1.5 h-1.5 rounded-full ${ir.is_resolved ? 'bg-green-500' : 'bg-red-400'}`} />
+                <span className="truncate">{String(ir.issue_id ?? `#${i + 1}`)}</span>
+                <span>{ir.is_resolved ? '已解决' : '未解决'}</span>
+                {!!ir.note && <span className="text-gray-400">— {String(ir.note)}</span>}
+              </div>
+            )
+          })}
+        </div>
+      )}
+    </div>
+  )
 }

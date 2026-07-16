@@ -4,7 +4,7 @@ import re
 
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
-from app.errors import conflict, bad_request
+from app.errors import conflict, bad_request, not_found
 from app.config import DATA_DIR
 from app.repositories.generation_repository import GenerationRepository
 from app.services.context_service import ContextService
@@ -51,6 +51,12 @@ class GenerationService:
 
     async def execute_stage(self, run_id: str, stage: str, override: dict):
         run = await self.repo.get_run_or_404(run_id)
+
+        for prev_stage in self._previous_stages(stage):
+            prev_step = await self.repo.get_step(run_id, prev_stage)
+            if not prev_step or prev_step.status != "completed":
+                raise bad_request("STAGE_DEPENDENCY", f"Please complete '{prev_stage}' first")
+
         step = await self.repo.get_step_or_404(run_id, stage)
 
         if step.status == "running":
@@ -141,8 +147,8 @@ class GenerationService:
 
             provider = await self._resolve_provider(provider_id)
             llm_request = LlmRequest(
-                system_prompt=ctx["system_prompt"],
-                user_prompt=ctx["user_prompt"],
+                system_prompt=ctx["rendered_system_prompt"],
+                user_prompt=ctx["rendered_user_prompt"],
                 model=model_id or "mock-model",
                 temperature=params["temperature"],
                 top_p=params["top_p"],
@@ -161,6 +167,10 @@ class GenerationService:
                 if parsed.valid:
                     parsed_output_json = json.dumps(parsed.data, ensure_ascii=False)
                     text_output = raw_response
+                    if stage == "reviser" and isinstance(parsed.data, dict):
+                        revised_text = parsed.data.get("revised_text", "")
+                        if revised_text:
+                            text_output = revised_text
                 else:
                     error_code = "STRUCTURED_OUTPUT_INVALID"
                     error_message = parsed.error or "无法解析结构化输出"
@@ -188,8 +198,8 @@ class GenerationService:
             prompt_version_id=prompt_version_id,
             parameters_json=json.dumps(params),
             run_override=run_override,
-            rendered_system_prompt=ctx["system_prompt"],
-            rendered_user_prompt=ctx["user_prompt"],
+            rendered_system_prompt=ctx["rendered_system_prompt"],
+            rendered_user_prompt=ctx["rendered_user_prompt"],
             raw_response=raw_response,
             parsed_output_json=parsed_output_json,
             text_output=text_output,
@@ -245,8 +255,8 @@ class GenerationService:
         ctx = await ctx_service.assemble(ctx_req)
         return {
             "sources": ctx["sources"],
-            "system_prompt": ctx["system_prompt"],
-            "user_prompt": ctx["user_prompt"],
+            "rendered_system_prompt": ctx["rendered_system_prompt"],
+            "rendered_user_prompt": ctx["rendered_user_prompt"],
             "input_snapshot_hash": ctx["input_snapshot_hash"],
             "total_chars": ctx["total_chars"],
             "truncated": ctx["truncated"],
@@ -325,24 +335,50 @@ class GenerationService:
 
         writer_step = await self.repo.get_step(run_id, "writer")
         reviser_step = await self.repo.get_step(run_id, "reviser")
+        judge_step = await self.repo.get_step(run_id, "judge")
 
-        final_text = ""
-        source = "writer"
+        writer_text = ""
+        reviser_text = ""
 
         if writer_step and writer_step.selected_candidate_id:
             candidate = next(
                 (c for c in writer_step.candidates if c.id == writer_step.selected_candidate_id), None
             )
             if candidate:
-                final_text = candidate.text_output or candidate.raw_response
+                writer_text = candidate.text_output or candidate.raw_response
 
         if reviser_step and reviser_step.selected_candidate_id:
             candidate = next(
                 (c for c in reviser_step.candidates if c.id == reviser_step.selected_candidate_id), None
             )
             if candidate and candidate.text_output:
-                final_text = candidate.text_output
-                source = "reviser"
+                reviser_text = candidate.text_output
+
+        final_text = ""
+        source = "writer"
+
+        if judge_step and judge_step.selected_candidate_id:
+            judge_candidate = next(
+                (c for c in judge_step.candidates if c.id == judge_step.selected_candidate_id), None
+            )
+            if judge_candidate and judge_candidate.parsed_output_json:
+                judge_data = _json.loads(judge_candidate.parsed_output_json)
+                decision = judge_data.get("decision", "")
+                if decision == "accept_original":
+                    final_text = writer_text
+                    source = "writer"
+                elif decision == "accept_revision":
+                    final_text = reviser_text
+                    source = "reviser"
+                elif decision == "accept_merged":
+                    final_text = judge_data.get("final_text", "") or reviser_text or writer_text
+                    source = "judge"
+                else:
+                    final_text = reviser_text or writer_text
+                    source = "reviser" if reviser_text else "writer"
+        else:
+            final_text = reviser_text or writer_text
+            source = "reviser" if reviser_text else "writer"
 
         if not final_text:
             raise bad_request("NO_CONTENT", "没有可采用的文本")
@@ -371,6 +407,7 @@ class GenerationService:
                 if source == "writer"
                 else reviser_step.selected_candidate_id
                 if source == "reviser"
+                else judge_step.selected_candidate_id if source == "judge" and judge_step
                 else None
             ),
         )

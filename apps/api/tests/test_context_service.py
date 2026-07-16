@@ -104,9 +104,9 @@ class TestContextPreview:
         assert resp.status_code == 200
         data = resp.json()
         assert data["input_snapshot_hash"]
-        assert len(data["system_prompt"]) > 0
-        assert len(data["user_prompt"]) > 0
-        assert "主角在黑暗中醒来" in data["user_prompt"]
+        assert len(data["rendered_system_prompt"]) > 0
+        assert len(data["rendered_user_prompt"]) > 0
+        assert "主角在黑暗中醒来" in data["rendered_user_prompt"]
         assert data["total_chars"] > 0
         source_names = {s["name"] for s in data["sources"]}
         assert "project_name" in source_names
@@ -129,7 +129,7 @@ class TestContextPreview:
 
         assert resp.status_code == 200
         data = resp.json()
-        assert "测试" in data["user_prompt"]
+        assert "测试" in data["rendered_user_prompt"]
 
     @pytest.mark.asyncio
     async def test_preview_critic_context(self, api_client):
@@ -147,9 +147,9 @@ class TestContextPreview:
 
         assert resp.status_code == 200
         data = resp.json()
-        assert "[P001]" in data["user_prompt"]
-        assert "[P002]" in data["user_prompt"]
-        assert "[P003]" in data["user_prompt"]
+        assert "[P001]" in data["rendered_user_prompt"]
+        assert "[P002]" in data["rendered_user_prompt"]
+        assert "[P003]" in data["rendered_user_prompt"]
 
     @pytest.mark.asyncio
     async def test_preview_reviser_context(self, api_client):
@@ -174,7 +174,7 @@ class TestContextPreview:
 
         assert resp.status_code == 200
         data = resp.json()
-        assert "I01" in data["user_prompt"]
+        assert "I01" in data["rendered_user_prompt"]
 
     @pytest.mark.asyncio
     async def test_preview_judge_context(self, api_client):
@@ -195,8 +195,8 @@ class TestContextPreview:
 
         assert resp.status_code == 200
         data = resp.json()
-        assert "初稿内容" in data["user_prompt"]
-        assert "修订稿内容" in data["user_prompt"]
+        assert "初稿内容" in data["rendered_user_prompt"]
+        assert "修订稿内容" in data["rendered_user_prompt"]
 
     @pytest.mark.asyncio
     async def test_preview_with_explicit_prompt_version(self, api_client):
@@ -335,8 +335,8 @@ class TestContextPreview:
         assert resp.status_code == 200
         data = resp.json()
         assert data["input_snapshot_hash"]
-        assert data["system_prompt"]
-        assert data["user_prompt"]
+        assert data["rendered_system_prompt"]
+        assert data["rendered_user_prompt"]
 
     @pytest.mark.asyncio
     async def test_with_workflow_profile(self, api_client):

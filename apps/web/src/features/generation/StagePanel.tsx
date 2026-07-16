@@ -1,8 +1,9 @@
 import { useState } from 'react'
-import { useMutation, useQueryClient } from '@tanstack/react-query'
-import type { Stage, GenerationStep, GenerationCandidate } from '../../types'
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
+import type { Stage, GenerationStep, GenerationCandidate, Provider } from '../../types'
 import { STAGE_LABELS } from '../../types'
 import * as runsApi from '../../api/runs'
+import { listProviders } from '../../api/providers'
 import CandidateView from './CandidateView'
 
 interface Props {
@@ -23,11 +24,32 @@ export default function StagePanel({ runId, stage, step }: Props) {
   const [showPreview, setShowPreview] = useState(false)
   const [selectedIssues, setSelectedIssues] = useState<Set<string>>(new Set())
 
+  const [showAdvanced, setShowAdvanced] = useState(false)
+  const [advanced, setAdvanced] = useState({
+    providerId: '',
+    modelId: '',
+    promptVersionId: '',
+    temperature: NaN,
+    topP: NaN,
+  })
+
+  const { data: providers } = useQuery({
+    queryKey: ['providers'],
+    queryFn: listProviders,
+  })
+
   const invalidate = () => queryClient.invalidateQueries({ queryKey: ['run', runId] })
 
   const executeMutation = useMutation({
     mutationFn: () =>
-      runsApi.executeStage(runId, stage, override.trim() ? { run_override: override } : undefined),
+      runsApi.executeStage(runId, stage, {
+        run_override: override.trim() || undefined,
+        provider_id: advanced.providerId || undefined,
+        model_id: advanced.modelId || undefined,
+        prompt_version_id: advanced.promptVersionId || undefined,
+        temperature: isNaN(advanced.temperature) ? undefined : advanced.temperature,
+        top_p: isNaN(advanced.topP) ? undefined : advanced.topP,
+      }),
     onSuccess: () => { invalidate(); setOverride('') },
   })
 
@@ -89,6 +111,12 @@ export default function StagePanel({ runId, stage, step }: Props) {
           >
             {executeMutation.isPending ? '执行中...' : step.status === 'failed' ? '重试' : '执行'}
           </button>
+          <button
+            onClick={() => setShowAdvanced(!showAdvanced)}
+            className={`px-2 py-1 text-xs rounded transition-colors ${showAdvanced ? 'bg-gray-200 text-gray-700' : 'text-gray-400 hover:text-gray-600 hover:bg-gray-100'}`}
+          >
+            ⚙ 高级
+          </button>
         </div>
       </div>
 
@@ -99,6 +127,68 @@ export default function StagePanel({ runId, stage, step }: Props) {
         className="w-full px-3 py-1.5 text-xs border border-gray-200 rounded-lg resize-none focus:outline-none focus:ring-1 focus:ring-indigo-400 mb-3"
         rows={2}
       />
+
+      {showAdvanced && (
+        <div className="mb-3 p-3 border border-gray-200 rounded-lg bg-gray-50">
+          <div className="grid grid-cols-2 gap-2">
+            <label className="text-xs text-gray-600">
+              提供商
+              <select
+                value={advanced.providerId}
+                onChange={(e) => setAdvanced((a) => ({ ...a, providerId: e.target.value }))}
+                className="mt-0.5 w-full px-2 py-1 text-xs border border-gray-200 rounded focus:outline-none focus:ring-1 focus:ring-indigo-400 bg-white"
+              >
+                <option value="">默认</option>
+                {providers?.map((p: Provider) => (
+                  <option key={p.id} value={p.id}>{p.name}</option>
+                ))}
+              </select>
+            </label>
+            <label className="text-xs text-gray-600">
+              模型
+              <input
+                value={advanced.modelId}
+                onChange={(e) => setAdvanced((a) => ({ ...a, modelId: e.target.value }))}
+                placeholder="默认"
+                className="mt-0.5 w-full px-2 py-1 text-xs border border-gray-200 rounded focus:outline-none focus:ring-1 focus:ring-indigo-400 bg-white"
+              />
+            </label>
+            <label className="text-xs text-gray-600">
+              Prompt 版本
+              <input
+                value={advanced.promptVersionId}
+                onChange={(e) => setAdvanced((a) => ({ ...a, promptVersionId: e.target.value }))}
+                placeholder="默认"
+                className="mt-0.5 w-full px-2 py-1 text-xs border border-gray-200 rounded focus:outline-none focus:ring-1 focus:ring-indigo-400 bg-white"
+              />
+            </label>
+            <label className="text-xs text-gray-600">
+              温度 ({isNaN(advanced.temperature) ? '-' : advanced.temperature.toFixed(1)})
+              <input
+                type="range"
+                min="0"
+                max="2"
+                step="0.1"
+                value={isNaN(advanced.temperature) ? 1 : advanced.temperature}
+                onChange={(e) => setAdvanced((a) => ({ ...a, temperature: parseFloat(e.target.value) }))}
+                className="mt-0.5 w-full h-1 accent-indigo-600"
+              />
+            </label>
+            <label className="text-xs text-gray-600 col-span-2">
+              Top P ({isNaN(advanced.topP) ? '-' : advanced.topP.toFixed(2)})
+              <input
+                type="range"
+                min="0"
+                max="1"
+                step="0.05"
+                value={isNaN(advanced.topP) ? 1 : advanced.topP}
+                onChange={(e) => setAdvanced((a) => ({ ...a, topP: parseFloat(e.target.value) }))}
+                className="mt-0.5 w-full h-1 accent-indigo-600"
+              />
+            </label>
+          </div>
+        </div>
+      )}
 
       {showPreview && preview && (
         <div className="mb-3">
@@ -197,21 +287,25 @@ function PreviewBlock({ label, content }: { label: string; content?: string }) {
 function parseIssues(candidate?: GenerationCandidate): { id: string; description: string }[] {
   if (!candidate?.parsed_output_json) return []
   try {
-    const parsed = candidate.parsed_output_json as Record<string, unknown>
-    const list = Array.isArray(parsed)
-      ? parsed
-      : Array.isArray(parsed.issues)
-        ? parsed.issues
+    let parsed: unknown = candidate.parsed_output_json
+    if (typeof parsed === 'string') {
+      parsed = JSON.parse(parsed)
+    }
+    const obj = parsed as Record<string, unknown>
+    const list = Array.isArray(obj)
+      ? obj
+      : Array.isArray(obj.issues)
+        ? obj.issues
         : null
     if (!Array.isArray(list)) return []
     return list
       .map((item: unknown, idx: number) => {
         if (typeof item === 'string') return { id: `issue-${idx}`, description: item }
         if (item && typeof item === 'object') {
-          const obj = item as Record<string, unknown>
+          const itemObj = item as Record<string, unknown>
           return {
-            id: String(obj.id ?? `issue-${idx}`),
-            description: String(obj.description ?? obj.title ?? JSON.stringify(item)),
+            id: String(itemObj.issue_id ?? itemObj.id ?? `issue-${idx}`),
+            description: String(itemObj.problem ?? itemObj.description ?? itemObj.title ?? JSON.stringify(item)),
           }
         }
         return { id: `issue-${idx}`, description: String(item) }

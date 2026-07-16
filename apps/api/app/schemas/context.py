@@ -27,8 +27,8 @@ class ContextPreviewRequest(BaseModel):
 
 class ContextPreviewResponse(BaseModel):
     sources: list[ContextSource]
-    system_prompt: str
-    user_prompt: str
+    rendered_system_prompt: str
+    rendered_user_prompt: str
     input_snapshot_hash: str
     total_chars: int
     truncated: bool

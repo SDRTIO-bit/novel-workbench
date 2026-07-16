@@ -120,8 +120,8 @@ class ContextService:
 
         return {
             "sources": sources,
-            "system_prompt": system_prompt,
-            "user_prompt": user_prompt,
+            "rendered_system_prompt": system_prompt,
+            "rendered_user_prompt": user_prompt,
             "input_snapshot_hash": snapshot_hash,
             "total_chars": total,
             "truncated": truncated,

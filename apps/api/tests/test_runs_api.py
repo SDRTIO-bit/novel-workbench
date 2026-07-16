@@ -199,8 +199,8 @@ class TestFullWorkflow:
         )
         assert resp.status_code == 200
         data = resp.json()
-        assert data["system_prompt"]
-        assert data["user_prompt"]
+        assert data["rendered_system_prompt"]
+        assert data["rendered_user_prompt"]
         assert data["input_snapshot_hash"]
 
     @pytest.mark.asyncio

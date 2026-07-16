@@ -45,7 +45,7 @@ class MockClient(BaseLlmClient):
         # Content extraction (chars, places) uses `up` (user prompt).
 
         # Planner → scene plan JSON
-        if "小说策划师" in sp or "场景规划师" in sp:
+        if "小说策划师" in sp or "场景规划师" in sp or ("小说规划" in sp and "plan" in sp):
             chars = []
             loc = "未指定地点"
             goal = "完成本章叙事目标"
@@ -124,7 +124,7 @@ class MockClient(BaseLlmClient):
 林远愣了一下，才反应过来她是在跟他说话。"""
 
         # Critic → diagnostic report
-        if "文学编辑" in sp:
+        if "文学编辑" in sp or "critic" in sp:
             return json.dumps({
                 "overall_assessment": "整体氛围营造出色，黄昏光线的描写有质感。但叙事节奏在中段略微松散。",
                 "strengths": [
@@ -140,7 +140,7 @@ class MockClient(BaseLlmClient):
             }, ensure_ascii=False)
 
         # Reviser → targeted fixes
-        if "文字修订师" in sp:
+        if "文字修订师" in sp or "reviser" in sp:
             return json.dumps({
                 "patches": [
                     {"issue_id": "I01", "operation": "replace", "target_paragraph_ids": ["P003"], "replacement": "老陈把书翻到夹着书签的那一页，却没有继续读。他想起妻子以前总说，一本书读得越慢，里面的世界就越长。窗台上的阿橘还在敲尾巴。他摘下老花镜，用袖口擦了擦镜片。"},
@@ -153,7 +153,7 @@ class MockClient(BaseLlmClient):
             }, ensure_ascii=False)
 
         # Judge → final verdict
-        if "文学评审" in sp:
+        if "文学评审" in sp or "judge" in sp:
             return json.dumps({
                 "decision": "accept_revision",
                 "issue_results": [

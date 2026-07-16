@@ -162,7 +162,7 @@ class TestMCPHandshake:
         resp = api_client.post("/mcp/",
             json={"jsonrpc": "2.0", "id": 2, "method": "tools/list"},
             headers={**headers, "mcp-session-id": sid})
-        assert len(_mcp_result(resp)["tools"]) == 31
+        assert len(_mcp_result(resp)["tools"]) == 33
 
 
 class TestMCPTools:
