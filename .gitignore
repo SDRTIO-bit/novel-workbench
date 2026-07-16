@@ -9,6 +9,7 @@ dist/
 .vite/
 data/novel_workbench.db
 data/.secret_key
+*.db
 test-results/
 playwright-report/
 .coverage
