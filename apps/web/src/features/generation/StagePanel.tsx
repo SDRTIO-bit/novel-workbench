@@ -1,7 +1,8 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import type { Stage, GenerationStep, GenerationCandidate, Provider } from '../../types'
 import { STAGE_LABELS } from '../../types'
+import { REVISION_OPERATIONS, type RevisionOperation } from '../../types/generation'
 import * as runsApi from '../../api/runs'
 import { listProviders } from '../../api/providers'
 import CandidateView from './CandidateView'
@@ -17,12 +18,24 @@ interface PreviewData {
   rendered_user_prompt: string
 }
 
+const REVISION_OPERATION_LABELS: Record<RevisionOperation, string> = {
+  naturalize: '自然化',
+  tighten: '删冗聚焦',
+  clarify: '信息清理',
+  voice_align: '角色语气',
+  ground_detail: '补足有效细节',
+  rhythm_adjust: '节奏校准',
+  diction_refine: '用词校准',
+  project_style_align: '项目文风对齐',
+}
+
 export default function StagePanel({ runId, stage, step }: Props) {
   const queryClient = useQueryClient()
   const [override, setOverride] = useState('')
   const [preview, setPreview] = useState<PreviewData | null>(null)
   const [showPreview, setShowPreview] = useState(false)
   const [selectedIssues, setSelectedIssues] = useState<Set<string>>(new Set())
+  const [operationByIssue, setOperationByIssue] = useState<Record<string, RevisionOperation>>({})
 
   const [showAdvanced, setShowAdvanced] = useState(false)
   const [advanced, setAdvanced] = useState({
@@ -65,8 +78,16 @@ export default function StagePanel({ runId, stage, step }: Props) {
   })
 
   const issuesMutation = useMutation({
-    mutationFn: () =>
-      runsApi.selectIssues(runId, { issue_ids: Array.from(selectedIssues) }),
+    mutationFn: () => {
+      const issueIds = Array.from(selectedIssues)
+      const operations = Object.fromEntries(
+        issueIds.map((issueId) => [issueId, operationByIssue[issueId]]),
+      ) as Record<string, RevisionOperation>
+      return runsApi.selectIssues(runId, {
+        issue_ids: issueIds,
+        operation_by_issue: operations,
+      })
+    },
     onSuccess: () => { invalidate(); setSelectedIssues(new Set()) },
   })
 
@@ -79,10 +100,13 @@ export default function StagePanel({ runId, stage, step }: Props) {
           ? 'bg-red-100 text-red-700'
           : 'bg-gray-100 text-gray-500'
 
-  const issues =
-    stage === 'critic'
-      ? parseIssues(step.candidates.find((c) => c.is_selected))
-      : null
+  const selectedCandidate = step.candidates.find((c) => c.is_selected)
+  const issues = stage === 'critic' ? parseIssues(selectedCandidate) : null
+
+  useEffect(() => {
+    setSelectedIssues(new Set())
+    setOperationByIssue({})
+  }, [selectedCandidate?.id])
 
   return (
     <div className="p-3 bg-white rounded-xl border border-gray-200 shadow-sm">
@@ -212,23 +236,63 @@ export default function StagePanel({ runId, stage, step }: Props) {
         <div className="mb-3 p-2 bg-amber-50 rounded-lg border border-amber-200">
           <p className="text-xs font-medium text-amber-800 mb-1.5">选择问题:</p>
           <div className="space-y-1">
-            {issues.map((issue) => (
-              <label key={issue.id} className="flex items-center gap-2 text-xs text-gray-700 cursor-pointer">
-                <input
-                  type="checkbox"
-                  checked={selectedIssues.has(issue.id)}
-                  onChange={() =>
-                    setSelectedIssues((prev) => {
-                      const next = new Set(prev)
-                      if (next.has(issue.id)) { next.delete(issue.id) } else { next.add(issue.id) }
-                      return next
-                    })
-                  }
-                  className="rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
-                />
-                {issue.description}
-              </label>
-            ))}
+            {issues.map((issue) => {
+              const isChecked = selectedIssues.has(issue.id)
+              return (
+                <div key={issue.id} className="rounded border border-amber-100 bg-white/60 p-2">
+                  <label className="flex items-center gap-2 text-xs text-gray-700 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      aria-label={`选择 ${issue.id}`}
+                      checked={isChecked}
+                      onChange={() => {
+                        setSelectedIssues((prev) => {
+                          const next = new Set(prev)
+                          if (next.has(issue.id)) {
+                            next.delete(issue.id)
+                            setOperationByIssue((operations) => {
+                              const nextOperations = { ...operations }
+                              delete nextOperations[issue.id]
+                              return nextOperations
+                            })
+                          } else {
+                            next.add(issue.id)
+                            setOperationByIssue((operations) => ({
+                              ...operations,
+                              [issue.id]: issue.recommendedOperation,
+                            }))
+                          }
+                          return next
+                        })
+                      }}
+                      className="rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                    />
+                    <span className="font-medium">{issue.id}</span>
+                    <span>{issue.description}</span>
+                  </label>
+                  {isChecked && (
+                    <label className="mt-2 flex items-center gap-2 text-xs text-amber-900">
+                      修订操作
+                      <select
+                        aria-label={`修订操作 ${issue.id}`}
+                        value={operationByIssue[issue.id] ?? issue.recommendedOperation}
+                        onChange={(event) => setOperationByIssue((operations) => ({
+                          ...operations,
+                          [issue.id]: event.target.value as RevisionOperation,
+                        }))}
+                        className="rounded border border-amber-200 bg-white px-2 py-1 text-xs"
+                      >
+                        {REVISION_OPERATIONS.map((operation) => (
+                          <option key={operation} value={operation}>
+                            {REVISION_OPERATION_LABELS[operation]}
+                          </option>
+                        ))}
+                      </select>
+                    </label>
+                  )}
+                </div>
+              )
+            })}
           </div>
           <button
             onClick={() => issuesMutation.mutate()}
@@ -284,7 +348,7 @@ function PreviewBlock({ label, content }: { label: string; content?: string }) {
   )
 }
 
-function parseIssues(candidate?: GenerationCandidate): { id: string; description: string }[] {
+function parseIssues(candidate?: GenerationCandidate): { id: string; description: string; recommendedOperation: RevisionOperation }[] {
   if (!candidate?.parsed_output_json) return []
   try {
     let parsed: unknown = candidate.parsed_output_json
@@ -300,18 +364,24 @@ function parseIssues(candidate?: GenerationCandidate): { id: string; description
     if (!Array.isArray(list)) return []
     return list
       .map((item: unknown, idx: number) => {
-        if (typeof item === 'string') return { id: `issue-${idx}`, description: item }
         if (item && typeof item === 'object') {
           const itemObj = item as Record<string, unknown>
+          const recommendedOperation = itemObj.recommended_operation
+          if (!isRevisionOperation(recommendedOperation)) return null
           return {
             id: String(itemObj.issue_id ?? itemObj.id ?? `issue-${idx}`),
             description: String(itemObj.problem ?? itemObj.description ?? itemObj.title ?? JSON.stringify(item)),
+            recommendedOperation,
           }
         }
-        return { id: `issue-${idx}`, description: String(item) }
+        return null
       })
-      .filter((i) => i.description)
+      .filter((issue): issue is { id: string; description: string; recommendedOperation: RevisionOperation } => Boolean(issue?.description))
   } catch {
     return []
   }
+}
+
+function isRevisionOperation(value: unknown): value is RevisionOperation {
+  return typeof value === 'string' && (REVISION_OPERATIONS as readonly string[]).includes(value)
 }

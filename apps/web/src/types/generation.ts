@@ -2,6 +2,25 @@ export type Stage = "planner" | "writer" | "critic" | "reviser" | "judge";
 
 export const STAGES: Stage[] = ["planner", "writer", "critic", "reviser", "judge"];
 
+export const REVISION_OPERATIONS = [
+  "naturalize",
+  "tighten",
+  "clarify",
+  "voice_align",
+  "ground_detail",
+  "rhythm_adjust",
+  "diction_refine",
+  "project_style_align",
+] as const;
+
+export type RevisionOperation = (typeof REVISION_OPERATIONS)[number];
+
+export interface CriticIssue {
+  issue_id: string;
+  problem: string;
+  recommended_operation: RevisionOperation;
+}
+
 export const STAGE_LABELS: Record<Stage, string> = {
   planner: "场景规划",
   writer: "场景写作",
@@ -82,6 +101,7 @@ export interface GenerationRunList {
 
 export interface SelectIssues {
   issue_ids: string[];
+  operation_by_issue?: Record<string, RevisionOperation>;
 }
 
 export interface CreateRun {
