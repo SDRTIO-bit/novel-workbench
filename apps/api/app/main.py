@@ -10,6 +10,7 @@ from app.errors import AppError, app_error_handler, validation_error_handler
 import app.models.project  # noqa: F401
 import app.models.chapter  # noqa: F401
 import app.models.prompt  # noqa: F401
+import app.models.provider  # noqa: F401
 
 
 @asynccontextmanager
@@ -17,8 +18,13 @@ async def lifespan(app: FastAPI):
     await init_db()
     async with async_session() as session:
         from app.services.prompt_service import PromptService
-        svc = PromptService(session)
-        await svc.init_builtins()
+        prompt_svc = PromptService(session)
+        await prompt_svc.init_builtins()
+        await session.commit()
+
+        from app.services.provider_service import ProviderService
+        provider_svc = ProviderService(session)
+        await provider_svc.init_builtins()
         await session.commit()
     yield
 
@@ -40,11 +46,13 @@ from app.routers.projects import router as projects_router  # noqa: E402
 from app.routers.chapters import router as chapters_router  # noqa: E402
 from app.routers.import_export import router as import_export_router  # noqa: E402
 from app.routers.prompts import router as prompts_router  # noqa: E402
+from app.routers.providers import router as providers_router  # noqa: E402
 
 app.include_router(projects_router)
 app.include_router(chapters_router)
 app.include_router(import_export_router)
 app.include_router(prompts_router)
+app.include_router(providers_router)
 
 
 @app.get("/api/health")
