@@ -3,12 +3,12 @@ import { useParams, useNavigate, useBeforeUnload } from 'react-router-dom';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import * as chaptersApi from '../api/chapters';
 import * as projectsApi from '../api/projects';
-import * as runsApi from '../api/runs';
 import { useUIStore } from '../stores/uiStore';
 import { useWriteStore } from '../stores/writeStore';
+import { WorkflowPanel } from '../features/generation';
 import type { ChapterListSchema, ChapterCreate, ChapterUpdate } from '../types';
-import { DOCUMENT_KINDS, DOCUMENT_LABELS, STAGES, STAGE_LABELS } from '../types';
-import type { Stage, DocumentKind } from '../types';
+import { DOCUMENT_KINDS, DOCUMENT_LABELS } from '../types';
+import type { DocumentKind } from '../types';
 import type { ApiError } from '../api/client';
 
 export default function WritePage() {
@@ -483,106 +483,14 @@ export default function WritePage() {
           </div>
 
           <div className="p-3 flex-1">
-            {!activeRun ? (
-              <>
-                <textarea
-                  value={sceneInstruction}
-                  onChange={(e) => setSceneInstruction(e.target.value)}
-                  placeholder="输入场景要求..."
-                  className="w-full px-3 py-2 text-xs border border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-1 focus:ring-indigo-500"
-                  rows={4}
-                />
-                <button
-                  onClick={() => {
-                    if (!sceneInstruction.trim()) return;
-                    createRunMutation.mutate({
-                      project_id: projectId,
-                      chapter_id: selectedChapterId || undefined,
-                      scene_instruction: sceneInstruction.trim(),
-                    });
-                  }}
-                  disabled={createRunMutation.isPending || !sceneInstruction.trim()}
-                  className="mt-2 w-full px-3 py-2 text-sm font-medium bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 disabled:opacity-50 transition-colors"
-                >
-                  {createRunMutation.isPending ? '创建中...' : '新建场景生成'}
-                </button>
-              </>
-            ) : (
-              <>
-                <div className="mb-3 p-2 bg-white rounded-lg border border-gray-200">
-                  <p className="text-xs text-gray-500">场景要求:</p>
-                  <p className="text-xs text-gray-800 mt-0.5">{activeRun.scene_instruction}</p>
-                  <span
-                    className={`inline-block mt-1 px-2 py-0.5 text-xs rounded-full ${
-                      activeRun.status === 'completed'
-                        ? 'bg-green-100 text-green-700'
-                        : activeRun.status === 'running'
-                          ? 'bg-blue-100 text-blue-700'
-                          : activeRun.status === 'failed'
-                            ? 'bg-red-100 text-red-700'
-                            : 'bg-gray-100 text-gray-600'
-                    }`}
-                  >
-                    {activeRun.status}
-                  </span>
-                </div>
-
-                <div className="space-y-1.5">
-                  {STAGES.map((stage) => {
-                    const step = stepForStage(stage);
-                    const status = step?.status || 'pending';
-                    const statusColor =
-                      status === 'completed'
-                        ? 'bg-green-100 text-green-700'
-                        : status === 'running'
-                          ? 'bg-blue-100 text-blue-700'
-                          : status === 'failed'
-                            ? 'bg-red-100 text-red-700'
-                            : 'bg-gray-100 text-gray-500';
-
-                    return (
-                      <div
-                        key={stage}
-                        className="flex items-center gap-2 p-2 bg-white rounded-lg border border-gray-200"
-                      >
-                        <span className="text-xs text-gray-700 flex-1">
-                          {STAGE_LABELS[stage]}
-                        </span>
-                        <span className={`px-1.5 py-0.5 text-xs rounded-full ${statusColor}`}>
-                          {status}
-                        </span>
-                        <button
-                          onClick={() =>
-                            executeStageMutation.mutate({ runId: activeRun.id, stage })
-                          }
-                          disabled={executeStageMutation.isPending}
-                          className="px-2 py-0.5 text-xs font-medium bg-indigo-600 text-white rounded hover:bg-indigo-700 disabled:opacity-50 transition-colors"
-                        >
-                          {status === 'failed' ? '重试' : '执行'}
-                        </button>
-                      </div>
-                    );
-                  })}
-                </div>
-
-                {writerHasOutput() && (
-                  <button
-                    onClick={() => acceptFinalMutation.mutate(activeRun.id)}
-                    disabled={acceptFinalMutation.isPending}
-                    className="mt-3 w-full px-3 py-2 text-sm font-medium bg-green-600 text-white rounded-lg hover:bg-green-700 disabled:opacity-50 transition-colors"
-                  >
-                    {acceptFinalMutation.isPending ? '接受中...' : '接受生成结果'}
-                  </button>
-                )}
-
-                <button
-                  onClick={() => setActiveRun(null)}
-                  className="mt-2 w-full px-3 py-1.5 text-xs text-gray-500 hover:text-gray-700 transition-colors"
-                >
-                  返回创建
-                </button>
-              </>
-            )}
+            <WorkflowPanel
+              projectId={projectId!}
+              chapterId={selectedChapterId}
+              onAccept={() => {
+                queryClient.invalidateQueries({ queryKey: ['chapter-versions', selectedChapterId] });
+                setActiveRun(null);
+              }}
+            />
           </div>
         </aside>
       )}

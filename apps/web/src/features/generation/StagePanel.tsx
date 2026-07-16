@@ -1,0 +1,223 @@
+import { useState } from 'react'
+import { useMutation, useQueryClient } from '@tanstack/react-query'
+import type { Stage, GenerationStep, GenerationCandidate } from '../../types'
+import { STAGE_LABELS } from '../../types'
+import * as runsApi from '../../api/runs'
+import CandidateView from './CandidateView'
+
+interface Props {
+  runId: string
+  stage: Stage
+  step: GenerationStep
+}
+
+interface PreviewData {
+  rendered_system_prompt: string
+  rendered_user_prompt: string
+}
+
+export default function StagePanel({ runId, stage, step }: Props) {
+  const queryClient = useQueryClient()
+  const [override, setOverride] = useState('')
+  const [preview, setPreview] = useState<PreviewData | null>(null)
+  const [showPreview, setShowPreview] = useState(false)
+  const [selectedIssues, setSelectedIssues] = useState<Set<string>>(new Set())
+
+  const invalidate = () => queryClient.invalidateQueries({ queryKey: ['run', runId] })
+
+  const executeMutation = useMutation({
+    mutationFn: () =>
+      runsApi.executeStage(runId, stage, override.trim() ? { run_override: override } : undefined),
+    onSuccess: () => { invalidate(); setOverride('') },
+  })
+
+  const previewMutation = useMutation({
+    mutationFn: () =>
+      runsApi.previewStage(runId, stage, override.trim() ? { run_override: override } : undefined),
+    onSuccess: (data) => { setPreview(data as PreviewData); setShowPreview(true) },
+  })
+
+  const selectMutation = useMutation({
+    mutationFn: (candidateId: string) => runsApi.selectCandidate(runId, stage, candidateId),
+    onSuccess: () => invalidate(),
+  })
+
+  const issuesMutation = useMutation({
+    mutationFn: () =>
+      runsApi.selectIssues(runId, { issue_ids: Array.from(selectedIssues) }),
+    onSuccess: () => { invalidate(); setSelectedIssues(new Set()) },
+  })
+
+  const statusColor =
+    step.status === 'completed'
+      ? 'bg-green-100 text-green-700'
+      : step.status === 'running'
+        ? 'bg-blue-100 text-blue-700'
+        : step.status === 'failed'
+          ? 'bg-red-100 text-red-700'
+          : 'bg-gray-100 text-gray-500'
+
+  const issues =
+    stage === 'critic'
+      ? parseIssues(step.candidates.find((c) => c.is_selected))
+      : null
+
+  return (
+    <div className="p-3 bg-white rounded-xl border border-gray-200 shadow-sm">
+      <div className="flex items-center justify-between mb-3">
+        <div className="flex items-center gap-2">
+          <h3 className="text-sm font-semibold text-gray-800">{STAGE_LABELS[stage]}</h3>
+          <span className={`px-1.5 py-0.5 text-xs rounded-full ${statusColor}`}>
+            {step.status}
+          </span>
+        </div>
+        <div className="flex items-center gap-1.5">
+          {!previewMutation.isPending ? (
+            <button
+              onClick={() => previewMutation.mutate()}
+              className="px-2.5 py-1 text-xs text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 rounded transition-colors"
+            >
+              预览上下文
+            </button>
+          ) : (
+            <span className="text-xs text-gray-400">加载中...</span>
+          )}
+          <button
+            onClick={() => executeMutation.mutate()}
+            disabled={executeMutation.isPending}
+            className="px-3 py-1 text-xs font-medium bg-indigo-600 text-white rounded hover:bg-indigo-700 disabled:opacity-50 transition-colors"
+          >
+            {executeMutation.isPending ? '执行中...' : step.status === 'failed' ? '重试' : '执行'}
+          </button>
+        </div>
+      </div>
+
+      <textarea
+        value={override}
+        onChange={(e) => setOverride(e.target.value)}
+        placeholder="此次附加要求（可选）..."
+        className="w-full px-3 py-1.5 text-xs border border-gray-200 rounded-lg resize-none focus:outline-none focus:ring-1 focus:ring-indigo-400 mb-3"
+        rows={2}
+      />
+
+      {showPreview && preview && (
+        <div className="mb-3">
+          <div className="flex items-center justify-between mb-1">
+            <span className="text-xs font-medium text-gray-600">上下文预览</span>
+            <button
+              onClick={() => setShowPreview(false)}
+              className="text-xs text-gray-400 hover:text-gray-600"
+            >
+              收起
+            </button>
+          </div>
+          <div className="space-y-2">
+            <PreviewBlock label="System Prompt" content={preview.rendered_system_prompt} />
+            <PreviewBlock label="User Prompt" content={preview.rendered_user_prompt} />
+          </div>
+        </div>
+      )}
+
+      {issues && issues.length > 0 && (
+        <div className="mb-3 p-2 bg-amber-50 rounded-lg border border-amber-200">
+          <p className="text-xs font-medium text-amber-800 mb-1.5">选择问题:</p>
+          <div className="space-y-1">
+            {issues.map((issue) => (
+              <label key={issue.id} className="flex items-center gap-2 text-xs text-gray-700 cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={selectedIssues.has(issue.id)}
+                  onChange={() =>
+                    setSelectedIssues((prev) => {
+                      const next = new Set(prev)
+                      next.has(issue.id) ? next.delete(issue.id) : next.add(issue.id)
+                      return next
+                    })
+                  }
+                  className="rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                />
+                {issue.description}
+              </label>
+            ))}
+          </div>
+          <button
+            onClick={() => issuesMutation.mutate()}
+            disabled={selectedIssues.size === 0 || issuesMutation.isPending}
+            className="mt-2 px-3 py-1 text-xs font-medium bg-amber-600 text-white rounded hover:bg-amber-700 disabled:opacity-50 transition-colors"
+          >
+            {issuesMutation.isPending ? '确认中...' : '确认问题'}
+          </button>
+        </div>
+      )}
+
+      {step.candidates.length > 0 && (
+        <div className="space-y-2">
+          <p className="text-xs font-medium text-gray-500">
+            候选结果 ({step.candidates.length})
+          </p>
+          {step.candidates.map((c) => (
+            <CandidateView
+              key={c.id}
+              candidate={c}
+              stage={stage}
+              isSelected={c.is_selected}
+              onSelect={() => selectMutation.mutate(c.id)}
+            />
+          ))}
+        </div>
+      )}
+
+      {step.candidates.length === 0 && (
+        <p className="text-xs text-gray-400 italic">尚无候选结果，点击"执行"开始生成</p>
+      )}
+    </div>
+  )
+}
+
+function PreviewBlock({ label, content }: { label: string; content?: string }) {
+  const [open, setOpen] = useState(false)
+  return (
+    <div className="border border-gray-200 rounded overflow-hidden">
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full flex items-center justify-between px-2 py-1 text-xs font-medium text-gray-500 bg-gray-50 hover:bg-gray-100"
+      >
+        {label}
+        <span>{open ? '▲' : '▼'}</span>
+      </button>
+      {open && (
+        <pre className="p-2 text-xs whitespace-pre-wrap max-h-48 overflow-y-auto bg-gray-900 text-green-300">
+          {content || '(空)'}
+        </pre>
+      )}
+    </div>
+  )
+}
+
+function parseIssues(candidate?: GenerationCandidate): { id: string; description: string }[] {
+  if (!candidate?.parsed_output_json) return []
+  try {
+    const parsed = candidate.parsed_output_json as Record<string, unknown>
+    const list = Array.isArray(parsed)
+      ? parsed
+      : Array.isArray(parsed.issues)
+        ? parsed.issues
+        : null
+    if (!Array.isArray(list)) return []
+    return list
+      .map((item: unknown, idx: number) => {
+        if (typeof item === 'string') return { id: `issue-${idx}`, description: item }
+        if (item && typeof item === 'object') {
+          const obj = item as Record<string, unknown>
+          return {
+            id: String(obj.id ?? `issue-${idx}`),
+            description: String(obj.description ?? obj.title ?? JSON.stringify(item)),
+          }
+        }
+        return { id: `issue-${idx}`, description: String(item) }
+      })
+      .filter((i) => i.description)
+  } catch {
+    return []
+  }
+}
