@@ -130,7 +130,7 @@ export default function StagePanel({ runId, stage, step }: Props) {
                   onChange={() =>
                     setSelectedIssues((prev) => {
                       const next = new Set(prev)
-                      next.has(issue.id) ? next.delete(issue.id) : next.add(issue.id)
+                      if (next.has(issue.id)) { next.delete(issue.id) } else { next.add(issue.id) }
                       return next
                     })
                   }

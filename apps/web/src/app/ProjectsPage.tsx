@@ -9,7 +9,7 @@ import {
   restoreProject,
   duplicateProject,
 } from '../api/projects'
-import type { ProjectListItem, ProjectCreate } from '../types'
+import type { ProjectCreate } from '../types'
 import { apiPost } from '../api/client'
 
 function ImportButton({ onImported }: { onImported: () => void }) {

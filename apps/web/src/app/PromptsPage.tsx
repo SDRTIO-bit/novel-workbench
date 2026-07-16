@@ -93,7 +93,7 @@ export default function PromptsPage() {
   const previewMutation = useMutation({
     mutationFn: () => {
       const variables = JSON.parse(previewData.varJson)
-      const v = versions?.find(v => v.id === (prompts?.find(p => p.id === previewProfile?.id) as any)?.latest_version?.id) || versions?.[0]
+      const v = versions?.[0]
       return renderPreview({
         system_template: v?.system_template || '',
         user_template: v?.user_template || '',

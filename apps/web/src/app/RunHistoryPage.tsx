@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
 import * as runsApi from '../api/runs'
-import { STAGES, STAGE_LABELS } from '../types'
+import { STAGE_LABELS } from '../types'
 import type { GenerationRunList } from '../types'
 
 export default function RunHistoryPage() {

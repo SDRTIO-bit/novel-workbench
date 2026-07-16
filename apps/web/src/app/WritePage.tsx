@@ -21,14 +21,13 @@ export default function WritePage() {
     toggleSidebar, toggleRightPanel, setSelectedChapter,
     selectedDocumentKind, setSelectedDocument,
   } = useUIStore();
-  const { dirty, activeRunId, setDirty, setLastSaved, setActiveRun } = useWriteStore();
+  const { dirty, setDirty, setLastSaved, setActiveRun } = useWriteStore();
 
   const [chapterText, setChapterText] = useState('');
   const [chapterTitle, setChapterTitle] = useState('');
   const [saveStatus, setSaveStatus] = useState<'saved' | 'saving' | 'unsaved'>('saved');
   const [showVersionForm, setShowVersionForm] = useState(false);
   const [versionNote, setVersionNote] = useState('');
-  const [sceneInstruction, setSceneInstruction] = useState('');
   const [docText, setDocText] = useState('');
   const [docTitle, setDocTitle] = useState('');
 
@@ -53,12 +52,6 @@ export default function WritePage() {
     enabled: !!projectId,
   });
 
-  const { data: activeRun } = useQuery({
-    queryKey: ['run', activeRunId],
-    queryFn: () => runsApi.getRun(activeRunId!),
-    enabled: !!activeRunId,
-  });
-
   const selectedChapter = chapters.find((c) => c.id === selectedChapterId) as
     | (ChapterListSchema & { current_text?: string })
     | undefined;
@@ -72,6 +65,7 @@ export default function WritePage() {
       setSaveStatus('saved');
       setDirty(false);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedChapterId]);
 
   useEffect(() => {
@@ -153,31 +147,6 @@ export default function WritePage() {
     },
   });
 
-  const createRunMutation = useMutation({
-    mutationFn: (data: { project_id: string; chapter_id?: string; scene_instruction: string }) =>
-      runsApi.createRun(data),
-    onSuccess: (run) => {
-      setActiveRun(run.id);
-      setSceneInstruction('');
-    },
-  });
-
-  const executeStageMutation = useMutation({
-    mutationFn: ({ runId, stage }: { runId: string; stage: string }) =>
-      runsApi.executeStage(runId, stage),
-    onSuccess: () => queryClient.invalidateQueries({ queryKey: ['run', activeRunId] }),
-  });
-
-  const acceptFinalMutation = useMutation({
-    mutationFn: (runId: string) => runsApi.acceptFinal(runId),
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['chapters', projectId] });
-      queryClient.invalidateQueries({ queryKey: ['chapter-versions', selectedChapterId] });
-      queryClient.invalidateQueries({ queryKey: ['run', activeRunId] });
-      setActiveRun(null);
-    },
-  });
-
   const updateDocumentMutation = useMutation({
     mutationFn: ({ kind, data }: { kind: DocumentKind; data: { title?: string; content?: string } }) =>
       projectsApi.updateDocument(projectId!, kind, data),
@@ -211,12 +180,6 @@ export default function WritePage() {
     setSelectedDocument(kind);
     setDocTitle(doc?.title || DOCUMENT_LABELS[kind] || kind);
     setDocText(doc?.content || '');
-  };
-
-  const stepForStage = (stage: Stage) => activeRun?.steps?.find((s) => s.stage === stage);
-  const writerHasOutput = () => {
-    const step = stepForStage('writer');
-    return step?.candidates?.some((c) => c.is_selected && c.text_output);
   };
 
   useBeforeUnload(
