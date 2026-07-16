@@ -1,25 +1,10 @@
 import { Routes, Route, Navigate } from 'react-router-dom'
 import { AppShell } from './AppShell'
-
-function ProjectsPage() {
-  return <div className="p-6"><h1 className="text-2xl font-bold">小说项目</h1></div>
-}
-
-function WritePage() {
-  return <div className="p-6"><h1 className="text-2xl font-bold">写作工作台</h1></div>
-}
-
-function ProvidersPage() {
-  return <div className="p-6"><h1 className="text-2xl font-bold">服务商管理</h1></div>
-}
-
-function PromptsPage() {
-  return <div className="p-6"><h1 className="text-2xl font-bold">提示词管理</h1></div>
-}
-
-function WorkflowsPage() {
-  return <div className="p-6"><h1 className="text-2xl font-bold">工作流方案</h1></div>
-}
+import ProjectsPage from './ProjectsPage'
+import WritePage from './WritePage'
+import ProvidersPage from './ProvidersPage'
+import PromptsPage from './PromptsPage'
+import WorkflowsPage from './WorkflowsPage'
 
 export function AppRouter() {
   return (
