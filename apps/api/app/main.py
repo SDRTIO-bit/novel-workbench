@@ -32,9 +32,11 @@ app.add_exception_handler(RequestValidationError, validation_error_handler)
 
 from app.routers.projects import router as projects_router  # noqa: E402
 from app.routers.chapters import router as chapters_router  # noqa: E402
+from app.routers.import_export import router as import_export_router  # noqa: E402
 
 app.include_router(projects_router)
 app.include_router(chapters_router)
+app.include_router(import_export_router)
 
 
 @app.get("/api/health")
