@@ -11,6 +11,7 @@ import app.models.project  # noqa: F401
 import app.models.chapter  # noqa: F401
 import app.models.prompt  # noqa: F401
 import app.models.provider  # noqa: F401
+import app.models.workflow  # noqa: F401
 
 
 @asynccontextmanager
@@ -20,11 +21,15 @@ async def lifespan(app: FastAPI):
         from app.services.prompt_service import PromptService
         prompt_svc = PromptService(session)
         await prompt_svc.init_builtins()
-        await session.commit()
 
         from app.services.provider_service import ProviderService
         provider_svc = ProviderService(session)
         await provider_svc.init_builtins()
+
+        from app.services.workflow_service import WorkflowService
+        workflow_svc = WorkflowService(session)
+        await workflow_svc.init_builtin_default()
+
         await session.commit()
     yield
 
@@ -47,12 +52,14 @@ from app.routers.chapters import router as chapters_router  # noqa: E402
 from app.routers.import_export import router as import_export_router  # noqa: E402
 from app.routers.prompts import router as prompts_router  # noqa: E402
 from app.routers.providers import router as providers_router  # noqa: E402
+from app.routers.workflows import router as workflows_router  # noqa: E402
 
 app.include_router(projects_router)
 app.include_router(chapters_router)
 app.include_router(import_export_router)
 app.include_router(prompts_router)
 app.include_router(providers_router)
+app.include_router(workflows_router)
 
 
 @app.get("/api/health")
