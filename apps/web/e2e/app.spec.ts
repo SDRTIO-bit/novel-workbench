@@ -1,5 +1,7 @@
 import { test, expect } from '@playwright/test'
 
+const PROJECT_NAME = `E2E-${Date.now()}`
+
 test.describe('Novel Workbench E2E', () => {
   test('health check returns 200', async ({ request }) => {
     const resp = await request.get('http://localhost:8766/api/health')
@@ -16,9 +18,9 @@ test.describe('Novel Workbench E2E', () => {
   test('can create and navigate project', async ({ page }) => {
     await page.goto('http://localhost:8765/projects')
     await page.click('text=新建项目')
-    await page.fill('input[placeholder="输入项目名称"]', 'E2E测试项目')
+    await page.fill('input[placeholder="输入项目名称"]', PROJECT_NAME)
     await page.click('text=确认')
-    await expect(page.locator('text=E2E测试项目')).toBeVisible()
+    await expect(page.locator(`text=${PROJECT_NAME}`)).toBeVisible()
   })
 
   test('settings pages load', async ({ page }) => {
