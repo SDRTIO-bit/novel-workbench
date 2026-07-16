@@ -283,6 +283,20 @@ class GenerationService:
             critic_report=override.get("critic_report"),
             selected_issues=override.get("selected_issues", []),
             revised_text=override.get("revised_text", ""),
+            chapter_function=override.get("chapter_function", ""),
+            arc_phase=override.get("arc_phase", ""),
+            reader_comes_for=override.get("reader_comes_for", ""),
+            must_deliver=override.get("must_deliver", ""),
+            must_not_deliver=override.get("must_not_deliver", ""),
+            main_change=override.get("main_change", ""),
+            main_payoff=override.get("main_payoff", ""),
+            ending_hook=override.get("ending_hook", ""),
+            hook_type=override.get("hook_type", ""),
+            fuel_reserved_for_later=override.get("fuel_reserved_for_later", ""),
+            target_length=override.get("target_length", 0),
+            write_mode=override.get("write_mode", ""),
+            continuation_anchor=override.get("continuation_anchor", ""),
+            current_chapter_text=override.get("current_chapter_text", ""),
         )
 
         for prev_stage in self._previous_stages(stage):

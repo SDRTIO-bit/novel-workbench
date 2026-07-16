@@ -106,7 +106,7 @@ class TestContextPreview:
         assert data["input_snapshot_hash"]
         assert len(data["rendered_system_prompt"]) > 0
         assert len(data["rendered_user_prompt"]) > 0
-        assert "主角在黑暗中醒来" in data["rendered_user_prompt"]
+        assert "主角在黑暗中醒来" in data["rendered_system_prompt"]
         assert data["total_chars"] > 0
         source_names = {s["name"] for s in data["sources"]}
         assert "project_name" in source_names

@@ -65,8 +65,40 @@ class ContextService:
 
         variables["revised_text"] = req.revised_text
 
+        variables["chapter_function"] = req.chapter_function or ""
+        variables["arc_phase"] = req.arc_phase or ""
+        variables["reader_comes_for"] = req.reader_comes_for or ""
+        variables["must_deliver"] = req.must_deliver or ""
+        variables["must_not_deliver"] = req.must_not_deliver or ""
+        variables["main_change"] = req.main_change or ""
+        variables["main_payoff"] = req.main_payoff or ""
+        variables["ending_hook"] = req.ending_hook or ""
+        variables["hook_type"] = req.hook_type or ""
+        variables["fuel_reserved_for_later"] = req.fuel_reserved_for_later or ""
+        variables["target_length"] = str(req.target_length) if req.target_length else ""
+
+        variables["write_mode"] = req.write_mode or "new_chapter"
+
+        if req.continuation_anchor:
+            variables["continuation_anchor"] = req.continuation_anchor
+        elif chapter and chapter.current_text:
+            anchor = chapter.current_text.strip()
+            if len(anchor) > 500:
+                anchor = anchor[-500:]
+            variables["continuation_anchor"] = anchor
+        else:
+            variables["continuation_anchor"] = ""
+
+        if req.current_chapter_text:
+            variables["current_chapter_text"] = req.current_chapter_text
+        elif chapter and chapter.current_text:
+            variables["current_chapter_text"] = chapter.current_text.strip()
+        else:
+            variables["current_chapter_text"] = ""
+
         untouchable = {"scene_instruction", "run_override", "draft_text", "numbered_draft",
-                       "revised_text", "scene_plan", "critic_report", "selected_issues"}
+                       "revised_text", "scene_plan", "critic_report", "selected_issues",
+                       "continuation_anchor", "current_chapter_text"}
 
         truncated = False
         sources: list[ContextSource] = []

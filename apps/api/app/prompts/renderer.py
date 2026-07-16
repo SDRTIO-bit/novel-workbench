@@ -20,6 +20,20 @@ ALLOWED_VARIABLES = {
     "default_pov",
     "chapter_title",
     "chapter_text",
+    "chapter_function",
+    "arc_phase",
+    "reader_comes_for",
+    "must_deliver",
+    "must_not_deliver",
+    "main_change",
+    "main_payoff",
+    "ending_hook",
+    "hook_type",
+    "fuel_reserved_for_later",
+    "target_length",
+    "write_mode",
+    "continuation_anchor",
+    "current_chapter_text",
 }
 
 

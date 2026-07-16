@@ -24,6 +24,22 @@ class ContextPreviewRequest(BaseModel):
     selected_issues: list[dict] = []
     revised_text: str = ""
 
+    chapter_function: str = ""
+    arc_phase: str = ""
+    reader_comes_for: str = ""
+    must_deliver: str = ""
+    must_not_deliver: str = ""
+    main_change: str = ""
+    main_payoff: str = ""
+    ending_hook: str = ""
+    hook_type: str = ""
+    fuel_reserved_for_later: str = ""
+    target_length: int = 0
+
+    write_mode: str = ""
+    continuation_anchor: str = ""
+    current_chapter_text: str = ""
+
 
 class ContextPreviewResponse(BaseModel):
     sources: list[ContextSource]
