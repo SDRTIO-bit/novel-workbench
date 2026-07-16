@@ -6,6 +6,13 @@ from alembic import context
 from app.db import Base
 from app.config import settings
 
+import app.models.project  # noqa: F401
+import app.models.chapter  # noqa: F401
+import app.models.prompt  # noqa: F401
+import app.models.provider  # noqa: F401
+import app.models.workflow  # noqa: F401
+import app.models.generation  # noqa: F401
+
 config = context.config
 
 if config.config_file_name is not None:

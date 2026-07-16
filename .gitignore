@@ -9,6 +9,8 @@ dist/
 .vite/
 data/novel_workbench.db
 data/.secret_key
+data/.mcp_token
+data/chapters/*.txt
 *.db
 test-results/
 playwright-report/

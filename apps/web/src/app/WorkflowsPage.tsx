@@ -66,13 +66,11 @@ export default function WorkflowsPage() {
   const { data: providers } = useQuery({
     queryKey: ['providers'],
     queryFn: listProviders,
-    enabled: !!expandedId,
   })
 
   const { data: allPrompts } = useQuery({
     queryKey: ['prompts'],
     queryFn: () => listPrompts(),
-    enabled: !!expandedId,
   })
 
   const createMutation = useMutation({

@@ -1,10 +1,12 @@
-from contextlib import asynccontextmanager
+from contextlib import asynccontextmanager, AsyncExitStack
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.exceptions import RequestValidationError
 from app.config import settings
 from app.db import init_db, async_session
 from app.errors import AppError, app_error_handler, validation_error_handler
+from app.mcp_server import mcp, mcp_http_app
+from app.mcp_auth import MCPAuthMiddleware
 
 # Import models to ensure they are registered with Base.metadata
 import app.models.project  # noqa: F401
@@ -16,26 +18,28 @@ import app.models.generation  # noqa: F401
 
 
 @asynccontextmanager
-async def lifespan(app: FastAPI):
-    await init_db()
-    async with async_session() as session:
-        from app.services.prompt_service import PromptService
-        prompt_svc = PromptService(session)
-        await prompt_svc.init_builtins()
+async def combined_lifespan(app: FastAPI):
+    async with AsyncExitStack() as stack:
+        await stack.enter_async_context(mcp_http_app.lifespan(app))
+        await init_db()
+        async with async_session() as session:
+            from app.services.prompt_service import PromptService
+            prompt_svc = PromptService(session)
+            await prompt_svc.init_builtins()
 
-        from app.services.provider_service import ProviderService
-        provider_svc = ProviderService(session)
-        await provider_svc.init_builtins()
+            from app.services.provider_service import ProviderService
+            provider_svc = ProviderService(session)
+            await provider_svc.init_builtins()
 
-        from app.services.workflow_service import WorkflowService
-        workflow_svc = WorkflowService(session)
-        await workflow_svc.init_builtin_default()
+            from app.services.workflow_service import WorkflowService
+            workflow_svc = WorkflowService(session)
+            await workflow_svc.init_builtin_default()
 
-        await session.commit()
-    yield
+            await session.commit()
+        yield
 
 
-app = FastAPI(title=settings.app_name, lifespan=lifespan)
+app = FastAPI(title=settings.app_name, lifespan=combined_lifespan)
 
 app.add_middleware(
     CORSMiddleware,
@@ -44,6 +48,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.add_middleware(MCPAuthMiddleware)
 
 app.add_exception_handler(AppError, app_error_handler)
 app.add_exception_handler(RequestValidationError, validation_error_handler)
@@ -65,6 +71,8 @@ app.include_router(providers_router)
 app.include_router(workflows_router)
 app.include_router(context_router)
 app.include_router(runs_router)
+
+app.mount("/mcp", mcp_http_app)
 
 
 @app.get("/api/health")

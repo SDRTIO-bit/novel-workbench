@@ -1,15 +1,25 @@
 import json
 import time
+import re
 
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 from app.errors import conflict, bad_request
+from app.config import DATA_DIR
 from app.repositories.generation_repository import GenerationRepository
 from app.services.context_service import ContextService
 from app.schemas.context import ContextPreviewRequest
 from app.llm.base import LlmRequest
 from app.llm.parser import parse_json
 from app.models.generation import GenerationRun
+
+
+def _save_to_disk(title: str, text: str):
+    chapters_dir = DATA_DIR / "chapters"
+    chapters_dir.mkdir(parents=True, exist_ok=True)
+    safe = re.sub(r'[<>:"/\\|?*]', '', title).strip()
+    filepath = chapters_dir / f"{safe}.txt"
+    filepath.write_text(text, encoding="utf-8")
 
 
 class GenerationService:
@@ -195,6 +205,18 @@ class GenerationService:
             run.status = "completed"
 
         await self.session.flush()
+
+        if stage == "writer" and text_output and run.chapter_id:
+            try:
+                from app.models.chapter import Chapter
+                ch_stmt = select(Chapter).where(Chapter.id == run.chapter_id)
+                ch_result = await self.session.execute(ch_stmt)
+                ch = ch_result.scalar_one_or_none()
+                if ch:
+                    _save_to_disk(ch.title + " (初稿)", text_output)
+            except Exception:
+                pass
+
         return candidate
 
     async def select_candidate(self, run_id: str, stage: str, candidate_id: str):
@@ -357,6 +379,11 @@ class GenerationService:
         chapter.updated_at = datetime.now(timezone.utc).replace(tzinfo=None)
         run.status = "completed"
         await self.session.flush()
+
+        try:
+            _save_to_disk(chapter.title, final_text)
+        except Exception:
+            pass
 
         return {"status": "ok", "source": source, "version_number": next_version}
 
