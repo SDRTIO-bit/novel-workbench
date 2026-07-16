@@ -9,6 +9,7 @@ from app.config import DATA_DIR
 from app.repositories.generation_repository import GenerationRepository
 from app.services.context_service import ContextService
 from app.schemas.context import ContextPreviewRequest
+from app.schemas.generation import REVISION_OPERATIONS
 from app.llm.base import LlmRequest
 from app.llm.parser import parse_json
 from app.models.generation import GenerationRun
@@ -324,7 +325,12 @@ class GenerationService:
 
         return ctx_req
 
-    async def select_critic_issues(self, run_id: str, issue_ids: list[str]):
+    async def select_critic_issues(
+        self,
+        run_id: str,
+        issue_ids: list[str],
+        operation_by_issue: dict[str, str] | None = None,
+    ):
         run = await self.repo.get_run_or_404(run_id)
         step = await self.repo.get_step_or_404(run_id, "critic")
 
@@ -337,12 +343,41 @@ class GenerationService:
 
         import json as _json
         critic_data = _json.loads(selected.parsed_output_json)
-        valid_ids = {i.get("issue_id") for i in critic_data.get("issues", [])}
+        issues_by_id = {
+            issue.get("issue_id"): issue for issue in critic_data.get("issues", [])
+        }
+        valid_ids = set(issues_by_id)
         for iid in issue_ids:
             if iid not in valid_ids:
                 raise bad_request("ISSUE_NOT_FOUND", f"问题 {iid} 不在诊断报告中")
 
+        operations = operation_by_issue or {}
+        for issue_id, operation in operations.items():
+            if issue_id not in issue_ids:
+                raise bad_request(
+                    "ISSUE_OPERATION_NOT_SELECTED",
+                    f"问题 {issue_id} 未被选择，不能指定修订操作",
+                )
+            if operation not in REVISION_OPERATIONS:
+                raise bad_request(
+                    "INVALID_REVISION_OPERATION",
+                    f"不支持的修订操作: {operation}",
+                )
+
+        selected_operations = {}
+        for issue_id in issue_ids:
+            operation = operations.get(issue_id)
+            if not operation:
+                operation = issues_by_id[issue_id].get("recommended_operation")
+            if operation not in REVISION_OPERATIONS:
+                raise bad_request(
+                    "CRITIC_OPERATION_MISSING",
+                    f"问题 {issue_id} 缺少有效的 recommended_operation",
+                )
+            selected_operations[issue_id] = operation
+
         step.selected_issue_ids_json = _json.dumps(issue_ids)
+        step.selected_issue_operations_json = _json.dumps(selected_operations)
         await self.session.flush()
 
     async def accept_final_text(self, run_id: str, accept_type: str, manual_text: str | None = None):

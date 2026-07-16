@@ -79,7 +79,7 @@ async def select_critic_issues(
     data: SelectIssuesRequest,
     svc: GenerationService = Depends(_service),
 ):
-    await svc.select_critic_issues(run_id, data.issue_ids)
+    await svc.select_critic_issues(run_id, data.issue_ids, data.operation_by_issue)
     await svc.session.commit()
     return {"status": "ok"}
 

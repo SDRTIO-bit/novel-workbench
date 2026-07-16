@@ -79,7 +79,7 @@ class MockClient(BaseLlmClient):
             }, ensure_ascii=False)
 
         # Writer → narrative prose (returns text, not JSON)
-        if "小说家" in sp:
+        if "小说家" in sp or "小说写作者" in sp:
             if "老陈" in up or "书店" in up or "黄昏" in up:
                 return """黄昏的光从梧桐叶的缝隙里漏进来，在书店的木地板上画出一块块金色的光斑。
 
@@ -132,11 +132,11 @@ class MockClient(BaseLlmClient):
                     {"aspect": "猫的意象", "detail": "阿橘作为情感线索运用得当，动作细节传递了微妙情绪"},
                 ],
                 "issues": [
-                    {"issue_id": "I01", "severity": "low", "issue_type": "pacing", "paragraph_ids": ["P003"], "problem": "老陈内心独白偏长，打断了外部动作流", "revision_goal": "将部分回忆分散到后续对话中自然带出"},
-                    {"issue_id": "I02", "severity": "medium", "issue_type": "dialogue", "paragraph_ids": ["P006"], "problem": "'进来坐'三字过于简练，可加一两个小动作丰富层次", "revision_goal": "在'进来坐'之前添加一个小动作，如摘下老花镜或挪开茶杯"},
-                    {"issue_id": "I03", "severity": "low", "issue_type": "detail", "paragraph_ids": ["P009"], "problem": "猫的反应过于简单，缺少具体动作细节", "revision_goal": "添加阿橘的嗅觉或声音细节，丰富猫的角色形象"},
-                    {"issue_id": "I04", "severity": "low", "issue_type": "opening_delay", "paragraph_ids": ["P001"], "problem": "开篇环境描写偏长，核心冲突引入较晚", "revision_goal": "在前两段内加入一个伏笔暗示，加快读者进入故事的节奏"},
-                    {"issue_id": "I05", "severity": "medium", "issue_type": "payoff_missing", "paragraph_ids": ["P008", "P009"], "problem": "猫阿橘的情感线索在结尾处收束不足，缺少呼应", "revision_goal": "在结尾增加阿橘与女孩的互动细节，形成首尾呼应的情感闭环"},
+                    {"issue_id": "I01", "severity": "low", "issue_type": "pacing_drag", "paragraph_ids": ["P003"], "problem": "老陈内心独白偏长，打断了外部动作流", "revision_goal": "将部分回忆分散到后续对话中自然带出", "recommended_operation": "tighten"},
+                    {"issue_id": "I02", "severity": "medium", "issue_type": "character_voice_inconsistent", "paragraph_ids": ["P006"], "problem": "'进来坐'三字过于简练，可加一两个小动作丰富层次", "revision_goal": "在'进来坐'之前添加一个小动作，如摘下老花镜或挪开茶杯", "recommended_operation": "ground_detail"},
+                    {"issue_id": "I03", "severity": "low", "issue_type": "description_overload", "paragraph_ids": ["P009"], "problem": "猫的反应过于简单，缺少具体动作细节", "revision_goal": "添加阿橘的嗅觉或声音细节，丰富猫的角色形象", "recommended_operation": "ground_detail"},
+                    {"issue_id": "I04", "severity": "low", "issue_type": "opening_delay", "paragraph_ids": ["P001"], "problem": "开篇环境描写偏长，核心冲突引入较晚", "revision_goal": "在前两段内加入一个伏笔暗示，加快读者进入故事的节奏", "recommended_operation": "tighten"},
+                    {"issue_id": "I05", "severity": "medium", "issue_type": "payoff_missing", "paragraph_ids": ["P008", "P009"], "problem": "猫阿橘的情感线索在结尾处收束不足，缺少呼应", "revision_goal": "在结尾增加阿橘与女孩的互动细节，形成首尾呼应的情感闭环", "recommended_operation": "rhythm_adjust"},
                 ],
                 "decision": "local_revision",
                 "chapter_contract_check": {

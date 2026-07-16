@@ -28,6 +28,7 @@
 | `apps/api/alembic/versions/b9c5d75f8a31_add_selected_issue_operations.py` | 为现有数据库添加可空 JSON 文本列。 |
 | `apps/api/app/services/generation_service.py` | 验证选择、持久化映射，并在 Reviser 上下文中组合完整选题。 |
 | `apps/api/app/routers/runs.py` | 将 `operation_by_issue` 交给服务层。 |
+| `apps/api/app/mcp_tools/generation_tools.py` | 允许 MCP 调用在保持旧签名可用的前提下传入操作映射。 |
 | `apps/api/app/prompts/defaults.py` | 强制 Critic 输出推荐操作，并为 Reviser 写入八种受控操作说明。 |
 | `apps/api/app/llm/mock.py` | 让模拟 Critic 输出合法操作，保证端到端流程可测。 |
 | `apps/api/tests/test_runs_api.py` | 覆盖 API 选择、回退、验证、上下文和 Mock 五阶段流程。 |
@@ -44,6 +45,7 @@
 - Create: `apps/api/alembic/versions/b9c5d75f8a31_add_selected_issue_operations.py`
 - Modify: `apps/api/app/services/generation_service.py`
 - Modify: `apps/api/app/routers/runs.py`
+- Modify: `apps/api/app/mcp_tools/generation_tools.py`
 - Modify: `apps/api/app/llm/mock.py`
 - Test: `apps/api/tests/test_runs_api.py`
 
@@ -167,6 +169,8 @@ Change the router to call:
 await svc.select_critic_issues(run_id, data.issue_ids, data.operation_by_issue)
 ```
 
+Extend MCP's `select_critic_issues` with optional `operation_by_issue: str = ""`; parse it as a JSON object when non-empty and forward it to the same service method. Existing MCP callers that send only `issue_ids` must retain the default-recommendation behaviour.
+
 In `GenerationService.select_critic_issues`, parse the selected Critic JSON, validate that all selected IDs exist, validate every mapping key belongs to `issue_ids`, reject values outside `REVISION_OPERATIONS`, derive missing values from each issue's `recommended_operation`, and save both JSON fields. Use `bad_request` codes `ISSUE_NOT_FOUND`, `ISSUE_OPERATION_NOT_SELECTED`, `INVALID_REVISION_OPERATION`, and `CRITIC_OPERATION_MISSING`.
 
 Add a legal `recommended_operation` to every issue returned by `MockClient`'s Critic response: use `tighten` for `I01`, `ground_detail` for `I02`, `ground_detail` for `I03`, `tighten` for `I04`, and `rhythm_adjust` for `I05`.
@@ -180,7 +184,7 @@ Expected: PASS with three tests collected and zero failures.
 - [ ] **Step 5: Commit the persistence contract**
 
 ```powershell
-git add apps/api/app/schemas/generation.py apps/api/app/models/generation.py apps/api/app/services/generation_service.py apps/api/app/routers/runs.py apps/api/app/llm/mock.py apps/api/alembic/versions/b9c5d75f8a31_add_selected_issue_operations.py apps/api/tests/test_runs_api.py
+git add apps/api/app/schemas/generation.py apps/api/app/models/generation.py apps/api/app/services/generation_service.py apps/api/app/routers/runs.py apps/api/app/mcp_tools/generation_tools.py apps/api/app/llm/mock.py apps/api/alembic/versions/b9c5d75f8a31_add_selected_issue_operations.py apps/api/tests/test_runs_api.py
 git commit -m "feat: persist revision operation choices"
 ```
 

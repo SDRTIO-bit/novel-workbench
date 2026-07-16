@@ -43,6 +43,7 @@ class GenerationStep(Base, TimestampMixin):
     status: Mapped[str] = mapped_column(String(50), default="pending", nullable=False)
     selected_candidate_id: Mapped[str | None] = mapped_column(String(36))
     selected_issue_ids_json: Mapped[str | None] = mapped_column(Text)
+    selected_issue_operations_json: Mapped[str | None] = mapped_column(Text)
     input_snapshot_json: Mapped[str | None] = mapped_column(Text)
 
     run: Mapped["GenerationRun"] = relationship(back_populates="steps")

@@ -160,11 +160,14 @@ async def select_candidate(run_id: str, stage: str, candidate_id: str) -> dict:
         return {"status": "selected", "run_id": run_id, "stage": stage, "candidate_id": candidate_id}
 
 
-async def select_critic_issues(run_id: str, issue_ids: list[str]) -> dict:
-    """After critic stage, select which issues the reviser should fix. issue_ids should be from the critic output."""
+async def select_critic_issues(
+    run_id: str, issue_ids: list[str], operation_by_issue: str = ""
+) -> dict:
+    """After critic stage, select issues and optionally pass a JSON issue-to-operation mapping."""
     async with mcp_db() as session:
         svc = GenerationService(session)
-        await svc.select_critic_issues(run_id, issue_ids)
+        operations = json.loads(operation_by_issue) if operation_by_issue else {}
+        await svc.select_critic_issues(run_id, issue_ids, operations)
         await session.commit()
         return {"status": "ok", "selected_count": len(issue_ids)}
 

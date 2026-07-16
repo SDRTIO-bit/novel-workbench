@@ -86,6 +86,28 @@ async def _create_chapter(client, project_id):
     return resp.json()["id"]
 
 
+async def _run_to_selected_critic(client):
+    project_id = await _create_project(client)
+    chapter_id = await _create_chapter(client, project_id)
+    response = await client.post("/api/runs", json={
+        "project_id": project_id,
+        "chapter_id": chapter_id,
+        "scene_instruction": "测试局部修订操作",
+    })
+    assert response.status_code == 201
+    run_id = response.json()["id"]
+
+    for stage in ("planner", "writer", "critic"):
+        candidate = await client.post(f"/api/runs/{run_id}/steps/{stage}/execute", json={})
+        assert candidate.status_code == 200
+        selection = await client.post(
+            f"/api/runs/{run_id}/steps/{stage}/select/{candidate.json()['id']}"
+        )
+        assert selection.status_code == 200
+
+    return run_id
+
+
 class TestFullWorkflow:
     @pytest.mark.asyncio
     async def test_full_five_stage_workflow(self, api_client):
@@ -220,6 +242,62 @@ class TestFullWorkflow:
             json={"issue_ids": ["I01"]},
         )
         assert resp.status_code == 400
+
+    @pytest.mark.asyncio
+    async def test_select_issues_uses_critic_recommendation_by_default(self, api_client):
+        run_id = await _run_to_selected_critic(api_client)
+
+        response = await api_client.post(
+            f"/api/runs/{run_id}/critic/select-issues",
+            json={"issue_ids": ["I01"]},
+        )
+
+        assert response.status_code == 200
+        run = (await api_client.get(f"/api/runs/{run_id}")).json()
+        critic = next(step for step in run["steps"] if step["stage"] == "critic")
+        assert json.loads(critic["selected_issue_ids_json"]) == ["I01"]
+        assert json.loads(critic["selected_issue_operations_json"]) == {"I01": "tighten"}
+
+    @pytest.mark.asyncio
+    async def test_select_issues_persists_author_operation_override(self, api_client):
+        run_id = await _run_to_selected_critic(api_client)
+
+        response = await api_client.post(
+            f"/api/runs/{run_id}/critic/select-issues",
+            json={
+                "issue_ids": ["I01"],
+                "operation_by_issue": {"I01": "voice_align"},
+            },
+        )
+
+        assert response.status_code == 200
+        run = (await api_client.get(f"/api/runs/{run_id}")).json()
+        critic = next(step for step in run["steps"] if step["stage"] == "critic")
+        assert json.loads(critic["selected_issue_operations_json"]) == {"I01": "voice_align"}
+
+    @pytest.mark.asyncio
+    async def test_select_issues_rejects_invalid_or_unselected_operation_mapping(self, api_client):
+        run_id = await _run_to_selected_critic(api_client)
+
+        invalid = await api_client.post(
+            f"/api/runs/{run_id}/critic/select-issues",
+            json={
+                "issue_ids": ["I01"],
+                "operation_by_issue": {"I01": "rewrite_everything"},
+            },
+        )
+        assert invalid.status_code == 400
+        assert invalid.json()["error"]["code"] == "INVALID_REVISION_OPERATION"
+
+        unselected = await api_client.post(
+            f"/api/runs/{run_id}/critic/select-issues",
+            json={
+                "issue_ids": ["I01"],
+                "operation_by_issue": {"I02": "tighten"},
+            },
+        )
+        assert unselected.status_code == 400
+        assert unselected.json()["error"]["code"] == "ISSUE_OPERATION_NOT_SELECTED"
 
     @pytest.mark.asyncio
     async def test_accept_creates_chapter_version(self, api_client):

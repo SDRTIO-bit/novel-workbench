@@ -2,6 +2,16 @@ from datetime import datetime
 from pydantic import BaseModel, Field
 
 STAGES = ["planner", "writer", "critic", "reviser", "judge"]
+REVISION_OPERATIONS = (
+    "naturalize",
+    "tighten",
+    "clarify",
+    "voice_align",
+    "ground_detail",
+    "rhythm_adjust",
+    "diction_refine",
+    "project_style_align",
+)
 
 
 class ParametersSchema(BaseModel):
@@ -45,6 +55,7 @@ class StepSchema(BaseModel):
     status: str
     selected_candidate_id: str | None = None
     selected_issue_ids_json: str | None = None
+    selected_issue_operations_json: str | None = None
     input_snapshot_json: str | None = None
     candidates: list[CandidateSchema] = []
     created_at: datetime
@@ -125,3 +136,4 @@ class AcceptFinalRequest(BaseModel):
 
 class SelectIssuesRequest(BaseModel):
     issue_ids: list[str] = Field(min_length=1)
+    operation_by_issue: dict[str, str] = Field(default_factory=dict)
