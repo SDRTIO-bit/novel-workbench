@@ -10,6 +10,35 @@ import {
   duplicateProject,
 } from '../api/projects'
 import type { ProjectListItem, ProjectCreate } from '../types'
+import { apiPost } from '../api/client'
+
+function ImportButton({ onImported }: { onImported: () => void }) {
+  const [importing, setImporting] = useState(false)
+  const handleImport = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0]
+    if (!file) return
+    setImporting(true)
+    try {
+      const text = await file.text()
+      const data = JSON.parse(text)
+      await apiPost('/import/project-bundle', data)
+      onImported()
+    } catch (err) {
+      alert('导入失败：' + (err instanceof Error ? err.message : '格式错误'))
+    } finally {
+      setImporting(false)
+      e.target.value = ''
+    }
+  }
+  return (
+    <label
+      className={`px-3 py-2 text-sm font-medium border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer ${importing ? 'opacity-50' : ''}`}
+    >
+      {importing ? '导入中...' : '导入项目'}
+      <input type="file" accept=".json" hidden onChange={handleImport} />
+    </label>
+  )
+}
 
 function PenIcon() {
   return (
@@ -141,12 +170,15 @@ export default function ProjectsPage() {
     <div className="p-6 max-w-4xl mx-auto">
       <div className="flex items-center justify-between mb-6">
         <h1 className="text-2xl font-bold text-gray-900">小说项目</h1>
-        <button
-          onClick={() => { setShowCreate(v => !v); setCreateName('') }}
-          className="px-4 py-2 text-sm font-medium bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
-        >
-          新建项目
-        </button>
+        <div className="flex gap-2">
+          <ImportButton onImported={() => queryClient.invalidateQueries({ queryKey: ['projects'] })} />
+          <button
+            onClick={() => { setShowCreate(v => !v); setCreateName('') }}
+            className="px-4 py-2 text-sm font-medium bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
+          >
+            新建项目
+          </button>
+        </div>
       </div>
 
       {showCreate && (
