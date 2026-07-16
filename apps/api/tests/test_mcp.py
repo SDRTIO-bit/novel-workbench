@@ -273,6 +273,14 @@ class TestMCPTools:
                         {"project_id": pid, "title": "第一章"}, 41)
         cid = ch["structuredContent"]["id"]
 
+        providers = self._call(api_client, headers, sid, "list_providers", {}, 43)
+        provider_list = providers["structuredContent"].get("result", providers["structuredContent"])
+        if isinstance(provider_list, dict):
+            provider_list = [provider_list]
+        mock_p = [p for p in provider_list if p.get("provider_type") == "mock"]
+        assert mock_p, "No mock provider found — default workflow may use real LLM"
+        mock_provider_id = mock_p[0]["id"]
+
         run = self._call(api_client, headers, sid, "create_run", {
             "project_id": pid,
             "chapter_id": cid,
@@ -284,7 +292,7 @@ class TestMCPTools:
 
         for i, stage in enumerate(["planner", "writer", "critic", "reviser", "judge"]):
             sr = self._call(api_client, headers, sid, "execute_stage",
-                            {"run_id": run_id, "stage": stage}, 50 + i)
+                            {"run_id": run_id, "stage": stage, "provider_id": mock_provider_id}, 50 + i)
             assert sr["isError"] is False, f"Stage {stage} failed: {sr}"
             assert sr["structuredContent"]["error_code"] is None, (
                 f"Stage {stage}: {sr['structuredContent'].get('error_message')}"
@@ -299,18 +307,78 @@ class TestMCPTools:
                 gs = self._call(api_client, headers, sid, "get_stage_status",
                                 {"run_id": run_id, "stage": "critic"}, 70)
                 assert gs["isError"] is False
-                issues_data = gs["structuredContent"]["candidates"][0]
-                self._call(api_client, headers, sid, "select_critic_issues", {
+                critic_cand = gs["structuredContent"]["candidates"][0]
+                issues = critic_cand.get("parsed_output_json")
+                if issues and isinstance(issues, str):
+                    import json as _j
+                    parsed = _j.loads(issues)
+                    issue_ids = [i["issue_id"] for i in parsed.get("issues", [])][:2]
+                else:
+                    issue_ids = ["I01", "I02"]
+                iss_result = self._call(api_client, headers, sid, "select_critic_issues", {
                     "run_id": run_id,
-                    "issue_ids": ["I01", "I02"],
+                    "issue_ids": issue_ids,
                 }, 71)
+                assert iss_result["isError"] is False, f"select_critic_issues failed: {iss_result}"
 
         final = self._call(api_client, headers, sid, "get_run",
-                           {"run_id": run_id}, 60)
+                           {"run_id": run_id}, 80)
         assert final["isError"] is False
         assert final["structuredContent"]["status"] == "completed"
         for step in final["structuredContent"]["steps"]:
-            assert step["status"] == "completed"
+            assert step["status"] == "completed", f"Step {step['stage']} status is {step['status']}"
+
+        writer_cand = self._get_stage_candidate(api_client, headers, sid, run_id, "writer")
+        critic_cand = self._get_stage_candidate(api_client, headers, sid, run_id, "critic")
+        reviser_cand = self._get_stage_candidate(api_client, headers, sid, run_id, "reviser")
+        judge_cand = self._get_stage_candidate(api_client, headers, sid, run_id, "judge")
+
+        writer_text = writer_cand["text_output"] or ""
+        reviser_text = reviser_cand["text_output"] or ""
+
+        assert writer_text and len(writer_text) > 50, "Writer should produce prose text"
+        assert not writer_text.lstrip().startswith("{"), "Writer output must be prose, not JSON"
+
+        if critic_cand:
+            critic_user_prompt = critic_cand.get("rendered_user_prompt", "")
+            assert writer_text[:80] in critic_user_prompt or any(
+                w in critic_user_prompt for w in writer_text.split()[:10]
+            ), "Critic must see Writer's draft text in user prompt"
+
+        if reviser_cand:
+            reviser_user_prompt = reviser_cand.get("rendered_user_prompt", "")
+            assert writer_text[:80] in reviser_user_prompt or any(
+                w in reviser_user_prompt for w in writer_text.split()[:10]
+            ), "Reviser must see Writer's draft text in user prompt"
+
+        if judge_cand:
+            judge_user_prompt = judge_cand.get("rendered_user_prompt", "")
+            assert writer_text[:80] in judge_user_prompt or any(
+                w in judge_user_prompt for w in writer_text.split()[:10]
+            ), "Judge must see Writer's draft text in user prompt"
+
+        acc = self._call(api_client, headers, sid, "accept_final_text", {
+            "run_id": run_id,
+            "accept_type": "original",
+        }, 90)
+        assert acc["isError"] is False
+
+        ch_data = self._call(api_client, headers, sid, "get_chapter",
+                             {"chapter_id": cid}, 91)
+        chapter_text = ch_data["structuredContent"].get("current_text", "")
+        assert chapter_text == writer_text, "Chapter text must equal the accepted Writer text"
+
+        second_acc = self._call(api_client, headers, sid, "accept_final_text", {
+            "run_id": run_id,
+            "accept_type": "revision",
+        }, 92)
+        assert second_acc["isError"] is True
+
+    def _get_stage_candidate(self, api_client, headers, sid, run_id, stage):
+        gs = self._call(api_client, headers, sid, "get_stage_status",
+                        {"run_id": run_id, "stage": stage}, 100)
+        candidates = gs["structuredContent"].get("candidates", [])
+        return candidates[0] if candidates else {}
 
 
 def _mcp_result(resp):

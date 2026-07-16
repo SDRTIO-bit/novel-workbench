@@ -218,6 +218,8 @@ async def get_stage_status(run_id: str, stage: str) -> dict:
                 "has_error": bool(c.error_code),
                 "error_message": c.error_message,
                 "text_output": c.text_output or "",
+                "parsed_output_json": c.parsed_output_json,
+                "rendered_user_prompt": c.rendered_user_prompt or "",
                 "input_tokens": c.input_tokens,
                 "output_tokens": c.output_tokens,
                 "latency_ms": c.latency_ms,

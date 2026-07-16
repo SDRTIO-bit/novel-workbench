@@ -65,7 +65,7 @@ class GenerationService:
             dep_cand = next(
                 (c for c in dep_step.candidates if c.id == dep_step.selected_candidate_id), None
             )
-            if dep_cand and dep_cand.error_code and not dep_cand.parsed_output_json:
+            if dep_cand and dep_cand.error_code:
                 raise bad_request(
                     "STAGE_CANDIDATE_ERROR",
                     f"The selected candidate for '{dep_stage}' has an error. Select a valid candidate first.",
@@ -114,36 +114,9 @@ class GenerationService:
                 if "timeout_seconds" not in override:
                     params["timeout_seconds"] = step_config.timeout_seconds
 
+        override["prompt_version_id"] = prompt_version_id
+        ctx_req = await self._build_context_request(run, stage, override)
         ctx_service = ContextService(self.session)
-        ctx_req = ContextPreviewRequest(
-            project_id=run.project_id,
-            chapter_id=run.chapter_id,
-            stage=stage,
-            workflow_profile_id=run.workflow_profile_id,
-            prompt_version_id=prompt_version_id,
-            scene_instruction=run.scene_instruction,
-            run_override=run_override,
-            scene_plan=override.get("scene_plan"),
-            draft_text=override.get("draft_text", ""),
-            critic_report=override.get("critic_report"),
-            selected_issues=override.get("selected_issues", []),
-            revised_text=override.get("revised_text", ""),
-        )
-
-        for prev_stage in self._previous_stages(stage):
-            prev_step = await self.repo.get_step(run_id, prev_stage)
-            if prev_step and prev_step.selected_candidate_id:
-                prev_candidate = next(
-                    (c for c in prev_step.candidates if c.id == prev_step.selected_candidate_id), None
-                )
-                if prev_candidate and prev_candidate.parsed_output_json:
-                    if prev_stage == "planner":
-                        ctx_req.scene_plan = json.loads(prev_candidate.parsed_output_json)
-                    elif prev_stage == "critic":
-                        ctx_req.critic_report = json.loads(prev_candidate.parsed_output_json)
-                    elif prev_stage == "writer":
-                        ctx_req.draft_text = prev_candidate.text_output or prev_candidate.raw_response
-
         ctx = await ctx_service.assemble(ctx_req)
         step.input_snapshot_json = ctx["input_snapshot_hash"]
 
@@ -194,7 +167,7 @@ class GenerationService:
                         judge_decision = parsed.data.get("decision", "")
                         if not judge_decision:
                             error_code = "JUDGE_OUTPUT_INVALID"
-                            error_message = "Judge returned valid JSON but missing 'decision' field."
+                            error_message = f"Judge response missing 'decision' field. Got keys: {list(parsed.data.keys())}"
                             step.status = "failed"
                             run.status = "completed"
                         elif judge_decision == "accept_merged" and not parsed.data.get("final_text", "").strip():
@@ -268,8 +241,8 @@ class GenerationService:
         if not candidate:
             raise bad_request("CANDIDATE_NOT_FOUND", "候选结果不存在")
 
-        if candidate.error_code and not candidate.parsed_output_json:
-            raise bad_request("CANDIDATE_INVALID", "无法选中错误的候选结果")
+        if candidate.error_code:
+            raise bad_request("CANDIDATE_INVALID", "无法选中执行失败的候选结果")
 
         await self.repo.select_candidate(step, candidate_id)
         await self.repo.mark_downstream_stale(run, stage)
@@ -314,21 +287,26 @@ class GenerationService:
 
         for prev_stage in self._previous_stages(stage):
             prev_step = await self.repo.get_step(run.id, prev_stage)
-            if prev_step and prev_step.selected_candidate_id:
-                prev_candidate = next(
-                    (c for c in prev_step.candidates if c.id == prev_step.selected_candidate_id), None
-                )
-                if prev_candidate and prev_candidate.parsed_output_json:
-                    if prev_stage == "planner":
-                        ctx_req.scene_plan = json.loads(prev_candidate.parsed_output_json)
-                    elif prev_stage == "critic":
-                        ctx_req.critic_report = json.loads(prev_candidate.parsed_output_json)
-                        if prev_step.selected_issue_ids_json:
-                            ctx_req.selected_issues = json.loads(prev_step.selected_issue_ids_json)
-                    elif prev_stage == "writer":
-                        ctx_req.draft_text = prev_candidate.text_output or prev_candidate.raw_response
-                elif prev_stage == "reviser" and prev_candidate and prev_candidate.text_output:
-                    ctx_req.revised_text = prev_candidate.text_output
+            if not prev_step or not prev_step.selected_candidate_id:
+                continue
+            prev_candidate = next(
+                (c for c in prev_step.candidates if c.id == prev_step.selected_candidate_id), None
+            )
+            if not prev_candidate:
+                continue
+
+            if prev_stage == "planner":
+                if prev_candidate.parsed_output_json:
+                    ctx_req.scene_plan = json.loads(prev_candidate.parsed_output_json)
+            elif prev_stage == "writer":
+                ctx_req.draft_text = prev_candidate.text_output or prev_candidate.raw_response
+            elif prev_stage == "critic":
+                if prev_candidate.parsed_output_json:
+                    ctx_req.critic_report = json.loads(prev_candidate.parsed_output_json)
+                if prev_step.selected_issue_ids_json:
+                    ctx_req.selected_issues = json.loads(prev_step.selected_issue_ids_json)
+            elif prev_stage == "reviser":
+                ctx_req.revised_text = prev_candidate.text_output or prev_candidate.raw_response
 
         return ctx_req
 
@@ -363,6 +341,13 @@ class GenerationService:
 
         if not run.chapter_id:
             raise bad_request("NO_CHAPTER", "运行未关联章节")
+
+        if run.accepted_at is not None:
+            raise conflict(
+                "ALREADY_ACCEPTED",
+                f"This run was already accepted (type: {run.accepted_type}) at {run.accepted_at.isoformat()}."
+                " Start a new run to submit a different version.",
+            )
 
         valid_types = {"original", "revision", "judge", "manual"}
         if accept_type not in valid_types:
@@ -435,16 +420,6 @@ class GenerationService:
         )
         existing_versions = existing_versions.scalars().all()
 
-        same_run_version = next(
-            (v for v in existing_versions if v.generation_candidate_id and v.source == accept_type), None
-        )
-        if same_run_version:
-            raise conflict(
-                "ALREADY_ACCEPTED",
-                f"This run has already been accepted with type '{accept_type}'. "
-                "Use a different accept_type or skip.",
-            )
-
         next_version = max((v.version_number for v in existing_versions), default=0) + 1
 
         candidate_ref = None
@@ -467,6 +442,9 @@ class GenerationService:
         chapter.current_text = final_text
         chapter.updated_at = datetime.now(timezone.utc).replace(tzinfo=None)
         run.status = "completed"
+        run.accepted_at = datetime.now(timezone.utc).replace(tzinfo=None)
+        run.accepted_type = accept_type
+        run.accepted_version_id = version.id
         await self.session.flush()
 
         try:

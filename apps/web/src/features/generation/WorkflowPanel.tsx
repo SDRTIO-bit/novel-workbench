@@ -16,6 +16,8 @@ export default function WorkflowPanel({ projectId, chapterId, onAccept }: Props)
   const queryClient = useQueryClient()
   const [runId, setRunId] = useState<string | null>(null)
   const [instruction, setInstruction] = useState('')
+  const [manualMode, setManualMode] = useState<{ show: boolean; defaultText: string }>({ show: false, defaultText: '' })
+  const [manualText, setManualText] = useState('')
 
   const { data: run } = useQuery({
     queryKey: ['run', runId],
@@ -39,10 +41,13 @@ export default function WorkflowPanel({ projectId, chapterId, onAccept }: Props)
   })
 
   const acceptMutation = useMutation({
-    mutationFn: (acceptType: string) => runsApi.acceptFinal(runId!, acceptType),
+    mutationFn: ({ acceptType, finalText }: { acceptType: string; finalText?: string }) =>
+      runsApi.acceptFinal(runId!, acceptType, finalText),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['run', runId] })
       setRunId(null)
+      setManualMode({ show: false, defaultText: '' })
+      setManualText('')
       onAccept()
     },
   })
@@ -116,15 +121,84 @@ export default function WorkflowPanel({ projectId, chapterId, onAccept }: Props)
 
       {renderJudgeVerdict(run)}
       {writerHasOutput(run) && (
-        <AcceptChoices run={run} acceptMutation={acceptMutation} />
+        <AcceptChoices
+          run={run}
+          acceptMutation={acceptMutation}
+          manualMode={manualMode}
+          setManualMode={setManualMode}
+          manualText={manualText}
+          setManualText={setManualText}
+        />
       )}
     </div>
   )
 }
 
-function AcceptChoices({ run, acceptMutation }: { run: GenerationRun; acceptMutation: { mutate: (v: string) => void; isPending: boolean } }) {
+function AcceptChoices({
+  run,
+  acceptMutation,
+  manualMode,
+  setManualMode,
+  manualText,
+  setManualText,
+}: {
+  run: GenerationRun
+  acceptMutation: { mutate: (v: { acceptType: string; finalText?: string }) => void; isPending: boolean }
+  manualMode: { show: boolean; defaultText: string }
+  setManualMode: (v: { show: boolean; defaultText: string }) => void
+  manualText: string
+  setManualText: (v: string) => void
+}) {
   const hasJudge = run.steps.some((s) => s.stage === 'judge' && s.candidates.some((c) => c.is_selected && c.parsed_output_json))
   const hasReviser = run.steps.some((s) => s.stage === 'reviser' && s.candidates.some((c) => c.is_selected && c.text_output))
+
+  const getDefaultText = () => {
+    const reviser = run.steps.find((s) => s.stage === 'reviser')
+    const writer = run.steps.find((s) => s.stage === 'writer')
+    if (reviser) {
+      const rev = reviser.candidates.find((c) => c.is_selected)
+      if (rev?.text_output) return rev.text_output
+    }
+    if (writer) {
+      const wr = writer.candidates.find((c) => c.is_selected)
+      if (wr?.text_output) return wr.text_output
+    }
+    return ''
+  }
+
+  const openManual = () => {
+    setManualMode({ show: true, defaultText: getDefaultText() })
+    setManualText(getDefaultText())
+  }
+
+  if (manualMode.show) {
+    return (
+      <div className="p-3 border-t border-gray-200 bg-white shrink-0">
+        <p className="text-xs font-medium text-gray-600 mb-2">手动编辑最终文本:</p>
+        <textarea
+          value={manualText}
+          onChange={(e) => setManualText(e.target.value)}
+          className="w-full px-3 py-2 text-xs border border-gray-300 rounded-lg resize-y focus:outline-none focus:ring-1 focus:ring-indigo-500 font-mono"
+          rows={12}
+        />
+        <div className="flex gap-2 mt-2">
+          <button
+            onClick={() => setManualMode({ show: false, defaultText: '' })}
+            className="flex-1 px-3 py-1.5 text-xs font-medium bg-white text-gray-600 border border-gray-300 rounded-lg hover:bg-gray-50"
+          >
+            取消
+          </button>
+          <button
+            onClick={() => acceptMutation.mutate({ acceptType: 'manual', finalText: manualText })}
+            disabled={acceptMutation.isPending || !manualText.trim()}
+            className="flex-1 px-3 py-1.5 text-xs font-medium bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 disabled:opacity-50"
+          >
+            {acceptMutation.isPending ? '提交中...' : '确认采用'}
+          </button>
+        </div>
+      </div>
+    )
+  }
 
   if (hasJudge) {
     const judgeStep = run.steps.find((s) => s.stage === 'judge')!
@@ -156,7 +230,13 @@ function AcceptChoices({ run, acceptMutation }: { run: GenerationRun; acceptMuta
           {buttons.map((b) => (
             <button
               key={b.type}
-              onClick={() => acceptMutation.mutate(b.type)}
+              onClick={() => {
+                if (b.type === 'manual') {
+                  openManual()
+                } else {
+                  acceptMutation.mutate({ acceptType: b.type })
+                }
+              }}
               disabled={acceptMutation.isPending}
               className="px-3 py-1.5 text-xs font-medium rounded-lg border transition-colors disabled:opacity-50"
               style={
@@ -177,7 +257,7 @@ function AcceptChoices({ run, acceptMutation }: { run: GenerationRun; acceptMuta
     <div className="p-3 border-t border-gray-200 bg-white shrink-0">
       <div className="flex gap-2">
         <button
-          onClick={() => acceptMutation.mutate('original')}
+          onClick={() => acceptMutation.mutate({ acceptType: 'original' })}
           disabled={acceptMutation.isPending}
           className="flex-1 px-3 py-2 text-xs font-medium bg-white text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-50 disabled:opacity-50 transition-colors"
         >
@@ -185,7 +265,7 @@ function AcceptChoices({ run, acceptMutation }: { run: GenerationRun; acceptMuta
         </button>
         {hasReviser && (
           <button
-            onClick={() => acceptMutation.mutate('revision')}
+              onClick={() => acceptMutation.mutate({ acceptType: 'revision' })}
             disabled={acceptMutation.isPending}
             className="flex-1 px-3 py-2 text-xs font-medium bg-green-600 text-white rounded-lg hover:bg-green-700 disabled:opacity-50 transition-colors"
           >

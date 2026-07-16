@@ -24,6 +24,9 @@ class GenerationRun(Base, TimestampMixin):
     workflow_profile_id: Mapped[str | None] = mapped_column(String(36), ForeignKey("workflow_profiles.id"))
     scene_instruction: Mapped[str] = mapped_column(Text, default="")
     status: Mapped[str] = mapped_column(String(50), default="pending", nullable=False)
+    accepted_at: Mapped[datetime | None] = mapped_column(DateTime)
+    accepted_type: Mapped[str | None] = mapped_column(String(50))
+    accepted_version_id: Mapped[str | None] = mapped_column(String(36))
 
     steps: Mapped[list["GenerationStep"]] = relationship(
         back_populates="run", cascade="all, delete-orphan",

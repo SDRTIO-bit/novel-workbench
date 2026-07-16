@@ -60,6 +60,8 @@ class RunSchema(BaseModel):
     workflow_profile_id: str | None = None
     scene_instruction: str = ""
     status: str
+    accepted_at: datetime | None = None
+    accepted_type: str | None = None
     steps: list[StepSchema] = []
     created_at: datetime
     updated_at: datetime
