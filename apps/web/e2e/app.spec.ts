@@ -29,6 +29,6 @@ test.describe('Novel Workbench E2E', () => {
     await expect(page.locator('text=提示词管理')).toBeVisible()
 
     await page.goto('http://localhost:8765/settings/workflows')
-    await expect(page.locator('text=工作流管理')).toBeVisible()
+    await expect(page.locator('text=工作流方案')).toBeVisible()
   })
 })
