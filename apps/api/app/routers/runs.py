@@ -3,9 +3,11 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.db import get_db
 from app.schemas.generation import (
     RunSchema, RunListSchema, CreateRunRequest,
-    StageOverrideRequest, CandidateSchema, StepSchema,
+    StageOverrideRequest, CandidateSchema, SelectIssuesRequest,
 )
+from app.schemas.context import ContextPreviewRequest, ContextPreviewResponse
 from app.services.generation_service import GenerationService
+from app.services.context_service import ContextService
 
 router = APIRouter(prefix="/api", tags=["runs"])
 
@@ -48,6 +50,18 @@ async def execute_stage(
     return candidate
 
 
+@router.post("/runs/{run_id}/steps/{stage}/preview", response_model=ContextPreviewResponse)
+async def preview_stage(
+    run_id: str, stage: str,
+    override: StageOverrideRequest | None = None,
+    svc: GenerationService = Depends(_service),
+    db: AsyncSession = Depends(get_db),
+):
+    ov = override.model_dump(exclude_none=True) if override else {}
+    ctx = await svc.preview_stage(run_id, stage, ov)
+    return ContextPreviewResponse(**ctx)
+
+
 @router.post("/runs/{run_id}/steps/{stage}/select/{candidate_id}")
 async def select_candidate(
     run_id: str, stage: str, candidate_id: str,
@@ -56,6 +70,27 @@ async def select_candidate(
     await svc.select_candidate(run_id, stage, candidate_id)
     await svc.session.commit()
     return {"status": "ok"}
+
+
+@router.post("/runs/{run_id}/critic/select-issues")
+async def select_critic_issues(
+    run_id: str,
+    data: SelectIssuesRequest,
+    svc: GenerationService = Depends(_service),
+):
+    await svc.select_critic_issues(run_id, data.issue_ids)
+    await svc.session.commit()
+    return {"status": "ok"}
+
+
+@router.post("/runs/{run_id}/accept")
+async def accept_final_text(
+    run_id: str,
+    svc: GenerationService = Depends(_service),
+):
+    result = await svc.accept_final_text(run_id)
+    await svc.session.commit()
+    return result
 
 
 @router.post("/runs/{run_id}/cancel")

@@ -216,6 +216,150 @@ class GenerationService:
         run.status = "cancelled"
         await self.session.flush()
 
+    async def preview_stage(self, run_id: str, stage: str, override: dict):
+        run = await self.repo.get_run_or_404(run_id)
+        ctx_req = await self._build_context_request(run, stage, override)
+        ctx_service = ContextService(self.session)
+        ctx = await ctx_service.assemble(ctx_req)
+        return {
+            "sources": ctx["sources"],
+            "system_prompt": ctx["system_prompt"],
+            "user_prompt": ctx["user_prompt"],
+            "input_snapshot_hash": ctx["input_snapshot_hash"],
+            "total_chars": ctx["total_chars"],
+            "truncated": ctx["truncated"],
+        }
+
+    async def _build_context_request(self, run, stage: str, override: dict):
+        prompt_version_id = override.get("prompt_version_id")
+        run_override = override.get("run_override", "")
+
+        ctx_req = ContextPreviewRequest(
+            project_id=run.project_id,
+            chapter_id=run.chapter_id,
+            stage=stage,
+            workflow_profile_id=run.workflow_profile_id,
+            prompt_version_id=prompt_version_id,
+            scene_instruction=run.scene_instruction,
+            run_override=run_override,
+            scene_plan=override.get("scene_plan"),
+            draft_text=override.get("draft_text", ""),
+            critic_report=override.get("critic_report"),
+            selected_issues=override.get("selected_issues", []),
+            revised_text=override.get("revised_text", ""),
+        )
+
+        for prev_stage in self._previous_stages(stage):
+            prev_step = await self.repo.get_step(run.id, prev_stage)
+            if prev_step and prev_step.selected_candidate_id:
+                prev_candidate = next(
+                    (c for c in prev_step.candidates if c.id == prev_step.selected_candidate_id), None
+                )
+                if prev_candidate and prev_candidate.parsed_output_json:
+                    if prev_stage == "planner":
+                        ctx_req.scene_plan = json.loads(prev_candidate.parsed_output_json)
+                    elif prev_stage == "critic":
+                        ctx_req.critic_report = json.loads(prev_candidate.parsed_output_json)
+                        if prev_step.selected_issue_ids_json:
+                            ctx_req.selected_issues = json.loads(prev_step.selected_issue_ids_json)
+                    elif prev_stage == "writer":
+                        ctx_req.draft_text = prev_candidate.text_output or prev_candidate.raw_response
+                elif prev_stage == "reviser" and prev_candidate and prev_candidate.text_output:
+                    ctx_req.revised_text = prev_candidate.text_output
+
+        return ctx_req
+
+    async def select_critic_issues(self, run_id: str, issue_ids: list[str]):
+        run = await self.repo.get_run_or_404(run_id)
+        step = await self.repo.get_step_or_404(run_id, "critic")
+
+        if not step.selected_candidate_id:
+            raise bad_request("CRITIC_NOT_SELECTED", "请先选择诊断结果")
+
+        selected = next((c for c in step.candidates if c.id == step.selected_candidate_id), None)
+        if not selected or not selected.parsed_output_json:
+            raise bad_request("CRITIC_INVALID", "诊断结果无效")
+
+        import json as _json
+        critic_data = _json.loads(selected.parsed_output_json)
+        valid_ids = {i.get("issue_id") for i in critic_data.get("issues", [])}
+        for iid in issue_ids:
+            if iid not in valid_ids:
+                raise bad_request("ISSUE_NOT_FOUND", f"问题 {iid} 不在诊断报告中")
+
+        step.selected_issue_ids_json = _json.dumps(issue_ids)
+        await self.session.flush()
+
+    async def accept_final_text(self, run_id: str):
+        import json as _json
+        from datetime import datetime, timezone
+
+        run = await self.repo.get_run_or_404(run_id)
+        if run.status not in ("completed", "running"):
+            raise bad_request("RUN_NOT_READY", "运行未完成，无法采用")
+
+        if not run.chapter_id:
+            raise bad_request("NO_CHAPTER", "运行未关联章节")
+
+        writer_step = await self.repo.get_step(run_id, "writer")
+        reviser_step = await self.repo.get_step(run_id, "reviser")
+
+        final_text = ""
+        source = "writer"
+
+        if writer_step and writer_step.selected_candidate_id:
+            candidate = next(
+                (c for c in writer_step.candidates if c.id == writer_step.selected_candidate_id), None
+            )
+            if candidate:
+                final_text = candidate.text_output or candidate.raw_response
+
+        if reviser_step and reviser_step.selected_candidate_id:
+            candidate = next(
+                (c for c in reviser_step.candidates if c.id == reviser_step.selected_candidate_id), None
+            )
+            if candidate and candidate.text_output:
+                final_text = candidate.text_output
+                source = "reviser"
+
+        if not final_text:
+            raise bad_request("NO_CONTENT", "没有可采用的文本")
+
+        from app.models.chapter import Chapter, ChapterVersion
+        stmt = select(Chapter).where(Chapter.id == run.chapter_id, Chapter.deleted_at.is_(None))
+        result = await self.session.execute(stmt)
+        chapter = result.scalar_one_or_none()
+        if not chapter:
+            raise not_found("CHAPTER_NOT_FOUND", "章节不存在")
+
+        existing_versions = await self.session.execute(
+            select(ChapterVersion).where(ChapterVersion.chapter_id == chapter.id)
+        )
+        existing_versions = existing_versions.scalars().all()
+        next_version = max((v.version_number for v in existing_versions), default=0) + 1
+
+        version = ChapterVersion(
+            chapter_id=chapter.id,
+            version_number=next_version,
+            source=source,
+            text=final_text,
+            note=f"从运行 {run_id[:8]} 采用",
+            generation_candidate_id=(
+                writer_step.selected_candidate_id
+                if source == "writer"
+                else reviser_step.selected_candidate_id
+                if source == "reviser"
+                else None
+            ),
+        )
+        self.session.add(version)
+        chapter.current_text = final_text
+        chapter.updated_at = datetime.now(timezone.utc).replace(tzinfo=None)
+        run.status = "completed"
+        await self.session.flush()
+
+        return {"status": "ok", "source": source, "version_number": next_version}
+
     def _previous_stages(self, stage: str) -> list[str]:
         stages = ["planner", "writer", "critic", "reviser", "judge"]
         try:
