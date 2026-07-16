@@ -6,6 +6,10 @@ from app.config import settings
 from app.db import init_db
 from app.errors import AppError, app_error_handler, validation_error_handler
 
+# Import models to ensure they are registered with Base.metadata
+import app.models.project  # noqa: F401
+import app.models.chapter  # noqa: F401
+
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -25,6 +29,12 @@ app.add_middleware(
 
 app.add_exception_handler(AppError, app_error_handler)
 app.add_exception_handler(RequestValidationError, validation_error_handler)
+
+from app.routers.projects import router as projects_router  # noqa: E402
+from app.routers.chapters import router as chapters_router  # noqa: E402
+
+app.include_router(projects_router)
+app.include_router(chapters_router)
 
 
 @app.get("/api/health")
