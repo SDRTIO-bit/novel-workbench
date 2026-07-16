@@ -168,8 +168,10 @@ class TestFullWorkflow:
         )
         assert resp.status_code == 200
 
-        # Accept final text
-        resp = await api_client.post(f"/api/runs/{run_id}/accept")
+        # Accept final text — use revision type (reviser has selected candidate)
+        resp = await api_client.post(f"/api/runs/{run_id}/accept", json={
+            "accept_type": "revision",
+        })
         assert resp.status_code == 200
         accept_data = resp.json()
         assert accept_data["status"] == "ok"
@@ -180,7 +182,7 @@ class TestFullWorkflow:
         assert resp.status_code == 200
         versions = resp.json()
         assert len(versions) >= 1
-        assert versions[-1]["source"] in ("writer", "reviser")
+        assert versions[-1]["source"] == "revision"
 
     @pytest.mark.asyncio
     async def test_stage_preview(self, api_client):
@@ -240,16 +242,18 @@ class TestFullWorkflow:
 
         writer_text = writer_cand["text_output"]
 
-        resp = await api_client.post(f"/api/runs/{run_id}/accept")
+        resp = await api_client.post(f"/api/runs/{run_id}/accept", json={
+            "accept_type": "original",
+        })
         assert resp.status_code == 200
-        assert resp.json()["source"] == "writer"
+        assert resp.json()["source"] == "original"
 
         resp = await api_client.get(f"/api/chapters/{chapter_id}/versions")
         assert resp.status_code == 200
         versions = resp.json()
         assert len(versions) >= 1
         assert versions[-1]["text"] == writer_text
-        assert versions[-1]["source"] == "writer"
+        assert versions[-1]["source"] == "original"
 
     @pytest.mark.asyncio
     async def test_accept_idempotent(self, api_client):
@@ -268,15 +272,19 @@ class TestFullWorkflow:
         resp = await api_client.post(f"/api/runs/{run_id}/steps/writer/execute", json={})
         await api_client.post(f"/api/runs/{run_id}/steps/writer/select/{resp.json()['id']}")
 
-        resp1 = await api_client.post(f"/api/runs/{run_id}/accept")
+        resp1 = await api_client.post(f"/api/runs/{run_id}/accept", json={
+            "accept_type": "original",
+        })
         assert resp1.status_code == 200
 
-        resp2 = await api_client.post(f"/api/runs/{run_id}/accept")
-        assert resp2.status_code == 200
+        resp2 = await api_client.post(f"/api/runs/{run_id}/accept", json={
+            "accept_type": "original",
+        })
+        assert resp2.status_code == 409  # already accepted with this type
 
         resp = await api_client.get(f"/api/chapters/{chapter_id}/versions")
         versions = resp.json()
-        assert len(versions) == 2
+        assert len(versions) == 1  # only one version, not duplicated
 
     @pytest.mark.asyncio
     async def test_accept_without_chapter_fails(self, api_client):
@@ -293,5 +301,7 @@ class TestFullWorkflow:
         resp = await api_client.post(f"/api/runs/{run_id}/steps/writer/execute", json={})
         await api_client.post(f"/api/runs/{run_id}/steps/writer/select/{resp.json()['id']}")
 
-        resp = await api_client.post(f"/api/runs/{run_id}/accept")
+        resp = await api_client.post(f"/api/runs/{run_id}/accept", json={
+            "accept_type": "original",
+        })
         assert resp.status_code == 400

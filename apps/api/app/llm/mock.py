@@ -132,11 +132,14 @@ class MockClient(BaseLlmClient):
                     {"aspect": "猫的意象", "detail": "阿橘作为情感线索运用得当，动作细节传递了微妙情绪"},
                 ],
                 "issues": [
-                    {"issue_id": "I01", "severity": "low", "issue_type": "pacing", "paragraph_ids": ["P003"], "problem": "老陈内心独白偏长，打断了外部动作流", "suggestion": "将部分回忆分散到后续对话中自然带出"},
-                    {"issue_id": "I02", "severity": "medium", "issue_type": "dialogue", "paragraph_ids": ["P006"], "problem": "'进来坐'三字过于简练，可加一两个小动作丰富层次", "suggestion": "比如老陈顺手推了一下老花镜，或把桌上的书合上"},
-                    {"issue_id": "I03", "severity": "low", "issue_type": "detail", "paragraph_ids": ["P009"], "problem": "猫的反应可以更丰富——它不只是坐下，可能先闻了闻女孩的鞋子", "suggestion": "添加一个猫的具体动作细节"},
+                    {"issue_id": "I01", "severity": "low", "issue_type": "pacing", "paragraph_ids": ["P003"], "problem": "老陈内心独白偏长，打断了外部动作流", "revision_goal": "将部分回忆分散到后续对话中自然带出"},
+                    {"issue_id": "I02", "severity": "medium", "issue_type": "dialogue", "paragraph_ids": ["P006"], "problem": "'进来坐'三字过于简练，可加一两个小动作丰富层次", "revision_goal": "在'进来坐'之前添加一个小动作，如摘下老花镜或挪开茶杯"},
+                    {"issue_id": "I03", "severity": "low", "issue_type": "detail", "paragraph_ids": ["P009"], "problem": "猫的反应过于简单，缺少具体动作细节", "revision_goal": "添加阿橘的嗅觉或声音细节，丰富猫的角色形象"},
                 ],
-                "recommendation": "局部修订即可，整体质量良好",
+                "decision": "local_revision",
+                "protected_strengths": [
+                    {"paragraph_ids": ["P001", "P002"], "reason": "黄昏氛围的描写已臻完美，情绪基调准确，不应修改"},
+                ],
             }, ensure_ascii=False)
 
         # Reviser → targeted fixes
@@ -144,10 +147,10 @@ class MockClient(BaseLlmClient):
             return json.dumps({
                 "patches": [
                     {"issue_id": "I01", "operation": "replace", "target_paragraph_ids": ["P003"], "replacement": "老陈把书翻到夹着书签的那一页，却没有继续读。他想起妻子以前总说，一本书读得越慢，里面的世界就越长。窗台上的阿橘还在敲尾巴。他摘下老花镜，用袖口擦了擦镜片。"},
-                    {"issue_id": "I02", "operation": "insert_before", "target_paragraph_ids": ["P006"], "replacement": "他摘下老花镜搁在书页上，顺手把桌上那杯已经凉透的茶往旁边挪了挪。"},
+                    {"issue_id": "I02", "operation": "insert_after", "target_paragraph_ids": ["P005"], "replacement": "他摘下老花镜搁在书页上，顺手把桌上那杯已经凉透的茶往旁边挪了挪。"},
                     {"issue_id": "I03", "operation": "insert_after", "target_paragraph_ids": ["P009"], "replacement": "阿橘凑近女孩的球鞋闻了闻，然后抬起头，发出一声很轻的'喵'——像是在打招呼，又像是在替老陈说那句他没有说出口的话。"},
                 ],
-                "revised_text": "（完整修订文本）",
+                "revised_text": "黄昏的光从梧桐叶的缝隙里漏进来...(修订后的完整文本)...",
                 "unchanged_ratio": 0.88,
                 "introduced_facts": [],
             }, ensure_ascii=False)

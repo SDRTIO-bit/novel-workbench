@@ -54,7 +54,7 @@ class TestMockClient:
         response = await client.complete(request)
         import json
         data = json.loads(response.text)
-        assert "recommendation" in data
+        assert "decision" in data
         assert "issues" in data
 
     async def test_reviser_response_format(self):

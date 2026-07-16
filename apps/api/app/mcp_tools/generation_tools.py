@@ -178,11 +178,21 @@ async def cancel_run(run_id: str) -> dict:
         return {"status": "cancelled"}
 
 
-async def accept_final_text(run_id: str) -> dict:
-    """Accept the generated text and write it back to the chapter. This creates a chapter version snapshot."""
+async def accept_final_text(run_id: str, accept_type: str = "revision", final_text: str | None = None) -> dict:
+    """Accept the generated text and write it back to the chapter.
+
+    accept_type must be one of:
+    - 'original': keep the writer's first draft
+    - 'revision': use the reviser's revised text
+    - 'judge': use the judge's merged final_text
+    - 'manual': use the final_text parameter directly
+
+    The Judge's recommendation is just a suggestion — YOU make the final decision.
+    This creates a chapter version snapshot and saves to disk.
+    """
     async with mcp_db() as session:
         svc = GenerationService(session)
-        result = await svc.accept_final_text(run_id)
+        result = await svc.accept_final_text(run_id, accept_type, final_text)
         await session.commit()
         return result
 

@@ -40,22 +40,22 @@ export default function StagePanel({ runId, stage, step }: Props) {
 
   const invalidate = () => queryClient.invalidateQueries({ queryKey: ['run', runId] })
 
+  const buildOverride = () => ({
+    run_override: override.trim() || undefined,
+    provider_id: advanced.providerId || undefined,
+    model_id: advanced.modelId || undefined,
+    prompt_version_id: advanced.promptVersionId || undefined,
+    temperature: isNaN(advanced.temperature) ? undefined : advanced.temperature,
+    top_p: isNaN(advanced.topP) ? undefined : advanced.topP,
+  })
+
   const executeMutation = useMutation({
-    mutationFn: () =>
-      runsApi.executeStage(runId, stage, {
-        run_override: override.trim() || undefined,
-        provider_id: advanced.providerId || undefined,
-        model_id: advanced.modelId || undefined,
-        prompt_version_id: advanced.promptVersionId || undefined,
-        temperature: isNaN(advanced.temperature) ? undefined : advanced.temperature,
-        top_p: isNaN(advanced.topP) ? undefined : advanced.topP,
-      }),
+    mutationFn: () => runsApi.executeStage(runId, stage, buildOverride()),
     onSuccess: () => { invalidate(); setOverride('') },
   })
 
   const previewMutation = useMutation({
-    mutationFn: () =>
-      runsApi.previewStage(runId, stage, override.trim() ? { run_override: override } : undefined),
+    mutationFn: () => runsApi.previewStage(runId, stage, buildOverride()),
     onSuccess: (data) => { setPreview(data as PreviewData); setShowPreview(true) },
   })
 

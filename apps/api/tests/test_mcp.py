@@ -290,6 +290,21 @@ class TestMCPTools:
                 f"Stage {stage}: {sr['structuredContent'].get('error_message')}"
             )
 
+            cand_id = sr["structuredContent"]["candidate_id"]
+            self._call(api_client, headers, sid, "select_candidate", {
+                "run_id": run_id, "stage": stage, "candidate_id": cand_id,
+            }, 60 + i)
+
+            if stage == "critic":
+                gs = self._call(api_client, headers, sid, "get_stage_status",
+                                {"run_id": run_id, "stage": "critic"}, 70)
+                assert gs["isError"] is False
+                issues_data = gs["structuredContent"]["candidates"][0]
+                self._call(api_client, headers, sid, "select_critic_issues", {
+                    "run_id": run_id,
+                    "issue_ids": ["I01", "I02"],
+                }, 71)
+
         final = self._call(api_client, headers, sid, "get_run",
                            {"run_id": run_id}, 60)
         assert final["isError"] is False

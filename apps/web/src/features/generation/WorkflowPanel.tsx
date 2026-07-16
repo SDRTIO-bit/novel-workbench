@@ -39,7 +39,7 @@ export default function WorkflowPanel({ projectId, chapterId, onAccept }: Props)
   })
 
   const acceptMutation = useMutation({
-    mutationFn: () => runsApi.acceptFinal(runId!),
+    mutationFn: (acceptType: string) => runsApi.acceptFinal(runId!, acceptType),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['run', runId] })
       setRunId(null)
@@ -116,16 +116,83 @@ export default function WorkflowPanel({ projectId, chapterId, onAccept }: Props)
 
       {renderJudgeVerdict(run)}
       {writerHasOutput(run) && (
-        <div className="p-3 border-t border-gray-200 bg-white shrink-0">
-          <button
-            onClick={() => acceptMutation.mutate()}
-            disabled={acceptMutation.isPending}
-            className="w-full px-4 py-2 text-sm font-medium bg-green-600 text-white rounded-lg hover:bg-green-700 disabled:opacity-50 transition-colors"
-          >
-            {acceptMutation.isPending ? '接受中...' : '采用生成结果'}
-          </button>
-        </div>
+        <AcceptChoices run={run} acceptMutation={acceptMutation} />
       )}
+    </div>
+  )
+}
+
+function AcceptChoices({ run, acceptMutation }: { run: GenerationRun; acceptMutation: { mutate: (v: string) => void; isPending: boolean } }) {
+  const hasJudge = run.steps.some((s) => s.stage === 'judge' && s.candidates.some((c) => c.is_selected && c.parsed_output_json))
+  const hasReviser = run.steps.some((s) => s.stage === 'reviser' && s.candidates.some((c) => c.is_selected && c.text_output))
+
+  if (hasJudge) {
+    const judgeStep = run.steps.find((s) => s.stage === 'judge')!
+    const candidate = judgeStep.candidates.find((c) => c.is_selected)
+    let decision = ''
+    if (candidate?.parsed_output_json) {
+      let parsed = candidate.parsed_output_json
+      if (typeof parsed === 'string') {
+        try { parsed = JSON.parse(parsed) } catch { /* */ }
+      }
+      decision = String((parsed as Record<string, unknown>).decision ?? '')
+    }
+
+    const buttons: { type: string; label: string }[] = [
+      { type: 'original', label: '保留初稿' },
+    ]
+    if (hasReviser) {
+      buttons.push({ type: 'revision', label: '采用修订稿' })
+    }
+    if (decision === 'accept_merged') {
+      buttons.push({ type: 'judge', label: '采纳合并稿' })
+    }
+    buttons.push({ type: 'manual', label: '手动编辑...' })
+
+    return (
+      <div className="p-3 border-t border-gray-200 bg-white shrink-0">
+        <p className="text-xs font-medium text-gray-500 mb-2">选择最终版本:</p>
+        <div className="grid grid-cols-2 gap-2">
+          {buttons.map((b) => (
+            <button
+              key={b.type}
+              onClick={() => acceptMutation.mutate(b.type)}
+              disabled={acceptMutation.isPending}
+              className="px-3 py-1.5 text-xs font-medium rounded-lg border transition-colors disabled:opacity-50"
+              style={
+                b.type === decision
+                  ? { background: '#eef2ff', borderColor: '#6366f1', color: '#4338ca' }
+                  : { background: '#fff', borderColor: '#d1d5db', color: '#374151' }
+              }
+            >
+              {b.label}
+            </button>
+          ))}
+        </div>
+      </div>
+    )
+  }
+
+  return (
+    <div className="p-3 border-t border-gray-200 bg-white shrink-0">
+      <div className="flex gap-2">
+        <button
+          onClick={() => acceptMutation.mutate('original')}
+          disabled={acceptMutation.isPending}
+          className="flex-1 px-3 py-2 text-xs font-medium bg-white text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-50 disabled:opacity-50 transition-colors"
+        >
+          {acceptMutation.isPending ? '...' : '保留初稿'}
+        </button>
+        {hasReviser && (
+          <button
+            onClick={() => acceptMutation.mutate('revision')}
+            disabled={acceptMutation.isPending}
+            className="flex-1 px-3 py-2 text-xs font-medium bg-green-600 text-white rounded-lg hover:bg-green-700 disabled:opacity-50 transition-colors"
+          >
+            {acceptMutation.isPending ? '...' : '采用修订稿'}
+          </button>
+        )}
+      </div>
     </div>
   )
 }
@@ -154,6 +221,12 @@ const JUDGE_LABELS: Record<string, string> = {
   manual_review: '需要人工判断',
 }
 
+const JUDGE_STATUS_LABELS: Record<string, string> = {
+  resolved: '已解决',
+  unresolved: '未解决',
+  revision_worse: '修订后退步',
+}
+
 function renderJudgeVerdict(run: GenerationRun) {
   const judgeStep = run.steps.find((s) => s.stage === 'judge')
   const judgeCandidate = judgeStep?.candidates.find((c) => c.is_selected)
@@ -166,7 +239,7 @@ function renderJudgeVerdict(run: GenerationRun) {
   const obj = parsed as Record<string, unknown>
   const decision = String(obj.decision ?? '')
   const label = JUDGE_LABELS[decision] ?? decision
-  const issueResults = obj.issue_results as unknown[] | undefined
+  const issueResults = obj.issue_results as Array<Record<string, unknown>> | undefined
 
   return (
     <div className="p-3 border-t border-gray-200 bg-white shrink-0">
@@ -179,14 +252,16 @@ function renderJudgeVerdict(run: GenerationRun) {
       {issueResults && issueResults.length > 0 && (
         <div className="space-y-1 mt-1">
           <p className="text-xs font-medium text-gray-500">问题处理结果:</p>
-          {issueResults.map((r, i) => {
-            const ir = r as Record<string, unknown>
+          {issueResults.map((ir, i) => {
+            const status = String(ir.status ?? '')
+            const statusLabel = JUDGE_STATUS_LABELS[status] ?? status
+            const resolvedColor = status === 'resolved' ? 'bg-green-500' : status === 'unresolved' ? 'bg-red-400' : 'bg-yellow-400'
             return (
               <div key={i} className="flex items-center gap-2 text-xs text-gray-600">
-                <span className={`w-1.5 h-1.5 rounded-full ${ir.is_resolved ? 'bg-green-500' : 'bg-red-400'}`} />
+                <span className={`w-1.5 h-1.5 rounded-full ${resolvedColor}`} />
                 <span className="truncate">{String(ir.issue_id ?? `#${i + 1}`)}</span>
-                <span>{ir.is_resolved ? '已解决' : '未解决'}</span>
-                {!!ir.note && <span className="text-gray-400">— {String(ir.note)}</span>}
+                <span>{statusLabel}</span>
+                {!!ir.comment && <span className="text-gray-400">— {String(ir.comment)}</span>}
               </div>
             )
           })}

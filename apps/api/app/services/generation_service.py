@@ -52,10 +52,24 @@ class GenerationService:
     async def execute_stage(self, run_id: str, stage: str, override: dict):
         run = await self.repo.get_run_or_404(run_id)
 
-        for prev_stage in self._previous_stages(stage):
-            prev_step = await self.repo.get_step(run_id, prev_stage)
-            if not prev_step or prev_step.status != "completed":
-                raise bad_request("STAGE_DEPENDENCY", f"Please complete '{prev_stage}' first")
+        required = await self._required_stages(stage, run)
+        for dep_stage in required:
+            dep_step = await self.repo.get_step(run_id, dep_stage)
+            if not dep_step or dep_step.status != "completed":
+                raise bad_request("STAGE_DEPENDENCY", f"Please complete '{dep_stage}' first")
+            if not dep_step.selected_candidate_id:
+                raise bad_request(
+                    "STAGE_NO_CANDIDATE",
+                    f"Please select a candidate for '{dep_stage}' before executing '{stage}'",
+                )
+            dep_cand = next(
+                (c for c in dep_step.candidates if c.id == dep_step.selected_candidate_id), None
+            )
+            if dep_cand and dep_cand.error_code and not dep_cand.parsed_output_json:
+                raise bad_request(
+                    "STAGE_CANDIDATE_ERROR",
+                    f"The selected candidate for '{dep_stage}' has an error. Select a valid candidate first.",
+                )
 
         step = await self.repo.get_step_or_404(run_id, stage)
 
@@ -169,8 +183,25 @@ class GenerationService:
                     text_output = raw_response
                     if stage == "reviser" and isinstance(parsed.data, dict):
                         revised_text = parsed.data.get("revised_text", "")
-                        if revised_text:
+                        if revised_text and revised_text.strip():
                             text_output = revised_text
+                        else:
+                            error_code = "REVISER_OUTPUT_INVALID"
+                            error_message = "Reviser returned valid JSON but missing or empty 'revised_text'. The candidate cannot be used."
+                            step.status = "failed"
+                            run.status = "completed"
+                    elif stage == "judge" and isinstance(parsed.data, dict):
+                        judge_decision = parsed.data.get("decision", "")
+                        if not judge_decision:
+                            error_code = "JUDGE_OUTPUT_INVALID"
+                            error_message = "Judge returned valid JSON but missing 'decision' field."
+                            step.status = "failed"
+                            run.status = "completed"
+                        elif judge_decision == "accept_merged" and not parsed.data.get("final_text", "").strip():
+                            error_code = "JUDGE_OUTPUT_INVALID"
+                            error_message = "Judge returned 'accept_merged' but 'final_text' is empty."
+                            step.status = "failed"
+                            run.status = "completed"
                 else:
                     error_code = "STRUCTURED_OUTPUT_INVALID"
                     error_message = parsed.error or "无法解析结构化输出"
@@ -322,7 +353,7 @@ class GenerationService:
         step.selected_issue_ids_json = _json.dumps(issue_ids)
         await self.session.flush()
 
-    async def accept_final_text(self, run_id: str):
+    async def accept_final_text(self, run_id: str, accept_type: str, manual_text: str | None = None):
         import json as _json
         from datetime import datetime, timezone
 
@@ -333,12 +364,22 @@ class GenerationService:
         if not run.chapter_id:
             raise bad_request("NO_CHAPTER", "运行未关联章节")
 
+        valid_types = {"original", "revision", "judge", "manual"}
+        if accept_type not in valid_types:
+            raise bad_request(
+                "INVALID_ACCEPT_TYPE",
+                f"accept_type must be one of: {', '.join(sorted(valid_types))}",
+            )
+        if accept_type == "manual" and not manual_text:
+            raise bad_request("MANUAL_TEXT_REQUIRED", "accept_type='manual' requires final_text")
+
         writer_step = await self.repo.get_step(run_id, "writer")
         reviser_step = await self.repo.get_step(run_id, "reviser")
         judge_step = await self.repo.get_step(run_id, "judge")
 
         writer_text = ""
         reviser_text = ""
+        judge_final_text = ""
 
         if writer_step and writer_step.selected_candidate_id:
             candidate = next(
@@ -354,31 +395,30 @@ class GenerationService:
             if candidate and candidate.text_output:
                 reviser_text = candidate.text_output
 
-        final_text = ""
-        source = "writer"
-
         if judge_step and judge_step.selected_candidate_id:
             judge_candidate = next(
                 (c for c in judge_step.candidates if c.id == judge_step.selected_candidate_id), None
             )
             if judge_candidate and judge_candidate.parsed_output_json:
                 judge_data = _json.loads(judge_candidate.parsed_output_json)
-                decision = judge_data.get("decision", "")
-                if decision == "accept_original":
-                    final_text = writer_text
-                    source = "writer"
-                elif decision == "accept_revision":
-                    final_text = reviser_text
-                    source = "reviser"
-                elif decision == "accept_merged":
-                    final_text = judge_data.get("final_text", "") or reviser_text or writer_text
-                    source = "judge"
-                else:
-                    final_text = reviser_text or writer_text
-                    source = "reviser" if reviser_text else "writer"
+                judge_final_text = judge_data.get("final_text", "")
+
+        if accept_type == "original":
+            if not writer_text:
+                raise bad_request("NO_ORIGINAL", "初稿不存在，无法选择保留初稿")
+            final_text = writer_text
+        elif accept_type == "revision":
+            if not reviser_text:
+                raise bad_request("NO_REVISION", "修订稿不存在，无法选择采用修订稿")
+            final_text = reviser_text
+        elif accept_type == "judge":
+            final_text = judge_final_text or reviser_text or writer_text
+            if not final_text:
+                raise bad_request("NO_JUDGE_TEXT", "没有可用的审稿合并文本")
+        elif accept_type == "manual":
+            final_text = manual_text
         else:
-            final_text = reviser_text or writer_text
-            source = "reviser" if reviser_text else "writer"
+            raise bad_request("INVALID_ACCEPT_TYPE", f"Unknown accept_type: {accept_type}")
 
         if not final_text:
             raise bad_request("NO_CONTENT", "没有可采用的文本")
@@ -394,22 +434,34 @@ class GenerationService:
             select(ChapterVersion).where(ChapterVersion.chapter_id == chapter.id)
         )
         existing_versions = existing_versions.scalars().all()
+
+        same_run_version = next(
+            (v for v in existing_versions if v.generation_candidate_id and v.source == accept_type), None
+        )
+        if same_run_version:
+            raise conflict(
+                "ALREADY_ACCEPTED",
+                f"This run has already been accepted with type '{accept_type}'. "
+                "Use a different accept_type or skip.",
+            )
+
         next_version = max((v.version_number for v in existing_versions), default=0) + 1
+
+        candidate_ref = None
+        if accept_type == "original":
+            candidate_ref = writer_step.selected_candidate_id if writer_step else None
+        elif accept_type == "revision":
+            candidate_ref = reviser_step.selected_candidate_id if reviser_step else None
+        elif accept_type == "judge":
+            candidate_ref = judge_step.selected_candidate_id if judge_step else None
 
         version = ChapterVersion(
             chapter_id=chapter.id,
             version_number=next_version,
-            source=source,
+            source=accept_type,
             text=final_text,
-            note=f"从运行 {run_id[:8]} 采用",
-            generation_candidate_id=(
-                writer_step.selected_candidate_id
-                if source == "writer"
-                else reviser_step.selected_candidate_id
-                if source == "reviser"
-                else judge_step.selected_candidate_id if source == "judge" and judge_step
-                else None
-            ),
+            note=f"从运行 {run_id[:8]} 采用 ({accept_type})",
+            generation_candidate_id=candidate_ref,
         )
         self.session.add(version)
         chapter.current_text = final_text
@@ -422,7 +474,7 @@ class GenerationService:
         except Exception:
             pass
 
-        return {"status": "ok", "source": source, "version_number": next_version}
+        return {"status": "ok", "source": accept_type, "version_number": next_version}
 
     def _previous_stages(self, stage: str) -> list[str]:
         stages = ["planner", "writer", "critic", "reviser", "judge"]
@@ -431,6 +483,29 @@ class GenerationService:
         except ValueError:
             return []
         return stages[:idx]
+
+    async def _required_stages(self, stage: str, run) -> list[str]:
+        """Stages that MUST be completed and have a selected valid candidate
+        before executing `stage`. Handles the Critic pass → skip Reviser path."""
+        all_stages = self._previous_stages(stage)
+        if "reviser" not in all_stages:
+            return all_stages
+
+        critic_step = await self.repo.get_step(run.id, "critic")
+        critic_passed = False
+        if critic_step and critic_step.selected_candidate_id:
+            import json as _json
+            critic_cand = next(
+                (c for c in critic_step.candidates if c.id == critic_step.selected_candidate_id), None
+            )
+            if critic_cand and critic_cand.parsed_output_json:
+                critic_data = _json.loads(critic_cand.parsed_output_json)
+                critic_passed = critic_data.get("decision") == "pass"
+
+        if critic_passed and "reviser" in all_stages:
+            all_stages.remove("reviser")
+
+        return all_stages
 
     async def _resolve_provider(self, provider_id: str | None):
         from app.models.provider import Provider

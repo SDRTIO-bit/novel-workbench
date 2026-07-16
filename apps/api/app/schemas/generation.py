@@ -96,5 +96,14 @@ class StageOverrideRequest(BaseModel):
     timeout_seconds: int | None = None
 
 
+class AcceptFinalRequest(BaseModel):
+    accept_type: str = Field(
+        description="One of: original, revision, judge, manual"
+    )
+    final_text: str | None = Field(
+        default=None, description="Required when accept_type is 'manual'"
+    )
+
+
 class SelectIssuesRequest(BaseModel):
     issue_ids: list[str] = Field(min_length=1)

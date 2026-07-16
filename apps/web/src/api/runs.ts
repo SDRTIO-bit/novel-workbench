@@ -8,5 +8,9 @@ export const executeStage = (runId: string, stage: string, override?: Partial<St
 export const previewStage = (runId: string, stage: string, override?: Partial<StageOverride>) => apiPost(`/runs/${runId}/steps/${stage}/preview`, override || {});
 export const selectCandidate = (runId: string, stage: string, candidateId: string) => apiPost(`/runs/${runId}/steps/${stage}/select/${candidateId}`);
 export const selectIssues = (runId: string, data: SelectIssues) => apiPost(`/runs/${runId}/critic/select-issues`, data);
-export const acceptFinal = (runId: string) => apiPost<{ status: string; source: string; version_number: number }>(`/runs/${runId}/accept`);
+export const acceptFinal = (runId: string, acceptType: string, finalText?: string) =>
+  apiPost<{ status: string; source: string; version_number: number }>(`/runs/${runId}/accept`, {
+    accept_type: acceptType,
+    final_text: finalText || undefined,
+  });
 export const cancelRun = (runId: string) => apiPost(`/runs/${runId}/cancel`);

@@ -4,6 +4,7 @@ from app.db import get_db
 from app.schemas.generation import (
     RunSchema, RunListSchema, CreateRunRequest,
     StageOverrideRequest, CandidateSchema, SelectIssuesRequest,
+    AcceptFinalRequest,
 )
 from app.schemas.context import ContextPreviewRequest, ContextPreviewResponse
 from app.services.generation_service import GenerationService
@@ -86,9 +87,10 @@ async def select_critic_issues(
 @router.post("/runs/{run_id}/accept")
 async def accept_final_text(
     run_id: str,
+    data: AcceptFinalRequest,
     svc: GenerationService = Depends(_service),
 ):
-    result = await svc.accept_final_text(run_id)
+    result = await svc.accept_final_text(run_id, data.accept_type, data.final_text)
     await svc.session.commit()
     return result
 
