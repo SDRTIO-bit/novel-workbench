@@ -36,7 +36,11 @@ class MockClient(BaseLlmClient):
         )
 
     def _build_response(self, request: LlmRequest) -> str:
-        if "plan" in request.system_prompt.lower():
+        sp = request.system_prompt.lower()
+        up = request.user_prompt.lower()
+        combined = sp + " " + up
+
+        if "plan" in combined or "策划" in combined or "planner" in combined:
             return json.dumps({
                 "scene_goal": "主角找到关键线索",
                 "location": "废弃工厂",
@@ -57,7 +61,7 @@ class MockClient(BaseLlmClient):
                 "forbidden": ["不能暴露身份"],
             }, ensure_ascii=False)
 
-        if "critic" in request.system_prompt.lower():
+        if "critic" in combined or "诊断" in combined or "文学编辑" in combined:
             return json.dumps({
                 "decision": "local_revision",
                 "issues": [
@@ -78,22 +82,7 @@ class MockClient(BaseLlmClient):
                 ],
             }, ensure_ascii=False)
 
-        if "reviser" in request.system_prompt.lower():
-            return json.dumps({
-                "patches": [
-                    {
-                        "issue_id": "I01",
-                        "operation": "replace",
-                        "target_paragraph_ids": ["P003"],
-                        "replacement": "修订后的段落内容",
-                    }
-                ],
-                "revised_text": "完整修订文本",
-                "unchanged_ratio": 0.85,
-                "introduced_facts": [],
-            }, ensure_ascii=False)
-
-        if "judge" in request.system_prompt.lower():
+        if "judge" in combined or "验收" in combined or "文学评审" in combined or "对比验收" in combined:
             return json.dumps({
                 "decision": "accept_revision",
                 "issue_results": [
@@ -110,6 +99,21 @@ class MockClient(BaseLlmClient):
                     "relationship_changes": [],
                     "unresolved_threads": [],
                 },
+            }, ensure_ascii=False)
+
+        if "reviser" in combined or "文字修订师" in combined or "定点修订" in combined:
+            return json.dumps({
+                "patches": [
+                    {
+                        "issue_id": "I01",
+                        "operation": "replace",
+                        "target_paragraph_ids": ["P003"],
+                        "replacement": "修订后的段落内容",
+                    }
+                ],
+                "revised_text": "完整修订文本",
+                "unchanged_ratio": 0.85,
+                "introduced_facts": [],
             }, ensure_ascii=False)
 
         return "这是模拟的章节正文内容。故事从这里开始展开..."
