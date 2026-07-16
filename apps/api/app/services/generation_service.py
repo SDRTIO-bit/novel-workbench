@@ -324,8 +324,12 @@ class GenerationService:
                         prev_step.selected_issue_operations_json or "{}"
                     )
                     issues_by_id = {
-                        issue.get("issue_id"): issue
+                        str(issue.get("issue_id")): {
+                            **issue,
+                            "issue_id": str(issue.get("issue_id")),
+                        }
                         for issue in ctx_req.critic_report.get("issues", [])
+                        if issue.get("issue_id") is not None
                     }
                     ctx_req.selected_issues = [
                         {
@@ -359,7 +363,12 @@ class GenerationService:
         import json as _json
         critic_data = _json.loads(selected.parsed_output_json)
         issues_by_id = {
-            issue.get("issue_id"): issue for issue in critic_data.get("issues", [])
+            str(issue.get("issue_id")): {
+                **issue,
+                "issue_id": str(issue.get("issue_id")),
+            }
+            for issue in critic_data.get("issues", [])
+            if issue.get("issue_id") is not None
         }
         valid_ids = set(issues_by_id)
         for iid in issue_ids:

@@ -150,7 +150,7 @@ BUILTIN_PROMPTS = [
             "- overall_assessment：一句话总体评价\n"
             "- decision：pass / local_revision / scene_rewrite\n"
             "- strengths：文本亮点列表\n"
-            "- issues：问题数组，每项包含 issue_id、severity（low/medium/high/critical）、issue_type、paragraph_ids（整数数组）、problem（问题描述）、revision_goal（修改目标）、recommended_operation（八种允许操作之一）\n"
+            "- issues：问题数组，每项包含 issue_id（字符串，按 I01、I02… 格式编号，不能使用数字）、severity（low/medium/high/critical）、issue_type、paragraph_ids（整数数组）、problem（问题描述）、revision_goal（修改目标）、recommended_operation（八种允许操作之一）\n"
             "- protected_strengths：不应修改的段落 ID 数组及每个的保护理由\n"
             "- chapter_contract_check：逐项核验本章契约交付情况，字段为 chapter_function_delivered（bool）、must_deliver_satisfied（bool）、must_not_deliver_respected（bool）、main_change_advanced（bool）、main_payoff_delivered（bool）、ending_hook_set（bool）、fuel_reserved（bool）、target_length_met（bool）\n\n"
             "## 项目设定\n"
