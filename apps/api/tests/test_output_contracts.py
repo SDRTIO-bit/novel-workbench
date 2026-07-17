@@ -2,6 +2,7 @@ import pytest
 
 from app.llm.output_contracts import (
     validate_critic_output,
+    validate_judge_output_for_selected_issues,
     validate_planner_output,
     validate_reviser_output,
 )
@@ -196,3 +197,45 @@ def test_critic_accepts_tempo_issue_types(issue_type, operation):
         }],
     })
     assert result.issues[0].issue_type.value == issue_type
+
+
+def test_judge_rejects_unselected_issue_results_and_numbered_merged_text():
+    data = {
+        "decision": "accept_merged",
+        "issue_results": [
+            {"issue_id": "I01", "status": "resolved", "action": "keep_revision"},
+            {"issue_id": "I02", "status": "resolved", "action": "keep_revision"},
+        ],
+        "new_problems": [],
+        "revision_became_cleaner_but_flatter": False,
+        "author_intent_preserved": True,
+        "chapter_contract_completed": True,
+        "main_payoff_preserved": True,
+        "final_text": "[P001] 面板亮了。",
+        "quality_score": 80,
+        "state_patch": {},
+    }
+
+    with pytest.raises(ValueError, match="JUDGE_OUTPUT_CONTRACT_INVALID"):
+        validate_judge_output_for_selected_issues(data, ["I01"])
+
+
+def test_judge_accepts_exact_selected_issue_results_and_clean_merged_text():
+    data = {
+        "decision": "accept_merged",
+        "issue_results": [
+            {"issue_id": "I01", "status": "resolved", "action": "keep_revision"},
+        ],
+        "new_problems": [],
+        "revision_became_cleaner_but_flatter": False,
+        "author_intent_preserved": True,
+        "chapter_contract_completed": True,
+        "main_payoff_preserved": True,
+        "final_text": "面板亮了。",
+        "quality_score": 80,
+        "state_patch": {},
+    }
+
+    result = validate_judge_output_for_selected_issues(data, ["I01"])
+
+    assert result.decision.value == "accept_merged"

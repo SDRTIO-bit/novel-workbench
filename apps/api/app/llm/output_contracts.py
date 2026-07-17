@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from enum import Enum
+import re
 from typing import Any, Literal
 from pydantic import BaseModel, Field, field_validator, model_validator
 
@@ -469,6 +470,45 @@ def validate_judge_output(data: dict) -> JudgeOutput:
         return JudgeOutput(**data)
     except Exception as e:
         raise ValueError(f"JUDGE_OUTPUT_CONTRACT_INVALID: {e}") from e
+
+
+def validate_judge_output_for_selected_issues(
+    data: dict,
+    selected_issue_ids: list[str],
+) -> JudgeOutput:
+    """Validate a judge result against the issues actually sent to Reviser.
+
+    A judge may report new problems, but it cannot claim to have resolved an
+    issue that was not selected for revision. This keeps the merge decision
+    tethered to the user's chosen edit scope instead of trusting an LLM's
+    self-assessment.
+    """
+    output = validate_judge_output(data)
+    if selected_issue_ids:
+        selected = set(selected_issue_ids)
+        reported = [result.issue_id for result in output.issue_results]
+        unexpected = set(reported) - selected
+        missing = selected - set(reported)
+        if unexpected or missing:
+            details = []
+            if unexpected:
+                details.append(f"unexpected issue_results: {sorted(unexpected)}")
+            if missing:
+                details.append(f"missing issue_results: {sorted(missing)}")
+            raise ValueError("JUDGE_OUTPUT_CONTRACT_INVALID: " + "; ".join(details))
+
+    if output.decision in (JudgeDecision.accept_revision, JudgeDecision.accept_merged):
+        if not output.chapter_contract_completed or not output.main_payoff_preserved:
+            raise ValueError(
+                "JUDGE_OUTPUT_CONTRACT_INVALID: accepting a revision requires "
+                "chapter_contract_completed and main_payoff_preserved"
+            )
+
+    if output.decision == JudgeDecision.accept_merged and re.search(r"(?m)^\s*\[P\d{3}\]", output.final_text):
+        raise ValueError(
+            "JUDGE_OUTPUT_CONTRACT_INVALID: merged final_text must not contain paragraph labels"
+        )
+    return output
 
 
 # ── Stage-level dispatch ──────────────────────────────────────────────

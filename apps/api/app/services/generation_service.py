@@ -12,7 +12,10 @@ from app.schemas.context import ContextPreviewRequest
 from app.schemas.generation import REVISION_OPERATIONS
 from app.llm.base import LlmRequest
 from app.llm.parser import parse_json
-from app.llm.output_contracts import validate_stage_output
+from app.llm.output_contracts import (
+    validate_judge_output_for_selected_issues,
+    validate_stage_output,
+)
 from app.models.generation import GenerationRun
 
 
@@ -156,6 +159,16 @@ class GenerationService:
                 if parsed.valid:
                     try:
                         validated = validate_stage_output(stage, parsed.data)
+                        if stage == "judge":
+                            critic_step = await self.repo.get_step(run_id, "critic")
+                            selected_issue_ids = []
+                            if critic_step and critic_step.selected_issue_ids_json:
+                                selected_issue_ids = json.loads(
+                                    critic_step.selected_issue_ids_json
+                                )
+                            validated = validate_judge_output_for_selected_issues(
+                                parsed.data, selected_issue_ids
+                            ).model_dump()
                         parsed_output_json = json.dumps(validated, ensure_ascii=False)
                     except ValueError as ve:
                         stage_upper = stage.upper()
