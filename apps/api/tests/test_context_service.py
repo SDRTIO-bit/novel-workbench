@@ -132,6 +132,31 @@ class TestContextPreview:
         assert "测试" in data["rendered_user_prompt"]
 
     @pytest.mark.asyncio
+    async def test_preview_tracks_tempo_guardrails(self, api_client):
+        project_id = await _create_project(api_client)
+        chapter_id = await _create_chapter(api_client, project_id)
+
+        guardrails = {
+            "entry_pressure": "林隅拖着探测车进库。",
+            "dominant_disruption": "冷却管传出敲击声。",
+            "allowed_viewpoint_misread": "他以为压力阀松了。",
+            "disclosure_cap": 1,
+            "must_remain_unclassified": ["敲击声来源"],
+            "stop_after": "他切断外门电源。",
+        }
+        resp = await api_client.post("/api/context/preview", json={
+            "project_id": project_id,
+            "chapter_id": chapter_id,
+            "stage": "writer",
+            "scene_instruction": "写维修场景",
+            "tempo_guardrails": guardrails,
+        })
+
+        assert resp.status_code == 200
+        data = resp.json()
+        assert "tempo_guardrails" in {source["name"] for source in data["sources"]}
+
+    @pytest.mark.asyncio
     async def test_preview_critic_context(self, api_client):
         project_id = await _create_project(api_client)
         chapter_id = await _create_chapter(api_client, project_id)

@@ -20,6 +20,41 @@ def _transition():
     }
 
 
+def _tempo_guardrails():
+    return {
+        "entry_pressure": "林隅正把熄火的探测车拖回仓库。",
+        "dominant_disruption": "冷却管里传出敲击声。",
+        "allowed_viewpoint_misread": "他以为压力阀松了。",
+        "disclosure_cap": 1,
+        "must_remain_unclassified": ["敲击声来源"],
+        "stop_after": "他切断外门电源。",
+    }
+
+
+def _planner_data():
+    return {
+        "scene_goal": "推进异常", "location": "机库", "time": "换班前",
+        "characters": [], "pressure": "即将交班", "turning_point": "敲击声再次出现",
+        "end_condition": "切断电源", "forbidden": [],
+        "causal_transitions": [], "chapter_contract_check": {},
+    }
+
+
+def test_planner_accepts_tempo_guardrails():
+    result = validate_planner_output({**_planner_data(), "tempo_guardrails": _tempo_guardrails()})
+
+    assert result.tempo_guardrails.disclosure_cap == 1
+
+
+@pytest.mark.parametrize("guardrails", [
+    {**_tempo_guardrails(), "disclosure_cap": 2},
+    {key: value for key, value in _tempo_guardrails().items() if key != "stop_after"},
+])
+def test_planner_rejects_invalid_tempo_guardrails(guardrails):
+    with pytest.raises(ValueError, match="PLANNER_OUTPUT_CONTRACT_INVALID"):
+        validate_planner_output({**_planner_data(), "tempo_guardrails": guardrails})
+
+
 def test_planner_normalizes_grouped_forbidden_values():
     data = {
         "scene_goal": "推进线索",

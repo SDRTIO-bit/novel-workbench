@@ -13,6 +13,8 @@ REVISION_OPERATIONS = (
     "project_style_align",
     "withhold_inference",
     "causalize",
+    "de_label",
+    "de_chain",
 )
 
 
@@ -126,6 +128,7 @@ class StageOverrideRequest(BaseModel):
     write_mode: str = ""
     continuation_anchor: str = ""
     current_chapter_text: str = ""
+    tempo_guardrails: dict | None = None
 
 
 class AcceptFinalRequest(BaseModel):

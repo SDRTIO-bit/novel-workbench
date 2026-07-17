@@ -23,6 +23,7 @@ class ContextPreviewRequest(BaseModel):
     critic_report: dict | None = None
     selected_issues: list[dict] = []
     revised_text: str = ""
+    tempo_guardrails: dict | None = None
 
     chapter_function: str = ""
     arc_phase: str = ""

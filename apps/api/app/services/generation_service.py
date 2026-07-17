@@ -289,6 +289,7 @@ class GenerationService:
             critic_report=override.get("critic_report"),
             selected_issues=override.get("selected_issues", []),
             revised_text=override.get("revised_text", ""),
+            tempo_guardrails=override.get("tempo_guardrails"),
             chapter_function=override.get("chapter_function", ""),
             arc_phase=override.get("arc_phase", ""),
             reader_comes_for=override.get("reader_comes_for", ""),
@@ -318,6 +319,9 @@ class GenerationService:
             if prev_stage == "planner":
                 if prev_candidate.parsed_output_json:
                     ctx_req.scene_plan = json.loads(prev_candidate.parsed_output_json)
+                    guardrails = ctx_req.scene_plan.get("tempo_guardrails")
+                    if isinstance(guardrails, dict):
+                        ctx_req.tempo_guardrails = guardrails
             elif prev_stage == "writer":
                 ctx_req.draft_text = prev_candidate.text_output or prev_candidate.raw_response
             elif prev_stage == "critic":

@@ -64,6 +64,10 @@ class ContextService:
             variables["selected_issues"] = ""
 
         variables["revised_text"] = req.revised_text
+        variables["tempo_guardrails"] = (
+            json.dumps(req.tempo_guardrails, ensure_ascii=False, indent=2)
+            if req.tempo_guardrails is not None else ""
+        )
 
         variables["chapter_function"] = req.chapter_function or ""
         variables["arc_phase"] = req.arc_phase or ""
@@ -98,7 +102,7 @@ class ContextService:
 
         untouchable = {"scene_instruction", "run_override", "draft_text", "numbered_draft",
                        "revised_text", "scene_plan", "critic_report", "selected_issues",
-                       "continuation_anchor", "current_chapter_text"}
+                       "continuation_anchor", "current_chapter_text", "tempo_guardrails"}
 
         truncated = False
         sources: list[ContextSource] = []

@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from enum import Enum
-from typing import Any
+from typing import Any, Literal
 from pydantic import BaseModel, Field, field_validator, model_validator
 
 
@@ -140,6 +140,22 @@ class PlannerChapterContractCheck(BaseModel):
     reader_inference_not_pre_resolved: bool = True
 
 
+class TempoGuardrails(BaseModel):
+    entry_pressure: str = Field(min_length=1)
+    dominant_disruption: str = Field(min_length=1)
+    allowed_viewpoint_misread: str = ""
+    disclosure_cap: int = Field(default=1, ge=0, le=1)
+    must_remain_unclassified: list[str] = Field(default_factory=list)
+    stop_after: str = Field(min_length=1)
+
+    @field_validator("must_remain_unclassified")
+    @classmethod
+    def require_non_empty_strings(cls, value):
+        if not all(isinstance(item, str) and item.strip() for item in value):
+            raise ValueError("must_remain_unclassified must contain non-empty strings")
+        return value
+
+
 class PlannerOutput(BaseModel):
     scene_goal: str = ""
     location: str = ""
@@ -151,6 +167,7 @@ class PlannerOutput(BaseModel):
     forbidden: list[str] = []
     causal_transitions: list[CausalTransition] = Field(default_factory=list, max_length=3)
     chapter_contract_check: PlannerChapterContractCheck = Field(default_factory=PlannerChapterContractCheck)
+    tempo_guardrails: TempoGuardrails | None = None
 
     @field_validator("forbidden", mode="before")
     @classmethod
@@ -268,6 +285,16 @@ class ChapterContractCheck(BaseModel):
     target_length_met: bool = True
 
 
+class TempoProfileCheck(BaseModel):
+    starts_in_motion: bool = True
+    disruption_interrupts_action: bool = True
+    viewpoint_misread_is_actionable: bool = True
+    disclosure_cap_respected: bool = True
+    unclassified_facts_preserved: bool = True
+    ending_stops_without_summary: bool = True
+    formulaic_completion_risk: Literal["low", "medium", "high"] = "low"
+
+
 class CriticOutput(BaseModel):
     overall_assessment: str = ""
     decision: str = ""
@@ -276,6 +303,7 @@ class CriticOutput(BaseModel):
     protected_strengths: list[ProtectedStrength] = Field(default_factory=list)
     chapter_contract_check: ChapterContractCheck = Field(default_factory=ChapterContractCheck)
     causal_transition_check: list[CausalTransitionCheck] = Field(default_factory=list)
+    tempo_profile_check: TempoProfileCheck | None = None
 
     @model_validator(mode="after")
     def check_result_consistency(self):
