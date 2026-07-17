@@ -55,6 +55,26 @@ def test_planner_rejects_invalid_tempo_guardrails(guardrails):
         validate_planner_output({**_planner_data(), "tempo_guardrails": guardrails})
 
 
+def test_planner_normalizes_common_real_llm_shape_variants():
+    data = {
+        **_planner_data(),
+        "characters": ["首席维修员林隅", {"name": "门控系统", "goal": "维持门禁"}],
+        "causal_transitions": [{
+            **_transition(),
+            "id": "ct_01",
+            "reader_must_infer": ["敲击声不是普通故障", "林隅不愿深究"],
+        }],
+        "chapter_contract_check": "本章完成异常发现并留下后续问题",
+    }
+
+    result = validate_planner_output(data)
+
+    assert result.characters[0] == {"name": "首席维修员林隅"}
+    assert result.causal_transitions[0].id == "CT01"
+    assert result.causal_transitions[0].reader_must_infer == "敲击声不是普通故障；林隅不愿深究"
+    assert result.chapter_contract_check.function_aligned is True
+
+
 def test_planner_normalizes_grouped_forbidden_values():
     data = {
         "scene_goal": "推进线索",

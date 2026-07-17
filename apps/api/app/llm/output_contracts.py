@@ -135,6 +135,21 @@ class CausalTransition(BaseModel):
     immediate_consequence: str = Field(min_length=1)
     next_constraint: str = Field(min_length=1)
 
+    @field_validator("id", mode="before")
+    @classmethod
+    def normalize_id(cls, value):
+        text = str(value).strip().upper().replace("_", "")
+        if text.startswith("CT") and text[2:].isdigit():
+            return f"CT{int(text[2:]):02d}"
+        return value
+
+    @field_validator("reader_must_infer", mode="before")
+    @classmethod
+    def normalize_reader_inference(cls, value):
+        if isinstance(value, list) and all(isinstance(item, str) for item in value):
+            return "；".join(item.strip() for item in value if item.strip())
+        return value
+
 
 class PlannerChapterContractCheck(BaseModel):
     function_aligned: bool = True
@@ -175,6 +190,22 @@ class PlannerOutput(BaseModel):
     causal_transitions: list[CausalTransition] = Field(default_factory=list, max_length=3)
     chapter_contract_check: PlannerChapterContractCheck = Field(default_factory=PlannerChapterContractCheck)
     tempo_guardrails: TempoGuardrails | None = None
+
+    @model_validator(mode="before")
+    @classmethod
+    def normalize_common_llm_shapes(cls, value):
+        if not isinstance(value, dict):
+            return value
+        normalized = dict(value)
+        characters = normalized.get("characters")
+        if isinstance(characters, list):
+            normalized["characters"] = [
+                {"name": item} if isinstance(item, str) else item
+                for item in characters
+            ]
+        if isinstance(normalized.get("chapter_contract_check"), str):
+            normalized["chapter_contract_check"] = {}
+        return normalized
 
     @field_validator("forbidden", mode="before")
     @classmethod
