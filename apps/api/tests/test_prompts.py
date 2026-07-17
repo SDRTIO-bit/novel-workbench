@@ -87,6 +87,17 @@ class TestPromptList:
         assert "结尾钩子：制造新的" not in text
         assert "{{tempo_guardrails}}" in text
 
+    def test_editor_prompts_preserve_visible_hook_when_cutting_a_summary(self):
+        from app.prompts.defaults import BUILTIN_PROMPTS
+
+        critic = next(item for item in BUILTIN_PROMPTS if item["stage"] == "critic")
+        reviser = next(item for item in BUILTIN_PROMPTS if item["stage"] == "reviser")
+        judge = next(item for item in BUILTIN_PROMPTS if item["stage"] == "judge")
+
+        assert "钩子承载的可见事实" in critic["system_template"]
+        assert "具体可见事实" in reviser["system_template"]
+        assert "角色反应" in judge["system_template"]
+
     def test_list_all_prompts(self, api_client):
         resp = api_client.get("/api/prompts")
         assert resp.status_code == 200
