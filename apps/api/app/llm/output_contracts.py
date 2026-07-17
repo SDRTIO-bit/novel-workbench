@@ -170,6 +170,11 @@ class TempoGuardrails(BaseModel):
     must_remain_unclassified: list[str] = Field(default_factory=list)
     stop_after: str = Field(min_length=1)
 
+    @field_validator("must_remain_unclassified", mode="before")
+    @classmethod
+    def normalize_single_unclassified_fact(cls, value):
+        return [value] if isinstance(value, str) else value
+
     @field_validator("must_remain_unclassified")
     @classmethod
     def require_non_empty_strings(cls, value):

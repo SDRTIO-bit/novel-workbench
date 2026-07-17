@@ -46,6 +46,14 @@ def test_planner_accepts_tempo_guardrails():
     assert result.tempo_guardrails.disclosure_cap == 1
 
 
+def test_planner_normalizes_single_unclassified_fact():
+    guardrails = {**_tempo_guardrails(), "must_remain_unclassified": "敲击声来源"}
+
+    result = validate_planner_output({**_planner_data(), "tempo_guardrails": guardrails})
+
+    assert result.tempo_guardrails.must_remain_unclassified == ["敲击声来源"]
+
+
 @pytest.mark.parametrize("guardrails", [
     {**_tempo_guardrails(), "disclosure_cap": 2},
     {key: value for key, value in _tempo_guardrails().items() if key != "stop_after"},
