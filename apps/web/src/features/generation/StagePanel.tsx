@@ -29,6 +29,8 @@ const REVISION_OPERATION_LABELS: Record<RevisionOperation, string> = {
   project_style_align: '项目文风对齐',
   withhold_inference: '删除解释',
   causalize: '因果化',
+  de_label: '去标签',
+  de_chain: '打断传送带',
 }
 
 export default function StagePanel({ runId, stage, step }: Props) {

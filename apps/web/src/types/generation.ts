@@ -13,6 +13,8 @@ export const REVISION_OPERATIONS = [
   "project_style_align",
   "withhold_inference",
   "causalize",
+  "de_label",
+  "de_chain",
 ] as const;
 
 export type RevisionOperation = (typeof REVISION_OPERATIONS)[number];
