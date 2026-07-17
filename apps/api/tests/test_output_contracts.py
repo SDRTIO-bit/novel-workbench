@@ -146,3 +146,23 @@ def test_reviser_patch_accepts_integer_paragraph_ids():
     result = validate_reviser_output(data)
 
     assert result.patches[0].target_paragraph_ids == ["P071", "P072"]
+
+
+@pytest.mark.parametrize("issue_type, operation", [
+    ("narrator_character_label", "de_label"),
+    ("clue_conveyor_belt", "de_chain"),
+    ("formulaic_escalation", "de_chain"),
+    ("premature_classification", "de_chain"),
+    ("closing_summary_hook", "tighten"),
+])
+def test_critic_accepts_tempo_issue_types(issue_type, operation):
+    result = validate_critic_output({
+        "overall_assessment": "x", "decision": "local_revision", "strengths": [],
+        "protected_strengths": [], "chapter_contract_check": {}, "causal_transition_check": [],
+        "issues": [{
+            "issue_id": "I01", "severity": "medium", "issue_type": issue_type,
+            "paragraph_ids": [1], "problem": "x", "revision_goal": "x",
+            "recommended_operation": operation,
+        }],
+    })
+    assert result.issues[0].issue_type.value == issue_type

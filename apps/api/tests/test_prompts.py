@@ -76,6 +76,17 @@ def _uniq_name(base: str) -> str:
 
 
 class TestPromptList:
+    def test_builtin_writer_uses_scene_responsiveness_not_four_beat_structure(self):
+        from app.prompts.defaults import BUILTIN_PROMPTS
+
+        writer = next(item for item in BUILTIN_PROMPTS if item["stage"] == "writer")
+        text = writer["system_template"] + writer["user_template"]
+        assert "场景响应规则" in text
+        assert "开场钩子：" not in text
+        assert "爽点释放：" not in text
+        assert "结尾钩子：制造新的" not in text
+        assert "{{tempo_guardrails}}" in text
+
     def test_list_all_prompts(self, api_client):
         resp = api_client.get("/api/prompts")
         assert resp.status_code == 200

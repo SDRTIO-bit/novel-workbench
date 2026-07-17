@@ -34,6 +34,7 @@ ALLOWED_VARIABLES = {
     "write_mode",
     "continuation_anchor",
     "current_chapter_text",
+    "tempo_guardrails",
 }
 
 

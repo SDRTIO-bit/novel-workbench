@@ -101,7 +101,7 @@ class TestContextPreview:
             "scene_instruction": "主角在黑暗中醒来",
         })
 
-        assert resp.status_code == 200
+        assert resp.status_code == 200, resp.text
         data = resp.json()
         assert data["input_snapshot_hash"]
         assert len(data["rendered_system_prompt"]) > 0
@@ -152,7 +152,7 @@ class TestContextPreview:
             "tempo_guardrails": guardrails,
         })
 
-        assert resp.status_code == 200
+        assert resp.status_code == 200, resp.text
         data = resp.json()
         assert "tempo_guardrails" in {source["name"] for source in data["sources"]}
 

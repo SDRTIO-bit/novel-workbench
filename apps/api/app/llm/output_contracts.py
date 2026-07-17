@@ -68,6 +68,11 @@ class CriticIssueType(str, Enum):
     technical_exposition_unconverted = "technical_exposition_unconverted"
     consequence_summarized = "consequence_summarized"
     causal_transition_missing = "causal_transition_missing"
+    narrator_character_label = "narrator_character_label"
+    clue_conveyor_belt = "clue_conveyor_belt"
+    formulaic_escalation = "formulaic_escalation"
+    premature_classification = "premature_classification"
+    closing_summary_hook = "closing_summary_hook"
 
 
 class RevisionOperation(str, Enum):
@@ -81,6 +86,8 @@ class RevisionOperation(str, Enum):
     project_style_align = "project_style_align"
     withhold_inference = "withhold_inference"
     causalize = "causalize"
+    de_label = "de_label"
+    de_chain = "de_chain"
 
 
 class ProtectedStrengthType(str, Enum):
