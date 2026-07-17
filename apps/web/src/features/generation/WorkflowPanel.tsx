@@ -5,6 +5,7 @@ import { STAGES } from '../../types'
 import * as runsApi from '../../api/runs'
 import StageStepper from './StageStepper'
 import StagePanel from './StagePanel'
+import DetectorFeedbackPanel from './DetectorFeedbackPanel'
 
 interface Props {
   projectId: string
@@ -45,7 +46,6 @@ export default function WorkflowPanel({ projectId, chapterId, onAccept }: Props)
       runsApi.acceptFinal(runId!, acceptType, finalText),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['run', runId] })
-      setRunId(null)
       setManualMode({ show: false, defaultText: '' })
       setManualText('')
       onAccept()
@@ -120,7 +120,8 @@ export default function WorkflowPanel({ projectId, chapterId, onAccept }: Props)
       </div>
 
       {renderJudgeVerdict(run)}
-      {writerHasOutput(run) && (
+      <DetectorFeedbackPanel projectId={projectId} chapterId={chapterId} run={run} />
+      {writerHasOutput(run) && !run.accepted_version_id && (
         <AcceptChoices
           run={run}
           acceptMutation={acceptMutation}

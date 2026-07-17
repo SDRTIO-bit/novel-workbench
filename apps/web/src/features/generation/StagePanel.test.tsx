@@ -65,6 +65,17 @@ function renderPanel() {
   )
 }
 
+function renderStage(stage: GenerationStep['stage'], step: GenerationStep) {
+  const queryClient = new QueryClient({
+    defaultOptions: { queries: { retry: false } },
+  })
+  return render(
+    <QueryClientProvider client={queryClient}>
+      <StagePanel runId="run-1" stage={stage} step={step} />
+    </QueryClientProvider>,
+  )
+}
+
 describe('StagePanel revision operations', () => {
   beforeEach(() => {
     vi.mocked(runsApi.selectIssues).mockReset()
@@ -94,5 +105,61 @@ describe('StagePanel revision operations', () => {
         operation_by_issue: { I01: 'voice_align' },
       })
     })
+  })
+
+  it('renders a planner causal transition as a readable card', () => {
+    const plannerStep: GenerationStep = {
+      ...criticStep,
+      id: 'planner-step',
+      stage: 'planner',
+      candidates: [{
+        ...criticStep.candidates[0],
+        id: 'planner-candidate',
+        step_id: 'planner-step',
+        parsed_output_json: JSON.stringify({
+          causal_transitions: [{
+            id: 'CT01',
+            kind: 'evidence_to_action',
+            visible_trigger: '接线盒上出现 GR-0713。',
+            character_next_action: '陆衡转头询问许栀父亲的名字。',
+            reader_must_infer: '编号与未来工单有关。',
+            narrator_must_not_state: ['两个编号相同。'],
+            immediate_consequence: '许栀开始警惕。',
+            next_constraint: '陆衡不能泄露工单。',
+          }],
+        }),
+      }],
+    }
+
+    renderStage('planner', plannerStep)
+
+    expect(screen.getByText(/证据 → 行动/)).toBeTruthy()
+    expect(screen.getAllByText(/接线盒上出现 GR-0713。/).length).toBeGreaterThan(1)
+    expect(screen.getByText(/留给读者的推论/)).toBeTruthy()
+  })
+
+  it('shows a Judge warning when revision loses necessary information', () => {
+    const judgeStep: GenerationStep = {
+      ...criticStep,
+      id: 'judge-step',
+      stage: 'judge',
+      candidates: [{
+        ...criticStep.candidates[0],
+        id: 'judge-candidate',
+        step_id: 'judge-step',
+        parsed_output_json: JSON.stringify({
+          decision: 'accept_original',
+          necessary_information_lost: true,
+          reader_inference_preserved: false,
+          decision_consequence_preserved: false,
+          narrator_management_reduced: true,
+          causal_transition_results: [],
+        }),
+      }],
+    }
+
+    renderStage('judge', judgeStep)
+
+    expect(screen.getByText('修订稿丢失必要信息')).toBeTruthy()
   })
 })

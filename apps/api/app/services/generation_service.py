@@ -12,6 +12,7 @@ from app.schemas.context import ContextPreviewRequest
 from app.schemas.generation import REVISION_OPERATIONS
 from app.llm.base import LlmRequest
 from app.llm.parser import parse_json
+from app.llm.output_contracts import validate_stage_output
 from app.models.generation import GenerationRun
 
 
@@ -153,29 +154,33 @@ class GenerationService:
             if stage != "writer":
                 parsed = parse_json(raw_response)
                 if parsed.valid:
-                    parsed_output_json = json.dumps(parsed.data, ensure_ascii=False)
-                    text_output = raw_response
-                    if stage == "reviser" and isinstance(parsed.data, dict):
-                        revised_text = parsed.data.get("revised_text", "")
-                        if revised_text and revised_text.strip():
-                            text_output = revised_text
-                        else:
-                            error_code = "REVISER_OUTPUT_INVALID"
-                            error_message = "Reviser returned valid JSON but missing or empty 'revised_text'. The candidate cannot be used."
-                            step.status = "failed"
-                            run.status = "completed"
-                    elif stage == "judge" and isinstance(parsed.data, dict):
-                        judge_decision = parsed.data.get("decision", "")
-                        if not judge_decision:
-                            error_code = "JUDGE_OUTPUT_INVALID"
-                            error_message = f"Judge response missing 'decision' field. Got keys: {list(parsed.data.keys())}"
-                            step.status = "failed"
-                            run.status = "completed"
-                        elif judge_decision == "accept_merged" and not parsed.data.get("final_text", "").strip():
-                            error_code = "JUDGE_OUTPUT_INVALID"
-                            error_message = "Judge returned 'accept_merged' but 'final_text' is empty."
-                            step.status = "failed"
-                            run.status = "completed"
+                    try:
+                        validated = validate_stage_output(stage, parsed.data)
+                        parsed_output_json = json.dumps(validated, ensure_ascii=False)
+                    except ValueError as ve:
+                        stage_upper = stage.upper()
+                        error_code = f"{stage_upper}_OUTPUT_CONTRACT_INVALID"
+                        error_message = str(ve)
+                        step.status = "failed"
+                        run.status = "completed"
+                    else:
+                        text_output = raw_response
+                        if stage == "reviser":
+                            revised_text = validated.get("revised_text", "")
+                            if revised_text and revised_text.strip():
+                                text_output = revised_text
+                            else:
+                                error_code = "REVISER_OUTPUT_INVALID"
+                                error_message = "Reviser returned valid JSON but missing or empty 'revised_text'. The candidate cannot be used."
+                                step.status = "failed"
+                                run.status = "completed"
+                        elif stage == "judge":
+                            judge_decision = validated.get("decision", "")
+                            if not judge_decision:
+                                error_code = "JUDGE_OUTPUT_INVALID"
+                                error_message = f"Judge response missing 'decision' field. Got keys: {list(validated.keys())}"
+                                step.status = "failed"
+                                run.status = "completed"
                 else:
                     error_code = "STRUCTURED_OUTPUT_INVALID"
                     error_message = parsed.error or "无法解析结构化输出"
@@ -512,6 +517,9 @@ class GenerationService:
             generation_candidate_id=candidate_ref,
         )
         self.session.add(version)
+        # SQLAlchemy applies the UUID default during flush, so materialize the
+        # version id before storing it on the run record.
+        await self.session.flush()
         chapter.current_text = final_text
         chapter.updated_at = datetime.now(timezone.utc).replace(tzinfo=None)
         run.status = "completed"

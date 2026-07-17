@@ -7,6 +7,10 @@ export type {
   GenerationRunList,
   SelectIssues,
   CreateRun,
+  DetectorSpan,
+  DetectorFeedback,
+  DetectorFeedbackCreate,
+  DetectorFeedbackUpdate,
 } from "./generation";
 
 export { STAGES, STAGE_LABELS } from "./generation";

@@ -1,0 +1,148 @@
+{
+  "started_at": "2026-07-17T14:08:24",
+  "project_id": "f6d07df4-002d-44ed-82a6-19f3dc1d3c98",
+  "chapter_id": "31031f88-3058-4d8c-984b-2d0d84e31d92",
+  "provider": "DeepSeek",
+  "model": "deepseek-chat",
+  "workflow_id": "d63c9534-6779-44f0-8cf5-8d83a00043e0",
+  "attempts": [
+    {
+      "attempt": "resume",
+      "run_id": "fa3d888d-adf7-40c4-9eff-fabd70fd568f",
+      "stages": {
+        "planner": {
+          "candidate_id": "0147463d-ec87-411a-9e22-5729cfe952bb",
+          "reused": true
+        },
+        "writer": {
+          "candidate_id": "f9064cb3-8a6c-45a0-9455-b96be698ca0d",
+          "reused": true
+        },
+        "critic": {
+          "candidate_id": "38b7fba6-f892-4bd4-a054-362d58e9e5fa",
+          "latency_ms": 164975,
+          "input_tokens": 6670,
+          "output_tokens": 9324,
+          "reused": true
+        },
+        "reviser": {
+          "candidate_id": "d81872f7-6a62-411f-8dbc-c5cb780371a1",
+          "latency_ms": 26437,
+          "input_tokens": 6424,
+          "output_tokens": 3898,
+          "reused": false
+        },
+        "judge": {
+          "candidate_id": "51367668-2e86-4833-829b-f2a38841a814",
+          "latency_ms": 29392,
+          "input_tokens": 10408,
+          "output_tokens": 4196,
+          "reused": false
+        }
+      },
+      "causal_transitions": [
+        {
+          "id": "CT01",
+          "kind": "evidence_to_action",
+          "visible_trigger": "陆衡拆开步道接线盒，在阵列排线内侧看到一片用绝缘胶带贴着的旧标签，上手写体‘GR-0713’，墨迹已褪色。",
+          "character_next_action": "他停下手，转向身旁的许栀，语气平静地问：‘你父亲叫什么？’",
+          "reader_must_infer": "陆衡意识到手写编号与任务工单前缀一致，且出现在禁区的非标位置，怀疑与对方的寻找有关，所以用问题试探联系，而不直接暴露工单信息。",
+          "narrator_must_not_state": [
+            "陆衡内心立刻将编号与许明远直接关联。",
+            "陆衡断定手写编号即是许明远所留。"
+          ],
+          "immediate_consequence": "许栀眼神一震，犹豫后低声答出‘许明远’，证实了陆衡的猜想，也让她对陆衡产生警惕与好奇，两人间形成一种紧绷的默契。",
+          "next_constraint": "陆衡必须在维修同时避免刺激许栀，且不能泄露工单异常；许栀开始戒备，不再轻易透露线索，双方进入有限信息交换状态。"
+        },
+        {
+          "id": "CT02",
+          "kind": "constraint_to_choice",
+          "visible_trigger": "重力节点嗡鸣骤停，步道三段悬浮板突然失重上飘，许栀脚下的维修踏板翻翘，她被甩出扶手之外，仅用指尖勾住外侧结构。",
+          "character_next_action": "陆衡用磁力扣锁住立柱，快速扫过承重数据，对许栀喊：‘松手！掉下去磁力扣会捕获你，抓着我俩都会割断缆绳！’",
+          "reader_must_infer": "陆衡的指令基于实时承重计算和下方备用磁力场的覆盖范围，他选择可信度最低但生存率最高的方案；松手后垂直坠落会被磁力场缓冲，而缆绳超载断裂将无人生还。",
+          "narrator_must_not_state": [
+            "陆衡的详细计算公式或磁力场激活参数。",
+            "陆衡内心对许栀是否会因松手而致死的犹豫或情绪挣扎。"
+          ],
+          "immediate_consequence": "许栀闭眼松手，身体被下方磁力场捕获后减速，撞在维修平台底部缓冲垫上；陆衡随后调整缆绳，降下将她拉回安全位置。",
+          "next_constraint": "逃生后许栀对陆衡的判断半信半疑，两人需重新建立最低信任；步道结构损坏导致维修复杂度剧增，陆衡不得不请求中心支援，从而触发更多内部审查与关注，压缩了他秘密追查的空间。"
+        }
+      ],
+      "accepted": true,
+      "critic_decision": "local_revision",
+      "critic_issue_ids": [
+        "I01",
+        "I02",
+        "I03"
+      ],
+      "causal_transition_check": [
+        {
+          "transition_id": "CT01",
+          "trigger_visible": true,
+          "next_action_changed": true,
+          "reader_inference_withheld": true,
+          "forbidden_explanation_found": [],
+          "consequence_visible": true,
+          "next_constraint_preserved": true,
+          "paragraph_ids": [
+            "P010",
+            "P020",
+            "P031"
+          ],
+          "result": "pass",
+          "comment": "转折核心有效，许栀的反应证实了陆衡的猜想；后续P029-P030的旁白补充略微削弱了整体推断空间，建议精简。"
+        },
+        {
+          "transition_id": "CT02",
+          "trigger_visible": true,
+          "next_action_changed": true,
+          "reader_inference_withheld": true,
+          "forbidden_explanation_found": [],
+          "consequence_visible": true,
+          "next_constraint_preserved": true,
+          "paragraph_ids": [
+            "P057",
+            "P067",
+            "P074",
+            "P076"
+          ],
+          "result": "pass",
+          "comment": "救援动作和后果呈现充分，但P071的旁白对真实判断的提示削弱了读者自行推断的空间，建议删除或改为更隐晦的暗示。"
+        }
+      ],
+      "judge_decision": "accept_merged",
+      "judge_quality_score": 85,
+      "judge_causal_transition_results": [
+        {
+          "transition_id": "CT01",
+          "original_status": "pass",
+          "revision_status": "pass",
+          "preferred_version": "original",
+          "comment": "修订稿删除了P030中关于工单前缀的内心独白，但P029的保留仍削弱了推断空间，建议保留原稿的完整推断链以维持角色动机的清晰度。"
+        },
+        {
+          "transition_id": "CT02",
+          "original_status": "pass",
+          "revision_status": "pass",
+          "preferred_version": "revision",
+          "comment": "修订稿删除了P071中'他在说谎'的旁白，改为'他在赌'，保留了读者对陆衡真实考量的推断空间，提升了紧张感。"
+        }
+      ],
+      "accepted_type": "judge",
+      "accepted_version_number": 1
+    }
+  ],
+  "finished_at": "2026-07-17T14:09:20",
+  "external_detector_feedback": {
+    "feedback_id": "b981a768-6e4d-4eea-ac8f-6b3a05619022",
+    "detector_name": "特邀测试",
+    "chapter_version_id": "644e0bff-eebb-4de2-ac22-fa473f715735",
+    "human_ratio": 0,
+    "suspected_ai_ratio": 0,
+    "ai_ratio": 100,
+    "spans": [],
+    "source": "user_reported_external_result",
+    "automatic_rewrite_triggered": false,
+    "conclusion": "The causal-transition detector-improvement hypothesis is not supported for this sample."
+  }
+}

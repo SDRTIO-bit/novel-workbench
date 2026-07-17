@@ -11,6 +11,8 @@ REVISION_OPERATIONS = (
     "rhythm_adjust",
     "diction_refine",
     "project_style_align",
+    "withhold_inference",
+    "causalize",
 )
 
 
@@ -73,6 +75,7 @@ class RunSchema(BaseModel):
     status: str
     accepted_at: datetime | None = None
     accepted_type: str | None = None
+    accepted_version_id: str | None = None
     steps: list[StepSchema] = []
     created_at: datetime
     updated_at: datetime

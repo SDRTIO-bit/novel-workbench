@@ -15,6 +15,7 @@ import app.models.prompt  # noqa: F401
 import app.models.provider  # noqa: F401
 import app.models.workflow  # noqa: F401
 import app.models.generation  # noqa: F401
+import app.models.detector_feedback  # noqa: F401
 
 
 @asynccontextmanager
@@ -62,6 +63,7 @@ from app.routers.providers import router as providers_router  # noqa: E402
 from app.routers.workflows import router as workflows_router  # noqa: E402
 from app.routers.context import router as context_router  # noqa: E402
 from app.routers.runs import router as runs_router  # noqa: E402
+from app.routers.detector_feedbacks import router as detector_feedbacks_router  # noqa: E402
 
 app.include_router(projects_router)
 app.include_router(chapters_router)
@@ -71,6 +73,7 @@ app.include_router(providers_router)
 app.include_router(workflows_router)
 app.include_router(context_router)
 app.include_router(runs_router)
+app.include_router(detector_feedbacks_router)
 
 app.mount("/mcp", mcp_http_app)
 

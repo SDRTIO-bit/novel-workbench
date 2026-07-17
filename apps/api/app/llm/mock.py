@@ -68,7 +68,7 @@ class MockClient(BaseLlmClient):
             return json.dumps({
                 "scene_goal": goal,
                 "location": loc,
-                "start_time": "黄昏" if is_twilight else "深夜",
+                "time": "黄昏" if is_twilight else "深夜",
                 "characters": chars or [
                     {"name": "主角", "goal": "推进故事", "known": ["当前处境"], "unknown": ["对方身份", "隐藏的真相"], "mistaken_beliefs": ["事情会按预期发展"], "constraints": ["不能暴露意图"]}
                 ],
@@ -76,6 +76,28 @@ class MockClient(BaseLlmClient):
                 "turning_point": "小女孩开口说第一句话" if "老陈" in up else "一个意外的眼神交汇",
                 "end_condition": "建立了最初的信任" if "老陈" in up else "雨停了",
                 "forbidden": ["不能煽情", "不能用巧合解决冲突"],
+                "causal_transitions": [
+                    {
+                        "id": "CT01",
+                        "kind": "evidence_to_action",
+                        "visible_trigger": "书店铜铃响起，门口出现一个红着眼眶的小女孩",
+                        "character_next_action": "老陈用最平常的语气请她进来坐",
+                        "reader_must_infer": "老陈看出女孩需要安全感，选择用日常感而非直接询问来安抚",
+                        "narrator_must_not_state": ["老陈判断女孩需要安全感", "这是最好的处理方式"],
+                        "immediate_consequence": "女孩跨过门槛，阿橘走到她脚边坐下",
+                        "next_constraint": "老陈还不知道女孩为什么哭以及她从哪里来"
+                    }
+                ],
+                "chapter_contract_check": {
+                    "function_aligned": True,
+                    "must_deliver_covered": True,
+                    "must_not_deliver_respected": True,
+                    "main_change_enabled": True,
+                    "main_payoff_prepared": True,
+                    "ending_hook_established": True,
+                    "causal_transitions_grounded": True,
+                    "reader_inference_not_pre_resolved": True
+                },
             }, ensure_ascii=False)
 
         # Writer → narrative prose (returns text, not JSON)
@@ -141,14 +163,31 @@ class MockClient(BaseLlmClient):
                 "decision": "local_revision",
                 "chapter_contract_check": {
                     "chapter_function_delivered": True,
-                    "reader_comes_for_delivered": True,
-                    "must_deliver_delivered": True,
+                    "must_deliver_satisfied": True,
+                    "must_not_deliver_respected": True,
+                    "main_change_advanced": True,
                     "main_payoff_delivered": True,
                     "ending_hook_set": True,
-                    "notes": "所有契约要求均已满足",
+                    "fuel_reserved": True,
+                    "target_length_met": True,
                 },
                 "protected_strengths": [
-                    {"paragraph_ids": ["P001", "P002"], "reason": "黄昏氛围的描写已臻完美，情绪基调准确，不应修改"},
+                    {"paragraph_ids": ["P001", "P002"], "reason": "黄昏氛围的描写已臻完美，情绪基调准确，不应修改", "strength_type": "scene_specific_detail"},
+                    {"paragraph_ids": ["P005", "P006"], "reason": "证据到行动的因果链完整，读者推理空间保留良好", "strength_type": "reader_inference_gap"},
+                ],
+                "causal_transition_check": [
+                    {
+                        "transition_id": "CT01",
+                        "trigger_visible": True,
+                        "next_action_changed": True,
+                        "reader_inference_withheld": True,
+                        "forbidden_explanation_found": [],
+                        "consequence_visible": True,
+                        "next_constraint_preserved": True,
+                        "paragraph_ids": [21, 22, 23, 24, 25],
+                        "result": "pass",
+                        "comment": "编号并列出现后，人物直接改变提问，叙述者没有解释编号关系。"
+                    }
                 ],
             }, ensure_ascii=False)
 
@@ -163,6 +202,15 @@ class MockClient(BaseLlmClient):
                 "revised_text": "黄昏的光从梧桐叶的缝隙里漏进来...(修订后的完整文本)...",
                 "unchanged_ratio": 0.88,
                 "introduced_facts": [],
+                "contract_verification": {
+                    "chapter_function_preserved": True,
+                    "must_deliver_preserved": True,
+                    "must_not_deliver_respected": True,
+                    "main_change_preserved": True,
+                    "main_payoff_preserved": True,
+                    "ending_hook_preserved": True,
+                    "fuel_remains_reserved": True,
+                },
             }, ensure_ascii=False)
 
         # Judge → final verdict
@@ -178,16 +226,29 @@ class MockClient(BaseLlmClient):
                 ],
                 "new_problems": [],
                 "final_text": "（合并修订后的完整文本）",
-                "quality_score": 8.5,
+                "quality_score": 85,
                 "revision_became_cleaner_but_flatter": False,
                 "author_intent_preserved": True,
                 "chapter_contract_completed": True,
                 "main_payoff_preserved": True,
                 "state_patch": {
                     "facts_added": ["老陈的妻子喜欢慢读书"],
-                    "relationship_changes": ["老陈与小满的距离缩短了一步"],
-                    "unresolved_threads": ["小满的妈妈何时来接她"],
+                    "relationships_changed": ["老陈与小满的距离缩短了一步"],
+                    "threads_carry_forward": ["小满的妈妈何时来接她"],
                 },
+                "reader_inference_preserved": True,
+                "decision_consequence_preserved": True,
+                "narrator_management_reduced": True,
+                "necessary_information_lost": False,
+                "causal_transition_results": [
+                    {
+                        "transition_id": "CT01",
+                        "original_status": "pass",
+                        "revision_status": "pass",
+                        "preferred_version": "revision",
+                        "comment": "修订丰富了细节，因果链推理空间未受破坏。"
+                    }
+                ],
             }, ensure_ascii=False)
 
         return "这是模拟的章节正文内容。故事从这里开始展开..."

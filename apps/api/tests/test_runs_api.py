@@ -23,6 +23,7 @@ def _setup():
     import app.models.provider
     import app.models.workflow
     import app.models.generation
+    import app.models.detector_feedback
 
     from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker, AsyncSession
     from app.db import Base
@@ -353,6 +354,10 @@ class TestFullWorkflow:
         assert versions[-1]["text"] == writer_text
         assert versions[-1]["source"] == "original"
 
+        resp = await api_client.get(f"/api/runs/{run_id}")
+        assert resp.status_code == 200
+        assert resp.json()["accepted_version_id"] == versions[-1]["id"]
+
     @pytest.mark.asyncio
     async def test_accept_idempotent(self, api_client):
         project_id = await _create_project(api_client)
@@ -403,3 +408,200 @@ class TestFullWorkflow:
             "accept_type": "original",
         })
         assert resp.status_code == 400
+
+    @pytest.mark.asyncio
+    async def test_detector_feedback_accepts_candidate_owned_by_project(self, api_client):
+        run_id = await _run_to_selected_critic(api_client)
+        run = (await api_client.get(f"/api/runs/{run_id}")).json()
+        writer = next(step for step in run["steps"] if step["stage"] == "writer")
+
+        response = await api_client.post(
+            "/api/detector-feedbacks",
+            json={
+                "project_id": run["project_id"],
+                "chapter_id": run["chapter_id"],
+                "run_id": run_id,
+                "candidate_id": writer["selected_candidate_id"],
+                "detector_name": "测试检测器",
+                "human_ratio": 25,
+                "suspected_ai_ratio": 75,
+                "ai_ratio": 0,
+                "spans": [],
+            },
+        )
+
+        assert response.status_code == 201
+        assert response.json()["candidate_id"] == writer["selected_candidate_id"]
+
+    @pytest.mark.asyncio
+    async def test_detector_feedback_rejects_span_beyond_referenced_candidate(self, api_client):
+        run_id = await _run_to_selected_critic(api_client)
+        run = (await api_client.get(f"/api/runs/{run_id}")).json()
+        writer = next(step for step in run["steps"] if step["stage"] == "writer")
+
+        response = await api_client.post(
+            "/api/detector-feedbacks",
+            json={
+                "project_id": run["project_id"],
+                "chapter_id": run["chapter_id"],
+                "run_id": run_id,
+                "candidate_id": writer["selected_candidate_id"],
+                "detector_name": "测试检测器",
+                "human_ratio": 100,
+                "suspected_ai_ratio": 0,
+                "ai_ratio": 0,
+                "spans": [{"start_paragraph": 99, "end_paragraph": 100}],
+            },
+        )
+
+        assert response.status_code == 400
+        assert response.json()["error"]["code"] == "SPAN_OUT_OF_RANGE"
+
+    @pytest.mark.asyncio
+    async def test_detector_feedback_patch_revalidates_merged_ratios(self, api_client):
+        run_id = await _run_to_selected_critic(api_client)
+        run = (await api_client.get(f"/api/runs/{run_id}")).json()
+        writer = next(step for step in run["steps"] if step["stage"] == "writer")
+        created = await api_client.post(
+            "/api/detector-feedbacks",
+            json={
+                "project_id": run["project_id"],
+                "chapter_id": run["chapter_id"],
+                "run_id": run_id,
+                "candidate_id": writer["selected_candidate_id"],
+                "detector_name": "测试检测器",
+                "human_ratio": 50,
+                "suspected_ai_ratio": 25,
+                "ai_ratio": 25,
+                "spans": [],
+            },
+        )
+        assert created.status_code == 201
+
+        response = await api_client.patch(
+            f"/api/detector-feedbacks/{created.json()['id']}",
+            json={"ai_ratio": 60},
+        )
+
+        assert response.status_code == 400
+        assert response.json()["error"]["code"] == "INVALID_RATIO_TOTAL"
+
+    @pytest.mark.asyncio
+    async def test_detector_feedback_can_be_listed_updated_and_deleted(self, api_client):
+        run_id = await _run_to_selected_critic(api_client)
+        run = (await api_client.get(f"/api/runs/{run_id}")).json()
+        writer = next(step for step in run["steps"] if step["stage"] == "writer")
+        created = await api_client.post(
+            "/api/detector-feedbacks",
+            json={
+                "project_id": run["project_id"],
+                "chapter_id": run["chapter_id"],
+                "run_id": run_id,
+                "candidate_id": writer["selected_candidate_id"],
+                "detector_name": "初次检测",
+                "human_ratio": 0,
+                "suspected_ai_ratio": 0,
+                "ai_ratio": 100,
+                "spans": [],
+                "notes": "外部检测原始结果",
+            },
+        )
+        assert created.status_code == 201
+        feedback_id = created.json()["id"]
+
+        listed = await api_client.get(
+            "/api/detector-feedbacks",
+            params={"project_id": run["project_id"], "chapter_id": run["chapter_id"]},
+        )
+        assert listed.status_code == 200
+        assert feedback_id in [item["id"] for item in listed.json()]
+
+        updated = await api_client.patch(
+            f"/api/detector-feedbacks/{feedback_id}",
+            json={"detector_name": "复核检测", "notes": "已人工复核"},
+        )
+        assert updated.status_code == 200
+        assert updated.json()["detector_name"] == "复核检测"
+        assert updated.json()["ai_ratio"] == 100
+
+        deleted = await api_client.delete(f"/api/detector-feedbacks/{feedback_id}")
+        assert deleted.status_code == 200
+        assert deleted.json() == {"status": "ok"}
+        listed_after_delete = await api_client.get(
+            "/api/detector-feedbacks",
+            params={"project_id": run["project_id"], "chapter_id": run["chapter_id"]},
+        )
+        assert feedback_id not in [item["id"] for item in listed_after_delete.json()]
+
+    @pytest.mark.asyncio
+    async def test_detector_feedback_accepts_judge_final_text_span(self, api_client):
+        run_id = await _run_to_selected_critic(api_client)
+        selected = await api_client.post(
+            f"/api/runs/{run_id}/critic/select-issues",
+            json={"issue_ids": ["I01"]},
+        )
+        assert selected.status_code == 200
+        reviser = await api_client.post(f"/api/runs/{run_id}/steps/reviser/execute", json={})
+        assert reviser.status_code == 200
+        assert (await api_client.post(f"/api/runs/{run_id}/steps/reviser/select/{reviser.json()['id']}")).status_code == 200
+        judge = await api_client.post(f"/api/runs/{run_id}/steps/judge/execute", json={})
+        assert judge.status_code == 200
+        assert (await api_client.post(f"/api/runs/{run_id}/steps/judge/select/{judge.json()['id']}")).status_code == 200
+        run = (await api_client.get(f"/api/runs/{run_id}")).json()
+        judge_step = next(step for step in run["steps"] if step["stage"] == "judge")
+
+        response = await api_client.post(
+            "/api/detector-feedbacks",
+            json={
+                "project_id": run["project_id"],
+                "chapter_id": run["chapter_id"],
+                "run_id": run_id,
+                "candidate_id": judge_step["selected_candidate_id"],
+                "detector_name": "测试检测器",
+                "human_ratio": 100,
+                "suspected_ai_ratio": 0,
+                "ai_ratio": 0,
+                "spans": [{"start_paragraph": 1, "end_paragraph": 1}],
+            },
+        )
+
+        assert response.status_code == 201
+
+    @pytest.mark.asyncio
+    async def test_detector_feedback_records_full_ai_result_for_accepted_version(self, api_client):
+        project_id = await _create_project(api_client)
+        chapter_id = await _create_chapter(api_client, project_id)
+        run = await api_client.post("/api/runs", json={
+            "project_id": project_id,
+            "chapter_id": chapter_id,
+            "scene_instruction": "生成可采用初稿",
+        })
+        run_id = run.json()["id"]
+        planner = await api_client.post(f"/api/runs/{run_id}/steps/planner/execute", json={})
+        await api_client.post(f"/api/runs/{run_id}/steps/planner/select/{planner.json()['id']}")
+        writer = await api_client.post(f"/api/runs/{run_id}/steps/writer/execute", json={})
+        await api_client.post(f"/api/runs/{run_id}/steps/writer/select/{writer.json()['id']}")
+        accepted = await api_client.post(f"/api/runs/{run_id}/accept", json={"accept_type": "original"})
+        assert accepted.status_code == 200
+        accepted_version_id = (await api_client.get(f"/api/runs/{run_id}")).json()["accepted_version_id"]
+        assert accepted_version_id
+
+        recorded = await api_client.post(
+            "/api/detector-feedbacks",
+            json={
+                "project_id": project_id,
+                "chapter_id": chapter_id,
+                "run_id": run_id,
+                "chapter_version_id": accepted_version_id,
+                "detector_name": "特邀测试",
+                "human_ratio": 0,
+                "suspected_ai_ratio": 0,
+                "ai_ratio": 100,
+                "spans": [],
+                "notes": "保留外部结果，不触发自动改稿",
+            },
+        )
+
+        assert recorded.status_code == 201
+        assert recorded.json()["chapter_version_id"] == accepted_version_id
+        assert recorded.json()["ai_ratio"] == 100

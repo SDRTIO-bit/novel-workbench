@@ -11,6 +11,8 @@ export const REVISION_OPERATIONS = [
   "rhythm_adjust",
   "diction_refine",
   "project_style_align",
+  "withhold_inference",
+  "causalize",
 ] as const;
 
 export type RevisionOperation = (typeof REVISION_OPERATIONS)[number];
@@ -83,10 +85,54 @@ export interface GenerationRun {
   workflow_profile_id?: string;
   scene_instruction: string;
   status: string;
+  accepted_at?: string;
+  accepted_type?: string;
+  accepted_version_id?: string;
   created_at: string;
   updated_at: string;
   steps: GenerationStep[];
 }
+
+export interface DetectorSpan {
+  label: string;
+  start_paragraph: number;
+  end_paragraph: number;
+  transition_ids: string[];
+  excerpt: string;
+}
+
+export interface DetectorFeedback {
+  id: string;
+  project_id: string;
+  chapter_id?: string | null;
+  run_id?: string | null;
+  candidate_id?: string | null;
+  chapter_version_id?: string | null;
+  detector_name: string;
+  human_ratio?: number | null;
+  suspected_ai_ratio?: number | null;
+  ai_ratio?: number | null;
+  spans_json: string;
+  notes: string;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface DetectorFeedbackCreate {
+  project_id: string;
+  chapter_id?: string;
+  run_id?: string;
+  candidate_id?: string;
+  chapter_version_id?: string;
+  detector_name: string;
+  human_ratio?: number;
+  suspected_ai_ratio?: number;
+  ai_ratio?: number;
+  spans: DetectorSpan[];
+  notes?: string;
+}
+
+export type DetectorFeedbackUpdate = Omit<DetectorFeedbackCreate, 'project_id' | 'chapter_id' | 'run_id' | 'candidate_id' | 'chapter_version_id'>;
 
 export interface GenerationRunList {
   id: string;

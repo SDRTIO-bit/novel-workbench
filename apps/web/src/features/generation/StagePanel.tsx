@@ -27,6 +27,8 @@ const REVISION_OPERATION_LABELS: Record<RevisionOperation, string> = {
   rhythm_adjust: '节奏校准',
   diction_refine: '用词校准',
   project_style_align: '项目文风对齐',
+  withhold_inference: '删除解释',
+  causalize: '因果化',
 }
 
 export default function StagePanel({ runId, stage, step }: Props) {
@@ -102,6 +104,7 @@ export default function StagePanel({ runId, stage, step }: Props) {
 
   const selectedCandidate = step.candidates.find((c) => c.is_selected)
   const issues = stage === 'critic' ? parseIssues(selectedCandidate) : null
+  const structuredOutput = parseStructuredOutput(selectedCandidate)
 
   useEffect(() => {
     setSelectedIssues(new Set())
@@ -151,6 +154,8 @@ export default function StagePanel({ runId, stage, step }: Props) {
         className="w-full px-3 py-1.5 text-xs border border-gray-200 rounded-lg resize-none focus:outline-none focus:ring-1 focus:ring-indigo-400 mb-3"
         rows={2}
       />
+
+      {structuredOutput && <CausalSummary stage={stage} output={structuredOutput} />}
 
       {showAdvanced && (
         <div className="mb-3 p-3 border border-gray-200 rounded-lg bg-gray-50">
@@ -385,3 +390,89 @@ function parseIssues(candidate?: GenerationCandidate): { id: string; description
 function isRevisionOperation(value: unknown): value is RevisionOperation {
   return typeof value === 'string' && (REVISION_OPERATIONS as readonly string[]).includes(value)
 }
+
+function parseStructuredOutput(candidate?: GenerationCandidate): Record<string, unknown> | null {
+  if (!candidate?.parsed_output_json) return null
+  try {
+    const parsed = typeof candidate.parsed_output_json === 'string'
+      ? JSON.parse(candidate.parsed_output_json)
+      : candidate.parsed_output_json
+    return parsed && typeof parsed === 'object' && !Array.isArray(parsed)
+      ? parsed as Record<string, unknown>
+      : null
+  } catch {
+    return null
+  }
+}
+
+function CausalSummary({ stage, output }: { stage: Stage; output: Record<string, unknown> }) {
+  if (stage === 'planner') return <PlannerCausalCards transitions={asRecords(output.causal_transitions)} />
+  if (stage === 'critic') return <CriticCausalAudit checks={asRecords(output.causal_transition_check)} protectedStrengths={asRecords(output.protected_strengths)} />
+  if (stage === 'judge') return <JudgeCausalVerdict output={output} />
+  return null
+}
+
+function PlannerCausalCards({ transitions }: { transitions: Record<string, unknown>[] }) {
+  if (transitions.length === 0) return null
+  return (
+    <section className="mb-3 rounded-lg border border-indigo-200 bg-indigo-50 p-2">
+      <p className="mb-2 text-xs font-medium text-indigo-800">因果转折</p>
+      <div className="space-y-2">
+        {transitions.map((transition, index) => {
+          const kind = String(transition.kind ?? '')
+          return (
+            <div key={String(transition.id ?? index)} className="rounded border border-indigo-100 bg-white p-2 text-xs text-gray-700">
+              <p className="font-medium text-indigo-700">{kind === 'evidence_to_action' ? '证据 → 行动' : '约束 → 选择'} {transition.id ? `· ${String(transition.id)}` : ''}</p>
+              <CausalLine label="可见触发" value={transition.visible_trigger} />
+              <CausalLine label="人物下一步" value={transition.character_next_action} />
+              <CausalLine label="留给读者的推论" value={transition.reader_must_infer} />
+              <CausalLine label="立即后果" value={transition.immediate_consequence} />
+              <CausalLine label="新约束" value={transition.next_constraint} />
+            </div>
+          )
+        })}
+      </div>
+    </section>
+  )
+}
+
+function CriticCausalAudit({ checks, protectedStrengths }: { checks: Record<string, unknown>[]; protectedStrengths: Record<string, unknown>[] }) {
+  if (checks.length === 0 && protectedStrengths.length === 0) return null
+  return (
+    <section className="mb-3 rounded-lg border border-emerald-200 bg-emerald-50 p-2 text-xs">
+      {checks.length > 0 && <>
+        <p className="mb-1 font-medium text-emerald-800">因果转折审计</p>
+        {checks.map((check, index) => <p key={String(check.transition_id ?? index)} className="text-emerald-700">{String(check.transition_id ?? `CT${index + 1}`)}：{auditLabel(check.result)} {check.comment ? `— ${String(check.comment)}` : ''}</p>)}
+      </>}
+      {protectedStrengths.length > 0 && <p className="mt-1 text-emerald-700">受保护段落：{protectedStrengths.map((strength) => displayParagraphs(strength.paragraph_ids ?? strength.paragraph_id)).filter(Boolean).join('；')}</p>}
+    </section>
+  )
+}
+
+function JudgeCausalVerdict({ output }: { output: Record<string, unknown> }) {
+  const lost = output.necessary_information_lost === true
+  const results = asRecords(output.causal_transition_results)
+  const hasFlags = ['reader_inference_preserved', 'decision_consequence_preserved', 'narrator_management_reduced', 'necessary_information_lost'].some((key) => key in output)
+  if (!hasFlags && results.length === 0) return null
+  return (
+    <section className={`mb-3 rounded-lg border p-2 text-xs ${lost ? 'border-red-300 bg-red-50 text-red-800' : 'border-blue-200 bg-blue-50 text-blue-800'}`}>
+      {lost && <p className="font-medium">修订稿丢失必要信息</p>}
+      {hasFlags && <p>{flagText('读者推论保留', output.reader_inference_preserved)} · {flagText('选择后果保留', output.decision_consequence_preserved)} · {flagText('叙述者管理减少', output.narrator_management_reduced)}</p>}
+      {results.map((result, index) => <p key={String(result.transition_id ?? index)} className="mt-1">{String(result.transition_id ?? `CT${index + 1}`)}：原稿 {String(result.original_status ?? '-')} / 修订 {String(result.revision_status ?? '-')}，建议 {preferredLabel(result.preferred_version)}</p>)}
+    </section>
+  )
+}
+
+function CausalLine({ label, value }: { label: string; value: unknown }) {
+  if (!value) return null
+  return <p className="mt-1"><span className="text-gray-500">{label}：</span>{String(value)}</p>
+}
+
+function asRecords(value: unknown): Record<string, unknown>[] {
+  return Array.isArray(value) ? value.filter((item): item is Record<string, unknown> => Boolean(item) && typeof item === 'object' && !Array.isArray(item)) : []
+}
+
+function auditLabel(value: unknown) { return value === 'pass' ? '通过' : value === 'fail' ? '未通过' : value === 'not_present' ? '未呈现' : String(value ?? '-') }
+function preferredLabel(value: unknown) { return value === 'original' ? '保留原稿' : value === 'revision' ? '采用修订' : value === 'manual_review' ? '人工判断' : String(value ?? '-') }
+function flagText(label: string, value: unknown) { return `${label}${value === true ? '✓' : value === false ? '✕' : '—'}` }
+function displayParagraphs(value: unknown) { return Array.isArray(value) ? value.map(String).join(', ') : value ? String(value) : '' }
