@@ -150,6 +150,11 @@ class CausalTransition(BaseModel):
             return "；".join(item.strip() for item in value if item.strip())
         return value
 
+    @field_validator("narrator_must_not_state", mode="before")
+    @classmethod
+    def normalize_single_withheld_statement(cls, value):
+        return [value] if isinstance(value, str) else value
+
 
 class PlannerChapterContractCheck(BaseModel):
     function_aligned: bool = True

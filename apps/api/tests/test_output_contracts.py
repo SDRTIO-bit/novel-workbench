@@ -71,6 +71,7 @@ def test_planner_normalizes_common_real_llm_shape_variants():
             **_transition(),
             "id": "ct_01",
             "reader_must_infer": ["敲击声不是普通故障", "林隅不愿深究"],
+            "narrator_must_not_state": "敲击声的真实来源。",
         }],
         "chapter_contract_check": "本章完成异常发现并留下后续问题",
     }
@@ -80,6 +81,7 @@ def test_planner_normalizes_common_real_llm_shape_variants():
     assert result.characters[0] == {"name": "首席维修员林隅"}
     assert result.causal_transitions[0].id == "CT01"
     assert result.causal_transitions[0].reader_must_infer == "敲击声不是普通故障；林隅不愿深究"
+    assert result.causal_transitions[0].narrator_must_not_state == ["敲击声的真实来源。"]
     assert result.chapter_contract_check.function_aligned is True
 
 
