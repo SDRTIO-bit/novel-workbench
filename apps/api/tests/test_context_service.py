@@ -132,6 +132,44 @@ class TestContextPreview:
         assert "测试" in data["rendered_user_prompt"]
 
     @pytest.mark.asyncio
+    async def test_preview_writer_brief_renders_last(self, api_client):
+        project_id = await _create_project(api_client)
+        chapter_id = await _create_chapter(api_client, project_id)
+
+        writer_brief = {
+            "opening_mode": "direct_consequence",
+            "opening_fact": "扳手落地的回声让敲击声停了半秒",
+            "viewpoint_character": "陆衡",
+            "known_facts": ["压力表读数偏高"],
+            "unknown_facts": ["敲击声来源"],
+            "current_assumption": "阀门松了",
+            "assumption_basis": ["昨夜大风"],
+            "next_action": "他蹲下去检查接线盒",
+            "immediate_consequence": "编号 GR-0713 从灰尘里露出来",
+            "next_constraint": "不能暴露未来工单",
+            "remain_unclassified": ["敲击声来源"],
+            "stop_fact": "他切断外门电源",
+            "final_line_must_include": "身份验证通过",
+        }
+        resp = await api_client.post("/api/context/preview", json={
+            "project_id": project_id,
+            "chapter_id": chapter_id,
+            "stage": "writer",
+            "scene_instruction": "写维修场景",
+            "writer_brief": writer_brief,
+        })
+
+        assert resp.status_code == 200, resp.text
+        data = resp.json()
+        user = data["rendered_user_prompt"]
+        assert "Writer Brief（最后指令，据此直接写作）" in user
+        assert "【进入事实】扳手落地的回声让敲击声停了半秒" in user
+        assert "【下一行动】他蹲下去检查接线盒" in user
+        assert "【停止事实】他切断外门电源" in user
+        assert "【末行必须包含】身份验证通过" in user
+        assert user.rstrip().endswith("请直接写出场景正文。")
+
+    @pytest.mark.asyncio
     async def test_preview_tracks_tempo_guardrails(self, api_client):
         project_id = await _create_project(api_client)
         chapter_id = await _create_chapter(api_client, project_id)

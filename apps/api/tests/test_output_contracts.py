@@ -88,7 +88,7 @@ def test_planner_normalizes_common_real_llm_shape_variants():
 
     result = validate_planner_output(data)
 
-    assert result.characters[0] == {"name": "首席维修员林隅"}
+    assert result.characters[0].name == "首席维修员林隅"
     assert result.causal_transitions[0].id == "CT01"
     assert result.causal_transitions[0].reader_must_infer == "敲击声不是普通故障；林隅不愿深究"
     assert result.causal_transitions[0].narrator_must_not_state == ["敲击声的真实来源。"]
@@ -248,3 +248,77 @@ def test_judge_accepts_exact_selected_issue_results_and_clean_merged_text():
     result = validate_judge_output_for_selected_issues(data, ["I01"])
 
     assert result.decision.value == "accept_merged"
+
+
+def test_planner_requires_assumption_basis_for_situational_assumption():
+    data = {
+        **_planner_data(),
+        "characters": [{
+            "name": "陆衡",
+            "current_goal": "查明真相",
+            "known_facts": [],
+            "unknown_facts": [],
+            "situational_assumption": "阀门松了",
+            "assumption_basis": [],
+        }],
+    }
+
+    with pytest.raises(ValueError, match="PLANNER_OUTPUT_CONTRACT_INVALID"):
+        validate_planner_output(data)
+
+
+def test_planner_accepts_optional_dominant_disruption():
+    guardrails = {**_tempo_guardrails(), "dominant_disruption": ""}
+
+    result = validate_planner_output({**_planner_data(), "tempo_guardrails": guardrails})
+
+    assert result.tempo_guardrails.dominant_disruption == ""
+
+
+def test_planner_normalizes_legacy_scene_state_fields():
+    data = {
+        **_planner_data(),
+        "scene_state": {
+            "location": "机库",
+            "viewpoint": "陆衡",
+            "last_action": "放下工具",
+            "unfinished_action": "检查阀门",
+        },
+    }
+
+    result = validate_planner_output(data)
+
+    assert result.scene_state.viewpoint_character == "陆衡"
+    assert result.scene_state.last_completed_action == "放下工具"
+    assert result.scene_state.active_unfinished_action == "检查阀门"
+
+
+def test_planner_typed_characters_accept_new_and_legacy_fields():
+    data = {
+        **_planner_data(),
+        "characters": [
+            {
+                "name": "陆衡",
+                "goal": "查明真相",
+                "known": ["工单编号"],
+                "unknown": ["发送者"],
+                "mistaken_beliefs": ["阀门松了"],
+                "observed_evidence": "冷却管有敲击声",
+                "assumption_basis": "压力表读数偏高",
+                "situational_assumption": "阀门松了",
+                "constraints": ["不能暴露未来工单"],
+            },
+        ],
+    }
+
+    result = validate_planner_output(data)
+    char = result.characters[0]
+
+    assert char.current_goal == "查明真相"
+    assert char.known_facts == ["工单编号"]
+    assert char.unknown_facts == ["发送者"]
+    assert char.stable_mistaken_beliefs == ["阀门松了"]
+    assert char.observed_evidence == ["冷却管有敲击声"]
+    assert char.assumption_basis == ["压力表读数偏高"]
+    assert char.situational_assumption == "阀门松了"
+    assert char.constraints == ["不能暴露未来工单"]

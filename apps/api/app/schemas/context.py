@@ -24,6 +24,7 @@ class ContextPreviewRequest(BaseModel):
     selected_issues: list[dict] = []
     revised_text: str = ""
     tempo_guardrails: dict | None = None
+    writer_brief: dict | None = None
 
     chapter_function: str = ""
     arc_phase: str = ""

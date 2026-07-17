@@ -74,6 +74,13 @@ class CriticIssueType(str, Enum):
     formulaic_escalation = "formulaic_escalation"
     premature_classification = "premature_classification"
     closing_summary_hook = "closing_summary_hook"
+    knowledge_without_source = "knowledge_without_source"
+    assumption_without_evidence = "assumption_without_evidence"
+    action_without_consequence = "action_without_consequence"
+    consequence_forgotten = "consequence_forgotten"
+    repeated_completed_action = "repeated_completed_action"
+    private_state_leak = "private_state_leak"
+    writer_brief_echo = "writer_brief_echo"
 
 
 class RevisionOperation(str, Enum):
@@ -124,6 +131,76 @@ class IssueAction(str, Enum):
     manual_review = "manual_review"
 
 
+# ── Planner character / scene state ──────────────────────────────────
+
+class PlannerCharacterState(BaseModel):
+    name: str = Field(min_length=1)
+    current_goal: str = ""
+    known_facts: list[str] = Field(default_factory=list)
+    unknown_facts: list[str] = Field(default_factory=list)
+    observed_evidence: list[str] = Field(default_factory=list)
+    stable_mistaken_beliefs: list[str] = Field(default_factory=list)
+    situational_assumption: str = ""
+    assumption_basis: list[str] = Field(default_factory=list)
+    constraints: list[str] = Field(default_factory=list)
+
+    @field_validator("assumption_basis", mode="before")
+    @classmethod
+    def normalize_single_basis(cls, value):
+        return [value] if isinstance(value, str) else value
+
+    @model_validator(mode="after")
+    def require_basis_for_assumption(self):
+        if self.situational_assumption and not self.assumption_basis:
+            raise ValueError(
+                "PLANNER_OUTPUT_CONTRACT_INVALID: situational_assumption requires assumption_basis"
+            )
+        return self
+
+
+class SceneState(BaseModel):
+    location: str = ""
+    time_window: str = ""
+    viewpoint_character: str = ""
+    last_completed_action: str = ""
+    active_unfinished_action: str = ""
+    direct_consequence_available: str = ""
+    character_positions: list[str] = Field(default_factory=list)
+    objects_in_play: list[str] = Field(default_factory=list)
+    current_constraints: list[str] = Field(default_factory=list)
+
+
+# ── Writer Brief ─────────────────────────────────────────────────────
+
+class WriterBrief(BaseModel):
+    opening_mode: Literal[
+        "direct_consequence",
+        "unfinished_action",
+        "active_pressure",
+        "new_scene_fact",
+    ]
+    opening_fact: str = Field(min_length=1)
+    viewpoint_character: str = ""
+    known_facts: list[str] = Field(default_factory=list)
+    unknown_facts: list[str] = Field(default_factory=list)
+    current_assumption: str = ""
+    assumption_basis: list[str] = Field(default_factory=list)
+    next_action: str = ""
+    immediate_consequence: str = ""
+    next_constraint: str = ""
+    active_project_facts: list[str] = Field(default_factory=list)
+    remain_unclassified: list[str] = Field(default_factory=list)
+    stop_fact: str = Field(min_length=1)
+    final_line_must_include: str = ""
+
+    @field_validator("active_project_facts")
+    @classmethod
+    def cap_active_project_facts(cls, value):
+        if len(value) > 5:
+            raise ValueError("WRITER_BRIEF_TOO_LONG: active_project_facts exceeds 5 items")
+        return value
+
+
 # ── Planner ───────────────────────────────────────────────────────────
 
 class CausalTransition(BaseModel):
@@ -170,7 +247,7 @@ class PlannerChapterContractCheck(BaseModel):
 
 class TempoGuardrails(BaseModel):
     entry_pressure: str = Field(min_length=1)
-    dominant_disruption: str = Field(min_length=1)
+    dominant_disruption: str = ""
     allowed_viewpoint_misread: str = ""
     disclosure_cap: int = Field(default=1, ge=0, le=1)
     must_remain_unclassified: list[str] = Field(default_factory=list)
@@ -194,7 +271,8 @@ class PlannerOutput(BaseModel):
     scene_goal: str = ""
     location: str = ""
     time: str = ""
-    characters: list[dict[str, Any]] = []
+    characters: list[PlannerCharacterState] = Field(default_factory=list)
+    scene_state: SceneState | None = None
     pressure: str = ""
     turning_point: str = ""
     end_condition: str = ""
@@ -209,15 +287,72 @@ class PlannerOutput(BaseModel):
         if not isinstance(value, dict):
             return value
         normalized = dict(value)
+
         characters = normalized.get("characters")
         if isinstance(characters, list):
             normalized["characters"] = [
-                {"name": item} if isinstance(item, str) else item
-                for item in characters
+                cls._normalize_character(item) for item in characters
             ]
+
+        scene_state = normalized.get("scene_state")
+        if isinstance(scene_state, dict):
+            normalized["scene_state"] = cls._normalize_scene_state(scene_state)
+        elif scene_state is None and (normalized.get("location") or normalized.get("time")):
+            normalized["scene_state"] = cls._legacy_scene_state(normalized)
+
         if isinstance(normalized.get("chapter_contract_check"), str):
             normalized["chapter_contract_check"] = {}
         return normalized
+
+    @classmethod
+    def _normalize_character(cls, item: Any) -> dict:
+        if isinstance(item, str):
+            return {"name": item}
+        if not isinstance(item, dict):
+            return {"name": str(item)}
+        result = dict(item)
+        result.setdefault("name", "未命名角色")
+
+        # Legacy fields used by previous contracts.
+        if "goal" in result and "current_goal" not in result:
+            result["current_goal"] = result.pop("goal")
+        if "known" in result and "known_facts" not in result:
+            result["known_facts"] = result.pop("known")
+        if "unknown" in result and "unknown_facts" not in result:
+            result["unknown_facts"] = result.pop("unknown")
+        if "mistaken_beliefs" in result and "stable_mistaken_beliefs" not in result:
+            mb = result.pop("mistaken_beliefs")
+            result["stable_mistaken_beliefs"] = mb if isinstance(mb, list) else [mb] if mb else []
+        if "observed_evidence" in result and isinstance(result["observed_evidence"], str):
+            result["observed_evidence"] = [result["observed_evidence"]]
+        if "assumption_basis" in result and isinstance(result["assumption_basis"], str):
+            result["assumption_basis"] = [result["assumption_basis"]]
+        return result
+
+    @classmethod
+    def _normalize_scene_state(cls, state: dict) -> dict:
+        result = dict(state)
+        if "viewpoint" in result and "viewpoint_character" not in result:
+            result["viewpoint_character"] = result.pop("viewpoint")
+        if "last_action" in result and "last_completed_action" not in result:
+            result["last_completed_action"] = result.pop("last_action")
+        if "unfinished_action" in result and "active_unfinished_action" not in result:
+            result["active_unfinished_action"] = result.pop("unfinished_action")
+        return result
+
+    @classmethod
+    def _legacy_scene_state(cls, data: dict) -> dict:
+        return {
+            "location": data.get("location", ""),
+            "time_window": data.get("time", ""),
+            "viewpoint_character": "",
+            "last_completed_action": "",
+            "active_unfinished_action": "",
+            "direct_consequence_available": "",
+            "character_positions": [],
+            "objects_in_play": [],
+            "current_constraints": [],
+        }
 
     @field_validator("forbidden", mode="before")
     @classmethod

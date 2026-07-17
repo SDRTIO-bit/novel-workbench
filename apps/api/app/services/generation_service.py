@@ -15,10 +15,12 @@ from app.llm.base import LlmRequest
 from app.llm.parser import parse_json
 from app.llm.output_contracts import (
     validate_judge_output_for_selected_issues,
+    validate_planner_output,
     validate_stage_output,
     validate_tempo_final_line,
 )
 from app.models.generation import GenerationRun
+from app.prompts.writer_brief import compile_writer_brief
 
 
 def _save_to_disk(title: str, text: str):
@@ -389,6 +391,30 @@ class GenerationService:
                     ]
             elif prev_stage == "reviser":
                 ctx_req.revised_text = prev_candidate.text_output or prev_candidate.raw_response
+
+        if stage == "writer" and ctx_req.scene_plan is not None:
+            try:
+                planner_output = validate_planner_output(ctx_req.scene_plan)
+                compiler_override = {}
+                if ctx_req.tempo_guardrails is not None:
+                    compiler_override["tempo_guardrails"] = ctx_req.tempo_guardrails
+                writer_brief = compile_writer_brief(planner_output, override=compiler_override)
+                ctx_req.writer_brief = writer_brief.model_dump()
+            except Exception:
+                # If the planner output cannot be compiled into a brief, leave
+                # writer_brief unset rather than failing the whole stage. This
+                # preserves the old fallback behaviour until the planner output
+                # is corrected.
+                ctx_req.writer_brief = None
+            ctx_req.scene_plan = None
+            ctx_req.tempo_guardrails = None
+
+        if stage == "critic" and ctx_req.scene_plan is not None:
+            # Critic must continue to receive the full PlannerOutput.
+            try:
+                validate_planner_output(ctx_req.scene_plan)
+            except Exception:
+                ctx_req.scene_plan = None
 
         return ctx_req
 

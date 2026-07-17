@@ -9,6 +9,8 @@ from app.models.chapter import Chapter
 from app.models.prompt import PromptProfile, PromptVersion, STAGES
 from app.models.workflow import WorkflowProfile, WorkflowStepConfig
 from app.prompts.renderer import render, validate_variables, RenderError
+from app.llm.output_contracts import WriterBrief
+from app.prompts.writer_brief import format_writer_brief
 from app.schemas.context import ContextSource, ContextPreviewRequest
 
 MAX_CONTEXT_CHARS = 128000
@@ -69,7 +71,16 @@ class ContextService:
             if req.tempo_guardrails is not None else ""
         )
 
+        if req.writer_brief is not None:
+            try:
+                variables["writer_brief"] = format_writer_brief(WriterBrief(**req.writer_brief))
+            except Exception:
+                variables["writer_brief"] = json.dumps(req.writer_brief, ensure_ascii=False, indent=2)
+        else:
+            variables["writer_brief"] = ""
+
         variables["chapter_function"] = req.chapter_function or ""
+
         variables["arc_phase"] = req.arc_phase or ""
         variables["reader_comes_for"] = req.reader_comes_for or ""
         variables["must_deliver"] = req.must_deliver or ""
@@ -102,7 +113,8 @@ class ContextService:
 
         untouchable = {"scene_instruction", "run_override", "draft_text", "numbered_draft",
                        "revised_text", "scene_plan", "critic_report", "selected_issues",
-                       "continuation_anchor", "current_chapter_text", "tempo_guardrails"}
+                       "continuation_anchor", "current_chapter_text", "tempo_guardrails",
+                       "writer_brief"}
 
         truncated = False
         sources: list[ContextSource] = []

@@ -13,6 +13,7 @@ data/.secret_key
 data/.mcp_token
 data/chapters/*.txt
 data/backups/
+data/writer_prompt_samples/
 *.db
 test-results/
 playwright-report/

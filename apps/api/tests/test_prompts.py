@@ -81,11 +81,14 @@ class TestPromptList:
 
         writer = next(item for item in BUILTIN_PROMPTS if item["stage"] == "writer")
         text = writer["system_template"] + writer["user_template"]
-        assert "场景响应规则" in text
+        assert "Writer Brief" in text
+        assert "{{scene_plan}}" not in text
+        assert "{{tempo_guardrails}}" not in text
         assert "开场钩子：" not in text
         assert "爽点释放：" not in text
         assert "结尾钩子：制造新的" not in text
-        assert "{{tempo_guardrails}}" in text
+        assert "{{writer_brief}}" in text
+        assert "stop_fact" in text
         assert "final_line_must_include" in text
 
     def test_editor_prompts_preserve_visible_hook_when_cutting_a_summary(self):
