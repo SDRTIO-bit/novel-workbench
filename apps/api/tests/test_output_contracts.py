@@ -322,3 +322,34 @@ def test_planner_typed_characters_accept_new_and_legacy_fields():
     assert char.assumption_basis == ["压力表读数偏高"]
     assert char.situational_assumption == "阀门松了"
     assert char.constraints == ["不能暴露未来工单"]
+
+
+@pytest.mark.parametrize("text", [
+    "第一段。\n\n第二段：身份验证通过。",
+    "第一段。\n\n身份验证通过\n",
+])
+def test_tempo_final_line_passes_when_marker_in_last_paragraph(text):
+    guardrails = {"final_line_must_include": "身份验证通过"}
+    validate_tempo_final_line(text, guardrails)
+
+
+def test_tempo_final_line_fails_when_marker_not_in_last_paragraph():
+    guardrails = {"final_line_must_include": "身份验证通过"}
+    with pytest.raises(ValueError, match="TEMPO_FINAL_LINE_MISMATCH"):
+        validate_tempo_final_line("身份验证通过。\n\n后续还有一段。", guardrails)
+
+
+def test_tempo_final_line_allows_empty_marker():
+    # Empty marker means no restriction, regardless of text content.
+    validate_tempo_final_line("任意正文。", {})
+    validate_tempo_final_line("任意正文。", {"final_line_must_include": ""})
+    validate_tempo_final_line("任意正文。", {"final_line_must_include": "   "})
+
+
+def test_tempo_final_line_reads_from_writer_brief_dict():
+    # The generation_service passes the compiled writer_brief dict directly.
+    writer_brief = {"final_line_must_include": "全班安静了一秒"}
+    validate_tempo_final_line("沈溪说完。\n\n全班安静了一秒。", writer_brief)
+
+    with pytest.raises(ValueError, match="TEMPO_FINAL_LINE_MISMATCH"):
+        validate_tempo_final_line("全班安静了一秒。\n\n陈默低下头。", writer_brief)

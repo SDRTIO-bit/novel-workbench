@@ -220,17 +220,27 @@ class GenerationService:
                 run.status = "completed"
 
             if not error_code and stage in ("writer", "reviser"):
-                validate_tempo_final_line(text_output, ctx_req.tempo_guardrails)
+                # WriterBriefCompiler deliberately keeps full tempo_guardrails
+                # out of the Writer prompt. Final-line validation must therefore
+                # read the marker from the compiled writer_brief, while reviser
+                # still uses the original guardrails dict.
+                guardrails_for_validation = (
+                    ctx_req.writer_brief if stage == "writer" and ctx_req.writer_brief is not None
+                    else ctx_req.tempo_guardrails
+                )
+                validate_tempo_final_line(text_output, guardrails_for_validation)
 
         except Exception as e:
             error_code = getattr(e, "code", None)
+            err_msg = str(e)
             if error_code is None:
-                error_code = (
-                    "WRITER_BRIEF_COMPILE_FAILED"
-                    if str(e).startswith("Writer brief compilation failed")
-                    else "LLM_ERROR"
-                )
-            error_message = str(e)
+                if err_msg.startswith("Writer brief compilation failed"):
+                    error_code = "WRITER_BRIEF_COMPILE_FAILED"
+                elif err_msg.startswith("TEMPO_FINAL_LINE_MISMATCH"):
+                    error_code = "TEMPO_FINAL_LINE_MISMATCH"
+                else:
+                    error_code = "LLM_ERROR"
+            error_message = err_msg
             raw_response = ""
             step.status = "failed"
             run.status = "completed"

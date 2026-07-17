@@ -18,6 +18,10 @@ data/.secret_key.*
 *.db
 backend.log
 backend.err
+apps/api/planner_result*.json
+apps/api/planner_parsed.json
+apps/api/writer_preview.json
+apps/api/writer_result_*.json
 test-results/
 playwright-report/
 .coverage
