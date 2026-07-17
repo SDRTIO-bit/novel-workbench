@@ -15,6 +15,7 @@ from app.llm.parser import parse_json
 from app.llm.output_contracts import (
     validate_judge_output_for_selected_issues,
     validate_stage_output,
+    validate_tempo_final_line,
 )
 from app.models.generation import GenerationRun
 
@@ -203,6 +204,9 @@ class GenerationService:
                 text_output = raw_response
                 step.status = "completed"
                 run.status = "completed"
+
+            if not error_code and stage in ("writer", "reviser"):
+                validate_tempo_final_line(text_output, ctx_req.tempo_guardrails)
 
         except Exception as e:
             error_code = getattr(e, "code", "LLM_ERROR")

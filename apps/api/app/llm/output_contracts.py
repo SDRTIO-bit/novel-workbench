@@ -175,6 +175,7 @@ class TempoGuardrails(BaseModel):
     disclosure_cap: int = Field(default=1, ge=0, le=1)
     must_remain_unclassified: list[str] = Field(default_factory=list)
     stop_after: str = Field(min_length=1)
+    final_line_must_include: str = ""
 
     @field_validator("must_remain_unclassified", mode="before")
     @classmethod
@@ -257,6 +258,26 @@ def validate_planner_output(data: dict) -> PlannerOutput:
         return PlannerOutput(**data)
     except Exception as e:
         raise ValueError(f"PLANNER_OUTPUT_CONTRACT_INVALID: {e}") from e
+
+
+def validate_tempo_final_line(text: str, tempo_guardrails: dict | None) -> None:
+    """Require an explicit author-supplied hook marker to survive at the end.
+
+    This is intentionally opt-in. It does not rewrite prose or infer a meaning
+    from a detector score; it only prevents a revision from deleting the
+    concrete final fact the author marked as non-negotiable.
+    """
+    marker = (tempo_guardrails or {}).get("final_line_must_include", "")
+    marker = str(marker).strip()
+    if not marker:
+        return
+    paragraphs = [paragraph.strip() for paragraph in re.split(r"\n\s*\n", text) if paragraph.strip()]
+    final_paragraph = paragraphs[-1] if paragraphs else ""
+    if marker not in final_paragraph:
+        raise ValueError(
+            "TEMPO_FINAL_LINE_MISMATCH: final paragraph must include "
+            f"the required marker {marker!r}"
+        )
 
 
 # ── Critic ────────────────────────────────────────────────────────────

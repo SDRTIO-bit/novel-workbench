@@ -86,6 +86,7 @@ class TestPromptList:
         assert "爽点释放：" not in text
         assert "结尾钩子：制造新的" not in text
         assert "{{tempo_guardrails}}" in text
+        assert "final_line_must_include" in text
 
     def test_editor_prompts_preserve_visible_hook_when_cutting_a_summary(self):
         from app.prompts.defaults import BUILTIN_PROMPTS
@@ -97,6 +98,7 @@ class TestPromptList:
         assert "钩子承载的可见事实" in critic["system_template"]
         assert "具体可见事实" in reviser["system_template"]
         assert "角色反应" in judge["system_template"]
+        assert "final_line_must_include" in reviser["system_template"]
 
     def test_list_all_prompts(self, api_client):
         resp = api_client.get("/api/prompts")

@@ -1,6 +1,7 @@
 import pytest
 
 from app.llm.output_contracts import (
+    validate_tempo_final_line,
     validate_critic_output,
     validate_judge_output_for_selected_issues,
     validate_planner_output,
@@ -53,6 +54,14 @@ def test_planner_normalizes_single_unclassified_fact():
     result = validate_planner_output({**_planner_data(), "tempo_guardrails": guardrails})
 
     assert result.tempo_guardrails.must_remain_unclassified == ["敲击声来源"]
+
+
+def test_tempo_final_line_requires_explicit_visible_marker():
+    guardrails = {**_tempo_guardrails(), "final_line_must_include": "身份验证通过"}
+
+    validate_tempo_final_line("面板亮了。\n\n身份验证通过。", guardrails)
+    with pytest.raises(ValueError, match="TEMPO_FINAL_LINE_MISMATCH"):
+        validate_tempo_final_line("身份验证通过。\n\n他只能继续看着。", guardrails)
 
 
 @pytest.mark.parametrize("guardrails", [
