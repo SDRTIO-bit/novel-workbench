@@ -1,5 +1,6 @@
 import time
 import json
+import re
 from app.llm.base import BaseLlmClient, LlmRequest, LlmResponse, LlmError
 
 MOCK_MODE_NORMAL = "normal"
@@ -215,15 +216,27 @@ class MockClient(BaseLlmClient):
 
         # Judge → final verdict
         if "文学评审" in sp or "judge" in sp:
+            selected_markers = re.findall(
+                r"SELECTED_ISSUES_JSON=(.*?)-->", request.user_prompt, re.DOTALL
+            )
+            selected_marker = selected_markers[-1] if selected_markers else ""
+            selected_issue_ids = re.findall(
+                r'"issue_id"\s*:\s*"([^"]+)"', selected_marker
+            )
+            if not selected_issue_ids:
+                selected_issue_ids = ["I01"]
+            issue_results = [
+                {
+                    "issue_id": issue_id,
+                    "status": "resolved",
+                    "action": "keep_revision",
+                    "comment": "模拟修订已处理该选定问题",
+                }
+                for issue_id in selected_issue_ids
+            ]
             return json.dumps({
                 "decision": "accept_revision",
-                "issue_results": [
-                    {"issue_id": "I01", "status": "resolved", "action": "keep_revision", "comment": "修订后内心独白更含蓄，不打断叙事流"},
-                    {"issue_id": "I02", "status": "resolved", "action": "keep_revision", "comment": "小动作丰富了老陈的形象"},
-                    {"issue_id": "I03", "status": "resolved", "action": "keep_revision", "comment": "猫的细节让场景更具温度"},
-                    {"issue_id": "I04", "status": "resolved", "action": "keep_revision", "comment": "开篇伏笔暗示使读者更快进入故事节奏"},
-                    {"issue_id": "I05", "status": "resolved", "action": "keep_revision", "comment": "结尾猫与女孩的互动形成了情感闭环"},
-                ],
+                "issue_results": issue_results,
                 "new_problems": [],
                 "final_text": "（合并修订后的完整文本）",
                 "quality_score": 85,

@@ -1,6 +1,7 @@
 import json
 import time
 import re
+from hashlib import sha256
 
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -124,6 +125,7 @@ class GenerationService:
         ctx_req = await self._build_context_request(run, stage, override)
         ctx_service = ContextService(self.session)
         ctx = await ctx_service.assemble(ctx_req)
+        await self._append_judge_selection_envelope(run_id, stage, ctx)
         step.input_snapshot_json = ctx["input_snapshot_hash"]
 
         error_code = None
@@ -280,6 +282,7 @@ class GenerationService:
         ctx_req = await self._build_context_request(run, stage, override)
         ctx_service = ContextService(self.session)
         ctx = await ctx_service.assemble(ctx_req)
+        await self._append_judge_selection_envelope(run_id, stage, ctx)
         return {
             "sources": ctx["sources"],
             "rendered_system_prompt": ctx["rendered_system_prompt"],
@@ -288,6 +291,22 @@ class GenerationService:
             "total_chars": ctx["total_chars"],
             "truncated": ctx["truncated"],
         }
+
+    async def _append_judge_selection_envelope(self, run_id: str, stage: str, ctx: dict) -> None:
+        if stage != "judge":
+            return
+        critic_step = await self.repo.get_step(run_id, "critic")
+        if not critic_step or not critic_step.selected_issue_ids_json:
+            return
+        selected_issue_ids = json.loads(critic_step.selected_issue_ids_json)
+        selected_payload = json.dumps(
+            [{"issue_id": issue_id} for issue_id in selected_issue_ids],
+            ensure_ascii=False,
+        )
+        ctx["rendered_user_prompt"] += f"\n<!-- SELECTED_ISSUES_JSON={selected_payload} -->"
+        ctx["input_snapshot_hash"] = sha256(
+            (ctx["input_snapshot_hash"] + selected_payload).encode("utf-8")
+        ).hexdigest()
 
     async def _build_context_request(self, run, stage: str, override: dict):
         prompt_version_id = override.get("prompt_version_id")

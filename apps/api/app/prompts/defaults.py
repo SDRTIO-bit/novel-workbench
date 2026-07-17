@@ -379,6 +379,7 @@ BUILTIN_PROMPTS = [
             "{{critic_report}}\n\n"
             "## 本次选定问题\n"
             "{{selected_issues}}\n\n"
+            "<!-- SELECTED_ISSUES_JSON={{selected_issues}} -->\n"
             "请输出 JSON 格式的验收报告。"
         ),
         "output_mode": "structured",

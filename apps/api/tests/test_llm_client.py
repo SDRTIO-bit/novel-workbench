@@ -83,6 +83,18 @@ class TestMockClient:
         assert "decision" in data
         assert "issue_results" in data
 
+    async def test_judge_limits_results_to_selected_issues(self):
+        client = MockClient(mode=MOCK_MODE_NORMAL, delay_ms=0)
+        request = LlmRequest(
+            system_prompt="你是一位公正的文学评审",
+            user_prompt='<!-- SELECTED_ISSUES_JSON=[{"issue_id":"I03"}] -->',
+            model="mock-model",
+        )
+        response = await client.complete(request)
+        import json
+        data = json.loads(response.text)
+        assert [item["issue_id"] for item in data["issue_results"]] == ["I03"]
+
     async def test_writer_plain_text(self):
         client = MockClient(mode=MOCK_MODE_NORMAL, delay_ms=0)
         request = LlmRequest(
