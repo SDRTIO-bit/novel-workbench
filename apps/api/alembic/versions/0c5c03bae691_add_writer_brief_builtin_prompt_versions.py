@@ -122,6 +122,7 @@ def downgrade() -> None:
         sa.column("id", sa.String),
         sa.column("profile_id", sa.String),
         sa.column("version_number", sa.Integer),
+        sa.column("system_template", sa.Text),
     )
     workflow_steps = sa.table(
         "workflow_step_configs",
@@ -130,6 +131,9 @@ def downgrade() -> None:
     )
 
     for stage in ("planner", "writer"):
+        entry = _builtin(stage)
+        target_template = entry["system_template"]
+
         profile = bind.execute(
             sa.select(profiles.c.id)
             .where(profiles.c.stage == stage, profiles.c.is_builtin.is_(True))
@@ -138,30 +142,35 @@ def downgrade() -> None:
         if not profile:
             continue
 
-        new = bind.execute(
-            sa.select(versions.c.id)
-            .where(versions.c.profile_id == profile.id)
-            .order_by(versions.c.version_number.desc())
-        ).first()
-        if not new:
-            continue
-
-        old = bind.execute(
-            sa.select(versions.c.id)
+        # Find the version this migration created by matching its template.
+        rows = bind.execute(
+            sa.select(versions.c.id, versions.c.version_number)
             .where(
                 versions.c.profile_id == profile.id,
-                versions.c.version_number == new.version_number - 1,
+                versions.c.system_template == target_template,
             )
-        ).first()
-        if not old:
+            .order_by(versions.c.version_number.desc())
+        ).fetchall()
+        if not rows:
             continue
 
-        bind.execute(
-            workflow_steps.update()
-            .where(
-                workflow_steps.c.stage == stage,
-                workflow_steps.c.prompt_version_id == new.id,
+        for new in rows:
+            old = bind.execute(
+                sa.select(versions.c.id)
+                .where(
+                    versions.c.profile_id == profile.id,
+                    versions.c.version_number == new.version_number - 1,
+                )
+            ).first()
+            if not old:
+                continue
+
+            bind.execute(
+                workflow_steps.update()
+                .where(
+                    workflow_steps.c.stage == stage,
+                    workflow_steps.c.prompt_version_id == new.id,
+                )
+                .values(prompt_version_id=old.id)
             )
-            .values(prompt_version_id=old.id)
-        )
-        bind.execute(versions.delete().where(versions.c.id == new.id))
+            bind.execute(versions.delete().where(versions.c.id == new.id))

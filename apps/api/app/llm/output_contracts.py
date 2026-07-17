@@ -136,6 +136,7 @@ class IssueAction(str, Enum):
 class PlannerCharacterState(BaseModel):
     name: str = Field(min_length=1)
     current_goal: str = ""
+    planned_next_action: str = ""
     known_facts: list[str] = Field(default_factory=list)
     unknown_facts: list[str] = Field(default_factory=list)
     observed_evidence: list[str] = Field(default_factory=list)

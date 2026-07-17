@@ -43,7 +43,7 @@ def _planner_output(**overrides) -> PlannerOutput:
                 "character_next_action": "陆衡询问许栀父亲的名字",
                 "reader_must_infer": "编号与许明远有关",
                 "narrator_must_not_state": ["两个编号一致"],
-                "immediate_consequence": "陆衡改变调查方向",
+                "immediate_consequence": "陆衡合上机械手册，转身打开人事档案柜",
                 "next_constraint": "他不能透露未来工单",
             },
         ],
@@ -94,7 +94,7 @@ def test_compile_extracts_transition_action_consequence_and_constraint():
     brief = compile_writer_brief(_planner_output())
 
     assert brief.next_action == "陆衡询问许栀父亲的名字"
-    assert brief.immediate_consequence == "陆衡改变调查方向"
+    assert brief.immediate_consequence == "陆衡合上机械手册，转身打开人事档案柜"
     assert brief.next_constraint == "他不能透露未来工单"
 
 
@@ -179,3 +179,45 @@ def test_compile_requires_opening_fact_fallback_to_goal():
 
     assert brief.opening_mode == "new_scene_fact"
     assert brief.opening_fact == "推进异常"
+
+
+def test_compile_uses_planned_next_action_when_no_transition():
+    planner = _planner_output()
+    planner.causal_transitions = []
+    planner.characters[0].planned_next_action = "陆衡打开阀门盖板"
+
+    brief = compile_writer_brief(planner)
+
+    assert brief.next_action == "陆衡打开阀门盖板"
+
+
+def test_compile_next_action_empty_when_no_transition_and_no_plan():
+    planner = _planner_output()
+    planner.causal_transitions = []
+    planner.characters[0].planned_next_action = ""
+
+    brief = compile_writer_brief(planner)
+
+    assert brief.next_action == ""
+
+
+def test_compile_does_not_use_current_goal_as_next_action_fallback():
+    planner = _planner_output()
+    planner.causal_transitions = []
+    planner.characters[0].planned_next_action = ""
+    planner.characters[0].current_goal = "查明真相"
+
+    brief = compile_writer_brief(planner)
+
+    assert brief.next_action == ""
+    assert brief.next_action != planner.characters[0].current_goal
+
+
+def test_compile_does_not_mutate_planner_output():
+    planner = _planner_output()
+    original_guardrails = planner.tempo_guardrails.model_dump()
+    original_override = {"stop_after": "他关闭总闸。"}
+
+    compile_writer_brief(planner, override={"tempo_guardrails": original_override})
+
+    assert planner.tempo_guardrails.model_dump() == original_guardrails

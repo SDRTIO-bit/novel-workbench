@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import copy
+
 from app.llm.output_contracts import PlannerOutput, PlannerCharacterState, SceneState, WriterBrief, TempoGuardrails
 
 
@@ -55,8 +57,21 @@ def compile_writer_brief(planner_output: PlannerOutput, override: dict | None = 
     author's correct answer, Critic-language, and any Planner free-text
     reasoning.
     """
+    class _EmptyGuardrails:
+        entry_pressure = ""
+        dominant_disruption = ""
+        allowed_viewpoint_misread = ""
+        disclosure_cap = 0
+        must_remain_unclassified = []
+        stop_after = ""
+        final_line_must_include = ""
+
     override = override or {}
-    guardrails = planner_output.tempo_guardrails or TempoGuardrails(entry_pressure="", stop_after="")
+    guardrails = (
+        copy.deepcopy(planner_output.tempo_guardrails)
+        if planner_output.tempo_guardrails is not None
+        else _EmptyGuardrails()
+    )
 
     # Apply explicit author overrides to guardrails when provided.
     if "tempo_guardrails" in override and isinstance(override["tempo_guardrails"], dict):
@@ -79,7 +94,13 @@ def compile_writer_brief(planner_output: PlannerOutput, override: dict | None = 
         unknown_facts = list(pov.unknown_facts)
         current_assumption = pov.situational_assumption
         assumption_basis = list(pov.assumption_basis)
-        next_action = pov.current_goal if not main_transition else main_transition.character_next_action
+        # current_goal is a strategic objective, not an observable next action.
+        # Prefer the planned next action when no causal transition is provided.
+        next_action = (
+            main_transition.character_next_action
+            if main_transition
+            else (pov.planned_next_action or "")
+        )
     else:
         known_facts = []
         unknown_facts = []

@@ -31,6 +31,15 @@ def _save_to_disk(title: str, text: str):
     filepath.write_text(text, encoding="utf-8")
 
 
+class _WriterBriefCompileError(ValueError):
+    """Raised when the deterministic WriterBrief compiler cannot produce a brief.
+
+    This is a fail-closed signal: the Writer stage must not be invoked with an
+    empty or invalid brief.
+    """
+    code = "WRITER_BRIEF_COMPILE_FAILED"
+
+
 class GenerationService:
     def __init__(self, session: AsyncSession):
         self.session = session
@@ -124,11 +133,6 @@ class GenerationService:
                     params["timeout_seconds"] = step_config.timeout_seconds
 
         override["prompt_version_id"] = prompt_version_id
-        ctx_req = await self._build_context_request(run, stage, override)
-        ctx_service = ContextService(self.session)
-        ctx = await ctx_service.assemble(ctx_req)
-        await self._append_judge_selection_envelope(run_id, stage, ctx)
-        step.input_snapshot_json = ctx["input_snapshot_hash"]
 
         error_code = None
         error_message = None
@@ -138,9 +142,15 @@ class GenerationService:
         input_tokens = 0
         output_tokens = 0
         latency_ms = 0
+        ctx = {"rendered_system_prompt": "", "rendered_user_prompt": ""}
+        start = time.time()
 
         try:
-            start = time.time()
+            ctx_req = await self._build_context_request(run, stage, override)
+            ctx_service = ContextService(self.session)
+            ctx = await ctx_service.assemble(ctx_req)
+            await self._append_judge_selection_envelope(run_id, stage, ctx)
+            step.input_snapshot_json = ctx["input_snapshot_hash"]
 
             provider = await self._resolve_provider(provider_id)
             llm_request = LlmRequest(
@@ -213,7 +223,13 @@ class GenerationService:
                 validate_tempo_final_line(text_output, ctx_req.tempo_guardrails)
 
         except Exception as e:
-            error_code = getattr(e, "code", "LLM_ERROR")
+            error_code = getattr(e, "code", None)
+            if error_code is None:
+                error_code = (
+                    "WRITER_BRIEF_COMPILE_FAILED"
+                    if str(e).startswith("Writer brief compilation failed")
+                    else "LLM_ERROR"
+                )
             error_message = str(e)
             raw_response = ""
             step.status = "failed"
@@ -400,14 +416,16 @@ class GenerationService:
                     compiler_override["tempo_guardrails"] = ctx_req.tempo_guardrails
                 writer_brief = compile_writer_brief(planner_output, override=compiler_override)
                 ctx_req.writer_brief = writer_brief.model_dump()
-            except Exception:
-                # If the planner output cannot be compiled into a brief, leave
-                # writer_brief unset rather than failing the whole stage. This
-                # preserves the old fallback behaviour until the planner output
-                # is corrected.
-                ctx_req.writer_brief = None
-            ctx_req.scene_plan = None
-            ctx_req.tempo_guardrails = None
+            except Exception as exc:
+                # Fail closed: do not invoke the Writer provider with an empty
+                # or invalid brief. The deterministic compiler is part of the
+                # cross-agent contract; failure here is a stable stage error.
+                raise _WriterBriefCompileError(
+                    f"Writer brief compilation failed: {exc}"
+                ) from exc
+            finally:
+                ctx_req.scene_plan = None
+                ctx_req.tempo_guardrails = None
 
         if stage == "critic" and ctx_req.scene_plan is not None:
             # Critic must continue to receive the full PlannerOutput.

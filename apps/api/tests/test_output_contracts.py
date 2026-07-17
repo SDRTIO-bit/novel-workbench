@@ -17,7 +17,7 @@ def _transition():
         "character_next_action": "陆衡询问许栀父亲的名字",
         "reader_must_infer": "编号与许明远有关",
         "narrator_must_not_state": ["两个编号一致"],
-        "immediate_consequence": "陆衡改变调查方向",
+        "immediate_consequence": "陆衡合上机械手册，转身打开人事档案柜",
         "next_constraint": "他不能透露未来工单",
     }
 

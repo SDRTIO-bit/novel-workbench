@@ -64,7 +64,7 @@ SCENES: list[dict] = [
                     "character_next_action": "陆衡询问许栀父亲的名字",
                     "reader_must_infer": "编号与许明远有关",
                     "narrator_must_not_state": ["两个编号一致", "许明远就是发送者"],
-                    "immediate_consequence": "陆衡改变调查方向，从机械故障转向人事档案",
+                    "immediate_consequence": "陆衡合上工具箱，把 GR-0713 铭牌收进口袋，转身走向人事档案终端",
                     "next_constraint": "他不能透露未来工单的存在",
                 }
             ],
@@ -145,6 +145,7 @@ SCENES: list[dict] = [
                 {
                     "name": "沈明",
                     "current_goal": "了解老同学近况",
+                    "planned_next_action": "沈明主动问起对方新工作的具体部门",
                     "known_facts": ["对方上个月换了工作", "两人三年未见"],
                     "unknown_facts": [],
                     "observed_evidence": [],
