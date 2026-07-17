@@ -14,7 +14,10 @@ data/.mcp_token
 data/chapters/*.txt
 data/backups/
 data/writer_prompt_samples/
+data/.secret_key.*
 *.db
+backend.log
+backend.err
 test-results/
 playwright-report/
 .coverage

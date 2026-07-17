@@ -1,4 +1,4 @@
-BUILTIN_PROMPTS = [
+﻿BUILTIN_PROMPTS = [
     {
         "stage": "planner",
         "name": "默认场景规划",
@@ -30,14 +30,14 @@ BUILTIN_PROMPTS = [
             "- scene_goal：场景目标，一句话概括本场景要达成的戏剧目的\n"
             "- location：场景发生地点\n"
             "- time：场景发生时间（含时间跨度）\n"
-            "- scene_state：可选对象，包含 viewpoint_character（当前视角角色名）、last_completed_action（上一场景已完成的动作）、active_unfinished_action（本场景中正在继续的未完成动作）、direct_consequence_available（可直接进入的上一动作后果）、character_positions（角色位置/状态）、objects_in_play（当前物件）、current_constraints（当前约束）\n"
-            "- characters：角色数组，每个角色需包含 name、current_goal（本场景目标）、planned_next_action（当没有 causal_transition 时，当前视角接下来要执行的具体可观察行动；没有则留空）、known_facts（已知信息）、unknown_facts（未知/被隐瞒信息）、observed_evidence（本场景中观察到的新证据）、stable_mistaken_beliefs（稳定错误信念，来自项目已埋下的信息差）、situational_assumption（当前情境下的即时判断/临时假设，没有则留空）、assumption_basis（临时判断的依据，字符串数组；若 situational_assumption 非空则必须至少一项）、constraints（行为约束）\n"
-            "- pressure：压力源，来自哪些已有冲突线的施压\n"
+            "- scene_state：可选对象，包含 viewpoint_character（当前视角角色名）、last_completed_action（上一场景已完成的动作）、active_unfinished_action（本场景中正在继续的未完成动作）、direct_consequence_available（可直接进入的上一动作后果）、character_positions（字符串数组，每项用一句话描述一个角色的位置或状态，不要写成键值对对象）、objects_in_play（字符串数组，当前出现的物件）、current_constraints（字符串数组，当前环境或流程带来的具体约束）\n"
+            "- characters：角色数组，每个角色需包含 name、current_goal（本场景目标）、planned_next_action（当没有 causal_transition 时，当前视角接下来要执行的具体可观察行动；没有则留空）、known_facts（已知信息）、unknown_facts（未知/被隐瞒信息）、observed_evidence（本场景中观察到的新证据）、stable_mistaken_beliefs（字符串数组；稳定错误信念必须来自项目已埋下的信息差；没有则留空；不要把当前情境下的临时判断放在这里）、situational_assumption（当前情境下的即时判断/临时假设，没有则留空）、assumption_basis（临时判断的依据，字符串数组；若 situational_assumption 非空则必须至少一项）、constraints（行为约束）\n"
+            "- pressure：单行字符串，描述当前正在收紧的压力源；不要写成数组或列表\n"
             "- turning_point：转折点，场景结束时局势如何改变\n"
             "- end_condition：结束条件，场景以什么状态收尾以衔接下一场景\n"
             "- forbidden：本场景严禁出现的内容（含 must_not_deliver 及保留燃料）\n"
-            "- causal_transitions：因果转折数组（0—3 项，可为空），每项包含 id、kind、visible_trigger、character_next_action、reader_must_infer、narrator_must_not_state（至少 1 项）、immediate_consequence、next_constraint\n"
-            "- tempo_guardrails：可选对象；含 entry_pressure、dominant_disruption（可选）、allowed_viewpoint_misread、disclosure_cap、must_remain_unclassified、stop_after，以及可选 final_line_must_include（作者已指定时，填写必须保留在最后一个非空段的精确短语）\n"
+            "- causal_transitions：因果转折数组（0—3 项，可为空），每项包含 id（固定格式 CT01、CT02、CT03，不得用 1/2/3 或其他形式）、kind、visible_trigger、character_next_action、reader_must_infer、narrator_must_not_state（至少 1 项）、immediate_consequence、next_constraint\n"
+            "- tempo_guardrails：可选对象；含 entry_pressure（单行字符串）、dominant_disruption（可选，单行字符串）、allowed_viewpoint_misread（单行字符串）、disclosure_cap（整数，只能为 0 或 1）、must_remain_unclassified（字符串数组，本章不得解释或命名的事实）、stop_after（单行字符串，停止位置），以及可选 final_line_must_include（单行字符串，必须保留在最后一个非空段的精确短语）\n"
             "- chapter_contract_check：逐项检查场景规划是否对齐本章契约，字段为 function_aligned（bool）、must_deliver_covered（bool）、must_not_deliver_respected（bool）、main_change_enabled（bool）、main_payoff_prepared（bool）、ending_hook_established（bool）、causal_transitions_grounded（bool）、reader_inference_not_pre_resolved（bool）\n\n"
             "## 项目设定\n"
             "你必须严格遵循以下项目资料中的全部世界观、角色设定、风格指南和创作原则：\n"
