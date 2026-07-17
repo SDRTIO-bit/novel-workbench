@@ -333,7 +333,10 @@ class GenerationService:
                 if prev_candidate.parsed_output_json:
                     ctx_req.scene_plan = json.loads(prev_candidate.parsed_output_json)
                     guardrails = ctx_req.scene_plan.get("tempo_guardrails")
-                    if isinstance(guardrails, dict):
+                    # An explicit per-run guardrail is an author decision. The
+                    # planner may supply a fallback, but must not silently
+                    # weaken or replace it for downstream stages.
+                    if isinstance(guardrails, dict) and ctx_req.tempo_guardrails is None:
                         ctx_req.tempo_guardrails = guardrails
             elif prev_stage == "writer":
                 ctx_req.draft_text = prev_candidate.text_output or prev_candidate.raw_response
