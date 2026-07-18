@@ -549,6 +549,17 @@ class CausalTransitionResult(BaseModel):
     preferred_version: PreferredVersion = PreferredVersion.original
     comment: str = ""
 
+    @field_validator("original_status", "revision_status", mode="before")
+    @classmethod
+    def normalize_partial_status(cls, value):
+        if isinstance(value, str):
+            v = value.strip().lower().replace("-", "_")
+            if v in ("partial_pass", "partial"):
+                return "pass"
+            if v in ("partial_fail",):
+                return "fail"
+        return value
+
 
 class IssueResult(BaseModel):
     issue_id: str
