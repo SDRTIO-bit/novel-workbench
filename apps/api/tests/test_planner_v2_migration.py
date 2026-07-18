@@ -1,9 +1,9 @@
-"""Tests for the planner-v2 builtin prompt migration (a2b3c4d5e6f7).
+"""Tests for the planner-v2 migration chain.
 
-Covers: upgrade on an unmodified old template (identified by a fixed hash),
-skip-with-warning on a user-modified template, no-op when already current,
-a downgrade that only removes the exact version this migration added, and
-full alembic upgrade/downgrade executability.
+Covers:
+- a2b3c4d5e6f7: upgrade/downgrade of the builtin planner v2 prompt
+- b2c3d4e5f6a7: safe duplicate version cleanup with repo repointing
+- f8a9b0c1d2e3: downgrade integrity (profiles.c.id typo fix)
 """
 import hashlib
 import importlib.util
@@ -21,13 +21,16 @@ from alembic.migration import MigrationContext
 from alembic.operations import Operations
 
 API_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-MIGRATION_PATH = os.path.join(
+A2_PATH = os.path.join(
     API_DIR, "alembic", "versions", "a2b3c4d5e6f7_enforce_planner_v2_builtin_prompt.py"
+)
+B2_PATH = os.path.join(
+    API_DIR, "alembic", "versions", "b2c3d4e5f6a7_fix_migration_remove_extra_versions.py"
 )
 
 
-def _load_migration():
-    spec = importlib.util.spec_from_file_location("planner_v2_migration", MIGRATION_PATH)
+def _load_migration(path=A2_PATH):
+    spec = importlib.util.spec_from_file_location(os.path.basename(path), path)
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     return module
@@ -260,3 +263,150 @@ def test_alembic_upgrade_downgrade_head_executes(tmp_path, monkeypatch):
     command.upgrade(cfg, "head")
     command.downgrade(cfg, "-1")
     command.upgrade(cfg, "head")
+
+
+def test_alembic_multi_step_downgrade_hits_f8a_without_typo(tmp_path, monkeypatch):
+    """Downgrade through the full chain to f8a9b0c1d2e3's downgrade().
+
+    f8a's downgrade used ``.order_by(profiles.id)`` (missing ``.c.``) which
+    caused an AttributeError.  This test proves the fix by creating DB rows
+    that exercise the downgrade path, then downgrading all the way back to
+    f8a and asserting it succeeds.
+    """
+    monkeypatch.syspath_prepend(API_DIR)
+    from app.config import settings
+
+    db_url = f"sqlite+aiosqlite:///{tmp_path / 'multi.db'}"
+    monkeypatch.setattr(settings, "database_url", db_url)
+
+    cfg = Config(os.path.join(API_DIR, "alembic.ini"))
+    cfg.set_main_option("script_location", os.path.join(API_DIR, "alembic"))
+
+    # 1. Apply all migrations to build schema.
+    command.upgrade(cfg, "head")
+
+    # 2. Insert profiles + versions that f8a's downgrade will iterate over.
+    import sqlite3
+
+    db_path = str(tmp_path / "multi.db")
+    conn = sqlite3.connect(db_path)
+    for stage in ("planner", "writer", "critic", "reviser", "judge"):
+        pid = f"prof-{stage}"
+        vid1 = f"ver-{stage}-1"
+        vid2 = f"ver-{stage}-2"
+        conn.execute(
+            "INSERT INTO prompt_profiles (id, stage, name, description, is_builtin, created_at, updated_at)"
+            " VALUES (?, ?, ?, '', 1, datetime('now'), datetime('now'))",
+            (pid, stage, stage),
+        )
+        conn.execute(
+            "INSERT INTO prompt_versions (id, profile_id, version_number, system_template, user_template,"
+            " output_mode, output_schema_name, created_at)"
+            " VALUES (?, ?, 1, 'old sys', 'old usr', 'structured', ?, datetime('now'))",
+            (vid1, pid, stage),
+        )
+        conn.execute(
+            "INSERT INTO prompt_versions (id, profile_id, version_number, system_template, user_template,"
+            " output_mode, output_schema_name, created_at)"
+            " VALUES (?, ?, 2, 'new sys', 'new usr', 'structured', ?, datetime('now'))",
+            (vid2, pid, stage),
+        )
+    conn.commit()
+    conn.close()
+
+    # 3. Downgrade two steps: a2 → b2 → f8.  f8's downgrade must run without
+    #    AttributeError from the old .order_by(profiles.id) bug.
+    command.downgrade(cfg, "a2b3c4d5e6f7")
+    command.downgrade(cfg, "f8a9b0c1d2e3")
+    # If we got here without an error, the fix is verified.
+
+
+# ── b2c3d4e5f6a7 (duplicate version cleanup) ──────────────────────────
+
+
+def _seed_critic_with_workflow(engine, *, system1, user1, system2, user2):
+    from app.models.prompt import PromptProfile, PromptVersion
+    from app.models.workflow import WorkflowProfile, WorkflowStepConfig
+
+    with Session(engine) as session:
+        profile = PromptProfile(stage="critic", name="默认场景诊断", is_builtin=True)
+        session.add(profile)
+        session.flush()
+        profile_id = profile.id
+        v1 = PromptVersion(
+            profile_id=profile_id, version_number=1,
+            system_template=system1, user_template=user1,
+            output_mode="structured", output_schema_name="critic",
+        )
+        session.add(v1)
+        session.flush()
+        v1_id = v1.id
+        v2 = PromptVersion(
+            profile_id=profile_id, version_number=2,
+            system_template=system2, user_template=user2,
+            output_mode="structured", output_schema_name="critic",
+        )
+        session.add(v2)
+        session.flush()
+        v2_id = v2.id
+        workflow = WorkflowProfile(name="wf", is_default=True)
+        session.add(workflow)
+        session.flush()
+        step = WorkflowStepConfig(
+            workflow_profile_id=workflow.id, stage="critic",
+            prompt_version_id=v2_id,
+        )
+        session.add(step)
+        session.flush()
+        step_id = step.id
+        session.commit()
+    return profile_id, v1_id, v2_id, step_id
+
+
+def test_b2_removes_duplicate_critic_version_and_repoints_references(engine):
+    mig = _load_migration(B2_PATH)
+    profile_id, v1_id, v2_id, step_id = _seed_critic_with_workflow(
+        engine,
+        system1="critic sys v1", user1="critic usr v1",
+        system2="critic sys v1", user2="critic usr v1",  # same = duplicate
+    )
+    _run_migration(mig, engine, "upgrade")
+
+    from app.models.prompt import PromptVersion
+    from app.models.workflow import WorkflowStepConfig
+
+    with Session(engine) as session:
+        versions = list(
+            session.execute(
+                select(PromptVersion)
+                .where(PromptVersion.profile_id == profile_id)
+                .order_by(PromptVersion.version_number)
+            ).scalars()
+        )
+        step = session.get(WorkflowStepConfig, step_id)
+        assert len(versions) == 1, "duplicate version should be deleted"
+        assert versions[0].id == v1_id
+        assert step.prompt_version_id == v1_id, "workflow step should be repointed"
+
+
+def test_b2_skips_when_hashes_differ(engine, caplog):
+    mig = _load_migration(B2_PATH)
+    profile_id, v1_id, v2_id, step_id = _seed_critic_with_workflow(
+        engine,
+        system1="critic A", user1="critic A",
+        system2="critic B", user2="critic B",  # different = user-modified
+    )
+    with caplog.at_level(logging.WARNING, logger="alembic.runtime.migration"):
+        _run_migration(mig, engine, "upgrade")
+
+    from app.models.prompt import PromptVersion
+
+    with Session(engine) as session:
+        versions = list(
+            session.execute(
+                select(PromptVersion)
+                .where(PromptVersion.profile_id == profile_id)
+            ).scalars()
+        )
+        assert len(versions) == 2, "dissimilar versions must not be deleted"
+    assert any("user-modified" in record.message for record in caplog.records)

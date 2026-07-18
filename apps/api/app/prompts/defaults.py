@@ -111,7 +111,7 @@ BUILTIN_PROMPTS = [
             "请输出 JSON 格式的场景规划方案。"
         ),
         "output_mode": "structured",
-        "output_schema_name": "planner",
+        "output_schema_name": "planner_v2",
     },
     {
         "stage": "writer",

@@ -29,15 +29,17 @@ def _save_to_disk(title: str, text: str):
     filepath.write_text(text, encoding="utf-8")
 
 
-# The current built-in planner workflow speaks contract v2. The strictness is
-# bound to the resolved prompt being the latest version of the built-in
-# planner profile — never to a version number the model chose to emit, and
-# never to user-defined or older pinned prompt versions.
+# The current built-in planner v2 template declares its contract via
+# output_schema_name on the prompt version row. This is an explicit marker,
+# not a heuristic: older versions, custom prompts, and user-edited variants
+# of the built-in profile all carry a different (or empty) schema name and
+# retain v1 compatibility.
 EXPECTED_PLANNER_CONTRACT_VERSION = 2
+PLANNER_V2_SCHEMA_NAME = "planner_v2"
 
 
 def _expected_planner_contract_version(stage: str, prompt_meta: dict | None) -> int | None:
-    if stage == "planner" and (prompt_meta or {}).get("is_builtin_latest"):
+    if stage == "planner" and (prompt_meta or {}).get("output_schema_name") == PLANNER_V2_SCHEMA_NAME:
         return EXPECTED_PLANNER_CONTRACT_VERSION
     return None
 

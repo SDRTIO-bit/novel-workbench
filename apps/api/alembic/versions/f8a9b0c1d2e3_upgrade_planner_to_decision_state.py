@@ -115,7 +115,7 @@ def downgrade() -> None:
         profile = bind.execute(
             sa.select(profiles.c.id)
             .where(profiles.c.stage == stage, profiles.c.is_builtin.is_(True))
-            .order_by(profiles.id)
+            .order_by(profiles.c.id)
         ).first()
         if not profile:
             continue

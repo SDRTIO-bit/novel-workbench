@@ -267,35 +267,24 @@ class ContextService:
 
         builtin = await self._get_builtin_prompt(stage)
         if builtin:
-            return builtin.system_template, builtin.user_template, {
-                "prompt_version_id": builtin.id,
-                "is_builtin_latest": True,
-            }
+            return builtin.system_template, builtin.user_template, await self._prompt_meta(builtin)
 
         raise bad_request("PROMPT_NOT_FOUND", f"阶段 {stage} 没有可用的提示词")
 
     async def _prompt_meta(self, version: PromptVersion) -> dict:
-        """Describe the resolved prompt version for contract-strictness decisions.
+        """Expose the resolved prompt version's contract-relevant metadata.
 
-        ``is_builtin_latest`` is True only when the version is the newest
-        version of a built-in profile — i.e. the *current* built-in prompt.
-        Older built-in versions and user-defined profiles are both False, so
-        strict output contracts never leak into custom or legacy prompts.
+        ``output_schema_name`` is an explicit contract marker stored on the
+        prompt version row. The current built-in Planner v2 template carries
+        ``"planner_v2"``; custom or older versions carry their own schema
+        name. This is a deterministic signal that survives user modifications
+        to the built-in profile — unlike ``is_builtin_latest``, which would
+        silently promote a user-edited version to strict v2 enforcement.
         """
-        stmt = (
-            select(PromptProfile)
-            .where(PromptProfile.id == version.profile_id)
-            .options(selectinload(PromptProfile.versions))
-        )
-        result = await self.session.execute(stmt)
-        profile = result.scalar_one_or_none()
-        is_builtin_latest = bool(
-            profile
-            and profile.is_builtin
-            and profile.versions
-            and profile.versions[-1].id == version.id
-        )
-        return {"prompt_version_id": version.id, "is_builtin_latest": is_builtin_latest}
+        return {
+            "prompt_version_id": version.id,
+            "output_schema_name": version.output_schema_name or "",
+        }
 
     async def _resolve_from_workflow(self, workflow_id: str, stage: str) -> tuple[str, str, dict]:
         stmt = (
@@ -319,10 +308,7 @@ class ContextService:
 
         builtin = await self._get_builtin_prompt(stage)
         if builtin:
-            return builtin.system_template, builtin.user_template, {
-                "prompt_version_id": builtin.id,
-                "is_builtin_latest": True,
-            }
+            return builtin.system_template, builtin.user_template, await self._prompt_meta(builtin)
 
         raise bad_request("PROMPT_NOT_FOUND", f"阶段 {stage} 没有可用的提示词")
 
