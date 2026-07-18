@@ -142,7 +142,7 @@ class ContextService:
 
         snapshot_hash = self._compute_hash(variables)
 
-        system_template, user_template = await self._resolve_prompt(
+        system_template, user_template, prompt_meta = await self._resolve_prompt(
             stage=req.stage,
             workflow_profile_id=req.workflow_profile_id,
             prompt_version_id=req.prompt_version_id,
@@ -161,6 +161,7 @@ class ContextService:
             "input_snapshot_hash": snapshot_hash,
             "total_chars": total,
             "truncated": truncated,
+            "prompt_meta": prompt_meta,
         }
 
     def _truncate_source(self, sources: list[ContextSource], name: str, gap: int) -> int:
@@ -247,14 +248,15 @@ class ContextService:
         stage: str,
         workflow_profile_id: str | None,
         prompt_version_id: str | None,
-    ) -> tuple[str, str]:
+    ) -> tuple[str, str, dict]:
         if prompt_version_id:
             stmt = select(PromptVersion).where(PromptVersion.id == prompt_version_id)
             res = await self.session.execute(stmt)
             version = res.scalar_one_or_none()
             if not version:
                 raise not_found("PROMPT_VERSION_NOT_FOUND", "提示词版本不存在")
-            return version.system_template, version.user_template
+            meta = await self._prompt_meta(version)
+            return version.system_template, version.user_template, meta
 
         if workflow_profile_id:
             return await self._resolve_from_workflow(workflow_profile_id, stage)
@@ -265,11 +267,37 @@ class ContextService:
 
         builtin = await self._get_builtin_prompt(stage)
         if builtin:
-            return builtin.system_template, builtin.user_template
+            return builtin.system_template, builtin.user_template, {
+                "prompt_version_id": builtin.id,
+                "is_builtin_latest": True,
+            }
 
         raise bad_request("PROMPT_NOT_FOUND", f"阶段 {stage} 没有可用的提示词")
 
-    async def _resolve_from_workflow(self, workflow_id: str, stage: str) -> tuple[str, str]:
+    async def _prompt_meta(self, version: PromptVersion) -> dict:
+        """Describe the resolved prompt version for contract-strictness decisions.
+
+        ``is_builtin_latest`` is True only when the version is the newest
+        version of a built-in profile — i.e. the *current* built-in prompt.
+        Older built-in versions and user-defined profiles are both False, so
+        strict output contracts never leak into custom or legacy prompts.
+        """
+        stmt = (
+            select(PromptProfile)
+            .where(PromptProfile.id == version.profile_id)
+            .options(selectinload(PromptProfile.versions))
+        )
+        result = await self.session.execute(stmt)
+        profile = result.scalar_one_or_none()
+        is_builtin_latest = bool(
+            profile
+            and profile.is_builtin
+            and profile.versions
+            and profile.versions[-1].id == version.id
+        )
+        return {"prompt_version_id": version.id, "is_builtin_latest": is_builtin_latest}
+
+    async def _resolve_from_workflow(self, workflow_id: str, stage: str) -> tuple[str, str, dict]:
         stmt = (
             select(WorkflowProfile)
             .where(WorkflowProfile.id == workflow_id)
@@ -286,11 +314,15 @@ class ContextService:
             pv_res = await self.session.execute(pv_stmt)
             pv = pv_res.scalar_one_or_none()
             if pv:
-                return pv.system_template, pv.user_template
+                meta = await self._prompt_meta(pv)
+                return pv.system_template, pv.user_template, meta
 
         builtin = await self._get_builtin_prompt(stage)
         if builtin:
-            return builtin.system_template, builtin.user_template
+            return builtin.system_template, builtin.user_template, {
+                "prompt_version_id": builtin.id,
+                "is_builtin_latest": True,
+            }
 
         raise bad_request("PROMPT_NOT_FOUND", f"阶段 {stage} 没有可用的提示词")
 

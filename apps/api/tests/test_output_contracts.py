@@ -208,6 +208,115 @@ def test_planner_v2_rejects_zero_causal_transitions():
         validate_planner_output(data)
 
 
+# ── Planner v2 hardening: version gate, state_delta, constraints ──────
+
+
+def test_planner_expected_version_rejects_missing_version_field():
+    data = _planner_data_v2()
+    del data["planner_contract_version"]
+    with pytest.raises(ValueError, match="planner_contract_version is required"):
+        validate_planner_output(data, expected_version=2)
+
+
+def test_planner_expected_version_rejects_missing_version_field_on_v1_shape():
+    # A v1-shaped payload (no version key at all) must fail loudly in the
+    # current built-in workflow instead of silently defaulting to v1.
+    data = _planner_data_v1()
+    del data["planner_contract_version"]
+    with pytest.raises(ValueError, match="planner_contract_version is required"):
+        validate_planner_output(data, expected_version=2)
+
+
+def test_planner_v1_passes_without_expected_version():
+    # Legacy read path: historical v1 candidates stay readable when no
+    # expected version is declared by the caller.
+    result = validate_planner_output(_planner_data_v1())
+    assert result.planner_contract_version == 1
+
+
+def test_planner_v2_rejects_empty_state_delta_after():
+    data = _planner_data_v2()
+    data["causal_transitions"] = [{**_transition(), "state_delta": {"before": "局面改变", "after": ""}}]
+    with pytest.raises(ValueError, match="state_delta.after must not be empty"):
+        validate_planner_output(data)
+
+
+def test_planner_v2_rejects_state_delta_trailing_whitespace_only_diff():
+    data = _planner_data_v2()
+    data["causal_transitions"] = [
+        {**_transition(), "state_delta": {"before": "继续关门", "after": "继续关门 "}}
+    ]
+    with pytest.raises(ValueError, match="state_delta.before and after must differ"):
+        validate_planner_output(data)
+
+
+@pytest.mark.parametrize("before,after", [
+    ("继续关门。", "继续关门"),
+    ("继续关门", "继续关门。"),
+    ("继续关门，", "继续关门"),
+    ("door closed.", "door closed"),
+    ("door closed;", "door closed"),
+    ("Door Closed", "door closed"),
+])
+def test_planner_v2_rejects_state_delta_punctuation_or_case_only_diff(before, after):
+    data = _planner_data_v2()
+    data["causal_transitions"] = [
+        {**_transition(), "state_delta": {"before": before, "after": after}}
+    ]
+    with pytest.raises(ValueError, match="state_delta.before and after must differ"):
+        validate_planner_output(data)
+
+
+def test_planner_v2_accepts_substantively_different_state_delta():
+    data = _planner_data_v2()
+    data["causal_transitions"] = [
+        {**_transition(), "state_delta": {"before": "继续关门。", "after": "门被打开。"}}
+    ]
+    result = validate_planner_output(data)
+    assert result.causal_transitions[0].state_delta.before == "继续关门。"
+
+
+def test_planner_v2_rejects_duplicate_next_constraint_whitespace_collapsed():
+    data = _planner_data_v2()
+    data["scene_state"]["already_existing_constraints"] = ["existing constraint"]
+    data["causal_transitions"] = [{**_transition(), "next_constraint": "existing   constraint"}]
+    with pytest.raises(ValueError, match="next_constraint duplicates"):
+        validate_planner_output(data)
+
+
+def test_planner_v2_rejects_duplicate_next_constraint_case_insensitive():
+    data = _planner_data_v2()
+    data["scene_state"]["already_existing_constraints"] = ["Existing Constraint"]
+    data["causal_transitions"] = [{**_transition(), "next_constraint": "existing constraint"}]
+    with pytest.raises(ValueError, match="next_constraint duplicates"):
+        validate_planner_output(data)
+
+
+def test_planner_v2_rejects_duplicate_next_constraint_cjk_punctuation():
+    data = _planner_data_v2()
+    data["scene_state"]["already_existing_constraints"] = ["不能暴露身份。"]
+    data["causal_transitions"] = [{**_transition(), "next_constraint": "不能暴露身份"}]
+    with pytest.raises(ValueError, match="next_constraint duplicates"):
+        validate_planner_output(data)
+
+
+def test_planner_v2_accepts_genuinely_new_constraint():
+    data = _planner_data_v2()
+    data["scene_state"]["already_existing_constraints"] = ["不能暴露身份"]
+    data["causal_transitions"] = [{**_transition(), "next_constraint": "必须在新守卫交班前离开"}]
+    result = validate_planner_output(data)
+    assert result.causal_transitions[0].next_constraint == "必须在新守卫交班前离开"
+
+
+def test_planner_v2_full_valid_example_passes():
+    data = _planner_data_v2()
+    data["scene_state"]["already_existing_constraints"] = ["不能暴露身份"]
+    result = validate_planner_output(data, expected_version=2)
+    assert result.planner_contract_version == 2
+    assert len(result.causal_transitions) == 1
+    assert result.causal_transitions[0].consequence_would_still_happen is False
+
+
 def test_planner_accepts_tempo_guardrails():
     result = validate_planner_output({**_planner_data_v1(), "tempo_guardrails": _tempo_guardrails()})
     assert result.tempo_guardrails.disclosure_cap == 1

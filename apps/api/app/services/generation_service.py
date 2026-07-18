@@ -29,6 +29,19 @@ def _save_to_disk(title: str, text: str):
     filepath.write_text(text, encoding="utf-8")
 
 
+# The current built-in planner workflow speaks contract v2. The strictness is
+# bound to the resolved prompt being the latest version of the built-in
+# planner profile — never to a version number the model chose to emit, and
+# never to user-defined or older pinned prompt versions.
+EXPECTED_PLANNER_CONTRACT_VERSION = 2
+
+
+def _expected_planner_contract_version(stage: str, prompt_meta: dict | None) -> int | None:
+    if stage == "planner" and (prompt_meta or {}).get("is_builtin_latest"):
+        return EXPECTED_PLANNER_CONTRACT_VERSION
+    return None
+
+
 class GenerationService:
     def __init__(self, session: AsyncSession):
         self.session = session
@@ -161,7 +174,9 @@ class GenerationService:
                 parsed = parse_json(raw_response)
                 if parsed.valid:
                     try:
-                        expected_ver = 2 if stage == "planner" else None
+                        expected_ver = _expected_planner_contract_version(
+                            stage, ctx.get("prompt_meta")
+                        )
                         validated = validate_stage_output(stage, parsed.data, expected_version=expected_ver)
                         if stage == "judge":
                             critic_step = await self.repo.get_step(run_id, "critic")

@@ -6,6 +6,28 @@ from typing import Any, Literal
 from pydantic import BaseModel, Field, field_validator, model_validator
 
 
+# Trailing punctuation stripped before deterministic equality comparisons.
+# Covers common CJK and ASCII sentence-final punctuation only; interior
+# punctuation is never touched.
+_COMPARE_TRAILING_PUNCT = (
+    "。，、；：！？…·—～"
+    "「」『』（）《》〈〉【】“”‘’"
+    ".,;:!?~\"'()[]<>-"
+)
+
+
+def _normalize_for_compare(text: str) -> str:
+    """Deterministic normalization for equality comparisons.
+
+    strip → collapse consecutive whitespace → strip trailing common
+    punctuation → lowercase (a no-op for CJK). Deliberately simple: no
+    embeddings, no synonym handling, no LLM judgment.
+    """
+    normalized = re.sub(r"\s+", " ", str(text).strip())
+    normalized = normalized.rstrip(_COMPARE_TRAILING_PUNCT).strip()
+    return normalized.lower()
+
+
 def _paragraph_labels(value) -> list[str]:
     values = value if isinstance(value, list) else [value]
     labels: list[str] = []
@@ -132,13 +154,11 @@ class StateDelta(BaseModel):
 
     @model_validator(mode="after")
     def check_nonempty_and_different(self):
-        before_stripped = self.before.strip()
-        after_stripped = self.after.strip()
-        if not before_stripped:
+        if not self.before.strip():
             raise ValueError("state_delta.before must not be empty")
-        if not after_stripped:
+        if not self.after.strip():
             raise ValueError("state_delta.after must not be empty")
-        if before_stripped == after_stripped:
+        if _normalize_for_compare(self.before) == _normalize_for_compare(self.after):
             raise ValueError("state_delta.before and after must differ")
         return self
 
@@ -314,6 +334,30 @@ class PlannerOutput(BaseModel):
                 "unresolved_problem": scene_state.strip(),
                 "already_existing_constraints": [],
             }
+        # Handle state_delta being a string instead of object in causal_transitions
+        causal_transitions = normalized.get("causal_transitions")
+        if isinstance(causal_transitions, list):
+            for i, ct in enumerate(causal_transitions):
+                if isinstance(ct, dict):
+                    state_delta = ct.get("state_delta")
+                    if isinstance(state_delta, str) and state_delta.strip():
+                        # Try to parse "before -> after" or "before → after" pattern
+                        parts = None
+                        for sep in [" -> ", " → ", "→", "->"]:
+                            if sep in state_delta:
+                                parts = state_delta.split(sep, 1)
+                                break
+                        if parts and len(parts) == 2:
+                            ct["state_delta"] = {
+                                "before": parts[0].strip().strip("'\""),
+                                "after": parts[1].strip().strip("'\""),
+                            }
+                        else:
+                            # Fallback: put the whole string in "after", leave "before" empty
+                            ct["state_delta"] = {
+                                "before": "",
+                                "after": state_delta.strip(),
+                            }
         return normalized
 
     @field_validator("forbidden", mode="before")
@@ -351,11 +395,22 @@ class PlannerOutput(BaseModel):
 
 
 def validate_planner_output(data: dict, expected_version: int | None = None) -> PlannerOutput:
+    # When a workflow declares the contract version it expects, a missing
+    # version field is a hard failure instead of a silent default to v1.
+    if (
+        expected_version is not None
+        and isinstance(data, dict)
+        and "planner_contract_version" not in data
+    ):
+        raise ValueError(
+            f"PLANNER_OUTPUT_CONTRACT_INVALID: planner_contract_version is required "
+            f"(expected planner_contract_version={expected_version})"
+        )
     try:
         output = PlannerOutput(**data)
     except Exception as e:
         raise ValueError(f"PLANNER_OUTPUT_CONTRACT_INVALID: {e}") from e
-    
+
     version = output.planner_contract_version
     
     if expected_version is not None and version != expected_version:
@@ -383,7 +438,7 @@ def validate_planner_output(data: dict, expected_version: int | None = None) -> 
         existing_constraints_normalized = set()
         if output.scene_state and output.scene_state.already_existing_constraints:
             for c in output.scene_state.already_existing_constraints:
-                normalized = c.strip().rstrip("。，,.；;")
+                normalized = _normalize_for_compare(c)
                 if normalized:
                     existing_constraints_normalized.add(normalized)
         
@@ -401,7 +456,7 @@ def validate_planner_output(data: dict, expected_version: int | None = None) -> 
             if not ct.cost_or_commitment:
                 errors.append(f"causal_transitions[{i}].cost_or_commitment is required in v2")
             
-            next_constraint_normalized = ct.next_constraint.strip().rstrip("。，,.；;")
+            next_constraint_normalized = _normalize_for_compare(ct.next_constraint)
             if next_constraint_normalized in existing_constraints_normalized:
                 errors.append(
                     f"causal_transitions[{i}].next_constraint duplicates an already_existing_constraint"
