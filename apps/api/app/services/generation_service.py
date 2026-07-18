@@ -20,6 +20,16 @@ from app.llm.output_contracts import (
 )
 from app.models.generation import GenerationRun
 from app.services.critic_compiler import compile_critic_report, validate_critic_evidence
+from app.services.tgbreak_service import (
+    load_tgbreak_profile,
+    persist_tgbreak_output,
+)
+from app.services.tgbreak_writer_adapter import (
+    build_tgbreak_project_data_from_writer_context,
+)
+from app.tgbreak.models import TgbreakOutput
+from app.tgbreak.output import TgbreakOutputError, parse_tgbreak_response
+from app.tgbreak.renderer import render_tgbreak
 
 
 def _save_to_disk(title: str, text: str):
@@ -133,9 +143,9 @@ class GenerationService:
             "top_p": override.get("top_p", 1.0),
             "max_output_tokens": override.get("max_output_tokens", 4096),
             "timeout_seconds": override.get("timeout_seconds", 120),
-            "reasoning_mode": "disabled",
         }
 
+        step_config = None
         if run.workflow_profile_id:
             step_config = await self.repo.get_workflow_step_config(
                 run.workflow_profile_id, stage
@@ -156,10 +166,23 @@ class GenerationService:
                 if "timeout_seconds" not in override:
                     params["timeout_seconds"] = step_config.timeout_seconds
 
+        writer_prompt_mode = "builtin"
+        tgbreak_profile_id = None
+        if stage == "writer" and step_config:
+            writer_prompt_mode = step_config.writer_prompt_mode or "builtin"
+            tgbreak_profile_id = step_config.tgbreak_profile_id
+        if writer_prompt_mode == "tgbreak":
+            prompt_version_id = None
+            params["writer_prompt_mode"] = "tgbreak"
+            params["tgbreak_profile_id"] = tgbreak_profile_id
+            params["reasoning_mode"] = "disabled"
+
         override["prompt_version_id"] = prompt_version_id
         ctx_req = await self._build_context_request(run, stage, override)
         ctx_service = ContextService(self.session)
-        ctx = await ctx_service.assemble(ctx_req)
+        ctx = await ctx_service.assemble(
+            ctx_req, resolve_prompt=writer_prompt_mode != "tgbreak"
+        )
         await self._append_judge_selection_envelope(run_id, stage, ctx)
         step.input_snapshot_json = ctx["input_snapshot_hash"]
 
@@ -175,9 +198,55 @@ class GenerationService:
         latency_ms = 0
         finish_reason = None
         reasoning_tokens = None
+        tgbreak_rendered = None
+        tgbreak_output = None
 
         try:
             start = time.time()
+
+            ordered_messages = None
+            reasoning_mode = None
+            if writer_prompt_mode == "tgbreak":
+                preset, profile = await load_tgbreak_profile(
+                    self.session, tgbreak_profile_id
+                )
+                planner_candidate_id = await self._selected_candidate_id(
+                    run_id, "planner"
+                )
+                project_data = build_tgbreak_project_data_from_writer_context(
+                    ctx["variables"],
+                    selected_planner_candidate_id=planner_candidate_id,
+                )
+                tgbreak_rendered = render_tgbreak(
+                    preset,
+                    profile,
+                    project_data.variables,
+                    chat_history=project_data.variables["interaction_record"],
+                    user_message=project_data.variables["peip"],
+                )
+                ordered_messages = [
+                    {"role": message.role, "content": message.content}
+                    for message in tgbreak_rendered.messages
+                ]
+                serialized_messages = json.dumps(
+                    [message.as_dict() for message in tgbreak_rendered.messages],
+                    ensure_ascii=False,
+                )
+                ctx["rendered_system_prompt"] = serialized_messages
+                ctx["rendered_user_prompt"] = project_data.variables["peip"]
+                ctx["input_snapshot_hash"] = sha256(
+                    json.dumps(ordered_messages, ensure_ascii=False).encode("utf-8")
+                ).hexdigest()
+                step.input_snapshot_json = ctx["input_snapshot_hash"]
+                params.update({
+                    "selected_planner_candidate_id": planner_candidate_id,
+                    "source_preset_id": tgbreak_rendered.source_preset_id,
+                    "source_preset_sha256": tgbreak_rendered.source_preset_sha256,
+                    "resolved_entry_identifiers": (
+                        tgbreak_rendered.resolved_entry_identifiers
+                    ),
+                })
+                reasoning_mode = "disabled"
 
             provider = await self._resolve_provider(provider_id)
             llm_request = LlmRequest(
@@ -189,7 +258,8 @@ class GenerationService:
                 max_output_tokens=params["max_output_tokens"],
                 timeout_seconds=params["timeout_seconds"],
                 response_format=_response_format_for_prompt(ctx.get("prompt_meta")),
-                reasoning_mode="disabled",
+                reasoning_mode=reasoning_mode,
+                messages=ordered_messages,
             )
             params["response_format"] = llm_request.response_format
 
@@ -201,7 +271,41 @@ class GenerationService:
             finish_reason = response.finish_reason
             reasoning_tokens = response.reasoning_tokens
 
-            if llm_request.response_format == "json_object":
+            if writer_prompt_mode == "tgbreak":
+                try:
+                    tgbreak_output = parse_tgbreak_response(
+                        raw_response,
+                        source_preset_id=tgbreak_rendered.source_preset_id,
+                        source_preset_sha256=tgbreak_rendered.source_preset_sha256,
+                        resolved_entry_identifiers=(
+                            tgbreak_rendered.resolved_entry_identifiers
+                        ),
+                        reasoning_tokens=reasoning_tokens,
+                        requested_reasoning_mode="disabled",
+                    )
+                except TgbreakOutputError as exc:
+                    error_code = "TGBREAK_OUTPUT_FORMAT_INVALID"
+                    error_message = str(exc)
+                    step.status = "failed"
+                    run.status = "completed"
+                    tgbreak_output = TgbreakOutput(
+                        raw_response=raw_response,
+                        draft_notes="",
+                        draft_text="",
+                        extra_modules=[],
+                        source_preset_id=tgbreak_rendered.source_preset_id,
+                        source_preset_sha256=tgbreak_rendered.source_preset_sha256,
+                        resolved_entry_identifiers=(
+                            tgbreak_rendered.resolved_entry_identifiers
+                        ),
+                        requested_reasoning_mode="disabled",
+                        reasoning_tokens=reasoning_tokens,
+                    )
+                else:
+                    text_output = tgbreak_output.draft_text
+                    step.status = "completed"
+                    run.status = "completed"
+            elif llm_request.response_format == "json_object":
                 if finish_reason == "length":
                     error_code = "STRUCTURED_OUTPUT_TRUNCATED"
                     error_message = (
@@ -342,6 +446,13 @@ class GenerationService:
             reasoning_tokens=reasoning_tokens,
         )
 
+        if tgbreak_output is not None:
+            tgbreak_record = await persist_tgbreak_output(
+                self.session, candidate.id, tgbreak_output
+            )
+            params["tgbreak_output_record_id"] = tgbreak_record.id
+            candidate.parameters_json = json.dumps(params)
+
         if not error_code:
             step.status = "completed"
             run.status = "completed"
@@ -361,9 +472,14 @@ class GenerationService:
 
         return candidate
 
+    async def _selected_candidate_id(self, run_id: str, stage: str) -> str | None:
+        step = await self.repo.get_step(run_id, stage)
+        return step.selected_candidate_id if step else None
+
     async def select_candidate(self, run_id: str, stage: str, candidate_id: str):
         run = await self.repo.get_run_or_404(run_id)
         step = await self.repo.get_step_or_404(run_id, stage)
+        await self.session.refresh(step, ["candidates"])
 
         candidate = next((c for c in step.candidates if c.id == candidate_id), None)
         if not candidate:

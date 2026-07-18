@@ -18,7 +18,9 @@ class ContextService:
     def __init__(self, session: AsyncSession):
         self.session = session
 
-    async def assemble(self, req: ContextPreviewRequest) -> dict:
+    async def assemble(
+        self, req: ContextPreviewRequest, *, resolve_prompt: bool = True
+    ) -> dict:
         project = await self._get_project(req.project_id)
 
         docs_map = {d.kind: d for d in project.documents}
@@ -142,17 +144,21 @@ class ContextService:
 
         snapshot_hash = self._compute_hash(variables)
 
-        system_template, user_template, prompt_meta = await self._resolve_prompt(
-            stage=req.stage,
-            workflow_profile_id=req.workflow_profile_id,
-            prompt_version_id=req.prompt_version_id,
-        )
+        system_prompt = ""
+        user_prompt = ""
+        prompt_meta = {}
+        if resolve_prompt:
+            system_template, user_template, prompt_meta = await self._resolve_prompt(
+                stage=req.stage,
+                workflow_profile_id=req.workflow_profile_id,
+                prompt_version_id=req.prompt_version_id,
+            )
 
-        try:
-            system_prompt = render(system_template, variables, strict=True)
-            user_prompt = render(user_template, variables, strict=True)
-        except RenderError as e:
-            raise bad_request("RENDER_ERROR", "; ".join(e.errors))
+            try:
+                system_prompt = render(system_template, variables, strict=True)
+                user_prompt = render(user_template, variables, strict=True)
+            except RenderError as e:
+                raise bad_request("RENDER_ERROR", "; ".join(e.errors))
 
         return {
             "sources": sources,
@@ -162,6 +168,7 @@ class ContextService:
             "total_chars": total,
             "truncated": truncated,
             "prompt_meta": prompt_meta,
+            "variables": variables,
         }
 
     def _truncate_source(self, sources: list[ContextSource], name: str, gap: int) -> int:

@@ -1,4 +1,5 @@
 from datetime import datetime
+from typing import Literal
 from pydantic import BaseModel, Field
 
 
@@ -11,6 +12,8 @@ class WorkflowStepSchema(BaseModel):
     provider_id: str | None
     model_id: str | None
     prompt_version_id: str | None
+    writer_prompt_mode: Literal["builtin", "tgbreak"] = "builtin"
+    tgbreak_profile_id: str | None = None
     temperature: float
     top_p: float
     max_output_tokens: int
@@ -54,6 +57,8 @@ class WorkflowStepUpdate(BaseModel):
     provider_id: str | None = None
     model_id: str | None = None
     prompt_version_id: str | None = None
+    writer_prompt_mode: Literal["builtin", "tgbreak"] | None = None
+    tgbreak_profile_id: str | None = None
     temperature: float | None = None
     top_p: float | None = None
     max_output_tokens: int | None = None

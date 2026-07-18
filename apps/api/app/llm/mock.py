@@ -28,9 +28,12 @@ class MockClient(BaseLlmClient):
         if self.mode == MOCK_MODE_INVALID_JSON:
             text = "这不是有效的 JSON { broken"
 
+        input_text = "".join(
+            message.get("content", "") for message in (request.messages or [])
+        ) or (request.system_prompt + request.user_prompt)
         return LlmResponse(
             text=text,
-            input_tokens=len(request.system_prompt + request.user_prompt) // 3,
+            input_tokens=len(input_text) // 3,
             output_tokens=len(text) // 3,
             latency_ms=self.delay_ms,
             provider_request_id="mock-request-001",

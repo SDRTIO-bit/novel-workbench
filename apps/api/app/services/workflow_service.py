@@ -131,6 +131,8 @@ class WorkflowService:
                 provider_id=src_step.provider_id,
                 model_id=src_step.model_id,
                 prompt_version_id=src_step.prompt_version_id,
+                writer_prompt_mode=src_step.writer_prompt_mode or "builtin",
+                tgbreak_profile_id=src_step.tgbreak_profile_id,
                 temperature=src_step.temperature,
                 top_p=src_step.top_p,
                 max_output_tokens=src_step.max_output_tokens,
@@ -168,6 +170,22 @@ class WorkflowService:
             step.model_id = data["model_id"] if data["model_id"] else None
         if data.get("prompt_version_id") is not None:
             step.prompt_version_id = data["prompt_version_id"] if data["prompt_version_id"] else None
+        if data.get("writer_prompt_mode") is not None:
+            if stage != "writer":
+                raise bad_request(
+                    "INVALID_WRITER_PROMPT_MODE",
+                    "writer_prompt_mode 只能配置在 writer 阶段",
+                )
+            step.writer_prompt_mode = data["writer_prompt_mode"]
+        if data.get("tgbreak_profile_id") is not None:
+            if stage != "writer":
+                raise bad_request(
+                    "INVALID_WRITER_PROMPT_MODE",
+                    "tgbreak_profile_id 只能配置在 writer 阶段",
+                )
+            step.tgbreak_profile_id = (
+                data["tgbreak_profile_id"] if data["tgbreak_profile_id"] else None
+            )
         if data.get("temperature") is not None:
             t = data["temperature"]
             if t < 0.0 or t > 2.0:

@@ -38,6 +38,12 @@ class WorkflowStepConfig(Base):
     provider_id: Mapped[str | None] = mapped_column(String(36), ForeignKey("providers.id"))
     model_id: Mapped[str | None] = mapped_column(String(200))
     prompt_version_id: Mapped[str | None] = mapped_column(String(36), ForeignKey("prompt_versions.id"))
+    writer_prompt_mode: Mapped[str] = mapped_column(
+        String(20), default="builtin", server_default="builtin", nullable=False
+    )
+    tgbreak_profile_id: Mapped[str | None] = mapped_column(
+        String(36)
+    )
     temperature: Mapped[float] = mapped_column(Float, default=0.7, nullable=False)
     top_p: Mapped[float] = mapped_column(Float, default=1.0, nullable=False)
     max_output_tokens: Mapped[int] = mapped_column(Integer, default=4096, nullable=False)

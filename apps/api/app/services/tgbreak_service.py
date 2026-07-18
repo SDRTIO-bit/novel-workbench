@@ -10,7 +10,72 @@ from app.models.tgbreak import (
     TgbreakOutputRecord,
     TgbreakProfile,
 )
-from app.tgbreak.models import CoreProfile, ImportedPreset, TgbreakOutput
+from app.tgbreak.models import (
+    CoreProfile,
+    ImportedPreset,
+    PresetMetadata,
+    PromptEntry,
+    TgbreakOutput,
+)
+
+
+class TgbreakProfileLoadError(ValueError):
+    pass
+
+
+async def load_tgbreak_profile(
+    session: AsyncSession, profile_id: str | None
+) -> tuple[ImportedPreset, CoreProfile]:
+    if not profile_id:
+        raise TgbreakProfileLoadError("TGBREAK_PROFILE_REQUIRED")
+    row = await session.scalar(
+        select(TgbreakProfile)
+        .where(TgbreakProfile.id == profile_id)
+        .options(selectinload(TgbreakProfile.preset).selectinload(SillyTavernPreset.entries))
+    )
+    if not row:
+        raise TgbreakProfileLoadError("TGBREAK_PROFILE_NOT_FOUND")
+    preset_row = row.preset
+    imported = ImportedPreset(
+        metadata=PresetMetadata(
+            preset_id=preset_row.id,
+            source_path=preset_row.source_path,
+            source_sha256=preset_row.source_sha256,
+            file_size=preset_row.file_size,
+            source_format_version=preset_row.source_format_version,
+            top_level_keys=json.loads(preset_row.top_level_keys_json),
+            unsupported_fields=json.loads(preset_row.unsupported_fields_json),
+            parse_mode=preset_row.parse_mode,
+            standard_json_parse_error=(
+                json.loads(preset_row.standard_json_parse_error_json)
+                if preset_row.standard_json_parse_error_json else None
+            ),
+        ),
+        entries=[
+            PromptEntry(
+                array_index=entry.array_index,
+                identifier=entry.identifier,
+                name=entry.name,
+                enabled=entry.enabled,
+                role=entry.role,
+                content=entry.content,
+                system_prompt=entry.system_prompt,
+                marker=entry.marker,
+                injection_position=entry.injection_position,
+                injection_depth=entry.injection_depth,
+                injection_order=entry.injection_order,
+                injection_trigger=json.loads(entry.injection_trigger_json),
+                forbid_overrides=entry.forbid_overrides,
+            )
+            for entry in sorted(preset_row.entries, key=lambda item: item.array_index)
+        ],
+    )
+    profile = CoreProfile(
+        source_preset_id=row.source_preset_id,
+        source_sha256=row.source_sha256,
+        entry_overrides=json.loads(row.entry_overrides_json),
+    )
+    return imported, profile
 
 
 async def persist_imported_preset(session: AsyncSession, imported: ImportedPreset) -> SillyTavernPreset:

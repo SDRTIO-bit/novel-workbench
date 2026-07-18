@@ -19,15 +19,16 @@ class OpenAiCompatibleClient(BaseLlmClient):
 
         body = {
             "model": request.model,
-            "messages": [
+            "messages": request.messages or [
                 {"role": "system", "content": request.system_prompt},
                 {"role": "user", "content": request.user_prompt},
             ],
             "temperature": request.temperature,
             "top_p": request.top_p,
             "max_tokens": request.max_output_tokens,
-            "reasoning_mode": request.reasoning_mode,
         }
+        if request.reasoning_mode is not None:
+            body["reasoning_mode"] = request.reasoning_mode
         if request.response_format == "json_object":
             body["response_format"] = {"type": "json_object"}
 
