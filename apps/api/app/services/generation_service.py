@@ -161,7 +161,8 @@ class GenerationService:
                 parsed = parse_json(raw_response)
                 if parsed.valid:
                     try:
-                        validated = validate_stage_output(stage, parsed.data)
+                        expected_ver = 2 if stage == "planner" else None
+                        validated = validate_stage_output(stage, parsed.data, expected_version=expected_ver)
                         if stage == "judge":
                             critic_step = await self.repo.get_step(run_id, "critic")
                             selected_issue_ids = []

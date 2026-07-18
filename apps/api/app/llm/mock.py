@@ -67,9 +67,19 @@ class MockClient(BaseLlmClient):
 
             is_twilight = "黄昏" in up or "黄昏" in sp
             return json.dumps({
+                "planner_contract_version": 2,
                 "scene_goal": goal,
                 "location": loc,
                 "time": "黄昏" if is_twilight else "深夜",
+                "scene_state": {
+                    "last_completed_action": "场景开始前的状态",
+                    "present_characters": [c["name"] for c in (chars or [{"name": "主角"}])],
+                    "visible_facts": ["场景中的可见事实"],
+                    "available_objects": ["场景中的可用物件"],
+                    "unresolved_problem": "未解决的问题",
+                    "already_existing_constraints": ["已有的限制条件"],
+                },
+                "concrete_problem": "角色在本场景中需要面对的具体问题",
                 "characters": chars or [
                     {"name": "主角", "goal": "推进故事", "known": ["当前处境"], "unknown": ["对方身份", "隐藏的真相"], "mistaken_beliefs": ["事情会按预期发展"], "constraints": ["不能暴露意图"]}
                 ],
@@ -82,13 +92,32 @@ class MockClient(BaseLlmClient):
                         "id": "CT01",
                         "kind": "evidence_to_action",
                         "visible_trigger": "书店铜铃响起，门口出现一个红着眼眶的小女孩",
+                        "character_interpretation": "老陈看出女孩需要安全感",
                         "character_next_action": "老陈用最平常的语气请她进来坐",
-                        "reader_must_infer": "老陈看出女孩需要安全感，选择用日常感而非直接询问来安抚",
+                        "rejected_alternative": "直接询问女孩为什么哭",
+                        "reader_must_infer": "老陈选择用日常感而非直接询问来安抚",
                         "narrator_must_not_state": ["老陈判断女孩需要安全感", "这是最好的处理方式"],
                         "immediate_consequence": "女孩跨过门槛，阿橘走到她脚边坐下",
-                        "next_constraint": "老陈还不知道女孩为什么哭以及她从哪里来"
+                        "counterfactual_without_action": "如果老陈不邀请，女孩会继续站在门外",
+                        "consequence_would_still_happen": False,
+                        "state_delta": {"before": "女孩站在门外犹豫", "after": "女孩进入书店坐下"},
+                        "cost_or_commitment": "老陈打破了自己不干涉他人事务的习惯",
+                        "next_constraint": "老陈还不知道女孩为什么哭以及她从哪里来",
                     }
                 ],
+                "tempo_guardrails": {
+                    "entry_pressure": "铜铃响起，女孩出现在门口",
+                    "dominant_pressure": {"kind": "social_friction", "description": "陌生人之间的信任建立"},
+                    "allowed_viewpoint_misread": "女孩可能误以为老陈不关心她",
+                    "disclosure_cap": 1,
+                    "must_remain_unclassified": ["女孩哭的真正原因"],
+                    "stop_state": {
+                        "type": "relationship_shift",
+                        "visible_fact": "女孩坐在书店里",
+                        "what_is_now_different": "从陌生人变成了暂时的庇护关系",
+                        "must_not_append": "不得解释女孩为什么哭",
+                    },
+                },
                 "chapter_contract_check": {
                     "function_aligned": True,
                     "must_deliver_covered": True,
@@ -97,7 +126,15 @@ class MockClient(BaseLlmClient):
                     "main_payoff_prepared": True,
                     "ending_hook_established": True,
                     "causal_transitions_grounded": True,
-                    "reader_inference_not_pre_resolved": True
+                    "reader_inference_not_pre_resolved": True,
+                    "scene_state_reconstructed": True,
+                    "information_sources_legal": True,
+                    "character_choice_is_real": True,
+                    "consequence_is_counterfactual": True,
+                    "state_delta_is_nonempty": True,
+                    "next_constraint_is_new": True,
+                    "stop_state_is_visible": True,
+                    "stop_state_changes_future_actions": True,
                 },
             }, ensure_ascii=False)
 

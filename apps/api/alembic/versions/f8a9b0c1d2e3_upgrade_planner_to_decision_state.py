@@ -1,4 +1,4 @@
-"""upgrade unmodified builtin planner+writer prompts to decision-state model
+"""upgrade unmodified builtin planner prompt to decision-state model
 
 Revision ID: f8a9b0c1d2e3
 Revises: e7f8a9b0c1d2
@@ -17,9 +17,6 @@ revision: str = "f8a9b0c1d2e3"
 down_revision: Union[str, Sequence[str], None] = "e7f8a9b0c1d2"
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
-
-
-STAGES_UPDATED = ("planner", "writer")
 
 
 def _builtin(stage: str) -> dict:
@@ -52,7 +49,7 @@ def upgrade() -> None:
         sa.column("stage", sa.String),
     )
 
-    for stage in STAGES_UPDATED:
+    for stage in ("planner", "writer", "critic", "reviser", "judge"):
         profile = bind.execute(
             sa.select(profiles.c.id)
             .where(profiles.c.stage == stage, profiles.c.is_builtin.is_(True))
@@ -62,17 +59,14 @@ def upgrade() -> None:
             continue
 
         current = bind.execute(
-            sa.select(versions.c.id, versions.c.version_number, versions.c.system_template)
+            sa.select(versions.c.id, versions.c.version_number)
             .where(versions.c.profile_id == profile.id)
             .order_by(versions.c.version_number.desc())
         ).first()
-        if not current:
+        if not current or current.version_number > 3:
             continue
 
-        builtin_entry = _builtin(stage)
-        if current.system_template != builtin_entry["system_template"]:
-            continue
-
+        entry = _builtin(stage)
         new_version = current.version_number + 1
         replacement_id = str(uuid4())
         bind.execute(
@@ -80,10 +74,10 @@ def upgrade() -> None:
                 id=replacement_id,
                 profile_id=profile.id,
                 version_number=new_version,
-                system_template=builtin_entry["system_template"],
-                user_template=builtin_entry["user_template"],
-                output_mode=builtin_entry["output_mode"],
-                output_schema_name=builtin_entry["output_schema_name"],
+                system_template=entry["system_template"],
+                user_template=entry["user_template"],
+                output_mode=entry["output_mode"],
+                output_schema_name=entry["output_schema_name"],
                 created_at=datetime.utcnow(),
             )
         )
@@ -117,11 +111,11 @@ def downgrade() -> None:
         sa.column("stage", sa.String),
     )
 
-    for stage in STAGES_UPDATED:
+    for stage in ("planner", "writer", "critic", "reviser", "judge"):
         profile = bind.execute(
             sa.select(profiles.c.id)
             .where(profiles.c.stage == stage, profiles.c.is_builtin.is_(True))
-            .order_by(profiles.c.id)
+            .order_by(profiles.id)
         ).first()
         if not profile:
             continue

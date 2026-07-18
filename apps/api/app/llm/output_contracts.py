@@ -130,6 +130,18 @@ class StateDelta(BaseModel):
     before: str = ""
     after: str = ""
 
+    @model_validator(mode="after")
+    def check_nonempty_and_different(self):
+        before_stripped = self.before.strip()
+        after_stripped = self.after.strip()
+        if not before_stripped:
+            raise ValueError("state_delta.before must not be empty")
+        if not after_stripped:
+            raise ValueError("state_delta.after must not be empty")
+        if before_stripped == after_stripped:
+            raise ValueError("state_delta.before and after must differ")
+        return self
+
 
 class CausalTransition(BaseModel):
     id: str
@@ -140,11 +152,26 @@ class CausalTransition(BaseModel):
     rejected_alternative: str = ""
     immediate_consequence: str = Field(min_length=1)
     counterfactual_without_action: str = ""
+    consequence_would_still_happen: bool | None = None
     state_delta: StateDelta | None = None
     cost_or_commitment: str = ""
     next_constraint: str = Field(min_length=1)
     reader_must_infer: str = Field(min_length=1)
     narrator_must_not_state: list[str] = Field(min_length=1)
+
+    @field_validator("kind", mode="before")
+    @classmethod
+    def normalize_kind(cls, value):
+        if isinstance(value, str):
+            value = value.strip()
+            # Map Chinese values to English enum values
+            chinese_to_english = {
+                "证据到行动": "evidence_to_action",
+                "约束到选择": "constraint_to_choice",
+            }
+            if value in chinese_to_english:
+                return chinese_to_english[value]
+        return value
 
     @field_validator("id", mode="before")
     @classmethod
@@ -275,6 +302,18 @@ class PlannerOutput(BaseModel):
             ]
         if isinstance(normalized.get("chapter_contract_check"), str):
             normalized["chapter_contract_check"] = {}
+        # Handle scene_state being a string instead of object - convert to minimal object
+        scene_state = normalized.get("scene_state")
+        if isinstance(scene_state, str) and scene_state.strip():
+            # Convert string description to minimal object structure
+            normalized["scene_state"] = {
+                "last_completed_action": "",
+                "present_characters": [],
+                "visible_facts": [],
+                "available_objects": [],
+                "unresolved_problem": scene_state.strip(),
+                "already_existing_constraints": [],
+            }
         return normalized
 
     @field_validator("forbidden", mode="before")
@@ -311,13 +350,20 @@ class PlannerOutput(BaseModel):
         return self
 
 
-def validate_planner_output(data: dict) -> PlannerOutput:
+def validate_planner_output(data: dict, expected_version: int | None = None) -> PlannerOutput:
     try:
         output = PlannerOutput(**data)
     except Exception as e:
         raise ValueError(f"PLANNER_OUTPUT_CONTRACT_INVALID: {e}") from e
     
     version = output.planner_contract_version
+    
+    if expected_version is not None and version != expected_version:
+        raise ValueError(
+            f"PLANNER_OUTPUT_CONTRACT_INVALID: expected planner_contract_version={expected_version}, "
+            f"got {version}"
+        )
+    
     if version >= 2:
         errors = []
         
@@ -331,6 +377,16 @@ def validate_planner_output(data: dict) -> PlannerOutput:
         if not output.concrete_problem:
             errors.append("concrete_problem is required in v2")
         
+        if not output.causal_transitions:
+            errors.append("at least one causal_transition is required in v2")
+        
+        existing_constraints_normalized = set()
+        if output.scene_state and output.scene_state.already_existing_constraints:
+            for c in output.scene_state.already_existing_constraints:
+                normalized = c.strip().rstrip("。，,.；;")
+                if normalized:
+                    existing_constraints_normalized.add(normalized)
+        
         for i, ct in enumerate(output.causal_transitions):
             if not ct.character_interpretation:
                 errors.append(f"causal_transitions[{i}].character_interpretation is required in v2")
@@ -338,12 +394,18 @@ def validate_planner_output(data: dict) -> PlannerOutput:
                 errors.append(f"causal_transitions[{i}].rejected_alternative is required in v2")
             if not ct.counterfactual_without_action:
                 errors.append(f"causal_transitions[{i}].counterfactual_without_action is required in v2")
+            if ct.consequence_would_still_happen is not False:
+                errors.append(f"causal_transitions[{i}].consequence_would_still_happen must be false in v2")
             if not ct.state_delta:
                 errors.append(f"causal_transitions[{i}].state_delta is required in v2")
-            elif ct.state_delta.before == ct.state_delta.after:
-                errors.append(f"causal_transitions[{i}].state_delta.before/after must differ")
             if not ct.cost_or_commitment:
                 errors.append(f"causal_transitions[{i}].cost_or_commitment is required in v2")
+            
+            next_constraint_normalized = ct.next_constraint.strip().rstrip("。，,.；;")
+            if next_constraint_normalized in existing_constraints_normalized:
+                errors.append(
+                    f"causal_transitions[{i}].next_constraint duplicates an already_existing_constraint"
+                )
         
         if output.tempo_guardrails:
             if not output.tempo_guardrails.stop_state:
@@ -648,12 +710,12 @@ def validate_judge_output_for_selected_issues(
 
 # ── Stage-level dispatch ──────────────────────────────────────────────
 
-def validate_stage_output(stage: str, data: dict) -> dict:
+def validate_stage_output(stage: str, data: dict, expected_version: int | None = None) -> dict:
     """Validate stage output and return normalized data.
     Raises ValueError with stage-specific error code on failure.
     """
     if stage == "planner":
-        return validate_planner_output(data).model_dump()
+        return validate_planner_output(data, expected_version=expected_version).model_dump()
     elif stage == "critic":
         return validate_critic_output(data).model_dump()
     elif stage == "reviser":

@@ -21,6 +21,7 @@ def _transition():
         "narrator_must_not_state": ["\u4e24\u4e2a\u7f16\u53f7\u4e00\u81f4"],
         "immediate_consequence": "\u9646\u8861\u6539\u53d8\u8c03\u67e5\u65b9\u5411",
         "counterfactual_without_action": "\u5982\u679c\u9646\u8861\u4e0d\u6539\u53d8\u65b9\u5411\uff0c\u8c03\u67e5\u4f1a\u6309\u539f\u5de5\u5355\u7ed3\u6848",
+        "consequence_would_still_happen": False,
         "state_delta": {"before": "\u6309\u539f\u5de5\u5355\u6d41\u7a0b\u5904\u7406", "after": "\u8c03\u67e5\u65b9\u5411\u8f6c\u5411\u8bb8\u660e\u8fdc"},
         "cost_or_commitment": "\u9646\u8861\u504f\u79bb\u4e86\u6807\u51c6\u6d41\u7a0b\uff0c\u627f\u62c5\u8ffd\u67e5\u98ce\u9669",
         "next_constraint": "\u4ed6\u4e0d\u80fd\u900f\u9732\u672a\u6765\u5de5\u5355",
@@ -126,7 +127,7 @@ def test_planner_v2_rejects_missing_character_interpretation():
 def test_planner_v2_rejects_same_state_delta():
     data = _planner_data_v2()
     data["causal_transitions"] = [{**_transition(), "state_delta": {"before": "\u76f8\u540c", "after": "\u76f8\u540c"}}]
-    with pytest.raises(ValueError, match="state_delta.before/after must differ"):
+    with pytest.raises(ValueError, match="state_delta.before and after must differ"):
         validate_planner_output(data)
 
 
@@ -141,6 +142,69 @@ def test_planner_v2_rejects_empty_contract_check():
     data = _planner_data_v2()
     data["chapter_contract_check"] = {}
     with pytest.raises(ValueError, match="chapter_contract_check fields must all be true"):
+        validate_planner_output(data)
+
+
+def test_planner_expected_version_rejects_wrong_version():
+    data = _planner_data_v1()
+    with pytest.raises(ValueError, match="expected planner_contract_version=2"):
+        validate_planner_output(data, expected_version=2)
+
+
+def test_planner_expected_version_accepts_correct_version():
+    data = _planner_data_v2()
+    result = validate_planner_output(data, expected_version=2)
+    assert result.planner_contract_version == 2
+
+
+def test_planner_v2_rejects_consequence_would_still_happen_true():
+    data = _planner_data_v2()
+    data["causal_transitions"] = [{**_transition(), "consequence_would_still_happen": True}]
+    with pytest.raises(ValueError, match="consequence_would_still_happen must be false"):
+        validate_planner_output(data)
+
+
+def test_planner_v2_rejects_consequence_would_still_happen_none():
+    data = _planner_data_v2()
+    data["causal_transitions"] = [{**_transition(), "consequence_would_still_happen": None}]
+    with pytest.raises(ValueError, match="consequence_would_still_happen must be false"):
+        validate_planner_output(data)
+
+
+def test_planner_v2_rejects_empty_state_delta_before():
+    data = _planner_data_v2()
+    data["causal_transitions"] = [{**_transition(), "state_delta": {"before": "", "after": "changed"}}]
+    with pytest.raises(ValueError, match="state_delta.before must not be empty"):
+        validate_planner_output(data)
+
+
+def test_planner_v2_rejects_whitespace_only_state_delta():
+    data = _planner_data_v2()
+    data["causal_transitions"] = [{**_transition(), "state_delta": {"before": "  ", "after": "changed"}}]
+    with pytest.raises(ValueError, match="state_delta.before must not be empty"):
+        validate_planner_output(data)
+
+
+def test_planner_v2_rejects_duplicate_next_constraint():
+    data = _planner_data_v2()
+    data["scene_state"]["already_existing_constraints"] = ["existing constraint"]
+    data["causal_transitions"] = [{**_transition(), "next_constraint": "existing constraint"}]
+    with pytest.raises(ValueError, match="next_constraint duplicates"):
+        validate_planner_output(data)
+
+
+def test_planner_v2_rejects_duplicate_next_constraint_with_punctuation():
+    data = _planner_data_v2()
+    data["scene_state"]["already_existing_constraints"] = ["existing constraint。"]
+    data["causal_transitions"] = [{**_transition(), "next_constraint": "existing constraint"}]
+    with pytest.raises(ValueError, match="next_constraint duplicates"):
+        validate_planner_output(data)
+
+
+def test_planner_v2_rejects_zero_causal_transitions():
+    data = _planner_data_v2()
+    data["causal_transitions"] = []
+    with pytest.raises(ValueError, match="at least one causal_transition is required"):
         validate_planner_output(data)
 
 
