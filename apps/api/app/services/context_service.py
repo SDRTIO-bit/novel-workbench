@@ -288,6 +288,8 @@ class ContextService:
         }
         if version.output_schema_name == "critic_v2":
             meta["expected_critic_contract_version"] = 2
+        if version.output_schema_name == "critic_evidence_v1":
+            meta["expected_critic_evidence_contract_version"] = 1
         return meta
 
     async def _resolve_from_workflow(self, workflow_id: str, stage: str) -> tuple[str, str, dict]:

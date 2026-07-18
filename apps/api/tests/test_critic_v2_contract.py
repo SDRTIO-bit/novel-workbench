@@ -218,29 +218,32 @@ def test_expected_critic_contract_version_uses_explicit_schema_marker():
     ) is None
 
 
-def test_official_critic_prompt_requires_audits_before_strength_protection():
+def test_official_critic_evidence_prompt_requires_audits_before_strength_protection():
     critic = next(entry for entry in BUILTIN_PROMPTS if entry["stage"] == "critic")
     prompt = critic["system_template"]
 
-    assert critic["output_schema_name"] == "critic_v2"
+    assert critic["output_schema_name"] == "critic_evidence_v1"
 
     for required_text in [
-        "问题识别优先于亮点保护",
-        "issue 段落不得进入 protected_strengths",
-        "先找到 stop_state.visible_fact 第一次成立的位置",
+        "只提交证据",
+        "程序会从证据生成 issues、issue_id、decision",
+        "找 stop_state.visible_fact 首次成立位置",
         "rejected_alternative",
         "cost_or_commitment",
     ]:
         assert required_text in prompt
 
 
-def test_official_critic_v21_prompt_requires_choice_evidence_before_true_findings():
+def test_official_critic_evidence_prompt_requires_verbatim_evidence_before_true_findings():
     critic = next(entry for entry in BUILTIN_PROMPTS if entry["stage"] == "critic")
     prompt = critic["system_template"]
 
     for required_text in [
-        "任何 true 判断都必须先引用正文证据",
-        "不能引用场景规划本身作为正文证据",
+        "需要正文证据的 true 判断没有引用时填 false",
+        "不得引用 Planner",
         "没有锁门不自动等于延迟关店代价已落实",
+        "把灯转向另一侧不自动证明形成了持续的新行动约束",
+        "小满停了一下不自动证明离开是被明确拒绝的现实替代路线",
+        "不得提供 issue_id",
     ]:
         assert required_text in prompt

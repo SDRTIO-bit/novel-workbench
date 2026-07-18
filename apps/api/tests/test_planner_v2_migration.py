@@ -46,6 +46,12 @@ CRITIC_V2_PATH = os.path.join(
 CRITIC_V21_PATH = os.path.join(
     API_DIR, "alembic", "versions", "f3a4b5c6d7e8_add_critic_v21_choice_evidence.py"
 )
+CRITIC_EVIDENCE_FIELDS_PATH = os.path.join(
+    API_DIR, "alembic", "versions", "f4a5b6c7d8e9_add_critic_evidence_candidate_fields.py"
+)
+CRITIC_EVIDENCE_PROMPT_PATH = os.path.join(
+    API_DIR, "alembic", "versions", "f5a6b7c8d9e0_add_critic_evidence_prompt.py"
+)
 
 
 def _load_migration(path=A2_PATH):
@@ -924,3 +930,103 @@ def test_critic_v21_migration_skips_user_modified_v7(engine, monkeypatch, caplog
     with Session(engine) as session:
         assert [version.version_number for version in _versions_of(session, profile_id)] == [7]
     assert any("user-modified" in record.message for record in caplog.records)
+
+
+def _seed_official_critic_v8_with_workflows(engine, monkeypatch, *, system, user):
+    migration = _load_migration(CRITIC_EVIDENCE_PROMPT_PATH)
+    monkeypatch.setattr(
+        migration,
+        "OFFICIAL_V8_TEMPLATE_SHA256",
+        migration._template_hash(system, user),
+    )
+    from app.models.prompt import PromptProfile, PromptVersion
+    from app.models.workflow import WorkflowProfile, WorkflowStepConfig
+
+    with Session(engine) as session:
+        profile = PromptProfile(stage="critic", name="默认场景诊断", is_builtin=True)
+        session.add(profile)
+        session.flush()
+        v8 = PromptVersion(
+            profile_id=profile.id, version_number=8,
+            system_template=system, user_template=user,
+            output_mode="structured", output_schema_name="critic_v2",
+        )
+        historical = PromptVersion(
+            profile_id=profile.id, version_number=7,
+            system_template="historical critic system", user_template="historical critic user",
+            output_mode="structured", output_schema_name="critic_v2",
+        )
+        session.add_all([v8, historical])
+        session.flush()
+        workflow = WorkflowProfile(name="official critic evidence workflow", is_default=True)
+        pinned = WorkflowProfile(name="historical critic evidence workflow", is_default=False)
+        session.add_all([workflow, pinned])
+        session.flush()
+        upgraded = WorkflowStepConfig(
+            workflow_profile_id=workflow.id, stage="critic", prompt_version_id=v8.id
+        )
+        pinned_step = WorkflowStepConfig(
+            workflow_profile_id=pinned.id, stage="critic", prompt_version_id=historical.id
+        )
+        session.add_all([upgraded, pinned_step])
+        session.commit()
+        return migration, profile.id, v8.id, historical.id, upgraded.id, pinned_step.id
+
+
+def test_critic_evidence_prompt_migration_upgrades_only_exact_v21(engine, monkeypatch):
+    migration, profile_id, v8_id, historical_id, step_id, pinned_step_id = _seed_official_critic_v8_with_workflows(
+        engine, monkeypatch, system="official critic v21 system", user="official critic v21 user"
+    )
+    _run_migration(migration, engine, "upgrade")
+    from app.prompts.defaults import BUILTIN_PROMPTS
+    current = next(entry for entry in BUILTIN_PROMPTS if entry["stage"] == "critic")
+
+    with Session(engine) as session:
+        v9 = next(v for v in _versions_of(session, profile_id) if v.version_number == 9)
+        assert v9.system_template == current["system_template"]
+        assert v9.user_template == "official critic v21 user"
+        assert v9.output_mode == "structured"
+        assert v9.output_schema_name == "critic_evidence_v1"
+        assert _step_prompt_id(session, step_id) == v9.id
+        assert _step_prompt_id(session, pinned_step_id) == historical_id
+
+    _run_migration(migration, engine, "downgrade")
+    with Session(engine) as session:
+        assert {v.id for v in _versions_of(session, profile_id)} == {v8_id, historical_id}
+        assert _step_prompt_id(session, step_id) == v8_id
+        assert _step_prompt_id(session, pinned_step_id) == historical_id
+
+
+def test_critic_evidence_prompt_migration_skips_user_modified_v21(engine, caplog):
+    migration = _load_migration(CRITIC_EVIDENCE_PROMPT_PATH)
+    from app.models.prompt import PromptProfile, PromptVersion
+    with Session(engine) as session:
+        profile = PromptProfile(stage="critic", name="默认场景诊断", is_builtin=True)
+        session.add(profile)
+        session.flush()
+        session.add(PromptVersion(
+            profile_id=profile.id, version_number=8,
+            system_template="custom v21", user_template="custom user",
+            output_mode="structured", output_schema_name="critic_v2",
+        ))
+        session.commit()
+        profile_id = profile.id
+    with caplog.at_level(logging.WARNING, logger="alembic.runtime.migration"):
+        _run_migration(migration, engine, "upgrade")
+    with Session(engine) as session:
+        assert [v.version_number for v in _versions_of(session, profile_id)] == [8]
+    assert any("user-modified" in record.message for record in caplog.records)
+
+
+def test_critic_evidence_candidate_fields_migration_adds_and_removes_columns(tmp_path):
+    engine = create_engine(f"sqlite:///{tmp_path / 'critic-evidence.db'}")
+    with engine.begin() as conn:
+        conn.exec_driver_sql("CREATE TABLE generation_candidates (id VARCHAR(36) PRIMARY KEY)")
+    migration = _load_migration(CRITIC_EVIDENCE_FIELDS_PATH)
+    _run_migration(migration, engine, "upgrade")
+    columns = {column["name"] for column in inspect(engine).get_columns("generation_candidates")}
+    assert {"model_parsed_output_json", "compiler_trace_json"} <= columns
+    _run_migration(migration, engine, "downgrade")
+    columns = {column["name"] for column in inspect(engine).get_columns("generation_candidates")}
+    assert "model_parsed_output_json" not in columns
+    assert "compiler_trace_json" not in columns

@@ -185,6 +185,56 @@ class MockClient(BaseLlmClient):
 
         # Critic → diagnostic report
         if "文学编辑" in sp or "critic" in sp:
+            if "critic_evidence_contract_version" in sp:
+                first_quote = (
+                    "黄昏的光从梧桐叶的缝隙里漏进来"
+                    if "黄昏的光从梧桐叶的缝隙里漏进来" in up
+                    else "雨是从九点四十分开始下的"
+                )
+                return json.dumps({
+                    "critic_evidence_contract_version": 1,
+                    "overall_assessment": "编号正文在停点后仍继续，选择重量未完整落地。",
+                    "stop_audit": {
+                        "visible_fact_found": True,
+                        "first_satisfied_paragraph_id": "P001",
+                        "quote": first_quote,
+                        "explanation": "该可见画面可作为停点事实的落点。",
+                    },
+                    "inference_findings": [],
+                    "transition_audits": [{
+                        "transition_id": "CT01",
+                        "trigger": {"visible": True, "evidence": [{
+                            "paragraph_id": "P001", "quote": first_quote,
+                            "explanation": "正文给出了可见触发。",
+                        }], "explanation": "触发可见。"},
+                        "next_action": {"visible": True, "evidence": [{
+                            "paragraph_id": "P001", "quote": first_quote,
+                            "explanation": "正文有后续变化。",
+                        }], "explanation": "行动可见。"},
+                        "immediate_consequence": {"visible": True, "evidence": [{
+                            "paragraph_id": "P001", "quote": first_quote,
+                            "explanation": "正文有即时可见结果。",
+                        }], "explanation": "后果可见。"},
+                        "rejected_alternative": {"visible": False, "evidence": [], "explanation": "没有可验证的替代路线。"},
+                        "cost_or_commitment": {"visible": False, "evidence": [], "explanation": "没有可验证的具体代价。"},
+                        "next_constraint": {"visible": False, "evidence": [], "explanation": "没有可验证的新限制。"},
+                        "reader_inference_withheld": True,
+                        "forbidden_explanation_evidence": [],
+                    }],
+                    "general_findings": [],
+                    "strength_candidates": [],
+                    "chapter_contract_observations": {
+                        "chapter_function_delivered": True, "must_deliver_satisfied": True,
+                        "must_not_deliver_respected": True, "main_change_advanced": True,
+                        "main_payoff_delivered": True, "ending_hook_set": True,
+                        "fuel_reserved": True, "target_length_met": True,
+                    },
+                    "tempo_observations": {
+                        "starts_in_motion": True, "disruption_interrupts_action": True,
+                        "viewpoint_misread_is_actionable": True, "disclosure_cap_respected": True,
+                        "unclassified_facts_preserved": True, "formulaic_completion_risk": "low",
+                    },
+                }, ensure_ascii=False)
             return json.dumps({
                 "critic_contract_version": 2,
                 "overall_assessment": "结尾已经形成可见变化，但停点之后仍追加说明；人物选择的代价也需要在正文中落地。",

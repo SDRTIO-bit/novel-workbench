@@ -335,28 +335,20 @@ BUILTIN_PROMPTS = [
         "description": "对初稿进行精准诊断，检测是否交付本章契约并标注受保护亮点",
         "system_template": (
             "## 角色与规则\n"
-            "你是一位经验丰富的类型文学编辑。只输出合法 JSON，不得输出解释、前言、后缀或 Markdown。输出 critic_contract_version 必须为整数 2。\n\n"
+            "你是一位经验丰富的类型文学编辑。只输出合法 JSON，不得输出解释、前言、后缀或 Markdown。输出 critic_evidence_contract_version 必须为整数 1。\n\n"
             "## 强制诊断顺序\n"
-            "必须按以下顺序完成。问题识别优先于亮点保护；不得跳到一般文风、结尾或 hook 检查，也不得因为最多 5 个 issue 而遗漏前三类。\n\n"
-            "第一步：先找到 stop_state.visible_fact 第一次成立的位置。读取 tempo_guardrails.stop_state.visible_fact 与 must_not_append，在编号正文中定位首次成立段落；逐段检查其后的全部内容。其后新增动作、对白、物件处理、场景调度、新信息、心理或关系定性、温柔余韵、主题总结、解释刚发生事实、再次制造更晚结尾，均为 stop_state_overrun。返回 stop_state_audit。若有越界，创建 high severity 的 stop_state_overrun issue，paragraph_ids 覆盖全部违规段落，recommended_operation 为 tighten 或 withhold_inference，revision_goal 必须保留停止事实并删除或截断越界部分。猫鼻尖碰到手背后继续写肩膀变化、猫蹭手、洗杯、开灯、调灯是判断方式示例，不得机械寻找这些词。\n\n"
-            "第二步：检查读者推论是否被旁白完成。逐段比较 Planner 的 reader_must_infer、narrator_must_not_state 与正文。动作已足够后，旁白或比喻又宣布“终于”“慢慢松开”“放下戒备”“接受善意”“距离近了”“气氛柔和”等同功能结论，才是 inference_overexplained。不得关键词匹配，按句子功能判断；“肩膀塌下去”单独作为可见动作不自动判错，只有它与上下文共同替读者确定放松、接受或关系缓和时才判错。返回 inference_audit；若 overexplained=true，摘录 quoted_phrases，并创建对应 inference_overexplained issue，recommended_operation 为 withhold_inference。\n\n"
-            "第三步：检查选择是否有重量。对每张 causal_transition 检查 rejected_alternative、cost_or_commitment、next_constraint 是否以具体行动和局面让读者感受到：人物本可另一行动→没有那样做→选择关闭退路或产生责任、风险、延误、暴露或持续限制→后续受新限制。不要要求正文复述字段；只写 character_next_action 与 immediate_consequence 不算完整落实。任何 true 判断都必须先引用正文证据；不能引用场景规划本身作为正文证据，不能因为 Planner 声明了字段就默认 Writer 已落实。\n"
-            "先问：人物采取当前行动之前，正文是否展示另一条具体、仍可执行的路线？再问：正文是否让读者感受到人物关闭或放弃它？任一为否，rejected_alternative_visible=false。\n"
-            "再问：行动之后人物实际失去什么、承担什么，或后续必须继续做什么？若只能写成“付出了善意”“承担情绪压力”“冒了一点风险”“延迟了一下”等抽象词，且没有具体可见事实，cost_or_commitment_visible=false。没有锁门不自动等于延迟关店代价已落实；只有正文进一步表明关店计划受阻、必须继续留下、收尾被搁置或有其他持续限制时才可为 true。\n"
-            "最后问：该选择以后，人物行动空间具体少了哪一项，或新增哪项必须继续处理的责任？不能回答时 next_constraint_visible=false。每个 true 字段必须附带至少一项 {paragraph_id, quote, explanation}，三项均为非空字符串；paragraph_id 必须属于该 choice_realization_check 的 paragraph_ids。\n"
-            "反例一：Planner 写 cost_or_commitment=老陈延迟关店，正文只写“老陈没有锁门，小满走进来”，则 cost_or_commitment_visible=false；正文没有表明关店计划受阻、老陈必须继续留下、收尾被搁置或产生其他持续限制。\n"
-            "反例二：Planner 写 rejected_alternative=小满转身离开，正文只写“小满在门口停了一下，然后走进书店”。仅有“停了一下”不足以证明离开是现场中真实可行路线；除非正文通过方向、动作、对白或环境事实让离开成为具体选择，否则 rejected_alternative_visible=false。\n"
-            "每张转折返回 choice_realization_check；任一可见判断为 false 时，创建 medium/high severity 的 choice_cost_missing issue，recommended_operation 为 causalize。\n\n"
-            "第四步：完成前三项后，才检查开场、对话、节奏、风格、契约、字数与一般结尾钩子。删除结尾总结时必须保留钩子承载的可见事实，不得只留下角色反应。最多 5 个 issue，优先级依次为 stop_state_overrun、inference_overexplained、choice_cost_missing、契约未交付、其他文风措辞。每个 issue 必须有唯一 I01/I02… ID、精确 paragraph_ids、可执行 revision_goal 和最小有效 recommended_operation。\n\n"
-            "第五步：最后标记 protected_strengths。issue 段落不得进入 protected_strengths；同段既有有效事实又有错误解释时，不保护整段，创建 issue，revision_goal 明确保留有效事实、仅删改错误部分。成功落实因果转折不自动保护整段；只有整段不存在任何待修问题才可保护。\n\n"
-            "issue_type 可使用既有类型，以及 stop_state_overrun、choice_cost_missing、inference_overexplained。推荐操作：stop_state_overrun → tighten/withhold_inference；inference_overexplained → withhold_inference；choice_cost_missing → causalize。\n\n"
+            "先做三项强制审计，再记录一般发现，最后才给 strength_candidates。你只提交证据；程序会从证据生成 issues、issue_id、decision、paragraphs_after_stop、protected-overlap 处理和 ending_stops_without_summary。不得输出 issues、issue_id、decision、paragraphs_after_stop、stop_state_overrun、ending_stops_without_summary 或任何程序结论。\n\n"
+            "所有正文引用必须使用编号正文中的实际 [P001] 标签。每项引用均为 {paragraph_id, quote, explanation}：quote 必须是该段逐字可见的连续原文（允许空白差异），不得引用 Planner、不得概括、不得虚构。需要正文证据的 true 判断没有引用时填 false，不得凭 Planner 默认 true。\n\n"
+            "第一项 stop_audit：在编号正文中找 stop_state.visible_fact 首次成立位置。visible_fact_found=true 时必须给 first_satisfied_paragraph_id、quote、explanation；false 时三个字段为空。不要列出停点后的段落，程序会按正文顺序推导。\n\n"
+            "检查结尾时必须保留钩子承载的可见事实；不得把它改成角色反应或事后总结。\n\n"
+            "第二项 inference_findings：仅记录正文已经给出可见动作后，旁白又替读者确定心理、关系或主题结论的逐字证据；每项必须有 paragraph_id、quote、explanation、severity。没有则 []。\n\n"
+            "第三项 transition_audits：每张 Planner causal_transition 一项。每项记录 trigger、next_action、immediate_consequence、rejected_alternative、cost_or_commitment、next_constraint；每个对象含 visible、evidence、explanation。visible=true 时 evidence 至少一项且逐字可证；false 时说明缺少何种可见事实。另填 reader_inference_withheld，若为 false，forbidden_explanation_evidence 必须引用正文；若为 true，该列表必须为空。\n"
+            "选择重量的判准：另一条路线必须在现场具体可执行；代价/承诺必须是可见的责任、风险、延误、暴露或持续限制；next_constraint 必须是选择之后的新行动限制。没有锁门不自动等于延迟关店代价已落实；把灯转向另一侧不自动证明形成了持续的新行动约束；小满停了一下不自动证明离开是被明确拒绝的现实替代路线。\n\n"
+            "随后可给 general_findings（最多只记录有逐段依据的普通问题），strength_candidates，以及 chapter_contract_observations 和 tempo_observations。general_findings 不得抢占前三项强制审计；strength_candidates 只列整段无问题的亮点，不能维护与 issue 的重叠。\n\n"
             "输出 JSON 字段：\n"
-            "- critic_contract_version：固定为 2\n"
-            "- overall_assessment、decision（pass/local_revision/scene_rewrite）、strengths、issues、protected_strengths、chapter_contract_check、causal_transition_check、tempo_profile_check\n"
-            "- stop_state_audit：visible_fact_found、first_satisfied_paragraph_id、paragraphs_after_stop、post_stop_new_action_found、post_stop_emotional_summary_found、issue_id；若有越界 issue_id 指向 stop_state_overrun，否则为空字符串\n"
-            "- inference_audit：overexplained、paragraph_ids、quoted_phrases、issue_id；overexplained=true 时必须有摘录且 issue_id 指向 inference_overexplained\n"
-            "- choice_realization_check：每张转折一项，包含 transition_id、rejected_alternative_visible、cost_or_commitment_visible、next_constraint_visible、paragraph_ids、rejected_alternative_evidence、cost_or_commitment_evidence、next_constraint_evidence、issue_id、comment；每个 evidence 都含非空 paragraph_id、quote、explanation，true 对应 evidence 至少一项；任一可见判断为 false 时 issue_id 指向 choice_cost_missing\n"
-            "- tempo_profile_check.ending_stops_without_summary 必须与 stop_state_audit 一致：有越界时为 false；未找到停止事实时不得为 true。\n\n"
+            "- critic_evidence_contract_version：固定为 1\n"
+            "- overall_assessment、stop_audit、inference_findings、transition_audits、general_findings、strength_candidates、chapter_contract_observations、tempo_observations\n"
+            "- general_findings 每项只含 issue_type、severity、paragraph_ids、problem、revision_goal、recommended_operation；不得提供 issue_id。\n\n"
             "## 项目设定\n"
             "诊断时必须参考以下项目资料的风格标准和角色设定：\n"
             "{{project_documents}}\n\n"
@@ -388,7 +380,7 @@ BUILTIN_PROMPTS = [
             "请输出 JSON 格式的诊断报告。"
         ),
         "output_mode": "structured",
-        "output_schema_name": "critic_v2",
+        "output_schema_name": "critic_evidence_v1",
     },
     {
         "stage": "reviser",

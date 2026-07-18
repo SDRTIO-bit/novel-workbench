@@ -3,7 +3,9 @@ from app.mcp_utils import mcp_db
 from app.models.prompt import PromptVersion
 from app.services.generation_service import (
     CRITIC_V2_SCHEMA_NAME,
+    CRITIC_EVIDENCE_V1_SCHEMA_NAME,
     EXPECTED_CRITIC_CONTRACT_VERSION,
+    EXPECTED_CRITIC_EVIDENCE_CONTRACT_VERSION,
     EXPECTED_PLANNER_CONTRACT_VERSION,
     PLANNER_V2_SCHEMA_NAME,
     GenerationService,
@@ -34,6 +36,11 @@ async def _candidate_contract_meta(session, stage: str, prompt_version_id: str |
         "expected_critic_contract_version": (
             EXPECTED_CRITIC_CONTRACT_VERSION
             if stage == "critic" and output_schema_name == CRITIC_V2_SCHEMA_NAME
+            else None
+        ),
+        "expected_critic_evidence_contract_version": (
+            EXPECTED_CRITIC_EVIDENCE_CONTRACT_VERSION
+            if stage == "critic" and output_schema_name == CRITIC_EVIDENCE_V1_SCHEMA_NAME
             else None
         ),
     }
@@ -201,7 +208,10 @@ async def execute_stage(
             "output_schema_name": contract_meta["output_schema_name"],
             "expected_contract_version": contract_meta["expected_contract_version"],
             "expected_critic_contract_version": contract_meta["expected_critic_contract_version"],
+            "expected_critic_evidence_contract_version": contract_meta["expected_critic_evidence_contract_version"],
+            "model_parsed_output_json": candidate.model_parsed_output_json,
             "parsed_output_json": candidate.parsed_output_json,
+            "compiler_trace_json": candidate.compiler_trace_json,
         }
 
 
@@ -279,7 +289,9 @@ async def get_stage_status(run_id: str, stage: str) -> dict:
                 "text_output": c.text_output or "",
                 "prompt_version_id": c.prompt_version_id or "",
                 "raw_response": c.raw_response or "",
+                "model_parsed_output_json": c.model_parsed_output_json,
                 "parsed_output_json": c.parsed_output_json,
+                "compiler_trace_json": c.compiler_trace_json,
                 "rendered_user_prompt": c.rendered_user_prompt or "",
                 "input_tokens": c.input_tokens,
                 "output_tokens": c.output_tokens,
@@ -289,6 +301,7 @@ async def get_stage_status(run_id: str, stage: str) -> dict:
                 "response_format": contract_meta["response_format"],
                 "max_output_tokens": _candidate_max_output_tokens(c),
                 "expected_critic_contract_version": contract_meta["expected_critic_contract_version"],
+                "expected_critic_evidence_contract_version": contract_meta["expected_critic_evidence_contract_version"],
             })
         return {
             "stage": step.stage,

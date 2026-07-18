@@ -19,6 +19,7 @@ from app.llm.output_contracts import (
     validate_tempo_final_line,
 )
 from app.models.generation import GenerationRun
+from app.services.critic_compiler import compile_critic_report, validate_critic_evidence
 
 
 def _save_to_disk(title: str, text: str):
@@ -38,6 +39,8 @@ EXPECTED_PLANNER_CONTRACT_VERSION = 2
 PLANNER_V2_SCHEMA_NAME = "planner_v2"
 EXPECTED_CRITIC_CONTRACT_VERSION = 2
 CRITIC_V2_SCHEMA_NAME = "critic_v2"
+CRITIC_EVIDENCE_V1_SCHEMA_NAME = "critic_evidence_v1"
+EXPECTED_CRITIC_EVIDENCE_CONTRACT_VERSION = 1
 
 
 def _expected_planner_contract_version(stage: str, prompt_meta: dict | None) -> int | None:
@@ -162,7 +165,9 @@ class GenerationService:
         error_code = None
         error_message = None
         raw_response = ""
+        model_parsed_output_json = None
         parsed_output_json = None
+        compiler_trace_json = None
         text_output = ""
         input_tokens = 0
         output_tokens = 0
@@ -215,12 +220,34 @@ class GenerationService:
                     parsed = parse_json(raw_response)
                     if parsed.valid:
                         try:
-                            expected_ver = _expected_planner_contract_version(
-                                stage, ctx.get("prompt_meta")
-                            ) or _expected_critic_contract_version(
-                                stage, ctx.get("prompt_meta")
-                            )
-                            validated = validate_stage_output(stage, parsed.data, expected_version=expected_ver)
+                            if (
+                                stage == "critic"
+                                and ctx.get("prompt_meta", {}).get("output_schema_name")
+                                == CRITIC_EVIDENCE_V1_SCHEMA_NAME
+                            ):
+                                evidence = validate_critic_evidence(parsed.data)
+                                model_parsed_output_json = json.dumps(
+                                    evidence.model_dump(), ensure_ascii=False
+                                )
+                                numbered_draft = ContextService(self.session)._numbered_text(
+                                    ctx_req.draft_text
+                                )
+                                compilation = compile_critic_report(
+                                    evidence, ctx_req.scene_plan or {}, numbered_draft
+                                )
+                                validated = validate_stage_output(
+                                    "critic", compilation.report.model_dump()
+                                )
+                                compiler_trace_json = json.dumps(
+                                    compilation.trace.model_dump(), ensure_ascii=False
+                                )
+                            else:
+                                expected_ver = _expected_planner_contract_version(
+                                    stage, ctx.get("prompt_meta")
+                                ) or _expected_critic_contract_version(
+                                    stage, ctx.get("prompt_meta")
+                                )
+                                validated = validate_stage_output(stage, parsed.data, expected_version=expected_ver)
                             if stage == "judge":
                                 critic_step = await self.repo.get_step(run_id, "critic")
                                 selected_issue_ids = []
@@ -233,9 +260,21 @@ class GenerationService:
                                 ).model_dump()
                             parsed_output_json = json.dumps(validated, ensure_ascii=False)
                         except ValueError as ve:
-                            stage_upper = stage.upper()
-                            error_code = f"{stage_upper}_OUTPUT_CONTRACT_INVALID"
                             error_message = str(ve)
+                            if (
+                                stage == "critic"
+                                and ctx.get("prompt_meta", {}).get("output_schema_name")
+                                == CRITIC_EVIDENCE_V1_SCHEMA_NAME
+                            ):
+                                if error_message.startswith("CRITIC_EVIDENCE_INVALID"):
+                                    error_code = "CRITIC_EVIDENCE_INVALID"
+                                elif error_message.startswith("CRITIC_OUTPUT_CONTRACT_INVALID"):
+                                    error_code = "CRITIC_OUTPUT_CONTRACT_INVALID"
+                                else:
+                                    error_code = "CRITIC_COMPILATION_FAILED"
+                            else:
+                                stage_upper = stage.upper()
+                                error_code = f"{stage_upper}_OUTPUT_CONTRACT_INVALID"
                             step.status = "failed"
                             run.status = "completed"
                         else:
@@ -288,7 +327,9 @@ class GenerationService:
             rendered_system_prompt=ctx["rendered_system_prompt"],
             rendered_user_prompt=ctx["rendered_user_prompt"],
             raw_response=raw_response,
+            model_parsed_output_json=model_parsed_output_json,
             parsed_output_json=parsed_output_json,
+            compiler_trace_json=compiler_trace_json,
             text_output=text_output,
             error_code=error_code,
             error_message=error_message,

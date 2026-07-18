@@ -3,7 +3,7 @@ from __future__ import annotations
 from enum import Enum
 import re
 from typing import Any, Literal
-from pydantic import BaseModel, Field, field_validator, model_validator
+from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
 
 # Trailing punctuation stripped before deterministic equality comparisons.
@@ -905,6 +905,162 @@ def validate_critic_output(
         return CriticOutput(**data)
     except Exception as e:
         raise ValueError(f"CRITIC_OUTPUT_CONTRACT_INVALID: {e}") from e
+
+
+# ── Critic evidence (compiled into CriticOutput) ─────────────────────
+
+class CriticEvidenceReference(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    paragraph_id: str
+    quote: str
+    explanation: str
+
+    @field_validator("paragraph_id", mode="before")
+    @classmethod
+    def normalize_paragraph_id(cls, value):
+        labels = _paragraph_labels(value)
+        if len(labels) != 1 or not _is_paragraph_label(labels[0]):
+            raise ValueError("paragraph_id must be a legal paragraph ID")
+        return labels[0]
+
+    @model_validator(mode="after")
+    def require_nonempty_fields(self):
+        if not self.quote.strip() or not self.explanation.strip():
+            raise ValueError("evidence quote and explanation must be non-empty strings")
+        return self
+
+
+class CriticEvidenceVisibility(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    visible: bool
+    evidence: list[CriticEvidenceReference]
+    explanation: str = ""
+
+    @model_validator(mode="after")
+    def require_explanation(self):
+        if not self.explanation.strip():
+            raise ValueError("visibility finding requires an explanation")
+        return self
+
+
+class CriticEvidenceStopAudit(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    visible_fact_found: bool
+    first_satisfied_paragraph_id: str = ""
+    quote: str = ""
+    explanation: str = ""
+
+    @field_validator("first_satisfied_paragraph_id", mode="before")
+    @classmethod
+    def normalize_paragraph_id(cls, value):
+        if value is None or not str(value).strip():
+            return ""
+        labels = _paragraph_labels(value)
+        if len(labels) != 1 or not _is_paragraph_label(labels[0]):
+            raise ValueError("first_satisfied_paragraph_id must be a legal paragraph ID")
+        return labels[0]
+
+    @model_validator(mode="after")
+    def require_reference_when_found(self):
+        if self.visible_fact_found and not all([
+            self.first_satisfied_paragraph_id.strip(), self.quote.strip(), self.explanation.strip(),
+        ]):
+            raise ValueError("visible stop audit requires paragraph_id, quote, and explanation")
+        return self
+
+
+class CriticEvidenceInferenceFinding(CriticEvidenceReference):
+    severity: Literal["low", "medium", "high"] = "medium"
+
+
+class CriticEvidenceTransitionAudit(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    transition_id: str = Field(min_length=1)
+    trigger: CriticEvidenceVisibility
+    next_action: CriticEvidenceVisibility
+    immediate_consequence: CriticEvidenceVisibility
+    rejected_alternative: CriticEvidenceVisibility
+    cost_or_commitment: CriticEvidenceVisibility
+    next_constraint: CriticEvidenceVisibility
+    reader_inference_withheld: bool
+    forbidden_explanation_evidence: list[CriticEvidenceReference]
+
+    @model_validator(mode="after")
+    def require_evidence_for_visible_findings(self):
+        for name in (
+            "trigger", "next_action", "immediate_consequence", "rejected_alternative",
+            "cost_or_commitment", "next_constraint",
+        ):
+            finding = getattr(self, name)
+            if finding.visible and not finding.evidence:
+                raise ValueError(f"{name}.visible=true requires evidence")
+        if not self.reader_inference_withheld and not self.forbidden_explanation_evidence:
+            raise ValueError("reader_inference_withheld=false requires forbidden_explanation_evidence")
+        return self
+
+
+class CriticEvidenceGeneralFinding(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    issue_type: CriticIssueType
+    severity: Literal["low", "medium", "high"] = "low"
+    paragraph_ids: list[str] = Field(default_factory=list)
+    problem: str = Field(min_length=1)
+    revision_goal: str = Field(min_length=1)
+    recommended_operation: RevisionOperation
+
+    @field_validator("paragraph_ids", mode="before")
+    @classmethod
+    def normalize_paragraph_ids(cls, value):
+        return _paragraph_labels(value)
+
+
+class CriticEvidenceTempoObservations(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    starts_in_motion: bool = True
+    disruption_interrupts_action: bool = True
+    viewpoint_misread_is_actionable: bool = True
+    disclosure_cap_respected: bool = True
+    unclassified_facts_preserved: bool = True
+    formulaic_completion_risk: Literal["low", "medium", "high"] = "low"
+
+
+class CriticEvidenceStrengthCandidate(ProtectedStrength):
+    model_config = ConfigDict(extra="forbid")
+
+
+class CriticEvidenceChapterContractObservations(ChapterContractCheck):
+    model_config = ConfigDict(extra="forbid")
+
+
+class CriticEvidenceOutput(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    critic_evidence_contract_version: Literal[1]
+    overall_assessment: str = ""
+    stop_audit: CriticEvidenceStopAudit
+    inference_findings: list[CriticEvidenceInferenceFinding] = Field(default_factory=list)
+    transition_audits: list[CriticEvidenceTransitionAudit] = Field(default_factory=list)
+    general_findings: list[CriticEvidenceGeneralFinding] = Field(default_factory=list)
+    strength_candidates: list[CriticEvidenceStrengthCandidate] = Field(default_factory=list)
+    chapter_contract_observations: CriticEvidenceChapterContractObservations = Field(
+        default_factory=CriticEvidenceChapterContractObservations
+    )
+    tempo_observations: CriticEvidenceTempoObservations = Field(
+        default_factory=CriticEvidenceTempoObservations
+    )
+
+
+def validate_critic_evidence(data: dict) -> CriticEvidenceOutput:
+    try:
+        return CriticEvidenceOutput(**data)
+    except Exception as e:
+        raise ValueError(f"CRITIC_EVIDENCE_INVALID: {e}") from e
 
 
 # ── Reviser ───────────────────────────────────────────────────────────
