@@ -49,3 +49,5 @@ class ContextPreviewResponse(BaseModel):
     input_snapshot_hash: str
     total_chars: int
     truncated: bool
+    prompt_meta: dict = {}
+    llm_request_meta: dict = {}

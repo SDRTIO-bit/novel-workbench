@@ -46,6 +46,8 @@ class CandidateSchema(BaseModel):
     input_tokens: int | None = None
     output_tokens: int | None = None
     latency_ms: int | None = None
+    finish_reason: str | None = None
+    reasoning_tokens: int | None = None
     is_selected: bool = False
     created_at: datetime
 

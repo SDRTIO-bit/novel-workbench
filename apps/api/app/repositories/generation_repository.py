@@ -122,6 +122,8 @@ class GenerationRepository:
         input_tokens: int | None,
         output_tokens: int | None,
         latency_ms: int | None,
+        finish_reason: str | None,
+        reasoning_tokens: int | None,
     ) -> GenerationCandidate:
         candidate = GenerationCandidate(
             step_id=step_id,
@@ -141,6 +143,8 @@ class GenerationRepository:
             input_tokens=input_tokens,
             output_tokens=output_tokens,
             latency_ms=latency_ms,
+            finish_reason=finish_reason,
+            reasoning_tokens=reasoning_tokens,
         )
         self.session.add(candidate)
         await self.session.flush()

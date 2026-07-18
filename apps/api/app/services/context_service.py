@@ -284,6 +284,7 @@ class ContextService:
         return {
             "prompt_version_id": version.id,
             "output_schema_name": version.output_schema_name or "",
+            "output_mode": version.output_mode,
         }
 
     async def _resolve_from_workflow(self, workflow_id: str, stage: str) -> tuple[str, str, dict]:

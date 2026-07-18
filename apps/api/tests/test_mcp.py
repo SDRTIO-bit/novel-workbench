@@ -422,11 +422,15 @@ class TestMCPGenerationObservability:
             "run_id": run_id,
             "stage": "planner",
             "prompt_version_id": planner_v2["id"],
+            "max_output_tokens": 8192,
         }, 206)
         assert preview["structuredContent"]["prompt_meta"] == {
             "prompt_version_id": planner_v2["id"],
             "output_schema_name": "planner_v2",
+            "output_mode": "structured",
         }
+        assert preview["structuredContent"]["llm_request_meta"]["response_format"] == "json_object"
+        assert preview["structuredContent"]["llm_request_meta"]["max_output_tokens"] == 8192
 
         provider_list = tools._call(api_client, headers, sid, "list_providers", {}, 207)
         mock_provider = next(
@@ -443,6 +447,10 @@ class TestMCPGenerationObservability:
         assert executed["output_schema_name"] == "planner_v2"
         assert executed["expected_contract_version"] == 2
         assert isinstance(executed["parsed_output_json"], str)
+        assert executed["response_format"] == "json_object"
+        assert executed["max_output_tokens"] > 0
+        assert "finish_reason" in executed
+        assert "reasoning_tokens" in executed
 
         status = tools._call(api_client, headers, sid, "get_stage_status", {
             "run_id": run_id,
@@ -451,6 +459,10 @@ class TestMCPGenerationObservability:
         candidate = status["candidates"][0]
         assert candidate["prompt_version_id"] == planner_v2["id"]
         assert candidate["raw_response"]
+        assert candidate["response_format"] == "json_object"
+        assert candidate["max_output_tokens"] > 0
+        assert "finish_reason" in candidate
+        assert "reasoning_tokens" in candidate
 
 
 def _mcp_result(resp):

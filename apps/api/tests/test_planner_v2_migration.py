@@ -13,7 +13,7 @@ import os
 import sys
 
 import pytest
-from sqlalchemy import create_engine, select
+from sqlalchemy import create_engine, inspect, select
 from sqlalchemy.orm import Session
 
 from alembic import command
@@ -36,6 +36,9 @@ D3_PATH = os.path.join(
 )
 E4_PATH = os.path.join(
     API_DIR, "alembic", "versions", "e4f5a6b7c8d9_add_planner_v6_top_level_shapes.py"
+)
+TRANSPORT_PATH = os.path.join(
+    API_DIR, "alembic", "versions", "f1a2b3c4d5e6_add_generation_candidate_transport_metadata.py"
 )
 
 
@@ -695,3 +698,21 @@ def test_e4_pins_the_released_official_v5_hash():
     assert mig.OFFICIAL_V5_TEMPLATE_SHA256 == (
         "3ede12f48e9864b054e1bd80636ba50d1605e0695a1ec23ceef100db07a7c327"
     )
+
+
+def test_transport_metadata_migration_adds_and_removes_candidate_columns(tmp_path):
+    engine = create_engine(f"sqlite:///{tmp_path / 'transport.db'}")
+    with engine.begin() as conn:
+        conn.exec_driver_sql(
+            "CREATE TABLE generation_candidates (id VARCHAR(36) PRIMARY KEY)"
+        )
+
+    mig = _load_migration(TRANSPORT_PATH)
+    _run_migration(mig, engine, "upgrade")
+    columns = {column["name"] for column in inspect(engine).get_columns("generation_candidates")}
+    assert {"finish_reason", "reasoning_tokens"} <= columns
+
+    _run_migration(mig, engine, "downgrade")
+    columns = {column["name"] for column in inspect(engine).get_columns("generation_candidates")}
+    assert "finish_reason" not in columns
+    assert "reasoning_tokens" not in columns

@@ -13,6 +13,7 @@ async def preview_context(
     provider_id: str | None = None,
     model_id: str | None = None,
     prompt_version_id: str | None = None,
+    max_output_tokens: int | None = None,
     run_override: str = "",
     scene_plan: str = "",
     draft_text: str = "",
@@ -34,6 +35,8 @@ async def preview_context(
             override["model_id"] = model_id
         if prompt_version_id is not None:
             override["prompt_version_id"] = prompt_version_id
+        if max_output_tokens is not None:
+            override["max_output_tokens"] = max_output_tokens
         if scene_plan:
             override["scene_plan"] = json.loads(scene_plan)
         if draft_text:
@@ -50,6 +53,7 @@ async def preview_context(
             "system_prompt": ctx["rendered_system_prompt"],
             "user_prompt": ctx["rendered_user_prompt"],
             "prompt_meta": ctx["prompt_meta"],
+            "llm_request_meta": ctx["llm_request_meta"],
             "input_snapshot_hash": ctx["input_snapshot_hash"],
             "total_chars": ctx["total_chars"],
             "truncated": ctx["truncated"],

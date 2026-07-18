@@ -44,6 +44,14 @@ def _expected_planner_contract_version(stage: str, prompt_meta: dict | None) -> 
     return None
 
 
+def _response_format_for_prompt(prompt_meta: dict | None) -> str:
+    return (
+        "json_object"
+        if (prompt_meta or {}).get("output_mode") == "structured"
+        else "text"
+    )
+
+
 class GenerationService:
     def __init__(self, session: AsyncSession):
         self.session = session
@@ -151,6 +159,8 @@ class GenerationService:
         input_tokens = 0
         output_tokens = 0
         latency_ms = 0
+        finish_reason = None
+        reasoning_tokens = None
 
         try:
             start = time.time()
@@ -164,62 +174,83 @@ class GenerationService:
                 top_p=params["top_p"],
                 max_output_tokens=params["max_output_tokens"],
                 timeout_seconds=params["timeout_seconds"],
+                response_format=_response_format_for_prompt(ctx.get("prompt_meta")),
             )
+            params["response_format"] = llm_request.response_format
 
             response = await provider.complete(llm_request)
             raw_response = response.text
             input_tokens = response.input_tokens
             output_tokens = response.output_tokens
             latency_ms = response.latency_ms
+            finish_reason = response.finish_reason
+            reasoning_tokens = response.reasoning_tokens
 
-            if stage != "writer":
-                parsed = parse_json(raw_response)
-                if parsed.valid:
-                    try:
-                        expected_ver = _expected_planner_contract_version(
-                            stage, ctx.get("prompt_meta")
-                        )
-                        validated = validate_stage_output(stage, parsed.data, expected_version=expected_ver)
-                        if stage == "judge":
-                            critic_step = await self.repo.get_step(run_id, "critic")
-                            selected_issue_ids = []
-                            if critic_step and critic_step.selected_issue_ids_json:
-                                selected_issue_ids = json.loads(
-                                    critic_step.selected_issue_ids_json
-                                )
-                            validated = validate_judge_output_for_selected_issues(
-                                parsed.data, selected_issue_ids
-                            ).model_dump()
-                        parsed_output_json = json.dumps(validated, ensure_ascii=False)
-                    except ValueError as ve:
-                        stage_upper = stage.upper()
-                        error_code = f"{stage_upper}_OUTPUT_CONTRACT_INVALID"
-                        error_message = str(ve)
-                        step.status = "failed"
-                        run.status = "completed"
-                    else:
-                        text_output = raw_response
-                        if stage == "reviser":
-                            revised_text = validated.get("revised_text", "")
-                            if revised_text and revised_text.strip():
-                                text_output = revised_text
-                            else:
-                                error_code = "REVISER_OUTPUT_INVALID"
-                                error_message = "Reviser returned valid JSON but missing or empty 'revised_text'. The candidate cannot be used."
-                                step.status = "failed"
-                                run.status = "completed"
-                        elif stage == "judge":
-                            judge_decision = validated.get("decision", "")
-                            if not judge_decision:
-                                error_code = "JUDGE_OUTPUT_INVALID"
-                                error_message = f"Judge response missing 'decision' field. Got keys: {list(validated.keys())}"
-                                step.status = "failed"
-                                run.status = "completed"
-                else:
-                    error_code = "STRUCTURED_OUTPUT_INVALID"
-                    error_message = parsed.error or "无法解析结构化输出"
+            if llm_request.response_format == "json_object":
+                if finish_reason == "length":
+                    error_code = "STRUCTURED_OUTPUT_TRUNCATED"
+                    error_message = (
+                        "模型因达到 max_output_tokens 停止，结构化输出可能不完整"
+                    )
                     step.status = "failed"
                     run.status = "completed"
+                elif finish_reason not in (None, "stop"):
+                    normalized_reason = str(finish_reason).upper()
+                    error_code = f"STRUCTURED_OUTPUT_{normalized_reason}"
+                    error_message = (
+                        f"模型以 finish_reason={finish_reason} 停止，"
+                        "结构化输出未进入合同解析"
+                    )
+                    step.status = "failed"
+                    run.status = "completed"
+                else:
+                    parsed = parse_json(raw_response)
+                    if parsed.valid:
+                        try:
+                            expected_ver = _expected_planner_contract_version(
+                                stage, ctx.get("prompt_meta")
+                            )
+                            validated = validate_stage_output(stage, parsed.data, expected_version=expected_ver)
+                            if stage == "judge":
+                                critic_step = await self.repo.get_step(run_id, "critic")
+                                selected_issue_ids = []
+                                if critic_step and critic_step.selected_issue_ids_json:
+                                    selected_issue_ids = json.loads(
+                                        critic_step.selected_issue_ids_json
+                                    )
+                                validated = validate_judge_output_for_selected_issues(
+                                    parsed.data, selected_issue_ids
+                                ).model_dump()
+                            parsed_output_json = json.dumps(validated, ensure_ascii=False)
+                        except ValueError as ve:
+                            stage_upper = stage.upper()
+                            error_code = f"{stage_upper}_OUTPUT_CONTRACT_INVALID"
+                            error_message = str(ve)
+                            step.status = "failed"
+                            run.status = "completed"
+                        else:
+                            text_output = raw_response
+                            if stage == "reviser":
+                                revised_text = validated.get("revised_text", "")
+                                if revised_text and revised_text.strip():
+                                    text_output = revised_text
+                                else:
+                                    error_code = "REVISER_OUTPUT_INVALID"
+                                    error_message = "Reviser returned valid JSON but missing or empty 'revised_text'. The candidate cannot be used."
+                                    step.status = "failed"
+                                    run.status = "completed"
+                            elif stage == "judge":
+                                judge_decision = validated.get("decision", "")
+                                if not judge_decision:
+                                    error_code = "JUDGE_OUTPUT_INVALID"
+                                    error_message = f"Judge response missing 'decision' field. Got keys: {list(validated.keys())}"
+                                    step.status = "failed"
+                                    run.status = "completed"
+                    else:
+                        error_code = "STRUCTURED_OUTPUT_INVALID"
+                        error_message = parsed.error or "无法解析结构化输出"
+                        step.status = "failed"
+                        run.status = "completed"
             else:
                 text_output = raw_response
                 step.status = "completed"
@@ -231,7 +262,6 @@ class GenerationService:
         except Exception as e:
             error_code = getattr(e, "code", "LLM_ERROR")
             error_message = str(e)
-            raw_response = ""
             step.status = "failed"
             run.status = "completed"
 
@@ -255,6 +285,8 @@ class GenerationService:
             input_tokens=input_tokens,
             output_tokens=output_tokens,
             latency_ms=latency_ms,
+            finish_reason=finish_reason,
+            reasoning_tokens=reasoning_tokens,
         )
 
         if not error_code:
@@ -301,11 +333,22 @@ class GenerationService:
         ctx_service = ContextService(self.session)
         ctx = await ctx_service.assemble(ctx_req)
         await self._append_judge_selection_envelope(run_id, stage, ctx)
+        max_output_tokens = override.get("max_output_tokens", 4096)
+        if run.workflow_profile_id and "max_output_tokens" not in override:
+            step_config = await self.repo.get_workflow_step_config(
+                run.workflow_profile_id, stage
+            )
+            if step_config:
+                max_output_tokens = step_config.max_output_tokens
         return {
             "sources": ctx["sources"],
             "rendered_system_prompt": ctx["rendered_system_prompt"],
             "rendered_user_prompt": ctx["rendered_user_prompt"],
             "prompt_meta": ctx["prompt_meta"],
+            "llm_request_meta": {
+                "response_format": _response_format_for_prompt(ctx.get("prompt_meta")),
+                "max_output_tokens": max_output_tokens,
+            },
             "input_snapshot_hash": ctx["input_snapshot_hash"],
             "total_chars": ctx["total_chars"],
             "truncated": ctx["truncated"],

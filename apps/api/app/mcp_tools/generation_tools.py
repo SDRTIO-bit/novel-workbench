@@ -11,19 +11,32 @@ from app.services.generation_service import (
 async def _candidate_contract_meta(session, stage: str, prompt_version_id: str | None) -> dict:
     """Return contract metadata for the exact prompt version recorded on a candidate."""
     output_schema_name = ""
+    output_mode = ""
     if prompt_version_id:
         version = await session.get(PromptVersion, prompt_version_id)
         if version:
             output_schema_name = version.output_schema_name or ""
+            output_mode = version.output_mode
     return {
         "prompt_version_id": prompt_version_id or "",
         "output_schema_name": output_schema_name,
+        "output_mode": output_mode,
+        "response_format": (
+            "json_object" if output_mode == "structured" else "text"
+        ),
         "expected_contract_version": (
             EXPECTED_PLANNER_CONTRACT_VERSION
             if stage == "planner" and output_schema_name == PLANNER_V2_SCHEMA_NAME
             else None
         ),
     }
+
+
+def _candidate_max_output_tokens(candidate) -> int | None:
+    try:
+        return json.loads(candidate.parameters_json or "{}").get("max_output_tokens")
+    except (TypeError, ValueError):
+        return None
 
 
 async def list_runs(project_id: str) -> list[dict]:
@@ -173,6 +186,10 @@ async def execute_stage(
             "input_tokens": candidate.input_tokens,
             "output_tokens": candidate.output_tokens,
             "latency_ms": candidate.latency_ms,
+            "finish_reason": candidate.finish_reason,
+            "reasoning_tokens": candidate.reasoning_tokens,
+            "response_format": contract_meta["response_format"],
+            "max_output_tokens": _candidate_max_output_tokens(candidate),
             "prompt_version_id": contract_meta["prompt_version_id"],
             "output_schema_name": contract_meta["output_schema_name"],
             "expected_contract_version": contract_meta["expected_contract_version"],
@@ -241,8 +258,10 @@ async def get_stage_status(run_id: str, stage: str) -> dict:
                 break
         if not step:
             return {"error": f"Stage '{stage}' not found in run"}
-        candidates = [
-            {
+        candidates = []
+        for c in step.candidates:
+            contract_meta = await _candidate_contract_meta(session, step.stage, c.prompt_version_id)
+            candidates.append({
                 "id": c.id,
                 "attempt": c.attempt_number,
                 "model": c.model_id,
@@ -257,9 +276,11 @@ async def get_stage_status(run_id: str, stage: str) -> dict:
                 "input_tokens": c.input_tokens,
                 "output_tokens": c.output_tokens,
                 "latency_ms": c.latency_ms,
-            }
-            for c in step.candidates
-        ]
+                "finish_reason": c.finish_reason,
+                "reasoning_tokens": c.reasoning_tokens,
+                "response_format": contract_meta["response_format"],
+                "max_output_tokens": _candidate_max_output_tokens(c),
+            })
         return {
             "stage": step.stage,
             "status": step.status,

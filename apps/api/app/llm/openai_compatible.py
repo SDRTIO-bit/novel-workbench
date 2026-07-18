@@ -27,6 +27,8 @@ class OpenAiCompatibleClient(BaseLlmClient):
             "top_p": request.top_p,
             "max_tokens": request.max_output_tokens,
         }
+        if request.response_format == "json_object":
+            body["response_format"] = {"type": "json_object"}
 
         start = time.monotonic()
         try:
@@ -63,6 +65,12 @@ class OpenAiCompatibleClient(BaseLlmClient):
                 output_tokens=data.get("usage", {}).get("completion_tokens"),
                 latency_ms=latency_ms,
                 provider_request_id=data.get("id"),
+                finish_reason=choice.get("finish_reason"),
+                reasoning_tokens=(
+                    data.get("usage", {})
+                    .get("completion_tokens_details", {})
+                    .get("reasoning_tokens")
+                ),
             )
 
         except httpx.TimeoutException:
