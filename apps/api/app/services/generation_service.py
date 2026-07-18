@@ -15,6 +15,7 @@ from app.llm.base import LlmRequest
 from app.llm.parser import parse_json
 from app.llm.output_contracts import (
     validate_judge_output_for_selected_issues,
+    validate_planner_contract_validation,
     validate_stage_output,
     validate_tempo_final_line,
 )
@@ -51,6 +52,7 @@ EXPECTED_CRITIC_CONTRACT_VERSION = 2
 CRITIC_V2_SCHEMA_NAME = "critic_v2"
 CRITIC_EVIDENCE_V1_SCHEMA_NAME = "critic_evidence_v1"
 EXPECTED_CRITIC_EVIDENCE_CONTRACT_VERSION = 1
+PLANNER_CONTRACT_VALIDATION_V1_SCHEMA_NAME = "planner_contract_validation_v1"
 
 
 def _expected_planner_contract_version(stage: str, prompt_meta: dict | None) -> int | None:
@@ -347,6 +349,12 @@ class GenerationService:
                                 compiler_trace_json = json.dumps(
                                     compilation.trace.model_dump(), ensure_ascii=False
                                 )
+                            elif (
+                                stage == "critic"
+                                and ctx.get("prompt_meta", {}).get("output_schema_name")
+                                == PLANNER_CONTRACT_VALIDATION_V1_SCHEMA_NAME
+                            ):
+                                validated = validate_planner_contract_validation(parsed.data).model_dump()
                             else:
                                 expected_ver = _expected_planner_contract_version(
                                     stage, ctx.get("prompt_meta")
@@ -378,6 +386,15 @@ class GenerationService:
                                     error_code = "CRITIC_OUTPUT_CONTRACT_INVALID"
                                 else:
                                     error_code = "CRITIC_COMPILATION_FAILED"
+                            elif (
+                                stage == "critic"
+                                and ctx.get("prompt_meta", {}).get("output_schema_name")
+                                == PLANNER_CONTRACT_VALIDATION_V1_SCHEMA_NAME
+                            ):
+                                if error_message.startswith("PLANNER_CONTRACT_VALIDATION_INVALID"):
+                                    error_code = "PLANNER_CONTRACT_VALIDATION_INVALID"
+                                else:
+                                    error_code = "CRITIC_OUTPUT_CONTRACT_INVALID"
                             else:
                                 stage_upper = stage.upper()
                                 error_code = f"{stage_upper}_OUTPUT_CONTRACT_INVALID"

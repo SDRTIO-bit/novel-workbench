@@ -222,14 +222,20 @@ def test_official_critic_evidence_prompt_requires_audits_before_strength_protect
     critic = next(entry for entry in BUILTIN_PROMPTS if entry["stage"] == "critic")
     prompt = critic["system_template"]
 
-    assert critic["output_schema_name"] == "critic_evidence_v1"
+    assert critic["output_schema_name"] == "planner_contract_validation_v1"
 
     for required_text in [
-        "只提交证据",
-        "程序会从证据生成 issues、issue_id、decision",
-        "找 stop_state.visible_fact 首次成立位置",
+        "四态判断",
+        "present",
+        "partial",
+        "missing",
+        "contradicted",
+        "visible_trigger",
         "rejected_alternative",
+        "character_next_action",
         "cost_or_commitment",
+        "immediate_consequence",
+        "next_constraint",
     ]:
         assert required_text in prompt
 
@@ -239,11 +245,10 @@ def test_official_critic_evidence_prompt_requires_verbatim_evidence_before_true_
     prompt = critic["system_template"]
 
     for required_text in [
-        "需要正文证据的 true 判断没有引用时填 false",
+        "不得以留白、含蓄、reader inference 为理由将 missing 或 contradicted 判定为 present 或 partial",
         "不得引用 Planner",
-        "没有锁门不自动等于延迟关店代价已落实",
-        "把灯转向另一侧不自动证明形成了持续的新行动约束",
-        "小满停了一下不自动证明离开是被明确拒绝的现实替代路线",
-        "不得提供 issue_id",
+        "不得概括",
+        "不得虚构",
+        "Planner 要求「碰到」，正文写「几乎碰到」→ 判定为 missing 或 contradicted",
     ]:
         assert required_text in prompt

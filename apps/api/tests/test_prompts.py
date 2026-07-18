@@ -130,7 +130,7 @@ class TestPromptList:
         reviser = next(item for item in BUILTIN_PROMPTS if item["stage"] == "reviser")
         judge = next(item for item in BUILTIN_PROMPTS if item["stage"] == "judge")
 
-        assert "钩子承载的可见事实" in critic["system_template"]
+        assert "四态判断" in critic["system_template"]
         assert "具体可见事实" in reviser["system_template"]
         assert "角色反应" in judge["system_template"]
         assert "final_line_must_include" in reviser["system_template"]

@@ -74,6 +74,14 @@ class CausalCheckResult(str, Enum):
     not_present = "not_present"
 
 
+class PlannerContractFieldStatus(str, Enum):
+    """四态判断：用于 Planner 合同核验"""
+    present = "present"  # 字段完整存在
+    partial = "partial"  # 字段部分存在
+    missing = "missing"  # 字段缺失
+    contradicted = "contradicted"  # 字段与 Planner 要求矛盾
+
+
 class CriticIssueType(str, Enum):
     opening_delay = "opening_delay"
     chapter_goal_unclear = "chapter_goal_unclear"
@@ -149,6 +157,7 @@ class PreferredVersion(str, Enum):
 
 class IssueStatus(str, Enum):
     resolved = "resolved"
+    partially_resolved = "partially_resolved"
     unresolved = "unresolved"
     revision_worse = "revision_worse"
 
@@ -1206,6 +1215,78 @@ def validate_judge_output_for_selected_issues(
             "JUDGE_OUTPUT_CONTRACT_INVALID: merged final_text must not contain paragraph labels"
         )
     return output
+
+
+# ── Planner Contract Validation ──────────────────────────────────────
+
+class PlannerContractFieldValidation(BaseModel):
+    """单个 Planner 合同字段的验证结果"""
+    model_config = ConfigDict(extra="forbid")
+    
+    status: PlannerContractFieldStatus
+    evidence: list[CriticEvidenceReference] = Field(default_factory=list)
+    explanation: str = ""
+    
+    @model_validator(mode="after")
+    def require_explanation_for_non_present(self):
+        if self.status != PlannerContractFieldStatus.present and not self.explanation.strip():
+            raise ValueError(f"explanation is required when status is {self.status.value}")
+        return self
+    
+    @model_validator(mode="after")
+    def require_evidence_for_present_partial(self):
+        if self.status in (PlannerContractFieldStatus.present, PlannerContractFieldStatus.partial):
+            if not self.evidence:
+                raise ValueError(f"evidence is required when status is {self.status.value}")
+        return self
+
+
+class PlannerContractStopStateValidation(BaseModel):
+    """Planner 合同中 stop_state 字段的验证结果"""
+    model_config = ConfigDict(extra="forbid")
+    
+    visible_fact: PlannerContractFieldValidation
+    must_not_append: PlannerContractFieldValidation
+
+
+class PlannerContractTransitionValidation(BaseModel):
+    """Planner 合同中单个 causal_transition 的验证结果"""
+    model_config = ConfigDict(extra="forbid")
+    
+    transition_id: str = Field(min_length=1)
+    visible_trigger: PlannerContractFieldValidation
+    rejected_alternative: PlannerContractFieldValidation
+    character_next_action: PlannerContractFieldValidation
+    cost_or_commitment: PlannerContractFieldValidation
+    immediate_consequence: PlannerContractFieldValidation
+    next_constraint: PlannerContractFieldValidation
+
+
+class PlannerContractValidationOutput(BaseModel):
+    """Planner 合同验证的完整输出"""
+    model_config = ConfigDict(extra="forbid")
+    
+    planner_contract_validation_version: Literal[1]
+    overall_assessment: str = ""
+    stop_state: PlannerContractStopStateValidation
+    transitions: list[PlannerContractTransitionValidation] = Field(default_factory=list)
+    general_findings: list[CriticEvidenceGeneralFinding] = Field(default_factory=list)
+    strength_candidates: list[CriticEvidenceStrengthCandidate] = Field(default_factory=list)
+    issues: list[CriticIssue] = Field(default_factory=list)
+    
+    @model_validator(mode="after")
+    def require_at_least_one_transition(self):
+        if not self.transitions:
+            raise ValueError("at least one transition validation is required")
+        return self
+
+
+def validate_planner_contract_validation(data: dict) -> PlannerContractValidationOutput:
+    """验证 Planner 合同验证输出"""
+    try:
+        return PlannerContractValidationOutput(**data)
+    except Exception as e:
+        raise ValueError(f"PLANNER_CONTRACT_VALIDATION_INVALID: {e}") from e
 
 
 # ── Stage-level dispatch ──────────────────────────────────────────────

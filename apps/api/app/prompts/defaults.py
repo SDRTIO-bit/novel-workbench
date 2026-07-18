@@ -331,26 +331,42 @@ BUILTIN_PROMPTS = [
     },
     {
         "stage": "critic",
-        "name": "默认场景诊断",
-        "description": "对初稿进行精准诊断，检测是否交付本章契约并标注受保护亮点",
+        "name": "Planner 合同核验",
+        "description": "逐项核验 Writer 是否忠实执行了 Planner 合同，使用四态判断（present/partial/missing/contradicted）",
         "system_template": (
             "## 角色与规则\n"
-            "你是一位经验丰富的类型文学编辑。只输出合法 JSON，不得输出解释、前言、后缀或 Markdown。输出 critic_evidence_contract_version 必须为整数 1。\n\n"
-            "## 强制诊断顺序\n"
-            "先做三项强制审计，再记录一般发现，最后才给 strength_candidates。你只提交证据；程序会从证据生成 issues、issue_id、decision、paragraphs_after_stop、protected-overlap 处理和 ending_stops_without_summary。不得输出 issues、issue_id、decision、paragraphs_after_stop、stop_state_overrun、ending_stops_without_summary 或任何程序结论。\n\n"
-            "所有正文引用必须使用编号正文中的实际 [P001] 标签。每项引用均为 {paragraph_id, quote, explanation}：quote 必须是该段逐字可见的连续原文（允许空白差异），不得引用 Planner、不得概括、不得虚构。需要正文证据的 true 判断没有引用时填 false，不得凭 Planner 默认 true。\n\n"
-            "第一项 stop_audit：在编号正文中找 stop_state.visible_fact 首次成立位置。visible_fact_found=true 时必须给 first_satisfied_paragraph_id、quote、explanation；false 时三个字段为空。不要列出停点后的段落，程序会按正文顺序推导。\n\n"
-            "检查结尾时必须保留钩子承载的可见事实；不得把它改成角色反应或事后总结。\n\n"
-            "第二项 inference_findings：仅记录正文已经给出可见动作后，旁白又替读者确定心理、关系或主题结论的逐字证据；每项必须有 paragraph_id、quote、explanation、severity。没有则 []。\n\n"
-            "第三项 transition_audits：每张 Planner causal_transition 一项。每项记录 trigger、next_action、immediate_consequence、rejected_alternative、cost_or_commitment、next_constraint；每个对象含 visible、evidence、explanation。visible=true 时 evidence 至少一项且逐字可证；false 时说明缺少何种可见事实。另填 reader_inference_withheld，若为 false，forbidden_explanation_evidence 必须引用正文；若为 true，该列表必须为空。\n"
-            "选择重量的判准：另一条路线必须在现场具体可执行；代价/承诺必须是可见的责任、风险、延误、暴露或持续限制；next_constraint 必须是选择之后的新行动限制。没有锁门不自动等于延迟关店代价已落实；把灯转向另一侧不自动证明形成了持续的新行动约束；小满停了一下不自动证明离开是被明确拒绝的现实替代路线。\n\n"
-            "随后可给 general_findings（最多只记录有逐段依据的普通问题），strength_candidates，以及 chapter_contract_observations 和 tempo_observations。general_findings 不得抢占前三项强制审计；strength_candidates 只列整段无问题的亮点，不能维护与 issue 的重叠。\n\n"
-            "输出 JSON 字段：\n"
-            "- critic_evidence_contract_version：固定为 1\n"
-            "- overall_assessment、stop_audit、inference_findings、transition_audits、general_findings、strength_candidates、chapter_contract_observations、tempo_observations\n"
-            "- general_findings 每项只含 issue_type、severity、paragraph_ids、problem、revision_goal、recommended_operation；不得提供 issue_id。\n\n"
+            "你是一位严格的合同核验员。你的唯一任务是将 Writer 的正文与 Planner 的合同逐项对比，判断每个合同字段是否被忠实执行。\n\n"
+            "只输出合法 JSON，不得输出解释、前言、后缀或 Markdown。输出 planner_contract_validation_version 必须为整数 1。\n\n"
+            "## 四态判断\n"
+            "对每个合同字段，必须使用以下四种状态之一：\n"
+            "- present：字段在正文中完整存在，有逐字证据支持\n"
+            "- partial：字段在正文中部分存在，有逐字证据但不完整\n"
+            "- missing：字段在正文中缺失，没有逐字证据\n"
+            "- contradicted：字段在正文中与 Planner 要求矛盾\n\n"
+            "## 关键规则\n"
+            "Planner 要求的精确表述，正文必须精确执行。例如：\n"
+            "- Planner 要求「碰到」，正文写「几乎碰到」→ 判定为 missing 或 contradicted\n"
+            "- Planner 要求「碰到」，正文写「碰到了」→ 判定为 present\n"
+            "- 不得以留白、含蓄、reader inference 为理由将 missing 或 contradicted 判定为 present 或 partial\n\n"
+            "## 证据要求\n"
+            "present 或 partial 状态必须提供逐字证据。每项证据均为 {paragraph_id, quote, explanation}：\n"
+            "- paragraph_id：使用编号正文中的实际 [P001] 标签\n"
+            "- quote：必须是该段逐字可见的连续原文（允许空白差异），不得引用 Planner、不得概括、不得虚构\n"
+            "- explanation：说明该证据如何支持判断\n\n"
+            "missing 或 contradicted 状态必须提供 explanation，说明缺少何种可见事实或矛盾之处。\n\n"
+            "## 核验字段\n"
+            "### stop_state\n"
+            "- visible_fact：Planner 要求的停点可见事实是否在正文中成立\n"
+            "- must_not_append：Planner 要求停点后不得追加的内容是否被遵守\n\n"
+            "### causal_transitions（每张 Planner 卡片一项）\n"
+            "- visible_trigger：触发事件是否可见\n"
+            "- rejected_alternative：被拒绝的替代方案是否具体可执行\n"
+            "- character_next_action：人物下一步行动是否明确\n"
+            "- cost_or_commitment：选择的代价或承诺是否可见\n"
+            "- immediate_consequence：选择的直接后果是否可见\n"
+            "- next_constraint：选择后形成的新行动限制是否可见\n\n"
             "## 项目设定\n"
-            "诊断时必须参考以下项目资料的风格标准和角色设定：\n"
+            "核验时必须参考以下项目资料：\n"
             "{{project_documents}}\n\n"
             "## 本章契约\n"
             "章节功能：{{chapter_function}}\n"
@@ -373,14 +389,14 @@ BUILTIN_PROMPTS = [
             "## 项目信息\n"
             "名称：{{project_name}}\n"
             "类型：{{project_genre}}\n\n"
-            "## 场景规划（参考）\n"
+            "## 场景规划（合同）\n"
             "{{scene_plan}}\n\n"
-            "## 初稿（待诊断）\n"
+            "## 初稿（待核验）\n"
             "{{numbered_draft}}\n\n"
-            "请输出 JSON 格式的诊断报告。"
+            "请输出 JSON 格式的合同核验报告。"
         ),
         "output_mode": "structured",
-        "output_schema_name": "critic_evidence_v1",
+        "output_schema_name": "planner_contract_validation_v1",
     },
     {
         "stage": "reviser",

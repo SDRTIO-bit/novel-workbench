@@ -187,7 +187,117 @@ class MockClient(BaseLlmClient):
 林远愣了一下，才反应过来她是在跟他说话。"""
 
         # Critic → diagnostic report
-        if "文学编辑" in sp or "critic" in sp:
+        if "文学编辑" in sp or "critic" in sp or "合同核验员" in sp:
+            if "planner_contract_validation_version" in sp:
+                first_quote = (
+                    "黄昏的光从梧桐叶的缝隙里漏进来"
+                    if "黄昏的光从梧桐叶的缝隙里漏进来" in up
+                    else "雨是从九点四十分开始下的"
+                )
+                return json.dumps({
+                    "planner_contract_validation_version": 1,
+                    "overall_assessment": "Writer 基本执行了 Planner 合同，但部分字段存在缩水或缺失。",
+                    "stop_state": {
+                        "visible_fact": {
+                            "status": "present",
+                            "evidence": [{
+                                "paragraph_id": "P001",
+                                "quote": first_quote,
+                                "explanation": "正文给出了可见的停点事实。",
+                            }],
+                            "explanation": "停点事实完整存在。",
+                        },
+                        "must_not_append": {
+                            "status": "present",
+                            "evidence": [{
+                                "paragraph_id": "P001",
+                                "quote": first_quote,
+                                "explanation": "正文没有追加禁止内容。",
+                            }],
+                            "explanation": "停点后未追加禁止内容。",
+                        },
+                    },
+                    "transitions": [{
+                        "transition_id": "CT01",
+                        "visible_trigger": {
+                            "status": "present",
+                            "evidence": [{
+                                "paragraph_id": "P001",
+                                "quote": first_quote,
+                                "explanation": "正文给出了可见触发。",
+                            }],
+                            "explanation": "触发完整存在。",
+                        },
+                        "rejected_alternative": {
+                            "status": "missing",
+                            "evidence": [],
+                            "explanation": "正文中没有呈现被拒绝的替代方案。",
+                        },
+                        "character_next_action": {
+                            "status": "present",
+                            "evidence": [{
+                                "paragraph_id": "P001",
+                                "quote": first_quote,
+                                "explanation": "正文给出了人物下一步行动。",
+                            }],
+                            "explanation": "行动完整存在。",
+                        },
+                        "cost_or_commitment": {
+                            "status": "partial",
+                            "evidence": [{
+                                "paragraph_id": "P001",
+                                "quote": first_quote,
+                                "explanation": "正文暗示了代价但未明确呈现。",
+                            }],
+                            "explanation": "代价部分存在，需要更具体的呈现。",
+                        },
+                        "immediate_consequence": {
+                            "status": "present",
+                            "evidence": [{
+                                "paragraph_id": "P001",
+                                "quote": first_quote,
+                                "explanation": "正文给出了直接后果。",
+                            }],
+                            "explanation": "后果完整存在。",
+                        },
+                        "next_constraint": {
+                            "status": "missing",
+                            "evidence": [],
+                            "explanation": "正文中没有呈现选择后形成的新行动限制。",
+                        },
+                    }],
+                    "general_findings": [],
+                    "strength_candidates": [],
+                    "issues": [
+                        {
+                            "issue_id": "I01",
+                            "severity": "high",
+                            "issue_type": "contract_not_delivered",
+                            "paragraph_ids": ["P001"],
+                            "problem": "被拒绝的替代方案缺失：正文中没有呈现被拒绝的替代方案",
+                            "revision_goal": "在正文中呈现被拒绝的替代方案，使其具体可执行",
+                            "recommended_operation": "tighten",
+                        },
+                        {
+                            "issue_id": "I02",
+                            "severity": "medium",
+                            "issue_type": "contract_not_delivered",
+                            "paragraph_ids": ["P001"],
+                            "problem": "代价或承诺缩水：正文暗示了代价但未明确呈现",
+                            "revision_goal": "用具体行动呈现代价或承诺",
+                            "recommended_operation": "causalize",
+                        },
+                        {
+                            "issue_id": "I03",
+                            "severity": "high",
+                            "issue_type": "contract_not_delivered",
+                            "paragraph_ids": ["P001"],
+                            "problem": "新行动限制缺失：正文中没有呈现选择后形成的新行动限制",
+                            "revision_goal": "在正文中呈现选择后形成的新行动限制",
+                            "recommended_operation": "causalize",
+                        },
+                    ],
+                }, ensure_ascii=False)
             if "critic_evidence_contract_version" in sp:
                 first_quote = (
                     "黄昏的光从梧桐叶的缝隙里漏进来"
