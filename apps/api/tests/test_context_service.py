@@ -138,11 +138,16 @@ class TestContextPreview:
 
         guardrails = {
             "entry_pressure": "林隅拖着探测车进库。",
-            "dominant_disruption": "冷却管传出敲击声。",
+            "dominant_pressure": {"kind": "physical_problem", "description": "冷却管传出敲击声"},
             "allowed_viewpoint_misread": "他以为压力阀松了。",
             "disclosure_cap": 1,
             "must_remain_unclassified": ["敲击声来源"],
-            "stop_after": "他切断外门电源。",
+            "stop_state": {
+                "type": "physical_change",
+                "visible_fact": "他切断外门电源",
+                "what_is_now_different": "仓库与外部完全断电隔离",
+                "must_not_append": "不得追加对敲击声来源的解释",
+            },
         }
         resp = await api_client.post("/api/context/preview", json={
             "project_id": project_id,

@@ -126,15 +126,25 @@ class IssueAction(str, Enum):
 
 # ── Planner ───────────────────────────────────────────────────────────
 
+class StateDelta(BaseModel):
+    before: str = ""
+    after: str = ""
+
+
 class CausalTransition(BaseModel):
     id: str
     kind: CausalTransitionKind
     visible_trigger: str = Field(min_length=1)
+    character_interpretation: str = ""
     character_next_action: str = Field(min_length=1)
+    rejected_alternative: str = ""
+    immediate_consequence: str = Field(min_length=1)
+    counterfactual_without_action: str = ""
+    state_delta: StateDelta | None = None
+    cost_or_commitment: str = ""
+    next_constraint: str = Field(min_length=1)
     reader_must_infer: str = Field(min_length=1)
     narrator_must_not_state: list[str] = Field(min_length=1)
-    immediate_consequence: str = Field(min_length=1)
-    next_constraint: str = Field(min_length=1)
 
     @field_validator("id", mode="before")
     @classmethod
@@ -166,15 +176,51 @@ class PlannerChapterContractCheck(BaseModel):
     ending_hook_established: bool = True
     causal_transitions_grounded: bool = True
     reader_inference_not_pre_resolved: bool = True
+    scene_state_reconstructed: bool = True
+    information_sources_legal: bool = True
+    character_choice_is_real: bool = True
+    consequence_is_counterfactual: bool = True
+    state_delta_is_nonempty: bool = True
+    next_constraint_is_new: bool = True
+    stop_state_is_visible: bool = True
+    stop_state_changes_future_actions: bool = True
+
+
+class DominantPressure(BaseModel):
+    kind: str = "none"
+    description: str = Field(min_length=1)
+
+    @field_validator("kind")
+    @classmethod
+    def validate_kind(cls, value):
+        allowed = {"physical_problem", "social_friction", "resource_constraint", "unfinished_commitment", "information_gap", "none"}
+        if value not in allowed:
+            raise ValueError(f"dominant_pressure.kind must be one of {sorted(allowed)}, got {value!r}")
+        return value
+
+
+class StopState(BaseModel):
+    type: str
+    visible_fact: str = Field(min_length=1)
+    what_is_now_different: str = Field(min_length=1)
+    must_not_append: str = ""
+
+    @field_validator("type")
+    @classmethod
+    def validate_type(cls, value):
+        allowed = {"physical_change", "social_commitment", "relationship_shift", "information_conflict", "unresolved_problem"}
+        if value not in allowed:
+            raise ValueError(f"stop_state.type must be one of {sorted(allowed)}, got {value!r}")
+        return value
 
 
 class TempoGuardrails(BaseModel):
     entry_pressure: str = Field(min_length=1)
-    dominant_disruption: str = Field(min_length=1)
+    dominant_pressure: DominantPressure
     allowed_viewpoint_misread: str = ""
     disclosure_cap: int = Field(default=1, ge=0, le=1)
     must_remain_unclassified: list[str] = Field(default_factory=list)
-    stop_after: str = Field(min_length=1)
+    stop_state: StopState
     final_line_must_include: str = ""
 
     @field_validator("must_remain_unclassified", mode="before")
@@ -190,11 +236,22 @@ class TempoGuardrails(BaseModel):
         return value
 
 
+class SceneState(BaseModel):
+    last_completed_action: str = ""
+    present_characters: list[str] = Field(default_factory=list)
+    visible_facts: list[str] = Field(default_factory=list)
+    available_objects: list[str] = Field(default_factory=list)
+    unresolved_problem: str = ""
+    already_existing_constraints: list[str] = Field(default_factory=list)
+
+
 class PlannerOutput(BaseModel):
     scene_goal: str = ""
     location: str = ""
     time: str = ""
+    scene_state: SceneState | None = None
     characters: list[dict[str, Any]] = []
+    concrete_problem: str = ""
     pressure: str = ""
     turning_point: str = ""
     end_condition: str = ""

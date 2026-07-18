@@ -14,10 +14,15 @@ def _transition():
         "id": "CT01",
         "kind": "evidence_to_action",
         "visible_trigger": "接线盒里出现GR-0713",
+        "character_interpretation": "陆衡认为编号与许明远有关",
         "character_next_action": "陆衡询问许栀父亲的名字",
+        "rejected_alternative": "继续按原工单流程处理",
         "reader_must_infer": "编号与许明远有关",
         "narrator_must_not_state": ["两个编号一致"],
         "immediate_consequence": "陆衡改变调查方向",
+        "counterfactual_without_action": "如果陆衡不改变方向，调查会按原工单结案",
+        "state_delta": {"before": "按原工单流程处理", "after": "调查方向转向许明远"},
+        "cost_or_commitment": "陆衡偏离了标准流程，承担追查风险",
         "next_constraint": "他不能透露未来工单",
     }
 
@@ -25,11 +30,16 @@ def _transition():
 def _tempo_guardrails():
     return {
         "entry_pressure": "林隅正把熄火的探测车拖回仓库。",
-        "dominant_disruption": "冷却管里传出敲击声。",
+        "dominant_pressure": {"kind": "physical_problem", "description": "冷却管里传出敲击声"},
         "allowed_viewpoint_misread": "他以为压力阀松了。",
         "disclosure_cap": 1,
         "must_remain_unclassified": ["敲击声来源"],
-        "stop_after": "他切断外门电源。",
+        "stop_state": {
+            "type": "physical_change",
+            "visible_fact": "他切断外门电源",
+            "what_is_now_different": "仓库与外部完全断电隔离",
+            "must_not_append": "不得追加对敲击声来源的解释",
+        },
     }
 
 
@@ -66,7 +76,7 @@ def test_tempo_final_line_requires_explicit_visible_marker():
 
 @pytest.mark.parametrize("guardrails", [
     {**_tempo_guardrails(), "disclosure_cap": 2},
-    {key: value for key, value in _tempo_guardrails().items() if key != "stop_after"},
+    {key: value for key, value in _tempo_guardrails().items() if key != "stop_state"},
 ])
 def test_planner_rejects_invalid_tempo_guardrails(guardrails):
     with pytest.raises(ValueError, match="PLANNER_OUTPUT_CONTRACT_INVALID"):
