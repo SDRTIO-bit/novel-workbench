@@ -34,6 +34,9 @@ C2_PATH = os.path.join(
 D3_PATH = os.path.join(
     API_DIR, "alembic", "versions", "d3e4f5a6b7c8_add_planner_v5_enum_guidance.py"
 )
+E4_PATH = os.path.join(
+    API_DIR, "alembic", "versions", "e4f5a6b7c8d9_add_planner_v6_top_level_shapes.py"
+)
 
 
 def _load_migration(path=A2_PATH):
@@ -601,4 +604,94 @@ def test_d3_pins_the_released_official_v4_hash():
     mig = _load_migration(D3_PATH)
     assert mig.OFFICIAL_V4_TEMPLATE_SHA256 == (
         "0f54941707faaa60929b4292ec57d0473cd17e52c1f5398f37ec3b585c5ed4d7"
+    )
+
+
+# ── e4f5a6b7c8d9 (planner v6 top-level shapes) ──────────────────────
+
+
+def _seed_official_v5_with_workflows(engine, monkeypatch, *, system, user):
+    mig = _load_migration(E4_PATH)
+    monkeypatch.setattr(mig, "OFFICIAL_V5_TEMPLATE_SHA256", mig._template_hash(system, user))
+
+    with Session(engine) as session:
+        profile, version, step = _seed_builtin_planner(
+            session, system_template=system, user_template=user
+        )
+        version.version_number = 5
+        version.output_schema_name = "planner_v2"
+        from app.models.prompt import PromptVersion
+        from app.models.workflow import WorkflowStepConfig
+
+        historical = PromptVersion(
+            profile_id=profile.id,
+            version_number=4,
+            system_template="official v4 system",
+            user_template="official v4 user",
+            output_mode="structured",
+            output_schema_name="planner_v2",
+        )
+        session.add(historical)
+        session.flush()
+        pinned = WorkflowStepConfig(
+            workflow_profile_id=step.workflow_profile_id,
+            stage="planner",
+            prompt_version_id=historical.id,
+        )
+        session.add(pinned)
+        session.commit()
+        return mig, profile.id, version.id, step.id, historical.id, pinned.id
+
+
+def test_e4_creates_official_v6_and_updates_only_v5_workflow_refs(engine, monkeypatch):
+    mig, profile_id, v5_id, step_id, v4_id, pinned_step_id = _seed_official_v5_with_workflows(
+        engine, monkeypatch, system="official v5 system", user="official v5 user"
+    )
+
+    _run_migration(mig, engine, "upgrade")
+
+    current = _current_builtin_planner()
+    with Session(engine) as session:
+        versions = _versions_of(session, profile_id)
+        v6 = next(version for version in versions if version.version_number == 6)
+        assert v6.system_template == current["system_template"]
+        assert v6.user_template == "official v5 user"
+        assert v6.output_mode == "structured"
+        assert v6.output_schema_name == "planner_v2"
+        assert _step_prompt_id(session, step_id) == v6.id
+        assert _step_prompt_id(session, pinned_step_id) == v4_id
+
+    _run_migration(mig, engine, "downgrade")
+
+    with Session(engine) as session:
+        versions = _versions_of(session, profile_id)
+        assert {version.id for version in versions} == {v4_id, v5_id}
+        assert _step_prompt_id(session, step_id) == v5_id
+        assert _step_prompt_id(session, pinned_step_id) == v4_id
+
+
+def test_e4_skips_user_modified_v5_template(engine, caplog):
+    mig = _load_migration(E4_PATH)
+    with Session(engine) as session:
+        profile, version, step = _seed_builtin_planner(
+            session, system_template="user modified v5", user_template="user modified user"
+        )
+        version.version_number = 5
+        version.output_schema_name = "planner_v2"
+        session.commit()
+        profile_id, version_id, step_id = profile.id, version.id, step.id
+
+    with caplog.at_level(logging.WARNING, logger="alembic.runtime.migration"):
+        _run_migration(mig, engine, "upgrade")
+
+    with Session(engine) as session:
+        assert [v.id for v in _versions_of(session, profile_id)] == [version_id]
+        assert _step_prompt_id(session, step_id) == version_id
+    assert any("user-modified" in record.message for record in caplog.records)
+
+
+def test_e4_pins_the_released_official_v5_hash():
+    mig = _load_migration(E4_PATH)
+    assert mig.OFFICIAL_V5_TEMPLATE_SHA256 == (
+        "3ede12f48e9864b054e1bd80636ba50d1605e0695a1ec23ceef100db07a7c327"
     )

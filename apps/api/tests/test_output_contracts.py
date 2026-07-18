@@ -400,6 +400,38 @@ def test_planner_normalizes_common_real_llm_shape_variants():
     assert result.causal_transitions[0].narrator_must_not_state == ["\u6572\u51fb\u58f0\u7684\u771f\u5b9e\u6765\u6e90\u3002"]
 
 
+def test_planner_normalizes_character_name_map_without_losing_fields():
+    data = _planner_data_v2()
+    data["characters"] = {
+        "老陈": {"goal": "帮助女孩", "known": ["她站在门外"]},
+        "女孩": {"name": "小满", "goal": "找地方暂时停留"},
+    }
+
+    result = validate_planner_output(data, expected_version=2)
+
+    assert result.characters == [
+        {"name": "老陈", "goal": "帮助女孩", "known": ["她站在门外"]},
+        {"name": "小满", "goal": "找地方暂时停留"},
+    ]
+
+
+def test_planner_rejects_character_name_map_with_non_object_value():
+    data = _planner_data_v2()
+    data["characters"] = {"老陈": "帮助女孩"}
+
+    with pytest.raises(ValueError, match="PLANNER_OUTPUT_CONTRACT_INVALID"):
+        validate_planner_output(data, expected_version=2)
+
+
+@pytest.mark.parametrize("field", ["pressure", "end_condition"])
+def test_planner_rejects_top_level_object_fields_that_must_remain_strings(field):
+    data = _planner_data_v2()
+    data[field] = {"description": "关店时间逼近"}
+
+    with pytest.raises(ValueError, match="PLANNER_OUTPUT_CONTRACT_INVALID"):
+        validate_planner_output(data, expected_version=2)
+
+
 def test_planner_normalizes_grouped_forbidden_values():
     data = {
         "planner_contract_version": 1,

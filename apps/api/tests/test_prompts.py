@@ -92,6 +92,25 @@ class TestPromptList:
         for phrase in ("只能选择一个值", "不得组合多个分类", "其他压力写入 description", "不得填写 situational"):
             assert phrase in text
 
+    def test_builtin_planner_v6_documents_top_level_json_shapes(self):
+        from app.prompts.defaults import BUILTIN_PROMPTS
+
+        planner = next(item for item in BUILTIN_PROMPTS if item["stage"] == "planner")
+        text = planner["system_template"]
+
+        for phrase in (
+            "characters 只能是 JSON 数组",
+            "pressure 只能是字符串",
+            "end_condition 只能是字符串",
+            "不得以角色名作为对象 key",
+            '"planner_contract_version": 2',
+            '"characters": [',
+            '"pressure": "字符串"',
+            '"end_condition": "字符串"',
+            "上例只规定 JSON 结构和字段类型",
+        ):
+            assert phrase in text
+
     def test_builtin_writer_uses_scene_responsiveness_not_four_beat_structure(self):
         from app.prompts.defaults import BUILTIN_PROMPTS
 

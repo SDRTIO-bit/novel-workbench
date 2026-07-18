@@ -330,6 +330,19 @@ class PlannerOutput(BaseModel):
                 {"name": item} if isinstance(item, str) else item
                 for item in characters
             ]
+        elif isinstance(characters, dict):
+            normalized_characters = []
+            for name, character in characters.items():
+                if not isinstance(character, dict):
+                    raise ValueError(
+                        "characters name-map values must be objects; "
+                        "cannot safely infer a character from a scalar"
+                    )
+                normalized_character = dict(character)
+                if not str(normalized_character.get("name") or "").strip():
+                    normalized_character["name"] = name
+                normalized_characters.append(normalized_character)
+            normalized["characters"] = normalized_characters
         if isinstance(normalized.get("chapter_contract_check"), str):
             normalized["chapter_contract_check"] = {}
         # Handle scene_state being a string instead of object - convert to minimal object
