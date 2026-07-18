@@ -47,8 +47,9 @@ async def preview_context(
         ctx = await svc.preview_stage(run_id, stage, override)
         return {
             "sources": [s.model_dump() for s in ctx["sources"]],
-            "system_prompt": ctx["system_prompt"],
-            "user_prompt": ctx["user_prompt"],
+            "system_prompt": ctx["rendered_system_prompt"],
+            "user_prompt": ctx["rendered_user_prompt"],
+            "prompt_meta": ctx["prompt_meta"],
             "input_snapshot_hash": ctx["input_snapshot_hash"],
             "total_chars": ctx["total_chars"],
             "truncated": ctx["truncated"],
@@ -68,7 +69,12 @@ async def list_workflows() -> list[dict]:
                 "description": w.description,
                 "is_default": w.is_default,
                 "steps": [
-                    {"stage": s.stage, "provider_id": s.provider_id, "model_id": s.model_id}
+                    {
+                        "stage": s.stage,
+                        "provider_id": s.provider_id,
+                        "model_id": s.model_id,
+                        "prompt_version_id": s.prompt_version_id,
+                    }
                     for s in w.steps
                 ],
             }
@@ -146,7 +152,12 @@ async def list_prompt_profiles(stage: str | None = None) -> list[dict]:
                 "description": p.description,
                 "is_builtin": p.is_builtin,
                 "versions": [
-                    {"id": v.id, "version_number": v.version_number, "output_mode": v.output_mode}
+                    {
+                        "id": v.id,
+                        "version_number": v.version_number,
+                        "output_mode": v.output_mode,
+                        "output_schema_name": v.output_schema_name or "",
+                    }
                     for v in p.versions
                 ],
             }

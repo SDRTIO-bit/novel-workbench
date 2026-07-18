@@ -305,6 +305,7 @@ class GenerationService:
             "sources": ctx["sources"],
             "rendered_system_prompt": ctx["rendered_system_prompt"],
             "rendered_user_prompt": ctx["rendered_user_prompt"],
+            "prompt_meta": ctx["prompt_meta"],
             "input_snapshot_hash": ctx["input_snapshot_hash"],
             "total_chars": ctx["total_chars"],
             "truncated": ctx["truncated"],

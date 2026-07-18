@@ -381,6 +381,78 @@ class TestMCPTools:
         return candidates[0] if candidates else {}
 
 
+class TestMCPGenerationObservability:
+    def test_generation_tools_expose_resolved_prompt_contract_metadata(self, api_client):
+        tools = TestMCPTools()
+        headers, sid = tools._do_handshake(api_client)
+
+        project = tools._call(api_client, headers, sid, "create_project", {
+            "name": "可观测性测试项目",
+        }, 200)
+        project_id = project["structuredContent"]["id"]
+        chapter = tools._call(api_client, headers, sid, "create_chapter", {
+            "project_id": project_id,
+            "title": "第一章",
+        }, 201)
+
+        workflows = tools._call(api_client, headers, sid, "list_workflows", {}, 202)
+        workflow = next(w for w in workflows["structuredContent"]["result"] if w["is_default"])
+        planner_step = next(step for step in workflow["steps"] if step["stage"] == "planner")
+        assert planner_step["prompt_version_id"]
+
+        profiles = tools._call(api_client, headers, sid, "list_prompt_profiles", {
+            "stage": "planner",
+        }, 203)
+        builtin = next(p for p in profiles["structuredContent"]["result"] if p["is_builtin"])
+        planner_v2 = builtin["versions"][-1]
+        assert planner_v2["output_schema_name"] == "planner_v2"
+
+        run = tools._call(api_client, headers, sid, "create_run", {
+            "project_id": project_id,
+            "chapter_id": chapter["structuredContent"]["id"],
+            "workflow_profile_id": workflow["id"],
+            "scene_instruction": "主角发现了一条新线索。",
+        }, 204)
+        run_id = run["structuredContent"]["id"]
+
+        run_detail = tools._call(api_client, headers, sid, "get_run", {"run_id": run_id}, 205)
+        assert run_detail["structuredContent"]["workflow_profile_id"] == workflow["id"]
+
+        preview = tools._call(api_client, headers, sid, "preview_context", {
+            "run_id": run_id,
+            "stage": "planner",
+            "prompt_version_id": planner_v2["id"],
+        }, 206)
+        assert preview["structuredContent"]["prompt_meta"] == {
+            "prompt_version_id": planner_v2["id"],
+            "output_schema_name": "planner_v2",
+        }
+
+        provider_list = tools._call(api_client, headers, sid, "list_providers", {}, 207)
+        mock_provider = next(
+            item for item in provider_list["structuredContent"]["result"]
+            if item["provider_type"] == "mock"
+        )
+        executed = tools._call(api_client, headers, sid, "execute_stage", {
+            "run_id": run_id,
+            "stage": "planner",
+            "provider_id": mock_provider["id"],
+            "prompt_version_id": planner_v2["id"],
+        }, 208)["structuredContent"]
+        assert executed["prompt_version_id"] == planner_v2["id"]
+        assert executed["output_schema_name"] == "planner_v2"
+        assert executed["expected_contract_version"] == 2
+        assert isinstance(executed["parsed_output_json"], str)
+
+        status = tools._call(api_client, headers, sid, "get_stage_status", {
+            "run_id": run_id,
+            "stage": "planner",
+        }, 209)["structuredContent"]
+        candidate = status["candidates"][0]
+        assert candidate["prompt_version_id"] == planner_v2["id"]
+        assert candidate["raw_response"]
+
+
 def _mcp_result(resp):
     text = resp.text
     data_line = [l for l in text.strip().split("\n") if l.startswith("data: ")][0]

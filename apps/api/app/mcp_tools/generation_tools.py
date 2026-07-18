@@ -1,6 +1,29 @@
 import json
 from app.mcp_utils import mcp_db
-from app.services.generation_service import GenerationService
+from app.models.prompt import PromptVersion
+from app.services.generation_service import (
+    EXPECTED_PLANNER_CONTRACT_VERSION,
+    PLANNER_V2_SCHEMA_NAME,
+    GenerationService,
+)
+
+
+async def _candidate_contract_meta(session, stage: str, prompt_version_id: str | None) -> dict:
+    """Return contract metadata for the exact prompt version recorded on a candidate."""
+    output_schema_name = ""
+    if prompt_version_id:
+        version = await session.get(PromptVersion, prompt_version_id)
+        if version:
+            output_schema_name = version.output_schema_name or ""
+    return {
+        "prompt_version_id": prompt_version_id or "",
+        "output_schema_name": output_schema_name,
+        "expected_contract_version": (
+            EXPECTED_PLANNER_CONTRACT_VERSION
+            if stage == "planner" and output_schema_name == PLANNER_V2_SCHEMA_NAME
+            else None
+        ),
+    }
 
 
 async def list_runs(project_id: str) -> list[dict]:
@@ -77,6 +100,7 @@ async def get_run(run_id: str) -> dict:
             "id": run.id,
             "project_id": run.project_id,
             "chapter_id": run.chapter_id,
+            "workflow_profile_id": run.workflow_profile_id,
             "status": run.status,
             "scene_instruction": run.scene_instruction,
             "created_at": run.created_at.isoformat() if run.created_at else None,
@@ -137,6 +161,7 @@ async def execute_stage(
             override["revised_text"] = revised_text
         candidate = await svc.execute_stage(run_id, stage, override)
         await session.commit()
+        contract_meta = await _candidate_contract_meta(session, stage, candidate.prompt_version_id)
         return {
             "candidate_id": candidate.id,
             "attempt": candidate.attempt_number,
@@ -148,6 +173,10 @@ async def execute_stage(
             "input_tokens": candidate.input_tokens,
             "output_tokens": candidate.output_tokens,
             "latency_ms": candidate.latency_ms,
+            "prompt_version_id": contract_meta["prompt_version_id"],
+            "output_schema_name": contract_meta["output_schema_name"],
+            "expected_contract_version": contract_meta["expected_contract_version"],
+            "parsed_output_json": candidate.parsed_output_json,
         }
 
 
@@ -221,6 +250,8 @@ async def get_stage_status(run_id: str, stage: str) -> dict:
                 "has_error": bool(c.error_code),
                 "error_message": c.error_message,
                 "text_output": c.text_output or "",
+                "prompt_version_id": c.prompt_version_id or "",
+                "raw_response": c.raw_response or "",
                 "parsed_output_json": c.parsed_output_json,
                 "rendered_user_prompt": c.rendered_user_prompt or "",
                 "input_tokens": c.input_tokens,
