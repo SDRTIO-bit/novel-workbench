@@ -4,6 +4,7 @@ Covers:
 - a2b3c4d5e6f7: upgrade/downgrade of the builtin planner v2 prompt
 - b2c3d4e5f6a7: safe duplicate version cleanup with repo repointing
 - f8a9b0c1d2e3: downgrade integrity (profiles.c.id typo fix)
+- c2d3e4f5a6b7: mark existing builtin planner as planner_v2 contract
 """
 import hashlib
 import importlib.util
@@ -26,6 +27,9 @@ A2_PATH = os.path.join(
 )
 B2_PATH = os.path.join(
     API_DIR, "alembic", "versions", "b2c3d4e5f6a7_fix_migration_remove_extra_versions.py"
+)
+C2_PATH = os.path.join(
+    API_DIR, "alembic", "versions", "c2d3e4f5a6b7_mark_builtin_planner_v2_contract.py"
 )
 
 
@@ -314,10 +318,12 @@ def test_alembic_multi_step_downgrade_hits_f8a_without_typo(tmp_path, monkeypatc
     conn.commit()
     conn.close()
 
-    # 3. Downgrade two steps: a2 → b2 → f8.  f8's downgrade must run without
-    #    AttributeError from the old .order_by(profiles.id) bug.
+    # 3. Downgrade through the chain: c2→a2, a2→b2→f8a, f8a→e7.
+    #    The last step exercises f8a's downgrade() — the function that had
+    #    the .order_by(profiles.id) typo.  It must not raise.
     command.downgrade(cfg, "a2b3c4d5e6f7")
     command.downgrade(cfg, "f8a9b0c1d2e3")
+    command.downgrade(cfg, "e7f8a9b0c1d2")
     # If we got here without an error, the fix is verified.
 
 
@@ -410,3 +416,98 @@ def test_b2_skips_when_hashes_differ(engine, caplog):
         )
         assert len(versions) == 2, "dissimilar versions must not be deleted"
     assert any("user-modified" in record.message for record in caplog.records)
+
+
+# ── c2d3e4f5a6b7 (mark builtin planner as planner_v2) ────────────────
+
+
+def _seed_planner_with_schema(engine, *, system, user, schema="planner"):
+    from app.models.prompt import PromptProfile, PromptVersion
+
+    with Session(engine) as session:
+        profile = PromptProfile(stage="planner", name="默认场景规划", is_builtin=True)
+        session.add(profile)
+        session.flush()
+        profile_id = profile.id
+        version = PromptVersion(
+            profile_id=profile_id,
+            version_number=1,
+            system_template=system,
+            user_template=user,
+            output_mode="structured",
+            output_schema_name=schema,
+        )
+        session.add(version)
+        session.flush()
+        vid = version.id
+        session.commit()
+    return profile_id, vid
+
+
+def test_c2_marks_existing_planner_as_v2(engine):
+    mig = _load_migration(C2_PATH)
+    from app.prompts.defaults import BUILTIN_PROMPTS
+    entry = next(e for e in BUILTIN_PROMPTS if e["stage"] == "planner")
+
+    pid, vid = _seed_planner_with_schema(
+        engine, system=entry["system_template"], user=entry["user_template"],
+        schema="planner",
+    )
+    _run_migration(mig, engine, "upgrade")
+
+    from app.models.prompt import PromptVersion
+    with Session(engine) as session:
+        v = session.get(PromptVersion, vid)
+        assert v.output_schema_name == "planner_v2"
+
+
+def test_c2_skips_user_modified_template(engine, caplog):
+    mig = _load_migration(C2_PATH)
+
+    pid, vid = _seed_planner_with_schema(
+        engine, system="用户自定义模板", user="custom template",
+        schema="planner",
+    )
+    with caplog.at_level(logging.WARNING, logger="alembic.runtime.migration"):
+        _run_migration(mig, engine, "upgrade")
+
+    from app.models.prompt import PromptVersion
+    with Session(engine) as session:
+        v = session.get(PromptVersion, vid)
+        assert v.output_schema_name == "planner"
+    assert any("user-modified" in record.message for record in caplog.records)
+
+
+def test_c2_noop_when_already_v2(engine):
+    mig = _load_migration(C2_PATH)
+    from app.prompts.defaults import BUILTIN_PROMPTS
+    entry = next(e for e in BUILTIN_PROMPTS if e["stage"] == "planner")
+
+    pid, vid = _seed_planner_with_schema(
+        engine, system=entry["system_template"], user=entry["user_template"],
+        schema="planner_v2",
+    )
+    _run_migration(mig, engine, "upgrade")
+
+    from app.models.prompt import PromptVersion
+    with Session(engine) as session:
+        v = session.get(PromptVersion, vid)
+        assert v.output_schema_name == "planner_v2"
+
+
+def test_c2_downgrade_restores_planner(engine):
+    mig = _load_migration(C2_PATH)
+    from app.prompts.defaults import BUILTIN_PROMPTS
+    entry = next(e for e in BUILTIN_PROMPTS if e["stage"] == "planner")
+
+    pid, vid = _seed_planner_with_schema(
+        engine, system=entry["system_template"], user=entry["user_template"],
+        schema="planner",
+    )
+    _run_migration(mig, engine, "upgrade")
+    _run_migration(mig, engine, "downgrade")
+
+    from app.models.prompt import PromptVersion
+    with Session(engine) as session:
+        v = session.get(PromptVersion, vid)
+        assert v.output_schema_name == "planner"
