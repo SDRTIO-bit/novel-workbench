@@ -76,6 +76,22 @@ def _uniq_name(base: str) -> str:
 
 
 class TestPromptList:
+    def test_builtin_planner_v5_documents_tempo_machine_enums(self):
+        from app.prompts.defaults import BUILTIN_PROMPTS
+
+        planner = next(item for item in BUILTIN_PROMPTS if item["stage"] == "planner")
+        text = planner["system_template"]
+
+        for value in (
+            "physical_problem", "social_friction", "resource_constraint",
+            "unfinished_commitment", "information_gap", "none",
+            "physical_change", "social_commitment", "relationship_shift",
+            "information_conflict", "unresolved_problem",
+        ):
+            assert value in text
+        for phrase in ("只能选择一个值", "不得组合多个分类", "其他压力写入 description", "不得填写 situational"):
+            assert phrase in text
+
     def test_builtin_writer_uses_scene_responsiveness_not_four_beat_structure(self):
         from app.prompts.defaults import BUILTIN_PROMPTS
 

@@ -237,6 +237,11 @@ class DominantPressure(BaseModel):
     kind: str = "none"
     description: str = Field(min_length=1)
 
+    @field_validator("kind", mode="before")
+    @classmethod
+    def normalize_kind(cls, value):
+        return value.strip().lower() if isinstance(value, str) else value
+
     @field_validator("kind")
     @classmethod
     def validate_kind(cls, value):
@@ -251,6 +256,11 @@ class StopState(BaseModel):
     visible_fact: str = Field(min_length=1)
     what_is_now_different: str = Field(min_length=1)
     must_not_append: str = ""
+
+    @field_validator("type", mode="before")
+    @classmethod
+    def normalize_type(cls, value):
+        return value.strip().lower() if isinstance(value, str) else value
 
     @field_validator("type")
     @classmethod

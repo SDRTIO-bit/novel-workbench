@@ -322,6 +322,41 @@ def test_planner_accepts_tempo_guardrails():
     assert result.tempo_guardrails.disclosure_cap == 1
 
 
+def test_planner_normalizes_tempo_guardrail_machine_enums():
+    guardrails = {
+        **_tempo_guardrails(),
+        "dominant_pressure": {
+            **_tempo_guardrails()["dominant_pressure"],
+            "kind": " Social_Friction ",
+        },
+        "stop_state": {
+            **_tempo_guardrails()["stop_state"],
+            "type": "RELATIONSHIP_SHIFT",
+        },
+    }
+
+    result = validate_planner_output({**_planner_data_v1(), "tempo_guardrails": guardrails})
+
+    assert result.tempo_guardrails.dominant_pressure.kind == "social_friction"
+    assert result.tempo_guardrails.stop_state.type == "relationship_shift"
+
+
+@pytest.mark.parametrize(
+    "field,value",
+    [
+        ("dominant_pressure", "时间压力 + 沟通隔阂"),
+        ("stop_state", "situational"),
+        ("dominant_pressure", "social_friction + information_gap"),
+    ],
+)
+def test_planner_rejects_non_enum_tempo_guardrail_machine_values(field, value):
+    guardrails = _tempo_guardrails()
+    guardrails[field] = {**guardrails[field], "kind" if field == "dominant_pressure" else "type": value}
+
+    with pytest.raises(ValueError, match="PLANNER_OUTPUT_CONTRACT_INVALID"):
+        validate_planner_output({**_planner_data_v1(), "tempo_guardrails": guardrails})
+
+
 def test_planner_normalizes_single_unclassified_fact():
     guardrails = {**_tempo_guardrails(), "must_remain_unclassified": "\u6572\u51fb\u58f0\u6765\u6e90"}
     result = validate_planner_output({**_planner_data_v1(), "tempo_guardrails": guardrails})

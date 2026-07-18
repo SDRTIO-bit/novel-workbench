@@ -31,6 +31,9 @@ B2_PATH = os.path.join(
 C2_PATH = os.path.join(
     API_DIR, "alembic", "versions", "c2d3e4f5a6b7_mark_builtin_planner_v2_contract.py"
 )
+D3_PATH = os.path.join(
+    API_DIR, "alembic", "versions", "d3e4f5a6b7c8_add_planner_v5_enum_guidance.py"
+)
 
 
 def _load_migration(path=A2_PATH):
@@ -511,3 +514,91 @@ def test_c2_downgrade_restores_planner(engine):
     with Session(engine) as session:
         v = session.get(PromptVersion, vid)
         assert v.output_schema_name == "planner"
+
+
+# ── d3e4f5a6b7c8 (planner v5 enum guidance) ─────────────────────────
+
+
+def _seed_official_v4_with_workflows(engine, monkeypatch, *, system, user):
+    mig = _load_migration(D3_PATH)
+    monkeypatch.setattr(mig, "OFFICIAL_V4_TEMPLATE_SHA256", mig._template_hash(system, user))
+
+    with Session(engine) as session:
+        profile, version, step = _seed_builtin_planner(
+            session, system_template=system, user_template=user
+        )
+        version.version_number = 4
+        from app.models.prompt import PromptVersion
+        from app.models.workflow import WorkflowStepConfig
+
+        historical = PromptVersion(
+            profile_id=profile.id,
+            version_number=3,
+            system_template="official v3 system",
+            user_template="official v3 user",
+            output_mode="structured",
+            output_schema_name="planner",
+        )
+        session.add(historical)
+        session.flush()
+        pinned = WorkflowStepConfig(
+            workflow_profile_id=step.workflow_profile_id,
+            stage="planner",
+            prompt_version_id=historical.id,
+        )
+        session.add(pinned)
+        session.commit()
+        return mig, profile.id, version.id, step.id, historical.id, pinned.id
+
+
+def test_d3_creates_official_v5_and_updates_only_v4_workflow_refs(engine, monkeypatch):
+    mig, profile_id, v4_id, step_id, v3_id, pinned_step_id = _seed_official_v4_with_workflows(
+        engine, monkeypatch, system="official v4 system", user="official v4 user"
+    )
+
+    _run_migration(mig, engine, "upgrade")
+
+    current = _current_builtin_planner()
+    with Session(engine) as session:
+        versions = _versions_of(session, profile_id)
+        v5 = next(version for version in versions if version.version_number == 5)
+        assert v5.system_template == current["system_template"]
+        assert v5.user_template == "official v4 user"
+        assert v5.output_mode == "structured"
+        assert v5.output_schema_name == "planner_v2"
+        assert _step_prompt_id(session, step_id) == v5.id
+        assert _step_prompt_id(session, pinned_step_id) == v3_id
+
+    _run_migration(mig, engine, "downgrade")
+
+    with Session(engine) as session:
+        versions = _versions_of(session, profile_id)
+        assert {version.id for version in versions} == {v3_id, v4_id}
+        assert _step_prompt_id(session, step_id) == v4_id
+        assert _step_prompt_id(session, pinned_step_id) == v3_id
+
+
+def test_d3_skips_user_modified_v4_template(engine, monkeypatch, caplog):
+    mig = _load_migration(D3_PATH)
+    with Session(engine) as session:
+        profile, version, step = _seed_builtin_planner(
+            session, system_template="user modified v4", user_template="user modified user"
+        )
+        version.version_number = 4
+        session.commit()
+        profile_id, version_id, step_id = profile.id, version.id, step.id
+
+    with caplog.at_level(logging.WARNING, logger="alembic.runtime.migration"):
+        _run_migration(mig, engine, "upgrade")
+
+    with Session(engine) as session:
+        assert [v.id for v in _versions_of(session, profile_id)] == [version_id]
+        assert _step_prompt_id(session, step_id) == version_id
+    assert any("user-modified" in record.message for record in caplog.records)
+
+
+def test_d3_pins_the_released_official_v4_hash():
+    mig = _load_migration(D3_PATH)
+    assert mig.OFFICIAL_V4_TEMPLATE_SHA256 == (
+        "0f54941707faaa60929b4292ec57d0473cd17e52c1f5398f37ec3b585c5ed4d7"
+    )
