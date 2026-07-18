@@ -256,6 +256,15 @@ class MockClient(BaseLlmClient):
                         "cost_or_commitment_visible": False,
                         "next_constraint_visible": True,
                         "paragraph_ids": ["P006", "P012"],
+                        "rejected_alternative_evidence": [],
+                        "cost_or_commitment_evidence": [],
+                        "next_constraint_evidence": [
+                            {
+                                "paragraph_id": "P012",
+                                "quote": "女孩停在门内，没有立刻走向柜台。",
+                                "explanation": "进入书店后，她仍受不主动接近柜台的行动限制。",
+                            }
+                        ],
                         "issue_id": "I03",
                         "comment": "选择被写出，但放弃的退路和由此产生的责任尚不可见。",
                     }

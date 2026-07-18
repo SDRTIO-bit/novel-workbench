@@ -81,6 +81,15 @@ def _valid_critic_v2_payload():
                 "cost_or_commitment_visible": False,
                 "next_constraint_visible": True,
                 "paragraph_ids": ["P006", "P012", "P018"],
+                "rejected_alternative_evidence": [],
+                "cost_or_commitment_evidence": [],
+                "next_constraint_evidence": [
+                    {
+                        "paragraph_id": "P018",
+                        "quote": "她停在阿橘旁边，没有走向柜台。",
+                        "explanation": "进入书店后仍不能直接走向柜台，保留了新形成的互动限制。",
+                    }
+                ],
                 "issue_id": "I03",
                 "comment": "替代路线和延迟关店的代价没有成为压力。",
             }
@@ -93,6 +102,72 @@ def test_critic_v2_accepts_complete_self_consistent_audits():
 
     assert result.critic_contract_version == 2
     assert result.stop_state_audit.issue_id == "I01"
+
+
+def test_critic_v21_normalizes_stop_issue_coverage_with_deduped_sorted_paragraphs():
+    payload = _valid_critic_v2_payload()
+    payload["stop_state_audit"]["paragraphs_after_stop"] = ["P027", "P025", "P026", "P026"]
+    payload["issues"][0]["paragraph_ids"] = ["P027", "P026", "P030"]
+
+    result = validate_critic_output(payload, expected_version=2)
+
+    assert result.issues[0].paragraph_ids == ["P025", "P026", "P027", "P030"]
+
+
+@pytest.mark.parametrize("field", [
+    "rejected_alternative_evidence",
+    "cost_or_commitment_evidence",
+    "next_constraint_evidence",
+])
+def test_critic_v21_requires_evidence_for_each_true_choice_visibility(field):
+    payload = _valid_critic_v2_payload()
+    choice = payload["choice_realization_check"][0]
+    choice["rejected_alternative_visible"] = True
+    choice["cost_or_commitment_visible"] = True
+    choice["issue_id"] = ""
+    choice[field] = []
+
+    with pytest.raises(ValueError, match="CRITIC_OUTPUT_CONTRACT_INVALID"):
+        validate_critic_output(payload, expected_version=2)
+
+
+def test_critic_v21_rejects_choice_evidence_outside_its_audit_paragraphs():
+    payload = _valid_critic_v2_payload()
+    choice = payload["choice_realization_check"][0]
+    choice["next_constraint_evidence"] = [{
+        "paragraph_id": "P099",
+        "quote": "这不是该审计范围内的正文。",
+        "explanation": "段落引用超出 choice_realization_check 的范围。",
+    }]
+
+    with pytest.raises(ValueError, match="CRITIC_OUTPUT_CONTRACT_INVALID"):
+        validate_critic_output(payload, expected_version=2)
+
+
+def test_critic_v21_rejects_illegal_stop_audit_paragraph_id():
+    payload = _valid_critic_v2_payload()
+    payload["stop_state_audit"]["paragraphs_after_stop"] = ["not-a-paragraph"]
+
+    with pytest.raises(ValueError, match="CRITIC_OUTPUT_CONTRACT_INVALID"):
+        validate_critic_output(payload, expected_version=2)
+
+
+def test_critic_v21_rejects_stop_audit_linked_to_wrong_issue_type():
+    payload = _valid_critic_v2_payload()
+    payload["issues"][0]["issue_type"] = "pacing_drag"
+
+    with pytest.raises(ValueError, match="CRITIC_OUTPUT_CONTRACT_INVALID"):
+        validate_critic_output(payload, expected_version=2)
+
+
+def test_critic_v21_normalized_stop_issue_cannot_overlap_a_protected_strength():
+    payload = _valid_critic_v2_payload()
+    payload["stop_state_audit"]["paragraphs_after_stop"] = ["P025", "P026"]
+    payload["issues"][0]["paragraph_ids"] = ["P026"]
+    payload["protected_strengths"][0]["paragraph_ids"] = ["P025"]
+
+    with pytest.raises(ValueError, match="CRITIC_OUTPUT_CONTRACT_INVALID"):
+        validate_critic_output(payload, expected_version=2)
 
 
 @pytest.mark.parametrize("mutator", [
@@ -155,5 +230,17 @@ def test_official_critic_prompt_requires_audits_before_strength_protection():
         "先找到 stop_state.visible_fact 第一次成立的位置",
         "rejected_alternative",
         "cost_or_commitment",
+    ]:
+        assert required_text in prompt
+
+
+def test_official_critic_v21_prompt_requires_choice_evidence_before_true_findings():
+    critic = next(entry for entry in BUILTIN_PROMPTS if entry["stage"] == "critic")
+    prompt = critic["system_template"]
+
+    for required_text in [
+        "任何 true 判断都必须先引用正文证据",
+        "不能引用场景规划本身作为正文证据",
+        "没有锁门不自动等于延迟关店代价已落实",
     ]:
         assert required_text in prompt

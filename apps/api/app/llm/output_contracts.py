@@ -50,6 +50,17 @@ def _paragraph_labels(value) -> list[str]:
     return labels
 
 
+_PARAGRAPH_LABEL_RE = re.compile(r"^P(?!0+$)\d{3,}$")
+
+
+def _is_paragraph_label(value: str) -> bool:
+    return bool(_PARAGRAPH_LABEL_RE.fullmatch(value))
+
+
+def _sorted_unique_paragraph_labels(values: list[str]) -> list[str]:
+    return sorted(set(values), key=lambda label: int(label[1:]))
+
+
 # ── Enums ────────────────────────────────────────────────────────────
 
 class CausalTransitionKind(str, Enum):
@@ -649,6 +660,13 @@ class StopStateAudit(BaseModel):
     def normalize_paragraph_ids(cls, value):
         return _paragraph_labels(value)
 
+    @field_validator("paragraphs_after_stop")
+    @classmethod
+    def require_legal_paragraph_ids(cls, value):
+        if any(not _is_paragraph_label(label) for label in value):
+            raise ValueError("paragraphs_after_stop must contain legal paragraph IDs")
+        return value
+
 
 class InferenceAudit(BaseModel):
     overexplained: bool
@@ -662,12 +680,35 @@ class InferenceAudit(BaseModel):
         return _paragraph_labels(value)
 
 
+class ChoiceEvidence(BaseModel):
+    paragraph_id: str
+    quote: str
+    explanation: str
+
+    @field_validator("paragraph_id", mode="before")
+    @classmethod
+    def normalize_paragraph_id(cls, value):
+        labels = _paragraph_labels(value)
+        if len(labels) != 1 or not _is_paragraph_label(labels[0]):
+            raise ValueError("paragraph_id must be a legal paragraph ID")
+        return labels[0]
+
+    @model_validator(mode="after")
+    def require_nonempty_fields(self):
+        if not self.paragraph_id.strip() or not self.quote.strip() or not self.explanation.strip():
+            raise ValueError("choice evidence fields must be non-empty strings")
+        return self
+
+
 class ChoiceRealizationCheck(BaseModel):
     transition_id: str
     rejected_alternative_visible: bool
     cost_or_commitment_visible: bool
     next_constraint_visible: bool
     paragraph_ids: list[str]
+    rejected_alternative_evidence: list[ChoiceEvidence]
+    cost_or_commitment_evidence: list[ChoiceEvidence]
+    next_constraint_evidence: list[ChoiceEvidence]
     issue_id: str
     comment: str = ""
 
@@ -682,6 +723,53 @@ class CriticOutputV2(CriticOutput):
     stop_state_audit: StopStateAudit
     inference_audit: InferenceAudit
     choice_realization_check: list[ChoiceRealizationCheck]
+
+    @model_validator(mode="before")
+    @classmethod
+    def normalize_stop_overrun_issue_coverage(cls, data):
+        if not isinstance(data, dict):
+            return data
+
+        stop = data.get("stop_state_audit")
+        issues = data.get("issues")
+        if not isinstance(stop, dict) or not isinstance(issues, list):
+            return data
+        if not (
+            stop.get("visible_fact_found") is True
+            and bool(stop.get("paragraphs_after_stop"))
+            and (
+                stop.get("post_stop_new_action_found") is True
+                or stop.get("post_stop_emotional_summary_found") is True
+            )
+            and isinstance(stop.get("issue_id"), str)
+            and stop["issue_id"].strip()
+        ):
+            return data
+
+        audit_paragraphs = _paragraph_labels(stop["paragraphs_after_stop"])
+        if any(not _is_paragraph_label(label) for label in audit_paragraphs):
+            return data
+
+        issue_id = stop["issue_id"].strip()
+        normalized_issues = list(issues)
+        for index, issue in enumerate(issues):
+            if not isinstance(issue, dict) or issue.get("issue_id") != issue_id:
+                continue
+            if issue.get("issue_type") != CriticIssueType.stop_state_overrun.value:
+                return data
+
+            issue_paragraphs = _paragraph_labels(issue.get("paragraph_ids", []))
+            if any(not _is_paragraph_label(label) for label in issue_paragraphs):
+                return data
+            normalized_issue = dict(issue)
+            normalized_issue["paragraph_ids"] = _sorted_unique_paragraph_labels(
+                issue_paragraphs + audit_paragraphs
+            )
+            normalized_issues[index] = normalized_issue
+            normalized = dict(data)
+            normalized["issues"] = normalized_issues
+            return normalized
+        return data
 
     @model_validator(mode="after")
     def check_v2_audit_consistency(self):
@@ -766,10 +854,28 @@ class CriticOutputV2(CriticOutput):
             )
 
         for choice in self.choice_realization_check:
-            missing_choice_weight = (
-                not choice.rejected_alternative_visible
-                or not choice.cost_or_commitment_visible
+            evidence_by_visibility = (
+                (choice.rejected_alternative_visible, choice.rejected_alternative_evidence),
+                (choice.cost_or_commitment_visible, choice.cost_or_commitment_evidence),
+                (choice.next_constraint_visible, choice.next_constraint_evidence),
             )
+            for visible, evidence in evidence_by_visibility:
+                if visible and not evidence:
+                    raise ValueError(
+                        "CRITIC_OUTPUT_CONTRACT_INVALID: visible choice finding "
+                        "requires evidence"
+                    )
+                if not {item.paragraph_id for item in evidence}.issubset(choice.paragraph_ids):
+                    raise ValueError(
+                        "CRITIC_OUTPUT_CONTRACT_INVALID: choice evidence paragraph_id "
+                        "must be included in choice_realization_check paragraph_ids"
+                    )
+
+            missing_choice_weight = not all([
+                choice.rejected_alternative_visible,
+                choice.cost_or_commitment_visible,
+                choice.next_constraint_visible,
+            ])
             if missing_choice_weight:
                 issue = issues_by_id.get(choice.issue_id)
                 if not issue or issue.issue_type != CriticIssueType.choice_cost_missing:
