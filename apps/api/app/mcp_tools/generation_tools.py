@@ -2,6 +2,8 @@ import json
 from app.mcp_utils import mcp_db
 from app.models.prompt import PromptVersion
 from app.services.generation_service import (
+    CRITIC_V2_SCHEMA_NAME,
+    EXPECTED_CRITIC_CONTRACT_VERSION,
     EXPECTED_PLANNER_CONTRACT_VERSION,
     PLANNER_V2_SCHEMA_NAME,
     GenerationService,
@@ -27,6 +29,11 @@ async def _candidate_contract_meta(session, stage: str, prompt_version_id: str |
         "expected_contract_version": (
             EXPECTED_PLANNER_CONTRACT_VERSION
             if stage == "planner" and output_schema_name == PLANNER_V2_SCHEMA_NAME
+            else None
+        ),
+        "expected_critic_contract_version": (
+            EXPECTED_CRITIC_CONTRACT_VERSION
+            if stage == "critic" and output_schema_name == CRITIC_V2_SCHEMA_NAME
             else None
         ),
     }
@@ -193,6 +200,7 @@ async def execute_stage(
             "prompt_version_id": contract_meta["prompt_version_id"],
             "output_schema_name": contract_meta["output_schema_name"],
             "expected_contract_version": contract_meta["expected_contract_version"],
+            "expected_critic_contract_version": contract_meta["expected_critic_contract_version"],
             "parsed_output_json": candidate.parsed_output_json,
         }
 
@@ -280,6 +288,7 @@ async def get_stage_status(run_id: str, stage: str) -> dict:
                 "reasoning_tokens": c.reasoning_tokens,
                 "response_format": contract_meta["response_format"],
                 "max_output_tokens": _candidate_max_output_tokens(c),
+                "expected_critic_contract_version": contract_meta["expected_critic_contract_version"],
             })
         return {
             "stage": step.stage,

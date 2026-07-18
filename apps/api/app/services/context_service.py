@@ -281,11 +281,14 @@ class ContextService:
         to the built-in profile — unlike ``is_builtin_latest``, which would
         silently promote a user-edited version to strict v2 enforcement.
         """
-        return {
+        meta = {
             "prompt_version_id": version.id,
             "output_schema_name": version.output_schema_name or "",
             "output_mode": version.output_mode,
         }
+        if version.output_schema_name == "critic_v2":
+            meta["expected_critic_contract_version"] = 2
+        return meta
 
     async def _resolve_from_workflow(self, workflow_id: str, stage: str) -> tuple[str, str, dict]:
         stmt = (

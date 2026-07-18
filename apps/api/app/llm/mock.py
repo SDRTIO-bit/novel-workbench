@@ -186,17 +186,16 @@ class MockClient(BaseLlmClient):
         # Critic → diagnostic report
         if "文学编辑" in sp or "critic" in sp:
             return json.dumps({
-                "overall_assessment": "整体氛围营造出色，黄昏光线的描写有质感。但叙事节奏在中段略微松散。",
+                "critic_contract_version": 2,
+                "overall_assessment": "结尾已经形成可见变化，但停点之后仍追加说明；人物选择的代价也需要在正文中落地。",
                 "strengths": [
-                    {"aspect": "环境描写", "detail": "光线与气味的感官细节丰富，营造了强烈的沉浸感"},
-                    {"aspect": "猫的意象", "detail": "阿橘作为情感线索运用得当，动作细节传递了微妙情绪"},
+                    {"aspect": "场景细节", "detail": "黄昏光线与书店气味建立了具体空间感"},
+                    {"aspect": "人物互动", "detail": "女孩进门前的迟疑保留了关系尚未稳定的张力"},
                 ],
                 "issues": [
-                    {"issue_id": "I01", "severity": "low", "issue_type": "pacing_drag", "paragraph_ids": ["P003"], "problem": "老陈内心独白偏长，打断了外部动作流", "revision_goal": "将部分回忆分散到后续对话中自然带出", "recommended_operation": "tighten"},
-                    {"issue_id": "I02", "severity": "medium", "issue_type": "character_voice_inconsistent", "paragraph_ids": ["P006"], "problem": "'进来坐'三字过于简练，可加一两个小动作丰富层次", "revision_goal": "在'进来坐'之前添加一个小动作，如摘下老花镜或挪开茶杯", "recommended_operation": "ground_detail"},
-                    {"issue_id": "I03", "severity": "low", "issue_type": "description_overload", "paragraph_ids": ["P009"], "problem": "猫的反应过于简单，缺少具体动作细节", "revision_goal": "添加阿橘的嗅觉或声音细节，丰富猫的角色形象", "recommended_operation": "ground_detail"},
-                    {"issue_id": "I04", "severity": "low", "issue_type": "opening_delay", "paragraph_ids": ["P001"], "problem": "开篇环境描写偏长，核心冲突引入较晚", "revision_goal": "在前两段内加入一个伏笔暗示，加快读者进入故事的节奏", "recommended_operation": "tighten"},
-                    {"issue_id": "I05", "severity": "medium", "issue_type": "payoff_missing", "paragraph_ids": ["P008", "P009"], "problem": "猫阿橘的情感线索在结尾处收束不足，缺少呼应", "revision_goal": "在结尾增加阿橘与女孩的互动细节，形成首尾呼应的情感闭环", "recommended_operation": "rhythm_adjust"},
+                    {"issue_id": "I01", "severity": "high", "issue_type": "stop_state_overrun", "paragraph_ids": ["P010"], "problem": "停点的可见事实成立后又追加行动和情绪说明", "revision_goal": "在停点成立处收束，删去其后的附加说明", "recommended_operation": "tighten"},
+                    {"issue_id": "I02", "severity": "medium", "issue_type": "inference_overexplained", "paragraph_ids": ["P008"], "problem": "叙述直接替读者解释人物犹豫的意义", "revision_goal": "保留动作与对话，让读者自行推断", "recommended_operation": "withhold_inference"},
+                    {"issue_id": "I03", "severity": "medium", "issue_type": "choice_cost_missing", "paragraph_ids": ["P006", "P012"], "problem": "人物做出选择后没有呈现放弃退路或承担代价", "revision_goal": "用具体行动呈现被放弃的替代方案和新约束", "recommended_operation": "causalize"},
                 ],
                 "decision": "local_revision",
                 "chapter_contract_check": {
@@ -210,8 +209,8 @@ class MockClient(BaseLlmClient):
                     "target_length_met": True,
                 },
                 "protected_strengths": [
-                    {"paragraph_ids": ["P001", "P002"], "reason": "黄昏氛围的描写已臻完美，情绪基调准确，不应修改", "strength_type": "scene_specific_detail"},
-                    {"paragraph_ids": ["P005", "P006"], "reason": "证据到行动的因果链完整，读者推理空间保留良好", "strength_type": "reader_inference_gap"},
+                    {"paragraph_ids": ["P002"], "reason": "黄昏氛围的描写具体且服务于人物行动，不应为了压缩而删去", "strength_type": "scene_specific_detail"},
+                    {"paragraph_ids": ["P005"], "reason": "女孩进门前的停顿留下了读者可参与的推断空间", "strength_type": "reader_inference_gap"},
                 ],
                 "causal_transition_check": [
                     {
@@ -225,6 +224,40 @@ class MockClient(BaseLlmClient):
                         "paragraph_ids": [21, 22, 23, 24, 25],
                         "result": "pass",
                         "comment": "编号并列出现后，人物直接改变提问，叙述者没有解释编号关系。"
+                    }
+                ],
+                "tempo_profile_check": {
+                    "starts_in_motion": True,
+                    "disruption_interrupts_action": True,
+                    "viewpoint_misread_is_actionable": True,
+                    "disclosure_cap_respected": True,
+                    "unclassified_facts_preserved": True,
+                    "ending_stops_without_summary": False,
+                    "formulaic_completion_risk": "low",
+                },
+                "stop_state_audit": {
+                    "visible_fact_found": True,
+                    "first_satisfied_paragraph_id": "P009",
+                    "paragraphs_after_stop": ["P010"],
+                    "post_stop_new_action_found": True,
+                    "post_stop_emotional_summary_found": True,
+                    "issue_id": "I01",
+                },
+                "inference_audit": {
+                    "overexplained": True,
+                    "paragraph_ids": ["P008"],
+                    "quoted_phrases": ["她终于明白了老陈的善意"],
+                    "issue_id": "I02",
+                },
+                "choice_realization_check": [
+                    {
+                        "transition_id": "CT01",
+                        "rejected_alternative_visible": False,
+                        "cost_or_commitment_visible": False,
+                        "next_constraint_visible": True,
+                        "paragraph_ids": ["P006", "P012"],
+                        "issue_id": "I03",
+                        "comment": "选择被写出，但放弃的退路和由此产生的责任尚不可见。",
                     }
                 ],
             }, ensure_ascii=False)

@@ -91,6 +91,8 @@ class CriticIssueType(str, Enum):
     technical_exposition_unconverted = "technical_exposition_unconverted"
     consequence_summarized = "consequence_summarized"
     causal_transition_missing = "causal_transition_missing"
+    stop_state_overrun = "stop_state_overrun"
+    choice_cost_missing = "choice_cost_missing"
     narrator_character_label = "narrator_character_label"
     clue_conveyor_belt = "clue_conveyor_belt"
     formulaic_escalation = "formulaic_escalation"
@@ -634,8 +636,166 @@ class CriticOutput(BaseModel):
         return self
 
 
-def validate_critic_output(data: dict) -> CriticOutput:
+class StopStateAudit(BaseModel):
+    visible_fact_found: bool
+    first_satisfied_paragraph_id: str
+    paragraphs_after_stop: list[str]
+    post_stop_new_action_found: bool
+    post_stop_emotional_summary_found: bool
+    issue_id: str
+
+    @field_validator("paragraphs_after_stop", mode="before")
+    @classmethod
+    def normalize_paragraph_ids(cls, value):
+        return _paragraph_labels(value)
+
+
+class InferenceAudit(BaseModel):
+    overexplained: bool
+    paragraph_ids: list[str]
+    quoted_phrases: list[str]
+    issue_id: str
+
+    @field_validator("paragraph_ids", mode="before")
+    @classmethod
+    def normalize_paragraph_ids(cls, value):
+        return _paragraph_labels(value)
+
+
+class ChoiceRealizationCheck(BaseModel):
+    transition_id: str
+    rejected_alternative_visible: bool
+    cost_or_commitment_visible: bool
+    next_constraint_visible: bool
+    paragraph_ids: list[str]
+    issue_id: str
+    comment: str = ""
+
+    @field_validator("paragraph_ids", mode="before")
+    @classmethod
+    def normalize_paragraph_ids(cls, value):
+        return _paragraph_labels(value)
+
+
+class CriticOutputV2(CriticOutput):
+    critic_contract_version: Literal[2]
+    stop_state_audit: StopStateAudit
+    inference_audit: InferenceAudit
+    choice_realization_check: list[ChoiceRealizationCheck]
+
+    @model_validator(mode="after")
+    def check_v2_audit_consistency(self):
+        issues_by_id = {issue.issue_id: issue for issue in self.issues}
+        issue_paragraphs = {
+            paragraph_id
+            for issue in self.issues
+            for paragraph_id in issue.paragraph_ids
+        }
+        protected_paragraphs = {
+            paragraph_id
+            for strength in self.protected_strengths
+            for paragraph_id in strength.paragraph_ids
+        }
+        overlap = issue_paragraphs & protected_paragraphs
+        if overlap:
+            raise ValueError(
+                "CRITIC_OUTPUT_CONTRACT_INVALID: issue paragraph_ids overlap "
+                f"protected_strengths: {sorted(overlap)}"
+            )
+
+        stop = self.stop_state_audit
+        has_stop_overrun = bool(stop.paragraphs_after_stop) and (
+            stop.post_stop_new_action_found
+            or stop.post_stop_emotional_summary_found
+        )
+        if has_stop_overrun:
+            issue = issues_by_id.get(stop.issue_id)
+            if not issue or issue.issue_type != CriticIssueType.stop_state_overrun:
+                raise ValueError(
+                    "CRITIC_OUTPUT_CONTRACT_INVALID: stop overrun requires "
+                    "a stop_state_overrun issue"
+                )
+            if not set(stop.paragraphs_after_stop).issubset(issue.paragraph_ids):
+                raise ValueError(
+                    "CRITIC_OUTPUT_CONTRACT_INVALID: stop_state_overrun issue "
+                    "must cover paragraphs_after_stop"
+                )
+        elif stop.issue_id:
+            raise ValueError(
+                "CRITIC_OUTPUT_CONTRACT_INVALID: stop_state_audit.issue_id "
+                "must be empty when no stop overrun is present"
+            )
+
+        if self.tempo_profile_check:
+            if has_stop_overrun and self.tempo_profile_check.ending_stops_without_summary:
+                raise ValueError(
+                    "CRITIC_OUTPUT_CONTRACT_INVALID: tempo_profile_check "
+                    "contradicts stop_state_audit overrun"
+                )
+            if (
+                not stop.visible_fact_found
+                and self.tempo_profile_check.ending_stops_without_summary
+            ):
+                raise ValueError(
+                    "CRITIC_OUTPUT_CONTRACT_INVALID: ending_stops_without_summary "
+                    "cannot be true when stop_state.visible_fact was not found"
+                )
+
+        inference = self.inference_audit
+        if inference.overexplained:
+            if not inference.quoted_phrases:
+                raise ValueError(
+                    "CRITIC_OUTPUT_CONTRACT_INVALID: overexplained inference "
+                    "requires quoted_phrases"
+                )
+            issue = issues_by_id.get(inference.issue_id)
+            if not issue or issue.issue_type != CriticIssueType.inference_overexplained:
+                raise ValueError(
+                    "CRITIC_OUTPUT_CONTRACT_INVALID: overexplained inference "
+                    "requires an inference_overexplained issue"
+                )
+            if not set(inference.paragraph_ids).issubset(issue.paragraph_ids):
+                raise ValueError(
+                    "CRITIC_OUTPUT_CONTRACT_INVALID: inference issue must cover "
+                    "inference_audit paragraph_ids"
+                )
+        elif inference.issue_id:
+            raise ValueError(
+                "CRITIC_OUTPUT_CONTRACT_INVALID: inference_audit.issue_id "
+                "must be empty when overexplained is false"
+            )
+
+        for choice in self.choice_realization_check:
+            missing_choice_weight = (
+                not choice.rejected_alternative_visible
+                or not choice.cost_or_commitment_visible
+            )
+            if missing_choice_weight:
+                issue = issues_by_id.get(choice.issue_id)
+                if not issue or issue.issue_type != CriticIssueType.choice_cost_missing:
+                    raise ValueError(
+                        "CRITIC_OUTPUT_CONTRACT_INVALID: missing choice weight "
+                        "requires a choice_cost_missing issue"
+                    )
+                if not set(choice.paragraph_ids).issubset(issue.paragraph_ids):
+                    raise ValueError(
+                        "CRITIC_OUTPUT_CONTRACT_INVALID: choice_cost_missing issue "
+                        "must cover choice_realization_check paragraph_ids"
+                    )
+            elif choice.issue_id:
+                raise ValueError(
+                    "CRITIC_OUTPUT_CONTRACT_INVALID: choice_realization_check.issue_id "
+                    "must be empty when choice weight is visible"
+                )
+        return self
+
+
+def validate_critic_output(
+    data: dict, expected_version: int | None = None
+) -> CriticOutput | CriticOutputV2:
     try:
+        if expected_version == 2:
+            return CriticOutputV2(**data)
         return CriticOutput(**data)
     except Exception as e:
         raise ValueError(f"CRITIC_OUTPUT_CONTRACT_INVALID: {e}") from e
@@ -795,7 +955,7 @@ def validate_stage_output(stage: str, data: dict, expected_version: int | None =
     if stage == "planner":
         return validate_planner_output(data, expected_version=expected_version).model_dump()
     elif stage == "critic":
-        return validate_critic_output(data).model_dump()
+        return validate_critic_output(data, expected_version=expected_version).model_dump()
     elif stage == "reviser":
         return validate_reviser_output(data).model_dump()
     elif stage == "judge":

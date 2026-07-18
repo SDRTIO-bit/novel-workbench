@@ -36,11 +36,19 @@ def _save_to_disk(title: str, text: str):
 # retain v1 compatibility.
 EXPECTED_PLANNER_CONTRACT_VERSION = 2
 PLANNER_V2_SCHEMA_NAME = "planner_v2"
+EXPECTED_CRITIC_CONTRACT_VERSION = 2
+CRITIC_V2_SCHEMA_NAME = "critic_v2"
 
 
 def _expected_planner_contract_version(stage: str, prompt_meta: dict | None) -> int | None:
     if stage == "planner" and (prompt_meta or {}).get("output_schema_name") == PLANNER_V2_SCHEMA_NAME:
         return EXPECTED_PLANNER_CONTRACT_VERSION
+    return None
+
+
+def _expected_critic_contract_version(stage: str, prompt_meta: dict | None) -> int | None:
+    if stage == "critic" and (prompt_meta or {}).get("output_schema_name") == CRITIC_V2_SCHEMA_NAME:
+        return EXPECTED_CRITIC_CONTRACT_VERSION
     return None
 
 
@@ -208,6 +216,8 @@ class GenerationService:
                     if parsed.valid:
                         try:
                             expected_ver = _expected_planner_contract_version(
+                                stage, ctx.get("prompt_meta")
+                            ) or _expected_critic_contract_version(
                                 stage, ctx.get("prompt_meta")
                             )
                             validated = validate_stage_output(stage, parsed.data, expected_version=expected_ver)

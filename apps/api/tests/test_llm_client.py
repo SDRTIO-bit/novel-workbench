@@ -56,6 +56,10 @@ class TestMockClient:
         data = json.loads(response.text)
         assert "decision" in data
         assert "issues" in data
+        assert data["critic_contract_version"] == 2
+        assert "stop_state_audit" in data
+        assert "inference_audit" in data
+        assert "choice_realization_check" in data
 
     async def test_reviser_response_format(self):
         client = MockClient(mode=MOCK_MODE_NORMAL, delay_ms=0)
