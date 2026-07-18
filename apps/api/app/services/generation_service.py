@@ -133,6 +133,7 @@ class GenerationService:
             "top_p": override.get("top_p", 1.0),
             "max_output_tokens": override.get("max_output_tokens", 4096),
             "timeout_seconds": override.get("timeout_seconds", 120),
+            "reasoning_mode": "disabled",
         }
 
         if run.workflow_profile_id:
@@ -188,6 +189,7 @@ class GenerationService:
                 max_output_tokens=params["max_output_tokens"],
                 timeout_seconds=params["timeout_seconds"],
                 response_format=_response_format_for_prompt(ctx.get("prompt_meta")),
+                reasoning_mode="disabled",
             )
             params["response_format"] = llm_request.response_format
 

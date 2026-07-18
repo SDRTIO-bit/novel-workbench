@@ -16,6 +16,7 @@ import app.models.provider  # noqa: F401
 import app.models.workflow  # noqa: F401
 import app.models.generation  # noqa: F401
 import app.models.detector_feedback  # noqa: F401
+import app.models.tgbreak  # noqa: F401
 
 
 @asynccontextmanager

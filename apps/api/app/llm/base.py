@@ -11,12 +11,15 @@ class LlmRequest:
     max_output_tokens: int = 4096
     timeout_seconds: int = 120
     response_format: str = "text"
+    reasoning_mode: str = "disabled"
 
     def __post_init__(self):
         if self.response_format not in {"text", "json_object"}:
             raise ValueError(
                 "response_format must be one of: text, json_object"
             )
+        if self.reasoning_mode != "disabled":
+            raise ValueError("reasoning_mode must be disabled for TGbreak requests")
 
 
 @dataclass

@@ -26,6 +26,7 @@ class OpenAiCompatibleClient(BaseLlmClient):
             "temperature": request.temperature,
             "top_p": request.top_p,
             "max_tokens": request.max_output_tokens,
+            "reasoning_mode": request.reasoning_mode,
         }
         if request.response_format == "json_object":
             body["response_format"] = {"type": "json_object"}
