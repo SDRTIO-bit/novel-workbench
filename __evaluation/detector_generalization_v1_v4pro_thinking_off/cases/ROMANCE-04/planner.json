@@ -1,0 +1,187 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "通过一盒意外出现的生日蜡烛，让许岚和陈述在公共场合完成一次无声的试探与确认，推动关系从模糊暧昧向明确默契转变。",
+  "location": "餐厅包间，聚餐刚结束，桌上杯盘狼藉，人已陆续离开",
+  "time": "晚上九点左右，聚餐散场时",
+  "scene_state": {
+    "last_completed_action": "朋友们陆续起身道别，陈述主动收拾桌上的空盘和用过的纸巾",
+    "present_characters": [
+      "许岚",
+      "陈述"
+    ],
+    "visible_facts": [
+      "桌角有一小盒未拆封的生日蜡烛",
+      "今天不是许岚的生日",
+      "陈述正在收拾桌子"
+    ],
+    "available_objects": [
+      "生日蜡烛",
+      "空盘子",
+      "用过的餐巾",
+      "手机",
+      "包",
+      "外套"
+    ],
+    "unresolved_problem": "蜡烛是谁的，为什么在这里，以及陈述是否知道许岚上周随口提过的生日日期",
+    "already_existing_constraints": [
+      "不能直接问陈述蜡烛是不是给自己准备的",
+      "不能破坏朋友间自然的气氛",
+      "许岚不能表现出过度期待"
+    ]
+  },
+  "characters": [
+    {
+      "name": "许岚",
+      "goal": "确认陈述是否记得自己的生日，并试探他的心意，但不能主动挑明",
+      "known": [
+        "上周自己随口跟陈述说过一个日期，那是她真正的生日",
+        "今天不是那个日期",
+        "陈述在收拾桌子，蜡烛在他手边"
+      ],
+      "unknown": [
+        "蜡烛是否是陈述准备的",
+        "陈述是否记得那个日期",
+        "如果蜡烛是给自己的，为什么今天拿出来"
+      ],
+      "mistaken_beliefs": [
+        "也许蜡烛只是别人落下的，陈述只是顺手收拾",
+        "如果直接问，可能会让陈述尴尬或否认"
+      ],
+      "constraints": [
+        "不能直接问蜡烛的来源或目的",
+        "不能表现出对陈述的特别在意",
+        "必须在朋友般的互动中试探"
+      ],
+      "observed_evidence": [
+        "桌角有一盒没点过的生日蜡烛，包装完好",
+        "陈述在收盘子时，手在蜡烛旁停顿了一下",
+        "陈述没有立刻把蜡烛和其他垃圾一起丢掉"
+      ],
+      "current_interpretation": "蜡烛很可能是陈述带来的，他记得那个日期，但今天不是生日，所以他在犹豫要不要拿出来，或者是在等我的反应。",
+      "how_interpretation_drives_action": "她决定拿起蜡烛，用开玩笑的语气问一句‘这是谁的？’，给陈述一个可以轻松接话的机会，同时观察他的反应。"
+    },
+    {
+      "name": "陈述",
+      "goal": "在不暴露自己刻意准备的情况下，让许岚知道蜡烛是为她准备的，但保留退路",
+      "known": [
+        "许岚上周说过她的生日日期",
+        "今天不是那个日期",
+        "他买了这盒蜡烛，原本想提前给她一个小惊喜，但临场退缩了"
+      ],
+      "unknown": [
+        "许岚是否发现了蜡烛",
+        "许岚是否猜到自己记得她的生日",
+        "如果许岚直接问，该怎么回答"
+      ],
+      "mistaken_beliefs": [
+        "也许现在拿出来太突兀，许岚会觉得有压力",
+        "如果许岚没注意到，就当没这回事，下次再说"
+      ],
+      "constraints": [
+        "不能主动说‘这是给你的’",
+        "不能表现出过于明显的意图",
+        "如果许岚没反应，就当作普通杂物处理"
+      ],
+      "observed_evidence": [
+        "许岚的目光扫过蜡烛，然后停住了",
+        "许岚拿起蜡烛，笑着问‘这是谁的？’"
+      ],
+      "current_interpretation": "她注意到了，而且用轻松的方式给了台阶，她可能猜到了，但没有逼我承认。",
+      "how_interpretation_drives_action": "他决定用同样轻松的语气回答‘不知道，可能是谁落下的吧’，但故意不伸手去拿，让许岚继续拿着，用眼神传递一丝默契。"
+    }
+  ],
+  "concrete_problem": "许岚如何在不直接询问的情况下，让陈述承认或暗示蜡烛与自己有关，同时给自己和陈述都留有余地？",
+  "pressure": "朋友们随时可能返回拿东西，或者服务员进来打扫，这个私密的试探机会转瞬即逝。",
+  "turning_point": "许岚没有追问，而是把蜡烛放进自己包里，说‘那我先收着，万一有人找呢’，陈述没有阻止，反而轻轻笑了一下。",
+  "end_condition": "蜡烛被许岚收进包里，陈述默认了这个行为，两人之间形成一种心照不宣的默契。",
+  "forbidden": [
+    "直接说出蜡烛是陈述准备的",
+    "解释蜡烛原本的用途",
+    "许岚直接问‘是不是给我的’",
+    "陈述直接承认记得生日"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "陈述在收拾桌子时，手在蜡烛盒上方停顿了一秒，然后继续收旁边的盘子，没有立刻处理蜡烛。",
+      "character_interpretation": "许岚认为陈述在犹豫，这盒蜡烛对他来说不是普通垃圾，他可能想让自己注意到。",
+      "character_next_action": "许岚拿起蜡烛，用随意的语气问：‘这是谁的？还挺好看的。’",
+      "rejected_alternative": "装作没看见，让陈述自己处理，但那样可能蜡烛就被收走，再无试探机会。",
+      "immediate_consequence": "陈述抬头看她，眼神有一瞬间的闪躲，然后说‘不知道’，但语气温和，没有急于撇清。",
+      "counterfactual_without_action": "如果许岚不主动拿起蜡烛，陈述可能会在收拾时悄悄把蜡烛放回口袋，两人错过这次互动。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "蜡烛静置在桌角，未被任何人认领或注意",
+        "after": "蜡烛被许岚拿在手中，成为两人对话的焦点"
+      },
+      "cost_or_commitment": "许岚主动跨出一步，承担了可能被陈述敷衍过去的风险",
+      "next_constraint": "陈述不能直接承认蜡烛是自己的，必须维持表面上的‘不知情’",
+      "reader_must_infer": "陈述的停顿和语气暗示他并非真的不知道蜡烛来源，而是在给许岚留空间",
+      "narrator_must_not_state": [
+        "陈述停顿的真实心理活动",
+        "蜡烛的具体购买时间或动机"
+      ]
+    },
+    {
+      "id": "CT02",
+      "kind": "constraint_to_choice",
+      "visible_trigger": "陈述说‘不知道’后，没有伸手要回蜡烛，反而继续低头摞盘子，耳朵微微发红。",
+      "character_interpretation": "许岚认为陈述的回避和耳朵发红是害羞的表现，他默认了蜡烛与她有关，但不方便明说。",
+      "character_next_action": "许岚把蜡烛放进自己的包里，说：‘那我先收着，万一有人找呢。’",
+      "rejected_alternative": "把蜡烛放回桌上，说‘那留给服务员吧’，但那样会彻底切断联系，陈述可能会失望。",
+      "immediate_consequence": "陈述没有阻止，反而轻轻笑了一下，说‘也行’，然后继续收拾，动作自然了许多。",
+      "counterfactual_without_action": "如果许岚不把蜡烛收起来，陈述可能会在最后悄悄带走蜡烛，但两人之间不会形成明确的默契，关系停留在原地。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "蜡烛归属不明，两人处于试探状态",
+        "after": "蜡烛被许岚拥有，陈述通过默许表达了认可，关系进入心照不宣的新阶段"
+      },
+      "cost_or_commitment": "许岚用行动表明她接受了这份潜在的心意，同时承担了如果猜错会尴尬的风险；陈述则默认了这份心意被接收。",
+      "next_constraint": "蜡烛在许岚包里，未来她不能装作完全不知情，两人之间多了一个未言明的秘密。",
+      "reader_must_infer": "陈述的笑和‘也行’是接纳的信号，他原本可能想给惊喜，但现在的默契更让他安心。",
+      "narrator_must_not_state": [
+        "陈述为什么笑",
+        "许岚收下蜡烛时内心的全部想法"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "陈述正在收盘子，蜡烛就在他手边，许岚必须在他收走之前采取行动",
+    "dominant_pressure": {
+      "kind": "social_friction",
+      "description": "两人都害怕直接表达会破坏现有关系，必须在社交面具下完成试探，同时时间紧迫"
+    },
+    "allowed_viewpoint_misread": "许岚可能把陈述的停顿和耳朵发红误解为他只是不好意思处理别人落下的东西，而非与自己有关",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "陈述购买蜡烛的具体过程",
+      "陈述原本计划如何送出蜡烛"
+    ],
+    "stop_state": {
+      "type": "relationship_shift",
+      "visible_fact": "许岚把蜡烛放进包里，陈述笑了笑说‘也行’",
+      "what_is_now_different": "两人之间建立了一个共享的秘密——蜡烛的归属和意义无需言明，关系从普通朋友向暧昧默契转变",
+      "must_not_append": "不得描写两人之后如何讨论蜡烛或生日"
+    },
+    "final_line_must_include": "也行"
+  }
+}

@@ -1,0 +1,172 @@
+[
+  {
+    "blind_id": "5B01059F28",
+    "case_id": "TASK-01",
+    "text_path": "cases\\TASK-01\\drafts\\B-1.txt"
+  },
+  {
+    "blind_id": "3FFAC3EE2E",
+    "case_id": "TASK-01",
+    "text_path": "cases\\TASK-01\\drafts\\B-2.txt"
+  },
+  {
+    "blind_id": "51F3120ED2",
+    "case_id": "ROMANCE-03",
+    "text_path": "cases\\ROMANCE-03\\drafts\\B-1.txt"
+  },
+  {
+    "blind_id": "89CDEDC20F",
+    "case_id": "ROMANCE-03",
+    "text_path": "cases\\ROMANCE-03\\drafts\\A-2.txt"
+  },
+  {
+    "blind_id": "145F79A8B3",
+    "case_id": "ROMANCE-02",
+    "text_path": "cases\\ROMANCE-02\\drafts\\B-2.txt"
+  },
+  {
+    "blind_id": "8BC1A34B49",
+    "case_id": "TASK-04",
+    "text_path": "cases\\TASK-04\\drafts\\A-2.txt"
+  },
+  {
+    "blind_id": "870D898C8D",
+    "case_id": "TASK-04",
+    "text_path": "cases\\TASK-04\\drafts\\C-2.txt"
+  },
+  {
+    "blind_id": "67E4F6398E",
+    "case_id": "ROMANCE-02",
+    "text_path": "cases\\ROMANCE-02\\drafts\\A-2.txt"
+  },
+  {
+    "blind_id": "5B3C08116C",
+    "case_id": "TASK-03",
+    "text_path": "cases\\TASK-03\\drafts\\A-1.txt"
+  },
+  {
+    "blind_id": "EBE37B660F",
+    "case_id": "ROMANCE-02",
+    "text_path": "cases\\ROMANCE-02\\drafts\\C-2.txt"
+  },
+  {
+    "blind_id": "9440D49829",
+    "case_id": "TASK-02",
+    "text_path": "cases\\TASK-02\\drafts\\A-2.txt"
+  },
+  {
+    "blind_id": "769047A59A",
+    "case_id": "TASK-03",
+    "text_path": "cases\\TASK-03\\drafts\\B-2.txt"
+  },
+  {
+    "blind_id": "DBBB6A5618",
+    "case_id": "ROMANCE-02",
+    "text_path": "cases\\ROMANCE-02\\drafts\\A-1.txt"
+  },
+  {
+    "blind_id": "F33AEE1CF0",
+    "case_id": "TASK-03",
+    "text_path": "cases\\TASK-03\\drafts\\C-2.txt"
+  },
+  {
+    "blind_id": "C7312B9D51",
+    "case_id": "ROMANCE-02",
+    "text_path": "cases\\ROMANCE-02\\drafts\\B-1.txt"
+  },
+  {
+    "blind_id": "EA1A725411",
+    "case_id": "TASK-01",
+    "text_path": "cases\\TASK-01\\drafts\\A-1.txt"
+  },
+  {
+    "blind_id": "94A2882C25",
+    "case_id": "ROMANCE-03",
+    "text_path": "cases\\ROMANCE-03\\drafts\\A-1.txt"
+  },
+  {
+    "blind_id": "E5874F6B6C",
+    "case_id": "TASK-03",
+    "text_path": "cases\\TASK-03\\drafts\\B-1.txt"
+  },
+  {
+    "blind_id": "68EF500DF8",
+    "case_id": "TASK-02",
+    "text_path": "cases\\TASK-02\\drafts\\B-2.txt"
+  },
+  {
+    "blind_id": "C0DB355D7A",
+    "case_id": "TASK-02",
+    "text_path": "cases\\TASK-02\\drafts\\C-2.txt"
+  },
+  {
+    "blind_id": "9C69909F93",
+    "case_id": "ROMANCE-03",
+    "text_path": "cases\\ROMANCE-03\\drafts\\B-2.txt"
+  },
+  {
+    "blind_id": "EB40269DE6",
+    "case_id": "TASK-01",
+    "text_path": "cases\\TASK-01\\drafts\\C-1.txt"
+  },
+  {
+    "blind_id": "386A4EDDB7",
+    "case_id": "TASK-03",
+    "text_path": "cases\\TASK-03\\drafts\\A-2.txt"
+  },
+  {
+    "blind_id": "AA0550A0DE",
+    "case_id": "TASK-04",
+    "text_path": "cases\\TASK-04\\drafts\\A-1.txt"
+  },
+  {
+    "blind_id": "BD049BFA8C",
+    "case_id": "TASK-01",
+    "text_path": "cases\\TASK-01\\drafts\\A-2.txt"
+  },
+  {
+    "blind_id": "73F96AE403",
+    "case_id": "ROMANCE-04",
+    "text_path": "cases\\ROMANCE-04\\drafts\\B-2.txt"
+  },
+  {
+    "blind_id": "8955643FE9",
+    "case_id": "ROMANCE-02",
+    "text_path": "cases\\ROMANCE-02\\drafts\\C-1.txt"
+  },
+  {
+    "blind_id": "608C0E2DF3",
+    "case_id": "ROMANCE-03",
+    "text_path": "cases\\ROMANCE-03\\drafts\\C-2.txt"
+  },
+  {
+    "blind_id": "5465AEB3D1",
+    "case_id": "ROMANCE-04",
+    "text_path": "cases\\ROMANCE-04\\drafts\\B-1.txt"
+  },
+  {
+    "blind_id": "36876E2A73",
+    "case_id": "TASK-02",
+    "text_path": "cases\\TASK-02\\drafts\\C-1.txt"
+  },
+  {
+    "blind_id": "4F6D90068D",
+    "case_id": "TASK-03",
+    "text_path": "cases\\TASK-03\\drafts\\C-1.txt"
+  },
+  {
+    "blind_id": "A17DB20A45",
+    "case_id": "ROMANCE-03",
+    "text_path": "cases\\ROMANCE-03\\drafts\\C-1.txt"
+  },
+  {
+    "blind_id": "85652FA8FE",
+    "case_id": "TASK-02",
+    "text_path": "cases\\TASK-02\\drafts\\A-1.txt"
+  },
+  {
+    "blind_id": "6727CF66E4",
+    "case_id": "TASK-01",
+    "text_path": "cases\\TASK-01\\drafts\\C-2.txt"
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "experiment": "DETECTOR_GENERALIZATION_V1",
+  "writer_texts": 72,
+  "scenes": 12,
+  "groups": [
+    "A",
+    "B",
+    "C"
+  ],
+  "replicas_per_group": 2,
+  "model_strata": [
+    {
+      "scenes": 4,
+      "model": "deepseek-chat",
+      "writer_max_output_tokens": 1800
+    },
+    {
+      "scenes": 8,
+      "model": "deepseek-v4-pro",
+      "thinking": "disabled",
+      "writer_max_output_tokens": 1800
+    }
+  ],
+  "warning": "Model strata must be reported separately. The 4000-token setting was adopted after all 72 frozen texts completed and applies only to future runs.",
+  "contract_warning_samples": 15,
+  "external_detector_status": "pending: no callable Zhuque integration or authenticated browser session is available in this environment"
+}

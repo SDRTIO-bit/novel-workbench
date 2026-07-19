@@ -1,0 +1,176 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "许澄在校园广播站门口看到自己名字被贴迟到名单，误以为周弈忘记替她登记，决定不追问而采取行动，导致具体麻烦。",
+  "location": "校园广播站门口",
+  "time": "下午放学后，广播站值班时间",
+  "scene_state": {
+    "last_completed_action": "许澄走到广播站门口，看到墙上贴的迟到名单上自己的名字。",
+    "present_characters": [
+      "许澄",
+      "周弈",
+      "值班老师"
+    ],
+    "visible_facts": [
+      "迟到名单上许澄的名字被红笔圈出",
+      "周弈抱着器材从走廊另一头走来",
+      "值班老师站在广播站门口看着名单"
+    ],
+    "available_objects": [
+      "迟到名单",
+      "红笔",
+      "周弈手中的器材箱",
+      "广播站门"
+    ],
+    "unresolved_problem": "许澄需要确认周弈是否忘了替她登记，但不想当面质问。",
+    "already_existing_constraints": [
+      "许澄不能直接质问周弈",
+      "许澄必须在值班老师面前保持自然",
+      "许澄不能损坏名单"
+    ]
+  },
+  "characters": [
+    {
+      "name": "许澄",
+      "goal": "在不直接质问周弈的前提下，确认周弈是否忘了替她登记，并避免自己受罚。",
+      "known": [
+        "迟到名单上有自己的名字",
+        "周弈今天值班",
+        "周弈答应替她登记"
+      ],
+      "unknown": [
+        "周弈其实已经替她向老师解释过",
+        "周弈正要去广播站处理名单"
+      ],
+      "mistaken_beliefs": [
+        "周弈忘了替她登记",
+        "周弈可能故意没帮她"
+      ],
+      "constraints": [
+        "不能当面质问周弈",
+        "不能在老师面前表现异常"
+      ],
+      "observed_evidence": [
+        "自己的名字在迟到名单上",
+        "周弈从远处走来"
+      ],
+      "current_interpretation": "周弈忘了替她登记，导致她上了名单。",
+      "how_interpretation_drives_action": "她决定在周弈到达前主动把名单撕下来，以此掩盖证据，但这么做会引来老师注意。"
+    },
+    {
+      "name": "周弈",
+      "goal": "正常完成广播站值班，顺便处理许澄的迟到登记问题。",
+      "known": [
+        "许澄今天迟到但已向老师说明",
+        "老师同意不记名"
+      ],
+      "unknown": [
+        "许澄看到了名单并误解了"
+      ],
+      "mistaken_beliefs": [
+        "许澄知道他已经处理好了"
+      ],
+      "constraints": [
+        "不能泄露老师私下处理的事"
+      ],
+      "observed_evidence": [
+        "许澄站在名单前"
+      ],
+      "current_interpretation": "许澄看到名单但没有担心，因为他已经处理好了。",
+      "how_interpretation_drives_action": "他继续抱着器材走向广播站，准备开始值班。"
+    },
+    {
+      "name": "值班老师",
+      "goal": "维护广播站秩序，监督值班学生。",
+      "known": [
+        "许澄的迟到已经私下处理",
+        "名单是旧的，还没来得及撤下"
+      ],
+      "unknown": [
+        "许澄和周弈之间的误会"
+      ],
+      "mistaken_beliefs": [
+        "许澄知道名单是旧的"
+      ],
+      "constraints": [
+        "不能公开解释私下处理"
+      ],
+      "observed_evidence": [
+        "许澄盯着名单",
+        "周弈走过来"
+      ],
+      "current_interpretation": "许澄对名单好奇，但不会有事。",
+      "how_interpretation_drives_action": "老师继续站在门口，没有干预。"
+    }
+  ],
+  "concrete_problem": "许澄必须在周弈和老师面前，决定是否要撕下名单来掩盖自己被记名的事实。",
+  "pressure": "许澄误以为周弈失约，必须在老师在场的情况下迅速行动，否则会被正式记过。",
+  "turning_point": "许澄趁老师转身与周弈说话时，快速撕下名单，但动作被老师察觉，导致老师追问。",
+  "end_condition": "许澄撕下名单被老师发现，老师要求她解释，周弈困惑地看着她。",
+  "forbidden": [
+    "周弈提前解释真相",
+    "老师当场揭穿私下处理",
+    "许澄直接质问周弈",
+    "名单被其他学生捡走"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "许澄看到自己的名字被红笔圈在迟到名单上。",
+      "character_interpretation": "周弈忘了替她登记，名单还在。",
+      "character_next_action": "许澄决定撕下名单，以免被记录。",
+      "rejected_alternative": "她可以等周弈过来后悄悄问他，但那样会暴露她的焦虑。",
+      "immediate_consequence": "她撕下名单时，老师转身看到她的动作。",
+      "counterfactual_without_action": "如果她不撕，周弈会过来后把名单撤掉，并解释已经处理好。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "名单完整贴在墙上，许澄犹豫。",
+        "after": "名单被撕下，老师注意到异常。"
+      },
+      "cost_or_commitment": "许澄承担了被老师怀疑的风险，并失去了周弈帮忙解释的机会。",
+      "next_constraint": "许澄不能直接承认自己撕了名单，必须编造理由。",
+      "reader_must_infer": "许澄的冲动源于对周弈的不信任，而不是对规则的恐惧。",
+      "narrator_must_not_state": [
+        "周弈其实已经处理好了",
+        "老师知道许澄迟到已解决"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "许澄站在广播站门口，看到迟到名单上自己的名字。",
+    "dominant_pressure": {
+      "kind": "social_friction",
+      "description": "许澄误以为周弈失信，但不愿当面质疑，导致她采取冒险行动。"
+    },
+    "allowed_viewpoint_misread": "许澄可能认为老师盯着名单是在确认她的迟到，实际上老师只是习惯性查看。",
+    "disclosure_cap": 0,
+    "must_remain_unclassified": [
+      "周弈已经私下处理迟到登记"
+    ],
+    "stop_state": {
+      "type": "relationship_shift",
+      "visible_fact": "老师要求许澄解释撕名单的行为，周弈面露困惑。",
+      "what_is_now_different": "许澄和周弈之间的信任出现裂痕，许澄必须应对老师的质问。",
+      "must_not_append": "不得解释周弈的困惑是出于不解还是失望。"
+    },
+    "final_line_must_include": "老师的声音在走廊里回荡，许澄攥着撕下的名单，手心出汗。"
+  }
+}

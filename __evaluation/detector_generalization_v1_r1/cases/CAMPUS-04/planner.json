@@ -1,0 +1,156 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "叶舟在有限信息下对便签做出反应，引发唐闻的紧张和同学的侧目，结尾保留便签后半句未知。",
+  "location": "高二（3）班教室，课间",
+  "time": "上午第二节课后，课间十分钟",
+  "scene_state": {
+    "last_completed_action": "叶舟从黑板槽里捡起写着自己名字的便签，只看到'别再……'三个字",
+    "present_characters": [
+      "叶舟",
+      "唐闻",
+      "同学A",
+      "同学B",
+      "其他同学"
+    ],
+    "visible_facts": [
+      "唐闻刚从讲台下来",
+      "同学们围在讲台周围交作业",
+      "叶舟手里拿着便签",
+      "便签上写着'别再……'"
+    ],
+    "available_objects": [
+      "便签",
+      "黑板槽",
+      "讲台",
+      "作业本"
+    ],
+    "unresolved_problem": "便签后半句是什么？唐闻为什么写这张便签？",
+    "already_existing_constraints": [
+      "叶舟不能把便签内容念出来",
+      "叶舟不能直接追问唐闻"
+    ]
+  },
+  "characters": [
+    {
+      "name": "叶舟",
+      "goal": "在不暴露便签内容的情况下，探明唐闻的意图",
+      "known": [
+        "便签上写着自己的名字和'别再……'",
+        "唐闻刚从讲台下来",
+        "周围有很多同学"
+      ],
+      "unknown": [
+        "便签后半句内容",
+        "唐闻写便签的原因"
+      ],
+      "mistaken_beliefs": [
+        "唐闻可能是在警告或威胁自己"
+      ],
+      "constraints": [
+        "不能念出便签内容",
+        "不能直接追问唐闻"
+      ],
+      "observed_evidence": [
+        "便签上的'别再……'三个字",
+        "唐闻从讲台方向走来"
+      ],
+      "current_interpretation": "唐闻想私下对我说什么，但用便签这种方式很奇怪，可能是不好的事",
+      "how_interpretation_drives_action": "她决定用沉默的眼神和动作回应，让唐闻主动解释"
+    },
+    {
+      "name": "唐闻",
+      "goal": "确保叶舟看到便签但不引起其他同学注意",
+      "known": [
+        "便签完整内容是'别再偷看我的作业'",
+        "他刚把便签放在黑板槽"
+      ],
+      "unknown": [
+        "叶舟是否理解了便签含义",
+        "叶舟会如何反应"
+      ],
+      "mistaken_beliefs": [
+        "叶舟应该知道他在说上次考试偷看的事"
+      ],
+      "constraints": [
+        "不能当众让叶舟难堪"
+      ],
+      "observed_evidence": [
+        "叶舟捡起了便签",
+        "叶舟看向自己"
+      ],
+      "current_interpretation": "叶舟看到了便签，但她没有反应，可能没看懂或假装不懂",
+      "how_interpretation_drives_action": "他决定走近叶舟，用低声提醒她"
+    }
+  ],
+  "concrete_problem": "叶舟如何在众目睽睽之下，让唐闻明白她已经看到便签，同时不引发更多猜测？",
+  "pressure": "课间时间有限，周围同学随时可能注意到便签，叶舟必须在几秒内做出反应",
+  "turning_point": "叶舟没有念出便签，而是把便签折好放进口袋，然后对唐闻微微点头，唐闻脸色一变，快步走开",
+  "end_condition": "唐闻走回座位，叶舟把便签收好，周围同学虽然好奇但无人追问，便签后半句仍然未知",
+  "forbidden": [
+    "便签后半句内容在本章揭晓",
+    "叶舟或唐闻直接解释便签含义",
+    "其他同学介入并公开便签内容"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "叶舟捡起便签后，看到'别再……'，然后抬头看见唐闻从讲台下来，正看着自己",
+      "character_interpretation": "叶舟认为唐闻在观察她的反应，如果她表现出惊讶或愤怒，会引来同学注意",
+      "character_next_action": "叶舟平静地把便签折好，放进口袋，然后对唐闻微微点头",
+      "rejected_alternative": "叶舟可以选择大声质问唐闻，但那样会暴露便签内容",
+      "immediate_consequence": "唐闻脸色一变，快步走回座位，其他同学注意到两人之间的异常气氛",
+      "counterfactual_without_action": "如果叶舟没有折起便签，而是拿着便签发呆，唐闻可能会走过来解释，导致便签内容被周围同学看到",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "便签暴露在叶舟手中，唐闻在讲台附近观察",
+        "after": "便签被收进口袋，唐闻离开讲台走回座位，气氛变得微妙"
+      },
+      "cost_or_commitment": "叶舟失去了立刻澄清误会的机会，唐闻的误解加深",
+      "next_constraint": "叶舟不能在课间剩余时间主动找唐闻谈话，否则会坐实同学的猜测",
+      "reader_must_infer": "叶舟的点头是一种'我知道了'的信号，但唐闻可能误解为挑衅",
+      "narrator_must_not_state": [
+        "便签后半句的具体内容",
+        "唐闻写便签的真实动机"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "叶舟刚捡起便签，唐闻正从讲台下来",
+    "dominant_pressure": {
+      "kind": "social_friction",
+      "description": "叶舟和唐闻之间因为便签产生尴尬，周围同学的存在加剧了双方不能直接沟通的压力"
+    },
+    "allowed_viewpoint_misread": "唐闻可能认为叶舟的点头是承认偷看并挑衅",
+    "disclosure_cap": 0,
+    "must_remain_unclassified": [
+      "便签后半句",
+      "唐闻的动机"
+    ],
+    "stop_state": {
+      "type": "relationship_shift",
+      "visible_fact": "唐闻快步走回座位，没有再看叶舟",
+      "what_is_now_different": "两人从可能的直接冲突转为沉默对峙，关系变得紧张",
+      "must_not_append": "不得解释唐闻为何走开"
+    },
+    "final_line_must_include": ""
+  }
+}

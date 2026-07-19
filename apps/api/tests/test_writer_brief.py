@@ -6,7 +6,10 @@ import pytest
 from app.services.writer_brief import (
     MAX_ACTIVE_PROJECT_FACTS,
     WriterBrief,
+    WriterBriefC,
     compile_writer_brief,
+    compile_writer_brief_c,
+    compile_writer_input,
     validate_writer_brief,
 )
 
@@ -106,6 +109,49 @@ def test_writer_brief_model_rejects_backend_fields():
     brief["reader_must_infer"] = "后台答案"
     with pytest.raises(ValueError, match="extra"):
         WriterBrief.model_validate(brief)
+
+
+def test_narrative_behaviour_brief_adds_only_the_four_public_fields():
+    planner = _planner(
+        scene_state={
+            "present_characters": ["林澈"],
+            "visible_facts": ["周宁的扣子错位"],
+            "available_objects": ["点名册", "校服外套"],
+        },
+        causal_transitions=[{
+            "visible_trigger": "点名开始前，周宁走向点名台",
+            "character_next_action": "林澈递出点名册示意周宁低头",
+            "immediate_consequence": "周宁看见扣子错位",
+            "next_constraint": "点名已经开始，不能当众解释",
+            "rejected_alternative": "不能直接喊住周宁",
+            "cost_or_commitment": "林澈得当着全班递出点名册",
+            "counterfactual_without_action": "周宁若不接点名册，林澈的暗示就落空",
+        }],
+        counteraction_or_disproof="不得从这个非 Planner v2 字段读取",
+    )
+
+    baseline = compile_writer_brief(planner)
+    enhanced = compile_writer_brief_c(planner)
+
+    assert set(enhanced) == set(baseline) | {
+        "available_causal_objects", "rejected_alternative",
+        "cost_or_commitment", "counteraction_or_disproof",
+    }
+    assert enhanced["available_causal_objects"] == ["点名册", "校服外套"]
+    assert enhanced["rejected_alternative"] == "不能直接喊住周宁"
+    assert enhanced["cost_or_commitment"] == "林澈得当着全班递出点名册"
+    assert enhanced["counteraction_or_disproof"] == "周宁若不接点名册，林澈的暗示就落空"
+    WriterBriefC.model_validate(enhanced)
+
+
+def test_writer_input_modes_keep_the_planner_or_select_the_expected_brief():
+    planner = _planner()
+
+    assert compile_writer_input(planner, "complete_planner") == planner
+    assert compile_writer_input(planner, "writer_brief") == compile_writer_brief(planner)
+    assert compile_writer_input(planner, "narrative_behaviour_brief") == compile_writer_brief_c(planner)
+    with pytest.raises(ValueError, match="writer input mode"):
+        compile_writer_input(planner, "twenty_fields")
 
 
 def test_builtin_writer_prompt_ends_with_short_brief_not_full_planner():

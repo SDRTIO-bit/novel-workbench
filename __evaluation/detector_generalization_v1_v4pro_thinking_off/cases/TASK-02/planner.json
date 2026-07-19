@@ -1,0 +1,190 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "周默在驿站关门前处理错领快递的危机，面对箱内不明物品和真正收件人的压力，他必须在不能拆箱的约束下做出选择，引发立即后果，并留下后续悬念。",
+  "location": "小区快递驿站前台",
+  "time": "晚上九点五十分，距离关门十分钟",
+  "scene_state": {
+    "last_completed_action": "周默撕开胶带发现箱内有一张写着“今晚使用”的说明书，同时真正的收件人敲门要求取箱",
+    "present_characters": [
+      "周默",
+      "真正收件人"
+    ],
+    "visible_facts": [
+      "周默手中的快递箱已被撕开一角，露出说明书",
+      "柜台上有固定电话和一辆推车",
+      "真正收件人站在门外，神情焦急",
+      "驿站即将关门"
+    ],
+    "available_objects": [
+      "固定电话",
+      "推车",
+      "已撕开一角的快递箱",
+      "说明书",
+      "周默的手机"
+    ],
+    "unresolved_problem": "周默错领了快递，箱内物品可能敏感，真正收件人在门外索要，而周默不能拆箱确认物品，必须在关门前解决",
+    "already_existing_constraints": [
+      "不能拆箱确认物品",
+      "不能假定箱内是什么",
+      "驿站即将关门",
+      "真正收件人已在门外"
+    ]
+  },
+  "characters": [
+    {
+      "name": "周默",
+      "goal": "在关门前合法、安全地处理错领快递，避免自身卷入麻烦",
+      "known": [
+        "自己错领了快递",
+        "箱内有一张写着“今晚使用”的说明书",
+        "真正收件人正在门外",
+        "驿站即将关门"
+      ],
+      "unknown": [
+        "箱内具体物品是什么",
+        "真正收件人的身份和意图",
+        "物品是否危险或违法",
+        "如果直接归还，自己是否会惹上麻烦"
+      ],
+      "mistaken_beliefs": [
+        "可能认为箱内物品只是普通私人物品，但说明书暗示有紧迫性"
+      ],
+      "constraints": [
+        "不能拆箱确认",
+        "不能假定箱内是什么",
+        "必须在关门前处理",
+        "不能无视门外收件人"
+      ],
+      "observed_evidence": [
+        "箱内露出一角说明书，写着“今晚使用”",
+        "真正收件人敲门，声音急促",
+        "驿站灯光昏暗，门外人影晃动"
+      ],
+      "current_interpretation": "箱内物品可能具有时间敏感性，真正收件人很着急，但直接归还可能让自己被怀疑或卷入未知事件",
+      "how_interpretation_drives_action": "他选择先通过固定电话联系驿站负责人或报警，而不是直接开门归还，以保护自己并争取时间"
+    },
+    {
+      "name": "真正收件人",
+      "goal": "尽快拿回自己的快递箱，避免物品被他人发现或延误",
+      "known": [
+        "自己的快递被错领",
+        "箱内物品需要今晚使用",
+        "驿站即将关门"
+      ],
+      "unknown": [
+        "周默是否已查看箱内物品",
+        "周默是否会归还",
+        "周默的身份"
+      ],
+      "mistaken_beliefs": [
+        "可能认为周默是故意拿走或想偷看物品"
+      ],
+      "constraints": [
+        "不能强行闯入驿站",
+        "不能暴露箱内物品的细节",
+        "时间紧迫"
+      ],
+      "observed_evidence": [
+        "周默手中的箱子已被撕开一角",
+        "周默表情犹豫，没有立即开门"
+      ],
+      "current_interpretation": "周默可能已经看到了说明书，正在怀疑箱内物品，若再不拿回，事情会暴露",
+      "how_interpretation_drives_action": "他继续敲门并提高声音催促，甚至威胁要报警，迫使周默做出反应"
+    }
+  ],
+  "concrete_problem": "周默必须在真正收件人催促和驿站关门的压力下，决定是直接归还箱子、联系上级，还是报警，而每个选择都可能带来不同风险。",
+  "pressure": "驿站即将关门，真正收件人不断催促，箱内“今晚使用”的说明书暗示紧迫性，周默没有时间犹豫",
+  "turning_point": "周默拿起固定电话报警，而不是直接开门归还箱子，这一选择将改变他与收件人的对峙性质，并可能揭开箱内物品的秘密",
+  "end_condition": "周默通过电话报警，真正收件人在门外听到后情绪激动，但驿站门依然锁着，局面暂时僵持",
+  "forbidden": [
+    "拆箱确认物品",
+    "假定箱内物品是普通私人物品",
+    "直接开门归还并结束事件",
+    "揭示箱内物品的真实性质"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "箱内露出一角说明书，写着“今晚使用”",
+      "character_interpretation": "周默认为箱内物品可能涉及敏感或紧急事务，直接归还可能让自己被误会或卷入麻烦",
+      "character_next_action": "周默拿起固定电话报警，而不是开门归还",
+      "rejected_alternative": "直接开门归还箱子，简单结束错领事件",
+      "immediate_consequence": "真正收件人在门外听到周默报警，情绪变得更加激动，开始用力拍门",
+      "counterfactual_without_action": "如果周默直接开门归还，错领事件会简单解决，但他可能无法得知箱内物品的真相，或者收件人拿到箱子后立即离开，周默不会卷入后续",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "周默犹豫不决，收件人敲门催促",
+        "after": "周默报警，收件人情绪升级，双方对峙加剧"
+      },
+      "cost_or_commitment": "周默选择报警，意味着他主动将事件升级，可能面临收件人的敌意和后续调查的麻烦",
+      "next_constraint": "警察到来前，周默不能离开驿站，也不能让收件人进入",
+      "reader_must_infer": "周默报警的真正动机是自我保护，还是他怀疑箱内物品有问题",
+      "narrator_must_not_state": [
+        "箱内物品是否真的危险",
+        "收件人是否在说谎"
+      ]
+    },
+    {
+      "id": "CT02",
+      "kind": "constraint_to_choice",
+      "visible_trigger": "真正收件人威胁要报警",
+      "character_interpretation": "周默意识到如果自己不先报警，对方报警后自己可能更被动，因为箱子上有他的取件记录",
+      "character_next_action": "周默抢先报警，并告知接线员驿站位置和错领情况",
+      "rejected_alternative": "等待收件人报警，自己被动应对",
+      "immediate_consequence": "收件人听到周默报警后，停止敲门并短暂沉默，随后低声咒骂",
+      "counterfactual_without_action": "如果周默不抢先报警，收件人报警后，周默可能被当作嫌疑人盘问，更被动",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "收件人威胁报警，周默处于被动",
+        "after": "周默抢先报警，暂时掌握主动权"
+      },
+      "cost_or_commitment": "周默承担了报假警或浪费警力的风险，同时与收件人彻底对立",
+      "next_constraint": "警察到达前，周默必须守住箱子，不能让其被收件人拿走",
+      "reader_must_infer": "收件人为什么在周默报警后反而沉默，是害怕还是另有计划",
+      "narrator_must_not_state": [
+        "收件人沉默的真实原因",
+        "箱内物品是否违法"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "真正收件人敲门要求取箱，驿站即将关门",
+    "dominant_pressure": {
+      "kind": "information_gap",
+      "description": "周默不知道箱内物品是什么，也不知道收件人的真实意图，信息缺失迫使他做出保守选择"
+    },
+    "allowed_viewpoint_misread": "周默可能把收件人的焦急误读为敌意，而收件人可能把周默的犹豫误读为贪婪",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "箱内物品的真实性质",
+      "真正收件人的背景和意图",
+      "说明书“今晚使用”的具体所指"
+    ],
+    "stop_state": {
+      "type": "unresolved_problem",
+      "visible_fact": "周默通过电话报警，收件人在门外听到后停止敲门",
+      "what_is_now_different": "事件从私下纠纷升级为等待警方介入，双方陷入僵持",
+      "must_not_append": "不得揭示箱内物品或收件人的后续行动"
+    },
+    "final_line_must_include": "门外安静了下来，但周默知道事情还没完。"
+  }
+}

@@ -66,9 +66,108 @@ class WriterBrief(BaseModel):
         return self
 
 
+class WriterBriefC(BaseModel):
+    """Narrative-behaviour-enhanced brief — same skeleton as WriterBrief plus
+    four fields that carry causal weight without leaking Planner answers."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    opening_mode: str
+    opening_fact: str = Field(min_length=1)
+    viewpoint_character: str = ""
+    known_facts: list[str] = Field(default_factory=list)
+    unknown_facts: list[str] = Field(default_factory=list)
+    current_assumption: str = ""
+    assumption_basis: list[str] = Field(default_factory=list)
+    next_action: str = Field(min_length=1)
+    immediate_consequence: str = Field(min_length=1)
+    next_constraint: str = Field(min_length=1)
+    active_project_facts: list[str] = Field(default_factory=list, max_length=MAX_ACTIVE_PROJECT_FACTS)
+    remain_unclassified: list[str] = Field(default_factory=list)
+    stop_fact: str = Field(min_length=1)
+    must_not_append: str = ""
+    final_line_must_include: str = ""
+
+    available_causal_objects: list[str] = Field(default_factory=list)
+    rejected_alternative: str = ""
+    cost_or_commitment: str = ""
+    counteraction_or_disproof: str = ""
+
+    @model_validator(mode="after")
+    def validate_assumption(self):
+        if self.current_assumption and not self.assumption_basis:
+            raise ValueError("assumption_basis is required when current_assumption is non-empty")
+        if not self.current_assumption and self.assumption_basis:
+            raise ValueError("assumption_basis must be empty when current_assumption is empty")
+        legal_basis = set(self.known_facts)
+        legal_basis.add(self.opening_fact)
+        if any(item not in legal_basis for item in self.assumption_basis):
+            raise ValueError("assumption_basis must come from known_facts or opening_fact")
+        return self
+
+
+def compile_writer_brief_c(scene_plan: dict[str, Any] | None) -> dict[str, Any]:
+    """Same projection as compile_writer_brief but adds four narrative-behaviour
+    fields: causal objects, rejected alternative, cost, and counteraction."""
+    plan = scene_plan if isinstance(scene_plan, dict) else {}
+    state = plan.get("scene_state") if isinstance(plan.get("scene_state"), dict) else {}
+    guardrails = plan.get("tempo_guardrails") if isinstance(plan.get("tempo_guardrails"), dict) else {}
+    stop_state = guardrails.get("stop_state") if isinstance(guardrails.get("stop_state"), dict) else {}
+    character = _viewpoint_character(plan)
+    transitions = plan.get("causal_transitions") if isinstance(plan.get("causal_transitions"), list) else []
+    transition = next((item for item in transitions if isinstance(item, dict)), {})
+
+    opening_fact = _text(guardrails.get("entry_pressure")) or _text(transition.get("visible_trigger"))
+    known_facts = _strings([
+        *_strings(state.get("visible_facts")),
+        *_strings(character.get("known")),
+        *_strings(character.get("observed_evidence")),
+    ])
+    assumption = _text(character.get("situational_assumption")) or _text(
+        character.get("current_interpretation")
+    ) or _text(plan.get("current_interpretation"))
+    basis = []
+    if assumption:
+        basis = _strings(character.get("observed_evidence")) or known_facts[:1] or [opening_fact]
+
+    return WriterBriefC(
+        opening_mode="entry_pressure",
+        opening_fact=opening_fact,
+        viewpoint_character=_text(character.get("name")),
+        known_facts=known_facts,
+        unknown_facts=_strings(character.get("unknown")),
+        current_assumption=assumption,
+        assumption_basis=basis,
+        next_action=_text(transition.get("character_next_action")),
+        immediate_consequence=_text(transition.get("immediate_consequence")),
+        next_constraint=_text(transition.get("next_constraint")),
+        active_project_facts=_strings(plan.get("active_project_facts"))[:MAX_ACTIVE_PROJECT_FACTS],
+        remain_unclassified=_strings(guardrails.get("must_remain_unclassified")),
+        stop_fact=_text(stop_state.get("visible_fact")),
+        must_not_append=_text(stop_state.get("must_not_append")),
+        final_line_must_include=_text(guardrails.get("final_line_must_include")),
+        available_causal_objects=_strings(state.get("available_objects")),
+        rejected_alternative=_text(transition.get("rejected_alternative")),
+        cost_or_commitment=_text(transition.get("cost_or_commitment")),
+        counteraction_or_disproof=_text(transition.get("counterfactual_without_action")),
+    ).model_dump()
+
+
 def validate_writer_brief(data: dict[str, Any]) -> WriterBrief:
     """Validate the shared compiler/preflight contract without duplicate rules."""
     return WriterBrief.model_validate(data)
+
+
+def compile_writer_input(scene_plan: dict[str, Any] | None, mode: str) -> dict[str, Any]:
+    """Return the sole Writer-visible planning payload for an experiment arm."""
+    plan = scene_plan if isinstance(scene_plan, dict) else {}
+    if mode == "complete_planner":
+        return plan
+    if mode == "writer_brief":
+        return compile_writer_brief(plan)
+    if mode == "narrative_behaviour_brief":
+        return compile_writer_brief_c(plan)
+    raise ValueError(f"unsupported writer input mode: {mode}")
 
 
 def _viewpoint_character(plan: dict[str, Any]) -> dict[str, Any]:

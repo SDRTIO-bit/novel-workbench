@@ -1,0 +1,133 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "学校演出前二十分钟，舞台助理安梨发现排练室钥匙被反锁，必须找到备用麦克风线以避免演出事故。她需在有限时间内根据现场条件选择一条获取路线，并承担相应的代价和结果。",
+  "location": "学校礼堂后台走廊，排练室门外",
+  "time": "学校演出前二十分钟",
+  "scene_state": {
+    "last_completed_action": "安梨发现排练室门已锁，钥匙在里面，透过玻璃看到备用麦克风线在桌上",
+    "present_characters": [
+      "安梨"
+    ],
+    "visible_facts": [
+      "排练室门锁着，钥匙在室内桌上",
+      "备用麦克风线在排练室桌上",
+      "走廊尽头有消防箱、保洁推车和一扇半开的窗",
+      "负责人正在台上点名，无法立即求助"
+    ],
+    "available_objects": [
+      "消防箱（内有工具）",
+      "保洁推车（可能装有杂物）",
+      "半开的窗（通往排练室另一侧）"
+    ],
+    "unresolved_problem": "备用麦克风线被锁在排练室内，演出即将开始，必须尽快取出",
+    "already_existing_constraints": [
+      "不能砸门或擅自破坏设备",
+      "负责人正在台上点名，不能打扰",
+      "时间仅剩二十分钟"
+    ]
+  },
+  "characters": [
+    {
+      "name": "安梨",
+      "goal": "在演出前取得备用麦克风线，确保演出顺利进行",
+      "known": [
+        "备用线在排练室里",
+        "钥匙被反锁在里面",
+        "走廊尽头有消防箱、保洁推车和半开的窗"
+      ],
+      "unknown": [
+        "消防箱内具体有哪些可用工具",
+        "保洁推车里是否有可借用的物品",
+        "半开的窗是否足够让她进入"
+      ],
+      "mistaken_beliefs": [
+        "她认为从窗户爬进去是最快的办法，但忽略了窗户可能无法完全打开或有其他风险"
+      ],
+      "constraints": [
+        "不能砸门或擅自破坏设备",
+        "时间紧迫，只有二十分钟",
+        "不能惊动太多人或引起骚动"
+      ],
+      "observed_evidence": [
+        "半开的窗似乎可以通向排练室",
+        "保洁推车上有一些清洁工具和杂物",
+        "消防箱门未上锁"
+      ],
+      "current_interpretation": "窗户可能是唯一入口，但需要工具辅助或冒险攀爬",
+      "how_interpretation_drives_action": "她决定尝试从窗户进入，但需要先检查窗户是否可行，并考虑借用保洁推车或消防工具"
+    }
+  ],
+  "concrete_problem": "安梨必须选择一条路线获取备用麦克风线：爬窗（风险高但快）或使用工具从门缝钩取钥匙（更安全但耗时），并承担相应后果。",
+  "pressure": "演出即将开始，负责人正在点名，时间紧迫，安梨必须独自快速做出决定并行动。",
+  "turning_point": "安梨在检查窗户时发现窗框生锈难以完全推开，她意识到爬窗可能受伤或损坏窗户，于是转而选择使用保洁推车上的铁丝衣架制作钩子，从门缝钩取钥匙，尽管这花费了更多时间，但避免了潜在危险。",
+  "end_condition": "安梨成功钩出钥匙，打开门取出备用麦克风线，在演出开场前最后一刻送到舞台。她因迟到被负责人责备，但演出未受影响。",
+  "forbidden": [
+    "砸门或破坏设备",
+    "求助负责人或其他人员",
+    "使用消防斧等危险工具",
+    "爬窗成功（必须放弃此路线）",
+    "备用麦克风线损坏"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "安梨发现窗户虽然半开，但窗框生锈，用力推时发出刺耳声响且无法完全打开",
+      "character_interpretation": "爬窗不仅可能受伤，还可能损坏窗户，违反不能破坏设备的规定，而且噪音会引来注意",
+      "character_next_action": "放弃爬窗，转而检查保洁推车，寻找可用来钩取钥匙的长条物品",
+      "rejected_alternative": "强行爬窗，冒险进入",
+      "immediate_consequence": "安梨在保洁推车上找到一个铁丝衣架，开始制作钩子",
+      "counterfactual_without_action": "如果安梨强行爬窗，可能会被卡住或摔伤，并因破坏公物被追责",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "安梨考虑爬窗，但窗户有阻碍",
+        "after": "安梨放弃爬窗，转向使用工具钩取钥匙"
+      },
+      "cost_or_commitment": "安梨放弃了最快路线，选择更费时但安全的方法，承担了可能赶不上演出的时间风险",
+      "next_constraint": "必须在剩余时间内完成钩取钥匙并取出设备，时间更紧迫",
+      "reader_must_infer": "安梨的决定体现了她对规则的遵守和对安全的重视，即使这意味着可能被责备",
+      "narrator_must_not_state": [
+        "安梨内心对爬窗的恐惧",
+        "负责人后来是否理解她的处境"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "安梨发现钥匙被反锁，演出仅剩二十分钟，负责人正在点名",
+    "dominant_pressure": {
+      "kind": "resource_constraint",
+      "description": "时间有限，且无法直接获取备用设备，安梨必须利用有限资源解决问题"
+    },
+    "allowed_viewpoint_misread": "安梨可能误判窗户的可行性，以为可以轻松爬入",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "安梨的真实情绪波动",
+      "负责人是否注意到她的缺席"
+    ],
+    "stop_state": {
+      "type": "physical_change",
+      "visible_fact": "安梨将备用麦克风线交到舞台助理手中",
+      "what_is_now_different": "演出所需的备用设备已到位，危机解除",
+      "must_not_append": "不得描写安梨后续与负责人的对话细节"
+    },
+    "final_line_must_include": ""
+  }
+}

@@ -1,0 +1,434 @@
+[
+  {
+    "submission_id": "1C8229862A04",
+    "case_id": "CAMPUS-03",
+    "category": "校园尴尬与误会",
+    "text_path": "blind_texts\\1C8229862A04.txt"
+  },
+  {
+    "submission_id": "15E0964301DA",
+    "case_id": "CAMPUS-02",
+    "category": "校园尴尬与误会",
+    "text_path": "blind_texts\\15E0964301DA.txt"
+  },
+  {
+    "submission_id": "6A958902EC56",
+    "case_id": "CAMPUS-04",
+    "category": "校园尴尬与误会",
+    "text_path": "blind_texts\\6A958902EC56.txt"
+  },
+  {
+    "submission_id": "8E4BAE6E7C64",
+    "case_id": "CAMPUS-02",
+    "category": "校园尴尬与误会",
+    "text_path": "blind_texts\\8E4BAE6E7C64.txt"
+  },
+  {
+    "submission_id": "73F96AE403DE",
+    "case_id": "ROMANCE-04",
+    "category": "恋爱日常与关系试探",
+    "text_path": "blind_texts\\73F96AE403DE.txt"
+  },
+  {
+    "submission_id": "802832D461D7",
+    "case_id": "CAMPUS-03",
+    "category": "校园尴尬与误会",
+    "text_path": "blind_texts\\802832D461D7.txt"
+  },
+  {
+    "submission_id": "88870578E971",
+    "case_id": "CAMPUS-03",
+    "category": "校园尴尬与误会",
+    "text_path": "blind_texts\\88870578E971.txt"
+  },
+  {
+    "submission_id": "85652FA8FECF",
+    "case_id": "TASK-02",
+    "category": "危机或具体任务",
+    "text_path": "blind_texts\\85652FA8FECF.txt"
+  },
+  {
+    "submission_id": "C554886D326B",
+    "case_id": "CAMPUS-02",
+    "category": "校园尴尬与误会",
+    "text_path": "blind_texts\\C554886D326B.txt"
+  },
+  {
+    "submission_id": "C5F667697453",
+    "case_id": "ROMANCE-01",
+    "category": "恋爱日常与关系试探",
+    "text_path": "blind_texts\\C5F667697453.txt"
+  },
+  {
+    "submission_id": "9C69909F9384",
+    "case_id": "ROMANCE-03",
+    "category": "恋爱日常与关系试探",
+    "text_path": "blind_texts\\9C69909F9384.txt"
+  },
+  {
+    "submission_id": "C0DB355D7AA1",
+    "case_id": "TASK-02",
+    "category": "危机或具体任务",
+    "text_path": "blind_texts\\C0DB355D7AA1.txt"
+  },
+  {
+    "submission_id": "1F424F1FF868",
+    "case_id": "CAMPUS-04",
+    "category": "校园尴尬与误会",
+    "text_path": "blind_texts\\1F424F1FF868.txt"
+  },
+  {
+    "submission_id": "5465AEB3D192",
+    "case_id": "ROMANCE-04",
+    "category": "恋爱日常与关系试探",
+    "text_path": "blind_texts\\5465AEB3D192.txt"
+  },
+  {
+    "submission_id": "EBE37B660FD1",
+    "case_id": "ROMANCE-02",
+    "category": "恋爱日常与关系试探",
+    "text_path": "blind_texts\\EBE37B660FD1.txt"
+  },
+  {
+    "submission_id": "4F6D90068DED",
+    "case_id": "TASK-03",
+    "category": "危机或具体任务",
+    "text_path": "blind_texts\\4F6D90068DED.txt"
+  },
+  {
+    "submission_id": "386A4EDDB7B0",
+    "case_id": "TASK-03",
+    "category": "危机或具体任务",
+    "text_path": "blind_texts\\386A4EDDB7B0.txt"
+  },
+  {
+    "submission_id": "870D898C8DD8",
+    "case_id": "TASK-04",
+    "category": "危机或具体任务",
+    "text_path": "blind_texts\\870D898C8DD8.txt"
+  },
+  {
+    "submission_id": "94FA370047DB",
+    "case_id": "ROMANCE-04",
+    "category": "恋爱日常与关系试探",
+    "text_path": "blind_texts\\94FA370047DB.txt"
+  },
+  {
+    "submission_id": "22BF0E93AA3B",
+    "case_id": "ROMANCE-01",
+    "category": "恋爱日常与关系试探",
+    "text_path": "blind_texts\\22BF0E93AA3B.txt"
+  },
+  {
+    "submission_id": "3FFAC3EE2EC4",
+    "case_id": "TASK-01",
+    "category": "危机或具体任务",
+    "text_path": "blind_texts\\3FFAC3EE2EC4.txt"
+  },
+  {
+    "submission_id": "4E115809BBB3",
+    "case_id": "TASK-02",
+    "category": "危机或具体任务",
+    "text_path": "blind_texts\\4E115809BBB3.txt"
+  },
+  {
+    "submission_id": "641B825DD59F",
+    "case_id": "CAMPUS-01",
+    "category": "校园尴尬与误会",
+    "text_path": "blind_texts\\641B825DD59F.txt"
+  },
+  {
+    "submission_id": "AA0550A0DEFB",
+    "case_id": "TASK-04",
+    "category": "危机或具体任务",
+    "text_path": "blind_texts\\AA0550A0DEFB.txt"
+  },
+  {
+    "submission_id": "ADC622545CB3",
+    "case_id": "ROMANCE-01",
+    "category": "恋爱日常与关系试探",
+    "text_path": "blind_texts\\ADC622545CB3.txt"
+  },
+  {
+    "submission_id": "608C0E2DF3CC",
+    "case_id": "ROMANCE-03",
+    "category": "恋爱日常与关系试探",
+    "text_path": "blind_texts\\608C0E2DF3CC.txt"
+  },
+  {
+    "submission_id": "84B638B0CAC5",
+    "case_id": "CAMPUS-01",
+    "category": "校园尴尬与误会",
+    "text_path": "blind_texts\\84B638B0CAC5.txt"
+  },
+  {
+    "submission_id": "EA1A725411FF",
+    "case_id": "TASK-01",
+    "category": "危机或具体任务",
+    "text_path": "blind_texts\\EA1A725411FF.txt"
+  },
+  {
+    "submission_id": "68EF500DF8D6",
+    "case_id": "TASK-02",
+    "category": "危机或具体任务",
+    "text_path": "blind_texts\\68EF500DF8D6.txt"
+  },
+  {
+    "submission_id": "B1872A59F2D9",
+    "case_id": "TASK-04",
+    "category": "危机或具体任务",
+    "text_path": "blind_texts\\B1872A59F2D9.txt"
+  },
+  {
+    "submission_id": "145F79A8B34B",
+    "case_id": "ROMANCE-02",
+    "category": "恋爱日常与关系试探",
+    "text_path": "blind_texts\\145F79A8B34B.txt"
+  },
+  {
+    "submission_id": "2DDB3A7A654F",
+    "case_id": "CAMPUS-01",
+    "category": "校园尴尬与误会",
+    "text_path": "blind_texts\\2DDB3A7A654F.txt"
+  },
+  {
+    "submission_id": "89CDEDC20FFC",
+    "case_id": "ROMANCE-03",
+    "category": "恋爱日常与关系试探",
+    "text_path": "blind_texts\\89CDEDC20FFC.txt"
+  },
+  {
+    "submission_id": "AB3E7779CE98",
+    "case_id": "TASK-04",
+    "category": "危机或具体任务",
+    "text_path": "blind_texts\\AB3E7779CE98.txt"
+  },
+  {
+    "submission_id": "36876E2A73B8",
+    "case_id": "TASK-02",
+    "category": "危机或具体任务",
+    "text_path": "blind_texts\\36876E2A73B8.txt"
+  },
+  {
+    "submission_id": "872BCEA41960",
+    "case_id": "ROMANCE-01",
+    "category": "恋爱日常与关系试探",
+    "text_path": "blind_texts\\872BCEA41960.txt"
+  },
+  {
+    "submission_id": "D95D066683E7",
+    "case_id": "CAMPUS-01",
+    "category": "校园尴尬与误会",
+    "text_path": "blind_texts\\D95D066683E7.txt"
+  },
+  {
+    "submission_id": "C7312B9D519A",
+    "case_id": "ROMANCE-02",
+    "category": "恋爱日常与关系试探",
+    "text_path": "blind_texts\\C7312B9D519A.txt"
+  },
+  {
+    "submission_id": "8BC1A34B499F",
+    "case_id": "TASK-04",
+    "category": "危机或具体任务",
+    "text_path": "blind_texts\\8BC1A34B499F.txt"
+  },
+  {
+    "submission_id": "121214C72646",
+    "case_id": "CAMPUS-02",
+    "category": "校园尴尬与误会",
+    "text_path": "blind_texts\\121214C72646.txt"
+  },
+  {
+    "submission_id": "8955643FE913",
+    "case_id": "ROMANCE-02",
+    "category": "恋爱日常与关系试探",
+    "text_path": "blind_texts\\8955643FE913.txt"
+  },
+  {
+    "submission_id": "E33DABCF33F4",
+    "case_id": "ROMANCE-01",
+    "category": "恋爱日常与关系试探",
+    "text_path": "blind_texts\\E33DABCF33F4.txt"
+  },
+  {
+    "submission_id": "EB40269DE67D",
+    "case_id": "TASK-01",
+    "category": "危机或具体任务",
+    "text_path": "blind_texts\\EB40269DE67D.txt"
+  },
+  {
+    "submission_id": "DBBB6A561801",
+    "case_id": "ROMANCE-02",
+    "category": "恋爱日常与关系试探",
+    "text_path": "blind_texts\\DBBB6A561801.txt"
+  },
+  {
+    "submission_id": "92AD215A62B8",
+    "case_id": "ROMANCE-04",
+    "category": "恋爱日常与关系试探",
+    "text_path": "blind_texts\\92AD215A62B8.txt"
+  },
+  {
+    "submission_id": "45B1AC531695",
+    "case_id": "CAMPUS-01",
+    "category": "校园尴尬与误会",
+    "text_path": "blind_texts\\45B1AC531695.txt"
+  },
+  {
+    "submission_id": "70F5BB17FBF0",
+    "case_id": "CAMPUS-03",
+    "category": "校园尴尬与误会",
+    "text_path": "blind_texts\\70F5BB17FBF0.txt"
+  },
+  {
+    "submission_id": "9440D498294D",
+    "case_id": "TASK-02",
+    "category": "危机或具体任务",
+    "text_path": "blind_texts\\9440D498294D.txt"
+  },
+  {
+    "submission_id": "F33AEE1CF00C",
+    "case_id": "TASK-03",
+    "category": "危机或具体任务",
+    "text_path": "blind_texts\\F33AEE1CF00C.txt"
+  },
+  {
+    "submission_id": "5B01059F28DA",
+    "case_id": "TASK-01",
+    "category": "危机或具体任务",
+    "text_path": "blind_texts\\5B01059F28DA.txt"
+  },
+  {
+    "submission_id": "35536A63CD94",
+    "case_id": "CAMPUS-01",
+    "category": "校园尴尬与误会",
+    "text_path": "blind_texts\\35536A63CD94.txt"
+  },
+  {
+    "submission_id": "1E843B2C135B",
+    "case_id": "ROMANCE-04",
+    "category": "恋爱日常与关系试探",
+    "text_path": "blind_texts\\1E843B2C135B.txt"
+  },
+  {
+    "submission_id": "152E345C0000",
+    "case_id": "CAMPUS-02",
+    "category": "校园尴尬与误会",
+    "text_path": "blind_texts\\152E345C0000.txt"
+  },
+  {
+    "submission_id": "BC967899CB85",
+    "case_id": "ROMANCE-01",
+    "category": "恋爱日常与关系试探",
+    "text_path": "blind_texts\\BC967899CB85.txt"
+  },
+  {
+    "submission_id": "3DA50EB5F0E3",
+    "case_id": "CAMPUS-03",
+    "category": "校园尴尬与误会",
+    "text_path": "blind_texts\\3DA50EB5F0E3.txt"
+  },
+  {
+    "submission_id": "8DE191B7519D",
+    "case_id": "CAMPUS-04",
+    "category": "校园尴尬与误会",
+    "text_path": "blind_texts\\8DE191B7519D.txt"
+  },
+  {
+    "submission_id": "769047A59AE4",
+    "case_id": "TASK-03",
+    "category": "危机或具体任务",
+    "text_path": "blind_texts\\769047A59AE4.txt"
+  },
+  {
+    "submission_id": "67E4F6398EC1",
+    "case_id": "ROMANCE-02",
+    "category": "恋爱日常与关系试探",
+    "text_path": "blind_texts\\67E4F6398EC1.txt"
+  },
+  {
+    "submission_id": "B8B7FF028E4A",
+    "case_id": "CAMPUS-04",
+    "category": "校园尴尬与误会",
+    "text_path": "blind_texts\\B8B7FF028E4A.txt"
+  },
+  {
+    "submission_id": "94A2882C25F4",
+    "case_id": "ROMANCE-03",
+    "category": "恋爱日常与关系试探",
+    "text_path": "blind_texts\\94A2882C25F4.txt"
+  },
+  {
+    "submission_id": "465EDC3A543D",
+    "case_id": "CAMPUS-02",
+    "category": "校园尴尬与误会",
+    "text_path": "blind_texts\\465EDC3A543D.txt"
+  },
+  {
+    "submission_id": "5EBE07BC11B5",
+    "case_id": "CAMPUS-04",
+    "category": "校园尴尬与误会",
+    "text_path": "blind_texts\\5EBE07BC11B5.txt"
+  },
+  {
+    "submission_id": "E5874F6B6CA4",
+    "case_id": "TASK-03",
+    "category": "危机或具体任务",
+    "text_path": "blind_texts\\E5874F6B6CA4.txt"
+  },
+  {
+    "submission_id": "5B3C08116C62",
+    "case_id": "TASK-03",
+    "category": "危机或具体任务",
+    "text_path": "blind_texts\\5B3C08116C62.txt"
+  },
+  {
+    "submission_id": "6727CF66E49C",
+    "case_id": "TASK-01",
+    "category": "危机或具体任务",
+    "text_path": "blind_texts\\6727CF66E49C.txt"
+  },
+  {
+    "submission_id": "D721AA67AD28",
+    "case_id": "CAMPUS-03",
+    "category": "校园尴尬与误会",
+    "text_path": "blind_texts\\D721AA67AD28.txt"
+  },
+  {
+    "submission_id": "13D9D662A81B",
+    "case_id": "ROMANCE-04",
+    "category": "恋爱日常与关系试探",
+    "text_path": "blind_texts\\13D9D662A81B.txt"
+  },
+  {
+    "submission_id": "BD049BFA8CF2",
+    "case_id": "TASK-01",
+    "category": "危机或具体任务",
+    "text_path": "blind_texts\\BD049BFA8CF2.txt"
+  },
+  {
+    "submission_id": "04159CD2958A",
+    "case_id": "CAMPUS-04",
+    "category": "校园尴尬与误会",
+    "text_path": "blind_texts\\04159CD2958A.txt"
+  },
+  {
+    "submission_id": "A17DB20A459C",
+    "case_id": "ROMANCE-03",
+    "category": "恋爱日常与关系试探",
+    "text_path": "blind_texts\\A17DB20A459C.txt"
+  },
+  {
+    "submission_id": "ED1295B61D88",
+    "case_id": "TASK-04",
+    "category": "危机或具体任务",
+    "text_path": "blind_texts\\ED1295B61D88.txt"
+  },
+  {
+    "submission_id": "51F3120ED25D",
+    "case_id": "ROMANCE-03",
+    "category": "恋爱日常与关系试探",
+    "text_path": "blind_texts\\51F3120ED25D.txt"
+  }
+]

@@ -1,0 +1,134 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "魏临必须在维修老师赶到前阻止漏水损坏设备，通过放弃看似更快的做法来承担时间代价，从而建立其责任感和应变能力。",
+  "location": "学校机房，天花板漏水处下方，靠近插线板区域",
+  "time": "晚自习前，傍晚时分",
+  "scene_state": {
+    "last_completed_action": "魏临发现天花板滴水，水正流向插线板",
+    "present_characters": [
+      "魏临"
+    ],
+    "visible_facts": [
+      "天花板有明显水渍，水滴持续落下",
+      "水沿着地面流向墙边的插线板",
+      "插线板连接着多台电脑设备",
+      "门口有总闸提示牌",
+      "角落有拖把和一卷胶带"
+    ],
+    "available_objects": [
+      "拖把",
+      "胶带",
+      "总闸提示牌"
+    ],
+    "unresolved_problem": "如何在水到达插线板前阻止短路风险，同时避免触电",
+    "already_existing_constraints": [
+      "维修老师短时间无法赶到",
+      "不能直接接触湿插线板",
+      "总闸关闭会影响整个机房运行"
+    ]
+  },
+  "characters": [
+    {
+      "name": "魏临",
+      "goal": "防止漏水电到插线板造成短路或危险",
+      "known": [
+        "水正在流向插线板",
+        "维修老师正在另一栋楼",
+        "拖把、胶带、总闸提示牌可用"
+      ],
+      "unknown": [
+        "漏水源头是否可快速封堵",
+        "总闸关闭后是否影响其他重要设备",
+        "维修老师具体到达时间"
+      ],
+      "mistaken_beliefs": [
+        "用胶带封堵天花板裂缝可能立刻止住漏水"
+      ],
+      "constraints": [
+        "不能触碰湿插线板",
+        "不能离开机房太久",
+        "必须尽快行动"
+      ],
+      "observed_evidence": [
+        "水滴持续落下，水迹逐渐扩大",
+        "插线板距离水渍仅剩半米",
+        "胶带看起来可以暂时封住裂缝"
+      ],
+      "current_interpretation": "如果快速用胶带封住天花板裂缝，可能阻止更多水流出，但需要爬高且可能失败；直接拖地只能延缓水到达插线板，无法根治。",
+      "how_interpretation_drives_action": "他决定先尝试用拖把吸水并改变水流方向，放弃直接封堵天花板的冒险做法。"
+    }
+  ],
+  "concrete_problem": "魏临必须在水流到插线板之前，用现有工具阻止短路，但无法直接处理带电区域。",
+  "pressure": "水滴速度加快，水渍距离插线板越来越近，维修老师仍未到达。",
+  "turning_point": "魏临意识到用胶带封天花板可能失败并浪费时间，转而用拖把和胶带构建临时引水渠，将水导向安全区域。",
+  "end_condition": "魏临成功将水流引离插线板，但水量增大，他必须守在机房等待维修老师。",
+  "forbidden": [
+    "维修老师提前到达",
+    "其他同学或老师突然出现帮忙",
+    "魏临顺利关闭总闸且无后果",
+    "漏水自动停止",
+    "直接触碰插线板"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "水滴突然加速，水渍已接近插线板边缘",
+      "character_interpretation": "封堵天花板可能来不及，而且可能失败导致更多水溅到插线板；引开水流更安全。",
+      "character_next_action": "魏临放弃取胶带封天花板，迅速用拖把吸水，并将胶带贴在地面形成临时导流槽，把水引向墙角排水口。",
+      "rejected_alternative": "爬高用胶带封堵天花板裂缝",
+      "immediate_consequence": "水流被成功导向排水口，插线板暂时安全，但天花板漏水仍在继续，地面水渍增多。",
+      "counterfactual_without_action": "如果不行动，水将直接浸入插线板，引发短路甚至触电。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "水正流向插线板，无任何引流措施",
+        "after": "水流被胶带导流槽引向排水口，插线板周围保持干燥"
+      },
+      "cost_or_commitment": "魏临放弃了可能根治漏水的尝试，选择更耗体力的持续维护，并承担漏水可能再次蔓延的风险。",
+      "next_constraint": "必须持续监控导流槽，防止胶带脱落或水量过大溢出",
+      "reader_must_infer": "魏临并非鲁莽，而是通过快速风险评估选择了最稳妥的临时方案。",
+      "narrator_must_not_state": [
+        "魏临的决定是唯一正确的选择",
+        "他内心完全确信这个方案会成功"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "水滴声在空旷机房中回响，魏临看到水正流向插线板",
+    "dominant_pressure": {
+      "kind": "physical_problem",
+      "description": "漏水正在扩大，物理上威胁设备安全，必须立即处理"
+    },
+    "allowed_viewpoint_misread": "魏临可能误判胶带封堵天花板的难度和成功率",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "漏水是否由楼上水管爆裂引起",
+      "维修老师具体何时到达"
+    ],
+    "stop_state": {
+      "type": "physical_change",
+      "visible_fact": "胶带导流槽将水引向排水口，插线板周围地面干燥",
+      "what_is_now_different": "插线板暂时安全，但天花板仍在漏水且水量可能增大",
+      "must_not_append": "不得描述魏临完全控制局面或漏水停止"
+    },
+    "final_line_must_include": ""
+  }
+}

@@ -1,0 +1,187 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "陶然在商场服务台处理走失男孩事件，通过有限信息和行动约束做出可检验的选择，承受延误代价，并以新的可见线索结束场景。",
+  "location": "商场一楼服务台附近，靠近电梯口",
+  "time": "周末下午，人流高峰时段",
+  "scene_state": {
+    "last_completed_action": "保安告知陶然自己必须先去处理另一桩纠纷，将男孩暂时交给她看管。",
+    "present_characters": [
+      "陶然",
+      "走失男孩",
+      "保安（即将离开）"
+    ],
+    "visible_facts": [
+      "男孩约5-6岁，攥着一张被雨打湿的电影票",
+      "电影票显示场次时间为半小时前，影厅在5楼",
+      "电梯口人流不断，男孩有些害怕",
+      "服务台有广播系统，但需要明确信息才能播报",
+      "保安正朝另一方向走去处理纠纷"
+    ],
+    "available_objects": [
+      "广播按钮",
+      "商场楼层指引图",
+      "湿电影票",
+      "服务台电话"
+    ],
+    "unresolved_problem": "男孩说不出家长在哪层，陶然不能离开服务台带孩子去找，也不能编造信息广播。",
+    "already_existing_constraints": [
+      "陶然不能带孩子离开商场",
+      "陶然不能替孩子编造父母信息",
+      "保安暂时无法协助",
+      "广播需要具体描述才能有效"
+    ]
+  },
+  "characters": [
+    {
+      "name": "陶然",
+      "goal": "尽快帮男孩找到家长，同时遵守志愿者守则和现场约束",
+      "known": [
+        "电影票是唯一线索",
+        "半小时前5楼有电影散场",
+        "广播可以覆盖全商场",
+        "不能离开服务台岗位"
+      ],
+      "unknown": [
+        "家长是否还在5楼",
+        "男孩是否记得家长特征",
+        "家长是否也在寻找孩子"
+      ],
+      "mistaken_beliefs": [
+        "家长可能还在影院附近等待",
+        "男孩可能记得家长衣着"
+      ],
+      "constraints": [
+        "不能离开服务台",
+        "不能编造信息",
+        "必须依据可验证事实行动"
+      ],
+      "observed_evidence": [
+        "电影票被雨打湿，但影厅号可见",
+        "男孩指向电梯时含糊不清",
+        "服务台广播按钮有“寻人启事”选项"
+      ],
+      "current_interpretation": "电影票是唯一可靠线索，但时间已过半小时，家长可能已离开影厅；男孩的指向不可靠，但可以尝试用电影票信息广播。",
+      "how_interpretation_drives_action": "她决定先用广播播报“5楼影厅散场后走失男孩”的信息，同时询问男孩是否记得家长衣着，但只采用可验证的描述。"
+    },
+    {
+      "name": "走失男孩",
+      "goal": "找到父母",
+      "known": [
+        "和父母一起来看电影",
+        "电影结束后走散"
+      ],
+      "unknown": [
+        "父母具体在哪层",
+        "父母的电话号码"
+      ],
+      "mistaken_beliefs": [
+        "父母一定还在电影院门口"
+      ],
+      "constraints": [
+        "年龄小，表达不清",
+        "情绪紧张，可能哭泣"
+      ],
+      "observed_evidence": [
+        "陶然在问话",
+        "周围很多人"
+      ],
+      "current_interpretation": "这个阿姨在帮我找妈妈",
+      "how_interpretation_drives_action": "他配合回答，但只能说出“妈妈穿红色”等模糊信息。"
+    }
+  ],
+  "concrete_problem": "如何利用一张湿电影票和男孩模糊的指向，在不离开服务台、不编造信息的前提下，发出有效的寻人广播？",
+  "pressure": "电梯口人流持续，保安已离开，男孩情绪逐渐不安，延误越久家长可能走远。",
+  "turning_point": "陶然选择只广播可验证的事实（影厅、时间、男孩性别年龄），拒绝使用男孩说的“妈妈穿红色”因为无法确认，这个选择导致广播后无人立刻认领，但引出一位清洁工提供新线索。",
+  "end_condition": "清洁工提到曾在3楼儿童区见过类似描述的女人，陶然决定联系3楼服务台，但男孩突然指向清洁工身后的一个广告牌。",
+  "forbidden": [
+    "陶然带孩子离开服务台",
+    "广播中使用男孩提供的模糊衣着信息",
+    "保安突然返回解决事件",
+    "家长自动出现",
+    "男孩说出家长电话"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "男孩攥着的电影票上清晰印有“5号影厅 14:30”",
+      "character_interpretation": "这是唯一可验证的信息，广播必须基于此；男孩说的“妈妈穿红色”无法证实，可能误导。",
+      "character_next_action": "陶然按下广播按钮，播报：“请5号影厅14:30场次散场后走失男孩的家长速至一楼服务台。”",
+      "rejected_alternative": "她本可以加上“孩子说妈妈穿红色”，但意识到若信息错误会耽误时间。",
+      "immediate_consequence": "广播后，周围一些人转头，但无人立刻前来认领；男孩开始小声哭泣。",
+      "counterfactual_without_action": "如果不广播，家长可能继续在5楼寻找，延误更久。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "只有电影票线索，未采取行动",
+        "after": "广播已发出，但无立即响应，压力增大"
+      },
+      "cost_or_commitment": "陶然承担了广播无效带来的时间延误和男孩情绪压力。",
+      "next_constraint": "广播未能立即找到家长，必须寻找其他线索。",
+      "reader_must_infer": "陶然拒绝使用衣着信息是因为志愿者培训强调信息核实，而非冷漠。",
+      "narrator_must_not_state": [
+        "陶然内心对规则的不满",
+        "清洁工出现是巧合"
+      ]
+    },
+    {
+      "id": "CT02",
+      "kind": "evidence_to_action",
+      "visible_trigger": "一位清洁工路过，听到广播后说：“半小时前我在3楼儿童区打扫，好像有个女的在找孩子，急得不行。”",
+      "character_interpretation": "清洁工的话提供了新方向，但3楼与5楼不一致，可能家长已移动；需要核实。",
+      "character_next_action": "陶然请清洁工描述那女人的衣着，清洁工说“没注意，只记得她手里拿着爆米花桶”。陶然决定联系3楼服务台同事，请他们留意。",
+      "rejected_alternative": "她本可以立即带男孩去3楼，但违反不能离开岗位的约束。",
+      "immediate_consequence": "陶然拿起电话准备拨打3楼服务台，此时男孩突然扯她衣袖，指向清洁工身后的广告牌。",
+      "counterfactual_without_action": "如果忽略清洁工的信息，就只能被动等待家长来服务台。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "仅有5楼影厅线索",
+        "after": "获得3楼儿童区的新线索，并准备联系同事"
+      },
+      "cost_or_commitment": "陶然必须分配注意力同时处理电话和男孩的新动作。",
+      "next_constraint": "男孩的新动作可能提供更直接线索，但必须放下电话去观察。",
+      "reader_must_infer": "清洁工的出现并非偶然，商场人流大，清洁工常在各楼层移动。",
+      "narrator_must_not_state": [
+        "广告牌上具体是什么",
+        "男孩为什么指向广告牌"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "保安离开，男孩开始抽泣，电梯口又涌出一批人。",
+    "dominant_pressure": {
+      "kind": "information_gap",
+      "description": "缺少家长的具体位置和特征，时间流逝增加焦虑。"
+    },
+    "allowed_viewpoint_misread": "男孩可能把陶然的犹豫误解为不想帮忙。",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "家长实际位置",
+      "男孩指向广告牌的原因"
+    ],
+    "stop_state": {
+      "type": "information_conflict",
+      "visible_fact": "男孩指向清洁工身后的广告牌，而陶然正要联系3楼。",
+      "what_is_now_different": "原本单向的寻人流程被男孩的主动行为打断，出现新的线索方向。",
+      "must_not_append": "不得解释广告牌内容或男孩动机。"
+    },
+    "final_line_must_include": "广告牌"
+  }
+}

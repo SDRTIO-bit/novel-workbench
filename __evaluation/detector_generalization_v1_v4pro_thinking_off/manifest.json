@@ -1,0 +1,48 @@
+{
+  "experiment": "DETECTOR_GENERALIZATION_V1",
+  "git_commit": "610e2af05daa85b21adae8fce827dee4f7ac394e",
+  "seed": 20260719,
+  "groups": {
+    "A": "complete_planner",
+    "B": "writer_brief",
+    "C": "narrative_behaviour_brief"
+  },
+  "replicas_per_group": 2,
+  "case_start": 4,
+  "case_ids": [
+    "ROMANCE-01",
+    "ROMANCE-02",
+    "ROMANCE-03",
+    "ROMANCE-04",
+    "TASK-01",
+    "TASK-02",
+    "TASK-03",
+    "TASK-04"
+  ],
+  "writer_drafts_expected": 48,
+  "frozen_writer": {
+    "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+    "model_id": "deepseek-v4-pro",
+    "writer_prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 1800,
+    "timeout_seconds": 300
+  },
+  "frozen_planner": {
+    "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+    "model_id": "deepseek-v4-pro",
+    "prompt_version_id": "f9052f8a-dc4e-5408-b14e-fc1badaf57f8",
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 12288,
+    "timeout_seconds": 300
+  },
+  "rules": [
+    "One Planner call per scenario.",
+    "Two Writer calls per group per scenario.",
+    "No Critic, Reviser, Judge, TGbreak, retry, or candidate selection.",
+    "Detector feedback is observational and never enters a Writer prompt."
+  ],
+  "detector_status": "pending_external_measurement"
+}

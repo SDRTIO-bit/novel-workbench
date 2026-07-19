@@ -1,0 +1,170 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "顾栖在不能喊叫、不能直接质问的情况下，独自解决被程野错拿外套并带走社团钥匙的紧急问题，并在过程中发现钥匙去向的新事实。",
+  "location": "教学楼三楼走廊（近楼梯口）及通往操场的台阶",
+  "time": "放学铃响后约两分钟，走廊人群稀疏但尚未散尽",
+  "scene_state": {
+    "last_completed_action": "放学铃响，顾栖起身准备离开，发现椅背上挂着的深蓝外套不见了，转头看见同桌程野正穿着那件外套往操场方向跑。",
+    "present_characters": [
+      "顾栖",
+      "程野（已跑远）"
+    ],
+    "visible_facts": [
+      "程野穿着顾栖的深蓝外套正跑向操场",
+      "顾栖自己的外套还挂在椅背上（确认被拿错的是程野的外套？不对，是顾栖的外套被程野穿走）",
+      "走廊里还有其他学生陆续离开",
+      "程野的外套还挂在顾栖椅背上（如果程野错拿，他的外套应该留下）"
+    ],
+    "available_objects": [
+      "程野留在椅背上的外套（灰色连帽衫）",
+      "顾栖自己的书包和物品",
+      "走廊墙上的消防栓",
+      "楼梯口的垃圾桶",
+      "手机（在书包里）"
+    ],
+    "unresolved_problem": "社团钥匙在程野穿走的外套口袋里，而程野已经跑远，无法直接追回。",
+    "already_existing_constraints": [
+      "不能在教学楼走廊大声喊叫（违反纪律）",
+      "不能直接跑出教室追赶（可能引起围观）",
+      "不能凭空知道程野是否故意拿错",
+      "必须在短时间内拿到钥匙，否则社团活动无法进行"
+    ]
+  },
+  "characters": [
+    {
+      "name": "顾栖",
+      "goal": "在不违反纪律、不暴露自己与程野关系尴尬的前提下，尽快从程野处取回外套口袋里的社团钥匙。",
+      "known": [
+        "程野穿走了自己的深蓝外套",
+        "外套口袋里有一把今天必须交的社团钥匙",
+        "程野正往操场方向跑",
+        "程野自己的灰色连帽衫还挂在椅背上"
+      ],
+      "unknown": [
+        "程野是否意识到穿错了外套",
+        "程野去操场做什么",
+        "钥匙是否还在外套口袋里（可能掉落）",
+        "程野是否会很快返回"
+      ],
+      "mistaken_beliefs": [
+        "程野可能故意拿错外套来捉弄自己"
+      ],
+      "constraints": [
+        "不能在教学楼大声喊程野的名字",
+        "不能直接跑出教室引起注意",
+        "不能表现出对钥匙过于紧张（否则显得自己小气）",
+        "不能与程野发生正面冲突（维持表面关系）"
+      ],
+      "observed_evidence": [
+        "程野穿着自己的深蓝外套跑向操场",
+        "程野自己的灰色连帽衫挂在椅背上",
+        "外套口袋里没有钥匙掉落的声音（自己挂外套时确认过）",
+        "程野跑动时外套口袋有轻微晃动（钥匙可能还在）"
+      ],
+      "current_interpretation": "程野可能无意中拿错了外套，但他没有立即意识到，因为他穿着就直接跑了。钥匙应该还在口袋里，但必须在他离开校园前拿到。",
+      "how_interpretation_drives_action": "因此顾栖决定利用程野留下的灰色连帽衫作为交换工具，通过让其他同学转交或自己间接送还的方式，在不直接接触的情况下换回外套。"
+    }
+  ],
+  "concrete_problem": "顾栖如何在不喊叫、不追赶、不引起注意的前提下，让程野意识到拿错外套并归还，从而取回社团钥匙？",
+  "pressure": "社团钥匙必须在今天放学后交到活动室，而程野正带着外套往操场跑，时间紧迫且不能直接行动。",
+  "turning_point": "顾栖发现程野的灰色连帽衫口袋里有一张纸条，上面写着‘操场东门见’，这解释了程野的去向，但也意味着如果她直接送还外套，可能会撞见程野与某人会面，导致尴尬。",
+  "end_condition": "顾栖决定将灰色连帽衫交给一位可靠的同学（如班长）转交，并附上纸条说明拿错外套，但当她看向走廊时，发现程野已经折返，正站在楼梯口看着她，手里拿着那件深蓝外套。",
+  "forbidden": [
+    "不能直接喊程野名字",
+    "不能直接跑出教室追赶程野",
+    "不能直接质问程野是否故意",
+    "不能解释程野去操场东门见谁",
+    "不能出现程野的内心活动",
+    "不能提前揭示钥匙是否还在口袋里",
+    "不能使用手机联系程野（因为两人没有交换联系方式）",
+    "不能出现其他同学主动帮忙的情节（除非顾栖主动请求）"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "顾栖拿起程野留下的灰色连帽衫，发现口袋里有一张纸条，上面写着‘操场东门见’。",
+      "character_interpretation": "程野是赶着去操场东门见某人，所以匆忙中穿错了外套。他可能还没发现拿错，或者发现了但来不及换。",
+      "character_next_action": "顾栖决定不直接送还外套，而是找一位路过的同学（如班长）帮忙转交灰色连帽衫，并附上一张纸条说明拿错，希望程野看到后能换回来。",
+      "rejected_alternative": "顾栖考虑过自己直接跑到操场东门，但那样会撞见程野的会面，可能引发尴尬，而且会违反‘不能追赶’的自我约束。",
+      "immediate_consequence": "顾栖叫住了班长，将灰色连帽衫和纸条交给他，请他转交给程野。班长答应后走向操场。",
+      "counterfactual_without_action": "如果顾栖没有发现纸条，她可能会选择在走廊等待，希望程野自己发现拿错后返回，但那样会浪费更多时间，且钥匙可能被程野带出校园。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "顾栖持有程野的灰色连帽衫，但不知如何安全地换回外套；程野已跑远，钥匙可能被带走。",
+        "after": "顾栖已将灰色连帽衫交给班长转交，自己留在走廊等待结果；钥匙的去向取决于程野是否看到纸条并换回外套。"
+      },
+      "cost_or_commitment": "顾栖欠了班长一个人情，并且承担了纸条可能被程野忽略或误解的风险。",
+      "next_constraint": "顾栖不能离开走廊太远，必须等待班长带回消息或程野出现，否则无法确认钥匙是否归还。",
+      "reader_must_infer": "程野去操场东门见的人可能是他的朋友或社团成员，但纸条内容没有具体说明，读者需要猜测。",
+      "narrator_must_not_state": [
+        "不能说明程野是否故意拿错",
+        "不能说明纸条是谁写的",
+        "不能说明班长是否成功找到程野",
+        "不能说明钥匙是否还在口袋里"
+      ]
+    },
+    {
+      "id": "CT02",
+      "kind": "constraint_to_choice",
+      "visible_trigger": "顾栖在等待时，看到班长从操场方向跑回来，手里拿着那件深蓝外套，但表情有些慌张。",
+      "character_interpretation": "班长可能已经遇到程野，但发生了什么意外，导致班长没有直接换回外套，而是带着外套跑回来。",
+      "character_next_action": "顾栖迎上前去询问情况，班长告诉她程野看到纸条后只是笑了笑，说‘不用换了’，然后就把深蓝外套塞给班长，自己穿着灰色连帽衫跑向操场东门。",
+      "rejected_alternative": "顾栖原本可以继续等待程野亲自回来，但班长带回外套和程野的反应让她必须立即检查钥匙是否还在。",
+      "immediate_consequence": "顾栖接过外套，伸手进口袋一摸——钥匙不见了。口袋里只有一张纸条，上面写着‘钥匙我先保管，明天还你’。",
+      "counterfactual_without_action": "如果顾栖没有请班长转交，而是自己直接去操场东门，她可能会当场与程野对峙，但那样会破坏两人关系，且钥匙可能被程野故意藏起。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "顾栖等待班长带回外套，期望钥匙仍在口袋里。",
+        "after": "顾栖拿到外套，但钥匙被程野取走，只留下一张纸条，问题从‘如何取回钥匙’变为‘程野为什么拿走钥匙以及如何应对’。"
+      },
+      "cost_or_commitment": "顾栖失去了钥匙，但获得了程野留下的纸条，这暗示程野是有意为之，顾栖必须决定下一步行动（如直接去操场东门或等待明天）。",
+      "next_constraint": "顾栖不能立即去操场东门质问程野，因为那会撞见他的会面，且可能引发冲突；她必须在今天放学后拿到钥匙，否则社团活动无法进行。",
+      "reader_must_infer": "程野拿走钥匙可能是故意为之，目的是让顾栖主动找他，或者是为了报复之前的一些事情。读者需要猜测程野的动机。",
+      "narrator_must_not_state": [
+        "不能解释程野为什么拿走钥匙",
+        "不能说明程野与谁在操场东门见面",
+        "不能说明顾栖是否决定去操场东门",
+        "不能说明社团活动是否因此取消"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "放学铃响后，顾栖发现外套被程野穿走，而程野已经跑向操场。",
+    "dominant_pressure": {
+      "kind": "social_friction",
+      "description": "顾栖与程野之间存在着微妙的尴尬关系，她不能直接喊叫或追赶，否则会破坏表面和谐，同时社团钥匙的紧迫性加剧了选择压力。"
+    },
+    "allowed_viewpoint_misread": "顾栖可能误以为程野是故意捉弄她，但实际上程野可能只是匆忙中拿错，后来发现钥匙才临时起意。",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "程野去操场东门见谁",
+      "程野拿走钥匙的真正动机"
+    ],
+    "stop_state": {
+      "type": "information_conflict",
+      "visible_fact": "顾栖从外套口袋里摸出的不是钥匙，而是一张写着‘钥匙我先保管，明天还你’的纸条。",
+      "what_is_now_different": "顾栖原本以为程野只是无心拿错，现在发现程野是有意取走钥匙，问题性质从‘取回’变为‘应对程野的挑衅或暗示’。",
+      "must_not_append": "不得解释程野为什么留下纸条，也不得说明顾栖是否立即采取行动。"
+    },
+    "final_line_must_include": ""
+  }
+}

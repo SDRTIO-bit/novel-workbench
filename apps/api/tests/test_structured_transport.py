@@ -105,6 +105,24 @@ async def test_openai_compatible_text_mode_omits_response_format(monkeypatch):
 
 
 @pytest.mark.asyncio
+async def test_openai_compatible_disables_v4_pro_thinking_in_extra_body(monkeypatch):
+    import app.llm.openai_compatible as adapter
+
+    monkeypatch.setattr(adapter.httpx, "AsyncClient", _RecordingAsyncClient)
+    client = OpenAiCompatibleClient("https://example.test/v1", "secret")
+
+    await client.complete(LlmRequest(
+        system_prompt="system",
+        user_prompt="user",
+        model="deepseek-v4-pro",
+        reasoning_mode="disabled",
+    ))
+
+    assert _RecordingAsyncClient.body["thinking"] == {"type": "disabled"}
+    assert "reasoning_mode" not in _RecordingAsyncClient.body
+
+
+@pytest.mark.asyncio
 async def test_openai_compatible_preserves_length_and_missing_reasoning_metadata(monkeypatch):
     import app.llm.openai_compatible as adapter
 

@@ -28,7 +28,9 @@ class OpenAiCompatibleClient(BaseLlmClient):
             "max_tokens": request.max_output_tokens,
         }
         if request.reasoning_mode is not None:
-            body["reasoning_mode"] = request.reasoning_mode
+            # DeepSeek V4 Pro uses this OpenAI-compatible extension rather
+            # than a top-level reasoning_mode parameter.
+            body["thinking"] = {"type": request.reasoning_mode}
         if request.response_format == "json_object":
             body["response_format"] = {"type": "json_object"}
 

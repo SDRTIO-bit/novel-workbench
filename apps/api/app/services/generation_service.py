@@ -28,7 +28,7 @@ from app.services.tgbreak_service import (
 from app.services.tgbreak_writer_adapter import (
     build_tgbreak_project_data_from_writer_context,
 )
-from app.services.writer_brief import compile_writer_brief
+from app.services.writer_brief import compile_writer_input
 from app.services.reviser_patches import PatchApplicationError, apply_reviser_patches
 from app.tgbreak.models import TgbreakOutput
 from app.tgbreak.output import TgbreakOutputError, parse_tgbreak_response
@@ -210,7 +210,9 @@ class GenerationService:
             start = time.time()
 
             ordered_messages = None
-            reasoning_mode = None
+            reasoning_mode = "disabled" if model_id == "deepseek-v4-pro" else None
+            if reasoning_mode:
+                params["thinking"] = reasoning_mode
             if writer_prompt_mode == "tgbreak":
                 preset, profile = await load_tgbreak_profile(
                     self.session, tgbreak_profile_id
@@ -637,12 +639,15 @@ class GenerationService:
                     ctx_req.scene_plan = json.loads(prev_candidate.parsed_output_json)
                     if stage == "writer":
                         try:
-                            ctx_req.writer_brief = compile_writer_brief(ctx_req.scene_plan)
+                            ctx_req.writer_brief = compile_writer_input(
+                                ctx_req.scene_plan,
+                                override.get("writer_input_mode", "writer_brief"),
+                            )
                         except ValueError as brief_error:
                             raise bad_request(
                                 "WRITER_BRIEF_INVALID",
-                                "所选 Planner 候选无法编译为 Writer Brief"
-                                f"（需要 planner v2 输出）: {brief_error}",
+                                "所选 Planner 候选无法编译为 Writer 输入"
+                                f"（需要有效的实验输入模式与 planner v2 输出）: {brief_error}",
                             ) from brief_error
                     guardrails = ctx_req.scene_plan.get("tempo_guardrails")
                     # An explicit per-run guardrail is an author decision. The

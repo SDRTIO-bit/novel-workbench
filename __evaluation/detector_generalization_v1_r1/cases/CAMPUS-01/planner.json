@@ -1,0 +1,149 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "陆祈在不直接揭穿的前提下，用一个具体动作让沈晚自己发现借书证夹在习题册中，同时维持纪律委员的立场不被误解。",
+  "location": "大学图书馆入口门禁处",
+  "time": "午间12:10，门禁排队高峰",
+  "scene_state": {
+    "last_completed_action": "沈晚在书包里翻找借书证，没有找到，准备向管理员解释。",
+    "present_characters": [
+      "陆祈",
+      "沈晚"
+    ],
+    "visible_facts": [
+      "沈晚的借书证夹在陆祈的习题册里",
+      "沈晚正在翻找借书证",
+      "门禁队伍正在向前移动",
+      "管理员在入口处等待验证"
+    ],
+    "available_objects": [
+      "陆祈的习题册",
+      "沈晚的借书证",
+      "沈晚的书包",
+      "门禁闸机"
+    ],
+    "unresolved_problem": "沈晚没有意识到借书证的位置，需要在不引起尴尬的情况下让她发现。",
+    "already_existing_constraints": [
+      "陆祈不能当众揭穿沈晚早晨借过自己的册子",
+      "陆祈不能直接说‘你的证在我这里’"
+    ]
+  },
+  "characters": [
+    {
+      "name": "陆祈",
+      "goal": "在不违反纪律委员身份的前提下，让沈晚自己发现借书证。",
+      "known": [
+        "借书证夹在自己的习题册里",
+        "沈晚早晨借过自己的习题册"
+      ],
+      "unknown": [
+        "沈晚是否记得早晨借过册子"
+      ],
+      "mistaken_beliefs": [
+        "沈晚可能因为着急而忽略细节"
+      ],
+      "constraints": [
+        "不能直接揭穿",
+        "不能显得刻意帮助"
+      ],
+      "observed_evidence": [
+        "沈晚翻找书包的动作越来越急",
+        "沈晚准备向管理员解释"
+      ],
+      "current_interpretation": "沈晚完全没意识到证在册子里，需要给她一个自然的提示。",
+      "how_interpretation_drives_action": "陆祈决定以整理习题册为由，把册子翻开，让证掉出来或让沈晚看见。"
+    },
+    {
+      "name": "沈晚",
+      "goal": "找到借书证，顺利进入图书馆。",
+      "known": [
+        "借书证不见了",
+        "自己早晨用过习题册"
+      ],
+      "unknown": [
+        "借书证的具体位置"
+      ],
+      "mistaken_beliefs": [
+        "可能把证忘在宿舍了"
+      ],
+      "constraints": [
+        "不想在管理员面前显得丢三落四"
+      ],
+      "observed_evidence": [
+        "陆祈拿出习题册并翻开"
+      ],
+      "current_interpretation": "陆祈可能只是在整理东西，与自己无关。",
+      "how_interpretation_drives_action": "沈晚继续翻找书包，但余光注意到陆祈的动作。"
+    }
+  ],
+  "concrete_problem": "陆祈如何用一个具体动作让沈晚自己发现借书证夹在习题册里，而不直接说明？",
+  "pressure": "门禁队伍正在向前移动，沈晚的焦急情绪逐渐上升，陆祈必须在几秒内做出选择。",
+  "turning_point": "陆祈选择以整理习题册为借口，翻开册子并让借书证滑落一角，沈晚因此注意到证的位置。",
+  "end_condition": "沈晚从陆祈的习题册中抽出借书证，两人目光短暂交汇，陆祈没有解释。",
+  "forbidden": [
+    "陆祈直接说出‘你的证在我这里’或类似揭穿话语",
+    "沈晚主动问陆祈是否看到自己的证",
+    "管理员介入或帮忙寻找",
+    "陆祈表现出刻意帮忙的意图"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "沈晚准备向管理员解释，声音中带着焦急。",
+      "character_interpretation": "陆祈认为沈晚完全没意识到证在册子里，需要立即行动。",
+      "character_next_action": "陆祈从书包里拿出习题册，假装整理书页，故意将册子翻开，让夹在其中的借书证露出一角。",
+      "rejected_alternative": "陆祈可以选择直接提醒，但那样会暴露自己知道沈晚早晨借过册子。",
+      "immediate_consequence": "沈晚的目光被露出的证吸引，她愣了一下，伸手抽出借书证。",
+      "counterfactual_without_action": "如果陆祈不行动，沈晚可能会向管理员解释后离开，之后才发现证夹在册子里。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "沈晚在翻找书包，陆祈在排队等待。",
+        "after": "沈晚从陆祈的习题册中抽出借书证，两人目光短暂交汇。"
+      },
+      "cost_or_commitment": "陆祈必须承受沈晚可能产生的怀疑：为什么陆祈会翻开那本册子？",
+      "next_constraint": "陆祈不能解释自己为什么恰好在那时翻开习题册。",
+      "reader_must_infer": "陆祈是故意翻开册子的，而且他知道证就在那里。",
+      "narrator_must_not_state": [
+        "陆祈是故意翻开册子的",
+        "陆祈知道证在册子里是因为早晨借给了沈晚"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "沈晚在书包里翻找借书证，无果，准备向管理员解释。",
+    "dominant_pressure": {
+      "kind": "social_friction",
+      "description": "陆祈不能直接揭穿，沈晚的焦急与陆祈的克制之间形成张力。"
+    },
+    "allowed_viewpoint_misread": "沈晚可能认为陆祈只是巧合在整理习题册。",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "陆祈的真实动机"
+    ],
+    "stop_state": {
+      "type": "relationship_shift",
+      "visible_fact": "沈晚从陆祈的习题册中抽出借书证，两人目光短暂交汇。",
+      "what_is_now_different": "沈晚意识到陆祈可能知道什么，但陆祈没有解释，两人之间产生一层未言明的默契。",
+      "must_not_append": "不得解释沈晚是否感激或陆祈是否故意。"
+    },
+    "final_line_must_include": ""
+  }
+}

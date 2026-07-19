@@ -1,0 +1,434 @@
+[
+  {
+    "ordinal": 1,
+    "submission_id": "1C8229862A04",
+    "text_start_character": 38,
+    "text_end_character": 1634
+  },
+  {
+    "ordinal": 2,
+    "submission_id": "15E0964301DA",
+    "text_start_character": 1672,
+    "text_end_character": 2221
+  },
+  {
+    "ordinal": 3,
+    "submission_id": "6A958902EC56",
+    "text_start_character": 2259,
+    "text_end_character": 3436
+  },
+  {
+    "ordinal": 4,
+    "submission_id": "8E4BAE6E7C64",
+    "text_start_character": 3474,
+    "text_end_character": 4323
+  },
+  {
+    "ordinal": 5,
+    "submission_id": "73F96AE403DE",
+    "text_start_character": 4361,
+    "text_end_character": 5075
+  },
+  {
+    "ordinal": 6,
+    "submission_id": "802832D461D7",
+    "text_start_character": 5113,
+    "text_end_character": 6961
+  },
+  {
+    "ordinal": 7,
+    "submission_id": "88870578E971",
+    "text_start_character": 6999,
+    "text_end_character": 8756
+  },
+  {
+    "ordinal": 8,
+    "submission_id": "85652FA8FECF",
+    "text_start_character": 8794,
+    "text_end_character": 9652
+  },
+  {
+    "ordinal": 9,
+    "submission_id": "C554886D326B",
+    "text_start_character": 9690,
+    "text_end_character": 10820
+  },
+  {
+    "ordinal": 10,
+    "submission_id": "C5F667697453",
+    "text_start_character": 10858,
+    "text_end_character": 11846
+  },
+  {
+    "ordinal": 11,
+    "submission_id": "9C69909F9384",
+    "text_start_character": 11884,
+    "text_end_character": 13137
+  },
+  {
+    "ordinal": 12,
+    "submission_id": "C0DB355D7AA1",
+    "text_start_character": 13175,
+    "text_end_character": 14786
+  },
+  {
+    "ordinal": 13,
+    "submission_id": "1F424F1FF868",
+    "text_start_character": 14824,
+    "text_end_character": 15510
+  },
+  {
+    "ordinal": 14,
+    "submission_id": "5465AEB3D192",
+    "text_start_character": 15548,
+    "text_end_character": 16330
+  },
+  {
+    "ordinal": 15,
+    "submission_id": "EBE37B660FD1",
+    "text_start_character": 16368,
+    "text_end_character": 16910
+  },
+  {
+    "ordinal": 16,
+    "submission_id": "4F6D90068DED",
+    "text_start_character": 16948,
+    "text_end_character": 18818
+  },
+  {
+    "ordinal": 17,
+    "submission_id": "386A4EDDB7B0",
+    "text_start_character": 18856,
+    "text_end_character": 19664
+  },
+  {
+    "ordinal": 18,
+    "submission_id": "870D898C8DD8",
+    "text_start_character": 19702,
+    "text_end_character": 20595
+  },
+  {
+    "ordinal": 19,
+    "submission_id": "94FA370047DB",
+    "text_start_character": 20633,
+    "text_end_character": 21450
+  },
+  {
+    "ordinal": 20,
+    "submission_id": "22BF0E93AA3B",
+    "text_start_character": 21488,
+    "text_end_character": 22305
+  },
+  {
+    "ordinal": 21,
+    "submission_id": "3FFAC3EE2EC4",
+    "text_start_character": 22343,
+    "text_end_character": 23293
+  },
+  {
+    "ordinal": 22,
+    "submission_id": "4E115809BBB3",
+    "text_start_character": 23331,
+    "text_end_character": 24374
+  },
+  {
+    "ordinal": 23,
+    "submission_id": "641B825DD59F",
+    "text_start_character": 24412,
+    "text_end_character": 25291
+  },
+  {
+    "ordinal": 24,
+    "submission_id": "AA0550A0DEFB",
+    "text_start_character": 25329,
+    "text_end_character": 26565
+  },
+  {
+    "ordinal": 25,
+    "submission_id": "ADC622545CB3",
+    "text_start_character": 26603,
+    "text_end_character": 27385
+  },
+  {
+    "ordinal": 26,
+    "submission_id": "608C0E2DF3CC",
+    "text_start_character": 27423,
+    "text_end_character": 28542
+  },
+  {
+    "ordinal": 27,
+    "submission_id": "84B638B0CAC5",
+    "text_start_character": 28580,
+    "text_end_character": 29212
+  },
+  {
+    "ordinal": 28,
+    "submission_id": "EA1A725411FF",
+    "text_start_character": 29250,
+    "text_end_character": 29971
+  },
+  {
+    "ordinal": 29,
+    "submission_id": "68EF500DF8D6",
+    "text_start_character": 30009,
+    "text_end_character": 31121
+  },
+  {
+    "ordinal": 30,
+    "submission_id": "B1872A59F2D9",
+    "text_start_character": 31159,
+    "text_end_character": 32081
+  },
+  {
+    "ordinal": 31,
+    "submission_id": "145F79A8B34B",
+    "text_start_character": 32119,
+    "text_end_character": 32954
+  },
+  {
+    "ordinal": 32,
+    "submission_id": "2DDB3A7A654F",
+    "text_start_character": 32992,
+    "text_end_character": 33573
+  },
+  {
+    "ordinal": 33,
+    "submission_id": "89CDEDC20FFC",
+    "text_start_character": 33611,
+    "text_end_character": 34630
+  },
+  {
+    "ordinal": 34,
+    "submission_id": "AB3E7779CE98",
+    "text_start_character": 34668,
+    "text_end_character": 35522
+  },
+  {
+    "ordinal": 35,
+    "submission_id": "36876E2A73B8",
+    "text_start_character": 35560,
+    "text_end_character": 36569
+  },
+  {
+    "ordinal": 36,
+    "submission_id": "872BCEA41960",
+    "text_start_character": 36607,
+    "text_end_character": 37570
+  },
+  {
+    "ordinal": 37,
+    "submission_id": "D95D066683E7",
+    "text_start_character": 37608,
+    "text_end_character": 38550
+  },
+  {
+    "ordinal": 38,
+    "submission_id": "C7312B9D519A",
+    "text_start_character": 38588,
+    "text_end_character": 39125
+  },
+  {
+    "ordinal": 39,
+    "submission_id": "8BC1A34B499F",
+    "text_start_character": 39163,
+    "text_end_character": 40267
+  },
+  {
+    "ordinal": 40,
+    "submission_id": "121214C72646",
+    "text_start_character": 40305,
+    "text_end_character": 41205
+  },
+  {
+    "ordinal": 41,
+    "submission_id": "8955643FE913",
+    "text_start_character": 41243,
+    "text_end_character": 42127
+  },
+  {
+    "ordinal": 42,
+    "submission_id": "E33DABCF33F4",
+    "text_start_character": 42165,
+    "text_end_character": 43334
+  },
+  {
+    "ordinal": 43,
+    "submission_id": "EB40269DE67D",
+    "text_start_character": 43372,
+    "text_end_character": 44302
+  },
+  {
+    "ordinal": 44,
+    "submission_id": "DBBB6A561801",
+    "text_start_character": 44340,
+    "text_end_character": 45132
+  },
+  {
+    "ordinal": 45,
+    "submission_id": "92AD215A62B8",
+    "text_start_character": 45170,
+    "text_end_character": 46010
+  },
+  {
+    "ordinal": 46,
+    "submission_id": "45B1AC531695",
+    "text_start_character": 46048,
+    "text_end_character": 46944
+  },
+  {
+    "ordinal": 47,
+    "submission_id": "70F5BB17FBF0",
+    "text_start_character": 46982,
+    "text_end_character": 48579
+  },
+  {
+    "ordinal": 48,
+    "submission_id": "9440D498294D",
+    "text_start_character": 48617,
+    "text_end_character": 49834
+  },
+  {
+    "ordinal": 49,
+    "submission_id": "F33AEE1CF00C",
+    "text_start_character": 49872,
+    "text_end_character": 51437
+  },
+  {
+    "ordinal": 50,
+    "submission_id": "5B01059F28DA",
+    "text_start_character": 51475,
+    "text_end_character": 52311
+  },
+  {
+    "ordinal": 51,
+    "submission_id": "35536A63CD94",
+    "text_start_character": 52349,
+    "text_end_character": 52972
+  },
+  {
+    "ordinal": 52,
+    "submission_id": "1E843B2C135B",
+    "text_start_character": 53010,
+    "text_end_character": 53832
+  },
+  {
+    "ordinal": 53,
+    "submission_id": "152E345C0000",
+    "text_start_character": 53870,
+    "text_end_character": 54884
+  },
+  {
+    "ordinal": 54,
+    "submission_id": "BC967899CB85",
+    "text_start_character": 54922,
+    "text_end_character": 55616
+  },
+  {
+    "ordinal": 55,
+    "submission_id": "3DA50EB5F0E3",
+    "text_start_character": 55654,
+    "text_end_character": 57027
+  },
+  {
+    "ordinal": 56,
+    "submission_id": "8DE191B7519D",
+    "text_start_character": 57065,
+    "text_end_character": 57728
+  },
+  {
+    "ordinal": 57,
+    "submission_id": "769047A59AE4",
+    "text_start_character": 57766,
+    "text_end_character": 58691
+  },
+  {
+    "ordinal": 58,
+    "submission_id": "67E4F6398EC1",
+    "text_start_character": 58729,
+    "text_end_character": 59520
+  },
+  {
+    "ordinal": 59,
+    "submission_id": "B8B7FF028E4A",
+    "text_start_character": 59558,
+    "text_end_character": 60352
+  },
+  {
+    "ordinal": 60,
+    "submission_id": "94A2882C25F4",
+    "text_start_character": 60390,
+    "text_end_character": 61350
+  },
+  {
+    "ordinal": 61,
+    "submission_id": "465EDC3A543D",
+    "text_start_character": 61388,
+    "text_end_character": 62570
+  },
+  {
+    "ordinal": 62,
+    "submission_id": "5EBE07BC11B5",
+    "text_start_character": 62608,
+    "text_end_character": 63446
+  },
+  {
+    "ordinal": 63,
+    "submission_id": "E5874F6B6CA4",
+    "text_start_character": 63484,
+    "text_end_character": 65159
+  },
+  {
+    "ordinal": 64,
+    "submission_id": "5B3C08116C62",
+    "text_start_character": 65197,
+    "text_end_character": 66167
+  },
+  {
+    "ordinal": 65,
+    "submission_id": "6727CF66E49C",
+    "text_start_character": 66205,
+    "text_end_character": 66921
+  },
+  {
+    "ordinal": 66,
+    "submission_id": "D721AA67AD28",
+    "text_start_character": 66959,
+    "text_end_character": 68003
+  },
+  {
+    "ordinal": 67,
+    "submission_id": "13D9D662A81B",
+    "text_start_character": 68041,
+    "text_end_character": 69019
+  },
+  {
+    "ordinal": 68,
+    "submission_id": "BD049BFA8CF2",
+    "text_start_character": 69057,
+    "text_end_character": 69754
+  },
+  {
+    "ordinal": 69,
+    "submission_id": "04159CD2958A",
+    "text_start_character": 69792,
+    "text_end_character": 70358
+  },
+  {
+    "ordinal": 70,
+    "submission_id": "A17DB20A459C",
+    "text_start_character": 70396,
+    "text_end_character": 71363
+  },
+  {
+    "ordinal": 71,
+    "submission_id": "ED1295B61D88",
+    "text_start_character": 71401,
+    "text_end_character": 72411
+  },
+  {
+    "ordinal": 72,
+    "submission_id": "51F3120ED25D",
+    "text_start_character": 72449,
+    "text_end_character": 73246
+  }
+]
