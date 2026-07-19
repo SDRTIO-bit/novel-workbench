@@ -1,0 +1,134 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "郑宣必须在手机电量耗尽前，根据有限线索制定一条覆盖路线，找到自己的车。",
+  "location": "商场B2地下车库",
+  "time": "商场打烊后，深夜",
+  "scene_state": {
+    "last_completed_action": "郑宣在B2层发现至少二十根蓝色柱子，无法立即确定停车位置。",
+    "present_characters": [
+      "郑宣"
+    ],
+    "visible_facts": [
+      "车库广播已关闭",
+      "手机剩余电量为8%",
+      "B2层有超过二十根蓝色柱子",
+      "车库内灯光昏暗，部分区域有阴影"
+    ],
+    "available_objects": [
+      "手机（剩余8%电量）",
+      "车钥匙",
+      "商场购物袋",
+      "蓝色柱子上的编号或标记"
+    ],
+    "unresolved_problem": "郑宣无法回忆车停在具体哪根蓝色柱子旁，且不能逐一检查所有柱子。",
+    "already_existing_constraints": [
+      "不能每根柱子都去找",
+      "手机电量仅剩8%",
+      "车库广播已关闭",
+      "必须做出覆盖路线选择"
+    ]
+  },
+  "characters": [
+    {
+      "name": "郑宣",
+      "goal": "在手机断电前找到车，或接受放弃的可见状态",
+      "known": [
+        "车停在蓝色柱子旁",
+        "B2层有至少二十根蓝色柱子",
+        "手机电量8%",
+        "不能每根柱子都找"
+      ],
+      "unknown": [
+        "具体是哪根蓝色柱子",
+        "手机剩余电量是否足够支持手电筒或导航",
+        "是否有其他线索（如购物袋内容、停车时拍的照片）"
+      ],
+      "mistaken_beliefs": [
+        "可能认为所有蓝色柱子外观完全一致，忽略柱子上的编号或细微差异"
+      ],
+      "constraints": [
+        "不能逐一检查所有蓝色柱子",
+        "手机电量有限，不能持续使用手电筒或地图",
+        "必须尽快做出路线决策"
+      ],
+      "observed_evidence": [
+        "蓝色柱子分布在B2层的不同区域，有些靠近电梯口，有些在深处",
+        "手机屏幕显示电量8%，信号微弱",
+        "部分柱子旁有数字编号，但光线昏暗不易看清"
+      ],
+      "current_interpretation": "他意识到必须利用有限线索（如停车时的记忆碎片、柱子编号规律）制定一条高效搜索路径，否则会困在车库里。",
+      "how_interpretation_drives_action": "他决定先查看手机里是否有停车时的照片或笔记，然后根据剩余电量规划一条覆盖最多可能性柱子的路线。"
+    }
+  ],
+  "concrete_problem": "郑宣必须决定先检查哪根蓝色柱子，以及如何用最少步数覆盖最可能停车的区域，同时为手机断电后的情况做准备。",
+  "pressure": "手机电量正在快速消耗，每拖延一分钟，找到车的可能性就降低一分。",
+  "turning_point": "郑宣在查看手机时，发现一张模糊的停车照片，照片中柱子旁有一个独特的污渍标记，他必须决定是相信这个新线索改变路线，还是坚持原计划。",
+  "end_condition": "郑宣根据新发现的线索调整了搜索路线，最终在一根蓝色柱子旁找到了自己的车，或者因手机断电而被迫放弃，坐在某个柱基旁等待。",
+  "forbidden": [
+    "不能通过外部帮助（如保安、其他车主）找到车",
+    "不能使用手机充电或备用电源",
+    "不能回忆起精确的停车位置",
+    "不能使用车库监控或广播系统"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "手机相册里有一张停车时拍的模糊照片，显示蓝色柱子旁有一块明显的黑色污渍。",
+      "character_interpretation": "郑宣认为这个污渍是独一无二的，可以帮助他快速定位那根特定的柱子，从而缩小搜索范围。",
+      "character_next_action": "他决定优先检查那些可能带有类似污渍的柱子，从最近的一根开始，按顺时针方向扫描。",
+      "rejected_alternative": "他本可以忽略照片，继续按区域顺序盲目搜索，但那样会浪费更多电量和时间。",
+      "immediate_consequence": "他在第三根检查的柱子上发现了相似的污渍，但发现车不在那里，原来污渍在多个柱子上都存在。",
+      "counterfactual_without_action": "如果他不依据污渍线索行动，他可能会在更远的区域漫无目的地寻找，手机电量更快耗尽。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "郑宣没有明确的搜索方向，仅凭记忆中的蓝色柱子。",
+        "after": "郑宣获得了一个具体但可能误导的线索（污渍），并据此调整了路线，但发现线索并非唯一。"
+      },
+      "cost_or_commitment": "他消耗了约2%的手机电量用于查看照片和手电筒照明。",
+      "next_constraint": "污渍并非唯一标识，他必须重新评估路线，且手机电量降至6%。",
+      "reader_must_infer": "郑宣是否意识到污渍的普遍性意味着他必须寻找其他更可靠的标识？",
+      "narrator_must_not_state": [
+        "不要直接说明郑宣内心的挫败感，而是通过他攥紧手机的动作来暗示。",
+        "不要直接说‘他意识到自己犯了错’，而是让他重新审视柱子上的其他特征。"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "手机电量从8%跳至7%，郑宣站在电梯口，面对二十多根蓝色柱子，不知从何开始。",
+    "dominant_pressure": {
+      "kind": "resource_constraint",
+      "description": "手机电量是核心限制，但信息不足（information_gap）加剧了决策压力，迫使郑宣必须在资源耗尽前做出选择。"
+    },
+    "allowed_viewpoint_misread": "读者可能误以为污渍是唯一线索，从而预期郑宣会很快找到车。",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "郑宣最终是否找到车的具体过程，留给下一章"
+    ],
+    "stop_state": {
+      "type": "physical_change",
+      "visible_fact": "郑宣的手机屏幕彻底变黑，电量耗尽。",
+      "what_is_now_different": "他失去了唯一的光源和潜在的信息来源，必须完全依靠记忆和触觉。",
+      "must_not_append": "不要描述他是否已经找到车，只停留在断电那一刻的状态。"
+    },
+    "final_line_must_include": "屏幕黑了。"
+  }
+}

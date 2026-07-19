@@ -1,0 +1,185 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "陈川在闭馆前发现自己的《电路原理》被陌生女生夹在归还车里推走，他必须在不违反图书馆规则的情况下，用一个现场物件使书被退回，从而取回夹在书里的答辩笔记。",
+  "location": "大学图书馆借阅区/归还车附近",
+  "time": "工作日傍晚，图书馆闭馆前十分钟",
+  "scene_state": {
+    "last_completed_action": "陈川从书架间返回阅览桌，发现桌上的《电路原理》消失，同时看到一个陌生女生将书夹在归还车中推走。",
+    "present_characters": [
+      "陈川",
+      "陌生女生",
+      "图书馆管理员"
+    ],
+    "visible_facts": [
+      "归还车停在借阅区出口附近",
+      "女生推着归还车走向电梯方向",
+      "陈川的桌上只剩草稿纸和笔",
+      "图书馆广播提醒闭馆"
+    ],
+    "available_objects": [
+      "归还车",
+      "其他书籍",
+      "草稿纸",
+      "笔",
+      "书包",
+      "学生卡"
+    ],
+    "unresolved_problem": "陈川的《电路原理》被推入归还车，但他不能直接翻找回车，也不能大声喊人，必须让书被退回。",
+    "already_existing_constraints": [
+      "图书馆规定归还车内的书不能由读者自行取出",
+      "闭馆在即，时间紧迫",
+      "不能大声喧哗"
+    ]
+  },
+  "characters": [
+    {
+      "name": "陈川",
+      "goal": "取回夹在《电路原理》里的答辩笔记，但不能违反图书馆规定或引起冲突。",
+      "known": [
+        "自己的《电路原理》被女生错拿放入归还车",
+        "书里夹着明天答辩要用的重要笔记",
+        "归还车的书只能由管理员处理"
+      ],
+      "unknown": [
+        "女生是否意识到拿错书",
+        "女生推车去往何处",
+        "管理员是否会立即处理归还车"
+      ],
+      "mistaken_beliefs": [
+        "女生可能是故意拿走书"
+      ],
+      "constraints": [
+        "不能大声喊人",
+        "不能翻找回车",
+        "不能直接抢回书"
+      ],
+      "observed_evidence": [
+        "女生推着归还车离开时的背影",
+        "归还车里露出《电路原理》的封面",
+        "桌上只剩自己的草稿纸"
+      ],
+      "current_interpretation": "女生无意中拿错了书，但她似乎很着急，没注意到书不是她的。",
+      "how_interpretation_drives_action": "陈川决定不追赶女生，而是利用现场物件制造一个理由让管理员主动退回那本书。"
+    },
+    {
+      "name": "陌生女生",
+      "goal": "尽快归还一批书后离开图书馆，可能赶时间。",
+      "known": [
+        "自己有一批书要归还",
+        "归还车是图书馆公用的"
+      ],
+      "unknown": [
+        "错拿了陈川的《电路原理》",
+        "书里夹着重要笔记"
+      ],
+      "mistaken_beliefs": [
+        "归还车里的书都是自己借的"
+      ],
+      "constraints": [
+        "可能赶时间",
+        "对图书馆环境不熟悉"
+      ],
+      "observed_evidence": [],
+      "current_interpretation": "",
+      "how_interpretation_drives_action": ""
+    },
+    {
+      "name": "图书馆管理员",
+      "goal": "在闭馆前完成归还图书的整理，维持秩序。",
+      "known": [
+        "闭馆时间快到了",
+        "归还车需要清点"
+      ],
+      "unknown": [
+        "归还车里有不属于归还的书",
+        "陈川的笔记夹在书里"
+      ],
+      "mistaken_beliefs": [
+        "归还车里的书都是读者正常归还的"
+      ],
+      "constraints": [
+        "必须按流程处理归还书",
+        "不能随意让读者取回归还车里的书"
+      ],
+      "observed_evidence": [],
+      "current_interpretation": "",
+      "how_interpretation_drives_action": ""
+    }
+  ],
+  "concrete_problem": "陈川如何在不接触归还车的情况下，让管理员从归还车中取出《电路原理》并发现笔记？",
+  "pressure": "闭馆广播已经响起，管理员即将推走归还车，时间窗口正在关闭。",
+  "turning_point": "陈川将写有“内有笔记，请退回”的草稿纸折叠后，用笔压在自己空荡的桌上，然后走向管理员求助，声称自己还书时误将笔记夹入，请求帮忙找回。管理员在桌上发现纸条后，检查归还车并取出那本《电路原理》，发现笔记，将书退回给陈川。",
+  "end_condition": "管理员将《电路原理》交还给陈川，笔记完好无损，陈川在闭馆前离开。",
+  "forbidden": [
+    "陈川直接翻找回车",
+    "陈川大声喊住女生",
+    "女生主动发现拿错书",
+    "管理员主动发现错误",
+    "笔记丢失或损坏",
+    "陈川与女生发生正面冲突",
+    "使用手机等电子设备",
+    "其他读者介入"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "归还车里露出《电路原理》的封面，但女生已推车走远。",
+      "character_interpretation": "陈川意识到女生是无意拿错，且自己不能追上去抢夺，必须让书在归还流程中被拦截。",
+      "character_next_action": "陈川用草稿纸写下“内有笔记，请退回”并放在自己空荡的桌上，然后走向管理员求助。",
+      "rejected_alternative": "陈川本可以悄悄跟着女生，趁她不注意取回书，但这样可能被误认为偷书。",
+      "immediate_consequence": "管理员注意到桌上的纸条，在陈川的请求下检查归还车，找到了那本《电路原理》。",
+      "counterfactual_without_action": "如果陈川不放置纸条并求助，管理员会直接将归还车推走，笔记可能丢失。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "《电路原理》在归还车中，无人知晓内有笔记",
+        "after": "管理员取出《电路原理》，发现笔记，准备退回给陈川"
+      },
+      "cost_or_commitment": "陈川暴露了自己粗心夹笔记的事实，可能被管理员轻微责备。",
+      "next_constraint": "陈川必须向管理员解释情况并接受可能的批评。",
+      "reader_must_infer": "陈川的纸条是故意留给管理员看的，以制造一个合理的检查理由。",
+      "narrator_must_not_state": [
+        "陈川的内心完全镇定",
+        "纸条是提前准备好的计划"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "闭馆广播响起，管理员开始向归还车走去",
+    "dominant_pressure": {
+      "kind": "resource_constraint",
+      "description": "时间紧迫，一旦归还车被推走，笔记可能再也找不回来。"
+    },
+    "allowed_viewpoint_misread": "管理员可能以为陈川是粗心的读者，而没意识到这是故意设计的求助。",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "女生是否最终发现拿错书",
+      "陈川是否对女生有后续印象"
+    ],
+    "stop_state": {
+      "type": "physical_change",
+      "visible_fact": "管理员将《电路原理》交到陈川手中，笔记夹在书页间完好。",
+      "what_is_now_different": "书和笔记回到陈川手中，归还危机解除。",
+      "must_not_append": "不得描写女生后来的行为或管理员的事后评价。"
+    },
+    "final_line_must_include": "书页间露出笔记的一角。"
+  }
+}

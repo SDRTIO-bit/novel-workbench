@@ -1,0 +1,59 @@
+{
+  "group": "ROUTE-C_OBJECT_CAUSAL",
+  "replica": 1,
+  "mode": "narrative_route",
+  "candidate_id": "14cde2ed-0af2-49f5-b13b-384a56d29d54",
+  "attempt_number": 1,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "route_decision": {
+      "route_name": "C_OBJECT_CAUSAL",
+      "classifier_version": "narrative-route-v1",
+      "decision_reasons": [
+        "scene_state.available_objects is non-empty",
+        "causal_transitions contains counterfactual_without_action or rejected_alternative",
+        "character_next_action involves physical object manipulation"
+      ],
+      "matched_rules": [
+        "RULE_C_OBJECT_CAUSAL"
+      ],
+      "rejected_routes": []
+    },
+    "compiled_brief_hash": "4884a09d1fe62b9a25aad055711d0b53b65ea3236a0b10b1dac155bde36eb095",
+    "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "赵遥站在课桌旁，盯着那个灰色书包看了三秒。\n\n不是她的。\n\n她的书包带子上挂着一个红色小铃铛，去年生日同桌送的。眼前这个书包同样是灰色帆布面，同样的黑色拉链，但带子上什么都没有。空的。\n\n她抬头看向走廊窗外。\n\n徐帆正穿过教学楼和实验楼之间的空地，肩上背着一个灰色书包。距离太远，看不清细节，但那个背影走得不快，书包在他肩上一晃一晃的。离走廊拐角还有大约二十米。过了那个拐角，就是实验楼的侧门。\n\n赵遥的手指按在窗框上。\n\n她可以跑出去。走廊尽头就是楼梯口，跑下去用不了三十秒。追上他，把手里这个书包举起来，说“你拿错了”——然后周围路过的同学都会看过来。徐帆会站在空地中间，背着她的书包，拉链上挂着那个红色小铃铛，所有人都能看到。\n\n她没有动。\n\n窗外的身影又往前走了几步。\n\n赵遥转过身，视线扫过走廊墙壁。一张褪色的社团招新海报贴在公告栏边上，边角翘起，露出后面发黄的胶痕。海报下面是公用失物招领箱，一个敞口的塑料收纳箱，里面躺着两把雨伞和一只单只手套。\n\n她走过去，捏住海报翘起的那一角，用力一撕。\n\n纸张发出干燥的撕裂声。她撕下一块巴掌大的空白边角，又从笔袋里摸出黑色水笔，在海报纸背面画起来。一个书包的简笔轮廓，两条带子，其中一条带子末端画了个小圆圈。她在圆圈旁边写了四个字：红色挂饰。\n\n笔尖停顿了一下。她又加了一行：失主请联系高一三班赵遥。\n\n她把海报纸片对折，放进失物招领箱，压在雨伞上面。纸片露出一角，画的那个小圆圈刚好朝上。\n\n赵遥走回窗边。\n\n徐帆已经走到空地的中段。他停下来，好像在翻书包侧袋找什么东西。手伸进去，又抽出来，空的。他低头看了一眼书包正面，然后拉开主拉链。\n\n赵遥攥紧了窗框。\n\n徐帆的动作停住了。他站在空地中央，一只手还伸在拉开的书包里，头低着，整个人定在那里。过了几秒，他把拉链拉上，转过身。\n\n他转过身，朝教学楼的方向走了回来。",
+  "raw_response": "赵遥站在课桌旁，盯着那个灰色书包看了三秒。\n\n不是她的。\n\n她的书包带子上挂着一个红色小铃铛，去年生日同桌送的。眼前这个书包同样是灰色帆布面，同样的黑色拉链，但带子上什么都没有。空的。\n\n她抬头看向走廊窗外。\n\n徐帆正穿过教学楼和实验楼之间的空地，肩上背着一个灰色书包。距离太远，看不清细节，但那个背影走得不快，书包在他肩上一晃一晃的。离走廊拐角还有大约二十米。过了那个拐角，就是实验楼的侧门。\n\n赵遥的手指按在窗框上。\n\n她可以跑出去。走廊尽头就是楼梯口，跑下去用不了三十秒。追上他，把手里这个书包举起来，说“你拿错了”——然后周围路过的同学都会看过来。徐帆会站在空地中间，背着她的书包，拉链上挂着那个红色小铃铛，所有人都能看到。\n\n她没有动。\n\n窗外的身影又往前走了几步。\n\n赵遥转过身，视线扫过走廊墙壁。一张褪色的社团招新海报贴在公告栏边上，边角翘起，露出后面发黄的胶痕。海报下面是公用失物招领箱，一个敞口的塑料收纳箱，里面躺着两把雨伞和一只单只手套。\n\n她走过去，捏住海报翘起的那一角，用力一撕。\n\n纸张发出干燥的撕裂声。她撕下一块巴掌大的空白边角，又从笔袋里摸出黑色水笔，在海报纸背面画起来。一个书包的简笔轮廓，两条带子，其中一条带子末端画了个小圆圈。她在圆圈旁边写了四个字：红色挂饰。\n\n笔尖停顿了一下。她又加了一行：失主请联系高一三班赵遥。\n\n她把海报纸片对折，放进失物招领箱，压在雨伞上面。纸片露出一角，画的那个小圆圈刚好朝上。\n\n赵遥走回窗边。\n\n徐帆已经走到空地的中段。他停下来，好像在翻书包侧袋找什么东西。手伸进去，又抽出来，空的。他低头看了一眼书包正面，然后拉开主拉链。\n\n赵遥攥紧了窗框。\n\n徐帆的动作停住了。他站在空地中央，一只手还伸在拉开的书包里，头低着，整个人定在那里。过了几秒，他把拉链拉上，转过身。\n\n他转过身，朝教学楼的方向走了回来。",
+  "input_tokens": 1517,
+  "output_tokens": 505,
+  "latency_ms": 12420,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "8b0d4d67e1e8c638d0be2357ca55a383dae59d76448632633b474096ba5ad603",
+  "route_name": null,
+  "route_decision": {
+    "route_name": "C_OBJECT_CAUSAL",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "scene_state.available_objects is non-empty",
+      "causal_transitions contains counterfactual_without_action or rejected_alternative",
+      "character_next_action involves physical object manipulation"
+    ],
+    "matched_rules": [
+      "RULE_C_OBJECT_CAUSAL"
+    ],
+    "rejected_routes": []
+  },
+  "compiled_brief_hash": "4884a09d1fe62b9a25aad055711d0b53b65ea3236a0b10b1dac155bde36eb095",
+  "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+  "text_path": "cases\\C-02\\drafts\\route-1.txt"
+}

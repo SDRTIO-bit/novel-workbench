@@ -1,0 +1,158 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "午休后，赵遥发现自己的灰色书包被隔壁班的徐帆错拿走了，书包里有下午第一节课必须交的实验报告。徐帆正往实验楼走，赵遥不能追上去当众喊人，也不能假定对方动机。她必须用走廊里可见的一个物件发出信号，让对方自己发现拿错了。停在书包归属出现新事实。",
+  "location": "教学楼走廊",
+  "time": "午休后，下午第一节课前",
+  "scene_state": {
+    "last_completed_action": "赵遥从洗手间回到教室，发现自己的灰色书包不见了，而旁边座位上留下了一个极为相似的灰色书包。",
+    "present_characters": [
+      "赵遥"
+    ],
+    "visible_facts": [
+      "赵遥的课桌旁放着一个不属于她的灰色书包",
+      "走廊窗外能看到徐帆正背着灰色书包走向实验楼",
+      "走廊墙上贴着一张褪色的社团招新海报，边角翘起",
+      "海报下方有一个公用失物招领箱"
+    ],
+    "available_objects": [
+      "那个被留下的灰色书包",
+      "走廊墙上的社团招新海报",
+      "公用失物招领箱",
+      "赵遥自己的笔袋"
+    ],
+    "unresolved_problem": "赵遥必须在不引起旁人注意、不直接接触徐帆的情况下，让徐帆意识到拿错了书包并返回交换。",
+    "already_existing_constraints": [
+      "不能追上去当众喊住徐帆",
+      "不能假定徐帆是故意拿错",
+      "必须在下午第一节课前拿回实验报告"
+    ]
+  },
+  "characters": [
+    {
+      "name": "赵遥",
+      "goal": "让徐帆主动发现拿错书包，并返回交换，同时避免公开尴尬或误会",
+      "known": [
+        "自己的灰色书包被徐帆错拿",
+        "书包里有下午第一节课必须交的实验报告",
+        "徐帆正往实验楼走，很快会离开视线"
+      ],
+      "unknown": [
+        "徐帆是否已经发现拿错",
+        "徐帆对书包内物品的熟悉程度",
+        "留下书包的主人是谁"
+      ],
+      "mistaken_beliefs": [
+        "徐帆可能只是匆忙中拿错，并非故意",
+        "直接追上去可能会让徐帆难堪"
+      ],
+      "constraints": [
+        "不能追上去当众喊人",
+        "不能假定对方动机",
+        "时间紧迫，必须在徐帆进入实验楼前行动"
+      ],
+      "observed_evidence": [
+        "课桌旁多了一个相似的灰色书包",
+        "走廊窗外徐帆的背影和那个灰色书包",
+        "墙上的社团海报和失物招领箱"
+      ],
+      "current_interpretation": "留下的书包和徐帆背走的书包外观几乎一样，徐帆很可能还没发现拿错。如果她能利用走廊里的物件让徐帆注意到差异，或许能促使对方自查。",
+      "how_interpretation_drives_action": "她决定用海报或失物招领箱制造一个视觉信号，指向书包特征，让徐帆在路过时注意到并检查自己的书包。"
+    }
+  ],
+  "concrete_problem": "如何在走廊里用可见物件发出信号，让徐帆在走向实验楼的过程中自己发现拿错了书包？",
+  "pressure": "徐帆正在走远，下午第一节课即将开始，实验报告必须准时上交。",
+  "turning_point": "赵遥撕下海报翘起的一角，用笔在上面快速画了一个书包简图并标注‘灰色，外侧小袋有红色挂饰’，然后放进失物招领箱最上层，正对走廊。徐帆经过时瞥见，停下脚步，低头查看自己的书包。",
+  "end_condition": "徐帆发现自己的书包没有红色挂饰，意识到拿错，转身往回走。",
+  "forbidden": [
+    "赵遥追上去直接喊住徐帆",
+    "赵遥假定徐帆故意拿错",
+    "其他同学介入帮忙",
+    "徐帆主动发现书包内实验报告姓名",
+    "赵遥使用手机联系徐帆",
+    "书包内有明显身份标识让徐帆立刻发现"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "走廊墙上翘角的社团海报和下方的失物招领箱",
+      "character_interpretation": "海报可以写字，失物招领箱是公共信息点，徐帆路过可能会看一眼。",
+      "character_next_action": "赵遥撕下海报一角，画书包简图并标注特征，放入失物招领箱。",
+      "rejected_alternative": "直接跑上去把留下的书包举高示意，但这会当众暴露，让徐帆尴尬。",
+      "immediate_consequence": "失物招领箱里出现了一张手绘的‘灰色书包带红色挂饰’的提示。",
+      "counterfactual_without_action": "赵遥什么都不做，徐帆会直接走进实验楼，直到上课前才可能发现拿错，实验报告将无法按时提交。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "失物招领箱空置或只有旧物，走廊无任何关于书包的提示。",
+        "after": "失物招领箱最上层多了一张指向明确书包特征的简笔画提示。"
+      },
+      "cost_or_commitment": "赵遥损坏了公物（海报），并留下了自己的笔迹证据。",
+      "next_constraint": "提示只能依赖徐帆自己看到并理解，无法控制他的反应。",
+      "reader_must_infer": "赵遥选择失物招领箱是因为它处于徐帆的必经之路，且‘招领’暗示了物品错位。",
+      "narrator_must_not_state": [
+        "赵遥内心确定徐帆一定会看到并理解提示",
+        "徐帆此时的心理活动"
+      ]
+    },
+    {
+      "id": "CT02",
+      "kind": "evidence_to_action",
+      "visible_trigger": "失物招领箱里手绘的‘灰色书包带红色挂饰’提示",
+      "character_interpretation": "徐帆瞥见这张纸，觉得描述和自己的书包很像，但自己的书包没有红色挂饰。",
+      "character_next_action": "徐帆停下脚步，低头检查自己背着的书包外侧小袋。",
+      "rejected_alternative": "徐帆忽略提示继续走，认为只是别人的失物招领。",
+      "immediate_consequence": "徐帆发现书包上没有红色挂饰，意识到自己可能拿错了书包。",
+      "counterfactual_without_action": "如果徐帆没有看到或没有停下，他会直接进入实验楼，书包错拿将持续。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "徐帆正常走向实验楼，未意识到书包问题。",
+        "after": "徐帆停在走廊，检查书包并发现异常。"
+      },
+      "cost_or_commitment": "徐帆在公共走廊短暂停留，可能引起他人注意。",
+      "next_constraint": "徐帆必须决定是返回寻找还是继续前行。",
+      "reader_must_infer": "徐帆之所以会注意失物招领箱，是因为他潜意识里对‘灰色书包’这个关键词敏感，尽管他尚未意识到拿错。",
+      "narrator_must_not_state": [
+        "徐帆看到提示的瞬间就完全明白了是赵遥放的",
+        "徐帆此时对赵遥的任何猜测"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "徐帆正背着书包走向实验楼，离走廊拐角还有约二十米。",
+    "dominant_pressure": {
+      "kind": "resource_constraint",
+      "description": "时间紧迫，赵遥必须在徐帆离开视线前发出信号，否则实验报告将无法按时提交。"
+    },
+    "allowed_viewpoint_misread": "读者可能误以为赵遥会直接追上去，但她选择了更间接的方式。",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "徐帆对赵遥的真实看法",
+      "留下书包的主人是谁"
+    ],
+    "stop_state": {
+      "type": "physical_change",
+      "visible_fact": "徐帆转身，开始往回走。",
+      "what_is_now_different": "书包错拿的事实已被徐帆自己发现，他正返回寻找交换。",
+      "must_not_append": "不得描写徐帆返回后的具体交换过程或对话。"
+    },
+    "final_line_must_include": "他转过身，朝教学楼的方向走了回来。"
+  }
+}

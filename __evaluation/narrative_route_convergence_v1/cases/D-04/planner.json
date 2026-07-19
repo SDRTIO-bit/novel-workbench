@@ -1,0 +1,186 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "乔安在深夜快递柜前发现包裹不是自己的，取件码失效，必须在不能拆包裹、不能空手回家的约束下，通过有限互动找到一个可接受的行动方案，并在此过程中埋下后续冲突的伏笔。",
+  "location": "小区快递柜区，深夜，只有柜机屏幕和扫码失败的送货员",
+  "time": "深夜，约23:00",
+  "scene_state": {
+    "last_completed_action": "乔安输入取件码后箱门弹开，发现包裹收件人不是自己，自己的取件码已失效",
+    "present_characters": [
+      "乔安",
+      "送货员"
+    ],
+    "visible_facts": [
+      "包裹上的收件人姓名不是乔安",
+      "乔安的取件码已失效",
+      "手机客服排队第47位",
+      "送货员扫码失败，正在查看柜机屏幕",
+      "快递柜周围没有其他人"
+    ],
+    "available_objects": [
+      "错误包裹",
+      "快递柜屏幕",
+      "乔安的手机",
+      "送货员的扫描枪"
+    ],
+    "unresolved_problem": "乔安无法取回自己的包裹，又不能拆开或拿走别人的包裹，且客服暂时无法接通",
+    "already_existing_constraints": [
+      "不能拆开别人的包裹",
+      "不能空手回家",
+      "取件码已失效",
+      "客服热线排队中"
+    ]
+  },
+  "characters": [
+    {
+      "name": "乔安",
+      "goal": "找到一个既不违规又能拿回自己包裹的方法，或者至少得到一个明确的结果再离开",
+      "known": [
+        "自己有一个包裹待取",
+        "取件码失效前曾有效",
+        "包裹可能是被错投了"
+      ],
+      "unknown": [
+        "自己的包裹现在在哪里",
+        "送货员是否与错投有关",
+        "系统为何会分配错误的包裹"
+      ],
+      "mistaken_beliefs": [
+        "送货员可能知道内情或能直接解决问题"
+      ],
+      "constraints": [
+        "不能拆开别人的包裹",
+        "不能空手回家",
+        "不能长时间等待客服"
+      ],
+      "observed_evidence": [
+        "送货员扫码失败后神色焦急",
+        "送货员反复查看柜机屏幕上的订单信息"
+      ],
+      "current_interpretation": "送货员可能也遇到了系统错误，他或许能提供帮助或知道一些信息",
+      "how_interpretation_drives_action": "乔安主动向送货员搭话，询问是否遇到同样问题，并展示自己的情况以寻求合作"
+    },
+    {
+      "name": "送货员",
+      "goal": "完成当前投递任务，解决扫码失败的问题，避免超时罚款",
+      "known": [
+        "自己负责的包裹无法正常投递",
+        "系统显示柜机有故障"
+      ],
+      "unknown": [
+        "乔安的包裹具体是什么",
+        "系统错误是否影响其他用户"
+      ],
+      "mistaken_beliefs": [
+        "乔安可能是来取件的一般用户，与自己遇到的问题无关"
+      ],
+      "constraints": [
+        "不能擅自打开任何包裹",
+        "不能将包裹交给非收件人",
+        "必须尽快完成投递"
+      ],
+      "observed_evidence": [
+        "乔安站在打开的快递柜前，手里拿着一个包裹，表情困惑",
+        "乔安展示手机上客服排队界面"
+      ],
+      "current_interpretation": "这个用户也遇到了取件问题，可能与系统错误有关，但自己首要任务是解决投递问题",
+      "how_interpretation_drives_action": "送货员先尝试重启扫码流程，同时简短回应乔安的询问，但保持一定距离"
+    }
+  ],
+  "concrete_problem": "乔安如何在不违规的情况下，利用现场仅有的送货员和柜机屏幕，处理拿错的包裹并追踪自己包裹的下落？",
+  "pressure": "深夜时间紧迫，客服排队遥遥无期，乔安不能无限期等待，送货员也可能随时离开",
+  "turning_point": "乔安注意到送货员扫描的包裹地址与自己的相似，主动提议核对双方信息，发现两个包裹可能被系统调换，由此做出一个冒险但合理的决定：与送货员交换包裹并留下证据。",
+  "end_condition": "乔安与送货员达成临时协议，交换包裹并各自拍照留证，但系统错误的原因仍未查明，留下隐患。",
+  "forbidden": [
+    "拆开别人的包裹",
+    "空手回家",
+    "客服接通并解决问题",
+    "送货员直接解决问题",
+    "揭示系统错误的真正原因",
+    "乔安与送货员发生冲突",
+    "乔安直接拿走错误包裹"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "送货员扫码失败后，柜机屏幕显示“包裹信息异常，请联系管理员”",
+      "character_interpretation": "送货员认为这只是单个包裹的问题，自己需要重新投递或联系后台",
+      "character_next_action": "送货员准备打电话给站点，同时想把异常包裹暂存一旁",
+      "rejected_alternative": "送货员可以主动询问乔安是否遇到类似问题，但他选择先解决自己的任务",
+      "immediate_consequence": "乔安看到送货员准备离开，意识到必须立刻介入，否则将失去唯一可能提供帮助的人",
+      "counterfactual_without_action": "如果乔安不行动，送货员会离开，乔安将独自面对无法解决的困境",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "送货员仍在现场，但即将离开",
+        "after": "乔安主动搭话，送货员停下脚步，两人开始交流"
+      },
+      "cost_or_commitment": "乔安必须主动暴露自己的困境，可能被拒绝或误解",
+      "next_constraint": "送货员同意停留片刻，但时间有限，乔安必须快速提出有效方案",
+      "reader_must_infer": "乔安从送货员的准备离开推断出时间紧迫，她的主动搭话是出于对孤立无援的恐惧",
+      "narrator_must_not_state": [
+        "送货员其实对系统错误有更多了解",
+        "乔安完全信任送货员"
+      ]
+    },
+    {
+      "id": "CT02",
+      "kind": "constraint_to_choice",
+      "visible_trigger": "乔安注意到送货员手上的包裹地址与自己的相似，而自己拿到的包裹地址与送货员屏幕上的订单地址相似",
+      "character_interpretation": "乔安推测系统可能将两人的包裹调换了，交换包裹可能是最直接的解决方法",
+      "character_next_action": "乔安向送货员提议核对包裹信息，并交换包裹，同时拍照留证",
+      "rejected_alternative": "乔安可以继续等待客服，但可能等不到且送货员会离开",
+      "immediate_consequence": "送货员犹豫后同意，两人交换包裹并各自拍照，乔安拿到了自己的包裹",
+      "counterfactual_without_action": "如果乔安不提议交换，她将继续困在快递柜前，最终可能被迫空手回家或违规拿走错误包裹",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "乔安拿着错误包裹，自己的包裹下落不明",
+        "after": "乔安拿回自己的包裹，但系统错误未解决，留下隐患"
+      },
+      "cost_or_commitment": "乔安承担了私换包裹的风险，如果后续出问题，她可能被追责",
+      "next_constraint": "乔安必须保留证据，且未来若包裹出现问题，她需要自己承担部分责任",
+      "reader_must_infer": "乔安的决定是基于对送货员处境的理解和对自己时间的权衡，并非完全信任",
+      "narrator_must_not_state": [
+        "交换包裹是绝对安全的",
+        "系统错误会很快被发现并修复"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "乔安站在打开的快递柜前，手里拿着不属于自己的包裹，手机显示客服排队第47位",
+    "dominant_pressure": {
+      "kind": "resource_constraint",
+      "description": "时间正在流逝，客服无法接通，送货员可能随时离开，乔安必须在资源耗尽前做出决定"
+    },
+    "allowed_viewpoint_misread": "乔安可能误以为送货员对系统错误负有责任",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "系统错误的真正原因",
+      "送货员是否之前就遇到过类似问题"
+    ],
+    "stop_state": {
+      "type": "social_commitment",
+      "visible_fact": "乔安和送货员交换包裹并各自拍照留证",
+      "what_is_now_different": "乔安拿到了自己的包裹，但留下了一个需要后续处理的证据链和未解决的系统问题",
+      "must_not_append": "不得说明系统错误是否会影响其他人或何时修复"
+    },
+    "final_line_must_include": "屏幕上的错误提示依然闪烁，但乔安已经转身离开"
+  }
+}

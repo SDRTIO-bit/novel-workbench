@@ -1,0 +1,63 @@
+{
+  "group": "ROUTE-B_SHORT_RELATION",
+  "replica": 1,
+  "mode": "narrative_route",
+  "candidate_id": "4da8d870-f14b-4765-a4bd-f3d975c2557d",
+  "attempt_number": 1,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "route_decision": {
+      "route_name": "B_SHORT_RELATION",
+      "classifier_version": "narrative-route-v1",
+      "decision_reasons": [
+        "scene is relationship-oriented with no physical urgency",
+        "character action involves relational move (message, gesture, proximity)"
+      ],
+      "matched_rules": [
+        "RULE_B_SHORT_RELATION"
+      ],
+      "rejected_routes": [
+        "C_OBJECT_CAUSAL",
+        "A_LITE_INFORMATION_GAP"
+      ]
+    },
+    "compiled_brief_hash": "fc25d584be59023d13a82f729dac11ab51382abb209fd019bef654fdbb030d01",
+    "instruction_hash": "d7a76822408396dc71c4599a7f40f33368b90199f0d9c0712383961213437555",
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "手机屏幕右上角的数字从8跳成了7。\n\n郑宣站在B2层电梯口，面前是停车场的昏暗灯光。蓝色柱子。左边三根，右边四根，前方深处还有更多，有些隐在灯管照不到的阴影里。他记得自己停在蓝色柱子旁边，但此刻他看见的蓝色柱子至少有二十根。\n\n他低头看了一眼手机——7%，信号格只剩一个灰点。车库广播下午六点就关了，这会儿静得像口井。\n\n不能每根都找。\n\n他迈开步子，先走向离电梯口最近的那根蓝柱。柱身冰凉，蓝色油漆在荧光灯下泛着暗沉的光，柱脚有一块巴掌大的黑色污渍，像是轮胎蹭过的痕迹。他蹲下来看了一眼，站起身往第二根走去。\n\n第二根没有污渍。他加快脚步，绕过一辆银色轿车，找到第三根——柱脚也有一块类似的黑印，形状和第一根差不多。他心跳快了一拍，绕到柱子后面。\n\n空的。那辆白色SUV不在这里。\n\n他站了两秒，又去看第四根。同样的黑印。第五根也有。是清洁车转弯时蹭的，每根靠过道的柱子都留下了差不多的痕迹。\n\n手机屏幕闪了一下——6%。\n\n郑宣把手机攥在手里，没开手电筒。他重新扫视整个B2层，蓝色柱子沿着车道排成几条线，有些在亮处，有些沉在阴影尽头。他必须重新决定往哪个方向走，而且下一次打开手机的时候，电会掉得更快。\n\n他选了靠墙的那排，快步走过去。第一根，没有。第二根，旁边停着一辆黑色轿车。第三根——\n\n手机震了一下，屏幕上的数字跳成5%，然后画面一暗，电池图标闪了闪，彻底熄灭。\n\n屏幕黑了。",
+  "raw_response": "手机屏幕右上角的数字从8跳成了7。\n\n郑宣站在B2层电梯口，面前是停车场的昏暗灯光。蓝色柱子。左边三根，右边四根，前方深处还有更多，有些隐在灯管照不到的阴影里。他记得自己停在蓝色柱子旁边，但此刻他看见的蓝色柱子至少有二十根。\n\n他低头看了一眼手机——7%，信号格只剩一个灰点。车库广播下午六点就关了，这会儿静得像口井。\n\n不能每根都找。\n\n他迈开步子，先走向离电梯口最近的那根蓝柱。柱身冰凉，蓝色油漆在荧光灯下泛着暗沉的光，柱脚有一块巴掌大的黑色污渍，像是轮胎蹭过的痕迹。他蹲下来看了一眼，站起身往第二根走去。\n\n第二根没有污渍。他加快脚步，绕过一辆银色轿车，找到第三根——柱脚也有一块类似的黑印，形状和第一根差不多。他心跳快了一拍，绕到柱子后面。\n\n空的。那辆白色SUV不在这里。\n\n他站了两秒，又去看第四根。同样的黑印。第五根也有。是清洁车转弯时蹭的，每根靠过道的柱子都留下了差不多的痕迹。\n\n手机屏幕闪了一下——6%。\n\n郑宣把手机攥在手里，没开手电筒。他重新扫视整个B2层，蓝色柱子沿着车道排成几条线，有些在亮处，有些沉在阴影尽头。他必须重新决定往哪个方向走，而且下一次打开手机的时候，电会掉得更快。\n\n他选了靠墙的那排，快步走过去。第一根，没有。第二根，旁边停着一辆黑色轿车。第三根——\n\n手机震了一下，屏幕上的数字跳成5%，然后画面一暗，电池图标闪了闪，彻底熄灭。\n\n屏幕黑了。",
+  "input_tokens": 1403,
+  "output_tokens": 384,
+  "latency_ms": 13125,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "b7a9b97332199ef32aefb323de603bdbe1eb9cac2c2e8d351bdfd93119b9aa2a",
+  "route_name": null,
+  "route_decision": {
+    "route_name": "B_SHORT_RELATION",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "scene is relationship-oriented with no physical urgency",
+      "character action involves relational move (message, gesture, proximity)"
+    ],
+    "matched_rules": [
+      "RULE_B_SHORT_RELATION"
+    ],
+    "rejected_routes": [
+      "C_OBJECT_CAUSAL",
+      "A_LITE_INFORMATION_GAP"
+    ]
+  },
+  "compiled_brief_hash": "fc25d584be59023d13a82f729dac11ab51382abb209fd019bef654fdbb030d01",
+  "instruction_hash": "d7a76822408396dc71c4599a7f40f33368b90199f0d9c0712383961213437555",
+  "text_path": "cases\\D-06\\drafts\\route-1.txt"
+}

@@ -1,0 +1,338 @@
+{
+  "case_id": "A-06",
+  "category": "校园日常",
+  "title": "群撤回消息",
+  "run_id": "bc9496e6-ecc5-42da-b47f-8ca941ffb1e9",
+  "expected_route": "A_LITE_INFORMATION_GAP",
+  "planner": {
+    "candidate_id": "81d83d40-6bf0-4dac-ada9-99e7cf49e8b5",
+    "attempt_number": 1,
+    "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+    "model_id": "deepseek-v4-pro",
+    "prompt_version_id": "f9052f8a-dc4e-5408-b14e-fc1badaf57f8",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 12288,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "json_object"
+    },
+    "text_output": "{\n  \"planner_contract_version\": 2,\n  \"scene_goal\": \"孙然在晚自习前看到搭档撤回的@消息，必须在不私聊的前提下根据这个信号做出具体行动，从而改变两人之间的互动状态。\",\n  \"location\": \"教室\",\n  \"time\": \"晚自习前十分钟\",\n  \"scene_state\": {\n    \"last_completed_action\": \"孙然看到班级群里有人@了自己然后撤回了\",\n    \"present_characters\": [\"孙然\", \"搭档（未直接出场，但存在于群聊和教室环境中）\"],\n    \"visible_facts\": [\n      \"班级群里显示一条撤回消息的提示\",\n      \"撤回消息的昵称是经常和孙然排练的搭档\",\n      \"群里有三十多个人在线\"\n    ],\n    \"available_objects\": [\"手机\", \"班级群聊天界面\", \"课桌\", \"书本\"],\n    \"unresolved_problem\": \"搭档为什么@孙然又撤回？孙然该如何回应这个未完成的信号？\",\n    \"already_existing_constraints\": [\n      \"孙然不能私聊追问搭档\",\n      \"孙然不能假装没看见撤回消息\",\n      \"晚自习即将开始，时间有限\",\n      \"群里有三十多人在线，公开行动会被他人看到\"\n    ]\n  },\n  \"characters\": [\n    {\n      \"name\": \"孙然\",\n      \"goal\": \"根据搭档的撤回信号，采取一个具体行动来试探或回应，同时不违反不能私聊的约束\",\n      \"known\": [\n        \"搭档经常和自己排练\",\n        \"搭档在群里@了自己然后撤回了\",\n        \"群里有三十多个人在线\"\n      ],\n      \"unknown\": [\n        \"搭档撤回的具体内容\",\n        \"搭档撤回的真实原因\",\n        \"搭档此刻的心理状态\"\n      ],\n      \"mistaken_beliefs\": [\n        \"搭档可能是不小心发错了消息\",\n        \"搭档可能想约排练但不好意思公开说\"\n      ],\n      \"constraints\": [\n        \"不能私聊追问搭档\",\n        \"不能假装没看见\",\n        \"必须在晚自习前行动\",\n        \"行动可能被群里其他人看到\"\n      ],\n      \"observed_evidence\": [\n        \"群聊界面显示搭档撤回了一条消息\",\n        \"撤回提示中有自己的昵称\",\n        \"搭档的头像仍然在线\"\n      ],\n      \"current_interpretation\": \"搭档想对自己说某件事，但出于某种顾虑又撤销了，这件事可能涉及两人之间的私密约定或尴尬话题。\",\n      \"how_interpretation_drives_action\": \"孙然决定在群里发一条看似无关但只有搭档能懂的消息，间接回应撤回信号，同时观察搭档的反应。\"\n    }\n  ],\n  \"concrete_problem\": \"孙然必须在群里发一条消息，既能回应搭档的撤回信号，又不暴露自己已看到撤回，同时不引起其他群成员的注意。\",\n  \"pressure\": \"晚自习即将开始，孙然必须在短时间内行动，否则机会消失；群里有三十多人在线，公开行动有社交风险。\",\n  \"turning_point\": \"孙然发出的消息被搭档看到后，搭档做出一个微妙回应，使孙然确认搭档确实想传达某事，两人之间形成新的默契或张力。\",\n  \"end_condition\": \"搭档在群里对孙然的消息做出了一个可被孙然察觉的回应，但未直接挑明，局面进入新的不确定状态。\",\n  \"forbidden\": [\n    \"孙然私聊搭档\",\n    \"搭档直接解释撤回原因\",\n    \"其他群成员介入或解读两人的互动\",\n    \"孙然直接提及撤回消息\",\n    \"孙然假装没看见撤回\",\n    \"搭档主动私聊孙然\",\n    \"使用任何超出校园日常设定的戏剧化冲突\"\n  ],\n  \"causal_transitions\": [\n    {\n      \"id\": \"CT01\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"班级群里的撤回消息提示，显示搭档@了孙然\",\n      \"character_interpretation\": \"搭档可能想传达一个不便公开的消息，但又犹豫了，孙然认为这是一个需要回应的信号。\",\n      \"character_next_action\": \"孙然在群里发了一条与排练相关的模糊消息，例如“今天的排练要改时间吗？还是按原来的？”\",\n      \"rejected_alternative\": \"孙然本可以发一条完全无关的消息（如问作业），但那样无法回应搭档的信号；或者她可以保持沉默，但那样就违反了“不能假装没看见”的约束。\",\n      \"immediate_consequence\": \"搭档在群里回复了一个简短的、看似正常的答案，但回复的速度或措辞让孙然察觉到搭档确实在关注她的反应。\",\n      \"counterfactual_without_action\": \"如果孙然不发这条消息，搭档可能认为孙然没看到撤回，或者孙然故意忽略，两人之间会留下一个未解的信号，影响后续互动。\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"孙然和搭档之间存在一个悬而未决的撤回信号，两人没有直接交流。\",\n        \"after\": \"孙然通过公开消息间接回应，搭档以微妙方式反馈，两人之间建立了一个只有彼此能察觉的互动线索。\"\n      },\n      \"cost_or_commitment\": \"孙然冒着被其他同学好奇或误解的风险，主动迈出一步；她承诺了自己对搭档信号的重视。\",\n      \"next_constraint\": \"搭档的回应虽然微妙，但并未完全澄清意图，孙然必须继续观察或等待进一步信号，不能直接追问。\",\n      \"reader_must_infer\": \"搭档回复的真正意图是什么？撤回的消息可能是什么内容？两人之间的默契程度是否超出了普通搭档？\",\n      \"narrator_must_not_state\": [\n        \"搭档撤回的具体内容\",\n        \"搭档此刻的真实想法\",\n        \"孙然是否完全猜对了搭档的意图\"\n      ]\n    }\n  ],\n  \"tempo_guardrails\": {\n    \"entry_pressure\": \"晚自习前十分钟，孙然盯着手机屏幕上那条撤回提示，周围同学陆续入座\",\n    \"dominant_pressure\": {\n      \"kind\": \"information_gap\",\n      \"description\": \"时间紧迫，但真正驱动孙然行动的是她对撤回内容的好奇和不能忽视信号的自我要求\"\n    },\n    \"allowed_viewpoint_misread\": \"孙然可能把搭档的撤回误读为搭档对她有特殊顾虑，而实际上可能只是搭档手误或临时改变主意\",\n    \"disclosure_cap\": 1,\n    \"must_remain_unclassified\": [\n      \"搭档撤回的具体消息内容\",\n      \"搭档撤回的真实动机\"\n    ],\n    \"stop_state\": {\n      \"type\": \"social_commitment\",\n      \"visible_fact\": \"搭档在群里回复了孙然的消息，且回复中带有一个只有孙然能察觉的微小停顿或表情符号\",\n      \"what_is_now_different\": \"两人之间从单向撤回信号变成了双向的、心照不宣的互动，孙然确认搭档在关注她的反应\",\n      \"must_not_append\": \"不得解释搭档回复的深层含义，不得让其他同学注意到异常\"\n    },\n    \"final_line_must_include\": \"\"\n  },\n  \"chapter_contract_check\": {\n    \"function_aligned\": true,\n    \"must_deliver_covered\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_enabled\": true,\n    \"main_payoff_prepared\": true,\n    \"ending_hook_established\": true,\n    \"causal_transitions_grounded\": true,\n    \"reader_inference_not_pre_resolved\": true,\n    \"scene_state_reconstructed\": true,\n    \"information_sources_legal\": true,\n    \"character_choice_is_real\": true,\n    \"consequence_is_counterfactual\": true,\n    \"state_delta_is_nonempty\": true,\n    \"next_constraint_is_new\": true,\n    \"stop_state_is_visible\": true,\n    \"stop_state_changes_future_actions\": true\n  }\n}",
+    "raw_response": "{\n  \"planner_contract_version\": 2,\n  \"scene_goal\": \"孙然在晚自习前看到搭档撤回的@消息，必须在不私聊的前提下根据这个信号做出具体行动，从而改变两人之间的互动状态。\",\n  \"location\": \"教室\",\n  \"time\": \"晚自习前十分钟\",\n  \"scene_state\": {\n    \"last_completed_action\": \"孙然看到班级群里有人@了自己然后撤回了\",\n    \"present_characters\": [\"孙然\", \"搭档（未直接出场，但存在于群聊和教室环境中）\"],\n    \"visible_facts\": [\n      \"班级群里显示一条撤回消息的提示\",\n      \"撤回消息的昵称是经常和孙然排练的搭档\",\n      \"群里有三十多个人在线\"\n    ],\n    \"available_objects\": [\"手机\", \"班级群聊天界面\", \"课桌\", \"书本\"],\n    \"unresolved_problem\": \"搭档为什么@孙然又撤回？孙然该如何回应这个未完成的信号？\",\n    \"already_existing_constraints\": [\n      \"孙然不能私聊追问搭档\",\n      \"孙然不能假装没看见撤回消息\",\n      \"晚自习即将开始，时间有限\",\n      \"群里有三十多人在线，公开行动会被他人看到\"\n    ]\n  },\n  \"characters\": [\n    {\n      \"name\": \"孙然\",\n      \"goal\": \"根据搭档的撤回信号，采取一个具体行动来试探或回应，同时不违反不能私聊的约束\",\n      \"known\": [\n        \"搭档经常和自己排练\",\n        \"搭档在群里@了自己然后撤回了\",\n        \"群里有三十多个人在线\"\n      ],\n      \"unknown\": [\n        \"搭档撤回的具体内容\",\n        \"搭档撤回的真实原因\",\n        \"搭档此刻的心理状态\"\n      ],\n      \"mistaken_beliefs\": [\n        \"搭档可能是不小心发错了消息\",\n        \"搭档可能想约排练但不好意思公开说\"\n      ],\n      \"constraints\": [\n        \"不能私聊追问搭档\",\n        \"不能假装没看见\",\n        \"必须在晚自习前行动\",\n        \"行动可能被群里其他人看到\"\n      ],\n      \"observed_evidence\": [\n        \"群聊界面显示搭档撤回了一条消息\",\n        \"撤回提示中有自己的昵称\",\n        \"搭档的头像仍然在线\"\n      ],\n      \"current_interpretation\": \"搭档想对自己说某件事，但出于某种顾虑又撤销了，这件事可能涉及两人之间的私密约定或尴尬话题。\",\n      \"how_interpretation_drives_action\": \"孙然决定在群里发一条看似无关但只有搭档能懂的消息，间接回应撤回信号，同时观察搭档的反应。\"\n    }\n  ],\n  \"concrete_problem\": \"孙然必须在群里发一条消息，既能回应搭档的撤回信号，又不暴露自己已看到撤回，同时不引起其他群成员的注意。\",\n  \"pressure\": \"晚自习即将开始，孙然必须在短时间内行动，否则机会消失；群里有三十多人在线，公开行动有社交风险。\",\n  \"turning_point\": \"孙然发出的消息被搭档看到后，搭档做出一个微妙回应，使孙然确认搭档确实想传达某事，两人之间形成新的默契或张力。\",\n  \"end_condition\": \"搭档在群里对孙然的消息做出了一个可被孙然察觉的回应，但未直接挑明，局面进入新的不确定状态。\",\n  \"forbidden\": [\n    \"孙然私聊搭档\",\n    \"搭档直接解释撤回原因\",\n    \"其他群成员介入或解读两人的互动\",\n    \"孙然直接提及撤回消息\",\n    \"孙然假装没看见撤回\",\n    \"搭档主动私聊孙然\",\n    \"使用任何超出校园日常设定的戏剧化冲突\"\n  ],\n  \"causal_transitions\": [\n    {\n      \"id\": \"CT01\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"班级群里的撤回消息提示，显示搭档@了孙然\",\n      \"character_interpretation\": \"搭档可能想传达一个不便公开的消息，但又犹豫了，孙然认为这是一个需要回应的信号。\",\n      \"character_next_action\": \"孙然在群里发了一条与排练相关的模糊消息，例如“今天的排练要改时间吗？还是按原来的？”\",\n      \"rejected_alternative\": \"孙然本可以发一条完全无关的消息（如问作业），但那样无法回应搭档的信号；或者她可以保持沉默，但那样就违反了“不能假装没看见”的约束。\",\n      \"immediate_consequence\": \"搭档在群里回复了一个简短的、看似正常的答案，但回复的速度或措辞让孙然察觉到搭档确实在关注她的反应。\",\n      \"counterfactual_without_action\": \"如果孙然不发这条消息，搭档可能认为孙然没看到撤回，或者孙然故意忽略，两人之间会留下一个未解的信号，影响后续互动。\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"孙然和搭档之间存在一个悬而未决的撤回信号，两人没有直接交流。\",\n        \"after\": \"孙然通过公开消息间接回应，搭档以微妙方式反馈，两人之间建立了一个只有彼此能察觉的互动线索。\"\n      },\n      \"cost_or_commitment\": \"孙然冒着被其他同学好奇或误解的风险，主动迈出一步；她承诺了自己对搭档信号的重视。\",\n      \"next_constraint\": \"搭档的回应虽然微妙，但并未完全澄清意图，孙然必须继续观察或等待进一步信号，不能直接追问。\",\n      \"reader_must_infer\": \"搭档回复的真正意图是什么？撤回的消息可能是什么内容？两人之间的默契程度是否超出了普通搭档？\",\n      \"narrator_must_not_state\": [\n        \"搭档撤回的具体内容\",\n        \"搭档此刻的真实想法\",\n        \"孙然是否完全猜对了搭档的意图\"\n      ]\n    }\n  ],\n  \"tempo_guardrails\": {\n    \"entry_pressure\": \"晚自习前十分钟，孙然盯着手机屏幕上那条撤回提示，周围同学陆续入座\",\n    \"dominant_pressure\": {\n      \"kind\": \"information_gap\",\n      \"description\": \"时间紧迫，但真正驱动孙然行动的是她对撤回内容的好奇和不能忽视信号的自我要求\"\n    },\n    \"allowed_viewpoint_misread\": \"孙然可能把搭档的撤回误读为搭档对她有特殊顾虑，而实际上可能只是搭档手误或临时改变主意\",\n    \"disclosure_cap\": 1,\n    \"must_remain_unclassified\": [\n      \"搭档撤回的具体消息内容\",\n      \"搭档撤回的真实动机\"\n    ],\n    \"stop_state\": {\n      \"type\": \"social_commitment\",\n      \"visible_fact\": \"搭档在群里回复了孙然的消息，且回复中带有一个只有孙然能察觉的微小停顿或表情符号\",\n      \"what_is_now_different\": \"两人之间从单向撤回信号变成了双向的、心照不宣的互动，孙然确认搭档在关注她的反应\",\n      \"must_not_append\": \"不得解释搭档回复的深层含义，不得让其他同学注意到异常\"\n    },\n    \"final_line_must_include\": \"\"\n  },\n  \"chapter_contract_check\": {\n    \"function_aligned\": true,\n    \"must_deliver_covered\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_enabled\": true,\n    \"main_payoff_prepared\": true,\n    \"ending_hook_established\": true,\n    \"causal_transitions_grounded\": true,\n    \"reader_inference_not_pre_resolved\": true,\n    \"scene_state_reconstructed\": true,\n    \"information_sources_legal\": true,\n    \"character_choice_is_real\": true,\n    \"consequence_is_counterfactual\": true,\n    \"state_delta_is_nonempty\": true,\n    \"next_constraint_is_new\": true,\n    \"stop_state_is_visible\": true,\n    \"stop_state_changes_future_actions\": true\n  }\n}",
+    "input_tokens": 3302,
+    "output_tokens": 1717,
+    "latency_ms": 27079,
+    "finish_reason": "stop",
+    "error_code": null,
+    "error_message": null,
+    "rendered_user_prompt_sha256": "fc3010f22a0a6b34e1d28a05f3ed50ab575363149d59d45941ac7ec3578ff72e",
+    "route_name": null,
+    "route_decision": null,
+    "compiled_brief_hash": null,
+    "instruction_hash": null
+  },
+  "drafts": [
+    {
+      "group": "ROUTE-B_SHORT_RELATION",
+      "replica": 1,
+      "mode": "narrative_route",
+      "candidate_id": "7af7baa5-5fcf-4b01-942c-0fa9e6d5e365",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "B_SHORT_RELATION",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "scene is relationship-oriented with no physical urgency",
+            "character action involves relational move (message, gesture, proximity)"
+          ],
+          "matched_rules": [
+            "RULE_B_SHORT_RELATION"
+          ],
+          "rejected_routes": [
+            "C_OBJECT_CAUSAL",
+            "A_LITE_INFORMATION_GAP"
+          ]
+        },
+        "compiled_brief_hash": "02b725513ea167bd711e771974962e39a571cd3fc30a45006c9ef13b6b613571",
+        "instruction_hash": "d7a76822408396dc71c4599a7f40f33368b90199f0d9c0712383961213437555",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "晚自习前十分钟，教室里人已经坐了大半。孙然把手机搁在桌面上，屏幕亮着，班级群的消息列表停在一条灰底提示上——“搭档”撤回了一条消息。\n\n她盯着那行字看了几秒。\n\n撤回提示里嵌着她的昵称，前面带着@符号。群里三十多个人在线，刚才那一瞬间应该有不少人看到了弹窗。但没人接话，聊天记录往上翻，只有两条无关的表情包和英语课代表发的作业提醒。\n\n搭档的头像还亮着，在线状态没变。\n\n孙然把手机拿起来，拇指在屏幕上停了一下。她没有点开私聊窗口。\n\n她切回群聊界面，打字，发送。\n\n“今天的排练要改时间吗？还是按原来的？”\n\n消息发出去之后，她把手机屏幕朝下扣在桌面上，伸手去翻书包里的笔记本。翻了两页，手机震了一下。\n\n她翻过来看。\n\n搭档的回复只有一行字：“按原来的。”\n\n句号。没有多余的字，没有表情包。但回复速度很快，几乎是秒回。\n\n孙然正准备锁屏，屏幕上又弹出一条新消息——搭档紧跟着补了一个表情符号，是一个歪头的小黄脸，眼睛斜斜地看向一边。\n\n这个表情和前面那句“按原来的”之间隔了不到一秒。\n\n孙然把手机重新扣在桌上，没再回复。",
+      "raw_response": "晚自习前十分钟，教室里人已经坐了大半。孙然把手机搁在桌面上，屏幕亮着，班级群的消息列表停在一条灰底提示上——“搭档”撤回了一条消息。\n\n她盯着那行字看了几秒。\n\n撤回提示里嵌着她的昵称，前面带着@符号。群里三十多个人在线，刚才那一瞬间应该有不少人看到了弹窗。但没人接话，聊天记录往上翻，只有两条无关的表情包和英语课代表发的作业提醒。\n\n搭档的头像还亮着，在线状态没变。\n\n孙然把手机拿起来，拇指在屏幕上停了一下。她没有点开私聊窗口。\n\n她切回群聊界面，打字，发送。\n\n“今天的排练要改时间吗？还是按原来的？”\n\n消息发出去之后，她把手机屏幕朝下扣在桌面上，伸手去翻书包里的笔记本。翻了两页，手机震了一下。\n\n她翻过来看。\n\n搭档的回复只有一行字：“按原来的。”\n\n句号。没有多余的字，没有表情包。但回复速度很快，几乎是秒回。\n\n孙然正准备锁屏，屏幕上又弹出一条新消息——搭档紧跟着补了一个表情符号，是一个歪头的小黄脸，眼睛斜斜地看向一边。\n\n这个表情和前面那句“按原来的”之间隔了不到一秒。\n\n孙然把手机重新扣在桌上，没再回复。",
+      "input_tokens": 1325,
+      "output_tokens": 286,
+      "latency_ms": 7071,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "4cfb17d7cb516b071de8281cb57bae3dcbba9b3422fd91667f93b5acee99e1f0",
+      "route_name": null,
+      "route_decision": {
+        "route_name": "B_SHORT_RELATION",
+        "classifier_version": "narrative-route-v1",
+        "decision_reasons": [
+          "scene is relationship-oriented with no physical urgency",
+          "character action involves relational move (message, gesture, proximity)"
+        ],
+        "matched_rules": [
+          "RULE_B_SHORT_RELATION"
+        ],
+        "rejected_routes": [
+          "C_OBJECT_CAUSAL",
+          "A_LITE_INFORMATION_GAP"
+        ]
+      },
+      "compiled_brief_hash": "02b725513ea167bd711e771974962e39a571cd3fc30a45006c9ef13b6b613571",
+      "instruction_hash": "d7a76822408396dc71c4599a7f40f33368b90199f0d9c0712383961213437555",
+      "text_path": "cases\\A-06\\drafts\\route-1.txt"
+    },
+    {
+      "group": "ROUTE-B_SHORT_RELATION",
+      "replica": 2,
+      "mode": "narrative_route",
+      "candidate_id": "145f6c0f-6c3b-4944-a338-cb134dc0b666",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "B_SHORT_RELATION",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "scene is relationship-oriented with no physical urgency",
+            "character action involves relational move (message, gesture, proximity)"
+          ],
+          "matched_rules": [
+            "RULE_B_SHORT_RELATION"
+          ],
+          "rejected_routes": [
+            "C_OBJECT_CAUSAL",
+            "A_LITE_INFORMATION_GAP"
+          ]
+        },
+        "compiled_brief_hash": "02b725513ea167bd711e771974962e39a571cd3fc30a45006c9ef13b6b613571",
+        "instruction_hash": "d7a76822408396dc71c4599a7f40f33368b90199f0d9c0712383961213437555",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "孙然把手机屏幕按亮，盯着那条灰色的系统提示——【“周也”撤回了一条消息】。\n\n她拇指在屏幕上顿了一下。\n\n群聊界面还停在刚才的位置，三十多个人在线，有人在聊晚自习的座位安排，有人在发食堂晚饭的照片。那条撤回提示夹在中间，像一块被迅速抹掉的痕迹，但痕迹本身还在。\n\n周也的头像亮着。\n\n孙然没有点进私聊窗口。她切回群聊页面，打字：“今天的排练要改时间吗？还是按原来的？”\n\n发送。\n\n她看着消息出现在屏幕上，然后锁屏，把手机翻过来扣在桌面上。\n\n过了大概十秒，手机震了一下。\n\n她翻过来看——周也的回复已经出现在群里：“按原来的。”\n\n句号。不是句号，是带句号的三个字。\n\n孙然盯着那个句号看了两秒。\n\n然后周也又发了一个表情包——是一只猫举起爪子，底下配了三个字：收到啦。\n\n表情包发出来的时间，和上一条回复之间，隔了四秒。",
+      "raw_response": "孙然把手机屏幕按亮，盯着那条灰色的系统提示——【“周也”撤回了一条消息】。\n\n她拇指在屏幕上顿了一下。\n\n群聊界面还停在刚才的位置，三十多个人在线，有人在聊晚自习的座位安排，有人在发食堂晚饭的照片。那条撤回提示夹在中间，像一块被迅速抹掉的痕迹，但痕迹本身还在。\n\n周也的头像亮着。\n\n孙然没有点进私聊窗口。她切回群聊页面，打字：“今天的排练要改时间吗？还是按原来的？”\n\n发送。\n\n她看着消息出现在屏幕上，然后锁屏，把手机翻过来扣在桌面上。\n\n过了大概十秒，手机震了一下。\n\n她翻过来看——周也的回复已经出现在群里：“按原来的。”\n\n句号。不是句号，是带句号的三个字。\n\n孙然盯着那个句号看了两秒。\n\n然后周也又发了一个表情包——是一只猫举起爪子，底下配了三个字：收到啦。\n\n表情包发出来的时间，和上一条回复之间，隔了四秒。",
+      "input_tokens": 1325,
+      "output_tokens": 224,
+      "latency_ms": 6247,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "4cfb17d7cb516b071de8281cb57bae3dcbba9b3422fd91667f93b5acee99e1f0",
+      "route_name": null,
+      "route_decision": {
+        "route_name": "B_SHORT_RELATION",
+        "classifier_version": "narrative-route-v1",
+        "decision_reasons": [
+          "scene is relationship-oriented with no physical urgency",
+          "character action involves relational move (message, gesture, proximity)"
+        ],
+        "matched_rules": [
+          "RULE_B_SHORT_RELATION"
+        ],
+        "rejected_routes": [
+          "C_OBJECT_CAUSAL",
+          "A_LITE_INFORMATION_GAP"
+        ]
+      },
+      "compiled_brief_hash": "02b725513ea167bd711e771974962e39a571cd3fc30a45006c9ef13b6b613571",
+      "instruction_hash": "d7a76822408396dc71c4599a7f40f33368b90199f0d9c0712383961213437555",
+      "text_path": "cases\\A-06\\drafts\\route-2.txt"
+    },
+    {
+      "group": "ROUTE-B_SHORT_RELATION",
+      "replica": 3,
+      "mode": "narrative_route",
+      "candidate_id": "11b28f75-4e6c-446f-b8cf-486c96814291",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "B_SHORT_RELATION",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "scene is relationship-oriented with no physical urgency",
+            "character action involves relational move (message, gesture, proximity)"
+          ],
+          "matched_rules": [
+            "RULE_B_SHORT_RELATION"
+          ],
+          "rejected_routes": [
+            "C_OBJECT_CAUSAL",
+            "A_LITE_INFORMATION_GAP"
+          ]
+        },
+        "compiled_brief_hash": "02b725513ea167bd711e771974962e39a571cd3fc30a45006c9ef13b6b613571",
+        "instruction_hash": "d7a76822408396dc71c4599a7f40f33368b90199f0d9c0712383961213437555",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "晚自习前十分钟，教室里人已经坐了大半。孙然把手机搁在桌面上，屏幕亮着，班级群的消息记录停在一条灰色的系统提示上——“‘周屿’撤回了一条消息”。\n\n提示前面还有半截@，@的人是她。\n\n她盯着那条撤回提示看了几秒。群里三十多个人在线，没人接话，消息列表安静得像什么都没发生过。周屿的头像还亮着，在线状态没变。\n\n孙然没切出去私聊。她点开输入框，打了几个字，删掉，又重新打。\n\n“今天的排练要改时间吗？还是按原来的？”\n\n发出去。\n\n消息挂在群里，和那条撤回提示之间隔了不到一分钟的时间差。前排有人回头看了她一眼，又转回去了。\n\n周屿的回复几乎没让她等。\n\n“按原来的。”\n\n三个字。句号。\n\n但前面那个短暂的“对方正在输入”闪了足足四秒才变成这条消息。\n\n孙然把手机翻过来扣在桌上，手指在屏幕背面轻轻敲了一下。",
+      "raw_response": "晚自习前十分钟，教室里人已经坐了大半。孙然把手机搁在桌面上，屏幕亮着，班级群的消息记录停在一条灰色的系统提示上——“‘周屿’撤回了一条消息”。\n\n提示前面还有半截@，@的人是她。\n\n她盯着那条撤回提示看了几秒。群里三十多个人在线，没人接话，消息列表安静得像什么都没发生过。周屿的头像还亮着，在线状态没变。\n\n孙然没切出去私聊。她点开输入框，打了几个字，删掉，又重新打。\n\n“今天的排练要改时间吗？还是按原来的？”\n\n发出去。\n\n消息挂在群里，和那条撤回提示之间隔了不到一分钟的时间差。前排有人回头看了她一眼，又转回去了。\n\n周屿的回复几乎没让她等。\n\n“按原来的。”\n\n三个字。句号。\n\n但前面那个短暂的“对方正在输入”闪了足足四秒才变成这条消息。\n\n孙然把手机翻过来扣在桌上，手指在屏幕背面轻轻敲了一下。",
+      "input_tokens": 1325,
+      "output_tokens": 216,
+      "latency_ms": 5985,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "4cfb17d7cb516b071de8281cb57bae3dcbba9b3422fd91667f93b5acee99e1f0",
+      "route_name": null,
+      "route_decision": {
+        "route_name": "B_SHORT_RELATION",
+        "classifier_version": "narrative-route-v1",
+        "decision_reasons": [
+          "scene is relationship-oriented with no physical urgency",
+          "character action involves relational move (message, gesture, proximity)"
+        ],
+        "matched_rules": [
+          "RULE_B_SHORT_RELATION"
+        ],
+        "rejected_routes": [
+          "C_OBJECT_CAUSAL",
+          "A_LITE_INFORMATION_GAP"
+        ]
+      },
+      "compiled_brief_hash": "02b725513ea167bd711e771974962e39a571cd3fc30a45006c9ef13b6b613571",
+      "instruction_hash": "d7a76822408396dc71c4599a7f40f33368b90199f0d9c0712383961213437555",
+      "text_path": "cases\\A-06\\drafts\\route-3.txt"
+    },
+    {
+      "group": "BASELINE-complete_planner",
+      "replica": 1,
+      "mode": "complete_planner",
+      "candidate_id": "6c9eff75-a2d7-4f41-ae59-32a205f8b416",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "晚自习前十分钟，孙然把手机搁在桌面上，屏幕朝上。班级群的消息还在往上刷，有人问数学作业，有人发了一张猫的表情包。她的视线钉在那条灰色的系统提示上——“搭档”撤回了一条消息。\n\n撤回提示前面还有一行小字：@孙然。\n\n她没点进去。手指停在屏幕上方两厘米的位置，没有落下。\n\n群里三十多个人在线。刚才那几条消息发出来的时候，头像亮着一排。现在还有人接着聊作业的事，没人提那条撤回。搭档的头像也在在线列表里，没再发任何东西。\n\n孙然把手机拿起来，解锁，点进群聊。输入框弹出来的时候，她听见后排有人拉椅子的声音，走廊里传来晚自习铃响前的最后一阵脚步声。\n\n她打了一行字，删掉。又打了一行。\n\n发送。\n\n“今天的排练要改时间吗？还是按原来的？”\n\n消息发出去之后，群里安静了大概四秒。那四秒里，孙然盯着搭档的头像，没有眨眼。\n\n搭档的头像旁边出现了一个“正在输入”的提示。\n\n提示闪了两下，消失。又闪了一下。\n\n搭档回复：“按原来的。”\n\n句号。没有表情包，没有多余的字。但那个回复的速度——先闪了两下又消失，然后才发出来——孙然看见了。\n\n她把手机翻过去，屏幕扣在桌面上。\n\n晚自习铃响了。",
+      "raw_response": "晚自习前十分钟，孙然把手机搁在桌面上，屏幕朝上。班级群的消息还在往上刷，有人问数学作业，有人发了一张猫的表情包。她的视线钉在那条灰色的系统提示上——“搭档”撤回了一条消息。\n\n撤回提示前面还有一行小字：@孙然。\n\n她没点进去。手指停在屏幕上方两厘米的位置，没有落下。\n\n群里三十多个人在线。刚才那几条消息发出来的时候，头像亮着一排。现在还有人接着聊作业的事，没人提那条撤回。搭档的头像也在在线列表里，没再发任何东西。\n\n孙然把手机拿起来，解锁，点进群聊。输入框弹出来的时候，她听见后排有人拉椅子的声音，走廊里传来晚自习铃响前的最后一阵脚步声。\n\n她打了一行字，删掉。又打了一行。\n\n发送。\n\n“今天的排练要改时间吗？还是按原来的？”\n\n消息发出去之后，群里安静了大概四秒。那四秒里，孙然盯着搭档的头像，没有眨眼。\n\n搭档的头像旁边出现了一个“正在输入”的提示。\n\n提示闪了两下，消失。又闪了一下。\n\n搭档回复：“按原来的。”\n\n句号。没有表情包，没有多余的字。但那个回复的速度——先闪了两下又消失，然后才发出来——孙然看见了。\n\n她把手机翻过去，屏幕扣在桌面上。\n\n晚自习铃响了。",
+      "input_tokens": 2506,
+      "output_tokens": 300,
+      "latency_ms": 7842,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "8d461d94e01b34cb72bfa1de2585943c13131c67ec92446aa4b4cb2dd4811886",
+      "route_name": null,
+      "route_decision": null,
+      "compiled_brief_hash": null,
+      "instruction_hash": null,
+      "text_path": "cases\\A-06\\drafts\\baseline-1.txt"
+    },
+    {
+      "group": "BASELINE-complete_planner",
+      "replica": 2,
+      "mode": "complete_planner",
+      "candidate_id": "1ef3ad96-90b8-4984-ac06-ce6406d95d48",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "孙然盯着手机屏幕。\n\n班级群的聊天框里，一条灰色的系统提示停在最新消息的位置——“【李与同】撤回了一条消息”。\n\n撤回时间：三十秒前。\n\n她的拇指悬在屏幕上方，没有滑动。群成员列表里那个熟悉的头像还亮着，在线。三十多个人，在线。她数了一下——三十四个，包括几个平时不怎么冒泡的。\n\n李与同。\n\n经常和她排练的那个搭档。\n\n孙然把手机平放在课桌上，屏幕朝上。教室里的日光灯管嗡嗡响，后排有人拖椅子，前门有人进进出出。晚自习铃还有大概十分钟。\n\n她重新点亮屏幕。\n\n撤回提示还在。@孙然 然后撤回。\n\n她不能私聊问他。不能假装没看见。\n\n孙然点开输入框。手指在键盘上停了两秒。\n\n她打了一行字：“今天排练还按原来的时间？还是你那边要调？”\n\n发送。\n\n消息出现在群里。没有@任何人。没有称呼。\n\n她把手机翻过去，屏幕朝下扣在课本旁边。\n\n过了大概四十秒，手机震了一下。\n\n孙然翻过来。\n\n李与同在群里回了一条：“按原来的。”\n\n句号。没有表情。没有多余的字。\n\n但回复的时间——她盯着那条消息右侧的时间戳——几乎是她发出后二十秒内。二十秒。对于一个晚自习前正在收书包或者翻课本的人来说，太快了。\n\n他在等。\n\n孙然把屏幕按灭，把手机塞进桌肚。\n\n她没有再回复。",
+      "raw_response": "孙然盯着手机屏幕。\n\n班级群的聊天框里，一条灰色的系统提示停在最新消息的位置——“【李与同】撤回了一条消息”。\n\n撤回时间：三十秒前。\n\n她的拇指悬在屏幕上方，没有滑动。群成员列表里那个熟悉的头像还亮着，在线。三十多个人，在线。她数了一下——三十四个，包括几个平时不怎么冒泡的。\n\n李与同。\n\n经常和她排练的那个搭档。\n\n孙然把手机平放在课桌上，屏幕朝上。教室里的日光灯管嗡嗡响，后排有人拖椅子，前门有人进进出出。晚自习铃还有大概十分钟。\n\n她重新点亮屏幕。\n\n撤回提示还在。@孙然 然后撤回。\n\n她不能私聊问他。不能假装没看见。\n\n孙然点开输入框。手指在键盘上停了两秒。\n\n她打了一行字：“今天排练还按原来的时间？还是你那边要调？”\n\n发送。\n\n消息出现在群里。没有@任何人。没有称呼。\n\n她把手机翻过去，屏幕朝下扣在课本旁边。\n\n过了大概四十秒，手机震了一下。\n\n孙然翻过来。\n\n李与同在群里回了一条：“按原来的。”\n\n句号。没有表情。没有多余的字。\n\n但回复的时间——她盯着那条消息右侧的时间戳——几乎是她发出后二十秒内。二十秒。对于一个晚自习前正在收书包或者翻课本的人来说，太快了。\n\n他在等。\n\n孙然把屏幕按灭，把手机塞进桌肚。\n\n她没有再回复。",
+      "input_tokens": 2506,
+      "output_tokens": 311,
+      "latency_ms": 8565,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "8d461d94e01b34cb72bfa1de2585943c13131c67ec92446aa4b4cb2dd4811886",
+      "route_name": null,
+      "route_decision": null,
+      "compiled_brief_hash": null,
+      "instruction_hash": null,
+      "text_path": "cases\\A-06\\drafts\\baseline-2.txt"
+    },
+    {
+      "group": "BASELINE-complete_planner",
+      "replica": 3,
+      "mode": "complete_planner",
+      "candidate_id": "f8279906-893a-4137-861a-a65b8e3bc53d",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "晚自习前十分钟，教室里的人差不多坐满了。\n\n孙然把手机搁在课本旁边，屏幕朝上。班级群的消息还在往上刷——有人问数学作业，有人发了个表情包，然后一条灰色的小字停在中间：\n\n*“搭档”撤回了一条消息*\n\n她盯着那行字看了三秒。撤回提示前面还有半截系统消息，显示这个“搭档”刚刚@了她。\n\n群聊界面上方显示在线人数：32。\n\n孙然没有往上翻。往上翻也看不到撤回的内容。她把手机拿起来，拇指在屏幕上方停了一下。\n\n不能私聊。这是她自己定的规矩——排练的事都在群里说，免得别人觉得他们俩总单独约时间。搭档也一直遵守这条。\n\n但搭档刚才@了她，又撤回了。\n\n孙然点开输入框。周围有人在背单词，有人趴在桌上补觉，没人注意她。她打了一行字，又删掉。再打一行。\n\n如果发“怎么了”，就等于承认自己看到了撤回。如果发别的——\n\n她重新输入：*“今天的排练要改时间吗？还是按原来的？”*\n\n发送。\n\n消息跳进群里，排在撤回提示下面三行。孙然把手机放回桌面，屏幕没锁。\n\n过了大概十几秒。\n\n搭档的头像亮了一下。\n\n回复跳出来：“按原来的。”\n\n句号后面紧跟着一个表情——一个微笑的小黄脸，眼睛弯着，嘴巴是一条横线。\n\n孙然看着那个表情。搭档平时回复排练确认，从来不加表情。\n\n她把手机翻了过去，屏幕朝下扣在课本上。",
+      "raw_response": "晚自习前十分钟，教室里的人差不多坐满了。\n\n孙然把手机搁在课本旁边，屏幕朝上。班级群的消息还在往上刷——有人问数学作业，有人发了个表情包，然后一条灰色的小字停在中间：\n\n*“搭档”撤回了一条消息*\n\n她盯着那行字看了三秒。撤回提示前面还有半截系统消息，显示这个“搭档”刚刚@了她。\n\n群聊界面上方显示在线人数：32。\n\n孙然没有往上翻。往上翻也看不到撤回的内容。她把手机拿起来，拇指在屏幕上方停了一下。\n\n不能私聊。这是她自己定的规矩——排练的事都在群里说，免得别人觉得他们俩总单独约时间。搭档也一直遵守这条。\n\n但搭档刚才@了她，又撤回了。\n\n孙然点开输入框。周围有人在背单词，有人趴在桌上补觉，没人注意她。她打了一行字，又删掉。再打一行。\n\n如果发“怎么了”，就等于承认自己看到了撤回。如果发别的——\n\n她重新输入：*“今天的排练要改时间吗？还是按原来的？”*\n\n发送。\n\n消息跳进群里，排在撤回提示下面三行。孙然把手机放回桌面，屏幕没锁。\n\n过了大概十几秒。\n\n搭档的头像亮了一下。\n\n回复跳出来：“按原来的。”\n\n句号后面紧跟着一个表情——一个微笑的小黄脸，眼睛弯着，嘴巴是一条横线。\n\n孙然看着那个表情。搭档平时回复排练确认，从来不加表情。\n\n她把手机翻了过去，屏幕朝下扣在课本上。",
+      "input_tokens": 2506,
+      "output_tokens": 327,
+      "latency_ms": 9132,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "8d461d94e01b34cb72bfa1de2585943c13131c67ec92446aa4b4cb2dd4811886",
+      "route_name": null,
+      "route_decision": null,
+      "compiled_brief_hash": null,
+      "instruction_hash": null,
+      "text_path": "cases\\A-06\\drafts\\baseline-3.txt"
+    }
+  ],
+  "actual_route": "B_SHORT_RELATION",
+  "route_decision": {
+    "route_name": "B_SHORT_RELATION",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "scene is relationship-oriented with no physical urgency",
+      "character action involves relational move (message, gesture, proximity)"
+    ],
+    "matched_rules": [
+      "RULE_B_SHORT_RELATION"
+    ],
+    "rejected_routes": [
+      "C_OBJECT_CAUSAL",
+      "A_LITE_INFORMATION_GAP"
+    ]
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "陆柯发现外卖被错拿后，利用现场另一袋无主餐和外卖架上的便签纸，留下信息并取走替代餐，在规则与便利之间做出选择。",
+  "location": "写字楼一楼大厅外卖架区域",
+  "time": "傍晚下班时分，前台已下班，监控死角",
+  "scene_state": {
+    "last_completed_action": "陆柯下班走到外卖架，发现自己名字的餐不见了，只剩一袋无名字的餐。",
+    "present_characters": [
+      "陆柯"
+    ],
+    "visible_facts": [
+      "外卖架上有一袋标注陆柯名字的餐不见了",
+      "架子上只剩一袋没有名字的餐",
+      "外卖架位于监控死角",
+      "前台已下班，无人可询问"
+    ],
+    "available_objects": [
+      "一袋无名字的外卖",
+      "外卖架上的便签纸和笔",
+      "陆柯的手机"
+    ],
+    "unresolved_problem": "陆柯的餐被错拿，无法确定是谁拿走的，也无法直接联系错拿者。",
+    "already_existing_constraints": [
+      "监控死角，无法查看录像",
+      "前台已下班，无法求助工作人员",
+      "错拿者身份未知"
+    ]
+  },
+  "characters": [
+    {
+      "name": "陆柯",
+      "goal": "解决晚餐问题，同时尽量减少对他人的影响",
+      "known": [
+        "自己的餐被错拿",
+        "现场有一袋无主餐",
+        "监控死角，前台已下班"
+      ],
+      "unknown": [
+        "谁拿走了自己的餐",
+        "无主餐的主人是谁",
+        "错拿者是否会回来换餐"
+      ],
+      "mistaken_beliefs": [
+        "错拿者可能很快会发现自己拿错了并返回"
+      ],
+      "constraints": [
+        "不能直接联系错拿者",
+        "不能无限期等待",
+        "不能随意拿走别人的餐而不留信息"
+      ],
+      "observed_evidence": [
+        "外卖架上自己名字的餐不见了",
+        "只剩一袋没有名字的餐"
+      ],
+      "current_interpretation": "有人误拿了自己的餐，而留下的这袋餐可能是错拿者的，或者另一个被错拿的。",
+      "how_interpretation_drives_action": "陆柯决定用便签纸留下自己的联系方式，并取走那袋无主餐作为临时替代，以便错拿者联系自己交换。"
+    }
+  ],
+  "concrete_problem": "陆柯必须决定是等待错拿者返回、放弃晚餐，还是取走那袋无主餐并留下信息。",
+  "pressure": "下班时间饥饿感增加，且错拿者随时可能离开大楼，但等待时间不确定。",
+  "turning_point": "陆柯在便签上写下自己的电话号码和说明，贴在无主餐原来的位置，然后取走那袋餐，从而将被动等待转为主动建立联系的可能。",
+  "end_condition": "陆柯带着无主餐离开，外卖架上留下便签，错拿问题暂时搁置，但建立了后续联系的通道。",
+  "forbidden": [
+    "错拿者直接出现并交换餐",
+    "通过监控找到错拿者",
+    "前台或保安介入",
+    "陆柯放弃晚餐或直接丢弃无主餐"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "外卖架上只剩一袋没有名字的餐，且自己的餐不见了。",
+      "character_interpretation": "这袋餐很可能是错拿者留下的，或者另一个被误放的餐，自己拿走它可以解决晚餐，但需要给错拿者一个交代。",
+      "character_next_action": "陆柯从外卖架上拿起便签纸和笔，写下自己的电话号码和情况说明，贴在无主餐原来的位置，然后取走那袋餐。",
+      "rejected_alternative": "陆柯本可以放弃晚餐直接离开，或者等待错拿者返回，但饥饿和不确定性让他选择了更主动的方式。",
+      "immediate_consequence": "陆柯获得了晚餐，但承担了可能被指责私自拿走他人餐的风险，同时为错拿者提供了联系自己的途径。",
+      "counterfactual_without_action": "如果陆柯不采取行动，他只能饿着肚子离开，或者继续等待一个可能永远不会回来的错拿者。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "外卖架上有陆柯的餐（已被拿走）和一袋无主餐，无任何信息。",
+        "after": "外卖架上无任何餐，但有一张便签写着陆柯的联系方式和说明。"
+      },
+      "cost_or_commitment": "陆柯承担了私自取走他人餐的道德风险，并承诺如果错拿者联系他，他会配合解决。",
+      "next_constraint": "如果错拿者联系陆柯，他必须抽出时间处理换餐事宜。",
+      "reader_must_infer": "陆柯的便签是否会被错拿者看到，以及错拿者是否会联系他。",
+      "narrator_must_not_state": [
+        "错拿者一定会看到便签",
+        "陆柯的行为是完全正确的"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "陆柯站在外卖架前，发现自己的餐不见了，只剩一袋无主餐。",
+    "dominant_pressure": {
+      "kind": "resource_constraint",
+      "description": "陆柯面临晚餐资源缺失，同时时间有限，必须快速做出决定。"
+    },
+    "allowed_viewpoint_misread": "陆柯可能误以为错拿者是故意偷餐，而非无心之失。",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "错拿者的身份和动机",
+      "无主餐的实际主人是谁"
+    ],
+    "stop_state": {
+      "type": "physical_change",
+      "visible_fact": "外卖架上只剩一张便签，陆柯提着无主餐离开。",
+      "what_is_now_different": "外卖架上的餐品状态改变，陆柯的晚餐问题暂时解决，但留下了联系线索，为后续可能的互动埋下伏笔。",
+      "must_not_append": "不得描写陆柯离开后外卖架前的任何情况。"
+    },
+    "final_line_must_include": ""
+  }
+}

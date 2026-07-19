@@ -1,0 +1,338 @@
+{
+  "case_id": "B-03",
+  "category": "恋爱日常",
+  "title": "图书馆闭馆时刻",
+  "run_id": "dda19612-1dcf-4f9c-a856-b7dce580760f",
+  "expected_route": "B_SHORT_RELATION",
+  "planner": {
+    "candidate_id": "98642842-8969-421a-afec-e00c07e4f179",
+    "attempt_number": 1,
+    "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+    "model_id": "deepseek-v4-pro",
+    "prompt_version_id": "f9052f8a-dc4e-5408-b14e-fc1badaf57f8",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 12288,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "json_object"
+    },
+    "text_output": "{\n  \"planner_contract_version\": 2,\n  \"scene_goal\": \"在闭馆铃响后的短暂独处中，通过一个具体的归还动作，让江晚和宋行之间产生第一次非言语的默契接触，为后续情感发展埋下种子。\",\n  \"location\": \"大学图书馆二楼阅览室\",\n  \"time\": \"晚上九点五十分，闭馆铃刚响过\",\n  \"scene_state\": {\n    \"last_completed_action\": \"闭馆铃响起，其他读者陆续离开，江晚合上笔记本准备起身\",\n    \"present_characters\": [\"江晚\", \"宋行\"],\n    \"visible_facts\": [\"阅览室只剩下两人\", \"宋行坐在江晚对面\", \"江晚的借阅卡掉在地上\"],\n    \"available_objects\": [\"江晚的借阅卡\", \"江晚的笔记本\", \"宋行的书\", \"桌上的台灯\"],\n    \"unresolved_problem\": \"江晚不确定宋行是否在故意等她，但无法直接询问\",\n    \"already_existing_constraints\": [\"图书馆即将闭馆，时间有限\", \"两人关系尚浅，不能唐突追问私人意图\"]\n  },\n  \"characters\": [\n    {\n      \"name\": \"江晚\",\n      \"goal\": \"拿回借阅卡并安全结束这次偶遇，同时试探宋行的态度\",\n      \"known\": [\"宋行经常在图书馆坐在她对面\", \"借阅卡掉在地上需要捡回\"],\n      \"unknown\": [\"宋行是否故意等到最后\", \"宋行对她的真实感觉\"],\n      \"mistaken_beliefs\": [\"宋行可能只是碰巧也待到闭馆\"],\n      \"constraints\": [\"不能直接问对方是不是在等自己\", \"必须尽快离开以免尴尬\"],\n      \"observed_evidence\": [\"宋行弯腰捡起她的借阅卡并递过来\", \"两人的手指在交接时碰触\"],\n      \"current_interpretation\": \"宋行在主动帮她，但手指的接触可能不是偶然\",\n      \"how_interpretation_drives_action\": \"她接过卡，但没有立刻抽手，而是停顿了一秒，然后轻声道谢\"\n    },\n    {\n      \"name\": \"宋行\",\n      \"goal\": \"创造一次自然接触的机会，观察江晚的反应\",\n      \"known\": [\"江晚的借阅卡掉在地上\", \"闭馆后两人会短暂独处\"],\n      \"unknown\": [\"江晚是否对他有好感\", \"江晚会不会主动多说一句话\"],\n      \"mistaken_beliefs\": [\"江晚可能只是把他当成普通同学\"],\n      \"constraints\": [\"不能表现得太刻意\", \"不能直接表白或追问\"],\n      \"observed_evidence\": [\"江晚的手指在他递卡时没有立即躲开\"],\n      \"current_interpretation\": \"江晚不排斥这种轻微接触，甚至可能有点紧张\",\n      \"how_interpretation_drives_action\": \"他保持递卡的姿势，等江晚先抽手，然后收拾自己的书，准备一起离开\"\n    }\n  ],\n  \"concrete_problem\": \"江晚必须在接过借阅卡后的几秒内，决定是说一句话、直接离开，还是用动作回应宋行的试探。\",\n  \"pressure\": \"闭馆灯即将熄灭，时间紧迫，但两人都不愿先打破微妙的沉默\",\n  \"turning_point\": \"江晚接过卡时，手指故意在宋行手背上停留了一瞬，然后低声说了一句'谢谢'，这个选择让宋行确认了她不反感\",\n  \"end_condition\": \"江晚起身走向门口，宋行跟在她身后两步远，灯在他们身后熄灭\",\n  \"forbidden\": [\"江晚直接追问宋行是否在等她\", \"宋行直接表白或说出真实意图\", \"两人进行长篇对话\", \"使用内心独白解释全部心理活动\", \"提前揭示两人后续关系发展\"],\n  \"causal_transitions\": [\n    {\n      \"id\": \"CT01\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"宋行把借阅卡递过来时，指尖轻轻擦过江晚的手心\",\n      \"character_interpretation\": \"江晚认为宋行的动作可能不是无意的，而是有意延长接触\",\n      \"character_next_action\": \"她接过卡，但没有立刻收回手，而是让手指在宋行手背上停留了一秒\",\n      \"rejected_alternative\": \"她可以快速抽手并立即转身离开\",\n      \"immediate_consequence\": \"宋行感觉到她的停留，抬头看了她一眼，两人目光短暂相接\",\n      \"counterfactual_without_action\": \"如果江晚快速抽手，宋行会认为她只想保持距离，之后会主动拉开距离\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"两人只是对面而坐的普通同学，没有肢体接触\",\n        \"after\": \"两人有过一次有意识的、双方都注意到的轻微接触，并交换了眼神\"\n      },\n      \"cost_or_commitment\": \"江晚承担了被误解为主动的风险，且无法再假装只是偶然碰触\",\n      \"next_constraint\": \"两人之间有了一个未言明的默契，下次见面时不能再当作什么都没发生\",\n      \"reader_must_infer\": \"宋行递卡时的指尖触碰是故意的，但江晚的停留回应了他\",\n      \"narrator_must_not_state\": [\n        \"宋行此刻的心理活动\",\n        \"江晚为什么决定停留一秒的真实动机\"\n      ]\n    }\n  ],\n  \"tempo_guardrails\": {\n    \"entry_pressure\": \"闭馆铃已响，江晚发现借阅卡掉在地上，而宋行已经弯腰去捡\",\n    \"dominant_pressure\": {\n      \"kind\": \"social_friction\",\n      \"description\": \"时间正在流逝，但真正阻止两人进一步交流的是彼此尚未建立的信任和害怕被拒绝的顾虑\"\n    },\n    \"allowed_viewpoint_misread\": \"江晚可能把宋行捡卡的行为解读为单纯的帮忙，而忽略其中的试探意味\",\n    \"disclosure_cap\": 1,\n    \"must_remain_unclassified\": [\n      \"宋行是否真的故意等到闭馆\",\n      \"江晚对宋行的真实好感程度\"\n    ],\n    \"stop_state\": {\n      \"type\": \"relationship_shift\",\n      \"visible_fact\": \"江晚起身离开时，宋行没有立刻跟上，而是等了两步远的距离后才起身\",\n      \"what_is_now_different\": \"两人从偶然同处一室的陌生人，变成了有过一次默契接触、彼此心照不宣的潜在发展对象\",\n      \"must_not_append\": \"不得解释宋行为什么选择保持两步距离\"\n    },\n    \"final_line_must_include\": \"灯在他们身后熄灭\"\n  },\n  \"chapter_contract_check\": {\n    \"function_aligned\": true,\n    \"must_deliver_covered\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_enabled\": true,\n    \"main_payoff_prepared\": true,\n    \"ending_hook_established\": true,\n    \"causal_transitions_grounded\": true,\n    \"reader_inference_not_pre_resolved\": true,\n    \"scene_state_reconstructed\": true,\n    \"information_sources_legal\": true,\n    \"character_choice_is_real\": true,\n    \"consequence_is_counterfactual\": true,\n    \"state_delta_is_nonempty\": true,\n    \"next_constraint_is_new\": true,\n    \"stop_state_is_visible\": true,\n    \"stop_state_changes_future_actions\": true\n  }\n}",
+    "raw_response": "{\n  \"planner_contract_version\": 2,\n  \"scene_goal\": \"在闭馆铃响后的短暂独处中，通过一个具体的归还动作，让江晚和宋行之间产生第一次非言语的默契接触，为后续情感发展埋下种子。\",\n  \"location\": \"大学图书馆二楼阅览室\",\n  \"time\": \"晚上九点五十分，闭馆铃刚响过\",\n  \"scene_state\": {\n    \"last_completed_action\": \"闭馆铃响起，其他读者陆续离开，江晚合上笔记本准备起身\",\n    \"present_characters\": [\"江晚\", \"宋行\"],\n    \"visible_facts\": [\"阅览室只剩下两人\", \"宋行坐在江晚对面\", \"江晚的借阅卡掉在地上\"],\n    \"available_objects\": [\"江晚的借阅卡\", \"江晚的笔记本\", \"宋行的书\", \"桌上的台灯\"],\n    \"unresolved_problem\": \"江晚不确定宋行是否在故意等她，但无法直接询问\",\n    \"already_existing_constraints\": [\"图书馆即将闭馆，时间有限\", \"两人关系尚浅，不能唐突追问私人意图\"]\n  },\n  \"characters\": [\n    {\n      \"name\": \"江晚\",\n      \"goal\": \"拿回借阅卡并安全结束这次偶遇，同时试探宋行的态度\",\n      \"known\": [\"宋行经常在图书馆坐在她对面\", \"借阅卡掉在地上需要捡回\"],\n      \"unknown\": [\"宋行是否故意等到最后\", \"宋行对她的真实感觉\"],\n      \"mistaken_beliefs\": [\"宋行可能只是碰巧也待到闭馆\"],\n      \"constraints\": [\"不能直接问对方是不是在等自己\", \"必须尽快离开以免尴尬\"],\n      \"observed_evidence\": [\"宋行弯腰捡起她的借阅卡并递过来\", \"两人的手指在交接时碰触\"],\n      \"current_interpretation\": \"宋行在主动帮她，但手指的接触可能不是偶然\",\n      \"how_interpretation_drives_action\": \"她接过卡，但没有立刻抽手，而是停顿了一秒，然后轻声道谢\"\n    },\n    {\n      \"name\": \"宋行\",\n      \"goal\": \"创造一次自然接触的机会，观察江晚的反应\",\n      \"known\": [\"江晚的借阅卡掉在地上\", \"闭馆后两人会短暂独处\"],\n      \"unknown\": [\"江晚是否对他有好感\", \"江晚会不会主动多说一句话\"],\n      \"mistaken_beliefs\": [\"江晚可能只是把他当成普通同学\"],\n      \"constraints\": [\"不能表现得太刻意\", \"不能直接表白或追问\"],\n      \"observed_evidence\": [\"江晚的手指在他递卡时没有立即躲开\"],\n      \"current_interpretation\": \"江晚不排斥这种轻微接触，甚至可能有点紧张\",\n      \"how_interpretation_drives_action\": \"他保持递卡的姿势，等江晚先抽手，然后收拾自己的书，准备一起离开\"\n    }\n  ],\n  \"concrete_problem\": \"江晚必须在接过借阅卡后的几秒内，决定是说一句话、直接离开，还是用动作回应宋行的试探。\",\n  \"pressure\": \"闭馆灯即将熄灭，时间紧迫，但两人都不愿先打破微妙的沉默\",\n  \"turning_point\": \"江晚接过卡时，手指故意在宋行手背上停留了一瞬，然后低声说了一句'谢谢'，这个选择让宋行确认了她不反感\",\n  \"end_condition\": \"江晚起身走向门口，宋行跟在她身后两步远，灯在他们身后熄灭\",\n  \"forbidden\": [\"江晚直接追问宋行是否在等她\", \"宋行直接表白或说出真实意图\", \"两人进行长篇对话\", \"使用内心独白解释全部心理活动\", \"提前揭示两人后续关系发展\"],\n  \"causal_transitions\": [\n    {\n      \"id\": \"CT01\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"宋行把借阅卡递过来时，指尖轻轻擦过江晚的手心\",\n      \"character_interpretation\": \"江晚认为宋行的动作可能不是无意的，而是有意延长接触\",\n      \"character_next_action\": \"她接过卡，但没有立刻收回手，而是让手指在宋行手背上停留了一秒\",\n      \"rejected_alternative\": \"她可以快速抽手并立即转身离开\",\n      \"immediate_consequence\": \"宋行感觉到她的停留，抬头看了她一眼，两人目光短暂相接\",\n      \"counterfactual_without_action\": \"如果江晚快速抽手，宋行会认为她只想保持距离，之后会主动拉开距离\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"两人只是对面而坐的普通同学，没有肢体接触\",\n        \"after\": \"两人有过一次有意识的、双方都注意到的轻微接触，并交换了眼神\"\n      },\n      \"cost_or_commitment\": \"江晚承担了被误解为主动的风险，且无法再假装只是偶然碰触\",\n      \"next_constraint\": \"两人之间有了一个未言明的默契，下次见面时不能再当作什么都没发生\",\n      \"reader_must_infer\": \"宋行递卡时的指尖触碰是故意的，但江晚的停留回应了他\",\n      \"narrator_must_not_state\": [\n        \"宋行此刻的心理活动\",\n        \"江晚为什么决定停留一秒的真实动机\"\n      ]\n    }\n  ],\n  \"tempo_guardrails\": {\n    \"entry_pressure\": \"闭馆铃已响，江晚发现借阅卡掉在地上，而宋行已经弯腰去捡\",\n    \"dominant_pressure\": {\n      \"kind\": \"social_friction\",\n      \"description\": \"时间正在流逝，但真正阻止两人进一步交流的是彼此尚未建立的信任和害怕被拒绝的顾虑\"\n    },\n    \"allowed_viewpoint_misread\": \"江晚可能把宋行捡卡的行为解读为单纯的帮忙，而忽略其中的试探意味\",\n    \"disclosure_cap\": 1,\n    \"must_remain_unclassified\": [\n      \"宋行是否真的故意等到闭馆\",\n      \"江晚对宋行的真实好感程度\"\n    ],\n    \"stop_state\": {\n      \"type\": \"relationship_shift\",\n      \"visible_fact\": \"江晚起身离开时，宋行没有立刻跟上，而是等了两步远的距离后才起身\",\n      \"what_is_now_different\": \"两人从偶然同处一室的陌生人，变成了有过一次默契接触、彼此心照不宣的潜在发展对象\",\n      \"must_not_append\": \"不得解释宋行为什么选择保持两步距离\"\n    },\n    \"final_line_must_include\": \"灯在他们身后熄灭\"\n  },\n  \"chapter_contract_check\": {\n    \"function_aligned\": true,\n    \"must_deliver_covered\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_enabled\": true,\n    \"main_payoff_prepared\": true,\n    \"ending_hook_established\": true,\n    \"causal_transitions_grounded\": true,\n    \"reader_inference_not_pre_resolved\": true,\n    \"scene_state_reconstructed\": true,\n    \"information_sources_legal\": true,\n    \"character_choice_is_real\": true,\n    \"consequence_is_counterfactual\": true,\n    \"state_delta_is_nonempty\": true,\n    \"next_constraint_is_new\": true,\n    \"stop_state_is_visible\": true,\n    \"stop_state_changes_future_actions\": true\n  }\n}",
+    "input_tokens": 3314,
+    "output_tokens": 1631,
+    "latency_ms": 23488,
+    "finish_reason": "stop",
+    "error_code": null,
+    "error_message": null,
+    "rendered_user_prompt_sha256": "fa7c258c5aff9bbc742457a15147c6ad60113090fc953dfaf946fc599073cacc",
+    "route_name": null,
+    "route_decision": null,
+    "compiled_brief_hash": null,
+    "instruction_hash": null
+  },
+  "drafts": [
+    {
+      "group": "ROUTE-A_LITE_INFORMATION_GAP",
+      "replica": 1,
+      "mode": "narrative_route",
+      "candidate_id": "66c0275e-b123-4306-9efd-b3eacfff4267",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "A_LITE_INFORMATION_GAP",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "multiple characters with distinct information",
+            "viewpoint character has unknown facts and an interpretation",
+            "secondary character carries independent knowledge"
+          ],
+          "matched_rules": [
+            "RULE_A_LITE_INFORMATION_GAP"
+          ],
+          "rejected_routes": [
+            "C_OBJECT_CAUSAL"
+          ]
+        },
+        "compiled_brief_hash": "b5737879aee2f3c5caf1104908b59a9d5038cf995daa28df6dc9520aafb9662a",
+        "instruction_hash": "d368cbfa0846d1cb9adf452db083cbb58ba69154f281b3d6c895cb34da157cec",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "闭馆铃响到第三声的时候，江晚才意识到自己的借阅卡不在桌上。\n\n她低头去看脚边的地板，深灰色的地毯上，那张白色卡片躺在她左脚外侧大约二十公分的位置。她正要弯腰，对面的人已经先动了。\n\n宋行从椅子上侧过身，右手伸过桌沿，指尖捏住卡片的边缘捡起来。他没有直接递，而是用拇指擦了一下卡面上并不存在的灰，然后翻过来看了一眼借阅日期，才把手伸向她。\n\n“掉了。”\n\n他说这两个字的时候，视线落在卡片上，没有看她。\n\n江晚伸手去接。她的指尖碰到卡面的同时，也碰到了他的食指指腹。触感干燥，温度比她预想的要低一些。\n\n她捏住卡片的一端。\n\n没有立刻收回手。\n\n她的中指和无名指压在他的手背上，停留了一下。不是拿不稳，也不是没找准位置。就是停在那里，指腹贴着他的皮肤，能感觉到他指节微微动了一下。\n\n宋行抬起头。\n\n阅览室的顶灯已经关了大半，只剩门口那一排还亮着，光从他们背后打过来，他的脸有一半落在阴影里。他看她的时候，眼睛里的东西她读不懂——不是意外，也不是询问，更像是在确认什么。\n\n江晚把手收回来，把借阅卡塞进外套口袋里。口袋的拉链卡了一下，她低头弄了两次才拉上。\n\n“谢谢。”\n\n她站起来，把椅子推回桌下。椅脚蹭过地毯发出沉闷的摩擦声，在空荡荡的阅览室里显得格外清楚。\n\n宋行没有应声。他还坐在原来的位置上，手指收回去搭在桌沿，刚才被她碰过的那只手。\n\n江晚转身往门口走。她的帆布鞋踩在地毯上几乎没有声音，但她能听见自己的心跳，一下一下地敲在耳膜上。\n\n走了两步。\n\n身后没有动静。\n\n三步。\n\n还是没有。\n\n她走到阅览室门口的时候，身后传来椅子被推开的声音。不是紧跟着的，是隔了两步远的距离，像是特意等了那么一会儿。\n\n江晚没有回头。她伸手推开门，走廊里的感应灯亮起来，把她的影子拉得很长。\n\n她走出去的瞬间，身后的灯在他们之间熄灭了。",
+      "raw_response": "闭馆铃响到第三声的时候，江晚才意识到自己的借阅卡不在桌上。\n\n她低头去看脚边的地板，深灰色的地毯上，那张白色卡片躺在她左脚外侧大约二十公分的位置。她正要弯腰，对面的人已经先动了。\n\n宋行从椅子上侧过身，右手伸过桌沿，指尖捏住卡片的边缘捡起来。他没有直接递，而是用拇指擦了一下卡面上并不存在的灰，然后翻过来看了一眼借阅日期，才把手伸向她。\n\n“掉了。”\n\n他说这两个字的时候，视线落在卡片上，没有看她。\n\n江晚伸手去接。她的指尖碰到卡面的同时，也碰到了他的食指指腹。触感干燥，温度比她预想的要低一些。\n\n她捏住卡片的一端。\n\n没有立刻收回手。\n\n她的中指和无名指压在他的手背上，停留了一下。不是拿不稳，也不是没找准位置。就是停在那里，指腹贴着他的皮肤，能感觉到他指节微微动了一下。\n\n宋行抬起头。\n\n阅览室的顶灯已经关了大半，只剩门口那一排还亮着，光从他们背后打过来，他的脸有一半落在阴影里。他看她的时候，眼睛里的东西她读不懂——不是意外，也不是询问，更像是在确认什么。\n\n江晚把手收回来，把借阅卡塞进外套口袋里。口袋的拉链卡了一下，她低头弄了两次才拉上。\n\n“谢谢。”\n\n她站起来，把椅子推回桌下。椅脚蹭过地毯发出沉闷的摩擦声，在空荡荡的阅览室里显得格外清楚。\n\n宋行没有应声。他还坐在原来的位置上，手指收回去搭在桌沿，刚才被她碰过的那只手。\n\n江晚转身往门口走。她的帆布鞋踩在地毯上几乎没有声音，但她能听见自己的心跳，一下一下地敲在耳膜上。\n\n走了两步。\n\n身后没有动静。\n\n三步。\n\n还是没有。\n\n她走到阅览室门口的时候，身后传来椅子被推开的声音。不是紧跟着的，是隔了两步远的距离，像是特意等了那么一会儿。\n\n江晚没有回头。她伸手推开门，走廊里的感应灯亮起来，把她的影子拉得很长。\n\n她走出去的瞬间，身后的灯在他们之间熄灭了。",
+      "input_tokens": 1430,
+      "output_tokens": 466,
+      "latency_ms": 12434,
+      "finish_reason": "stop",
+      "error_code": "TEMPO_FINAL_LINE_MISMATCH",
+      "error_message": "TEMPO_FINAL_LINE_MISMATCH: final paragraph must include the required marker '灯在他们身后熄灭'",
+      "rendered_user_prompt_sha256": "fbd3f51f408a49b602fb3ab473abd7f50fdcd1f8c17518b246736ae9822fe2bf",
+      "route_name": null,
+      "route_decision": {
+        "route_name": "A_LITE_INFORMATION_GAP",
+        "classifier_version": "narrative-route-v1",
+        "decision_reasons": [
+          "multiple characters with distinct information",
+          "viewpoint character has unknown facts and an interpretation",
+          "secondary character carries independent knowledge"
+        ],
+        "matched_rules": [
+          "RULE_A_LITE_INFORMATION_GAP"
+        ],
+        "rejected_routes": [
+          "C_OBJECT_CAUSAL"
+        ]
+      },
+      "compiled_brief_hash": "b5737879aee2f3c5caf1104908b59a9d5038cf995daa28df6dc9520aafb9662a",
+      "instruction_hash": "d368cbfa0846d1cb9adf452db083cbb58ba69154f281b3d6c895cb34da157cec",
+      "text_path": "cases\\B-03\\drafts\\route-1.txt"
+    },
+    {
+      "group": "ROUTE-A_LITE_INFORMATION_GAP",
+      "replica": 2,
+      "mode": "narrative_route",
+      "candidate_id": "67c671f4-20de-4201-8b68-722c5437b019",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "A_LITE_INFORMATION_GAP",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "multiple characters with distinct information",
+            "viewpoint character has unknown facts and an interpretation",
+            "secondary character carries independent knowledge"
+          ],
+          "matched_rules": [
+            "RULE_A_LITE_INFORMATION_GAP"
+          ],
+          "rejected_routes": [
+            "C_OBJECT_CAUSAL"
+          ]
+        },
+        "compiled_brief_hash": "b5737879aee2f3c5caf1104908b59a9d5038cf995daa28df6dc9520aafb9662a",
+        "instruction_hash": "d368cbfa0846d1cb9adf452db083cbb58ba69154f281b3d6c895cb34da157cec",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "闭馆的电子铃响过第三遍时，江晚才把笔记合上。\n\n她弯腰去拿放在椅子边的帆布包，余光扫到地砖上那片长方形的白色——借阅卡从书页里滑出去了。\n\n她正要伸手。\n\n对面的椅子腿刮过地板，宋行已经弯下腰。\n\n他的手指碰到卡片的边缘，捡起来，翻了个面，看了一眼上面的名字。阅览室的日光灯管已经灭了一半，剩下的光从侧面打在他脸上，颧骨的线条被切成明暗两块。\n\n他递过来。\n\n江晚伸出手。\n\n卡片交接的地方，她的食指指尖划过他的手背。\n\n皮肤的温度。干燥的。比她预想的凉一点。\n\n她应该立刻收回手。\n\n她没有。\n\n食指停在他手背的骨节上，停了一秒。\n\n宋行的动作顿住了。\n\n他抬起头。\n\n阅览室里安静得只剩下空调出风口的嗡鸣。江晚能看清他瞳孔里倒映的自己——手指还搭在他手背上，嘴唇微微张着，什么都没说。\n\n一秒结束。\n\n她收回手，把借阅卡塞进书页里，站起来，把椅子推进桌下。\n\n动作一个接一个，没有停顿。\n\n帆布包的带子挂上肩膀，她转身朝阅览室门口走。鞋底踩在塑胶地板上，发出轻微摩擦声。\n\n身后没有动静。\n\n她走到门口时，身后才传来椅子被推开的声音。\n\n不是紧跟着。隔了两步远。\n\n江晚没有回头。\n\n她推开玻璃门，走进走廊。感应灯在头顶亮起来，走廊尽头电梯间的红色数字停在“1”。\n\n身后的脚步声保持着距离。\n\n阅览室里的灯控开关发出“咔哒”一声轻响。\n\n灯在他们身后熄灭。",
+      "raw_response": "闭馆的电子铃响过第三遍时，江晚才把笔记合上。\n\n她弯腰去拿放在椅子边的帆布包，余光扫到地砖上那片长方形的白色——借阅卡从书页里滑出去了。\n\n她正要伸手。\n\n对面的椅子腿刮过地板，宋行已经弯下腰。\n\n他的手指碰到卡片的边缘，捡起来，翻了个面，看了一眼上面的名字。阅览室的日光灯管已经灭了一半，剩下的光从侧面打在他脸上，颧骨的线条被切成明暗两块。\n\n他递过来。\n\n江晚伸出手。\n\n卡片交接的地方，她的食指指尖划过他的手背。\n\n皮肤的温度。干燥的。比她预想的凉一点。\n\n她应该立刻收回手。\n\n她没有。\n\n食指停在他手背的骨节上，停了一秒。\n\n宋行的动作顿住了。\n\n他抬起头。\n\n阅览室里安静得只剩下空调出风口的嗡鸣。江晚能看清他瞳孔里倒映的自己——手指还搭在他手背上，嘴唇微微张着，什么都没说。\n\n一秒结束。\n\n她收回手，把借阅卡塞进书页里，站起来，把椅子推进桌下。\n\n动作一个接一个，没有停顿。\n\n帆布包的带子挂上肩膀，她转身朝阅览室门口走。鞋底踩在塑胶地板上，发出轻微摩擦声。\n\n身后没有动静。\n\n她走到门口时，身后才传来椅子被推开的声音。\n\n不是紧跟着。隔了两步远。\n\n江晚没有回头。\n\n她推开玻璃门，走进走廊。感应灯在头顶亮起来，走廊尽头电梯间的红色数字停在“1”。\n\n身后的脚步声保持着距离。\n\n阅览室里的灯控开关发出“咔哒”一声轻响。\n\n灯在他们身后熄灭。",
+      "input_tokens": 1430,
+      "output_tokens": 359,
+      "latency_ms": 9340,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "fbd3f51f408a49b602fb3ab473abd7f50fdcd1f8c17518b246736ae9822fe2bf",
+      "route_name": null,
+      "route_decision": {
+        "route_name": "A_LITE_INFORMATION_GAP",
+        "classifier_version": "narrative-route-v1",
+        "decision_reasons": [
+          "multiple characters with distinct information",
+          "viewpoint character has unknown facts and an interpretation",
+          "secondary character carries independent knowledge"
+        ],
+        "matched_rules": [
+          "RULE_A_LITE_INFORMATION_GAP"
+        ],
+        "rejected_routes": [
+          "C_OBJECT_CAUSAL"
+        ]
+      },
+      "compiled_brief_hash": "b5737879aee2f3c5caf1104908b59a9d5038cf995daa28df6dc9520aafb9662a",
+      "instruction_hash": "d368cbfa0846d1cb9adf452db083cbb58ba69154f281b3d6c895cb34da157cec",
+      "text_path": "cases\\B-03\\drafts\\route-2.txt"
+    },
+    {
+      "group": "ROUTE-A_LITE_INFORMATION_GAP",
+      "replica": 3,
+      "mode": "narrative_route",
+      "candidate_id": "21cb3513-63ff-428c-be8d-443459b67447",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "A_LITE_INFORMATION_GAP",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "multiple characters with distinct information",
+            "viewpoint character has unknown facts and an interpretation",
+            "secondary character carries independent knowledge"
+          ],
+          "matched_rules": [
+            "RULE_A_LITE_INFORMATION_GAP"
+          ],
+          "rejected_routes": [
+            "C_OBJECT_CAUSAL"
+          ]
+        },
+        "compiled_brief_hash": "b5737879aee2f3c5caf1104908b59a9d5038cf995daa28df6dc9520aafb9662a",
+        "instruction_hash": "d368cbfa0846d1cb9adf452db083cbb58ba69154f281b3d6c895cb34da157cec",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "闭馆铃响到第三声的时候，江晚才从书页里抬起头。\n\n阅览室的日光灯已经灭了一半，剩下的两排照着空荡荡的长桌，她对面那个位置还坐着人。\n\n宋行。\n\n他手里的书翻到最后一页，像是也刚读完。\n\n江晚合上笔记本，伸手去够桌角的借阅卡，指尖刚碰到塑料边缘，卡片从桌面滑下去，落在地上发出一声轻响。\n\n她弯腰的同时，宋行已经先一步俯下身。\n\n他的手指先碰到那张卡。\n\n江晚的手停在半空，看着他直起身，把借阅卡翻到正面看了一眼，然后朝她递过来。\n\n“掉了。”\n\n他说这两个字的时候声音很轻，阅览室太空，轻得刚好能听见。\n\n江晚伸手去接。指尖碰到卡片边缘，也碰到他的手指。\n\n温热的。\n\n她捏住借阅卡的一角，没有立刻收回手。拇指的指腹压着卡片，无名指的指节贴着宋行的手背，停了一秒。\n\n一秒。\n\n宋行的手指没有动。\n\n江晚抬起眼，正好对上他的视线。他也在看她，隔着不到一臂的距离，目光落在她脸上，没有躲开。\n\n阅览室里只剩下空调出风口的低响。\n\n江晚收回手，把借阅卡塞进笔记本的封套里，站起来把椅子推进桌底。书包带挂上肩膀的时候，她听见宋行合上书的声音。\n\n她往门口走。\n\n身后没有脚步声跟上。\n\n走了两步，江晚听见椅子腿蹭过地板的动静。\n\n她伸手推开阅览室的玻璃门，走廊里的应急灯还亮着，照出地砖上模糊的反光。\n\n身后的脚步停在大约两步远的距离。\n\n江晚没有回头。\n\n头顶的日光灯闪了一下，然后整排熄灭。\n\n灯在他们身后熄灭。",
+      "raw_response": "闭馆铃响到第三声的时候，江晚才从书页里抬起头。\n\n阅览室的日光灯已经灭了一半，剩下的两排照着空荡荡的长桌，她对面那个位置还坐着人。\n\n宋行。\n\n他手里的书翻到最后一页，像是也刚读完。\n\n江晚合上笔记本，伸手去够桌角的借阅卡，指尖刚碰到塑料边缘，卡片从桌面滑下去，落在地上发出一声轻响。\n\n她弯腰的同时，宋行已经先一步俯下身。\n\n他的手指先碰到那张卡。\n\n江晚的手停在半空，看着他直起身，把借阅卡翻到正面看了一眼，然后朝她递过来。\n\n“掉了。”\n\n他说这两个字的时候声音很轻，阅览室太空，轻得刚好能听见。\n\n江晚伸手去接。指尖碰到卡片边缘，也碰到他的手指。\n\n温热的。\n\n她捏住借阅卡的一角，没有立刻收回手。拇指的指腹压着卡片，无名指的指节贴着宋行的手背，停了一秒。\n\n一秒。\n\n宋行的手指没有动。\n\n江晚抬起眼，正好对上他的视线。他也在看她，隔着不到一臂的距离，目光落在她脸上，没有躲开。\n\n阅览室里只剩下空调出风口的低响。\n\n江晚收回手，把借阅卡塞进笔记本的封套里，站起来把椅子推进桌底。书包带挂上肩膀的时候，她听见宋行合上书的声音。\n\n她往门口走。\n\n身后没有脚步声跟上。\n\n走了两步，江晚听见椅子腿蹭过地板的动静。\n\n她伸手推开阅览室的玻璃门，走廊里的应急灯还亮着，照出地砖上模糊的反光。\n\n身后的脚步停在大约两步远的距离。\n\n江晚没有回头。\n\n头顶的日光灯闪了一下，然后整排熄灭。\n\n灯在他们身后熄灭。",
+      "input_tokens": 1430,
+      "output_tokens": 380,
+      "latency_ms": 9577,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "fbd3f51f408a49b602fb3ab473abd7f50fdcd1f8c17518b246736ae9822fe2bf",
+      "route_name": null,
+      "route_decision": {
+        "route_name": "A_LITE_INFORMATION_GAP",
+        "classifier_version": "narrative-route-v1",
+        "decision_reasons": [
+          "multiple characters with distinct information",
+          "viewpoint character has unknown facts and an interpretation",
+          "secondary character carries independent knowledge"
+        ],
+        "matched_rules": [
+          "RULE_A_LITE_INFORMATION_GAP"
+        ],
+        "rejected_routes": [
+          "C_OBJECT_CAUSAL"
+        ]
+      },
+      "compiled_brief_hash": "b5737879aee2f3c5caf1104908b59a9d5038cf995daa28df6dc9520aafb9662a",
+      "instruction_hash": "d368cbfa0846d1cb9adf452db083cbb58ba69154f281b3d6c895cb34da157cec",
+      "text_path": "cases\\B-03\\drafts\\route-3.txt"
+    },
+    {
+      "group": "BASELINE-writer_brief",
+      "replica": 1,
+      "mode": "writer_brief",
+      "candidate_id": "71ee4d25-3202-43a6-84f7-e2c6db59f5a8",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "闭馆铃的尾音还在空气里荡着，江晚从书页里抬起头，阅览室的日光灯已经灭了一半。\n\n她下意识去摸口袋里的借阅卡，指尖落了空。\n\n地上。\n\n深蓝色的卡面贴着桌腿，应该是刚才掏纸巾的时候带出来的。江晚弯腰的瞬间，对面的人已经先一步探下身去。\n\n宋行的手指捏住卡片的边缘，直起身，递过来。\n\n江晚伸手去接。指尖碰到卡片冰凉的塑料面，也碰到了他的指腹。干燥，温热的，比她想象的要硬一点。\n\n她把卡捏在手里。\n\n没有立刻收回来。\n\n手指就那么停着，指腹还贴在宋行的手背上。一秒。也许不到一秒，但足够让她感觉到他指节微微动了一下，没有抽开。\n\n宋行抬起头。\n\n江晚对上他的视线。阅览室半暗的光线里，他的眼睛很黑，看不出什么情绪，但也没有移开。\n\n江晚先收回了手。\n\n她把借阅卡塞进口袋，弯腰去拿椅子上的书包。拉链的声音在空荡荡的阅览室里显得格外响。她站起来，把椅子推回桌下。\n\n宋行还坐在那里，面前摊着笔记本，笔帽没盖。\n\n江晚转身往门口走。\n\n身后没有动静。\n\n她走到第三排书架的位置，才听见椅子腿划过地板的轻响。然后是脚步声，不紧不慢的，隔着一个固定的距离。\n\n两步远。\n\n江晚推开阅览室的门，走廊的声控灯亮了一排。她没回头，但知道宋行就在身后，保持着那个距离，既没有拉近，也没有落下。\n\n她走到楼梯口的时候，阅览室的最后一排灯在他们身后熄灭了。",
+      "raw_response": "闭馆铃的尾音还在空气里荡着，江晚从书页里抬起头，阅览室的日光灯已经灭了一半。\n\n她下意识去摸口袋里的借阅卡，指尖落了空。\n\n地上。\n\n深蓝色的卡面贴着桌腿，应该是刚才掏纸巾的时候带出来的。江晚弯腰的瞬间，对面的人已经先一步探下身去。\n\n宋行的手指捏住卡片的边缘，直起身，递过来。\n\n江晚伸手去接。指尖碰到卡片冰凉的塑料面，也碰到了他的指腹。干燥，温热的，比她想象的要硬一点。\n\n她把卡捏在手里。\n\n没有立刻收回来。\n\n手指就那么停着，指腹还贴在宋行的手背上。一秒。也许不到一秒，但足够让她感觉到他指节微微动了一下，没有抽开。\n\n宋行抬起头。\n\n江晚对上他的视线。阅览室半暗的光线里，他的眼睛很黑，看不出什么情绪，但也没有移开。\n\n江晚先收回了手。\n\n她把借阅卡塞进口袋，弯腰去拿椅子上的书包。拉链的声音在空荡荡的阅览室里显得格外响。她站起来，把椅子推回桌下。\n\n宋行还坐在那里，面前摊着笔记本，笔帽没盖。\n\n江晚转身往门口走。\n\n身后没有动静。\n\n她走到第三排书架的位置，才听见椅子腿划过地板的轻响。然后是脚步声，不紧不慢的，隔着一个固定的距离。\n\n两步远。\n\n江晚推开阅览室的门，走廊的声控灯亮了一排。她没回头，但知道宋行就在身后，保持着那个距离，既没有拉近，也没有落下。\n\n她走到楼梯口的时候，阅览室的最后一排灯在他们身后熄灭了。",
+      "input_tokens": 1183,
+      "output_tokens": 360,
+      "latency_ms": 8880,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "611872b656c2413bd8fdcb366e436165aaea9a35500a069ce7fd6583bedb6b13",
+      "route_name": null,
+      "route_decision": null,
+      "compiled_brief_hash": null,
+      "instruction_hash": null,
+      "text_path": "cases\\B-03\\drafts\\baseline-1.txt"
+    },
+    {
+      "group": "BASELINE-writer_brief",
+      "replica": 2,
+      "mode": "writer_brief",
+      "candidate_id": "8bdcbcd0-a16c-48f4-b60b-31db2bc3160e",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "闭馆铃已经响过两遍了。\n\n江晚低头看着地上的借阅卡，手指刚碰到桌沿，对面的人已经弯腰下去。\n\n宋行的动作不快，但很准。他的手指捏住卡片的边角，直起身，手腕一转，把借阅卡递过桌面。\n\n江晚伸手去接。\n\n她的指尖碰到卡片塑料面的同时，也碰到了他的指节。凉的卡片，温的皮肤。她捏住卡片的一端，没有立刻抽回来。\n\n食指在他的手背上停了一秒。\n\n宋行的手指没动。\n\n他抬起头。\n\n江晚看着他。阅览室的顶灯已经关了一半，剩下的光从他肩膀后面打过来，他的眼睛在阴影里，但视线是落在她脸上的。\n\n她松开卡片，收回手。\n\n借阅卡在宋行指间转了半圈，他把它平放在桌面靠近她那侧，手收回去，开始合上面前的书。\n\n江晚站起来，把借阅卡塞进外套口袋，转身往门口走。她的脚步声在空了的阅览室里很清晰，走过三张桌子，身后没有椅子挪动的声音。\n\n走了两步远的距离，她听见他起身。\n\n灯的开关在门口墙上，江晚伸手按下去的时候，借阅卡在口袋里抵着她的指节，还残留着一点不属于她自己的温度。\n\n灯在他们身后熄灭。",
+      "raw_response": "闭馆铃已经响过两遍了。\n\n江晚低头看着地上的借阅卡，手指刚碰到桌沿，对面的人已经弯腰下去。\n\n宋行的动作不快，但很准。他的手指捏住卡片的边角，直起身，手腕一转，把借阅卡递过桌面。\n\n江晚伸手去接。\n\n她的指尖碰到卡片塑料面的同时，也碰到了他的指节。凉的卡片，温的皮肤。她捏住卡片的一端，没有立刻抽回来。\n\n食指在他的手背上停了一秒。\n\n宋行的手指没动。\n\n他抬起头。\n\n江晚看着他。阅览室的顶灯已经关了一半，剩下的光从他肩膀后面打过来，他的眼睛在阴影里，但视线是落在她脸上的。\n\n她松开卡片，收回手。\n\n借阅卡在宋行指间转了半圈，他把它平放在桌面靠近她那侧，手收回去，开始合上面前的书。\n\n江晚站起来，把借阅卡塞进外套口袋，转身往门口走。她的脚步声在空了的阅览室里很清晰，走过三张桌子，身后没有椅子挪动的声音。\n\n走了两步远的距离，她听见他起身。\n\n灯的开关在门口墙上，江晚伸手按下去的时候，借阅卡在口袋里抵着她的指节，还残留着一点不属于她自己的温度。\n\n灯在他们身后熄灭。",
+      "input_tokens": 1183,
+      "output_tokens": 275,
+      "latency_ms": 7502,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "611872b656c2413bd8fdcb366e436165aaea9a35500a069ce7fd6583bedb6b13",
+      "route_name": null,
+      "route_decision": null,
+      "compiled_brief_hash": null,
+      "instruction_hash": null,
+      "text_path": "cases\\B-03\\drafts\\baseline-2.txt"
+    },
+    {
+      "group": "BASELINE-writer_brief",
+      "replica": 3,
+      "mode": "writer_brief",
+      "candidate_id": "606aeede-da35-4c05-b775-3d4da777abc6",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "闭馆铃响过第三遍的时候，江晚才从书页里抬起头。\n\n阅览室的日光灯已经灭了一半，剩下的那排灯管把桌椅拉出斜长的影子。她合上笔记本，手指摸向桌角的借阅卡，指尖却只碰到冰凉的桌面。\n\n借阅卡不在那里。\n\n她低头去看，椅子腿边什么都没有，书包外侧的口袋也空着。然后她看见对面的人已经弯下了腰。\n\n宋行的手指从她椅子右侧的地砖上捡起那张卡，动作不快，像是顺手捡起一件本来就要归还的东西。他把卡翻到正面，看了一眼上面的照片，然后递过来。\n\n江晚伸手去接。\n\n她的指尖碰到卡片的边缘，也碰到他的食指和中指。卡片只有薄薄一层塑料，交接用不了半秒。但她没有立刻收回手。\n\n她的拇指停在宋行的手背上，压住了他食指根部的那条肌腱。\n\n他没有动。\n\n江晚感觉到他手背的温度比卡片高，皮肤下面有轻微的脉搏跳动，或者只是她自己的指尖在跳。她抬起眼睛，宋行正看着她。\n\n阅览室很安静，安静到能听见走廊里保安推着清洁车经过的声音。他们之间隔着两张拼在一起的阅览桌，桌面上摊着她的笔记本、一支没盖笔帽的签字笔，和他那本翻到中间的《信号与系统》。\n\n那个对视持续了不到两秒。\n\n宋行没有抽手，也没有低头去看她的手。他只是看着她，像是等她先做下一个动作。\n\n江晚收回手指，把借阅卡插进笔记本的封皮夹层里。她站起来，椅子腿在瓷砖地面上刮出一声短促的摩擦。\n\n她绕过桌子，朝门口走。书包带子从肩上滑下来，她重新拉上去，脚步没停。\n\n身后没有椅子的响动。\n\n她走到阅览室门口，伸手推开那扇半掩的防火门，听见身后两秒后才传来宋行起身的声音。椅子被推回原位，书包拉链拉上的金属响动，然后是球鞋踩在瓷砖上的脚步声。\n\n两步远。他保持了两步远的距离。\n\n江晚跨过门槛，走廊里的声控灯亮了，但她身后的那排阅览室灯管正好在这时候全部熄灭。",
+      "raw_response": "闭馆铃响过第三遍的时候，江晚才从书页里抬起头。\n\n阅览室的日光灯已经灭了一半，剩下的那排灯管把桌椅拉出斜长的影子。她合上笔记本，手指摸向桌角的借阅卡，指尖却只碰到冰凉的桌面。\n\n借阅卡不在那里。\n\n她低头去看，椅子腿边什么都没有，书包外侧的口袋也空着。然后她看见对面的人已经弯下了腰。\n\n宋行的手指从她椅子右侧的地砖上捡起那张卡，动作不快，像是顺手捡起一件本来就要归还的东西。他把卡翻到正面，看了一眼上面的照片，然后递过来。\n\n江晚伸手去接。\n\n她的指尖碰到卡片的边缘，也碰到他的食指和中指。卡片只有薄薄一层塑料，交接用不了半秒。但她没有立刻收回手。\n\n她的拇指停在宋行的手背上，压住了他食指根部的那条肌腱。\n\n他没有动。\n\n江晚感觉到他手背的温度比卡片高，皮肤下面有轻微的脉搏跳动，或者只是她自己的指尖在跳。她抬起眼睛，宋行正看着她。\n\n阅览室很安静，安静到能听见走廊里保安推着清洁车经过的声音。他们之间隔着两张拼在一起的阅览桌，桌面上摊着她的笔记本、一支没盖笔帽的签字笔，和他那本翻到中间的《信号与系统》。\n\n那个对视持续了不到两秒。\n\n宋行没有抽手，也没有低头去看她的手。他只是看着她，像是等她先做下一个动作。\n\n江晚收回手指，把借阅卡插进笔记本的封皮夹层里。她站起来，椅子腿在瓷砖地面上刮出一声短促的摩擦。\n\n她绕过桌子，朝门口走。书包带子从肩上滑下来，她重新拉上去，脚步没停。\n\n身后没有椅子的响动。\n\n她走到阅览室门口，伸手推开那扇半掩的防火门，听见身后两秒后才传来宋行起身的声音。椅子被推回原位，书包拉链拉上的金属响动，然后是球鞋踩在瓷砖上的脚步声。\n\n两步远。他保持了两步远的距离。\n\n江晚跨过门槛，走廊里的声控灯亮了，但她身后的那排阅览室灯管正好在这时候全部熄灭。",
+      "input_tokens": 1183,
+      "output_tokens": 468,
+      "latency_ms": 11589,
+      "finish_reason": "stop",
+      "error_code": "TEMPO_FINAL_LINE_MISMATCH",
+      "error_message": "TEMPO_FINAL_LINE_MISMATCH: final paragraph must include the required marker '灯在他们身后熄灭'",
+      "rendered_user_prompt_sha256": "611872b656c2413bd8fdcb366e436165aaea9a35500a069ce7fd6583bedb6b13",
+      "route_name": null,
+      "route_decision": null,
+      "compiled_brief_hash": null,
+      "instruction_hash": null,
+      "text_path": "cases\\B-03\\drafts\\baseline-3.txt"
+    }
+  ],
+  "actual_route": "A_LITE_INFORMATION_GAP",
+  "route_decision": {
+    "route_name": "A_LITE_INFORMATION_GAP",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "multiple characters with distinct information",
+      "viewpoint character has unknown facts and an interpretation",
+      "secondary character carries independent knowledge"
+    ],
+    "matched_rules": [
+      "RULE_A_LITE_INFORMATION_GAP"
+    ],
+    "rejected_routes": [
+      "C_OBJECT_CAUSAL"
+    ]
+  }
+}

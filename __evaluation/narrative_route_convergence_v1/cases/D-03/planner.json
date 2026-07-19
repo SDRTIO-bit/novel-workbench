@@ -1,0 +1,182 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "方舟在火车站出发前半小时发现身份证丢失，必须在三个可能地点中做出选择，每走错一步就离误车更近。通过他的选择过程展现其性格和决策方式，最终停在身份确认或改签的具体事实上，为下一章上车或误车埋下钩子。",
+  "location": "火车站候车大厅及周边（自动售票机、充电桩、洗手间）",
+  "time": "上午，出发前30分钟",
+  "scene_state": {
+    "last_completed_action": "方舟在进站口排队时发现手机壳里的身份证不见了。",
+    "present_characters": [
+      "方舟"
+    ],
+    "visible_facts": [
+      "进站口已排起长队",
+      "电子屏显示距离开车还有30分钟",
+      "方舟刚在三个地方用过身份证：自动售票机、充电桩、洗手间"
+    ],
+    "available_objects": [
+      "方舟的手机（无身份证）",
+      "随身背包",
+      "车票（电子）",
+      "自动售票机",
+      "充电桩",
+      "洗手间设施"
+    ],
+    "unresolved_problem": "身份证丢失，无法通过实名制进站，必须在开车前找到或解决身份验证问题。",
+    "already_existing_constraints": [
+      "不能补办临时身份证（未提及此选项，且时间可能不足）",
+      "三个可能地点分散，往返耗时不同",
+      "进站队伍正在移动，时间持续减少"
+    ]
+  },
+  "characters": [
+    {
+      "name": "方舟",
+      "goal": "在开车前找到身份证或找到进站的方法，避免误车。",
+      "known": [
+        "自己刚在三个地方用过身份证：自动售票机、充电桩、洗手间",
+        "距离开车还有30分钟",
+        "进站口排着长队，通过需要时间",
+        "身份证通常放在手机壳里，但现在不在"
+      ],
+      "unknown": [
+        "身份证具体丢在了哪个地点",
+        "是否被他人捡走或已经丢失无法找回",
+        "如果找不到，是否有其他进站方式（如人工窗口核验）"
+      ],
+      "mistaken_beliefs": [
+        "可能认为身份证一定还在三个地点之一，没有考虑被偷或掉在路上的可能性"
+      ],
+      "constraints": [
+        "时间紧迫，必须快速决策",
+        "不能同时去三个地方，必须排序",
+        "不能询问他人关于丢失物品的信息（可能出于性格或避免引起注意）"
+      ],
+      "observed_evidence": [
+        "手机壳内空无一物",
+        "三个地点距离当前位置远近不同",
+        "洗手间人流量大，充电桩附近有人正在使用"
+      ],
+      "current_interpretation": "身份证最可能掉在最近使用的地方，洗手间使用时间最近但环境复杂，充电桩次之，售票机最早但距离最远。时间只够去一个或两个地方，必须赌概率。",
+      "how_interpretation_drives_action": "方舟决定按使用顺序倒推，先去洗手间（最近使用且最近距离），如果找不到再去充电桩，最后考虑售票机，但可能来不及。"
+    }
+  ],
+  "concrete_problem": "方舟必须在三个可能丢失地点中选择先去哪里找身份证，每个选择都消耗时间，可能直接导致误车。",
+  "pressure": "进站队伍不断缩短，电子屏上的发车时间正在逼近，每犹豫一秒就减少找到身份证并成功进站的机会。",
+  "turning_point": "方舟放弃了去洗手间（最近但希望渺茫）和充电桩（可能有人捡走）的选项，直接冲向自动售票机——这个决定基于他对自身使用习惯的瞬间判断，但售票机距离最远，一旦错误将彻底来不及返回。",
+  "end_condition": "方舟在自动售票机处没有找到身份证，但发现机器上贴有‘失物招领请联系服务台’的提示，他必须决定是去服务台询问还是直接去人工窗口尝试其他进站方式。",
+  "forbidden": [
+    "身份证被他人捡到并主动归还",
+    "方舟补办临时身份证",
+    "方舟放弃乘车",
+    "方舟使用非正常手段进站（如逃票）",
+    "方舟的身份证被偷而非丢失的明确揭示",
+    "方舟在洗手间或充电桩找到身份证",
+    "详细描述方舟过去的故事（保持聚焦当前场景）"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "方舟摸到手机壳空空如也，同时看到电子屏显示‘开车时间：10:30’，当前时间10:00。",
+      "character_interpretation": "身份证确实丢了，而且时间紧迫，不能站在原地回想，必须立即行动。",
+      "character_next_action": "方舟从队伍中退出，快速扫视大厅，回忆最后使用身份证的地点，决定先去洗手间。",
+      "rejected_alternative": "方舟本可以继续排队，到检票口再向工作人员说明情况，但他认为那样可能直接被拒，不如自己先找。",
+      "immediate_consequence": "方舟离开进站口，向洗手间方向跑去，同时大脑在快速计算三个地点的距离和可能性。",
+      "counterfactual_without_action": "如果方舟不行动，他会继续排队，等到检票时才发现问题，届时可能无法及时返回寻找，彻底误车。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "方舟在进站队伍中，尚未发现身份证丢失。",
+        "after": "方舟脱离队伍，明确丢失事实，开始向洗手间移动。"
+      },
+      "cost_or_commitment": "方舟放弃了在队伍中的位置，这意味着即使找回身份证也要重新排队，增加了时间成本。",
+      "next_constraint": "方舟现在必须按顺序排查三个地点，且每个地点搜索时间有限。",
+      "reader_must_infer": "方舟为什么认为洗手间是首选？可能是因为他记得在那里整理过手机，或者他认为掉在洗手间的概率最大。",
+      "narrator_must_not_state": [
+        "方舟的准确内心计算过程",
+        "身份证是否真的在洗手间"
+      ]
+    },
+    {
+      "id": "CT02",
+      "kind": "constraint_to_choice",
+      "visible_trigger": "洗手间地面干净，没有身份证；洗手台上只有水渍；隔间内无人且无物。",
+      "character_interpretation": "身份证不在这里，要么被清洁工收走，要么根本没掉在洗手间。时间已经过去5分钟，再去充电桩可能也找不到，而且充电桩区域有人，询问可能浪费时间。",
+      "character_next_action": "方舟放弃充电桩，直接跑向最远的自动售票机，赌身份证掉在那里。",
+      "rejected_alternative": "方舟本可以去充电桩碰运气，或者去服务台挂失，但他认为售票机是使用身份证时间最长的地方，掉落的可能性最高。",
+      "immediate_consequence": "方舟穿越候车大厅跑向售票区，引起少数旅客侧目，但他不顾一切，心中只想着‘必须找到’。",
+      "counterfactual_without_action": "如果方舟继续去充电桩，可能会发现身份证不在，浪费时间后仍要去售票机，但那时可能已经来不及。或者，他可能选择直接去人工窗口，但无身份证可能无法办理。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "方舟在洗手间一无所获，面临第二个选择。",
+        "after": "方舟跳过充电桩，直奔售票机，将全部希望押在最后一个地点。"
+      },
+      "cost_or_commitment": "方舟放弃了充电桩的可能性，承担了判断错误的风险；同时体力消耗增加，心理压力剧增。",
+      "next_constraint": "方舟现在只能去售票机，如果那里也没有，就必须在极短时间内找到替代方案（如人工窗口或改签）。",
+      "reader_must_infer": "方舟为什么跳过充电桩？可能因为他回忆起在充电桩只是短暂停留，身份证可能根本没掏出来；或者他直觉认为售票机更可能。",
+      "narrator_must_not_state": [
+        "身份证是否真的在售票机",
+        "方舟是否后悔跳过充电桩"
+      ]
+    },
+    {
+      "id": "CT03",
+      "kind": "evidence_to_action",
+      "visible_trigger": "自动售票机周围地面空空荡荡，机器插卡口没有身份证；但机身贴着一张A4纸：‘失物招领：身份证、银行卡等请到二楼服务台认领’。",
+      "character_interpretation": "身份证可能被好心人捡到交到服务台了，但服务台在二楼，来回需要时间；也可能是别人丢的身份证，自己的并不在那里。现在必须决定：是去服务台碰运气，还是直接去人工检票口解释情况。",
+      "character_next_action": "方舟看了一眼手表，时间还剩15分钟，他决定去服务台，因为这是找回身份证的最后希望；如果那里没有，再想其他办法。",
+      "rejected_alternative": "方舟本可以直接去人工窗口尝试用电子身份证或报身份证号进站，但他不确定能否成功，且服务台的提示给了他一线希望，他选择相信这个线索。",
+      "immediate_consequence": "方舟转身跑向二楼服务台，心跳加速，汗水浸湿后背，他意识到这次奔跑可能决定他能否准时出发。",
+      "counterfactual_without_action": "如果方舟不去服务台，他会直接去人工窗口，可能因无身份证被拒，然后只能改签或放弃；或者，如果身份证真的在服务台，他就错过了找回的机会。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "方舟在售票机处未找到身份证，但看到失物招领提示。",
+        "after": "方舟决定去服务台，将最后的时间押在失物招领上。"
+      },
+      "cost_or_commitment": "方舟消耗了最后一段宝贵时间，如果服务台没有，他可能连解释的时间都不够；同时，他的身体和心理都接近极限。",
+      "next_constraint": "方舟到达服务台后，无论结果如何，都必须立即做出最终决定（进站或改签）。",
+      "reader_must_infer": "方舟是否过于依赖‘失物招领’的提示？他是否忽略了其他可能性（如身份证被偷）？服务台真的会有他的身份证吗？",
+      "narrator_must_not_state": [
+        "服务台是否真的有方舟的身份证",
+        "方舟最终是否成功进站"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "进站口队伍缓慢前移，方舟摸到手机壳空的瞬间，电子屏时间跳为10:00。",
+    "dominant_pressure": {
+      "kind": "resource_constraint",
+      "description": "时间是最稀缺的资源，每过一分钟，方舟成功进站的概率就降低一分。同时，信息不足（不知道身份证确切位置）加剧了决策压力。"
+    },
+    "allowed_viewpoint_misread": "读者可能以为方舟会在洗手间或充电桩找到线索，但实际他选择了最远的售票机，这种判断可能看起来不理智，但符合他此刻的思维模式。",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "身份证最终是否被找到",
+      "方舟是否误车"
+    ],
+    "stop_state": {
+      "type": "unresolved_problem",
+      "visible_fact": "方舟站在售票机前，看着失物招领提示，然后转身向二楼服务台跑去。",
+      "what_is_now_different": "方舟从盲目寻找变为有明确目标（服务台），但问题仍未解决，时间压力更紧迫。",
+      "must_not_append": "不得写出方舟是否找回身份证或是否进站成功。"
+    },
+    "final_line_must_include": "服务台"
+  }
+}

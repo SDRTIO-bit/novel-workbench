@@ -1,0 +1,59 @@
+{
+  "group": "ROUTE-C_OBJECT_CAUSAL",
+  "replica": 1,
+  "mode": "narrative_route",
+  "candidate_id": "f46987ab-ce10-43f9-a6b9-2c797e26d27c",
+  "attempt_number": 1,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "route_decision": {
+      "route_name": "C_OBJECT_CAUSAL",
+      "classifier_version": "narrative-route-v1",
+      "decision_reasons": [
+        "scene_state.available_objects is non-empty",
+        "causal_transitions contains counterfactual_without_action or rejected_alternative",
+        "character_next_action involves physical object manipulation"
+      ],
+      "matched_rules": [
+        "RULE_C_OBJECT_CAUSAL"
+      ],
+      "rejected_routes": []
+    },
+    "compiled_brief_hash": "990638a27fa505b5d617dc8010a3eb8da27b71fd8d44e1465e934a5d25a5d679",
+    "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "课间十分钟的教室像一锅煮沸的粥。\n\n叶舟从后门进来的时候，数学课代表正抱着一摞作业本从前排往后传，几个同学围在讲台边翻找自己的本子。她绕过第三排的桌椅，习惯性往黑板槽扫了一眼——班长总得看看有没有人往里头塞垃圾。\n\n确实有东西。\n\n一张对折的便签纸卡在粉笔盒和黑板擦之间，露出半截边缘。叶舟抽出来展开，上面是两行字，字迹她认得。\n\n“叶舟：”\n\n“别再——”\n\n就这三个字。后半句被折痕截断，像是写的人犹豫了一下，没有继续。\n\n她抬起头。\n\n唐闻正从讲台上下来，手指还沾着粉笔灰。他看见叶舟手里的便签，脚步顿了一拍，喉结滚了一下，然后移开视线，若无其事地往自己座位走。\n\n“叶舟，你的数学作业！”课代表隔着两排桌子喊她。\n\n“等会儿。”叶舟说。\n\n她把便签翻过来，背面是空白的。再翻回去，那三个字还在——“别再”。别再什么？别再管纪律？别再记他的名字？别再在他说话的时候皱眉？\n\n唐闻已经坐下了，正低头翻书，耳朵尖有一点红。\n\n叶舟把便签折回去，塞进制服口袋。她走上讲台，从粉笔盒里抽出一根白色粉笔。黑板左上角还留着上节课的板书，她在右下角的空白处写字。\n\n粉笔和黑板接触的声音让前排两个同学抬头看了一眼，又继续找作业本。\n\n她写了三个字。\n\n“我尽量。”\n\n粉笔放回盒子的时候磕出轻微的声响。叶舟拍了拍手上的灰，走下讲台。\n\n唐闻没有抬头。但他的笔停在纸上不动了，手指攥着笔杆的关节泛白。过了两秒，他慢慢抬起头，看向黑板。\n\n叶舟正好在看他。\n\n他的表情从紧张变成了一种她没见过的困惑。眉头拧着，嘴唇动了动，像是想说什么，又没出声。\n\n“叶舟，作业！”课代表已经把本子递到她面前了。\n\n“哦。”叶舟接过本子，翻开看了一眼，又合上。\n\n唐闻还盯着黑板上那三个字。他旁边座位的男生推了推他胳膊：“看什么呢？”\n\n“没什么。”唐闻收回视线，把笔重新按在纸上，但没有写任何东西。\n\n叶舟回到自己座位，把作业本塞进抽屉。她的手指碰到口袋里那张便签的边角，纸已经有点潮了。\n\n黑板上，“我尽量”三个字就那样晾在右下角，和上节课的板书隔着一片空白。",
+  "raw_response": "课间十分钟的教室像一锅煮沸的粥。\n\n叶舟从后门进来的时候，数学课代表正抱着一摞作业本从前排往后传，几个同学围在讲台边翻找自己的本子。她绕过第三排的桌椅，习惯性往黑板槽扫了一眼——班长总得看看有没有人往里头塞垃圾。\n\n确实有东西。\n\n一张对折的便签纸卡在粉笔盒和黑板擦之间，露出半截边缘。叶舟抽出来展开，上面是两行字，字迹她认得。\n\n“叶舟：”\n\n“别再——”\n\n就这三个字。后半句被折痕截断，像是写的人犹豫了一下，没有继续。\n\n她抬起头。\n\n唐闻正从讲台上下来，手指还沾着粉笔灰。他看见叶舟手里的便签，脚步顿了一拍，喉结滚了一下，然后移开视线，若无其事地往自己座位走。\n\n“叶舟，你的数学作业！”课代表隔着两排桌子喊她。\n\n“等会儿。”叶舟说。\n\n她把便签翻过来，背面是空白的。再翻回去，那三个字还在——“别再”。别再什么？别再管纪律？别再记他的名字？别再在他说话的时候皱眉？\n\n唐闻已经坐下了，正低头翻书，耳朵尖有一点红。\n\n叶舟把便签折回去，塞进制服口袋。她走上讲台，从粉笔盒里抽出一根白色粉笔。黑板左上角还留着上节课的板书，她在右下角的空白处写字。\n\n粉笔和黑板接触的声音让前排两个同学抬头看了一眼，又继续找作业本。\n\n她写了三个字。\n\n“我尽量。”\n\n粉笔放回盒子的时候磕出轻微的声响。叶舟拍了拍手上的灰，走下讲台。\n\n唐闻没有抬头。但他的笔停在纸上不动了，手指攥着笔杆的关节泛白。过了两秒，他慢慢抬起头，看向黑板。\n\n叶舟正好在看他。\n\n他的表情从紧张变成了一种她没见过的困惑。眉头拧着，嘴唇动了动，像是想说什么，又没出声。\n\n“叶舟，作业！”课代表已经把本子递到她面前了。\n\n“哦。”叶舟接过本子，翻开看了一眼，又合上。\n\n唐闻还盯着黑板上那三个字。他旁边座位的男生推了推他胳膊：“看什么呢？”\n\n“没什么。”唐闻收回视线，把笔重新按在纸上，但没有写任何东西。\n\n叶舟回到自己座位，把作业本塞进抽屉。她的手指碰到口袋里那张便签的边角，纸已经有点潮了。\n\n黑板上，“我尽量”三个字就那样晾在右下角，和上节课的板书隔着一片空白。",
+  "input_tokens": 1402,
+  "output_tokens": 569,
+  "latency_ms": 12554,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "a974907f323f6d8d1bf955cab160db6f939308f3543ecbf74b9b9dd62b376ead",
+  "route_name": null,
+  "route_decision": {
+    "route_name": "C_OBJECT_CAUSAL",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "scene_state.available_objects is non-empty",
+      "causal_transitions contains counterfactual_without_action or rejected_alternative",
+      "character_next_action involves physical object manipulation"
+    ],
+    "matched_rules": [
+      "RULE_C_OBJECT_CAUSAL"
+    ],
+    "rejected_routes": []
+  },
+  "compiled_brief_hash": "990638a27fa505b5d617dc8010a3eb8da27b71fd8d44e1465e934a5d25a5d679",
+  "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+  "text_path": "cases\\CAMPUS-04\\drafts\\route-1.txt"
+}

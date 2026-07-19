@@ -1,0 +1,192 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "唐婉在陌生医院门诊楼内找到正确的就诊科室，在挂号单截止时间前完成签到，同时暴露她对医院环境的陌生感和过度依赖手机的弱点。",
+  "location": "市人民医院门诊楼三楼走廊与科室区域",
+  "time": "工作日午后，距离挂号单预约时间还剩15分钟",
+  "scene_state": {
+    "last_completed_action": "唐婉推开301室的门，发现里面医生和病人都不对，护士告知她的科室在三楼另一侧。",
+    "present_characters": [
+      "唐婉",
+      "护士",
+      "走廊中的零星患者和护工"
+    ],
+    "visible_facts": [
+      "301室门牌显示为皮肤科",
+      "走廊尽头有分叉，左侧通往电梯间，右侧通往另一片诊区",
+      "墙上的楼层指示牌被清洁推车遮挡了关键一行",
+      "唐婉的挂号单显示预约科室为内分泌科，时间15分钟后"
+    ],
+    "available_objects": [
+      "挂号单（纸质）",
+      "没电的手机",
+      "楼层指示牌（部分被遮挡）",
+      "护士站的咨询台（距离约20米）",
+      "各科室门牌"
+    ],
+    "unresolved_problem": "唐婉不知道内分泌科的具体位置，且手机没电无法查询，指示牌被遮挡，时间紧迫。",
+    "already_existing_constraints": [
+      "手机没电，无法使用电子地图或打电话",
+      "挂号单时间不可更改，迟到可能作废",
+      "不能推开每一扇门查看，容易引起纠纷",
+      "护士只给了模糊方向，未指明具体房间号"
+    ]
+  },
+  "characters": [
+    {
+      "name": "唐婉",
+      "goal": "在15分钟内找到内分泌科并完成签到，避免错过预约。",
+      "known": [
+        "自己的科室是内分泌科",
+        "预约时间还剩15分钟",
+        "301室是错的",
+        "护士说在三楼另一侧"
+      ],
+      "unknown": [
+        "内分泌科的具体房间号",
+        "另一侧的确切范围",
+        "指示牌被遮挡的内容",
+        "护士站是否可以提供更精确的信息"
+      ],
+      "mistaken_beliefs": [
+        "她认为医院科室分布应该像商场一样有清晰的电子导航，但实际并非如此",
+        "她以为护士的模糊指引足以让自己找到位置，低估了寻找难度"
+      ],
+      "constraints": [
+        "不能返回护士站询问（因距离较远且时间紧张，且她倾向于自己解决）",
+        "手机没电，无法求助",
+        "必须在截止时间前到达"
+      ],
+      "observed_evidence": [
+        "301室门牌为皮肤科，与挂号单不符",
+        "护士口头告知科室在三楼另一侧",
+        "楼层指示牌被清洁推车遮挡，仅露出部分科室名称",
+        "走廊分叉，左右两侧均有诊室"
+      ],
+      "current_interpretation": "她认为‘另一侧’指的是走廊右侧区域，因为左侧是电梯间，不太可能有诊室。",
+      "how_interpretation_drives_action": "她决定向右走，逐一查看门牌，同时尝试从被遮挡的指示牌中辨认信息。"
+    },
+    {
+      "name": "护士",
+      "goal": "维持诊区秩序，快速打发走错房间的患者。",
+      "known": [
+        "301室是皮肤科",
+        "内分泌科大致方位在三楼另一侧"
+      ],
+      "unknown": [
+        "唐婉的预约时间紧迫",
+        "唐婉手机没电",
+        "指示牌被遮挡"
+      ],
+      "mistaken_beliefs": [
+        "她以为患者应该自己查看指示牌或使用手机导航，没有意识到指示牌被遮挡和手机没电的困境"
+      ],
+      "constraints": [
+        "正在协助当前患者，不能离开岗位",
+        "医院规定不能离开诊室带路"
+      ],
+      "observed_evidence": [
+        "唐婉推门后表情焦急，出示挂号单"
+      ],
+      "current_interpretation": "这只是一个普通走错房间的患者，简单指引即可。",
+      "how_interpretation_drives_action": "她快速说出‘三楼另一侧’后便继续手头工作，未提供更多细节。"
+    }
+  ],
+  "concrete_problem": "唐婉必须在走廊分叉处选择左或右，并利用有限线索（部分可见的指示牌、门牌规律）在15分钟内定位内分泌科。",
+  "pressure": "时间每过一分钟，错过预约的风险就增加一分；同时，走廊里人来人往，她不能长时间停留犹豫，必须做出选择。",
+  "turning_point": "唐婉在右侧走廊尽头发现指示牌被遮挡的部分其实是‘内分泌科 302-308’，而她已经走过了头，需要折返。",
+  "end_condition": "唐婉在预约时间截止前2分钟找到内分泌科302室，完成签到，但发现候诊区已有多人排队，她只能等待。",
+  "forbidden": [
+    "手机突然恢复电量或找到充电设备",
+    "遇到熟人带路",
+    "护士主动出来指引",
+    "指示牌被他人移开",
+    "唐婉放弃就诊",
+    "使用医院广播或电话求助",
+    "清洁工恰好移开推车",
+    "引入新角色提供关键帮助"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "唐婉看到走廊分叉，左侧通往电梯间，右侧有连续诊室门牌。",
+      "character_interpretation": "她认为右侧才是诊区，左侧只是出口，所以内分泌科一定在右侧。",
+      "character_next_action": "她果断向右走，开始查看每个门牌。",
+      "rejected_alternative": "她本可以去护士站再问一次，但觉得浪费时间且可能得到同样模糊的答案。",
+      "immediate_consequence": "她在右侧走廊看到了302、303等门牌，但都是其他科室，直到尽头才发现指示牌被遮挡的部分显示内分泌科在302-308，而她已走到308之后。",
+      "counterfactual_without_action": "如果她向左走，可能会先看到楼层总索引牌（未被遮挡），从而直接找到正确方向。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "唐婉站在分叉口，不知道内分泌科在哪侧。",
+        "after": "唐婉在右侧走廊尽头，意识到走过了，需要折返。"
+      },
+      "cost_or_commitment": "她浪费了约8分钟在错误的一侧寻找，剩余时间更少。",
+      "next_constraint": "她必须快速折返，不能再次犹豫或走错，时间仅剩7分钟。",
+      "reader_must_infer": "唐婉对医院布局的陌生和过度依赖方向感导致她忽略了总索引牌的可能位置。",
+      "narrator_must_not_state": [
+        "唐婉后悔没有先看总索引牌",
+        "左侧其实有更清晰的指示"
+      ]
+    },
+    {
+      "id": "CT02",
+      "kind": "constraint_to_choice",
+      "visible_trigger": "唐婉折返途中看到清洁推车仍挡着指示牌，但下方露出‘内分泌科302-308’字样。",
+      "character_interpretation": "她意识到自己之前没看到这一行是因为推车高度恰好挡住了关键信息。",
+      "character_next_action": "她弯腰确认房间号，然后直奔302室。",
+      "rejected_alternative": "她本可以推开推车看清全部信息，但担心弄脏衣服或被人指责。",
+      "immediate_consequence": "她在302室门口签到，时间还剩2分钟，但候诊区已有5人排队。",
+      "counterfactual_without_action": "如果她不弯腰确认，可能会继续向另一侧寻找，彻底错过时间。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "唐婉在走廊中段焦急折返，仍不确定房间号。",
+        "after": "唐婉站在302室门口，完成签到，但需等候。"
+      },
+      "cost_or_commitment": "她接受了候诊的等待时间，且因之前的奔跑而略显狼狈。",
+      "next_constraint": "候诊时间未知，她无法立即见到医生，且手机没电无法消磨时间。",
+      "reader_must_infer": "唐婉的观察力在压力下仍能捕捉细节，但她更倾向于独自解决问题而非求助。",
+      "narrator_must_not_state": [
+        "唐婉庆幸自己终于找到了",
+        "清洁推车是故意放在那里的"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "唐婉刚从301室退出，站在走廊中，时间还剩15分钟，她必须立刻决定方向。",
+    "dominant_pressure": {
+      "kind": "resource_constraint",
+      "description": "时间资源极度有限，每耽误一分钟就增加错过预约的风险，迫使她快速行动且不能出错。"
+    },
+    "allowed_viewpoint_misread": "唐婉可能把护士的冷漠理解为医院服务差，而非自己没问清楚。",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "内分泌科医生是否准时出诊",
+      "唐婉的具体病情"
+    ],
+    "stop_state": {
+      "type": "physical_change",
+      "visible_fact": "唐婉在302室门口的签到机上刷挂号单，机器显示‘签到成功’。",
+      "what_is_now_different": "她从寻找状态变为候诊状态，位置固定在302室门口，无法再移动。",
+      "must_not_append": "不得描写她签到后的心情或对候诊时间的抱怨"
+    },
+    "final_line_must_include": "签到成功"
+  }
+}

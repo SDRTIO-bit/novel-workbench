@@ -1,0 +1,67 @@
+{
+  "group": "ROUTE-D_FALLIBLE_TASK",
+  "replica": 3,
+  "mode": "narrative_route",
+  "candidate_id": "5c5953ea-98a1-46ab-ac7b-9c262ed37396",
+  "attempt_number": 1,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "route_decision": {
+      "route_name": "D_FALLIBLE_TASK",
+      "classifier_version": "narrative-route-v1",
+      "decision_reasons": [
+        "scene involves search, infiltration, lost item, or task execution",
+        "character must make choices under incomplete information"
+      ],
+      "matched_rules": [
+        "RULE_D_FALLIBLE_TASK"
+      ],
+      "rejected_routes": [
+        "C_OBJECT_CAUSAL",
+        "A_LITE_INFORMATION_GAP",
+        "B_SHORT_RELATION",
+        "B_PHYSICAL_PROBLEM"
+      ]
+    },
+    "compiled_brief_hash": "590dc249f35c0e893164b179106aa65d3980a747d5d7a0f75f19af9cc72b139f",
+    "instruction_hash": "3fbfa117b49b7742a7ef0deedd8d3d6d342f22fee2b19d0481e5e19aa06bd7da",
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "周默低头看着手里的纸箱，箱角露出一截折叠的说明书，“今晚使用”四个字正好朝上。\n\n门外站着一个男人，正举着手机对光看取件码，眉头拧着，视线在驿站门牌和屏幕之间来回跳。周默认出他——刚才排队时这人在自己前面两位，取走的也是一个小纸箱，棕黄色，跟手里这只一模一样。\n\n柜台上还摆着一只箱子。周默扫了一眼，封口胶带已经撕开了。\n\n电话机压在柜台角落，旁边横着一辆推车，摞了三层空筐。驿站店员正在拉卷帘门，铁皮哗啦啦往下滑。\n\n“你那个——”门外的男人抬起头，指着周默手里的箱子，“是不是我的？”\n\n周默手指收紧。说明书那角纸被他的指节压弯，“今晚使用”折进了阴影里。\n\n他把箱子递出去。\n\n“这是你的吧，我取错了。”\n\n男人接过去，没有立刻说话。他翻过箱子，拇指按在封口胶带上，沿着接缝摸了一圈，然后低头看箱底——那里也贴着一条透明胶，完好无损。\n\n周默站在原地。推车的轮子卡在地砖缝里，他没往后靠。\n\n男人又看了看箱角那截说明书，手指捏住纸边往外抽了半厘米，停住，又塞回去。他抬头看周默，嘴唇动了一下，像要问什么。\n\n周默没动。他可以现在说“我没拆过”，或者“刚才人多拿混了”，或者问对方取件码核对——他张了张嘴。\n\n没出声。\n\n男人把箱子夹到腋下，下巴朝周默微微一点。\n\n然后转身走了。\n\n周默看着那人走出驿站门廊，拐过路灯柱，消失在小区围墙后面。店员拉下最后一截卷帘门，锁扣咔哒一声扣进地面。",
+  "raw_response": "周默低头看着手里的纸箱，箱角露出一截折叠的说明书，“今晚使用”四个字正好朝上。\n\n门外站着一个男人，正举着手机对光看取件码，眉头拧着，视线在驿站门牌和屏幕之间来回跳。周默认出他——刚才排队时这人在自己前面两位，取走的也是一个小纸箱，棕黄色，跟手里这只一模一样。\n\n柜台上还摆着一只箱子。周默扫了一眼，封口胶带已经撕开了。\n\n电话机压在柜台角落，旁边横着一辆推车，摞了三层空筐。驿站店员正在拉卷帘门，铁皮哗啦啦往下滑。\n\n“你那个——”门外的男人抬起头，指着周默手里的箱子，“是不是我的？”\n\n周默手指收紧。说明书那角纸被他的指节压弯，“今晚使用”折进了阴影里。\n\n他把箱子递出去。\n\n“这是你的吧，我取错了。”\n\n男人接过去，没有立刻说话。他翻过箱子，拇指按在封口胶带上，沿着接缝摸了一圈，然后低头看箱底——那里也贴着一条透明胶，完好无损。\n\n周默站在原地。推车的轮子卡在地砖缝里，他没往后靠。\n\n男人又看了看箱角那截说明书，手指捏住纸边往外抽了半厘米，停住，又塞回去。他抬头看周默，嘴唇动了一下，像要问什么。\n\n周默没动。他可以现在说“我没拆过”，或者“刚才人多拿混了”，或者问对方取件码核对——他张了张嘴。\n\n没出声。\n\n男人把箱子夹到腋下，下巴朝周默微微一点。\n\n然后转身走了。\n\n周默看着那人走出驿站门廊，拐过路灯柱，消失在小区围墙后面。店员拉下最后一截卷帘门，锁扣咔哒一声扣进地面。",
+  "input_tokens": 1458,
+  "output_tokens": 393,
+  "latency_ms": 12378,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "5b59c2beefef38b739bea97946a21e3aac9f5ad5ee5cd9441ce7bfbef0236e3a",
+  "route_name": null,
+  "route_decision": {
+    "route_name": "D_FALLIBLE_TASK",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "scene involves search, infiltration, lost item, or task execution",
+      "character must make choices under incomplete information"
+    ],
+    "matched_rules": [
+      "RULE_D_FALLIBLE_TASK"
+    ],
+    "rejected_routes": [
+      "C_OBJECT_CAUSAL",
+      "A_LITE_INFORMATION_GAP",
+      "B_SHORT_RELATION",
+      "B_PHYSICAL_PROBLEM"
+    ]
+  },
+  "compiled_brief_hash": "590dc249f35c0e893164b179106aa65d3980a747d5d7a0f75f19af9cc72b139f",
+  "instruction_hash": "3fbfa117b49b7742a7ef0deedd8d3d6d342f22fee2b19d0481e5e19aa06bd7da",
+  "text_path": "cases\\TASK-02\\drafts\\route-3.txt"
+}

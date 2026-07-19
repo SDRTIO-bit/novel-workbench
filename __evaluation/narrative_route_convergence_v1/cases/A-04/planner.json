@@ -1,0 +1,167 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "吴筝在楼梯口看到被撕碎的信件碎片，无法直接质问何屿，必须基于碎片信息采取一个具体行动，从而改变两人之间的互动状态，并留下新的悬念。",
+  "location": "教学楼楼梯口",
+  "time": "课间操刚结束，学生陆续回教室",
+  "scene_state": {
+    "last_completed_action": "吴筝在楼梯口看到地上被撕成四片的信纸碎片，何屿正从楼上走下来",
+    "present_characters": [
+      "吴筝",
+      "何屿"
+    ],
+    "visible_facts": [
+      "地上有四片撕碎的信纸碎片",
+      "碎片上是吴筝的笔迹",
+      "何屿正从楼梯上走下来，表情平静",
+      "周围没有其他学生"
+    ],
+    "available_objects": [
+      "四片信纸碎片",
+      "吴筝的书包"
+    ],
+    "unresolved_problem": "何屿是否读了信？他为什么撕碎信？吴筝无法直接询问，但必须做出回应",
+    "already_existing_constraints": [
+      "吴筝不能直接问何屿关于信的事",
+      "吴筝不能捡起碎片拼读，因为何屿正在看着",
+      "吴筝必须保持表面镇定，不能情绪失控"
+    ]
+  },
+  "characters": [
+    {
+      "name": "吴筝",
+      "goal": "弄清何屿对信的态度，并做出一个既能维护自尊又能传递信号的行动",
+      "known": [
+        "信是自己写的，内容涉及对何屿的复杂感情",
+        "信被撕碎散落在地，何屿正走过来",
+        "不能直接质问，否则会暴露自己的脆弱"
+      ],
+      "unknown": [
+        "何屿是否读了信的内容",
+        "何屿撕信的原因（拒绝、愤怒、误会，还是其他）",
+        "何屿此刻的真实情绪"
+      ],
+      "mistaken_beliefs": [
+        "也许何屿根本没看信，只是随手撕掉",
+        "何屿可能认为信是别人的恶作剧"
+      ],
+      "constraints": [
+        "不能捡起碎片拼读",
+        "不能直接问何屿",
+        "不能表现出过度的情绪反应"
+      ],
+      "observed_evidence": [
+        "信纸碎片散落在楼梯口，位置显眼",
+        "何屿下楼时目光扫过碎片，然后看向吴筝",
+        "何屿的脚步没有停顿，表情如常"
+      ],
+      "current_interpretation": "何屿看到了碎片，也知道吴筝看到了，但他不打算主动解释，这可能是试探或冷漠。",
+      "how_interpretation_drives_action": "吴筝决定不捡碎片，而是用脚将碎片轻轻拨到墙边，然后抬头对何屿说一句无关的话，以此表明自己不会乞求答案。"
+    },
+    {
+      "name": "何屿",
+      "goal": "观察吴筝的反应，确认她是否在意信的命运，同时维持自己的冷淡形象",
+      "known": [
+        "信是吴筝写的，内容他已读过",
+        "他故意将信撕碎放在吴筝必经之路",
+        "吴筝的性格骄傲，不会当面崩溃"
+      ],
+      "unknown": [
+        "吴筝接下来会如何行动",
+        "吴筝是否还留有信的副本",
+        "吴筝会否因此彻底放弃或更加执着"
+      ],
+      "mistaken_beliefs": [
+        "吴筝可能会假装没看见碎片",
+        "撕信足以让吴筝知难而退"
+      ],
+      "constraints": [
+        "不能主动提及信的内容",
+        "不能表现出对吴筝的关心",
+        "必须维持一贯的疏离态度"
+      ],
+      "observed_evidence": [
+        "吴筝低头看着碎片，肩膀微微绷紧",
+        "吴筝没有立即走开或哭泣",
+        "吴筝的鞋尖轻轻碰了一下碎片"
+      ],
+      "current_interpretation": "吴筝在克制情绪，她不会当众失态，但她的停顿表明她在意。",
+      "how_interpretation_drives_action": "何屿故意放慢脚步，等待吴筝先开口或行动，以此判断她的下一步。"
+    }
+  ],
+  "concrete_problem": "吴筝必须在不捡起碎片、不直接质问何屿的前提下，用一个具体行动回应地上的碎信，这个行动将决定两人接下来的关系走向。",
+  "pressure": "课间操结束的嘈杂声渐近，其他学生即将经过此处，吴筝必须在被围观前做出反应，同时何屿的沉默注视构成无形的社交压力。",
+  "turning_point": "吴筝选择用脚将碎片轻轻归拢到墙边，然后抬头对何屿说：'让一下，你挡路了。'——这个行动既没有乞求解释，也没有假装无事发生，而是用冷漠回应冷漠，迫使何屿重新评估她的态度。",
+  "end_condition": "何屿侧身让开，吴筝擦肩而过，其中一片碎片被风带起粘在吴筝鞋底，她头也不回地走开，留下何屿看着那片碎片。",
+  "forbidden": [
+    "吴筝不能捡起碎片拼读",
+    "吴筝不能直接问何屿关于信的任何问题",
+    "不能出现何屿主动解释或道歉",
+    "不能有第三人介入打破两人对峙",
+    "不能揭示信的具体内容",
+    "不能出现吴筝哭泣或情绪崩溃",
+    "不能使用内心独白直接说明吴筝的真实想法"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "何屿的目光从碎片移到吴筝脸上，嘴角似乎有一丝若有若无的弧度",
+      "character_interpretation": "吴筝认为何屿在等她崩溃或质问，以此证明她的在意，从而占据上风。",
+      "character_next_action": "吴筝没有看碎片，而是用鞋尖轻轻将碎片拨到墙边，然后抬头直视何屿。",
+      "rejected_alternative": "吴筝本可以假装没看见碎片，直接走开，但那样等于默认自己心虚。",
+      "immediate_consequence": "何屿的表情出现一瞬间的凝固，他没想到吴筝会用这样轻描淡写的动作处理碎片。",
+      "counterfactual_without_action": "如果吴筝直接走开，何屿会认为她软弱逃避，两人的关系将陷入更冷的僵局。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "碎片散落在地，吴筝僵立，何屿带着审视观察",
+        "after": "碎片被归拢到墙边，吴筝主动打破沉默，何屿的预判落空"
+      },
+      "cost_or_commitment": "吴筝放弃了获取信被撕原因的机会，选择用骄傲武装自己，可能加深误会。",
+      "next_constraint": "何屿必须对吴筝的冷漠做出反应，不能继续沉默僵持",
+      "reader_must_infer": "吴筝的冷静是强装的，她内心其实很在意，但她的骄傲不允许她示弱。",
+      "narrator_must_not_state": [
+        "吴筝此刻的真实情绪是伤心或愤怒",
+        "何屿撕信的真正动机"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "吴筝看到碎片时，何屿已经走到楼梯中段，两人距离不足十步",
+    "dominant_pressure": {
+      "kind": "social_friction",
+      "description": "两人之间未言明的紧张关系因碎信而达到顶点，吴筝必须在维护自尊和寻求答案之间做出选择，而何屿的沉默注视加剧了社交摩擦。"
+    },
+    "allowed_viewpoint_misread": "吴筝可能把何屿的平静误读为冷酷，而何屿可能把吴筝的冷漠误读为不在乎",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "何屿撕信的真实原因",
+      "信的具体内容",
+      "吴筝对何屿的真实感情深度"
+    ],
+    "stop_state": {
+      "type": "relationship_shift",
+      "visible_fact": "吴筝头也不回地走开，一片碎片粘在她鞋底被带走",
+      "what_is_now_different": "两人的互动从何屿单方面施加压力，转变为吴筝用行动夺回主动权，何屿的预判被打破，关系进入新的博弈阶段。",
+      "must_not_append": "不得解释何屿看着碎片时的内心活动"
+    },
+    "final_line_must_include": ""
+  }
+}

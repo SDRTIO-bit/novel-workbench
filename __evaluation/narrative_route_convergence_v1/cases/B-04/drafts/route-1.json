@@ -1,0 +1,63 @@
+{
+  "group": "ROUTE-A_LITE_INFORMATION_GAP",
+  "replica": 1,
+  "mode": "narrative_route",
+  "candidate_id": "34b68d50-cab5-42f8-bd8b-785e6a48981f",
+  "attempt_number": 1,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "route_decision": {
+      "route_name": "A_LITE_INFORMATION_GAP",
+      "classifier_version": "narrative-route-v1",
+      "decision_reasons": [
+        "multiple characters with distinct information",
+        "viewpoint character has unknown facts and an interpretation",
+        "secondary character carries independent knowledge"
+      ],
+      "matched_rules": [
+        "RULE_A_LITE_INFORMATION_GAP"
+      ],
+      "rejected_routes": [
+        "C_OBJECT_CAUSAL"
+      ]
+    },
+    "compiled_brief_hash": "0c28400ba1a150298995c683316796fe15a7b910cd4f06ab07cba7ab32a81fd3",
+    "instruction_hash": "d368cbfa0846d1cb9adf452db083cbb58ba69154f281b3d6c895cb34da157cec",
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "操场的红色塑胶跑道在晨光里泛着潮气。\n\n沈辛调整着呼吸节奏，脚步落在第三道内侧的白线上。耳机里的节拍器响到第一百二十拍，他看见余苒从跑道对面拐过来，白色运动外套的袖子卷到小臂，马尾辫随着步幅左右轻摆。\n\n她跑的是反向。\n\n两人之间的距离在缩短。三十米。二十米。余苒抬起头，视线在他脸上停了一瞬，脚下没停。沈辛往右侧让了半步，余苒也往她的右侧让了半步，两个人从面对面变成了并排，她调转方向，跟上他的步频。\n\n跑了一百多米，谁都没说话。\n\n沈辛听着自己的呼吸声，还有她运动鞋踩在塑胶颗粒上细碎的摩擦。余苒的步幅比他短，跟上他的速度得多迈半步，她调整了两次节奏才稳住。\n\n跑道前方出现岔口。左边继续绕操场，右边通向篮球场边上的碎石小径。\n\n余苒忽然右拐。\n\n沈辛的左脚刚落地，余光里白色外套的袖子一晃，她已经踩上碎石路面。石子在她鞋底发出咔嚓几声脆响，步伐没停，也没回头。\n\n沈辛的右脚跟上，身体继续沿跑道弧线往前。\n\n他跑过岔口。\n\n碎石路上的脚步声远了。沈辛沿弯道跑完剩下的半圈，经过器材室门口，经过单杠区，经过刚才那个岔口。碎石路上已经没人。\n\n他又跑了两圈。第三圈的时候太阳从体育馆后面升起来，跑道上的影子拉得细长。沈辛在终点线前停下来，弯腰撑着膝盖喘了几口气，然后直起身，走向操场出口的铁门。\n\n门轴发出短促的金属摩擦声。",
+  "raw_response": "操场的红色塑胶跑道在晨光里泛着潮气。\n\n沈辛调整着呼吸节奏，脚步落在第三道内侧的白线上。耳机里的节拍器响到第一百二十拍，他看见余苒从跑道对面拐过来，白色运动外套的袖子卷到小臂，马尾辫随着步幅左右轻摆。\n\n她跑的是反向。\n\n两人之间的距离在缩短。三十米。二十米。余苒抬起头，视线在他脸上停了一瞬，脚下没停。沈辛往右侧让了半步，余苒也往她的右侧让了半步，两个人从面对面变成了并排，她调转方向，跟上他的步频。\n\n跑了一百多米，谁都没说话。\n\n沈辛听着自己的呼吸声，还有她运动鞋踩在塑胶颗粒上细碎的摩擦。余苒的步幅比他短，跟上他的速度得多迈半步，她调整了两次节奏才稳住。\n\n跑道前方出现岔口。左边继续绕操场，右边通向篮球场边上的碎石小径。\n\n余苒忽然右拐。\n\n沈辛的左脚刚落地，余光里白色外套的袖子一晃，她已经踩上碎石路面。石子在她鞋底发出咔嚓几声脆响，步伐没停，也没回头。\n\n沈辛的右脚跟上，身体继续沿跑道弧线往前。\n\n他跑过岔口。\n\n碎石路上的脚步声远了。沈辛沿弯道跑完剩下的半圈，经过器材室门口，经过单杠区，经过刚才那个岔口。碎石路上已经没人。\n\n他又跑了两圈。第三圈的时候太阳从体育馆后面升起来，跑道上的影子拉得细长。沈辛在终点线前停下来，弯腰撑着膝盖喘了几口气，然后直起身，走向操场出口的铁门。\n\n门轴发出短促的金属摩擦声。",
+  "input_tokens": 1308,
+  "output_tokens": 369,
+  "latency_ms": 10392,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "e27cd1fbc7d1ebe10d9160c14a109dcbd99449acb70d022dd396fcb828538ab8",
+  "route_name": null,
+  "route_decision": {
+    "route_name": "A_LITE_INFORMATION_GAP",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "multiple characters with distinct information",
+      "viewpoint character has unknown facts and an interpretation",
+      "secondary character carries independent knowledge"
+    ],
+    "matched_rules": [
+      "RULE_A_LITE_INFORMATION_GAP"
+    ],
+    "rejected_routes": [
+      "C_OBJECT_CAUSAL"
+    ]
+  },
+  "compiled_brief_hash": "0c28400ba1a150298995c683316796fe15a7b910cd4f06ab07cba7ab32a81fd3",
+  "instruction_hash": "d368cbfa0846d1cb9adf452db083cbb58ba69154f281b3d6c895cb34da157cec",
+  "text_path": "cases\\B-04\\drafts\\route-1.txt"
+}

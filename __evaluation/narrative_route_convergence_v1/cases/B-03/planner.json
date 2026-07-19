@@ -1,0 +1,153 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "在闭馆铃响后的短暂独处中，通过一个具体的归还动作，让江晚和宋行之间产生第一次非言语的默契接触，为后续情感发展埋下种子。",
+  "location": "大学图书馆二楼阅览室",
+  "time": "晚上九点五十分，闭馆铃刚响过",
+  "scene_state": {
+    "last_completed_action": "闭馆铃响起，其他读者陆续离开，江晚合上笔记本准备起身",
+    "present_characters": [
+      "江晚",
+      "宋行"
+    ],
+    "visible_facts": [
+      "阅览室只剩下两人",
+      "宋行坐在江晚对面",
+      "江晚的借阅卡掉在地上"
+    ],
+    "available_objects": [
+      "江晚的借阅卡",
+      "江晚的笔记本",
+      "宋行的书",
+      "桌上的台灯"
+    ],
+    "unresolved_problem": "江晚不确定宋行是否在故意等她，但无法直接询问",
+    "already_existing_constraints": [
+      "图书馆即将闭馆，时间有限",
+      "两人关系尚浅，不能唐突追问私人意图"
+    ]
+  },
+  "characters": [
+    {
+      "name": "江晚",
+      "goal": "拿回借阅卡并安全结束这次偶遇，同时试探宋行的态度",
+      "known": [
+        "宋行经常在图书馆坐在她对面",
+        "借阅卡掉在地上需要捡回"
+      ],
+      "unknown": [
+        "宋行是否故意等到最后",
+        "宋行对她的真实感觉"
+      ],
+      "mistaken_beliefs": [
+        "宋行可能只是碰巧也待到闭馆"
+      ],
+      "constraints": [
+        "不能直接问对方是不是在等自己",
+        "必须尽快离开以免尴尬"
+      ],
+      "observed_evidence": [
+        "宋行弯腰捡起她的借阅卡并递过来",
+        "两人的手指在交接时碰触"
+      ],
+      "current_interpretation": "宋行在主动帮她，但手指的接触可能不是偶然",
+      "how_interpretation_drives_action": "她接过卡，但没有立刻抽手，而是停顿了一秒，然后轻声道谢"
+    },
+    {
+      "name": "宋行",
+      "goal": "创造一次自然接触的机会，观察江晚的反应",
+      "known": [
+        "江晚的借阅卡掉在地上",
+        "闭馆后两人会短暂独处"
+      ],
+      "unknown": [
+        "江晚是否对他有好感",
+        "江晚会不会主动多说一句话"
+      ],
+      "mistaken_beliefs": [
+        "江晚可能只是把他当成普通同学"
+      ],
+      "constraints": [
+        "不能表现得太刻意",
+        "不能直接表白或追问"
+      ],
+      "observed_evidence": [
+        "江晚的手指在他递卡时没有立即躲开"
+      ],
+      "current_interpretation": "江晚不排斥这种轻微接触，甚至可能有点紧张",
+      "how_interpretation_drives_action": "他保持递卡的姿势，等江晚先抽手，然后收拾自己的书，准备一起离开"
+    }
+  ],
+  "concrete_problem": "江晚必须在接过借阅卡后的几秒内，决定是说一句话、直接离开，还是用动作回应宋行的试探。",
+  "pressure": "闭馆灯即将熄灭，时间紧迫，但两人都不愿先打破微妙的沉默",
+  "turning_point": "江晚接过卡时，手指故意在宋行手背上停留了一瞬，然后低声说了一句'谢谢'，这个选择让宋行确认了她不反感",
+  "end_condition": "江晚起身走向门口，宋行跟在她身后两步远，灯在他们身后熄灭",
+  "forbidden": [
+    "江晚直接追问宋行是否在等她",
+    "宋行直接表白或说出真实意图",
+    "两人进行长篇对话",
+    "使用内心独白解释全部心理活动",
+    "提前揭示两人后续关系发展"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "宋行把借阅卡递过来时，指尖轻轻擦过江晚的手心",
+      "character_interpretation": "江晚认为宋行的动作可能不是无意的，而是有意延长接触",
+      "character_next_action": "她接过卡，但没有立刻收回手，而是让手指在宋行手背上停留了一秒",
+      "rejected_alternative": "她可以快速抽手并立即转身离开",
+      "immediate_consequence": "宋行感觉到她的停留，抬头看了她一眼，两人目光短暂相接",
+      "counterfactual_without_action": "如果江晚快速抽手，宋行会认为她只想保持距离，之后会主动拉开距离",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "两人只是对面而坐的普通同学，没有肢体接触",
+        "after": "两人有过一次有意识的、双方都注意到的轻微接触，并交换了眼神"
+      },
+      "cost_or_commitment": "江晚承担了被误解为主动的风险，且无法再假装只是偶然碰触",
+      "next_constraint": "两人之间有了一个未言明的默契，下次见面时不能再当作什么都没发生",
+      "reader_must_infer": "宋行递卡时的指尖触碰是故意的，但江晚的停留回应了他",
+      "narrator_must_not_state": [
+        "宋行此刻的心理活动",
+        "江晚为什么决定停留一秒的真实动机"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "闭馆铃已响，江晚发现借阅卡掉在地上，而宋行已经弯腰去捡",
+    "dominant_pressure": {
+      "kind": "social_friction",
+      "description": "时间正在流逝，但真正阻止两人进一步交流的是彼此尚未建立的信任和害怕被拒绝的顾虑"
+    },
+    "allowed_viewpoint_misread": "江晚可能把宋行捡卡的行为解读为单纯的帮忙，而忽略其中的试探意味",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "宋行是否真的故意等到闭馆",
+      "江晚对宋行的真实好感程度"
+    ],
+    "stop_state": {
+      "type": "relationship_shift",
+      "visible_fact": "江晚起身离开时，宋行没有立刻跟上，而是等了两步远的距离后才起身",
+      "what_is_now_different": "两人从偶然同处一室的陌生人，变成了有过一次默契接触、彼此心照不宣的潜在发展对象",
+      "must_not_append": "不得解释宋行为什么选择保持两步距离"
+    },
+    "final_line_must_include": "灯在他们身后熄灭"
+  }
+}

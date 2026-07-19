@@ -1,0 +1,338 @@
+{
+  "case_id": "A-03",
+  "category": "校园日常",
+  "title": "办公室听到半句话",
+  "run_id": "62c8a074-ec85-4070-81ad-e2ace639dc49",
+  "expected_route": "A_LITE_INFORMATION_GAP",
+  "planner": {
+    "candidate_id": "089f219f-eef2-4191-9112-5e0b31128d6d",
+    "attempt_number": 1,
+    "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+    "model_id": "deepseek-v4-pro",
+    "prompt_version_id": "f9052f8a-dc4e-5408-b14e-fc1badaf57f8",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 12288,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "json_object"
+    },
+    "text_output": "{\n  \"planner_contract_version\": 2,\n  \"scene_goal\": \"韩雨听到班主任的半句话后，基于有限信息做出一个具体行动，从而改变她与班主任或年级组长之间的关系状态，并为后续情节埋下伏笔。\",\n  \"location\": \"教师办公室门外走廊\",\n  \"time\": \"上午第二节课后课间\",\n  \"scene_state\": {\n    \"last_completed_action\": \"韩雨走到办公室门边，听见班主任说“你们班的韩雨……”，门随即被关上，下半句被截断。\",\n    \"present_characters\": [\"韩雨\", \"班主任\", \"年级组长\"],\n    \"visible_facts\": [\n      \"班主任关上门，手里拿着一张表格走出办公室\",\n      \"韩雨站在门外，手里拿着作业本\",\n      \"走廊上有其他学生经过\"\n    ],\n    \"available_objects\": [\"作业本\", \"班主任手中的表格\", \"办公室的门\"],\n    \"unresolved_problem\": \"韩雨不知道班主任和年级组长在谈论她的什么事情，但隐约感觉与自己有关。\",\n    \"already_existing_constraints\": [\"韩雨不能追问班主任\", \"韩雨不能偷看表格\", \"韩雨必须在课间结束前返回教室\"]\n  },\n  \"characters\": [\n    {\n      \"name\": \"韩雨\",\n      \"goal\": \"弄清楚班主任谈话中关于自己的内容，并决定如何应对可能的问题。\",\n      \"known\": [\"班主任提到了自己的名字\", \"年级组长也在办公室内\", \"班主任手里有表格\"],\n      \"unknown\": [\"谈话的具体内容\", \"表格上写了什么\", \"谈话是好事还是坏事\"],\n      \"mistaken_beliefs\": [\"可能以为自己犯了什么错误被讨论\"],\n      \"constraints\": [\"不能直接追问班主任\", \"不能偷看表格\", \"不能表现出异常\"],\n      \"observed_evidence\": [\"班主任关门前说的半句话“你们班的韩雨……”\", \"班主任走出时手里的表格\"],\n      \"current_interpretation\": \"班主任和年级组长在讨论关于我的事情，可能是不好的事，因为语气听起来严肃。\",\n      \"how_interpretation_drives_action\": \"她决定假装偶遇，观察班主任的表情和反应，以获取更多信息。\"\n    },\n    {\n      \"name\": \"班主任\",\n      \"goal\": \"与年级组长沟通班级事务，可能涉及韩雨，但不希望学生听到。\",\n      \"known\": [\"韩雨在班级的表现\", \"表格上的内容\", \"与年级组长讨论的目的\"],\n      \"unknown\": [\"韩雨听到了半句话\", \"韩雨在门外\"],\n      \"mistaken_beliefs\": [\"以为谈话没有被学生听到\"],\n      \"constraints\": [\"不能让学生知道谈话内容\", \"必须按时处理表格\"],\n      \"observed_evidence\": [],\n      \"current_interpretation\": \"谈话已经结束，现在要去交表格。\",\n      \"how_interpretation_drives_action\": \"她走出办公室，准备前往教务处。\"\n    },\n    {\n      \"name\": \"年级组长\",\n      \"goal\": \"接收班主任的汇报，可能对韩雨有某种安排或评价。\",\n      \"known\": [\"韩雨的基本情况\", \"班主任汇报的内容\"],\n      \"unknown\": [\"韩雨听到了谈话\"],\n      \"mistaken_beliefs\": [],\n      \"constraints\": [\"不能泄露谈话内容\"],\n      \"observed_evidence\": [],\n      \"current_interpretation\": \"已经与班主任沟通完毕。\",\n      \"how_interpretation_drives_action\": \"留在办公室继续工作。\"\n    }\n  ],\n  \"concrete_problem\": \"韩雨必须决定：是假装偶遇班主任并观察反应，还是直接离开以避免暴露自己听到了谈话。\",\n  \"pressure\": \"课间时间有限，班主任随时可能离开，韩雨必须立即行动，否则将失去获取信息的机会。\",\n  \"turning_point\": \"韩雨选择主动迎上班主任，以交作业为借口，试图从班主任的微表情或言语中捕捉线索。\",\n  \"end_condition\": \"韩雨与班主任短暂互动后，班主任离开，韩雨站在原地，心中有了新的猜测，但无法确认。\",\n  \"forbidden\": [\"韩雨不能直接追问谈话内容\", \"韩雨不能偷看表格\", \"不能揭示谈话的真实内容\", \"不能使用任何超自然或非日常元素\"],\n  \"causal_transitions\": [\n    {\n      \"id\": \"CT01\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"班主任关上门，手里拿着一张表格走出办公室。\",\n      \"character_interpretation\": \"韩雨认为班主任手里的表格可能与谈话内容有关，而且班主任的表情似乎有些严肃。\",\n      \"character_next_action\": \"韩雨决定迎上前去，假装正好来交作业，并观察班主任的反应。\",\n      \"rejected_alternative\": \"韩雨本可以悄悄离开，假装没听到，但她选择冒险试探。\",\n      \"immediate_consequence\": \"班主任看到韩雨，稍微愣了一下，然后平静地接过作业本，说了句“好的，放这里吧”，但眼神有些闪烁。\",\n      \"counterfactual_without_action\": \"如果韩雨不行动，她会直接返回教室，但会一直猜测谈话内容，无法获得任何新信息。\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"韩雨不知道班主任是否在谈论自己，处于信息空白状态。\",\n        \"after\": \"韩雨观察到班主任的微表情异常，确认谈话内容可能与自己有关，且可能不是完全正面。\"\n      },\n      \"cost_or_commitment\": \"韩雨暴露了自己在办公室附近，可能让班主任意识到她可能听到了什么。\",\n      \"next_constraint\": \"韩雨不能进一步追问，必须带着猜测离开，且班主任可能会更加注意谈话的私密性。\",\n      \"reader_must_infer\": \"班主任的闪烁眼神和简短回应暗示了谈话内容对韩雨可能有影响，但具体是好是坏仍不明确。\",\n      \"narrator_must_not_state\": [\"班主任的真实想法\", \"表格上的具体内容\", \"谈话的完整内容\"]\n    }\n  ],\n  \"tempo_guardrails\": {\n    \"entry_pressure\": \"班主任关上门，手里拿着一张表格，正朝韩雨的方向走来。\",\n    \"dominant_pressure\": {\n      \"kind\": \"information_gap\",\n      \"description\": \"韩雨急需知道谈话内容，但无法直接获取，只能通过观察和试探来填补信息缺口。\"\n    },\n    \"allowed_viewpoint_misread\": \"韩雨可能把班主任的严肃表情误读为针对自己的负面评价，而实际上可能只是工作疲惫。\",\n    \"disclosure_cap\": 1,\n    \"must_remain_unclassified\": [\"谈话的真实目的\", \"表格的具体内容\"],\n    \"stop_state\": {\n      \"type\": \"information_conflict\",\n      \"visible_fact\": \"班主任接过作业本时眼神闪烁，回答简短。\",\n      \"what_is_now_different\": \"韩雨从完全不知情变为怀疑谈话内容可能对自己不利，且班主任可能意识到韩雨听到了什么。\",\n      \"must_not_append\": \"不得揭示班主任的真实想法或谈话内容。\"\n    }\n  },\n  \"chapter_contract_check\": {\n    \"function_aligned\": true,\n    \"must_deliver_covered\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_enabled\": true,\n    \"main_payoff_prepared\": true,\n    \"ending_hook_established\": true,\n    \"causal_transitions_grounded\": true,\n    \"reader_inference_not_pre_resolved\": true,\n    \"scene_state_reconstructed\": true,\n    \"information_sources_legal\": true,\n    \"character_choice_is_real\": true,\n    \"consequence_is_counterfactual\": true,\n    \"state_delta_is_nonempty\": true,\n    \"next_constraint_is_new\": true,\n    \"stop_state_is_visible\": true,\n    \"stop_state_changes_future_actions\": true\n  }\n}",
+    "raw_response": "{\n  \"planner_contract_version\": 2,\n  \"scene_goal\": \"韩雨听到班主任的半句话后，基于有限信息做出一个具体行动，从而改变她与班主任或年级组长之间的关系状态，并为后续情节埋下伏笔。\",\n  \"location\": \"教师办公室门外走廊\",\n  \"time\": \"上午第二节课后课间\",\n  \"scene_state\": {\n    \"last_completed_action\": \"韩雨走到办公室门边，听见班主任说“你们班的韩雨……”，门随即被关上，下半句被截断。\",\n    \"present_characters\": [\"韩雨\", \"班主任\", \"年级组长\"],\n    \"visible_facts\": [\n      \"班主任关上门，手里拿着一张表格走出办公室\",\n      \"韩雨站在门外，手里拿着作业本\",\n      \"走廊上有其他学生经过\"\n    ],\n    \"available_objects\": [\"作业本\", \"班主任手中的表格\", \"办公室的门\"],\n    \"unresolved_problem\": \"韩雨不知道班主任和年级组长在谈论她的什么事情，但隐约感觉与自己有关。\",\n    \"already_existing_constraints\": [\"韩雨不能追问班主任\", \"韩雨不能偷看表格\", \"韩雨必须在课间结束前返回教室\"]\n  },\n  \"characters\": [\n    {\n      \"name\": \"韩雨\",\n      \"goal\": \"弄清楚班主任谈话中关于自己的内容，并决定如何应对可能的问题。\",\n      \"known\": [\"班主任提到了自己的名字\", \"年级组长也在办公室内\", \"班主任手里有表格\"],\n      \"unknown\": [\"谈话的具体内容\", \"表格上写了什么\", \"谈话是好事还是坏事\"],\n      \"mistaken_beliefs\": [\"可能以为自己犯了什么错误被讨论\"],\n      \"constraints\": [\"不能直接追问班主任\", \"不能偷看表格\", \"不能表现出异常\"],\n      \"observed_evidence\": [\"班主任关门前说的半句话“你们班的韩雨……”\", \"班主任走出时手里的表格\"],\n      \"current_interpretation\": \"班主任和年级组长在讨论关于我的事情，可能是不好的事，因为语气听起来严肃。\",\n      \"how_interpretation_drives_action\": \"她决定假装偶遇，观察班主任的表情和反应，以获取更多信息。\"\n    },\n    {\n      \"name\": \"班主任\",\n      \"goal\": \"与年级组长沟通班级事务，可能涉及韩雨，但不希望学生听到。\",\n      \"known\": [\"韩雨在班级的表现\", \"表格上的内容\", \"与年级组长讨论的目的\"],\n      \"unknown\": [\"韩雨听到了半句话\", \"韩雨在门外\"],\n      \"mistaken_beliefs\": [\"以为谈话没有被学生听到\"],\n      \"constraints\": [\"不能让学生知道谈话内容\", \"必须按时处理表格\"],\n      \"observed_evidence\": [],\n      \"current_interpretation\": \"谈话已经结束，现在要去交表格。\",\n      \"how_interpretation_drives_action\": \"她走出办公室，准备前往教务处。\"\n    },\n    {\n      \"name\": \"年级组长\",\n      \"goal\": \"接收班主任的汇报，可能对韩雨有某种安排或评价。\",\n      \"known\": [\"韩雨的基本情况\", \"班主任汇报的内容\"],\n      \"unknown\": [\"韩雨听到了谈话\"],\n      \"mistaken_beliefs\": [],\n      \"constraints\": [\"不能泄露谈话内容\"],\n      \"observed_evidence\": [],\n      \"current_interpretation\": \"已经与班主任沟通完毕。\",\n      \"how_interpretation_drives_action\": \"留在办公室继续工作。\"\n    }\n  ],\n  \"concrete_problem\": \"韩雨必须决定：是假装偶遇班主任并观察反应，还是直接离开以避免暴露自己听到了谈话。\",\n  \"pressure\": \"课间时间有限，班主任随时可能离开，韩雨必须立即行动，否则将失去获取信息的机会。\",\n  \"turning_point\": \"韩雨选择主动迎上班主任，以交作业为借口，试图从班主任的微表情或言语中捕捉线索。\",\n  \"end_condition\": \"韩雨与班主任短暂互动后，班主任离开，韩雨站在原地，心中有了新的猜测，但无法确认。\",\n  \"forbidden\": [\"韩雨不能直接追问谈话内容\", \"韩雨不能偷看表格\", \"不能揭示谈话的真实内容\", \"不能使用任何超自然或非日常元素\"],\n  \"causal_transitions\": [\n    {\n      \"id\": \"CT01\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"班主任关上门，手里拿着一张表格走出办公室。\",\n      \"character_interpretation\": \"韩雨认为班主任手里的表格可能与谈话内容有关，而且班主任的表情似乎有些严肃。\",\n      \"character_next_action\": \"韩雨决定迎上前去，假装正好来交作业，并观察班主任的反应。\",\n      \"rejected_alternative\": \"韩雨本可以悄悄离开，假装没听到，但她选择冒险试探。\",\n      \"immediate_consequence\": \"班主任看到韩雨，稍微愣了一下，然后平静地接过作业本，说了句“好的，放这里吧”，但眼神有些闪烁。\",\n      \"counterfactual_without_action\": \"如果韩雨不行动，她会直接返回教室，但会一直猜测谈话内容，无法获得任何新信息。\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"韩雨不知道班主任是否在谈论自己，处于信息空白状态。\",\n        \"after\": \"韩雨观察到班主任的微表情异常，确认谈话内容可能与自己有关，且可能不是完全正面。\"\n      },\n      \"cost_or_commitment\": \"韩雨暴露了自己在办公室附近，可能让班主任意识到她可能听到了什么。\",\n      \"next_constraint\": \"韩雨不能进一步追问，必须带着猜测离开，且班主任可能会更加注意谈话的私密性。\",\n      \"reader_must_infer\": \"班主任的闪烁眼神和简短回应暗示了谈话内容对韩雨可能有影响，但具体是好是坏仍不明确。\",\n      \"narrator_must_not_state\": [\"班主任的真实想法\", \"表格上的具体内容\", \"谈话的完整内容\"]\n    }\n  ],\n  \"tempo_guardrails\": {\n    \"entry_pressure\": \"班主任关上门，手里拿着一张表格，正朝韩雨的方向走来。\",\n    \"dominant_pressure\": {\n      \"kind\": \"information_gap\",\n      \"description\": \"韩雨急需知道谈话内容，但无法直接获取，只能通过观察和试探来填补信息缺口。\"\n    },\n    \"allowed_viewpoint_misread\": \"韩雨可能把班主任的严肃表情误读为针对自己的负面评价，而实际上可能只是工作疲惫。\",\n    \"disclosure_cap\": 1,\n    \"must_remain_unclassified\": [\"谈话的真实目的\", \"表格的具体内容\"],\n    \"stop_state\": {\n      \"type\": \"information_conflict\",\n      \"visible_fact\": \"班主任接过作业本时眼神闪烁，回答简短。\",\n      \"what_is_now_different\": \"韩雨从完全不知情变为怀疑谈话内容可能对自己不利，且班主任可能意识到韩雨听到了什么。\",\n      \"must_not_append\": \"不得揭示班主任的真实想法或谈话内容。\"\n    }\n  },\n  \"chapter_contract_check\": {\n    \"function_aligned\": true,\n    \"must_deliver_covered\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_enabled\": true,\n    \"main_payoff_prepared\": true,\n    \"ending_hook_established\": true,\n    \"causal_transitions_grounded\": true,\n    \"reader_inference_not_pre_resolved\": true,\n    \"scene_state_reconstructed\": true,\n    \"information_sources_legal\": true,\n    \"character_choice_is_real\": true,\n    \"consequence_is_counterfactual\": true,\n    \"state_delta_is_nonempty\": true,\n    \"next_constraint_is_new\": true,\n    \"stop_state_is_visible\": true,\n    \"stop_state_changes_future_actions\": true\n  }\n}",
+    "input_tokens": 3313,
+    "output_tokens": 1716,
+    "latency_ms": 24929,
+    "finish_reason": "stop",
+    "error_code": null,
+    "error_message": null,
+    "rendered_user_prompt_sha256": "b31dec02e6defddb1b84c1d2e4e2ccd6f7373b3d9f693ff0f47408f29bef9d62",
+    "route_name": null,
+    "route_decision": null,
+    "compiled_brief_hash": null,
+    "instruction_hash": null
+  },
+  "drafts": [
+    {
+      "group": "ROUTE-A_LITE_INFORMATION_GAP",
+      "replica": 1,
+      "mode": "narrative_route",
+      "candidate_id": "96d41f58-a6ed-4ae0-bfb8-a7aa36584917",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "A_LITE_INFORMATION_GAP",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "multiple characters with distinct information",
+            "viewpoint character has unknown facts and an interpretation",
+            "secondary character carries independent knowledge"
+          ],
+          "matched_rules": [
+            "RULE_A_LITE_INFORMATION_GAP"
+          ],
+          "rejected_routes": [
+            "C_OBJECT_CAUSAL"
+          ]
+        },
+        "compiled_brief_hash": "c17d346999b2c0c4343a025731963d95477667eadfa4bb75b305b86902975ce7",
+        "instruction_hash": "d368cbfa0846d1cb9adf452db083cbb58ba69154f281b3d6c895cb34da157cec",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "韩雨抱着作业本走到办公室门口时，门正好从里面关上。\n\n“你们班的韩雨……”\n\n班主任的声音被门板截断，后半句闷在了办公室里。韩雨的手指在作业本边缘停了一下。走廊上有两个男生追打着跑过去，球鞋在地砖上蹭出尖锐的声响。\n\n门重新打开了。\n\n班主任走出来，手里拿着一张表格，转身拉门的动作让纸张在空气里轻轻扇动了一下。她抬起头，正对上韩雨的视线。\n\n韩雨往前走了一步，把作业本往前递了递。“老师，我来交作业。”\n\n班主任愣了一下。那个停顿很短，但韩雨看见了——她的眼皮跳了一下，目光从韩雨脸上移开，落在那叠作业本上，又移回来。\n\n“好的，放这里吧。”\n\n班主任伸手接过作业本，手指碰到了韩雨的手背。她的手指有点凉。表格被她夹在胳膊底下，韩雨只能看见背面，上面印着学校的红头，有几个手写的字迹透过纸张洇出来，但看不出写了什么。\n\n班主任把作业本夹到腋下，和表格放在一起。她的嘴唇动了动，像是想说什么，但最终只是朝韩雨点了点头，然后侧身从她旁边走过去，皮鞋在地砖上敲出规律的声响。\n\n韩雨站在原地，看着班主任的背影拐过走廊尽头。\n\n作业本已经不在她手里了。",
+      "raw_response": "韩雨抱着作业本走到办公室门口时，门正好从里面关上。\n\n“你们班的韩雨……”\n\n班主任的声音被门板截断，后半句闷在了办公室里。韩雨的手指在作业本边缘停了一下。走廊上有两个男生追打着跑过去，球鞋在地砖上蹭出尖锐的声响。\n\n门重新打开了。\n\n班主任走出来，手里拿着一张表格，转身拉门的动作让纸张在空气里轻轻扇动了一下。她抬起头，正对上韩雨的视线。\n\n韩雨往前走了一步，把作业本往前递了递。“老师，我来交作业。”\n\n班主任愣了一下。那个停顿很短，但韩雨看见了——她的眼皮跳了一下，目光从韩雨脸上移开，落在那叠作业本上，又移回来。\n\n“好的，放这里吧。”\n\n班主任伸手接过作业本，手指碰到了韩雨的手背。她的手指有点凉。表格被她夹在胳膊底下，韩雨只能看见背面，上面印着学校的红头，有几个手写的字迹透过纸张洇出来，但看不出写了什么。\n\n班主任把作业本夹到腋下，和表格放在一起。她的嘴唇动了动，像是想说什么，但最终只是朝韩雨点了点头，然后侧身从她旁边走过去，皮鞋在地砖上敲出规律的声响。\n\n韩雨站在原地，看着班主任的背影拐过走廊尽头。\n\n作业本已经不在她手里了。",
+      "input_tokens": 1414,
+      "output_tokens": 285,
+      "latency_ms": 7102,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "c9902eb798a77e44be0d3e7fc499f55299bfe3cbc6022c713182ef770053d9ec",
+      "route_name": null,
+      "route_decision": {
+        "route_name": "A_LITE_INFORMATION_GAP",
+        "classifier_version": "narrative-route-v1",
+        "decision_reasons": [
+          "multiple characters with distinct information",
+          "viewpoint character has unknown facts and an interpretation",
+          "secondary character carries independent knowledge"
+        ],
+        "matched_rules": [
+          "RULE_A_LITE_INFORMATION_GAP"
+        ],
+        "rejected_routes": [
+          "C_OBJECT_CAUSAL"
+        ]
+      },
+      "compiled_brief_hash": "c17d346999b2c0c4343a025731963d95477667eadfa4bb75b305b86902975ce7",
+      "instruction_hash": "d368cbfa0846d1cb9adf452db083cbb58ba69154f281b3d6c895cb34da157cec",
+      "text_path": "cases\\A-03\\drafts\\route-1.txt"
+    },
+    {
+      "group": "ROUTE-A_LITE_INFORMATION_GAP",
+      "replica": 2,
+      "mode": "narrative_route",
+      "candidate_id": "6fdb4f63-e4ae-4d75-b4c2-215375cd54c8",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "A_LITE_INFORMATION_GAP",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "multiple characters with distinct information",
+            "viewpoint character has unknown facts and an interpretation",
+            "secondary character carries independent knowledge"
+          ],
+          "matched_rules": [
+            "RULE_A_LITE_INFORMATION_GAP"
+          ],
+          "rejected_routes": [
+            "C_OBJECT_CAUSAL"
+          ]
+        },
+        "compiled_brief_hash": "c17d346999b2c0c4343a025731963d95477667eadfa4bb75b305b86902975ce7",
+        "instruction_hash": "d368cbfa0846d1cb9adf452db083cbb58ba69154f281b3d6c895cb34da157cec",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "韩雨抱着一摞数学作业本，拐过楼梯口。\n\n办公室的门关着，但门缝里漏出一句——“你们班的韩雨……”\n\n声音是班主任的。后半截被门板夹断了，只剩下走廊里嗡嗡的日光灯声。\n\n韩雨的脚步顿了一下。手里的作业本滑了滑，她收紧手指。\n\n门开了。\n\n班主任走出来，手里拿着一张表格，A4纸，上面有打印的表格线。她转身拉上门，动作不快，金属锁舌咔哒一声扣进门框。\n\n班主任抬起头。\n\n韩雨站在三步外，走廊里有三个男生从身后跑过去，球鞋踩得地砖啪啪响。班主任的目光落在她身上，停了一秒，然后落在她怀里的作业本上。\n\n“交作业？”班主任问。\n\n“嗯。”韩雨往前走了一步，把作业本递出去。本子最上面一本的边角有点卷，她用拇指按了按。\n\n班主任接过作业本。动作中间有个很短的停顿——她的手在半空停了不到一秒，像是先认出了人，再认出了作业本。\n\n“好的，放这里吧。”班主任把作业本接过去，夹在胳膊下面。表格还拿在手里，纸面朝内，贴着衣服。\n\n韩雨看着她的眼睛。\n\n班主任的视线从韩雨脸上移开，落在走廊尽头的窗户上，又移回来。嘴角动了一下，像是要说点什么，但最后只是点了点头。\n\n“行，回去吧。”\n\n韩雨的手空了。她把手垂下来，指甲掐了一下指腹。\n\n“老师——”\n\n“马上上课了。”班主任已经侧过身，表格换到另一只手上，纸角被拇指压出一个折痕。\n\n韩雨的嘴唇抿成一条线。她后退一步，转身往教室方向走。\n\n走了五步，她回头。\n\n班主任正推开年级组的门，半个身子已经进去了。表格的一角从她指缝里露出来，但距离太远，什么也看不清。\n\n门关上了。\n\n韩雨站在原地。走廊里的日光灯还在嗡嗡响。她的手指还掐着指腹，指甲印陷进肉里，有点疼。\n\n她松开手，转身继续走。脚步比来的时候快了一点。",
+      "raw_response": "韩雨抱着一摞数学作业本，拐过楼梯口。\n\n办公室的门关着，但门缝里漏出一句——“你们班的韩雨……”\n\n声音是班主任的。后半截被门板夹断了，只剩下走廊里嗡嗡的日光灯声。\n\n韩雨的脚步顿了一下。手里的作业本滑了滑，她收紧手指。\n\n门开了。\n\n班主任走出来，手里拿着一张表格，A4纸，上面有打印的表格线。她转身拉上门，动作不快，金属锁舌咔哒一声扣进门框。\n\n班主任抬起头。\n\n韩雨站在三步外，走廊里有三个男生从身后跑过去，球鞋踩得地砖啪啪响。班主任的目光落在她身上，停了一秒，然后落在她怀里的作业本上。\n\n“交作业？”班主任问。\n\n“嗯。”韩雨往前走了一步，把作业本递出去。本子最上面一本的边角有点卷，她用拇指按了按。\n\n班主任接过作业本。动作中间有个很短的停顿——她的手在半空停了不到一秒，像是先认出了人，再认出了作业本。\n\n“好的，放这里吧。”班主任把作业本接过去，夹在胳膊下面。表格还拿在手里，纸面朝内，贴着衣服。\n\n韩雨看着她的眼睛。\n\n班主任的视线从韩雨脸上移开，落在走廊尽头的窗户上，又移回来。嘴角动了一下，像是要说点什么，但最后只是点了点头。\n\n“行，回去吧。”\n\n韩雨的手空了。她把手垂下来，指甲掐了一下指腹。\n\n“老师——”\n\n“马上上课了。”班主任已经侧过身，表格换到另一只手上，纸角被拇指压出一个折痕。\n\n韩雨的嘴唇抿成一条线。她后退一步，转身往教室方向走。\n\n走了五步，她回头。\n\n班主任正推开年级组的门，半个身子已经进去了。表格的一角从她指缝里露出来，但距离太远，什么也看不清。\n\n门关上了。\n\n韩雨站在原地。走廊里的日光灯还在嗡嗡响。她的手指还掐着指腹，指甲印陷进肉里，有点疼。\n\n她松开手，转身继续走。脚步比来的时候快了一点。",
+      "input_tokens": 1414,
+      "output_tokens": 457,
+      "latency_ms": 11143,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "c9902eb798a77e44be0d3e7fc499f55299bfe3cbc6022c713182ef770053d9ec",
+      "route_name": null,
+      "route_decision": {
+        "route_name": "A_LITE_INFORMATION_GAP",
+        "classifier_version": "narrative-route-v1",
+        "decision_reasons": [
+          "multiple characters with distinct information",
+          "viewpoint character has unknown facts and an interpretation",
+          "secondary character carries independent knowledge"
+        ],
+        "matched_rules": [
+          "RULE_A_LITE_INFORMATION_GAP"
+        ],
+        "rejected_routes": [
+          "C_OBJECT_CAUSAL"
+        ]
+      },
+      "compiled_brief_hash": "c17d346999b2c0c4343a025731963d95477667eadfa4bb75b305b86902975ce7",
+      "instruction_hash": "d368cbfa0846d1cb9adf452db083cbb58ba69154f281b3d6c895cb34da157cec",
+      "text_path": "cases\\A-03\\drafts\\route-2.txt"
+    },
+    {
+      "group": "ROUTE-A_LITE_INFORMATION_GAP",
+      "replica": 3,
+      "mode": "narrative_route",
+      "candidate_id": "912e16b5-e3a4-48e1-afac-ab4012a9d412",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "A_LITE_INFORMATION_GAP",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "multiple characters with distinct information",
+            "viewpoint character has unknown facts and an interpretation",
+            "secondary character carries independent knowledge"
+          ],
+          "matched_rules": [
+            "RULE_A_LITE_INFORMATION_GAP"
+          ],
+          "rejected_routes": [
+            "C_OBJECT_CAUSAL"
+          ]
+        },
+        "compiled_brief_hash": "c17d346999b2c0c4343a025731963d95477667eadfa4bb75b305b86902975ce7",
+        "instruction_hash": "d368cbfa0846d1cb9adf452db083cbb58ba69154f281b3d6c895cb34da157cec",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "韩雨抱着作业本走到办公室门口时，门正好从里面关上。\n\n她听见班主任的声音——“你们班的韩雨……”——然后门合拢，后半句话被截在门板后面。\n\n韩雨的手停在半空，指节离门板还有十厘米。走廊里有两个男生从她身后跑过去，球鞋在地砖上蹭出短促的吱嘎声。她没回头。\n\n门重新打开。\n\n班主任走出来，手里拿着一张表格，纸张边缘被拇指捏出细微的折痕。她看见韩雨，脚步顿了一下。\n\n停顿很短。不到一秒。\n\n韩雨把作业本往前递了递。“老师，我来交作业。”\n\n“哦。”班主任伸出手，接过作业本。她的视线从韩雨脸上移开，落到本子封面上，又移回来。“好的，放这里吧。”\n\n韩雨站着没动。\n\n班主任把表格翻了个面，背面朝上。纸张在指间发出轻微的沙响。\n\n“还有事吗？”\n\n“没有。”\n\n韩雨转身往楼梯口走。走出三步，她听见班主任的脚步声朝相反方向去了，鞋跟敲在水磨石地面上，节奏比平时快。\n\n走到楼梯拐角，韩雨停下来。她往走廊尽头看了一眼——班主任的背影正拐进年级组的办公室，表格仍然背面朝上，贴在腿侧。\n\n韩雨收回视线，把手插进口袋，摸到了手机。屏幕亮起来，她解锁，点进和同桌的对话框，打了几个字又删掉。\n\n她重新打了一行字，发送：课间帮我带瓶水。\n\n手机震动。同桌回：你人呢？\n\n韩雨把手机塞回口袋，走下楼梯。",
+      "raw_response": "韩雨抱着作业本走到办公室门口时，门正好从里面关上。\n\n她听见班主任的声音——“你们班的韩雨……”——然后门合拢，后半句话被截在门板后面。\n\n韩雨的手停在半空，指节离门板还有十厘米。走廊里有两个男生从她身后跑过去，球鞋在地砖上蹭出短促的吱嘎声。她没回头。\n\n门重新打开。\n\n班主任走出来，手里拿着一张表格，纸张边缘被拇指捏出细微的折痕。她看见韩雨，脚步顿了一下。\n\n停顿很短。不到一秒。\n\n韩雨把作业本往前递了递。“老师，我来交作业。”\n\n“哦。”班主任伸出手，接过作业本。她的视线从韩雨脸上移开，落到本子封面上，又移回来。“好的，放这里吧。”\n\n韩雨站着没动。\n\n班主任把表格翻了个面，背面朝上。纸张在指间发出轻微的沙响。\n\n“还有事吗？”\n\n“没有。”\n\n韩雨转身往楼梯口走。走出三步，她听见班主任的脚步声朝相反方向去了，鞋跟敲在水磨石地面上，节奏比平时快。\n\n走到楼梯拐角，韩雨停下来。她往走廊尽头看了一眼——班主任的背影正拐进年级组的办公室，表格仍然背面朝上，贴在腿侧。\n\n韩雨收回视线，把手插进口袋，摸到了手机。屏幕亮起来，她解锁，点进和同桌的对话框，打了几个字又删掉。\n\n她重新打了一行字，发送：课间帮我带瓶水。\n\n手机震动。同桌回：你人呢？\n\n韩雨把手机塞回口袋，走下楼梯。",
+      "input_tokens": 1414,
+      "output_tokens": 347,
+      "latency_ms": 8620,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "c9902eb798a77e44be0d3e7fc499f55299bfe3cbc6022c713182ef770053d9ec",
+      "route_name": null,
+      "route_decision": {
+        "route_name": "A_LITE_INFORMATION_GAP",
+        "classifier_version": "narrative-route-v1",
+        "decision_reasons": [
+          "multiple characters with distinct information",
+          "viewpoint character has unknown facts and an interpretation",
+          "secondary character carries independent knowledge"
+        ],
+        "matched_rules": [
+          "RULE_A_LITE_INFORMATION_GAP"
+        ],
+        "rejected_routes": [
+          "C_OBJECT_CAUSAL"
+        ]
+      },
+      "compiled_brief_hash": "c17d346999b2c0c4343a025731963d95477667eadfa4bb75b305b86902975ce7",
+      "instruction_hash": "d368cbfa0846d1cb9adf452db083cbb58ba69154f281b3d6c895cb34da157cec",
+      "text_path": "cases\\A-03\\drafts\\route-3.txt"
+    },
+    {
+      "group": "BASELINE-complete_planner",
+      "replica": 1,
+      "mode": "complete_planner",
+      "candidate_id": "0c1ea095-785a-4274-b886-813e1a39ba5d",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "韩雨把作业本抱在胸前，站在办公室门外。\n\n门已经关上了。班主任那句“你们班的韩雨”的后半截，被门板切得干干净净，只剩下四个字悬在走廊的空气里，像一根没落地的针。\n\n她盯着门上的磨砂玻璃，能看见里面两个人影还站着。年级组长的声音隔着一层木板，变成一团模糊的嗡响，一个字都分辨不出来。\n\n走廊里有人在跑，书包带子甩在她胳膊上。一个男生喊着“让一下让一下”从她身边挤过去。韩雨往墙边退了半步，眼睛没离开那扇门。\n\n门把手动了。\n\n韩雨的手指在作业本边缘上收紧。班主任拉开门走出来，另一只手拿着一张表格，正低头扫着纸面上的内容。门在班主任身后合上，年级组长还坐在里面，已经翻开另一个本子。\n\n班主任抬起头，看见了韩雨。\n\n韩雨往前走了一步，把作业本往前递了递。“老师，我来交作业。”\n\n班主任的目光在她脸上停了一下。\n\n那一下很短，短到韩雨不确定自己是不是看错了——班主任的眼神往旁边闪了闪，没直接看她，而是落在她手里那摞本子上，然后才接过去。\n\n“好的，放这里吧。”\n\n班主任把那摞本子夹在腋下，和表格一起拿着。她说话的语气没什么问题，但声音比平时轻，像是已经说完了一句更重的话，这句只是补上去的。\n\n韩雨没动。她看着班主任把本子换到左手，右手把表格对折了一下，字朝里，然后塞进文件夹里。\n\n班主任抬起头，发现韩雨还站在面前。\n\n“还有事吗？”\n\n“没事了。”韩雨松开手指，刚才一直捏着作业本边缘的指尖有点发白。\n\n班主任点点头，从她身边走过去，皮鞋敲在水磨石地面上，节奏比平时快。文件夹夹在腋下，表格折在里头，什么都看不见了。\n\n韩雨转过身，看着班主任的背影拐过走廊尽头。\n\n她站在原地。手指还保持着刚才捏本子的姿势，空落落地垂在腿边。班主任那个闪开的眼神还在她脑子里，像一颗没炸开的石子，硌在某个说不清的位置。\n\n上课铃响了。",
+      "raw_response": "韩雨把作业本抱在胸前，站在办公室门外。\n\n门已经关上了。班主任那句“你们班的韩雨”的后半截，被门板切得干干净净，只剩下四个字悬在走廊的空气里，像一根没落地的针。\n\n她盯着门上的磨砂玻璃，能看见里面两个人影还站着。年级组长的声音隔着一层木板，变成一团模糊的嗡响，一个字都分辨不出来。\n\n走廊里有人在跑，书包带子甩在她胳膊上。一个男生喊着“让一下让一下”从她身边挤过去。韩雨往墙边退了半步，眼睛没离开那扇门。\n\n门把手动了。\n\n韩雨的手指在作业本边缘上收紧。班主任拉开门走出来，另一只手拿着一张表格，正低头扫着纸面上的内容。门在班主任身后合上，年级组长还坐在里面，已经翻开另一个本子。\n\n班主任抬起头，看见了韩雨。\n\n韩雨往前走了一步，把作业本往前递了递。“老师，我来交作业。”\n\n班主任的目光在她脸上停了一下。\n\n那一下很短，短到韩雨不确定自己是不是看错了——班主任的眼神往旁边闪了闪，没直接看她，而是落在她手里那摞本子上，然后才接过去。\n\n“好的，放这里吧。”\n\n班主任把那摞本子夹在腋下，和表格一起拿着。她说话的语气没什么问题，但声音比平时轻，像是已经说完了一句更重的话，这句只是补上去的。\n\n韩雨没动。她看着班主任把本子换到左手，右手把表格对折了一下，字朝里，然后塞进文件夹里。\n\n班主任抬起头，发现韩雨还站在面前。\n\n“还有事吗？”\n\n“没事了。”韩雨松开手指，刚才一直捏着作业本边缘的指尖有点发白。\n\n班主任点点头，从她身边走过去，皮鞋敲在水磨石地面上，节奏比平时快。文件夹夹在腋下，表格折在里头，什么都看不见了。\n\n韩雨转过身，看着班主任的背影拐过走廊尽头。\n\n她站在原地。手指还保持着刚才捏本子的姿势，空落落地垂在腿边。班主任那个闪开的眼神还在她脑子里，像一颗没炸开的石子，硌在某个说不清的位置。\n\n上课铃响了。",
+      "input_tokens": 2609,
+      "output_tokens": 472,
+      "latency_ms": 12165,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "92737ded17987b5683963d2b9638600ae06a310033aa0b15fa6a8b700f8c38db",
+      "route_name": null,
+      "route_decision": null,
+      "compiled_brief_hash": null,
+      "instruction_hash": null,
+      "text_path": "cases\\A-03\\drafts\\baseline-1.txt"
+    },
+    {
+      "group": "BASELINE-complete_planner",
+      "replica": 2,
+      "mode": "complete_planner",
+      "candidate_id": "72b91d88-5931-4108-acf6-3f4e8f96d1a7",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "韩雨站在办公室门外，手里的作业本边角被她捏得微微发皱。\n\n门合上的瞬间，班主任那句“你们班的韩雨……”还挂在耳边，后半截被木门吞得干干净净，只剩下走廊里课间嘈杂的人声。她盯着门板上“教师办公室”几个字，指节在作业本脊上敲了两下，没敲第三下。\n\n门开了。\n\n班主任从里面走出来，右手捏着一张表格，左手顺势把门带上。她抬头看见韩雨，脚步顿了一瞬——那停顿短得几乎不算停顿，但韩雨看见了。\n\n“老师，”韩雨把作业本往前递了递，“我来交作业。”\n\n班主任伸手接过本子，翻了两页，目光落在页面上，没有立刻抬起来。表格夹在她的食指和中指之间，纸面朝下，韩雨只能看见背面透出的一点模糊的格子线。\n\n“好的，放这里吧。”班主任合上作业本，把它夹在腋下，和表格放在同一只手里。\n\n她的视线从作业本上移开，掠过韩雨的肩膀，落在走廊尽头。然后她笑了笑，嘴角的弧度收得很快，像只完成了任务就撤回的动作。\n\n“回去吧，快上课了。”\n\n韩雨点点头，侧过身让开路。班主任从她身边走过，皮鞋踩在水磨石地面上，声音均匀，没有加快也没有放慢。表格的边角在走动中微微掀起，又落回去。\n\n韩雨站在原地，看着班主任的背影拐过楼梯口。\n\n她低头看了看自己空掉的手，又抬头看向办公室紧闭的门。门上的磨砂玻璃映出一个模糊的轮廓——年级组长还坐在里面，没有出来。",
+      "raw_response": "韩雨站在办公室门外，手里的作业本边角被她捏得微微发皱。\n\n门合上的瞬间，班主任那句“你们班的韩雨……”还挂在耳边，后半截被木门吞得干干净净，只剩下走廊里课间嘈杂的人声。她盯着门板上“教师办公室”几个字，指节在作业本脊上敲了两下，没敲第三下。\n\n门开了。\n\n班主任从里面走出来，右手捏着一张表格，左手顺势把门带上。她抬头看见韩雨，脚步顿了一瞬——那停顿短得几乎不算停顿，但韩雨看见了。\n\n“老师，”韩雨把作业本往前递了递，“我来交作业。”\n\n班主任伸手接过本子，翻了两页，目光落在页面上，没有立刻抬起来。表格夹在她的食指和中指之间，纸面朝下，韩雨只能看见背面透出的一点模糊的格子线。\n\n“好的，放这里吧。”班主任合上作业本，把它夹在腋下，和表格放在同一只手里。\n\n她的视线从作业本上移开，掠过韩雨的肩膀，落在走廊尽头。然后她笑了笑，嘴角的弧度收得很快，像只完成了任务就撤回的动作。\n\n“回去吧，快上课了。”\n\n韩雨点点头，侧过身让开路。班主任从她身边走过，皮鞋踩在水磨石地面上，声音均匀，没有加快也没有放慢。表格的边角在走动中微微掀起，又落回去。\n\n韩雨站在原地，看着班主任的背影拐过楼梯口。\n\n她低头看了看自己空掉的手，又抬头看向办公室紧闭的门。门上的磨砂玻璃映出一个模糊的轮廓——年级组长还坐在里面，没有出来。",
+      "input_tokens": 2609,
+      "output_tokens": 349,
+      "latency_ms": 8542,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "92737ded17987b5683963d2b9638600ae06a310033aa0b15fa6a8b700f8c38db",
+      "route_name": null,
+      "route_decision": null,
+      "compiled_brief_hash": null,
+      "instruction_hash": null,
+      "text_path": "cases\\A-03\\drafts\\baseline-2.txt"
+    },
+    {
+      "group": "BASELINE-complete_planner",
+      "replica": 3,
+      "mode": "complete_planner",
+      "candidate_id": "9bd5966d-cd7d-449a-9c42-6de60f0d725f",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "韩雨站在办公室门外，手里攥着作业本，指节有点发白。\n\n门在她面前合上了，但班主任那句话还卡在耳朵里——“你们班的韩雨……”——后面的字被门板吞了个干净。\n\n走廊上有脚步声，隔壁班的两个女生抱着课本从她身边走过去，笑声压得很低。韩雨没动，盯着门板上那块磨砂玻璃，里面两个人影晃了一下，然后其中一个朝门口移动。\n\n门开了。\n\n班主任走出来，右手握着一张对折的表格，左手带上门。她转过身，看见韩雨，脚步顿了一瞬。\n\n那一瞬很短，但韩雨看见了。\n\n“老师，”韩雨把作业本往前递了递，声音比她预想的稳，“我来交数学作业。”\n\n班主任接过本子，低头看了一眼封面上的名字，然后夹到腋下。“好的，放这里吧。”\n\n她说这话的时候，眼睛没看韩雨。目光从韩雨肩膀上方掠过去，落在走廊尽头的窗户那边，然后又收回来，落在表格上。\n\n韩雨没动。她看着班主任的手指——那张表格被捏得有点紧，纸边起了皱。\n\n“还有事吗？”班主任抬起头。\n\n“没有了。”\n\n韩雨转身往教室走。走了三步，听见身后班主任的脚步声朝相反方向去了，步子比平时快。\n\n她没回头。但她记住了班主任刚才那个眼神——不是生气，不是失望，是那种被撞见什么事之后，迅速把表情收起来的样子。\n\n韩雨把双手插进校服口袋，手指在里面攥紧了。",
+      "raw_response": "韩雨站在办公室门外，手里攥着作业本，指节有点发白。\n\n门在她面前合上了，但班主任那句话还卡在耳朵里——“你们班的韩雨……”——后面的字被门板吞了个干净。\n\n走廊上有脚步声，隔壁班的两个女生抱着课本从她身边走过去，笑声压得很低。韩雨没动，盯着门板上那块磨砂玻璃，里面两个人影晃了一下，然后其中一个朝门口移动。\n\n门开了。\n\n班主任走出来，右手握着一张对折的表格，左手带上门。她转过身，看见韩雨，脚步顿了一瞬。\n\n那一瞬很短，但韩雨看见了。\n\n“老师，”韩雨把作业本往前递了递，声音比她预想的稳，“我来交数学作业。”\n\n班主任接过本子，低头看了一眼封面上的名字，然后夹到腋下。“好的，放这里吧。”\n\n她说这话的时候，眼睛没看韩雨。目光从韩雨肩膀上方掠过去，落在走廊尽头的窗户那边，然后又收回来，落在表格上。\n\n韩雨没动。她看着班主任的手指——那张表格被捏得有点紧，纸边起了皱。\n\n“还有事吗？”班主任抬起头。\n\n“没有了。”\n\n韩雨转身往教室走。走了三步，听见身后班主任的脚步声朝相反方向去了，步子比平时快。\n\n她没回头。但她记住了班主任刚才那个眼神——不是生气，不是失望，是那种被撞见什么事之后，迅速把表情收起来的样子。\n\n韩雨把双手插进校服口袋，手指在里面攥紧了。",
+      "input_tokens": 2609,
+      "output_tokens": 319,
+      "latency_ms": 8545,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "92737ded17987b5683963d2b9638600ae06a310033aa0b15fa6a8b700f8c38db",
+      "route_name": null,
+      "route_decision": null,
+      "compiled_brief_hash": null,
+      "instruction_hash": null,
+      "text_path": "cases\\A-03\\drafts\\baseline-3.txt"
+    }
+  ],
+  "actual_route": "A_LITE_INFORMATION_GAP",
+  "route_decision": {
+    "route_name": "A_LITE_INFORMATION_GAP",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "multiple characters with distinct information",
+      "viewpoint character has unknown facts and an interpretation",
+      "secondary character carries independent knowledge"
+    ],
+    "matched_rules": [
+      "RULE_A_LITE_INFORMATION_GAP"
+    ],
+    "rejected_routes": [
+      "C_OBJECT_CAUSAL"
+    ]
+  }
+}

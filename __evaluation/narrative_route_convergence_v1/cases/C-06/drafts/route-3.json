@@ -1,0 +1,67 @@
+{
+  "group": "ROUTE-B_DEFAULT",
+  "replica": 3,
+  "mode": "narrative_route",
+  "candidate_id": "aa2c2e93-dedc-4e7b-84e1-6db5b36f0a74",
+  "attempt_number": 1,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "route_decision": {
+      "route_name": "B_DEFAULT",
+      "classifier_version": "narrative-route-v1",
+      "decision_reasons": [
+        "no specific narrative mechanism detected"
+      ],
+      "matched_rules": [
+        "RULE_B_DEFAULT"
+      ],
+      "rejected_routes": [
+        "C_OBJECT_CAUSAL",
+        "A_LITE_INFORMATION_GAP",
+        "B_SHORT_RELATION",
+        "B_PHYSICAL_PROBLEM",
+        "D_FALLIBLE_TASK"
+      ]
+    },
+    "compiled_brief_hash": "81ff806084f8944ee3e5ebfb49acab9dcfdd3a8c2cbd1eaf7973ac9884a8d76d",
+    "instruction_hash": "7ec8bb8faba03e4eb5f6e789d779dd925a17feb93d29aab55ff151fa2bc43890",
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "陆柯站在外卖架前，手指悬在那袋没写名字的餐上方。\n\n架子上四层格，第三层左边本该放着他那袋标注“陆柯”的黄焖鸡米饭。现在那个位置空着，旁边歪着一袋透明塑料袋，里面是份盖浇饭，袋口没系紧，能看到青椒肉丝的油渗出来，塑料袋外壁凝了一层水珠。没有小票，没有手写名，什么都没有。\n\n他低头看了眼手机上的外卖订单——已送达，18:47。现在是18:53。六分钟。\n\n陆柯把手机揣回裤兜，伸手翻开那袋无主餐的袋口往里看了一眼。青椒肉丝盖饭，一次性筷子，没有纸条，没有联系方式。他把袋子放回去，视线扫过外卖架旁边的墙面——墙角天花板的监控探头朝向走廊另一侧，镜头背对着这个架子。前台灯黑着，玻璃门后的转椅上没人，桌面上电脑屏幕已经熄了。\n\n他站在原地想了想，然后走到前台台面上扫了一圈。笔筒里插着几支黑色签字笔，旁边压着一叠黄色方形便签纸。他抽了一张，拔开笔帽，在便签上写：\n\n“拿错餐的朋友：你的青椒肉丝盖饭在架子上。我的黄焖鸡你拿走了。联系我 138——”，他停了一下，划掉“138”，改成“陆柯”，然后写下手机号。写完后又补了一句：“餐我先拿走吃，联系我换。”\n\n他把便签贴在外卖架第三层那个空位上，用力按了两下边角，让胶粘牢。然后他拿起那袋青椒肉丝盖饭，把袋口系紧，转身朝电梯间走去。\n\n外卖架上只剩一张黄色便签，贴在空了的格层边缘。",
+  "raw_response": "陆柯站在外卖架前，手指悬在那袋没写名字的餐上方。\n\n架子上四层格，第三层左边本该放着他那袋标注“陆柯”的黄焖鸡米饭。现在那个位置空着，旁边歪着一袋透明塑料袋，里面是份盖浇饭，袋口没系紧，能看到青椒肉丝的油渗出来，塑料袋外壁凝了一层水珠。没有小票，没有手写名，什么都没有。\n\n他低头看了眼手机上的外卖订单——已送达，18:47。现在是18:53。六分钟。\n\n陆柯把手机揣回裤兜，伸手翻开那袋无主餐的袋口往里看了一眼。青椒肉丝盖饭，一次性筷子，没有纸条，没有联系方式。他把袋子放回去，视线扫过外卖架旁边的墙面——墙角天花板的监控探头朝向走廊另一侧，镜头背对着这个架子。前台灯黑着，玻璃门后的转椅上没人，桌面上电脑屏幕已经熄了。\n\n他站在原地想了想，然后走到前台台面上扫了一圈。笔筒里插着几支黑色签字笔，旁边压着一叠黄色方形便签纸。他抽了一张，拔开笔帽，在便签上写：\n\n“拿错餐的朋友：你的青椒肉丝盖饭在架子上。我的黄焖鸡你拿走了。联系我 138——”，他停了一下，划掉“138”，改成“陆柯”，然后写下手机号。写完后又补了一句：“餐我先拿走吃，联系我换。”\n\n他把便签贴在外卖架第三层那个空位上，用力按了两下边角，让胶粘牢。然后他拿起那袋青椒肉丝盖饭，把袋口系紧，转身朝电梯间走去。\n\n外卖架上只剩一张黄色便签，贴在空了的格层边缘。",
+  "input_tokens": 1242,
+  "output_tokens": 382,
+  "latency_ms": 9924,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "b57648d2ca55afaba12a6ad3f9654eee723fe43dcc464d8033086cb4619a8770",
+  "route_name": null,
+  "route_decision": {
+    "route_name": "B_DEFAULT",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "no specific narrative mechanism detected"
+    ],
+    "matched_rules": [
+      "RULE_B_DEFAULT"
+    ],
+    "rejected_routes": [
+      "C_OBJECT_CAUSAL",
+      "A_LITE_INFORMATION_GAP",
+      "B_SHORT_RELATION",
+      "B_PHYSICAL_PROBLEM",
+      "D_FALLIBLE_TASK"
+    ]
+  },
+  "compiled_brief_hash": "81ff806084f8944ee3e5ebfb49acab9dcfdd3a8c2cbd1eaf7973ac9884a8d76d",
+  "instruction_hash": "7ec8bb8faba03e4eb5f6e789d779dd925a17feb93d29aab55ff151fa2bc43890",
+  "text_path": "cases\\C-06\\drafts\\route-3.txt"
+}

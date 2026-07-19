@@ -1,0 +1,176 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "丁宁在路口通过一个动作完成与季然的短暂同行或分道，从而确认两人之间是否还有未说完的话，并为后续单独相处埋下钩子。",
+  "location": "学校附近街道路口，社团聚餐散场后的人行道分岔处",
+  "time": "晚九点左右，聚餐散场后",
+  "scene_state": {
+    "last_completed_action": "季然把外套递还给丁宁，然后站在原地等她先走",
+    "present_characters": [
+      "丁宁",
+      "季然"
+    ],
+    "visible_facts": [
+      "其他社团成员已朝相反方向离开",
+      "丁宁和季然被分配同一条回宿舍的路",
+      "季然把外套递还后停在原地未动"
+    ],
+    "available_objects": [
+      "季然递还的外套",
+      "路灯下的分岔路口"
+    ],
+    "unresolved_problem": "丁宁不知道季然是否真的想和她同行还是只是出于礼貌等待",
+    "already_existing_constraints": [
+      "丁宁不能直接问‘你是不是有话要说’",
+      "两人关系尚未明朗，不能过于直白"
+    ]
+  },
+  "characters": [
+    {
+      "name": "丁宁",
+      "goal": "在不暴露自己真实意图的前提下，试探季然是否愿意同行",
+      "known": [
+        "外套是季然在聚餐时借给她的",
+        "其他人都走了，只剩他们两人",
+        "季然把外套递还后没有立即离开"
+      ],
+      "unknown": [
+        "季然是否有话想单独对她说",
+        "季然停在原地是出于礼节还是真心等待"
+      ],
+      "mistaken_beliefs": [
+        "季然可能只是出于社团前辈的责任感才等她"
+      ],
+      "constraints": [
+        "不能直接问‘你是不是有话要说’",
+        "必须在路口做出选择，不能犹豫太久"
+      ],
+      "observed_evidence": [
+        "季然递还外套时手指在袖口多停了一秒",
+        "其他成员哄笑着往反方向走时，季然没有跟上去"
+      ],
+      "current_interpretation": "季然可能也在犹豫，递外套和停留都是给她一个选择的机会",
+      "how_interpretation_drives_action": "她决定先往共同方向迈出一步，但停住回头，把决定权交还给季然"
+    },
+    {
+      "name": "季然",
+      "goal": "确认丁宁是否愿意和自己单独走一段，但不愿给她压力",
+      "known": [
+        "外套已经归还",
+        "其他人都走了",
+        "丁宁在路口停住了"
+      ],
+      "unknown": [
+        "丁宁是否察觉他的心意",
+        "丁宁是否愿意和他单独同行"
+      ],
+      "mistaken_beliefs": [
+        "丁宁可能只想赶快回宿舍，并不想和他多待"
+      ],
+      "constraints": [
+        "不能直接表白或追问",
+        "必须在丁宁做出选择后配合，不能强求"
+      ],
+      "observed_evidence": [
+        "丁宁接过外套后没有立刻离开",
+        "丁宁往共同方向迈了一步，但回头看他"
+      ],
+      "current_interpretation": "丁宁在给他一个信号，她愿意一起走，但需要他主动跟上",
+      "how_interpretation_drives_action": "他迈步跟上，与丁宁保持一个肩膀的距离，不开口打破沉默"
+    }
+  ],
+  "concrete_problem": "丁宁必须在路口分岔处用一个动作决定是独自离开还是与季然同行，这个动作将暴露她的真实意愿。",
+  "pressure": "路灯下的沉默正在累积尴尬，其他成员的笑声已远去，两人不能再僵持不动",
+  "turning_point": "丁宁没有直接走掉，而是往共同方向迈出一步后停住回头，这个动作迫使季然必须做出是否跟上的选择，从而将决定权交还给他，两人关系从被动等待转向主动试探。",
+  "end_condition": "季然迈步跟上，两人并肩走入路灯照不到的树荫下，丁宁没有开口，但脚步放慢了",
+  "forbidden": [
+    "丁宁不能直接问‘你是不是有话要说’",
+    "不能出现内心独白直接解释两人感情",
+    "不能有其他角色突然出现打断",
+    "不能使用‘喜欢’‘心动’等直白词汇",
+    "本期不能燃烧的燃料：季然的秘密（后续章节揭示）"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "季然递还外套时，手指在袖口多停了一秒",
+      "character_interpretation": "丁宁注意到这个细节，认为季然并非急于结束互动",
+      "character_next_action": "丁宁接过外套后没有立即转身，而是抬头看了季然一眼",
+      "rejected_alternative": "丁宁本可以简单道谢后快步离开",
+      "immediate_consequence": "季然接收到丁宁的视线，没有退后，两人之间形成短暂的对视",
+      "counterfactual_without_action": "如果丁宁直接道谢离开，季然可能会以为她不想同行而独自回去",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "季然递还外套，两人之间无眼神交流",
+        "after": "丁宁抬头与季然对视，气氛从礼貌疏离转为微妙试探"
+      },
+      "cost_or_commitment": "丁宁暴露了自己并不急于离开的意图",
+      "next_constraint": "对视之后，丁宁必须用下一个动作决定是走是留，不能继续沉默",
+      "reader_must_infer": "季然多停一秒的手指并非无意，而是他也在等待信号",
+      "narrator_must_not_state": [
+        "季然故意多停一秒是为了试探丁宁",
+        "丁宁抬头是因为喜欢季然"
+      ]
+    },
+    {
+      "id": "CT02",
+      "kind": "constraint_to_choice",
+      "visible_trigger": "路口分岔处，左边通向丁宁宿舍，右边通向季然宿舍，但两人被分配了同一条路",
+      "character_interpretation": "丁宁意识到所谓的‘同一条路’其实是社团成员的刻意安排，她必须决定是否接受这个安排",
+      "character_next_action": "丁宁先往共同方向迈出一步，然后停住，回头看向季然",
+      "rejected_alternative": "丁宁本可以假装不知道，直接往自己宿舍方向走",
+      "immediate_consequence": "季然迈步跟上，两人并肩走入树荫下",
+      "counterfactual_without_action": "如果丁宁直接走掉，季然会认为她不想同行，两人关系退回原点",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "两人僵持在路口，丁宁未做出选择",
+        "after": "丁宁用动作发出邀请，季然跟上，两人正式同行"
+      },
+      "cost_or_commitment": "丁宁主动制造了同行机会，承担了可能被拒绝的风险",
+      "next_constraint": "同行后两人必须面对沉默，丁宁不能开口打破氛围，只能靠肢体语言交流",
+      "reader_must_infer": "丁宁的停步回头是经过计算的，她故意把决定权交还给季然",
+      "narrator_must_not_state": [
+        "丁宁心里希望季然跟上",
+        "季然跟上是因为喜欢丁宁"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "季然把外套递还后站在原地，丁宁必须立刻决定是走是留",
+    "dominant_pressure": {
+      "kind": "social_friction",
+      "description": "两人之间的沉默和未明说的期待构成主要压力，时间流逝增加尴尬，但真正阻止行动的是双方都不敢先暴露心意"
+    },
+    "allowed_viewpoint_misread": "季然可能把丁宁的停步回头误解为她有话要说，而非邀请同行",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "季然是否真的喜欢丁宁",
+      "丁宁对季然的真实感觉"
+    ],
+    "stop_state": {
+      "type": "relationship_shift",
+      "visible_fact": "季然迈步跟上，两人并肩走入树荫下",
+      "what_is_now_different": "两人从僵持的个体变为共同行动的搭档，关系从公开场合的礼貌转为私下空间的试探",
+      "must_not_append": "不得描写两人牵手或任何亲密动作，不得解释他们内心的情感变化"
+    },
+    "final_line_must_include": "她的脚步放得很慢，慢到路灯把他们的影子拖成了一个人。"
+  }
+}

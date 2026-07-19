@@ -1,0 +1,59 @@
+{
+  "group": "ROUTE-C_OBJECT_CAUSAL",
+  "replica": 3,
+  "mode": "narrative_route",
+  "candidate_id": "753dae2c-da88-4f8e-b9e2-0b11b70ef297",
+  "attempt_number": 1,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "route_decision": {
+      "route_name": "C_OBJECT_CAUSAL",
+      "classifier_version": "narrative-route-v1",
+      "decision_reasons": [
+        "scene_state.available_objects is non-empty",
+        "causal_transitions contains counterfactual_without_action or rejected_alternative",
+        "character_next_action involves physical object manipulation"
+      ],
+      "matched_rules": [
+        "RULE_C_OBJECT_CAUSAL"
+      ],
+      "rejected_routes": []
+    },
+    "compiled_brief_hash": "cbe4fa5934e61303ecdd34ff4809da41663c9c10cd771e293fa399299cb09ed5",
+    "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "吴筝在楼梯口站住。\n\n地上散着四片纸，白色横格线，撕口毛糙。她认出自己的字迹，横折钩的收笔习惯，没人模仿得来。碎片就摊在第二级和第三级台阶之间，正对着下楼的方向，谁经过都能看见。\n\n何屿的脚步声从上面传下来，不快不慢，帆布鞋底磕在水磨石台阶上，闷闷的。\n\n吴筝没弯腰。她把书包带子往肩上拢了拢，右脚往前迈了一步，鞋尖抵住最近的一片碎片。纸片轻飘飘的，鞋尖一碰就往旁边滑。她没停，继续往前走，用鞋底把碎片往墙根拨，一下，两下，三下，四片纸全推到踢脚线边上，贴着白灰墙皮，像扫垃圾那样归成一堆。\n\n她抬起头。\n\n何屿正走到楼梯拐弯的平台，离她不到十步。他手里什么都没拿，校服拉链拉到胸口，露出里面黑色T恤的领口。他的视线从地上那堆碎片上移开，落在吴筝脸上。\n\n吴筝看着他，没说话。\n\n何屿的脚步顿了一下。真的只是顿了一下，右脚踩在平台上，左脚还悬在上一级台阶，大概半秒。他的表情像被什么东西轻轻刮了一下，不是惊讶，是某种更细微的东西——嘴角的弧度收了收，眼睑微微眯起。\n\n然后他继续往下走，恢复了刚才的节奏。\n\n吴筝转过身，背对楼梯口，朝走廊另一头走去。她的鞋底在地砖上发出轻微的摩擦声，走了三步，她听见何屿的脚步声在身后落地，踩在一楼的水泥地面上。\n\n她没有回头。\n\n走廊里的穿堂风从尽头的窗户灌进来，吹得她校服下摆翻了一下。她继续走，鞋底和地砖之间夹着什么东西，每走一步就发出极细微的沙沙声。\n\n一片信纸碎片粘在她右脚鞋底，随着她的步子，一下一下蹭在地上。纸片边缘已经磨烂了，沾着灰，字迹模糊成一条淡蓝色的线。\n\n吴筝拐过走廊转角，消失在教室门后。",
+  "raw_response": "吴筝在楼梯口站住。\n\n地上散着四片纸，白色横格线，撕口毛糙。她认出自己的字迹，横折钩的收笔习惯，没人模仿得来。碎片就摊在第二级和第三级台阶之间，正对着下楼的方向，谁经过都能看见。\n\n何屿的脚步声从上面传下来，不快不慢，帆布鞋底磕在水磨石台阶上，闷闷的。\n\n吴筝没弯腰。她把书包带子往肩上拢了拢，右脚往前迈了一步，鞋尖抵住最近的一片碎片。纸片轻飘飘的，鞋尖一碰就往旁边滑。她没停，继续往前走，用鞋底把碎片往墙根拨，一下，两下，三下，四片纸全推到踢脚线边上，贴着白灰墙皮，像扫垃圾那样归成一堆。\n\n她抬起头。\n\n何屿正走到楼梯拐弯的平台，离她不到十步。他手里什么都没拿，校服拉链拉到胸口，露出里面黑色T恤的领口。他的视线从地上那堆碎片上移开，落在吴筝脸上。\n\n吴筝看着他，没说话。\n\n何屿的脚步顿了一下。真的只是顿了一下，右脚踩在平台上，左脚还悬在上一级台阶，大概半秒。他的表情像被什么东西轻轻刮了一下，不是惊讶，是某种更细微的东西——嘴角的弧度收了收，眼睑微微眯起。\n\n然后他继续往下走，恢复了刚才的节奏。\n\n吴筝转过身，背对楼梯口，朝走廊另一头走去。她的鞋底在地砖上发出轻微的摩擦声，走了三步，她听见何屿的脚步声在身后落地，踩在一楼的水泥地面上。\n\n她没有回头。\n\n走廊里的穿堂风从尽头的窗户灌进来，吹得她校服下摆翻了一下。她继续走，鞋底和地砖之间夹着什么东西，每走一步就发出极细微的沙沙声。\n\n一片信纸碎片粘在她右脚鞋底，随着她的步子，一下一下蹭在地上。纸片边缘已经磨烂了，沾着灰，字迹模糊成一条淡蓝色的线。\n\n吴筝拐过走廊转角，消失在教室门后。",
+  "input_tokens": 1487,
+  "output_tokens": 464,
+  "latency_ms": 10890,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "55c1ec77976e5d335d334a9219d8c021ee5d9c18e870aec0491b71172052bb2f",
+  "route_name": null,
+  "route_decision": {
+    "route_name": "C_OBJECT_CAUSAL",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "scene_state.available_objects is non-empty",
+      "causal_transitions contains counterfactual_without_action or rejected_alternative",
+      "character_next_action involves physical object manipulation"
+    ],
+    "matched_rules": [
+      "RULE_C_OBJECT_CAUSAL"
+    ],
+    "rejected_routes": []
+  },
+  "compiled_brief_hash": "cbe4fa5934e61303ecdd34ff4809da41663c9c10cd771e293fa399299cb09ed5",
+  "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+  "text_path": "cases\\A-04\\drafts\\route-3.txt"
+}

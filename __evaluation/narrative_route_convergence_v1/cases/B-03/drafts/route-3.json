@@ -1,0 +1,63 @@
+{
+  "group": "ROUTE-A_LITE_INFORMATION_GAP",
+  "replica": 3,
+  "mode": "narrative_route",
+  "candidate_id": "21cb3513-63ff-428c-be8d-443459b67447",
+  "attempt_number": 1,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "route_decision": {
+      "route_name": "A_LITE_INFORMATION_GAP",
+      "classifier_version": "narrative-route-v1",
+      "decision_reasons": [
+        "multiple characters with distinct information",
+        "viewpoint character has unknown facts and an interpretation",
+        "secondary character carries independent knowledge"
+      ],
+      "matched_rules": [
+        "RULE_A_LITE_INFORMATION_GAP"
+      ],
+      "rejected_routes": [
+        "C_OBJECT_CAUSAL"
+      ]
+    },
+    "compiled_brief_hash": "b5737879aee2f3c5caf1104908b59a9d5038cf995daa28df6dc9520aafb9662a",
+    "instruction_hash": "d368cbfa0846d1cb9adf452db083cbb58ba69154f281b3d6c895cb34da157cec",
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "闭馆铃响到第三声的时候，江晚才从书页里抬起头。\n\n阅览室的日光灯已经灭了一半，剩下的两排照着空荡荡的长桌，她对面那个位置还坐着人。\n\n宋行。\n\n他手里的书翻到最后一页，像是也刚读完。\n\n江晚合上笔记本，伸手去够桌角的借阅卡，指尖刚碰到塑料边缘，卡片从桌面滑下去，落在地上发出一声轻响。\n\n她弯腰的同时，宋行已经先一步俯下身。\n\n他的手指先碰到那张卡。\n\n江晚的手停在半空，看着他直起身，把借阅卡翻到正面看了一眼，然后朝她递过来。\n\n“掉了。”\n\n他说这两个字的时候声音很轻，阅览室太空，轻得刚好能听见。\n\n江晚伸手去接。指尖碰到卡片边缘，也碰到他的手指。\n\n温热的。\n\n她捏住借阅卡的一角，没有立刻收回手。拇指的指腹压着卡片，无名指的指节贴着宋行的手背，停了一秒。\n\n一秒。\n\n宋行的手指没有动。\n\n江晚抬起眼，正好对上他的视线。他也在看她，隔着不到一臂的距离，目光落在她脸上，没有躲开。\n\n阅览室里只剩下空调出风口的低响。\n\n江晚收回手，把借阅卡塞进笔记本的封套里，站起来把椅子推进桌底。书包带挂上肩膀的时候，她听见宋行合上书的声音。\n\n她往门口走。\n\n身后没有脚步声跟上。\n\n走了两步，江晚听见椅子腿蹭过地板的动静。\n\n她伸手推开阅览室的玻璃门，走廊里的应急灯还亮着，照出地砖上模糊的反光。\n\n身后的脚步停在大约两步远的距离。\n\n江晚没有回头。\n\n头顶的日光灯闪了一下，然后整排熄灭。\n\n灯在他们身后熄灭。",
+  "raw_response": "闭馆铃响到第三声的时候，江晚才从书页里抬起头。\n\n阅览室的日光灯已经灭了一半，剩下的两排照着空荡荡的长桌，她对面那个位置还坐着人。\n\n宋行。\n\n他手里的书翻到最后一页，像是也刚读完。\n\n江晚合上笔记本，伸手去够桌角的借阅卡，指尖刚碰到塑料边缘，卡片从桌面滑下去，落在地上发出一声轻响。\n\n她弯腰的同时，宋行已经先一步俯下身。\n\n他的手指先碰到那张卡。\n\n江晚的手停在半空，看着他直起身，把借阅卡翻到正面看了一眼，然后朝她递过来。\n\n“掉了。”\n\n他说这两个字的时候声音很轻，阅览室太空，轻得刚好能听见。\n\n江晚伸手去接。指尖碰到卡片边缘，也碰到他的手指。\n\n温热的。\n\n她捏住借阅卡的一角，没有立刻收回手。拇指的指腹压着卡片，无名指的指节贴着宋行的手背，停了一秒。\n\n一秒。\n\n宋行的手指没有动。\n\n江晚抬起眼，正好对上他的视线。他也在看她，隔着不到一臂的距离，目光落在她脸上，没有躲开。\n\n阅览室里只剩下空调出风口的低响。\n\n江晚收回手，把借阅卡塞进笔记本的封套里，站起来把椅子推进桌底。书包带挂上肩膀的时候，她听见宋行合上书的声音。\n\n她往门口走。\n\n身后没有脚步声跟上。\n\n走了两步，江晚听见椅子腿蹭过地板的动静。\n\n她伸手推开阅览室的玻璃门，走廊里的应急灯还亮着，照出地砖上模糊的反光。\n\n身后的脚步停在大约两步远的距离。\n\n江晚没有回头。\n\n头顶的日光灯闪了一下，然后整排熄灭。\n\n灯在他们身后熄灭。",
+  "input_tokens": 1430,
+  "output_tokens": 380,
+  "latency_ms": 9577,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "fbd3f51f408a49b602fb3ab473abd7f50fdcd1f8c17518b246736ae9822fe2bf",
+  "route_name": null,
+  "route_decision": {
+    "route_name": "A_LITE_INFORMATION_GAP",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "multiple characters with distinct information",
+      "viewpoint character has unknown facts and an interpretation",
+      "secondary character carries independent knowledge"
+    ],
+    "matched_rules": [
+      "RULE_A_LITE_INFORMATION_GAP"
+    ],
+    "rejected_routes": [
+      "C_OBJECT_CAUSAL"
+    ]
+  },
+  "compiled_brief_hash": "b5737879aee2f3c5caf1104908b59a9d5038cf995daa28df6dc9520aafb9662a",
+  "instruction_hash": "d368cbfa0846d1cb9adf452db083cbb58ba69154f281b3d6c895cb34da157cec",
+  "text_path": "cases\\B-03\\drafts\\route-3.txt"
+}

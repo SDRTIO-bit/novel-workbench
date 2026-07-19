@@ -1,0 +1,10 @@
+{
+  "experiment_id": "NARRATIVE_ROUTE_CONVERGENCE_V1",
+  "source_commit": "3d855a420414a76aa87f9e99f4b7450d77fa05cc",
+  "total_articles": 128,
+  "total_content_characters": 120234,
+  "separator": "five newline characters (\\\\n\\\\n\\\\n\\\\n\\\\n)",
+  "submission_sha256": "66a8f81ebea1675388425e0fc19167287c5b7b3b31e5ae99a7b09089e94e0e67",
+  "blind_queue_sha256": "6abbef38611fcfd82f139ccb4e5fbb2a4123d2f06f089719764f9d01edeb8b1f",
+  "generated_at": "2026-07-19T23:22:39+08:00"
+}

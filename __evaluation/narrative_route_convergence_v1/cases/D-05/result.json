@@ -1,0 +1,338 @@
+{
+  "case_id": "D-05",
+  "category": "具体任务",
+  "title": "医院找错科室",
+  "run_id": "d93a2aa5-5a4b-4c75-8b43-7ddb23021969",
+  "expected_route": "D_FALLIBLE_TASK",
+  "planner": {
+    "candidate_id": "6e2d72bb-8ad4-40af-800f-9bcfe9906308",
+    "attempt_number": 1,
+    "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+    "model_id": "deepseek-v4-pro",
+    "prompt_version_id": "f9052f8a-dc4e-5408-b14e-fc1badaf57f8",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 12288,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "json_object"
+    },
+    "text_output": "{\n  \"planner_contract_version\": 2,\n  \"scene_goal\": \"唐婉在陌生医院门诊楼内找到正确的就诊科室，在挂号单截止时间前完成签到，同时暴露她对医院环境的陌生感和过度依赖手机的弱点。\",\n  \"location\": \"市人民医院门诊楼三楼走廊与科室区域\",\n  \"time\": \"工作日午后，距离挂号单预约时间还剩15分钟\",\n  \"scene_state\": {\n    \"last_completed_action\": \"唐婉推开301室的门，发现里面医生和病人都不对，护士告知她的科室在三楼另一侧。\",\n    \"present_characters\": [\"唐婉\", \"护士\", \"走廊中的零星患者和护工\"],\n    \"visible_facts\": [\n      \"301室门牌显示为皮肤科\",\n      \"走廊尽头有分叉，左侧通往电梯间，右侧通往另一片诊区\",\n      \"墙上的楼层指示牌被清洁推车遮挡了关键一行\",\n      \"唐婉的挂号单显示预约科室为内分泌科，时间15分钟后\"\n    ],\n    \"available_objects\": [\n      \"挂号单（纸质）\",\n      \"没电的手机\",\n      \"楼层指示牌（部分被遮挡）\",\n      \"护士站的咨询台（距离约20米）\",\n      \"各科室门牌\"\n    ],\n    \"unresolved_problem\": \"唐婉不知道内分泌科的具体位置，且手机没电无法查询，指示牌被遮挡，时间紧迫。\",\n    \"already_existing_constraints\": [\n      \"手机没电，无法使用电子地图或打电话\",\n      \"挂号单时间不可更改，迟到可能作废\",\n      \"不能推开每一扇门查看，容易引起纠纷\",\n      \"护士只给了模糊方向，未指明具体房间号\"\n    ]\n  },\n  \"characters\": [\n    {\n      \"name\": \"唐婉\",\n      \"goal\": \"在15分钟内找到内分泌科并完成签到，避免错过预约。\",\n      \"known\": [\n        \"自己的科室是内分泌科\",\n        \"预约时间还剩15分钟\",\n        \"301室是错的\",\n        \"护士说在三楼另一侧\"\n      ],\n      \"unknown\": [\n        \"内分泌科的具体房间号\",\n        \"另一侧的确切范围\",\n        \"指示牌被遮挡的内容\",\n        \"护士站是否可以提供更精确的信息\"\n      ],\n      \"mistaken_beliefs\": [\n        \"她认为医院科室分布应该像商场一样有清晰的电子导航，但实际并非如此\",\n        \"她以为护士的模糊指引足以让自己找到位置，低估了寻找难度\"\n      ],\n      \"constraints\": [\n        \"不能返回护士站询问（因距离较远且时间紧张，且她倾向于自己解决）\",\n        \"手机没电，无法求助\",\n        \"必须在截止时间前到达\"\n      ],\n      \"observed_evidence\": [\n        \"301室门牌为皮肤科，与挂号单不符\",\n        \"护士口头告知科室在三楼另一侧\",\n        \"楼层指示牌被清洁推车遮挡，仅露出部分科室名称\",\n        \"走廊分叉，左右两侧均有诊室\"\n      ],\n      \"current_interpretation\": \"她认为‘另一侧’指的是走廊右侧区域，因为左侧是电梯间，不太可能有诊室。\",\n      \"how_interpretation_drives_action\": \"她决定向右走，逐一查看门牌，同时尝试从被遮挡的指示牌中辨认信息。\"\n    },\n    {\n      \"name\": \"护士\",\n      \"goal\": \"维持诊区秩序，快速打发走错房间的患者。\",\n      \"known\": [\n        \"301室是皮肤科\",\n        \"内分泌科大致方位在三楼另一侧\"\n      ],\n      \"unknown\": [\n        \"唐婉的预约时间紧迫\",\n        \"唐婉手机没电\",\n        \"指示牌被遮挡\"\n      ],\n      \"mistaken_beliefs\": [\n        \"她以为患者应该自己查看指示牌或使用手机导航，没有意识到指示牌被遮挡和手机没电的困境\"\n      ],\n      \"constraints\": [\n        \"正在协助当前患者，不能离开岗位\",\n        \"医院规定不能离开诊室带路\"\n      ],\n      \"observed_evidence\": [\n        \"唐婉推门后表情焦急，出示挂号单\"\n      ],\n      \"current_interpretation\": \"这只是一个普通走错房间的患者，简单指引即可。\",\n      \"how_interpretation_drives_action\": \"她快速说出‘三楼另一侧’后便继续手头工作，未提供更多细节。\"\n    }\n  ],\n  \"concrete_problem\": \"唐婉必须在走廊分叉处选择左或右，并利用有限线索（部分可见的指示牌、门牌规律）在15分钟内定位内分泌科。\",\n  \"pressure\": \"时间每过一分钟，错过预约的风险就增加一分；同时，走廊里人来人往，她不能长时间停留犹豫，必须做出选择。\",\n  \"turning_point\": \"唐婉在右侧走廊尽头发现指示牌被遮挡的部分其实是‘内分泌科 302-308’，而她已经走过了头，需要折返。\",\n  \"end_condition\": \"唐婉在预约时间截止前2分钟找到内分泌科302室，完成签到，但发现候诊区已有多人排队，她只能等待。\",\n  \"forbidden\": [\n    \"手机突然恢复电量或找到充电设备\",\n    \"遇到熟人带路\",\n    \"护士主动出来指引\",\n    \"指示牌被他人移开\",\n    \"唐婉放弃就诊\",\n    \"使用医院广播或电话求助\",\n    \"清洁工恰好移开推车\",\n    \"引入新角色提供关键帮助\"\n  ],\n  \"causal_transitions\": [\n    {\n      \"id\": \"CT01\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"唐婉看到走廊分叉，左侧通往电梯间，右侧有连续诊室门牌。\",\n      \"character_interpretation\": \"她认为右侧才是诊区，左侧只是出口，所以内分泌科一定在右侧。\",\n      \"character_next_action\": \"她果断向右走，开始查看每个门牌。\",\n      \"rejected_alternative\": \"她本可以去护士站再问一次，但觉得浪费时间且可能得到同样模糊的答案。\",\n      \"immediate_consequence\": \"她在右侧走廊看到了302、303等门牌，但都是其他科室，直到尽头才发现指示牌被遮挡的部分显示内分泌科在302-308，而她已走到308之后。\",\n      \"counterfactual_without_action\": \"如果她向左走，可能会先看到楼层总索引牌（未被遮挡），从而直接找到正确方向。\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"唐婉站在分叉口，不知道内分泌科在哪侧。\",\n        \"after\": \"唐婉在右侧走廊尽头，意识到走过了，需要折返。\"\n      },\n      \"cost_or_commitment\": \"她浪费了约8分钟在错误的一侧寻找，剩余时间更少。\",\n      \"next_constraint\": \"她必须快速折返，不能再次犹豫或走错，时间仅剩7分钟。\",\n      \"reader_must_infer\": \"唐婉对医院布局的陌生和过度依赖方向感导致她忽略了总索引牌的可能位置。\",\n      \"narrator_must_not_state\": [\n        \"唐婉后悔没有先看总索引牌\",\n        \"左侧其实有更清晰的指示\"\n      ]\n    },\n    {\n      \"id\": \"CT02\",\n      \"kind\": \"constraint_to_choice\",\n      \"visible_trigger\": \"唐婉折返途中看到清洁推车仍挡着指示牌，但下方露出‘内分泌科302-308’字样。\",\n      \"character_interpretation\": \"她意识到自己之前没看到这一行是因为推车高度恰好挡住了关键信息。\",\n      \"character_next_action\": \"她弯腰确认房间号，然后直奔302室。\",\n      \"rejected_alternative\": \"她本可以推开推车看清全部信息，但担心弄脏衣服或被人指责。\",\n      \"immediate_consequence\": \"她在302室门口签到，时间还剩2分钟，但候诊区已有5人排队。\",\n      \"counterfactual_without_action\": \"如果她不弯腰确认，可能会继续向另一侧寻找，彻底错过时间。\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"唐婉在走廊中段焦急折返，仍不确定房间号。\",\n        \"after\": \"唐婉站在302室门口，完成签到，但需等候。\"\n      },\n      \"cost_or_commitment\": \"她接受了候诊的等待时间，且因之前的奔跑而略显狼狈。\",\n      \"next_constraint\": \"候诊时间未知，她无法立即见到医生，且手机没电无法消磨时间。\",\n      \"reader_must_infer\": \"唐婉的观察力在压力下仍能捕捉细节，但她更倾向于独自解决问题而非求助。\",\n      \"narrator_must_not_state\": [\n        \"唐婉庆幸自己终于找到了\",\n        \"清洁推车是故意放在那里的\"\n      ]\n    }\n  ],\n  \"tempo_guardrails\": {\n    \"entry_pressure\": \"唐婉刚从301室退出，站在走廊中，时间还剩15分钟，她必须立刻决定方向。\",\n    \"dominant_pressure\": {\n      \"kind\": \"resource_constraint\",\n      \"description\": \"时间资源极度有限，每耽误一分钟就增加错过预约的风险，迫使她快速行动且不能出错。\"\n    },\n    \"allowed_viewpoint_misread\": \"唐婉可能把护士的冷漠理解为医院服务差，而非自己没问清楚。\",\n    \"disclosure_cap\": 1,\n    \"must_remain_unclassified\": [\n      \"内分泌科医生是否准时出诊\",\n      \"唐婉的具体病情\"\n    ],\n    \"stop_state\": {\n      \"type\": \"physical_change\",\n      \"visible_fact\": \"唐婉在302室门口的签到机上刷挂号单，机器显示‘签到成功’。\",\n      \"what_is_now_different\": \"她从寻找状态变为候诊状态，位置固定在302室门口，无法再移动。\",\n      \"must_not_append\": \"不得描写她签到后的心情或对候诊时间的抱怨\"\n    },\n    \"final_line_must_include\": \"签到成功\"\n  },\n  \"chapter_contract_check\": {\n    \"function_aligned\": true,\n    \"must_deliver_covered\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_enabled\": true,\n    \"main_payoff_prepared\": true,\n    \"ending_hook_established\": true,\n    \"causal_transitions_grounded\": true,\n    \"reader_inference_not_pre_resolved\": true,\n    \"scene_state_reconstructed\": true,\n    \"information_sources_legal\": true,\n    \"character_choice_is_real\": true,\n    \"consequence_is_counterfactual\": true,\n    \"state_delta_is_nonempty\": true,\n    \"next_constraint_is_new\": true,\n    \"stop_state_is_visible\": true,\n    \"stop_state_changes_future_actions\": true\n  }\n}",
+    "raw_response": "{\n  \"planner_contract_version\": 2,\n  \"scene_goal\": \"唐婉在陌生医院门诊楼内找到正确的就诊科室，在挂号单截止时间前完成签到，同时暴露她对医院环境的陌生感和过度依赖手机的弱点。\",\n  \"location\": \"市人民医院门诊楼三楼走廊与科室区域\",\n  \"time\": \"工作日午后，距离挂号单预约时间还剩15分钟\",\n  \"scene_state\": {\n    \"last_completed_action\": \"唐婉推开301室的门，发现里面医生和病人都不对，护士告知她的科室在三楼另一侧。\",\n    \"present_characters\": [\"唐婉\", \"护士\", \"走廊中的零星患者和护工\"],\n    \"visible_facts\": [\n      \"301室门牌显示为皮肤科\",\n      \"走廊尽头有分叉，左侧通往电梯间，右侧通往另一片诊区\",\n      \"墙上的楼层指示牌被清洁推车遮挡了关键一行\",\n      \"唐婉的挂号单显示预约科室为内分泌科，时间15分钟后\"\n    ],\n    \"available_objects\": [\n      \"挂号单（纸质）\",\n      \"没电的手机\",\n      \"楼层指示牌（部分被遮挡）\",\n      \"护士站的咨询台（距离约20米）\",\n      \"各科室门牌\"\n    ],\n    \"unresolved_problem\": \"唐婉不知道内分泌科的具体位置，且手机没电无法查询，指示牌被遮挡，时间紧迫。\",\n    \"already_existing_constraints\": [\n      \"手机没电，无法使用电子地图或打电话\",\n      \"挂号单时间不可更改，迟到可能作废\",\n      \"不能推开每一扇门查看，容易引起纠纷\",\n      \"护士只给了模糊方向，未指明具体房间号\"\n    ]\n  },\n  \"characters\": [\n    {\n      \"name\": \"唐婉\",\n      \"goal\": \"在15分钟内找到内分泌科并完成签到，避免错过预约。\",\n      \"known\": [\n        \"自己的科室是内分泌科\",\n        \"预约时间还剩15分钟\",\n        \"301室是错的\",\n        \"护士说在三楼另一侧\"\n      ],\n      \"unknown\": [\n        \"内分泌科的具体房间号\",\n        \"另一侧的确切范围\",\n        \"指示牌被遮挡的内容\",\n        \"护士站是否可以提供更精确的信息\"\n      ],\n      \"mistaken_beliefs\": [\n        \"她认为医院科室分布应该像商场一样有清晰的电子导航，但实际并非如此\",\n        \"她以为护士的模糊指引足以让自己找到位置，低估了寻找难度\"\n      ],\n      \"constraints\": [\n        \"不能返回护士站询问（因距离较远且时间紧张，且她倾向于自己解决）\",\n        \"手机没电，无法求助\",\n        \"必须在截止时间前到达\"\n      ],\n      \"observed_evidence\": [\n        \"301室门牌为皮肤科，与挂号单不符\",\n        \"护士口头告知科室在三楼另一侧\",\n        \"楼层指示牌被清洁推车遮挡，仅露出部分科室名称\",\n        \"走廊分叉，左右两侧均有诊室\"\n      ],\n      \"current_interpretation\": \"她认为‘另一侧’指的是走廊右侧区域，因为左侧是电梯间，不太可能有诊室。\",\n      \"how_interpretation_drives_action\": \"她决定向右走，逐一查看门牌，同时尝试从被遮挡的指示牌中辨认信息。\"\n    },\n    {\n      \"name\": \"护士\",\n      \"goal\": \"维持诊区秩序，快速打发走错房间的患者。\",\n      \"known\": [\n        \"301室是皮肤科\",\n        \"内分泌科大致方位在三楼另一侧\"\n      ],\n      \"unknown\": [\n        \"唐婉的预约时间紧迫\",\n        \"唐婉手机没电\",\n        \"指示牌被遮挡\"\n      ],\n      \"mistaken_beliefs\": [\n        \"她以为患者应该自己查看指示牌或使用手机导航，没有意识到指示牌被遮挡和手机没电的困境\"\n      ],\n      \"constraints\": [\n        \"正在协助当前患者，不能离开岗位\",\n        \"医院规定不能离开诊室带路\"\n      ],\n      \"observed_evidence\": [\n        \"唐婉推门后表情焦急，出示挂号单\"\n      ],\n      \"current_interpretation\": \"这只是一个普通走错房间的患者，简单指引即可。\",\n      \"how_interpretation_drives_action\": \"她快速说出‘三楼另一侧’后便继续手头工作，未提供更多细节。\"\n    }\n  ],\n  \"concrete_problem\": \"唐婉必须在走廊分叉处选择左或右，并利用有限线索（部分可见的指示牌、门牌规律）在15分钟内定位内分泌科。\",\n  \"pressure\": \"时间每过一分钟，错过预约的风险就增加一分；同时，走廊里人来人往，她不能长时间停留犹豫，必须做出选择。\",\n  \"turning_point\": \"唐婉在右侧走廊尽头发现指示牌被遮挡的部分其实是‘内分泌科 302-308’，而她已经走过了头，需要折返。\",\n  \"end_condition\": \"唐婉在预约时间截止前2分钟找到内分泌科302室，完成签到，但发现候诊区已有多人排队，她只能等待。\",\n  \"forbidden\": [\n    \"手机突然恢复电量或找到充电设备\",\n    \"遇到熟人带路\",\n    \"护士主动出来指引\",\n    \"指示牌被他人移开\",\n    \"唐婉放弃就诊\",\n    \"使用医院广播或电话求助\",\n    \"清洁工恰好移开推车\",\n    \"引入新角色提供关键帮助\"\n  ],\n  \"causal_transitions\": [\n    {\n      \"id\": \"CT01\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"唐婉看到走廊分叉，左侧通往电梯间，右侧有连续诊室门牌。\",\n      \"character_interpretation\": \"她认为右侧才是诊区，左侧只是出口，所以内分泌科一定在右侧。\",\n      \"character_next_action\": \"她果断向右走，开始查看每个门牌。\",\n      \"rejected_alternative\": \"她本可以去护士站再问一次，但觉得浪费时间且可能得到同样模糊的答案。\",\n      \"immediate_consequence\": \"她在右侧走廊看到了302、303等门牌，但都是其他科室，直到尽头才发现指示牌被遮挡的部分显示内分泌科在302-308，而她已走到308之后。\",\n      \"counterfactual_without_action\": \"如果她向左走，可能会先看到楼层总索引牌（未被遮挡），从而直接找到正确方向。\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"唐婉站在分叉口，不知道内分泌科在哪侧。\",\n        \"after\": \"唐婉在右侧走廊尽头，意识到走过了，需要折返。\"\n      },\n      \"cost_or_commitment\": \"她浪费了约8分钟在错误的一侧寻找，剩余时间更少。\",\n      \"next_constraint\": \"她必须快速折返，不能再次犹豫或走错，时间仅剩7分钟。\",\n      \"reader_must_infer\": \"唐婉对医院布局的陌生和过度依赖方向感导致她忽略了总索引牌的可能位置。\",\n      \"narrator_must_not_state\": [\n        \"唐婉后悔没有先看总索引牌\",\n        \"左侧其实有更清晰的指示\"\n      ]\n    },\n    {\n      \"id\": \"CT02\",\n      \"kind\": \"constraint_to_choice\",\n      \"visible_trigger\": \"唐婉折返途中看到清洁推车仍挡着指示牌，但下方露出‘内分泌科302-308’字样。\",\n      \"character_interpretation\": \"她意识到自己之前没看到这一行是因为推车高度恰好挡住了关键信息。\",\n      \"character_next_action\": \"她弯腰确认房间号，然后直奔302室。\",\n      \"rejected_alternative\": \"她本可以推开推车看清全部信息，但担心弄脏衣服或被人指责。\",\n      \"immediate_consequence\": \"她在302室门口签到，时间还剩2分钟，但候诊区已有5人排队。\",\n      \"counterfactual_without_action\": \"如果她不弯腰确认，可能会继续向另一侧寻找，彻底错过时间。\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"唐婉在走廊中段焦急折返，仍不确定房间号。\",\n        \"after\": \"唐婉站在302室门口，完成签到，但需等候。\"\n      },\n      \"cost_or_commitment\": \"她接受了候诊的等待时间，且因之前的奔跑而略显狼狈。\",\n      \"next_constraint\": \"候诊时间未知，她无法立即见到医生，且手机没电无法消磨时间。\",\n      \"reader_must_infer\": \"唐婉的观察力在压力下仍能捕捉细节，但她更倾向于独自解决问题而非求助。\",\n      \"narrator_must_not_state\": [\n        \"唐婉庆幸自己终于找到了\",\n        \"清洁推车是故意放在那里的\"\n      ]\n    }\n  ],\n  \"tempo_guardrails\": {\n    \"entry_pressure\": \"唐婉刚从301室退出，站在走廊中，时间还剩15分钟，她必须立刻决定方向。\",\n    \"dominant_pressure\": {\n      \"kind\": \"resource_constraint\",\n      \"description\": \"时间资源极度有限，每耽误一分钟就增加错过预约的风险，迫使她快速行动且不能出错。\"\n    },\n    \"allowed_viewpoint_misread\": \"唐婉可能把护士的冷漠理解为医院服务差，而非自己没问清楚。\",\n    \"disclosure_cap\": 1,\n    \"must_remain_unclassified\": [\n      \"内分泌科医生是否准时出诊\",\n      \"唐婉的具体病情\"\n    ],\n    \"stop_state\": {\n      \"type\": \"physical_change\",\n      \"visible_fact\": \"唐婉在302室门口的签到机上刷挂号单，机器显示‘签到成功’。\",\n      \"what_is_now_different\": \"她从寻找状态变为候诊状态，位置固定在302室门口，无法再移动。\",\n      \"must_not_append\": \"不得描写她签到后的心情或对候诊时间的抱怨\"\n    },\n    \"final_line_must_include\": \"签到成功\"\n  },\n  \"chapter_contract_check\": {\n    \"function_aligned\": true,\n    \"must_deliver_covered\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_enabled\": true,\n    \"main_payoff_prepared\": true,\n    \"ending_hook_established\": true,\n    \"causal_transitions_grounded\": true,\n    \"reader_inference_not_pre_resolved\": true,\n    \"scene_state_reconstructed\": true,\n    \"information_sources_legal\": true,\n    \"character_choice_is_real\": true,\n    \"consequence_is_counterfactual\": true,\n    \"state_delta_is_nonempty\": true,\n    \"next_constraint_is_new\": true,\n    \"stop_state_is_visible\": true,\n    \"stop_state_changes_future_actions\": true\n  }\n}",
+    "input_tokens": 3321,
+    "output_tokens": 2392,
+    "latency_ms": 46484,
+    "finish_reason": "stop",
+    "error_code": null,
+    "error_message": null,
+    "rendered_user_prompt_sha256": "21b7dde708c0da9567215a7dcbff96b06f4ef1b66c87972a71ff0ea4f3692652",
+    "route_name": null,
+    "route_decision": null,
+    "compiled_brief_hash": null,
+    "instruction_hash": null
+  },
+  "drafts": [
+    {
+      "group": "ROUTE-A_LITE_INFORMATION_GAP",
+      "replica": 1,
+      "mode": "narrative_route",
+      "candidate_id": "0f906478-8f95-4e60-a17d-0a05d456df34",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "A_LITE_INFORMATION_GAP",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "multiple characters with distinct information",
+            "viewpoint character has unknown facts and an interpretation",
+            "secondary character carries independent knowledge"
+          ],
+          "matched_rules": [
+            "RULE_A_LITE_INFORMATION_GAP"
+          ],
+          "rejected_routes": [
+            "C_OBJECT_CAUSAL"
+          ]
+        },
+        "compiled_brief_hash": "806dfb07c1c392020274b2d4f756acfcfe05d1d61124839fe5b128f43d63ba8d",
+        "instruction_hash": "d368cbfa0846d1cb9adf452db083cbb58ba69154f281b3d6c895cb34da157cec",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "唐婉从301室退出来，门在身后合上，门牌上“皮肤科”三个字像是个冷笑话。\n\n走廊里消毒水的气味浓得发苦。她攥着挂号单，指尖在“内分泌科”几个字上掐出一道折痕。手机屏幕已经黑了，按电源键也没反应。墙上挂着楼层指示牌，但一辆清洁推车正好顶在牌子下方，拖把柄斜斜地遮住了中间一排科室名称。\n\n她踮脚看了一眼。露出来的部分写着“301皮肤科”“309中医科”，中间那行只看得见“30”两个数字，后面全被挡住了。\n\n时间还剩十五分钟。\n\n走廊在前方分叉。左侧通向电梯间，能看见电梯门上方跳动的红色数字。右侧是一条更深的走廊，日光灯照出几扇紧闭的门，门牌在灯光下反着白光。\n\n护士说“三楼另一侧”。左侧是电梯间，不可能有诊室。那就只有右侧。\n\n唐婉向右走。\n\n302室。门牌上写着“消化内科”。她脚步没停。\n\n303室。“神经内科”。\n\n304室。“心内科”。\n\n她的鞋跟在塑胶地板上敲出急促的节奏。每经过一扇门，门牌上的字就让她喉头发紧一分。305是“呼吸内科”，306是“肾内科”，307是“老年病科”。\n\n走廊尽头到了。308室的门牌写着“专家门诊”，门口贴着一张停诊通知。\n\n前面没有路了。\n\n唐婉站在原地，听见自己呼吸的声音。她转过身，视线扫过整条走廊，最后落在远处那辆清洁推车上。从这个角度看过去，拖把柄偏移了一点，露出指示牌上被遮挡的内容——\n\n“内分泌科 302-308”。\n\n她刚才从302室门口走过。那是消化内科。\n\n唐婉开始往回跑。\n\n鞋跟敲击地面的声音在走廊里来回弹跳。她经过307、306、305，每扇门都在余光里变成模糊的色块。挂号单在她手心里被汗浸湿，纸张变得软塌塌的。\n\n302室重新出现在眼前。门牌还是“消化内科”，但门框右侧的墙面上钉着一块小一号的亚克力牌——“内分泌科二诊室”。\n\n门边立着一台签到机，屏幕亮着蓝光。\n\n唐婉把挂号单背面的条码对准扫描口。机器发出“嘀”的一声，屏幕跳转，显示出一行绿字。\n\n“签到成功。请等候叫号。”",
+      "raw_response": "唐婉从301室退出来，门在身后合上，门牌上“皮肤科”三个字像是个冷笑话。\n\n走廊里消毒水的气味浓得发苦。她攥着挂号单，指尖在“内分泌科”几个字上掐出一道折痕。手机屏幕已经黑了，按电源键也没反应。墙上挂着楼层指示牌，但一辆清洁推车正好顶在牌子下方，拖把柄斜斜地遮住了中间一排科室名称。\n\n她踮脚看了一眼。露出来的部分写着“301皮肤科”“309中医科”，中间那行只看得见“30”两个数字，后面全被挡住了。\n\n时间还剩十五分钟。\n\n走廊在前方分叉。左侧通向电梯间，能看见电梯门上方跳动的红色数字。右侧是一条更深的走廊，日光灯照出几扇紧闭的门，门牌在灯光下反着白光。\n\n护士说“三楼另一侧”。左侧是电梯间，不可能有诊室。那就只有右侧。\n\n唐婉向右走。\n\n302室。门牌上写着“消化内科”。她脚步没停。\n\n303室。“神经内科”。\n\n304室。“心内科”。\n\n她的鞋跟在塑胶地板上敲出急促的节奏。每经过一扇门，门牌上的字就让她喉头发紧一分。305是“呼吸内科”，306是“肾内科”，307是“老年病科”。\n\n走廊尽头到了。308室的门牌写着“专家门诊”，门口贴着一张停诊通知。\n\n前面没有路了。\n\n唐婉站在原地，听见自己呼吸的声音。她转过身，视线扫过整条走廊，最后落在远处那辆清洁推车上。从这个角度看过去，拖把柄偏移了一点，露出指示牌上被遮挡的内容——\n\n“内分泌科 302-308”。\n\n她刚才从302室门口走过。那是消化内科。\n\n唐婉开始往回跑。\n\n鞋跟敲击地面的声音在走廊里来回弹跳。她经过307、306、305，每扇门都在余光里变成模糊的色块。挂号单在她手心里被汗浸湿，纸张变得软塌塌的。\n\n302室重新出现在眼前。门牌还是“消化内科”，但门框右侧的墙面上钉着一块小一号的亚克力牌——“内分泌科二诊室”。\n\n门边立着一台签到机，屏幕亮着蓝光。\n\n唐婉把挂号单背面的条码对准扫描口。机器发出“嘀”的一声，屏幕跳转，显示出一行绿字。\n\n“签到成功。请等候叫号。”",
+      "input_tokens": 1603,
+      "output_tokens": 525,
+      "latency_ms": 15197,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "cb3eb41199a4ee306e6718acb5e428db2c02c4f28cc2c73819e01bd317794e50",
+      "route_name": null,
+      "route_decision": {
+        "route_name": "A_LITE_INFORMATION_GAP",
+        "classifier_version": "narrative-route-v1",
+        "decision_reasons": [
+          "multiple characters with distinct information",
+          "viewpoint character has unknown facts and an interpretation",
+          "secondary character carries independent knowledge"
+        ],
+        "matched_rules": [
+          "RULE_A_LITE_INFORMATION_GAP"
+        ],
+        "rejected_routes": [
+          "C_OBJECT_CAUSAL"
+        ]
+      },
+      "compiled_brief_hash": "806dfb07c1c392020274b2d4f756acfcfe05d1d61124839fe5b128f43d63ba8d",
+      "instruction_hash": "d368cbfa0846d1cb9adf452db083cbb58ba69154f281b3d6c895cb34da157cec",
+      "text_path": "cases\\D-05\\drafts\\route-1.txt"
+    },
+    {
+      "group": "ROUTE-A_LITE_INFORMATION_GAP",
+      "replica": 2,
+      "mode": "narrative_route",
+      "candidate_id": "a699b636-51d2-4289-b0d5-51d78f1d3ea0",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "A_LITE_INFORMATION_GAP",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "multiple characters with distinct information",
+            "viewpoint character has unknown facts and an interpretation",
+            "secondary character carries independent knowledge"
+          ],
+          "matched_rules": [
+            "RULE_A_LITE_INFORMATION_GAP"
+          ],
+          "rejected_routes": [
+            "C_OBJECT_CAUSAL"
+          ]
+        },
+        "compiled_brief_hash": "806dfb07c1c392020274b2d4f756acfcfe05d1d61124839fe5b128f43d63ba8d",
+        "instruction_hash": "d368cbfa0846d1cb9adf452db083cbb58ba69154f281b3d6c895cb34da157cec",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "唐婉从301室退出来，门在身后合上，皮肤科的铜牌在视线里晃了一下。\n\n走廊里的消毒水味比刚才更重。她攥着挂号单站在原地，纸张边缘已经被手心的汗浸软了一小块。单子上印着“内分泌科”，预约时间14:30，下面一行是条形码。\n\n手机屏幕按不亮，黑屏里映出她自己的脸。\n\n走廊尽头分叉。左侧通道尽头能看见电梯间的不锈钢门，右侧通道延伸进另一片诊区，日光灯管把白墙照得发青。墙上的楼层指示牌就在分叉口正上方，但一辆清洁推车紧贴着墙根停在那里，黄色塑料桶和拖把杆正好遮住了指示牌中间那一行。\n\n唐婉走过去，侧头看了一眼。指示牌露出的是最上面两行——骨科301-305，神经内科306-310——下面被挡住的部分只能看见“科”字的上半截笔画。\n\n她往后退了半步。护士刚才说“三楼另一侧”。左侧是电梯间，不可能有诊室。右侧走廊两侧都是诊室门，门牌从302开始往深处排列。\n\n挂号单上的时间是14:30。她抬起手腕看了一眼表，14:15。\n\n唐婉向右转，开始走。\n\n302室，消化内科。门关着，门上的电子屏显示“就诊中”。\n\n303室，消化内科。空的，门半开着，里面灯没开。\n\n304室，呼吸内科。门口坐着三个病人。\n\n她的脚步在塑胶地板上发出闷响。每经过一扇门，她偏头看门牌，确认不是，继续走。305室，呼吸内科。306室，神经内科。307室，神经内科。走廊还在往前延伸，日光灯管在头顶均匀排列，尽头是一扇窗，窗外是另一栋楼的灰色外墙。\n\n308室，神经内科。门牌上的字是金属蚀刻的，在灯光下反光。\n\n唐婉停下来。\n\n走廊已经走到尽头。308是最后一扇门，再往前只有那扇窗和一个消防栓。她转过身，看着来时的方向，走廊笔直地延伸回去，302到308，七个门牌，没有一个写着内分泌科。\n\n她往回走，脚步比来时快。经过307，306，305，304，303，302，重新回到分叉口。清洁推车还停在那里，拖把杆上搭着一块灰布。\n\n唐婉蹲下来，伸手把那块灰布从拖把杆上扯下来。\n\n布掉在地上，指示牌中间那一行完整露出来：内分泌科302-308。\n\n302。\n\n她站起来，转身看向302室的门。门上的电子屏还在滚动“消化内科 李某某 就诊中”，但门牌旁边的墙上贴着一张A4纸，白底黑字，打印机墨水不太均匀，上面印着“内分泌科临时迁至302室”。\n\n唐婉走到302室门口。门边墙上嵌着一台签到机，屏幕亮着，显示“请刷挂号单”。\n\n她把挂号单翻过来，条形码朝下，按在扫描口上。机器发出“嘀”一声，屏幕闪了一下，跳出一行绿字：\n\n“签到成功。”",
+      "raw_response": "唐婉从301室退出来，门在身后合上，皮肤科的铜牌在视线里晃了一下。\n\n走廊里的消毒水味比刚才更重。她攥着挂号单站在原地，纸张边缘已经被手心的汗浸软了一小块。单子上印着“内分泌科”，预约时间14:30，下面一行是条形码。\n\n手机屏幕按不亮，黑屏里映出她自己的脸。\n\n走廊尽头分叉。左侧通道尽头能看见电梯间的不锈钢门，右侧通道延伸进另一片诊区，日光灯管把白墙照得发青。墙上的楼层指示牌就在分叉口正上方，但一辆清洁推车紧贴着墙根停在那里，黄色塑料桶和拖把杆正好遮住了指示牌中间那一行。\n\n唐婉走过去，侧头看了一眼。指示牌露出的是最上面两行——骨科301-305，神经内科306-310——下面被挡住的部分只能看见“科”字的上半截笔画。\n\n她往后退了半步。护士刚才说“三楼另一侧”。左侧是电梯间，不可能有诊室。右侧走廊两侧都是诊室门，门牌从302开始往深处排列。\n\n挂号单上的时间是14:30。她抬起手腕看了一眼表，14:15。\n\n唐婉向右转，开始走。\n\n302室，消化内科。门关着，门上的电子屏显示“就诊中”。\n\n303室，消化内科。空的，门半开着，里面灯没开。\n\n304室，呼吸内科。门口坐着三个病人。\n\n她的脚步在塑胶地板上发出闷响。每经过一扇门，她偏头看门牌，确认不是，继续走。305室，呼吸内科。306室，神经内科。307室，神经内科。走廊还在往前延伸，日光灯管在头顶均匀排列，尽头是一扇窗，窗外是另一栋楼的灰色外墙。\n\n308室，神经内科。门牌上的字是金属蚀刻的，在灯光下反光。\n\n唐婉停下来。\n\n走廊已经走到尽头。308是最后一扇门，再往前只有那扇窗和一个消防栓。她转过身，看着来时的方向，走廊笔直地延伸回去，302到308，七个门牌，没有一个写着内分泌科。\n\n她往回走，脚步比来时快。经过307，306，305，304，303，302，重新回到分叉口。清洁推车还停在那里，拖把杆上搭着一块灰布。\n\n唐婉蹲下来，伸手把那块灰布从拖把杆上扯下来。\n\n布掉在地上，指示牌中间那一行完整露出来：内分泌科302-308。\n\n302。\n\n她站起来，转身看向302室的门。门上的电子屏还在滚动“消化内科 李某某 就诊中”，但门牌旁边的墙上贴着一张A4纸，白底黑字，打印机墨水不太均匀，上面印着“内分泌科临时迁至302室”。\n\n唐婉走到302室门口。门边墙上嵌着一台签到机，屏幕亮着，显示“请刷挂号单”。\n\n她把挂号单翻过来，条形码朝下，按在扫描口上。机器发出“嘀”一声，屏幕闪了一下，跳出一行绿字：\n\n“签到成功。”",
+      "input_tokens": 1603,
+      "output_tokens": 676,
+      "latency_ms": 21020,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "cb3eb41199a4ee306e6718acb5e428db2c02c4f28cc2c73819e01bd317794e50",
+      "route_name": null,
+      "route_decision": {
+        "route_name": "A_LITE_INFORMATION_GAP",
+        "classifier_version": "narrative-route-v1",
+        "decision_reasons": [
+          "multiple characters with distinct information",
+          "viewpoint character has unknown facts and an interpretation",
+          "secondary character carries independent knowledge"
+        ],
+        "matched_rules": [
+          "RULE_A_LITE_INFORMATION_GAP"
+        ],
+        "rejected_routes": [
+          "C_OBJECT_CAUSAL"
+        ]
+      },
+      "compiled_brief_hash": "806dfb07c1c392020274b2d4f756acfcfe05d1d61124839fe5b128f43d63ba8d",
+      "instruction_hash": "d368cbfa0846d1cb9adf452db083cbb58ba69154f281b3d6c895cb34da157cec",
+      "text_path": "cases\\D-05\\drafts\\route-2.txt"
+    },
+    {
+      "group": "ROUTE-A_LITE_INFORMATION_GAP",
+      "replica": 3,
+      "mode": "narrative_route",
+      "candidate_id": "fa7cdf83-6cf6-4b95-b8e3-14d2d94726c5",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "A_LITE_INFORMATION_GAP",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "multiple characters with distinct information",
+            "viewpoint character has unknown facts and an interpretation",
+            "secondary character carries independent knowledge"
+          ],
+          "matched_rules": [
+            "RULE_A_LITE_INFORMATION_GAP"
+          ],
+          "rejected_routes": [
+            "C_OBJECT_CAUSAL"
+          ]
+        },
+        "compiled_brief_hash": "806dfb07c1c392020274b2d4f756acfcfe05d1d61124839fe5b128f43d63ba8d",
+        "instruction_hash": "d368cbfa0846d1cb9adf452db083cbb58ba69154f281b3d6c895cb34da157cec",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "唐婉从301室退出来，门在身后合上，门牌上“皮肤科”三个字还在眼前晃。她攥着挂号单站在走廊中间，左右两侧的白墙延伸到不同的方向。\n\n手机屏幕已经黑了，按侧键也没有反应。她看了一眼挂号单上打印的时间——14:45，现在十四点三十分整。\n\n走廊左侧尽头是电梯间，能看见不锈钢门反射的冷光。右侧是一条更长的走廊，两侧排列着诊室门，最近的一扇门上挂着302的牌子。\n\n墙上的楼层指示牌就在她左手边三步远，但一辆清洁推车紧紧贴着墙面停在那里，黄色的塑料桶和拖把柄正好挡住指示牌的中间一行。她能看见最上面一排写着“301皮肤科”，最下面一排露出“305骨科”几个字，中间那一行被遮得严严实实。\n\n刚才那个护士说“三楼另一侧”。唐婉转头看左侧——电梯间，消防通道标识，没有诊室门。她再看右侧——302，303，一扇接一扇的门延伸进去。\n\n她向右走。\n\n302室的门关着，门牌是“消化内科”。她没停，继续往前走。303室“心内科”，门开着一条缝，里面有人说话。304室“呼吸内科”。她的脚步越来越快，帆布鞋踩在水磨石地面上发出细碎的摩擦声。\n\n305室“骨科”——这是指示牌上她能看见的最后一行。她继续往前，306室“神经内科”，307室“肾内科”，308室“风湿免疫科”。\n\n走廊到了尽头。面前是一扇窗户，窗外是另一栋楼的灰色墙面。\n\n唐婉转过身，视线扫过整条走廊。308，307，306，305——她刚才走过的每一扇门都在原位。清洁推车还停在指示牌前面，从这个角度看，推车后面那一行字露出了一点点边缘。\n\n她往回跑。\n\n帆布鞋的声音在走廊里变得急促。经过308室时她瞥见墙上有一个小型的科室分布图，上面印着“302-308”后面跟着一行小字，她没停，但眼睛已经捕捉到那几个字——内分泌科。\n\n302到308。\n\n她刚才从302走到了308。\n\n挂号单在她手里被攥出了褶皱。她跑到302室门口时看了一眼手机——还是黑屏。走廊墙上挂着一个圆形的时钟，分针指着6，14:30已经过去了。\n\n302室的门关着。\n\n门口墙上装着一台灰色的签到机，屏幕亮着，上面显示“请刷挂号单或输入就诊卡号”。机器下方的扫描区发出微弱的红光。\n\n唐婉把挂号单摊平，条形码朝下按在扫描区上。\n\n机器发出一声短促的“嘀”。\n\n屏幕跳转，显示出她的名字和一个绿色的对勾，下方出现三个字——“签到成功”。",
+      "raw_response": "唐婉从301室退出来，门在身后合上，门牌上“皮肤科”三个字还在眼前晃。她攥着挂号单站在走廊中间，左右两侧的白墙延伸到不同的方向。\n\n手机屏幕已经黑了，按侧键也没有反应。她看了一眼挂号单上打印的时间——14:45，现在十四点三十分整。\n\n走廊左侧尽头是电梯间，能看见不锈钢门反射的冷光。右侧是一条更长的走廊，两侧排列着诊室门，最近的一扇门上挂着302的牌子。\n\n墙上的楼层指示牌就在她左手边三步远，但一辆清洁推车紧紧贴着墙面停在那里，黄色的塑料桶和拖把柄正好挡住指示牌的中间一行。她能看见最上面一排写着“301皮肤科”，最下面一排露出“305骨科”几个字，中间那一行被遮得严严实实。\n\n刚才那个护士说“三楼另一侧”。唐婉转头看左侧——电梯间，消防通道标识，没有诊室门。她再看右侧——302，303，一扇接一扇的门延伸进去。\n\n她向右走。\n\n302室的门关着，门牌是“消化内科”。她没停，继续往前走。303室“心内科”，门开着一条缝，里面有人说话。304室“呼吸内科”。她的脚步越来越快，帆布鞋踩在水磨石地面上发出细碎的摩擦声。\n\n305室“骨科”——这是指示牌上她能看见的最后一行。她继续往前，306室“神经内科”，307室“肾内科”，308室“风湿免疫科”。\n\n走廊到了尽头。面前是一扇窗户，窗外是另一栋楼的灰色墙面。\n\n唐婉转过身，视线扫过整条走廊。308，307，306，305——她刚才走过的每一扇门都在原位。清洁推车还停在指示牌前面，从这个角度看，推车后面那一行字露出了一点点边缘。\n\n她往回跑。\n\n帆布鞋的声音在走廊里变得急促。经过308室时她瞥见墙上有一个小型的科室分布图，上面印着“302-308”后面跟着一行小字，她没停，但眼睛已经捕捉到那几个字——内分泌科。\n\n302到308。\n\n她刚才从302走到了308。\n\n挂号单在她手里被攥出了褶皱。她跑到302室门口时看了一眼手机——还是黑屏。走廊墙上挂着一个圆形的时钟，分针指着6，14:30已经过去了。\n\n302室的门关着。\n\n门口墙上装着一台灰色的签到机，屏幕亮着，上面显示“请刷挂号单或输入就诊卡号”。机器下方的扫描区发出微弱的红光。\n\n唐婉把挂号单摊平，条形码朝下按在扫描区上。\n\n机器发出一声短促的“嘀”。\n\n屏幕跳转，显示出她的名字和一个绿色的对勾，下方出现三个字——“签到成功”。",
+      "input_tokens": 1603,
+      "output_tokens": 593,
+      "latency_ms": 18296,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "cb3eb41199a4ee306e6718acb5e428db2c02c4f28cc2c73819e01bd317794e50",
+      "route_name": null,
+      "route_decision": {
+        "route_name": "A_LITE_INFORMATION_GAP",
+        "classifier_version": "narrative-route-v1",
+        "decision_reasons": [
+          "multiple characters with distinct information",
+          "viewpoint character has unknown facts and an interpretation",
+          "secondary character carries independent knowledge"
+        ],
+        "matched_rules": [
+          "RULE_A_LITE_INFORMATION_GAP"
+        ],
+        "rejected_routes": [
+          "C_OBJECT_CAUSAL"
+        ]
+      },
+      "compiled_brief_hash": "806dfb07c1c392020274b2d4f756acfcfe05d1d61124839fe5b128f43d63ba8d",
+      "instruction_hash": "d368cbfa0846d1cb9adf452db083cbb58ba69154f281b3d6c895cb34da157cec",
+      "text_path": "cases\\D-05\\drafts\\route-3.txt"
+    },
+    {
+      "group": "BASELINE-writer_brief",
+      "replica": 1,
+      "mode": "writer_brief",
+      "candidate_id": "8c47d72c-87c6-4309-9796-fbce88b97974",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "唐婉从301室退出来，门在身后合上，门牌上“皮肤科”三个字还在眼前晃。\n\n走廊里的消毒水味比刚才更冲。她攥着挂号单站在原地，指尖在纸缘上捻了两下。手机屏幕已经黑了，按侧键也没反应。左侧走廊尽头能看见电梯间的不锈钢门，右侧是另一片诊区，日光灯管把两边的地板照得一样白。\n\n清洁推车停在墙边，灰色的垃圾桶上搭着半条抹布。推车顶住了楼层指示牌的左下角，倒数第二行被挡得严严实实，只露出上面几排——301皮肤科、309中医科、315消化内科。\n\n挂号单上印着“内分泌科”，预约时间14:45。手机死机前最后一次亮屏是14:30。\n\n唐婉把挂号单对折，塞进外套口袋。她看了一眼左侧的电梯间——那里只有电梯，没有诊室的门。护士说“三楼另一侧”，那就不可能是左边。\n\n她向右转，运动鞋踩在水磨石地面上发出细碎的摩擦声。\n\n302室的门牌是骨科，门关着，门缝底下透出一线黄光。303室，呼吸内科，门口排了两把空椅子。唐婉一边走一边看，每个门牌都扫一眼，脚步没停。304、305、306——心内科、神经内科、消化内科。\n\n走廊在307室门口拐了个小弯。她拐过去，看见308室的门牌上写着“肾内科”，再往前就是走廊尽头，一扇锁着的防火门，门把手上落了灰。\n\n内分泌科不在这一排。\n\n唐婉停住，转身，重新扫了一遍门牌。302到308，七个房间，没有她要找的科室。她往回走了两步，又停下，视线落在那辆清洁推车上。从她现在站的位置看过去，推车遮挡的那一行正好露出一角——一个“泌”字的偏旁。\n\n她快步走回去，蹲下来，伸手把推车往旁边推开半米。轮子在瓷砖上刮出一声短促的尖响。\n\n楼层指示牌倒数第二行完整地露了出来：\n\n“内分泌科 302-308室”。\n\n302到308。她刚从302走到308，又从308折回来，内分泌科就在她刚才经过的那一排里，而且302室——骨科——旁边根本没有内分泌科的标识。\n\n唐婉站起来，重新看向302室。门牌只有“骨科”两个字，门框旁边的墙上也没有副牌。她推了一下门，锁着的。门上的小窗透出里面的诊台和一个正在翻病历的医生，白大褂胸口别着“骨科”的工牌。\n\n挂号单上预约时间是14:45。走廊墙上的挂钟指着14:38。\n\n她松开302室的门把手，往后退了一步，视线扫过整条走廊。303呼吸内科，门开着一条缝，里面有人说话。304心内科，门口排了三个病人。305神经内科，门关着。306消化内科，门也关着。307、308——\n\n302室的门突然从里面打开了。\n\n一个护士端着病历夹走出来，差点撞上唐婉。护士侧身让开，皱了下眉：“找人？”\n\n“内分泌科，”唐婉把挂号单递过去，“302到308，但我找不到。”\n\n护士接过单子看了一眼，又抬头看了看302室的门牌，然后伸手把门牌往上一推——门牌是活动的，滑上去之后露出底下一块嵌在门框里的金属牌，上面印着“内分泌科302诊室”。\n\n“今天骨科借了这间，”护士把门牌推回原位，“你签到机刷一下就行，里面那个医生就是内分泌科的，工牌没换。”\n\n唐婉看着那块又被遮住的金属牌，没说话。\n\n护士指了指门边墙上一个不起眼的灰色盒子，屏幕上跳着绿色的待机光标。“签到机在这儿，刷挂号单。”\n\n挂钟跳到14:40。\n\n唐婉从口袋里掏出折了两折的挂号单，展开，把条形码对准签到机的扫描口。红灯扫过，屏幕闪了一下，跳出四个字：\n\n“签到成功。”",
+      "raw_response": "唐婉从301室退出来，门在身后合上，门牌上“皮肤科”三个字还在眼前晃。\n\n走廊里的消毒水味比刚才更冲。她攥着挂号单站在原地，指尖在纸缘上捻了两下。手机屏幕已经黑了，按侧键也没反应。左侧走廊尽头能看见电梯间的不锈钢门，右侧是另一片诊区，日光灯管把两边的地板照得一样白。\n\n清洁推车停在墙边，灰色的垃圾桶上搭着半条抹布。推车顶住了楼层指示牌的左下角，倒数第二行被挡得严严实实，只露出上面几排——301皮肤科、309中医科、315消化内科。\n\n挂号单上印着“内分泌科”，预约时间14:45。手机死机前最后一次亮屏是14:30。\n\n唐婉把挂号单对折，塞进外套口袋。她看了一眼左侧的电梯间——那里只有电梯，没有诊室的门。护士说“三楼另一侧”，那就不可能是左边。\n\n她向右转，运动鞋踩在水磨石地面上发出细碎的摩擦声。\n\n302室的门牌是骨科，门关着，门缝底下透出一线黄光。303室，呼吸内科，门口排了两把空椅子。唐婉一边走一边看，每个门牌都扫一眼，脚步没停。304、305、306——心内科、神经内科、消化内科。\n\n走廊在307室门口拐了个小弯。她拐过去，看见308室的门牌上写着“肾内科”，再往前就是走廊尽头，一扇锁着的防火门，门把手上落了灰。\n\n内分泌科不在这一排。\n\n唐婉停住，转身，重新扫了一遍门牌。302到308，七个房间，没有她要找的科室。她往回走了两步，又停下，视线落在那辆清洁推车上。从她现在站的位置看过去，推车遮挡的那一行正好露出一角——一个“泌”字的偏旁。\n\n她快步走回去，蹲下来，伸手把推车往旁边推开半米。轮子在瓷砖上刮出一声短促的尖响。\n\n楼层指示牌倒数第二行完整地露了出来：\n\n“内分泌科 302-308室”。\n\n302到308。她刚从302走到308，又从308折回来，内分泌科就在她刚才经过的那一排里，而且302室——骨科——旁边根本没有内分泌科的标识。\n\n唐婉站起来，重新看向302室。门牌只有“骨科”两个字，门框旁边的墙上也没有副牌。她推了一下门，锁着的。门上的小窗透出里面的诊台和一个正在翻病历的医生，白大褂胸口别着“骨科”的工牌。\n\n挂号单上预约时间是14:45。走廊墙上的挂钟指着14:38。\n\n她松开302室的门把手，往后退了一步，视线扫过整条走廊。303呼吸内科，门开着一条缝，里面有人说话。304心内科，门口排了三个病人。305神经内科，门关着。306消化内科，门也关着。307、308——\n\n302室的门突然从里面打开了。\n\n一个护士端着病历夹走出来，差点撞上唐婉。护士侧身让开，皱了下眉：“找人？”\n\n“内分泌科，”唐婉把挂号单递过去，“302到308，但我找不到。”\n\n护士接过单子看了一眼，又抬头看了看302室的门牌，然后伸手把门牌往上一推——门牌是活动的，滑上去之后露出底下一块嵌在门框里的金属牌，上面印着“内分泌科302诊室”。\n\n“今天骨科借了这间，”护士把门牌推回原位，“你签到机刷一下就行，里面那个医生就是内分泌科的，工牌没换。”\n\n唐婉看着那块又被遮住的金属牌，没说话。\n\n护士指了指门边墙上一个不起眼的灰色盒子，屏幕上跳着绿色的待机光标。“签到机在这儿，刷挂号单。”\n\n挂钟跳到14:40。\n\n唐婉从口袋里掏出折了两折的挂号单，展开，把条形码对准签到机的扫描口。红灯扫过，屏幕闪了一下，跳出四个字：\n\n“签到成功。”",
+      "input_tokens": 1335,
+      "output_tokens": 874,
+      "latency_ms": 26593,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "a0e04799dbb5c740d640982a607a215e45790a43a5813afde65c6268f3525ebc",
+      "route_name": null,
+      "route_decision": null,
+      "compiled_brief_hash": null,
+      "instruction_hash": null,
+      "text_path": "cases\\D-05\\drafts\\baseline-1.txt"
+    },
+    {
+      "group": "BASELINE-writer_brief",
+      "replica": 2,
+      "mode": "writer_brief",
+      "candidate_id": "82531b90-7f4d-4734-8cf8-c2f8da774529",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "唐婉从301室退出来，门在身后合上，门牌上“皮肤科”三个字还在眼前晃。\n\n她站在走廊中间，左右看了一眼。\n\n左侧走廊尽头是电梯间，能听见电梯到达的提示音。右侧走廊延伸出去，沿墙排着诊室门，门牌号一路递增。\n\n墙上的楼层指示牌就在三米外，但一辆清洁推车紧贴着墙面停放，拖把杆斜靠上去，正好遮住了中间一行。唐婉走过去，侧头想从缝隙里看，只露出“3”和“室”两个字，中间被铁杆挡得严严实实。\n\n她没再绕到推车另一边去看。护士说的是“三楼另一侧”，左侧是电梯间，不会有诊室。\n\n唐婉向右转，开始走。\n\n302。门紧闭，门牌上写着“消化内科”。她没停。\n\n303。呼吸内科。\n\n304。神经内科。\n\n她的步子越来越快，目光扫过每一块门牌，不跳过一个数字。走廊里有人在候诊椅上坐着，有人从诊室里出来，她侧身绕过他们，继续往前走。\n\n305。心内科。\n\n306。肾内科。\n\n307。风湿免疫科。\n\n走廊已经快走到头了。前面只剩308一扇门，再往前是消防通道的防火门，没有别的诊室。\n\n唐婉在308门口停下来，门牌上写着“中医科”。\n\n她转身往回看。整条走廊已经走完了，没有内分泌科。\n\n她往回走了两步，视线落回那辆清洁推车。从这个角度看，拖把杆的角度变了，露出刚才被挡住的那一行字的一部分——“内分泌科 302-308”。\n\n302到308。\n\n她已经走过了302，走过了所有七个科室，没有一个门牌写着内分泌科。\n\n唐婉低头看挂号单。时间栏里印着“10:30”，手机屏幕已经黑透了，按侧键没反应。走廊墙上的电子钟跳到10:23。\n\n她没再看第二眼，转身往回走。这次不是走，是小跑。\n\n经过307、306、305，门牌号递减，她的步子没有慢下来。一个推着输液架的病人从诊室出来，她侧身让开，肩膀擦过墙壁，继续往前。\n\n304、303。\n\n到302门口时，她刹住脚步。\n\n门还是那扇门，门牌还是“消化内科”。但门牌下面多了一样东西——一台壁挂式签到机，屏幕亮着，上面滚动显示“内分泌科·消化内科 联合诊室 请在此签到”。\n\n唐婉从包里抽出挂号单，条码朝下按在扫描口上。\n\n机器滴了一声。\n\n屏幕闪了一下，弹出四个绿色字：“签到成功。”",
+      "raw_response": "唐婉从301室退出来，门在身后合上，门牌上“皮肤科”三个字还在眼前晃。\n\n她站在走廊中间，左右看了一眼。\n\n左侧走廊尽头是电梯间，能听见电梯到达的提示音。右侧走廊延伸出去，沿墙排着诊室门，门牌号一路递增。\n\n墙上的楼层指示牌就在三米外，但一辆清洁推车紧贴着墙面停放，拖把杆斜靠上去，正好遮住了中间一行。唐婉走过去，侧头想从缝隙里看，只露出“3”和“室”两个字，中间被铁杆挡得严严实实。\n\n她没再绕到推车另一边去看。护士说的是“三楼另一侧”，左侧是电梯间，不会有诊室。\n\n唐婉向右转，开始走。\n\n302。门紧闭，门牌上写着“消化内科”。她没停。\n\n303。呼吸内科。\n\n304。神经内科。\n\n她的步子越来越快，目光扫过每一块门牌，不跳过一个数字。走廊里有人在候诊椅上坐着，有人从诊室里出来，她侧身绕过他们，继续往前走。\n\n305。心内科。\n\n306。肾内科。\n\n307。风湿免疫科。\n\n走廊已经快走到头了。前面只剩308一扇门，再往前是消防通道的防火门，没有别的诊室。\n\n唐婉在308门口停下来，门牌上写着“中医科”。\n\n她转身往回看。整条走廊已经走完了，没有内分泌科。\n\n她往回走了两步，视线落回那辆清洁推车。从这个角度看，拖把杆的角度变了，露出刚才被挡住的那一行字的一部分——“内分泌科 302-308”。\n\n302到308。\n\n她已经走过了302，走过了所有七个科室，没有一个门牌写着内分泌科。\n\n唐婉低头看挂号单。时间栏里印着“10:30”，手机屏幕已经黑透了，按侧键没反应。走廊墙上的电子钟跳到10:23。\n\n她没再看第二眼，转身往回走。这次不是走，是小跑。\n\n经过307、306、305，门牌号递减，她的步子没有慢下来。一个推着输液架的病人从诊室出来，她侧身让开，肩膀擦过墙壁，继续往前。\n\n304、303。\n\n到302门口时，她刹住脚步。\n\n门还是那扇门，门牌还是“消化内科”。但门牌下面多了一样东西——一台壁挂式签到机，屏幕亮着，上面滚动显示“内分泌科·消化内科 联合诊室 请在此签到”。\n\n唐婉从包里抽出挂号单，条码朝下按在扫描口上。\n\n机器滴了一声。\n\n屏幕闪了一下，弹出四个绿色字：“签到成功。”",
+      "input_tokens": 1335,
+      "output_tokens": 571,
+      "latency_ms": 17504,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "a0e04799dbb5c740d640982a607a215e45790a43a5813afde65c6268f3525ebc",
+      "route_name": null,
+      "route_decision": null,
+      "compiled_brief_hash": null,
+      "instruction_hash": null,
+      "text_path": "cases\\D-05\\drafts\\baseline-2.txt"
+    },
+    {
+      "group": "BASELINE-writer_brief",
+      "replica": 3,
+      "mode": "writer_brief",
+      "candidate_id": "43cef724-00f9-4e3c-af0b-48d30254a515",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "唐婉从301室退出来，门在身后合上，门牌上“皮肤科”三个字在走廊日光灯下清清楚楚。\n\n她低头看了一眼挂号单。内分泌科。时间还剩十五分钟。\n\n走廊里消毒水的气味混着中央空调的嗡鸣。她往护士站的方向望了一眼，那个窗口已经排了四个人，最前面的人正把一沓单据从窗口塞进去。\n\n唐婉转身看向走廊深处。\n\n左侧是电梯间，金属门紧闭，旁边的消防通道标识亮着绿灯。右侧是一条更长的走廊，日光灯一盏接一盏延伸过去，两侧都是诊室门，门牌序列从302开始。\n\n护士说“三楼另一侧”。左侧是电梯间，没有诊室。\n\n她向右走。\n\n302室。门牌上写着“消化内科”。门关着，门口候诊椅上坐着一个中年男人，膝盖上摊着一叠化验单。\n\n303室。呼吸内科。\n\n304室。心内科。\n\n唐婉的脚步没有停，但每一步踩在塑胶地板上，鞋底发出轻微的摩擦声。她的视线在每个门牌上停留不到一秒，数字在递增，科室名称在变换，没有一个是内分泌科。\n\n305。神经内科。\n\n306。肾内科。\n\n她的步子加快了。走廊尽头是一面白墙，墙上贴着一张褪色的消防疏散图，旁边就是那个被清洁推车挡住的楼层指示牌。推车的金属把手斜插在指示牌前面，抹布搭在桶沿上，桶里的水已经浑浊。\n\n唐婉走到推车前，伸手握住推车边缘，把它往旁边挪了半米。轮子在地板上发出干涩的刮擦声。\n\n指示牌露出来了。\n\n三楼科室分布图。她的视线扫过左侧栏——301皮肤科，然后是一行被推车把手压出折痕的印刷字：302-308内分泌科。\n\n她已经在308门口了。\n\n唐婉猛地转身。308室的门牌就在她左肩上方，肾内科。\n\n她往回走。\n\n脚步比来时快了一倍。305、304、303，门牌数字在递减，走廊好像比刚才更长。一个穿白大褂的医生从306室出来，差点和她撞上，医生侧身让开，她没来得及说抱歉。\n\n302室到了。\n\n门牌上“消化内科”四个字还在，但门框旁边多了一台灰色的签到机，屏幕亮着，上面滚动着一行字：“请刷挂号单或输入就诊卡号”。\n\n唐婉站到签到机前，把挂号单背面的条形码对准扫描口。\n\n机器发出一声短促的“嘀”。屏幕闪了一下，跳出一行绿字：\n\n“签到成功。”",
+      "raw_response": "唐婉从301室退出来，门在身后合上，门牌上“皮肤科”三个字在走廊日光灯下清清楚楚。\n\n她低头看了一眼挂号单。内分泌科。时间还剩十五分钟。\n\n走廊里消毒水的气味混着中央空调的嗡鸣。她往护士站的方向望了一眼，那个窗口已经排了四个人，最前面的人正把一沓单据从窗口塞进去。\n\n唐婉转身看向走廊深处。\n\n左侧是电梯间，金属门紧闭，旁边的消防通道标识亮着绿灯。右侧是一条更长的走廊，日光灯一盏接一盏延伸过去，两侧都是诊室门，门牌序列从302开始。\n\n护士说“三楼另一侧”。左侧是电梯间，没有诊室。\n\n她向右走。\n\n302室。门牌上写着“消化内科”。门关着，门口候诊椅上坐着一个中年男人，膝盖上摊着一叠化验单。\n\n303室。呼吸内科。\n\n304室。心内科。\n\n唐婉的脚步没有停，但每一步踩在塑胶地板上，鞋底发出轻微的摩擦声。她的视线在每个门牌上停留不到一秒，数字在递增，科室名称在变换，没有一个是内分泌科。\n\n305。神经内科。\n\n306。肾内科。\n\n她的步子加快了。走廊尽头是一面白墙，墙上贴着一张褪色的消防疏散图，旁边就是那个被清洁推车挡住的楼层指示牌。推车的金属把手斜插在指示牌前面，抹布搭在桶沿上，桶里的水已经浑浊。\n\n唐婉走到推车前，伸手握住推车边缘，把它往旁边挪了半米。轮子在地板上发出干涩的刮擦声。\n\n指示牌露出来了。\n\n三楼科室分布图。她的视线扫过左侧栏——301皮肤科，然后是一行被推车把手压出折痕的印刷字：302-308内分泌科。\n\n她已经在308门口了。\n\n唐婉猛地转身。308室的门牌就在她左肩上方，肾内科。\n\n她往回走。\n\n脚步比来时快了一倍。305、304、303，门牌数字在递减，走廊好像比刚才更长。一个穿白大褂的医生从306室出来，差点和她撞上，医生侧身让开，她没来得及说抱歉。\n\n302室到了。\n\n门牌上“消化内科”四个字还在，但门框旁边多了一台灰色的签到机，屏幕亮着，上面滚动着一行字：“请刷挂号单或输入就诊卡号”。\n\n唐婉站到签到机前，把挂号单背面的条形码对准扫描口。\n\n机器发出一声短促的“嘀”。屏幕闪了一下，跳出一行绿字：\n\n“签到成功。”",
+      "input_tokens": 1335,
+      "output_tokens": 559,
+      "latency_ms": 16660,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "a0e04799dbb5c740d640982a607a215e45790a43a5813afde65c6268f3525ebc",
+      "route_name": null,
+      "route_decision": null,
+      "compiled_brief_hash": null,
+      "instruction_hash": null,
+      "text_path": "cases\\D-05\\drafts\\baseline-3.txt"
+    }
+  ],
+  "actual_route": "A_LITE_INFORMATION_GAP",
+  "route_decision": {
+    "route_name": "A_LITE_INFORMATION_GAP",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "multiple characters with distinct information",
+      "viewpoint character has unknown facts and an interpretation",
+      "secondary character carries independent knowledge"
+    ],
+    "matched_rules": [
+      "RULE_A_LITE_INFORMATION_GAP"
+    ],
+    "rejected_routes": [
+      "C_OBJECT_CAUSAL"
+    ]
+  }
+}

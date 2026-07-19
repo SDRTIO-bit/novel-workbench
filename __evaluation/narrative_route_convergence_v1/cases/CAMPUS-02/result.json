@@ -1,0 +1,338 @@
+{
+  "case_id": "CAMPUS-02",
+  "category": "校园误会",
+  "title": "社团名单",
+  "run_id": "1f1de749-4da4-4d66-a6af-b79e117d2b85",
+  "expected_route": "A_LITE_INFORMATION_GAP",
+  "planner": {
+    "candidate_id": "d5797ca9-abaf-4b4d-bbf8-9396fbcc061e",
+    "attempt_number": 1,
+    "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+    "model_id": "deepseek-v4-pro",
+    "prompt_version_id": "f9052f8a-dc4e-5408-b14e-fc1badaf57f8",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 12288,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "json_object"
+    },
+    "text_output": "{\n  \"planner_contract_version\": 2,\n  \"scene_goal\": \"许澄在广播站门口看见迟到名单上有自己的名字，误以为周弈忘了替她登记，基于名单和现场动作做出判断，放弃当面追问，做一件会带来具体麻烦的事。\",\n  \"location\": \"校园广播站门口走廊\",\n  \"time\": \"早自习结束后，第一节课前\",\n  \"scene_state\": {\n    \"last_completed_action\": \"许澄在广播站门口看到迟到名单，上面有自己的名字\",\n    \"present_characters\": [\"许澄\", \"周弈\", \"值班老师\"],\n    \"visible_facts\": [\"广播站门口贴着迟到名单\", \"名单上有许澄的名字\", \"周弈正抱着器材从走廊另一头过来\", \"值班老师站在广播站门口旁边\"],\n    \"available_objects\": [\"迟到名单\", \"广播器材\", \"许澄的书包\"],\n    \"unresolved_problem\": \"许澄的名字为何出现在迟到名单上\",\n    \"already_existing_constraints\": [\"许澄不能直接向周弈求证\", \"许澄不能向值班老师解释\", \"许澄必须在上课前做出反应\"]\n  },\n  \"characters\": [\n    {\n      \"name\": \"许澄\",\n      \"goal\": \"确定周弈是否真的忘了替她登记，并做出反应\",\n      \"known\": [\"自己托周弈帮忙登记\", \"名单上有自己的名字\", \"周弈正抱着器材过来\"],\n      \"unknown\": [\"周弈是否真的忘了登记\", \"周弈是否另有安排\"],\n      \"mistaken_beliefs\": [\"周弈忘了替她登记\"],\n      \"constraints\": [\"不能当面追问周弈\", \"不能让值班老师察觉异常\"],\n      \"observed_evidence\": [\"名单上自己的名字\", \"周弈抱着器材走过来，没有主动解释\"],\n      \"current_interpretation\": \"周弈忘了登记，现在正忙着搬器材，没打算解释\",\n      \"how_interpretation_drives_action\": \"许澄放弃追问，转身离开，去教导处自首迟到，接受处罚\"\n    },\n    {\n      \"name\": \"周弈\",\n      \"goal\": \"把器材搬进广播站，完成老师交代的任务\",\n      \"known\": [\"自己已经替许澄登记\", \"名单是旧的，新名单还没贴出来\"],\n      \"unknown\": [\"许澄看到了旧名单并误会了自己\"],\n      \"mistaken_beliefs\": [\"许澄知道名单会更新\"],\n      \"constraints\": [\"不能放下器材去解释\", \"不能当着值班老师的面说名单有误\"],\n      \"observed_evidence\": [\"许澄站在名单前，脸色不好\", \"许澄转身离开\"],\n      \"current_interpretation\": \"许澄可能看到了旧名单，但应该知道我会处理\",\n      \"how_interpretation_drives_action\": \"周弈继续搬器材，打算忙完再找许澄\"\n    }\n  ],\n  \"concrete_problem\": \"许澄必须在周弈和值班老师都在场的情况下，仅凭名单和现场动作决定是否当面质问，还是采取其他行动。\",\n  \"pressure\": \"上课铃即将响起，许澄必须在短时间内做出选择，否则迟到记录将生效。\",\n  \"turning_point\": \"许澄看到周弈没有停下的意思，决定放弃质问，转身走向教导处。\",\n  \"end_condition\": \"许澄走进教导处，向老师承认自己迟到，接受扣分处罚。\",\n  \"forbidden\": [\"周弈的真实安排\", \"许澄与周弈的直接对话\", \"值班老师的干预\", \"名单更新的解释\"],\n  \"causal_transitions\": [\n    {\n      \"id\": \"CT01\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"迟到名单上许澄的名字\",\n      \"character_interpretation\": \"周弈忘了替我登记\",\n      \"character_next_action\": \"许澄转身离开，去教导处自首迟到\",\n      \"rejected_alternative\": \"许澄可以等周弈过来后当面质问，但她选择放弃\",\n      \"immediate_consequence\": \"许澄在教导处被记录迟到，扣班级分\",\n      \"counterfactual_without_action\": \"如果许澄不行动，她将错过上课时间，迟到记录自动生效，且可能被老师点名批评\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"许澄的名字在迟到名单上，但尚未被正式记录\",\n        \"after\": \"许澄主动承认迟到，迟到记录正式生效，班级分被扣\"\n      },\n      \"cost_or_commitment\": \"许澄付出了班级分被扣的代价，并承担了主动认错的心理压力\",\n      \"next_constraint\": \"许澄不能再以未迟到为由反驳任何记录\",\n      \"reader_must_infer\": \"周弈其实已经替许澄登记，但名单是旧的，新名单尚未贴出\",\n      \"narrator_must_not_state\": [\"周弈替许澄登记的事实\", \"名单是旧的原因\"]\n    }\n  ],\n  \"tempo_guardrails\": {\n    \"entry_pressure\": \"许澄看见名单上自己的名字，周弈正从走廊另一头过来\",\n    \"dominant_pressure\": {\n      \"kind\": \"information_gap\",\n      \"description\": \"许澄不知道名单为何有自己的名字，但时间紧迫，她必须决定如何应对\"\n    },\n    \"allowed_viewpoint_misread\": \"许澄可能把周弈的匆忙理解为心虚或不关心\",\n    \"disclosure_cap\": 1,\n    \"must_remain_unclassified\": [\n      \"周弈替许澄登记的事实\",\n      \"名单更新的具体时间\"\n    ],\n    \"stop_state\": {\n      \"type\": \"social_commitment\",\n      \"visible_fact\": \"许澄在教导处签到表上签名确认迟到\",\n      \"what_is_now_different\": \"许澄从可能被误记迟到变成主动承认迟到，形成了无法撤回的记录\",\n      \"must_not_append\": \"不得解释许澄实际并未迟到\"\n    },\n    \"final_line_must_include\": \"迟到确认\"\n  },\n  \"chapter_contract_check\": {\n    \"function_aligned\": true,\n    \"must_deliver_covered\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_enabled\": true,\n    \"main_payoff_prepared\": true,\n    \"ending_hook_established\": true,\n    \"causal_transitions_grounded\": true,\n    \"reader_inference_not_pre_resolved\": true,\n    \"scene_state_reconstructed\": true,\n    \"information_sources_legal\": true,\n    \"character_choice_is_real\": true,\n    \"consequence_is_counterfactual\": true,\n    \"state_delta_is_nonempty\": true,\n    \"next_constraint_is_new\": true,\n    \"stop_state_is_visible\": true,\n    \"stop_state_changes_future_actions\": true\n  }\n}",
+    "raw_response": "{\n  \"planner_contract_version\": 2,\n  \"scene_goal\": \"许澄在广播站门口看见迟到名单上有自己的名字，误以为周弈忘了替她登记，基于名单和现场动作做出判断，放弃当面追问，做一件会带来具体麻烦的事。\",\n  \"location\": \"校园广播站门口走廊\",\n  \"time\": \"早自习结束后，第一节课前\",\n  \"scene_state\": {\n    \"last_completed_action\": \"许澄在广播站门口看到迟到名单，上面有自己的名字\",\n    \"present_characters\": [\"许澄\", \"周弈\", \"值班老师\"],\n    \"visible_facts\": [\"广播站门口贴着迟到名单\", \"名单上有许澄的名字\", \"周弈正抱着器材从走廊另一头过来\", \"值班老师站在广播站门口旁边\"],\n    \"available_objects\": [\"迟到名单\", \"广播器材\", \"许澄的书包\"],\n    \"unresolved_problem\": \"许澄的名字为何出现在迟到名单上\",\n    \"already_existing_constraints\": [\"许澄不能直接向周弈求证\", \"许澄不能向值班老师解释\", \"许澄必须在上课前做出反应\"]\n  },\n  \"characters\": [\n    {\n      \"name\": \"许澄\",\n      \"goal\": \"确定周弈是否真的忘了替她登记，并做出反应\",\n      \"known\": [\"自己托周弈帮忙登记\", \"名单上有自己的名字\", \"周弈正抱着器材过来\"],\n      \"unknown\": [\"周弈是否真的忘了登记\", \"周弈是否另有安排\"],\n      \"mistaken_beliefs\": [\"周弈忘了替她登记\"],\n      \"constraints\": [\"不能当面追问周弈\", \"不能让值班老师察觉异常\"],\n      \"observed_evidence\": [\"名单上自己的名字\", \"周弈抱着器材走过来，没有主动解释\"],\n      \"current_interpretation\": \"周弈忘了登记，现在正忙着搬器材，没打算解释\",\n      \"how_interpretation_drives_action\": \"许澄放弃追问，转身离开，去教导处自首迟到，接受处罚\"\n    },\n    {\n      \"name\": \"周弈\",\n      \"goal\": \"把器材搬进广播站，完成老师交代的任务\",\n      \"known\": [\"自己已经替许澄登记\", \"名单是旧的，新名单还没贴出来\"],\n      \"unknown\": [\"许澄看到了旧名单并误会了自己\"],\n      \"mistaken_beliefs\": [\"许澄知道名单会更新\"],\n      \"constraints\": [\"不能放下器材去解释\", \"不能当着值班老师的面说名单有误\"],\n      \"observed_evidence\": [\"许澄站在名单前，脸色不好\", \"许澄转身离开\"],\n      \"current_interpretation\": \"许澄可能看到了旧名单，但应该知道我会处理\",\n      \"how_interpretation_drives_action\": \"周弈继续搬器材，打算忙完再找许澄\"\n    }\n  ],\n  \"concrete_problem\": \"许澄必须在周弈和值班老师都在场的情况下，仅凭名单和现场动作决定是否当面质问，还是采取其他行动。\",\n  \"pressure\": \"上课铃即将响起，许澄必须在短时间内做出选择，否则迟到记录将生效。\",\n  \"turning_point\": \"许澄看到周弈没有停下的意思，决定放弃质问，转身走向教导处。\",\n  \"end_condition\": \"许澄走进教导处，向老师承认自己迟到，接受扣分处罚。\",\n  \"forbidden\": [\"周弈的真实安排\", \"许澄与周弈的直接对话\", \"值班老师的干预\", \"名单更新的解释\"],\n  \"causal_transitions\": [\n    {\n      \"id\": \"CT01\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"迟到名单上许澄的名字\",\n      \"character_interpretation\": \"周弈忘了替我登记\",\n      \"character_next_action\": \"许澄转身离开，去教导处自首迟到\",\n      \"rejected_alternative\": \"许澄可以等周弈过来后当面质问，但她选择放弃\",\n      \"immediate_consequence\": \"许澄在教导处被记录迟到，扣班级分\",\n      \"counterfactual_without_action\": \"如果许澄不行动，她将错过上课时间，迟到记录自动生效，且可能被老师点名批评\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"许澄的名字在迟到名单上，但尚未被正式记录\",\n        \"after\": \"许澄主动承认迟到，迟到记录正式生效，班级分被扣\"\n      },\n      \"cost_or_commitment\": \"许澄付出了班级分被扣的代价，并承担了主动认错的心理压力\",\n      \"next_constraint\": \"许澄不能再以未迟到为由反驳任何记录\",\n      \"reader_must_infer\": \"周弈其实已经替许澄登记，但名单是旧的，新名单尚未贴出\",\n      \"narrator_must_not_state\": [\"周弈替许澄登记的事实\", \"名单是旧的原因\"]\n    }\n  ],\n  \"tempo_guardrails\": {\n    \"entry_pressure\": \"许澄看见名单上自己的名字，周弈正从走廊另一头过来\",\n    \"dominant_pressure\": {\n      \"kind\": \"information_gap\",\n      \"description\": \"许澄不知道名单为何有自己的名字，但时间紧迫，她必须决定如何应对\"\n    },\n    \"allowed_viewpoint_misread\": \"许澄可能把周弈的匆忙理解为心虚或不关心\",\n    \"disclosure_cap\": 1,\n    \"must_remain_unclassified\": [\n      \"周弈替许澄登记的事实\",\n      \"名单更新的具体时间\"\n    ],\n    \"stop_state\": {\n      \"type\": \"social_commitment\",\n      \"visible_fact\": \"许澄在教导处签到表上签名确认迟到\",\n      \"what_is_now_different\": \"许澄从可能被误记迟到变成主动承认迟到，形成了无法撤回的记录\",\n      \"must_not_append\": \"不得解释许澄实际并未迟到\"\n    },\n    \"final_line_must_include\": \"迟到确认\"\n  },\n  \"chapter_contract_check\": {\n    \"function_aligned\": true,\n    \"must_deliver_covered\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_enabled\": true,\n    \"main_payoff_prepared\": true,\n    \"ending_hook_established\": true,\n    \"causal_transitions_grounded\": true,\n    \"reader_inference_not_pre_resolved\": true,\n    \"scene_state_reconstructed\": true,\n    \"information_sources_legal\": true,\n    \"character_choice_is_real\": true,\n    \"consequence_is_counterfactual\": true,\n    \"state_delta_is_nonempty\": true,\n    \"next_constraint_is_new\": true,\n    \"stop_state_is_visible\": true,\n    \"stop_state_changes_future_actions\": true\n  }\n}",
+    "input_tokens": 3317,
+    "output_tokens": 1493,
+    "latency_ms": 20199,
+    "finish_reason": "stop",
+    "error_code": null,
+    "error_message": null,
+    "rendered_user_prompt_sha256": "98c13a562d9968141fd79a6552f5c3c8288b576cb118daec07207fa02d263a00",
+    "route_name": null,
+    "route_decision": null,
+    "compiled_brief_hash": null,
+    "instruction_hash": null
+  },
+  "drafts": [
+    {
+      "group": "ROUTE-A_LITE_INFORMATION_GAP",
+      "replica": 1,
+      "mode": "narrative_route",
+      "candidate_id": "573ccc6e-9afa-427f-a507-ea3086ce15fc",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "A_LITE_INFORMATION_GAP",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "multiple characters with distinct information",
+            "viewpoint character has unknown facts and an interpretation",
+            "secondary character carries independent knowledge"
+          ],
+          "matched_rules": [
+            "RULE_A_LITE_INFORMATION_GAP"
+          ],
+          "rejected_routes": [
+            "C_OBJECT_CAUSAL"
+          ]
+        },
+        "compiled_brief_hash": "74160fce44d2dce330367e4dee503bfd141dc6960fda8f9455d409ccc6090ef6",
+        "instruction_hash": "d368cbfa0846d1cb9adf452db083cbb58ba69154f281b3d6c895cb34da157cec",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "许澄站在广播站门口，名单就贴在玻璃橱窗里。\n\n她的名字在第三行。许澄，高二三班，迟到。\n\n她盯着那两个字看了三秒。晨光从走廊尽头斜打过来，名单上的油墨微微反光。她伸手碰了碰玻璃，名字没有花掉，没有涂改痕迹，就是印在那儿的。\n\n走廊另一头传来脚步声。\n\n周弈抱着器材箱拐过转角，纸箱堆得挡住半张脸，只露出额头和眼镜框。他走得不快，箱子里的麦克风线晃出来一截，在箱沿上磕磕碰碰。值班老师靠在广播站门框边翻签到本，抬头看了周弈一眼，又低下头继续翻。\n\n许澄把手从玻璃上放下来。\n\n周弈走近了，器材箱换了个手，麦克风线拖到地上。他经过名单橱窗时脚步没停，视线扫过许澄，下巴朝她抬了抬算打招呼，然后继续往广播站里走。\n\n“器材室那边清点完了？”值班老师合上签到本。\n\n“还差两根线。”周弈的声音从器材箱后面传出来，“下午再跑一趟。”\n\n许澄看着他走进广播站的门。纸箱擦过门框，发出闷闷的刮擦声。值班老师让开半步，手里的签到本夹回腋下，笔帽咔嗒扣上。\n\n广播站里的钟指向七点四十二。\n\n许澄转身往楼梯口走。帆布鞋踩在水磨石地面上没什么声音，她走得不快，手指勾着书包带子，指节攥得发白。经过楼梯拐角时她侧身让开两个跑上楼的男生，其中一个撞到她肩膀，说了句抱歉又继续跑。\n\n她没有回头。\n\n教学楼走廊已经安静下来，早读铃响过五分钟了。各班窗户里传出参差不齐的朗读声，高二三班教室门虚掩着，里面语文课代表正领着读《滕王阁序》。许澄从门口经过，没推门。她继续往前走，经过班主任办公室门口时脚步顿了顿，然后拐进了另一条走廊。\n\n教导处在一楼最东边。\n\n门开着，里面有人在说话。许澄站在门口，看见教导主任正背对着门往档案柜里塞文件，桌上摊着半杯茶和一摞迟到记录表。\n\n“报告。”\n\n教导主任转过身，眼镜推到额头上。“哪个班的？”\n\n“高二三班，许澄。迟到。”\n\n教导主任把眼镜拉下来，从桌上抽出迟到记录表。笔尖在纸面上点了点，找到高二三班那栏。“早上几点到的校？”\n\n许澄报了个数字。\n\n教导主任在表上写了什么，然后把表转过来推到她面前。“签名。”\n\n许澄拿起笔。表格上她的名字后面，迟到时间已经填好了，备注栏写着扣两分。她在签名栏写下自己的名字，笔画很用力，纸背都压出了印子。\n\n“下次注意。”教导主任收回表格，端起茶杯吹了吹。\n\n许澄把笔放回去，转身走出教导处。走廊里空荡荡的，早读声从楼上闷闷地传下来。她低头看了看自己的手，指尖还沾着一点油墨印子，是刚才碰名单玻璃时蹭到的。\n\n她往教学楼方向走，走到楼梯口时停下来，靠着墙站了一会儿。楼上有人翻书页，椅子拖动的声音，英语磁带转动的嗡嗡声。\n\n然后她开始上楼。\n\n帆布鞋踩在台阶上，一步，两步。书包带子从肩膀滑下来，她没有拉回去。\n\n迟到确认。",
+      "raw_response": "许澄站在广播站门口，名单就贴在玻璃橱窗里。\n\n她的名字在第三行。许澄，高二三班，迟到。\n\n她盯着那两个字看了三秒。晨光从走廊尽头斜打过来，名单上的油墨微微反光。她伸手碰了碰玻璃，名字没有花掉，没有涂改痕迹，就是印在那儿的。\n\n走廊另一头传来脚步声。\n\n周弈抱着器材箱拐过转角，纸箱堆得挡住半张脸，只露出额头和眼镜框。他走得不快，箱子里的麦克风线晃出来一截，在箱沿上磕磕碰碰。值班老师靠在广播站门框边翻签到本，抬头看了周弈一眼，又低下头继续翻。\n\n许澄把手从玻璃上放下来。\n\n周弈走近了，器材箱换了个手，麦克风线拖到地上。他经过名单橱窗时脚步没停，视线扫过许澄，下巴朝她抬了抬算打招呼，然后继续往广播站里走。\n\n“器材室那边清点完了？”值班老师合上签到本。\n\n“还差两根线。”周弈的声音从器材箱后面传出来，“下午再跑一趟。”\n\n许澄看着他走进广播站的门。纸箱擦过门框，发出闷闷的刮擦声。值班老师让开半步，手里的签到本夹回腋下，笔帽咔嗒扣上。\n\n广播站里的钟指向七点四十二。\n\n许澄转身往楼梯口走。帆布鞋踩在水磨石地面上没什么声音，她走得不快，手指勾着书包带子，指节攥得发白。经过楼梯拐角时她侧身让开两个跑上楼的男生，其中一个撞到她肩膀，说了句抱歉又继续跑。\n\n她没有回头。\n\n教学楼走廊已经安静下来，早读铃响过五分钟了。各班窗户里传出参差不齐的朗读声，高二三班教室门虚掩着，里面语文课代表正领着读《滕王阁序》。许澄从门口经过，没推门。她继续往前走，经过班主任办公室门口时脚步顿了顿，然后拐进了另一条走廊。\n\n教导处在一楼最东边。\n\n门开着，里面有人在说话。许澄站在门口，看见教导主任正背对着门往档案柜里塞文件，桌上摊着半杯茶和一摞迟到记录表。\n\n“报告。”\n\n教导主任转过身，眼镜推到额头上。“哪个班的？”\n\n“高二三班，许澄。迟到。”\n\n教导主任把眼镜拉下来，从桌上抽出迟到记录表。笔尖在纸面上点了点，找到高二三班那栏。“早上几点到的校？”\n\n许澄报了个数字。\n\n教导主任在表上写了什么，然后把表转过来推到她面前。“签名。”\n\n许澄拿起笔。表格上她的名字后面，迟到时间已经填好了，备注栏写着扣两分。她在签名栏写下自己的名字，笔画很用力，纸背都压出了印子。\n\n“下次注意。”教导主任收回表格，端起茶杯吹了吹。\n\n许澄把笔放回去，转身走出教导处。走廊里空荡荡的，早读声从楼上闷闷地传下来。她低头看了看自己的手，指尖还沾着一点油墨印子，是刚才碰名单玻璃时蹭到的。\n\n她往教学楼方向走，走到楼梯口时停下来，靠着墙站了一会儿。楼上有人翻书页，椅子拖动的声音，英语磁带转动的嗡嗡声。\n\n然后她开始上楼。\n\n帆布鞋踩在台阶上，一步，两步。书包带子从肩膀滑下来，她没有拉回去。\n\n迟到确认。",
+      "input_tokens": 1403,
+      "output_tokens": 758,
+      "latency_ms": 16386,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "c263b704282677e5a8f1ffb86bf5dae73e49dbae6491b4555ea46e2ca08012fc",
+      "route_name": null,
+      "route_decision": {
+        "route_name": "A_LITE_INFORMATION_GAP",
+        "classifier_version": "narrative-route-v1",
+        "decision_reasons": [
+          "multiple characters with distinct information",
+          "viewpoint character has unknown facts and an interpretation",
+          "secondary character carries independent knowledge"
+        ],
+        "matched_rules": [
+          "RULE_A_LITE_INFORMATION_GAP"
+        ],
+        "rejected_routes": [
+          "C_OBJECT_CAUSAL"
+        ]
+      },
+      "compiled_brief_hash": "74160fce44d2dce330367e4dee503bfd141dc6960fda8f9455d409ccc6090ef6",
+      "instruction_hash": "d368cbfa0846d1cb9adf452db083cbb58ba69154f281b3d6c895cb34da157cec",
+      "text_path": "cases\\CAMPUS-02\\drafts\\route-1.txt"
+    },
+    {
+      "group": "ROUTE-A_LITE_INFORMATION_GAP",
+      "replica": 2,
+      "mode": "narrative_route",
+      "candidate_id": "131b4f46-d49f-4836-a22d-7427d213669e",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "A_LITE_INFORMATION_GAP",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "multiple characters with distinct information",
+            "viewpoint character has unknown facts and an interpretation",
+            "secondary character carries independent knowledge"
+          ],
+          "matched_rules": [
+            "RULE_A_LITE_INFORMATION_GAP"
+          ],
+          "rejected_routes": [
+            "C_OBJECT_CAUSAL"
+          ]
+        },
+        "compiled_brief_hash": "74160fce44d2dce330367e4dee503bfd141dc6960fda8f9455d409ccc6090ef6",
+        "instruction_hash": "d368cbfa0846d1cb9adf452db083cbb58ba69154f281b3d6c895cb34da157cec",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "广播站门口的白墙上贴着一张A4纸。\n\n许澄停下来是因为看见了自己的名字。\n\n“第三周迟到名单”几个字印在最上面，她的名字排在第四行，黑色宋体，清清楚楚。走廊里日光灯嗡嗡响，名单边角被风吹得轻轻掀起又落下。\n\n她盯着那行字看了三秒。\n\n昨天下午她把学生证塞给周弈的时候，他正站在广播站门口啃面包。她说广播站签到马上截止，帮我去登一下，器材室那边我得去拿下午用的麦克风。周弈嘴里含着面包点头，接过学生证往口袋里一揣。\n\n现在名单上有她的名字。\n\n许澄从名单上移开视线，看见走廊另一头周弈正抱着两箱器材过来。黑色收纳箱摞在一起，最上面那个歪着，他下巴抵在箱子边上稳住平衡，走得慢。值班老师站在广播站门口旁边，手里拿着签到夹子，正翻页。\n\n周弈看见她了。\n\n他脚步顿了一下，像是想说什么，但箱子太重，他得先走到广播站门口把东西放下。他继续往前走，视线从她脸上移开，盯着脚下的路。\n\n许澄站在原地。\n\n周弈抱着箱子从她身边经过，距离不到一米。他没有停下来，没有说“名单的事我等下跟你说”，没有用下巴指指广播站里面示意她等一下。他走过去，把箱子放在广播站门口的地上，直起腰来。\n\n值班老师抬头看了他一眼，又低头翻签到夹。\n\n许澄转身往楼梯口走。\n\n她走得快，帆布鞋踩在水磨石地面上发出细碎的摩擦声。身后周弈好像叫了一声她的名字，声音被走廊里的回音搅散，听不清是“许澄”还是别的什么。她没有回头。\n\n下楼。二楼走廊拐角处有学生在擦黑板，粉笔灰扬起来，她侧身绕过去。一楼大厅的挂钟显示七点四十二分，早自习已经开始十二分钟。\n\n教导处在行政楼一楼，和教学楼隔着一个小操场。许澄推开玻璃门的时候，教导主任正坐在办公桌后面喝豆浆。桌上摊着一本签到表，旁边放着一支黑色签字笔。\n\n“老师，我迟到。”\n\n教导主任放下豆浆杯，看了她一眼，把签到表转过来推到她面前。表格上已经有两行记录，第一列是班级，第二列是姓名，第三列是迟到时间，第四列是扣分。\n\n许澄拿起笔。\n\n她的手指碰到笔身的时候停了一下。笔尖悬在姓名那一栏上方，距离纸面不到一厘米。教导主任在对面等着，手指敲了敲桌面。\n\n许澄在姓名栏写下自己的名字。\n\n教导主任伸手把签到表转回去，在扣分栏写了个“-1”，然后合上签到夹。“可以了，去上课。”\n\n许澄从教导处出来。小操场上有两个低年级学生在追跑，书包带子甩来甩去。她站在行政楼门口的台阶上，低头看着自己的手。\n\n手指上沾了一点黑色墨水。\n\n教学楼方向传来早读声，模糊的，隔着一整个操场。她把手在裤子上擦了一下，往教学楼走。\n\n教导处的门在她身后关上，签到表上她的名字旁边，扣分栏里的“-1”字迹还没干透。表格抬头印着“迟到确认登记表”，日期栏填着今天的日期。",
+      "raw_response": "广播站门口的白墙上贴着一张A4纸。\n\n许澄停下来是因为看见了自己的名字。\n\n“第三周迟到名单”几个字印在最上面，她的名字排在第四行，黑色宋体，清清楚楚。走廊里日光灯嗡嗡响，名单边角被风吹得轻轻掀起又落下。\n\n她盯着那行字看了三秒。\n\n昨天下午她把学生证塞给周弈的时候，他正站在广播站门口啃面包。她说广播站签到马上截止，帮我去登一下，器材室那边我得去拿下午用的麦克风。周弈嘴里含着面包点头，接过学生证往口袋里一揣。\n\n现在名单上有她的名字。\n\n许澄从名单上移开视线，看见走廊另一头周弈正抱着两箱器材过来。黑色收纳箱摞在一起，最上面那个歪着，他下巴抵在箱子边上稳住平衡，走得慢。值班老师站在广播站门口旁边，手里拿着签到夹子，正翻页。\n\n周弈看见她了。\n\n他脚步顿了一下，像是想说什么，但箱子太重，他得先走到广播站门口把东西放下。他继续往前走，视线从她脸上移开，盯着脚下的路。\n\n许澄站在原地。\n\n周弈抱着箱子从她身边经过，距离不到一米。他没有停下来，没有说“名单的事我等下跟你说”，没有用下巴指指广播站里面示意她等一下。他走过去，把箱子放在广播站门口的地上，直起腰来。\n\n值班老师抬头看了他一眼，又低头翻签到夹。\n\n许澄转身往楼梯口走。\n\n她走得快，帆布鞋踩在水磨石地面上发出细碎的摩擦声。身后周弈好像叫了一声她的名字，声音被走廊里的回音搅散，听不清是“许澄”还是别的什么。她没有回头。\n\n下楼。二楼走廊拐角处有学生在擦黑板，粉笔灰扬起来，她侧身绕过去。一楼大厅的挂钟显示七点四十二分，早自习已经开始十二分钟。\n\n教导处在行政楼一楼，和教学楼隔着一个小操场。许澄推开玻璃门的时候，教导主任正坐在办公桌后面喝豆浆。桌上摊着一本签到表，旁边放着一支黑色签字笔。\n\n“老师，我迟到。”\n\n教导主任放下豆浆杯，看了她一眼，把签到表转过来推到她面前。表格上已经有两行记录，第一列是班级，第二列是姓名，第三列是迟到时间，第四列是扣分。\n\n许澄拿起笔。\n\n她的手指碰到笔身的时候停了一下。笔尖悬在姓名那一栏上方，距离纸面不到一厘米。教导主任在对面等着，手指敲了敲桌面。\n\n许澄在姓名栏写下自己的名字。\n\n教导主任伸手把签到表转回去，在扣分栏写了个“-1”，然后合上签到夹。“可以了，去上课。”\n\n许澄从教导处出来。小操场上有两个低年级学生在追跑，书包带子甩来甩去。她站在行政楼门口的台阶上，低头看着自己的手。\n\n手指上沾了一点黑色墨水。\n\n教学楼方向传来早读声，模糊的，隔着一整个操场。她把手在裤子上擦了一下，往教学楼走。\n\n教导处的门在她身后关上，签到表上她的名字旁边，扣分栏里的“-1”字迹还没干透。表格抬头印着“迟到确认登记表”，日期栏填着今天的日期。",
+      "input_tokens": 1403,
+      "output_tokens": 710,
+      "latency_ms": 17929,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "c263b704282677e5a8f1ffb86bf5dae73e49dbae6491b4555ea46e2ca08012fc",
+      "route_name": null,
+      "route_decision": {
+        "route_name": "A_LITE_INFORMATION_GAP",
+        "classifier_version": "narrative-route-v1",
+        "decision_reasons": [
+          "multiple characters with distinct information",
+          "viewpoint character has unknown facts and an interpretation",
+          "secondary character carries independent knowledge"
+        ],
+        "matched_rules": [
+          "RULE_A_LITE_INFORMATION_GAP"
+        ],
+        "rejected_routes": [
+          "C_OBJECT_CAUSAL"
+        ]
+      },
+      "compiled_brief_hash": "74160fce44d2dce330367e4dee503bfd141dc6960fda8f9455d409ccc6090ef6",
+      "instruction_hash": "d368cbfa0846d1cb9adf452db083cbb58ba69154f281b3d6c895cb34da157cec",
+      "text_path": "cases\\CAMPUS-02\\drafts\\route-2.txt"
+    },
+    {
+      "group": "ROUTE-A_LITE_INFORMATION_GAP",
+      "replica": 3,
+      "mode": "narrative_route",
+      "candidate_id": "c2a00778-6f29-4bd7-9da7-6af7de34bea4",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "A_LITE_INFORMATION_GAP",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "multiple characters with distinct information",
+            "viewpoint character has unknown facts and an interpretation",
+            "secondary character carries independent knowledge"
+          ],
+          "matched_rules": [
+            "RULE_A_LITE_INFORMATION_GAP"
+          ],
+          "rejected_routes": [
+            "C_OBJECT_CAUSAL"
+          ]
+        },
+        "compiled_brief_hash": "74160fce44d2dce330367e4dee503bfd141dc6960fda8f9455d409ccc6090ef6",
+        "instruction_hash": "d368cbfa0846d1cb9adf452db083cbb58ba69154f281b3d6c895cb34da157cec",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "许澄在广播站门口停下脚步。\n\n那张名单贴在公告栏的玻璃上，淡蓝色的打印纸，边缘被风吹得轻轻翘起。她看见自己的名字排在第三行——许澄，高一三班，迟到，未登记。\n\n走廊那头传来脚步声。周弈抱着装器材的塑料箱走过来，箱子里是下午广播站要用的麦克风和线缆，最上面那根线拖在地上，随着他走路的节奏一跳一跳。值班老师站在广播站门口，正低头看手里的签到表。\n\n许澄看着名单，又看着周弈。昨天下午她特意去广播站找他，说第二天早自习前要帮班主任搬书，可能会迟到几分钟，让他帮忙在广播站登记一下。他说行，没问题。\n\n现在她的名字在名单上。\n\n周弈走近了。他看见她站在公告栏前，脚步顿了一下，视线从她脸上移到名单上，又移回来。箱子里的器材发出轻微的碰撞声。他张了张嘴，似乎想说什么，但值班老师抬头看了他一眼，催促道：“周弈，器材搬进来，马上要调试了。”\n\n“来了。”周弈应了一声，抱着箱子往广播站门口走。\n\n许澄站在原地。周弈从她身边经过时，箱子的边缘蹭过她的手臂。他没有停下来。\n\n她转身朝楼梯口走去。\n\n教导处在二楼东侧，门开着。许澄走进去，教导主任正坐在办公桌前翻文件。\n\n“老师，我来自首迟到。”\n\n教导主任抬头看她，从抽屉里取出迟到记录本，翻开新的一页。“哪个班的？”\n\n“高一三班。”\n\n“叫什么？”\n\n“许澄。”\n\n教导主任在记录本上写下日期、班级、姓名，然后抬头看她。“迟到原因？”\n\n许澄沉默了两秒。“没有特殊原因。”\n\n“扣班级分一分。”教导主任把笔递给她，“在这里签名确认。”\n\n许澄接过笔，在记录本上签下自己的名字。笔尖划过纸面，发出细微的声响。她写完最后一笔，把笔放回桌上。\n\n迟到确认。",
+      "raw_response": "许澄在广播站门口停下脚步。\n\n那张名单贴在公告栏的玻璃上，淡蓝色的打印纸，边缘被风吹得轻轻翘起。她看见自己的名字排在第三行——许澄，高一三班，迟到，未登记。\n\n走廊那头传来脚步声。周弈抱着装器材的塑料箱走过来，箱子里是下午广播站要用的麦克风和线缆，最上面那根线拖在地上，随着他走路的节奏一跳一跳。值班老师站在广播站门口，正低头看手里的签到表。\n\n许澄看着名单，又看着周弈。昨天下午她特意去广播站找他，说第二天早自习前要帮班主任搬书，可能会迟到几分钟，让他帮忙在广播站登记一下。他说行，没问题。\n\n现在她的名字在名单上。\n\n周弈走近了。他看见她站在公告栏前，脚步顿了一下，视线从她脸上移到名单上，又移回来。箱子里的器材发出轻微的碰撞声。他张了张嘴，似乎想说什么，但值班老师抬头看了他一眼，催促道：“周弈，器材搬进来，马上要调试了。”\n\n“来了。”周弈应了一声，抱着箱子往广播站门口走。\n\n许澄站在原地。周弈从她身边经过时，箱子的边缘蹭过她的手臂。他没有停下来。\n\n她转身朝楼梯口走去。\n\n教导处在二楼东侧，门开着。许澄走进去，教导主任正坐在办公桌前翻文件。\n\n“老师，我来自首迟到。”\n\n教导主任抬头看她，从抽屉里取出迟到记录本，翻开新的一页。“哪个班的？”\n\n“高一三班。”\n\n“叫什么？”\n\n“许澄。”\n\n教导主任在记录本上写下日期、班级、姓名，然后抬头看她。“迟到原因？”\n\n许澄沉默了两秒。“没有特殊原因。”\n\n“扣班级分一分。”教导主任把笔递给她，“在这里签名确认。”\n\n许澄接过笔，在记录本上签下自己的名字。笔尖划过纸面，发出细微的声响。她写完最后一笔，把笔放回桌上。\n\n迟到确认。",
+      "input_tokens": 1403,
+      "output_tokens": 427,
+      "latency_ms": 9807,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "c263b704282677e5a8f1ffb86bf5dae73e49dbae6491b4555ea46e2ca08012fc",
+      "route_name": null,
+      "route_decision": {
+        "route_name": "A_LITE_INFORMATION_GAP",
+        "classifier_version": "narrative-route-v1",
+        "decision_reasons": [
+          "multiple characters with distinct information",
+          "viewpoint character has unknown facts and an interpretation",
+          "secondary character carries independent knowledge"
+        ],
+        "matched_rules": [
+          "RULE_A_LITE_INFORMATION_GAP"
+        ],
+        "rejected_routes": [
+          "C_OBJECT_CAUSAL"
+        ]
+      },
+      "compiled_brief_hash": "74160fce44d2dce330367e4dee503bfd141dc6960fda8f9455d409ccc6090ef6",
+      "instruction_hash": "d368cbfa0846d1cb9adf452db083cbb58ba69154f281b3d6c895cb34da157cec",
+      "text_path": "cases\\CAMPUS-02\\drafts\\route-3.txt"
+    },
+    {
+      "group": "BASELINE-complete_planner",
+      "replica": 1,
+      "mode": "complete_planner",
+      "candidate_id": "d3112321-19c0-4ef2-8687-04a98c38d822",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "许澄盯着那张贴在广播站门口的白纸。\n\n名单是打印的，黑色宋体字，第七行——“高二(3)班 许澄 7:52”。\n\n她把书包带子攥紧了一截。\n\n走廊另一头传来脚步声和金属磕碰的响动。周弈抱着两台调音台，下巴压在最上面那台的边角上稳住平衡，正往这边走。值班老师就站在广播站门口，手里夹着签到板，看见周弈，侧身让了让。\n\n许澄没动。\n\n周弈从器材后面偏过头，看见了她。他脚步没停，下巴朝广播站门的方向抬了一下，像是示意她等一下，又像是只是调整姿势。然后他侧身挤进门框，器材角在门边上磕了一下，他嘟囔了句什么，走了进去。\n\n值班老师低头在签到板上写了几个字。\n\n许澄松开了书包带。\n\n她转身往楼梯口走。步子不快，鞋底在走廊水磨石地面上蹭出很轻的声响。经过垃圾桶的时候她抬手把额前的碎发别到耳后，动作很慢，像是在确认什么，又像只是手不知道该放哪儿。\n\n楼梯下到一半，上课预备铃响了。\n\n她停了一级台阶，然后继续往下走。\n\n教导处的门开着。里面只有年级组长孙老师在，正往电脑里录什么表格。许澄敲了一下门框。\n\n孙老师抬头。\n\n“老师，”许澄说，“我早上迟到了。”\n\n孙老师看了她一眼，把键盘推开一点。“哪个班的？”\n\n“高二(3)班，许澄。”\n\n孙老师翻了翻桌上的签到表，手指点着一行往下找。“广播站那边名单上没你——”\n\n“名单上有，”许澄说，“我来确认一下。”\n\n孙老师又看了她一眼，然后把签到表转过来，笔放在上面。“签字吧。按规矩，迟到扣班级量化分两分。”\n\n许澄拿起笔。笔杆是温的，被孙老师握了很久。\n\n她在签到表上写下自己的名字。笔迹比平时用力，最后一横拖得有点长。\n\n孙老师把表收回去，在电脑上敲了两下。“行了，回去上课吧。下回早点。”\n\n许澄说好，然后走出教导处。\n\n走廊里上课铃正式响起。她往教室方向走，经过楼梯口的时候没有往广播站的方向看。\n\n签到表上，她的名字旁边被孙老师用红笔圈了一下，旁边标注了“迟到确认”四个字。",
+      "raw_response": "许澄盯着那张贴在广播站门口的白纸。\n\n名单是打印的，黑色宋体字，第七行——“高二(3)班 许澄 7:52”。\n\n她把书包带子攥紧了一截。\n\n走廊另一头传来脚步声和金属磕碰的响动。周弈抱着两台调音台，下巴压在最上面那台的边角上稳住平衡，正往这边走。值班老师就站在广播站门口，手里夹着签到板，看见周弈，侧身让了让。\n\n许澄没动。\n\n周弈从器材后面偏过头，看见了她。他脚步没停，下巴朝广播站门的方向抬了一下，像是示意她等一下，又像是只是调整姿势。然后他侧身挤进门框，器材角在门边上磕了一下，他嘟囔了句什么，走了进去。\n\n值班老师低头在签到板上写了几个字。\n\n许澄松开了书包带。\n\n她转身往楼梯口走。步子不快，鞋底在走廊水磨石地面上蹭出很轻的声响。经过垃圾桶的时候她抬手把额前的碎发别到耳后，动作很慢，像是在确认什么，又像只是手不知道该放哪儿。\n\n楼梯下到一半，上课预备铃响了。\n\n她停了一级台阶，然后继续往下走。\n\n教导处的门开着。里面只有年级组长孙老师在，正往电脑里录什么表格。许澄敲了一下门框。\n\n孙老师抬头。\n\n“老师，”许澄说，“我早上迟到了。”\n\n孙老师看了她一眼，把键盘推开一点。“哪个班的？”\n\n“高二(3)班，许澄。”\n\n孙老师翻了翻桌上的签到表，手指点着一行往下找。“广播站那边名单上没你——”\n\n“名单上有，”许澄说，“我来确认一下。”\n\n孙老师又看了她一眼，然后把签到表转过来，笔放在上面。“签字吧。按规矩，迟到扣班级量化分两分。”\n\n许澄拿起笔。笔杆是温的，被孙老师握了很久。\n\n她在签到表上写下自己的名字。笔迹比平时用力，最后一横拖得有点长。\n\n孙老师把表收回去，在电脑上敲了两下。“行了，回去上课吧。下回早点。”\n\n许澄说好，然后走出教导处。\n\n走廊里上课铃正式响起。她往教室方向走，经过楼梯口的时候没有往广播站的方向看。\n\n签到表上，她的名字旁边被孙老师用红笔圈了一下，旁边标注了“迟到确认”四个字。",
+      "input_tokens": 2371,
+      "output_tokens": 524,
+      "latency_ms": 12591,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "ad18be1443669aa67eb288d4649f951fd148f10d857c53e90d667525ca231fe9",
+      "route_name": null,
+      "route_decision": null,
+      "compiled_brief_hash": null,
+      "instruction_hash": null,
+      "text_path": "cases\\CAMPUS-02\\drafts\\baseline-1.txt"
+    },
+    {
+      "group": "BASELINE-complete_planner",
+      "replica": 2,
+      "mode": "complete_planner",
+      "candidate_id": "6615743e-cf66-44b6-94fe-ca9b74589fe3",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "许澄盯着那张贴在广播站门口的白纸。\n\n名单第三行，她的名字清清楚楚——许澄，高一（3）班，迟到。\n\n她听见自己的呼吸声在走廊里被放大。早自习结束后的走廊并不安静，有人抱着课本跑过，有人在背后喊谁的名字，但那些声音都隔了一层什么东西，像是从另一个教室里传来的。\n\n周弈正从走廊另一头过来。\n\n他两只手抱着那台老旧的调音台，下巴压在机器顶盖上稳住重心，走路时膝盖微屈，每一步都踩得很实。器材室在走廊尽头，广播站的门就在许澄右手边三步远的位置。\n\n值班老师站在门口，手里拿着签到夹，正低头翻页。\n\n许澄没动。\n\n周弈看见她了。他的视线从调音台上方越过来，在她脸上停了一秒，然后落在她身后的名单上。他的脚步没有停。\n\n许澄等他开口。\n\n周弈把调音台往上颠了颠，重新调整抱姿，朝广播站门口走去。值班老师抬起头，往旁边让了一步，让他通过。周弈侧身挤进门框时，器材的边角在门框上磕了一下，发出一声闷响。\n\n他没回头。\n\n许澄看着他的背影消失在广播站门内。\n\n值班老师重新低下头，继续翻签到夹。\n\n走廊里有人从许澄身边跑过去，书包带甩在她胳膊上，她往旁边退了一步，脚后跟踩到墙根的瓷砖接缝。\n\n名单上的名字还是她的。\n\n许澄把书包带往肩上提了提，转身朝楼梯口走去。\n\n她没有走下楼。教导处在二楼，广播站在三楼。她扶着楼梯扶手往下走，手指在铁质扶手上滑过，冰凉，有一点锈迹的粗糙感。二楼走廊比三楼安静，教师办公室的门都关着，只有教导处的门半敞着，里面传出翻纸的声音。\n\n许澄在门口站了两秒，抬手敲了门框。\n\n教导主任抬起头，眼镜架在鼻梁上，手里捏着一支红笔。“什么事？”\n\n“老师，我迟到。”许澄说。\n\n教导主任放下红笔，拉开抽屉取出一张签到表，铺在桌面上。纸面已经有好几个签名，油笔迹深浅不一。\n\n“哪个班的？”\n\n“高一（3）班。”\n\n“名字。”\n\n“许澄。”\n\n教导主任在表格上找到她的班级栏，笔尖点在她名字后面的空行上。“什么原因？”\n\n许澄张了张嘴。\n\n她可以说周弈忘了替她登记。她可以说她其实没迟到，是名单搞错了。她可以请老师去广播站核实，周弈就在那儿，器材还在他手上，他还没走。\n\n“起晚了。”她说。\n\n教导主任看了她一眼，在备注栏里写了两个字，然后把签到表转过来推到她面前。“签个字。”\n\n许澄拿起桌上的油笔。笔杆上缠着一圈透明胶带，握在手里有点黏。她弯下腰，在表格上写下自己的名字。笔迹有点歪，因为她的手在抖，但她写得很用力，纸面上压出了凹痕。\n\n教导主任把签到表抽回去，拿起红笔在许澄名字旁边打了个勾，然后翻开手边的班级考核记录本。\n\n“迟到扣一分。”他说，“下次注意。”\n\n许澄点点头。\n\n上课铃响了。",
+      "raw_response": "许澄盯着那张贴在广播站门口的白纸。\n\n名单第三行，她的名字清清楚楚——许澄，高一（3）班，迟到。\n\n她听见自己的呼吸声在走廊里被放大。早自习结束后的走廊并不安静，有人抱着课本跑过，有人在背后喊谁的名字，但那些声音都隔了一层什么东西，像是从另一个教室里传来的。\n\n周弈正从走廊另一头过来。\n\n他两只手抱着那台老旧的调音台，下巴压在机器顶盖上稳住重心，走路时膝盖微屈，每一步都踩得很实。器材室在走廊尽头，广播站的门就在许澄右手边三步远的位置。\n\n值班老师站在门口，手里拿着签到夹，正低头翻页。\n\n许澄没动。\n\n周弈看见她了。他的视线从调音台上方越过来，在她脸上停了一秒，然后落在她身后的名单上。他的脚步没有停。\n\n许澄等他开口。\n\n周弈把调音台往上颠了颠，重新调整抱姿，朝广播站门口走去。值班老师抬起头，往旁边让了一步，让他通过。周弈侧身挤进门框时，器材的边角在门框上磕了一下，发出一声闷响。\n\n他没回头。\n\n许澄看着他的背影消失在广播站门内。\n\n值班老师重新低下头，继续翻签到夹。\n\n走廊里有人从许澄身边跑过去，书包带甩在她胳膊上，她往旁边退了一步，脚后跟踩到墙根的瓷砖接缝。\n\n名单上的名字还是她的。\n\n许澄把书包带往肩上提了提，转身朝楼梯口走去。\n\n她没有走下楼。教导处在二楼，广播站在三楼。她扶着楼梯扶手往下走，手指在铁质扶手上滑过，冰凉，有一点锈迹的粗糙感。二楼走廊比三楼安静，教师办公室的门都关着，只有教导处的门半敞着，里面传出翻纸的声音。\n\n许澄在门口站了两秒，抬手敲了门框。\n\n教导主任抬起头，眼镜架在鼻梁上，手里捏着一支红笔。“什么事？”\n\n“老师，我迟到。”许澄说。\n\n教导主任放下红笔，拉开抽屉取出一张签到表，铺在桌面上。纸面已经有好几个签名，油笔迹深浅不一。\n\n“哪个班的？”\n\n“高一（3）班。”\n\n“名字。”\n\n“许澄。”\n\n教导主任在表格上找到她的班级栏，笔尖点在她名字后面的空行上。“什么原因？”\n\n许澄张了张嘴。\n\n她可以说周弈忘了替她登记。她可以说她其实没迟到，是名单搞错了。她可以请老师去广播站核实，周弈就在那儿，器材还在他手上，他还没走。\n\n“起晚了。”她说。\n\n教导主任看了她一眼，在备注栏里写了两个字，然后把签到表转过来推到她面前。“签个字。”\n\n许澄拿起桌上的油笔。笔杆上缠着一圈透明胶带，握在手里有点黏。她弯下腰，在表格上写下自己的名字。笔迹有点歪，因为她的手在抖，但她写得很用力，纸面上压出了凹痕。\n\n教导主任把签到表抽回去，拿起红笔在许澄名字旁边打了个勾，然后翻开手边的班级考核记录本。\n\n“迟到扣一分。”他说，“下次注意。”\n\n许澄点点头。\n\n上课铃响了。",
+      "input_tokens": 2371,
+      "output_tokens": 697,
+      "latency_ms": 16085,
+      "finish_reason": "stop",
+      "error_code": "TEMPO_FINAL_LINE_MISMATCH",
+      "error_message": "TEMPO_FINAL_LINE_MISMATCH: final paragraph must include the required marker '迟到确认'",
+      "rendered_user_prompt_sha256": "ad18be1443669aa67eb288d4649f951fd148f10d857c53e90d667525ca231fe9",
+      "route_name": null,
+      "route_decision": null,
+      "compiled_brief_hash": null,
+      "instruction_hash": null,
+      "text_path": "cases\\CAMPUS-02\\drafts\\baseline-2.txt"
+    },
+    {
+      "group": "BASELINE-complete_planner",
+      "replica": 3,
+      "mode": "complete_planner",
+      "candidate_id": "207ddbf5-6507-472e-a8e7-02a911027a14",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "许澄盯着那张贴在广播站门上的名单，白纸黑字，自己的名字排在第三个。\n\n她没有看错。许澄，高一三班，迟到。\n\n走廊另一端传来脚步声和金属碰撞的轻响。周弈抱着两台调音台，下巴抵在最上面那台的边缘，正一步一步往这边挪。器材堆得太高，他只能侧着头看路，额头上已经沁出一层薄汗。\n\n值班老师靠在广播站门框边，手里拿着签到表，抬头看了周弈一眼，又低下头继续写字。\n\n许澄站在原地，手指攥紧了书包带子。\n\n她昨天下午亲口跟周弈说的。早自习前要去医务室换药，让他帮忙在广播站签到表上登记一下。周弈当时点头了，说行，没问题。\n\n名单上的墨水已经干了。\n\n周弈走近了，视线越过器材看到她，似乎愣了一下，脚步顿了顿。\n\n许澄等着他开口。\n\n他没有停。周弈只是把目光从她脸上移开，侧身绕过她，抱着器材进了广播站。\n\n值班老师往旁边让了让，顺手在签到表上划了一笔。\n\n许澄松开书包带子。\n\n她转过身，往楼梯口走去。脚步声在走廊里回响，不快不慢。经过垃圾桶时，她把刚才在名单前攥皱的废纸团扔了进去。\n\n下楼。左转。穿过操场。\n\n教导处的门开着，年级组长王老师正在整理桌上的表格。\n\n许澄走进去，站到桌前。\n\n“老师，我早自习迟到了。”\n\n王老师抬起头，看了她一眼，从抽屉里抽出一张迟到确认表推到桌面上。\n\n“哪个班的？”\n\n“高一三班。”\n\n“名字。”\n\n“许澄。”\n\n王老师在表上找到对应栏，把笔递给她。\n\n许澄接过笔，弯下腰。表格上印着日期、班级、姓名、迟到时间、扣分标准。她的手指在姓名栏上停了一秒，然后写下自己的名字。\n\n笔尖划在纸上，发出细小的摩擦声。\n\n“确认无误就签这里。”王老师指了指签名栏。\n\n许澄签了字。\n\n王老师收回表格，在旁边的记录本上登记了一笔，然后撕下一张回执递给她。\n\n“交给你们班主任。班级扣两分。”\n\n许澄接过回执。纸片薄薄的，边缘不太整齐，上面印着迟到确认四个字，下面一行小字注明扣分已生效。\n\n她把回执对折，塞进校服口袋。\n\n“可以走了。”王老师说。\n\n许澄转身走出教导处。走廊尽头，上课铃响了。",
+      "raw_response": "许澄盯着那张贴在广播站门上的名单，白纸黑字，自己的名字排在第三个。\n\n她没有看错。许澄，高一三班，迟到。\n\n走廊另一端传来脚步声和金属碰撞的轻响。周弈抱着两台调音台，下巴抵在最上面那台的边缘，正一步一步往这边挪。器材堆得太高，他只能侧着头看路，额头上已经沁出一层薄汗。\n\n值班老师靠在广播站门框边，手里拿着签到表，抬头看了周弈一眼，又低下头继续写字。\n\n许澄站在原地，手指攥紧了书包带子。\n\n她昨天下午亲口跟周弈说的。早自习前要去医务室换药，让他帮忙在广播站签到表上登记一下。周弈当时点头了，说行，没问题。\n\n名单上的墨水已经干了。\n\n周弈走近了，视线越过器材看到她，似乎愣了一下，脚步顿了顿。\n\n许澄等着他开口。\n\n他没有停。周弈只是把目光从她脸上移开，侧身绕过她，抱着器材进了广播站。\n\n值班老师往旁边让了让，顺手在签到表上划了一笔。\n\n许澄松开书包带子。\n\n她转过身，往楼梯口走去。脚步声在走廊里回响，不快不慢。经过垃圾桶时，她把刚才在名单前攥皱的废纸团扔了进去。\n\n下楼。左转。穿过操场。\n\n教导处的门开着，年级组长王老师正在整理桌上的表格。\n\n许澄走进去，站到桌前。\n\n“老师，我早自习迟到了。”\n\n王老师抬起头，看了她一眼，从抽屉里抽出一张迟到确认表推到桌面上。\n\n“哪个班的？”\n\n“高一三班。”\n\n“名字。”\n\n“许澄。”\n\n王老师在表上找到对应栏，把笔递给她。\n\n许澄接过笔，弯下腰。表格上印着日期、班级、姓名、迟到时间、扣分标准。她的手指在姓名栏上停了一秒，然后写下自己的名字。\n\n笔尖划在纸上，发出细小的摩擦声。\n\n“确认无误就签这里。”王老师指了指签名栏。\n\n许澄签了字。\n\n王老师收回表格，在旁边的记录本上登记了一笔，然后撕下一张回执递给她。\n\n“交给你们班主任。班级扣两分。”\n\n许澄接过回执。纸片薄薄的，边缘不太整齐，上面印着迟到确认四个字，下面一行小字注明扣分已生效。\n\n她把回执对折，塞进校服口袋。\n\n“可以走了。”王老师说。\n\n许澄转身走出教导处。走廊尽头，上课铃响了。",
+      "input_tokens": 2371,
+      "output_tokens": 540,
+      "latency_ms": 12218,
+      "finish_reason": "stop",
+      "error_code": "TEMPO_FINAL_LINE_MISMATCH",
+      "error_message": "TEMPO_FINAL_LINE_MISMATCH: final paragraph must include the required marker '迟到确认'",
+      "rendered_user_prompt_sha256": "ad18be1443669aa67eb288d4649f951fd148f10d857c53e90d667525ca231fe9",
+      "route_name": null,
+      "route_decision": null,
+      "compiled_brief_hash": null,
+      "instruction_hash": null,
+      "text_path": "cases\\CAMPUS-02\\drafts\\baseline-3.txt"
+    }
+  ],
+  "actual_route": "A_LITE_INFORMATION_GAP",
+  "route_decision": {
+    "route_name": "A_LITE_INFORMATION_GAP",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "multiple characters with distinct information",
+      "viewpoint character has unknown facts and an interpretation",
+      "secondary character carries independent knowledge"
+    ],
+    "matched_rules": [
+      "RULE_A_LITE_INFORMATION_GAP"
+    ],
+    "rejected_routes": [
+      "C_OBJECT_CAUSAL"
+    ]
+  }
+}

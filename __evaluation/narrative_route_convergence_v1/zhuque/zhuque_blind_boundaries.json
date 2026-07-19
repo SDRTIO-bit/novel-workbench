@@ -1,0 +1,1026 @@
+[
+  {
+    "ordinal": 1,
+    "blind_id": "2AB957C1E4E9",
+    "start_char": 0,
+    "end_char": 979,
+    "character_count": 979,
+    "text_path": "cases\\D-05\\drafts\\route-3.txt"
+  },
+  {
+    "ordinal": 2,
+    "blind_id": "912FDA309FE7",
+    "start_char": 984,
+    "end_char": 2270,
+    "character_count": 1286,
+    "text_path": "cases\\CAMPUS-04\\drafts\\route-2.txt"
+  },
+  {
+    "ordinal": 3,
+    "blind_id": "7FB5F3C9AE7F",
+    "start_char": 2275,
+    "end_char": 3183,
+    "character_count": 908,
+    "text_path": "cases\\D-05\\drafts\\baseline-2.txt"
+  },
+  {
+    "ordinal": 4,
+    "blind_id": "616D1EEFEA3E",
+    "start_char": 3188,
+    "end_char": 4325,
+    "character_count": 1137,
+    "text_path": "cases\\CAMPUS-02\\drafts\\route-1.txt"
+  },
+  {
+    "ordinal": 5,
+    "blind_id": "CBC113711593",
+    "start_char": 4330,
+    "end_char": 4865,
+    "character_count": 535,
+    "text_path": "cases\\B-04\\drafts\\route-2.txt"
+  },
+  {
+    "ordinal": 6,
+    "blind_id": "0C3026371A41",
+    "start_char": 4870,
+    "end_char": 5706,
+    "character_count": 836,
+    "text_path": "cases\\A-05\\drafts\\route-1.txt"
+  },
+  {
+    "ordinal": 7,
+    "blind_id": "CAAEEB01565D",
+    "start_char": 5711,
+    "end_char": 6254,
+    "character_count": 543,
+    "text_path": "cases\\A-03\\drafts\\route-3.txt"
+  },
+  {
+    "ordinal": 8,
+    "blind_id": "6F5830F6C70F",
+    "start_char": 6259,
+    "end_char": 6732,
+    "character_count": 473,
+    "text_path": "cases\\A-03\\drafts\\route-1.txt"
+  },
+  {
+    "ordinal": 9,
+    "blind_id": "D8D58D93BC24",
+    "start_char": 6737,
+    "end_char": 8321,
+    "character_count": 1584,
+    "text_path": "cases\\D-03\\drafts\\baseline-2.txt"
+  },
+  {
+    "ordinal": 10,
+    "blind_id": "827F2A06A0AE",
+    "start_char": 8326,
+    "end_char": 9845,
+    "character_count": 1519,
+    "text_path": "cases\\CAMPUS-03\\drafts\\baseline-2.txt"
+  },
+  {
+    "ordinal": 11,
+    "blind_id": "912C8A7EEBDA",
+    "start_char": 9850,
+    "end_char": 10928,
+    "character_count": 1078,
+    "text_path": "cases\\ROMANCE-02\\drafts\\baseline-3.txt"
+  },
+  {
+    "ordinal": 12,
+    "blind_id": "F186BBA41679",
+    "start_char": 10933,
+    "end_char": 11496,
+    "character_count": 563,
+    "text_path": "cases\\B-04\\drafts\\route-1.txt"
+  },
+  {
+    "ordinal": 13,
+    "blind_id": "253FBA08340F",
+    "start_char": 11501,
+    "end_char": 11854,
+    "character_count": 353,
+    "text_path": "cases\\A-06\\drafts\\route-3.txt"
+  },
+  {
+    "ordinal": 14,
+    "blind_id": "356FAF8FD457",
+    "start_char": 11859,
+    "end_char": 12900,
+    "character_count": 1041,
+    "text_path": "cases\\TASK-02\\drafts\\baseline-2.txt"
+  },
+  {
+    "ordinal": 15,
+    "blind_id": "A01C9B3FCAD3",
+    "start_char": 12905,
+    "end_char": 14179,
+    "character_count": 1274,
+    "text_path": "cases\\C-04\\drafts\\route-3.txt"
+  },
+  {
+    "ordinal": 16,
+    "blind_id": "9EF0CDC7779A",
+    "start_char": 14184,
+    "end_char": 15369,
+    "character_count": 1185,
+    "text_path": "cases\\C-04\\drafts\\baseline-3.txt"
+  },
+  {
+    "ordinal": 17,
+    "blind_id": "5BD99F552D11",
+    "start_char": 15374,
+    "end_char": 15873,
+    "character_count": 499,
+    "text_path": "cases\\B-06\\drafts\\route-3.txt"
+  },
+  {
+    "ordinal": 18,
+    "blind_id": "11263938BBB6",
+    "start_char": 15878,
+    "end_char": 16373,
+    "character_count": 495,
+    "text_path": "cases\\ROMANCE-02\\drafts\\route-3.txt"
+  },
+  {
+    "ordinal": 19,
+    "blind_id": "A077D2CB3A3C",
+    "start_char": 16378,
+    "end_char": 17944,
+    "character_count": 1566,
+    "text_path": "cases\\A-05\\drafts\\route-2.txt"
+  },
+  {
+    "ordinal": 20,
+    "blind_id": "C2EFBC177983",
+    "start_char": 17949,
+    "end_char": 18633,
+    "character_count": 684,
+    "text_path": "cases\\C-03\\drafts\\route-2.txt"
+  },
+  {
+    "ordinal": 21,
+    "blind_id": "DBACAFCC69EA",
+    "start_char": 18638,
+    "end_char": 19219,
+    "character_count": 581,
+    "text_path": "cases\\B-03\\drafts\\route-2.txt"
+  },
+  {
+    "ordinal": 22,
+    "blind_id": "A886C1A04AFD",
+    "start_char": 19224,
+    "end_char": 20352,
+    "character_count": 1128,
+    "text_path": "cases\\B-04\\drafts\\baseline-2.txt"
+  },
+  {
+    "ordinal": 23,
+    "blind_id": "C7C3774B779B",
+    "start_char": 20357,
+    "end_char": 21257,
+    "character_count": 900,
+    "text_path": "cases\\TASK-02\\drafts\\route-1.txt"
+  },
+  {
+    "ordinal": 24,
+    "blind_id": "BC696885509A",
+    "start_char": 21262,
+    "end_char": 22679,
+    "character_count": 1417,
+    "text_path": "cases\\C-03\\drafts\\baseline-2.txt"
+  },
+  {
+    "ordinal": 25,
+    "blind_id": "C39D068E3187",
+    "start_char": 22684,
+    "end_char": 23739,
+    "character_count": 1055,
+    "text_path": "cases\\D-05\\drafts\\route-2.txt"
+  },
+  {
+    "ordinal": 26,
+    "blind_id": "735536264BB6",
+    "start_char": 23744,
+    "end_char": 24656,
+    "character_count": 912,
+    "text_path": "cases\\ROMANCE-02\\drafts\\baseline-2.txt"
+  },
+  {
+    "ordinal": 27,
+    "blind_id": "B10573D404F4",
+    "start_char": 24661,
+    "end_char": 25158,
+    "character_count": 497,
+    "text_path": "cases\\C-06\\drafts\\baseline-3.txt"
+  },
+  {
+    "ordinal": 28,
+    "blind_id": "B30737D18A72",
+    "start_char": 25163,
+    "end_char": 26434,
+    "character_count": 1271,
+    "text_path": "cases\\B-05\\drafts\\baseline-3.txt"
+  },
+  {
+    "ordinal": 29,
+    "blind_id": "9EED5335EC98",
+    "start_char": 26439,
+    "end_char": 27491,
+    "character_count": 1052,
+    "text_path": "cases\\CAMPUS-03\\drafts\\baseline-1.txt"
+  },
+  {
+    "ordinal": 30,
+    "blind_id": "A2463C776BD8",
+    "start_char": 27496,
+    "end_char": 28380,
+    "character_count": 884,
+    "text_path": "cases\\D-05\\drafts\\baseline-3.txt"
+  },
+  {
+    "ordinal": 31,
+    "blind_id": "EB76C08874AC",
+    "start_char": 28385,
+    "end_char": 30418,
+    "character_count": 2033,
+    "text_path": "cases\\D-06\\drafts\\baseline-1.txt"
+  },
+  {
+    "ordinal": 32,
+    "blind_id": "1275FEC949D2",
+    "start_char": 30423,
+    "end_char": 30785,
+    "character_count": 362,
+    "text_path": "cases\\A-06\\drafts\\route-2.txt"
+  },
+  {
+    "ordinal": 33,
+    "blind_id": "C9C33AAA5B93",
+    "start_char": 30790,
+    "end_char": 32482,
+    "character_count": 1692,
+    "text_path": "cases\\D-03\\drafts\\route-1.txt"
+  },
+  {
+    "ordinal": 34,
+    "blind_id": "FB7544D174FB",
+    "start_char": 32487,
+    "end_char": 33886,
+    "character_count": 1399,
+    "text_path": "cases\\C-03\\drafts\\route-1.txt"
+  },
+  {
+    "ordinal": 35,
+    "blind_id": "0B37D38E2061",
+    "start_char": 33891,
+    "end_char": 34587,
+    "character_count": 696,
+    "text_path": "cases\\CAMPUS-02\\drafts\\route-3.txt"
+  },
+  {
+    "ordinal": 36,
+    "blind_id": "1B688A5D80BB",
+    "start_char": 34592,
+    "end_char": 35530,
+    "character_count": 938,
+    "text_path": "cases\\C-04\\drafts\\route-1.txt"
+  },
+  {
+    "ordinal": 37,
+    "blind_id": "856FE75D905A",
+    "start_char": 35535,
+    "end_char": 36395,
+    "character_count": 860,
+    "text_path": "cases\\A-04\\drafts\\baseline-1.txt"
+  },
+  {
+    "ordinal": 38,
+    "blind_id": "5CFAFC0962E7",
+    "start_char": 36400,
+    "end_char": 36960,
+    "character_count": 560,
+    "text_path": "cases\\B-04\\drafts\\baseline-1.txt"
+  },
+  {
+    "ordinal": 39,
+    "blind_id": "CC498FE2DAEC",
+    "start_char": 36965,
+    "end_char": 37560,
+    "character_count": 595,
+    "text_path": "cases\\D-06\\drafts\\route-1.txt"
+  },
+  {
+    "ordinal": 40,
+    "blind_id": "09EF50D51403",
+    "start_char": 37565,
+    "end_char": 38415,
+    "character_count": 850,
+    "text_path": "cases\\C-05\\drafts\\baseline-1.txt"
+  },
+  {
+    "ordinal": 41,
+    "blind_id": "F4134F134158",
+    "start_char": 38420,
+    "end_char": 38937,
+    "character_count": 517,
+    "text_path": "cases\\ROMANCE-02\\drafts\\route-1.txt"
+  },
+  {
+    "ordinal": 42,
+    "blind_id": "D6E8FE1BC4CD",
+    "start_char": 38942,
+    "end_char": 39683,
+    "character_count": 741,
+    "text_path": "cases\\B-05\\drafts\\baseline-2.txt"
+  },
+  {
+    "ordinal": 43,
+    "blind_id": "ABED982D40CC",
+    "start_char": 39688,
+    "end_char": 40380,
+    "character_count": 692,
+    "text_path": "cases\\ROMANCE-04\\drafts\\baseline-3.txt"
+  },
+  {
+    "ordinal": 44,
+    "blind_id": "4B62E80ECC92",
+    "start_char": 40385,
+    "end_char": 41490,
+    "character_count": 1105,
+    "text_path": "cases\\CAMPUS-03\\drafts\\route-2.txt"
+  },
+  {
+    "ordinal": 45,
+    "blind_id": "5533DEFB942C",
+    "start_char": 41495,
+    "end_char": 43736,
+    "character_count": 2241,
+    "text_path": "cases\\TASK-04\\drafts\\route-1.txt"
+  },
+  {
+    "ordinal": 46,
+    "blind_id": "6F772EB3C80A",
+    "start_char": 43741,
+    "end_char": 44602,
+    "character_count": 861,
+    "text_path": "cases\\C-02\\drafts\\route-3.txt"
+  },
+  {
+    "ordinal": 47,
+    "blind_id": "243212F8FF30",
+    "start_char": 44607,
+    "end_char": 45089,
+    "character_count": 482,
+    "text_path": "cases\\D-06\\drafts\\route-3.txt"
+  },
+  {
+    "ordinal": 48,
+    "blind_id": "0E2B8C045859",
+    "start_char": 45094,
+    "end_char": 45713,
+    "character_count": 619,
+    "text_path": "cases\\B-06\\drafts\\baseline-1.txt"
+  },
+  {
+    "ordinal": 49,
+    "blind_id": "79FC1C793219",
+    "start_char": 45718,
+    "end_char": 48244,
+    "character_count": 2526,
+    "text_path": "cases\\TASK-04\\drafts\\route-3.txt"
+  },
+  {
+    "ordinal": 50,
+    "blind_id": "47BCFED8787D",
+    "start_char": 48249,
+    "end_char": 49336,
+    "character_count": 1087,
+    "text_path": "cases\\CAMPUS-03\\drafts\\route-1.txt"
+  },
+  {
+    "ordinal": 51,
+    "blind_id": "0EFD8FA5FBB9",
+    "start_char": 49341,
+    "end_char": 50569,
+    "character_count": 1228,
+    "text_path": "cases\\B-05\\drafts\\route-2.txt"
+  },
+  {
+    "ordinal": 52,
+    "blind_id": "BA0D447C831C",
+    "start_char": 50574,
+    "end_char": 52835,
+    "character_count": 2261,
+    "text_path": "cases\\TASK-04\\drafts\\route-2.txt"
+  },
+  {
+    "ordinal": 53,
+    "blind_id": "01F5A2FF9910",
+    "start_char": 52840,
+    "end_char": 53347,
+    "character_count": 507,
+    "text_path": "cases\\C-06\\drafts\\route-1.txt"
+  },
+  {
+    "ordinal": 54,
+    "blind_id": "88ACC26CFC78",
+    "start_char": 53352,
+    "end_char": 53947,
+    "character_count": 595,
+    "text_path": "cases\\C-05\\drafts\\baseline-2.txt"
+  },
+  {
+    "ordinal": 55,
+    "blind_id": "CF05348729B1",
+    "start_char": 53952,
+    "end_char": 54971,
+    "character_count": 1019,
+    "text_path": "cases\\C-02\\drafts\\baseline-3.txt"
+  },
+  {
+    "ordinal": 56,
+    "blind_id": "28AB42966F6E",
+    "start_char": 54976,
+    "end_char": 57592,
+    "character_count": 2616,
+    "text_path": "cases\\D-06\\drafts\\baseline-3.txt"
+  },
+  {
+    "ordinal": 57,
+    "blind_id": "5BAB45D44D16",
+    "start_char": 57597,
+    "end_char": 58034,
+    "character_count": 437,
+    "text_path": "cases\\B-03\\drafts\\baseline-2.txt"
+  },
+  {
+    "ordinal": 58,
+    "blind_id": "43BEAF7AF671",
+    "start_char": 58039,
+    "end_char": 58624,
+    "character_count": 585,
+    "text_path": "cases\\A-04\\drafts\\baseline-3.txt"
+  },
+  {
+    "ordinal": 59,
+    "blind_id": "94F8F49D2CDB",
+    "start_char": 58629,
+    "end_char": 59391,
+    "character_count": 762,
+    "text_path": "cases\\A-03\\drafts\\baseline-1.txt"
+  },
+  {
+    "ordinal": 60,
+    "blind_id": "B83F7BBEB72A",
+    "start_char": 59396,
+    "end_char": 60025,
+    "character_count": 629,
+    "text_path": "cases\\ROMANCE-04\\drafts\\baseline-1.txt"
+  },
+  {
+    "ordinal": 61,
+    "blind_id": "B6D5D4FEF8EA",
+    "start_char": 60030,
+    "end_char": 60597,
+    "character_count": 567,
+    "text_path": "cases\\B-03\\drafts\\baseline-1.txt"
+  },
+  {
+    "ordinal": 62,
+    "blind_id": "44E807F86792",
+    "start_char": 60602,
+    "end_char": 61699,
+    "character_count": 1097,
+    "text_path": "cases\\A-05\\drafts\\baseline-2.txt"
+  },
+  {
+    "ordinal": 63,
+    "blind_id": "85520C8A748A",
+    "start_char": 61704,
+    "end_char": 62546,
+    "character_count": 842,
+    "text_path": "cases\\C-02\\drafts\\route-2.txt"
+  },
+  {
+    "ordinal": 64,
+    "blind_id": "31874F37C751",
+    "start_char": 62551,
+    "end_char": 63143,
+    "character_count": 592,
+    "text_path": "cases\\ROMANCE-02\\drafts\\route-2.txt"
+  },
+  {
+    "ordinal": 65,
+    "blind_id": "5D8920D7009F",
+    "start_char": 63148,
+    "end_char": 63932,
+    "character_count": 784,
+    "text_path": "cases\\A-04\\drafts\\route-1.txt"
+  },
+  {
+    "ordinal": 66,
+    "blind_id": "C61847E23E0C",
+    "start_char": 63937,
+    "end_char": 65493,
+    "character_count": 1556,
+    "text_path": "cases\\A-05\\drafts\\route-3.txt"
+  },
+  {
+    "ordinal": 67,
+    "blind_id": "A90A00AB37EB",
+    "start_char": 65498,
+    "end_char": 66192,
+    "character_count": 694,
+    "text_path": "cases\\B-04\\drafts\\route-3.txt"
+  },
+  {
+    "ordinal": 68,
+    "blind_id": "FDEF6276C166",
+    "start_char": 66197,
+    "end_char": 66483,
+    "character_count": 286,
+    "text_path": "cases\\ROMANCE-04\\drafts\\route-2.txt"
+  },
+  {
+    "ordinal": 69,
+    "blind_id": "3E1967654746",
+    "start_char": 66488,
+    "end_char": 67084,
+    "character_count": 596,
+    "text_path": "cases\\TASK-02\\drafts\\route-3.txt"
+  },
+  {
+    "ordinal": 70,
+    "blind_id": "75D7B6ECAE95",
+    "start_char": 67089,
+    "end_char": 67763,
+    "character_count": 674,
+    "text_path": "cases\\A-04\\drafts\\route-3.txt"
+  },
+  {
+    "ordinal": 71,
+    "blind_id": "A4D68465AB5C",
+    "start_char": 67768,
+    "end_char": 68597,
+    "character_count": 829,
+    "text_path": "cases\\D-05\\drafts\\route-1.txt"
+  },
+  {
+    "ordinal": 72,
+    "blind_id": "7937059A5751",
+    "start_char": 68602,
+    "end_char": 69988,
+    "character_count": 1386,
+    "text_path": "cases\\D-05\\drafts\\baseline-1.txt"
+  },
+  {
+    "ordinal": 73,
+    "blind_id": "F9A47FFBE45E",
+    "start_char": 69993,
+    "end_char": 71599,
+    "character_count": 1606,
+    "text_path": "cases\\CAMPUS-03\\drafts\\baseline-3.txt"
+  },
+  {
+    "ordinal": 74,
+    "blind_id": "A0EEB6DB7DBD",
+    "start_char": 71604,
+    "end_char": 73107,
+    "character_count": 1503,
+    "text_path": "cases\\CAMPUS-03\\drafts\\route-3.txt"
+  },
+  {
+    "ordinal": 75,
+    "blind_id": "C0A7A6E1C0CB",
+    "start_char": 73112,
+    "end_char": 73811,
+    "character_count": 699,
+    "text_path": "cases\\C-05\\drafts\\route-3.txt"
+  },
+  {
+    "ordinal": 76,
+    "blind_id": "774132784565",
+    "start_char": 73816,
+    "end_char": 75900,
+    "character_count": 2084,
+    "text_path": "cases\\TASK-04\\drafts\\baseline-3.txt"
+  },
+  {
+    "ordinal": 77,
+    "blind_id": "D4F1B55405DA",
+    "start_char": 75905,
+    "end_char": 76469,
+    "character_count": 564,
+    "text_path": "cases\\C-06\\drafts\\route-3.txt"
+  },
+  {
+    "ordinal": 78,
+    "blind_id": "461B19043241",
+    "start_char": 76474,
+    "end_char": 77648,
+    "character_count": 1174,
+    "text_path": "cases\\TASK-02\\drafts\\route-2.txt"
+  },
+  {
+    "ordinal": 79,
+    "blind_id": "C4BB683A4DF6",
+    "start_char": 77653,
+    "end_char": 79087,
+    "character_count": 1434,
+    "text_path": "cases\\TASK-04\\drafts\\baseline-2.txt"
+  },
+  {
+    "ordinal": 80,
+    "blind_id": "1B8FF34A4620",
+    "start_char": 79092,
+    "end_char": 79677,
+    "character_count": 585,
+    "text_path": "cases\\CAMPUS-04\\drafts\\baseline-3.txt"
+  },
+  {
+    "ordinal": 81,
+    "blind_id": "BDAD3F6E14EF",
+    "start_char": 79682,
+    "end_char": 80274,
+    "character_count": 592,
+    "text_path": "cases\\C-06\\drafts\\baseline-2.txt"
+  },
+  {
+    "ordinal": 82,
+    "blind_id": "90D6386EC21B",
+    "start_char": 80279,
+    "end_char": 81104,
+    "character_count": 825,
+    "text_path": "cases\\A-04\\drafts\\route-2.txt"
+  },
+  {
+    "ordinal": 83,
+    "blind_id": "3A04CECB6D7E",
+    "start_char": 81109,
+    "end_char": 82315,
+    "character_count": 1206,
+    "text_path": "cases\\CAMPUS-04\\drafts\\route-3.txt"
+  },
+  {
+    "ordinal": 84,
+    "blind_id": "43500A597628",
+    "start_char": 82320,
+    "end_char": 82717,
+    "character_count": 397,
+    "text_path": "cases\\ROMANCE-04\\drafts\\route-1.txt"
+  },
+  {
+    "ordinal": 85,
+    "blind_id": "8A4D230D9126",
+    "start_char": 82722,
+    "end_char": 83678,
+    "character_count": 956,
+    "text_path": "cases\\B-05\\drafts\\route-3.txt"
+  },
+  {
+    "ordinal": 86,
+    "blind_id": "F1701C9E20A9",
+    "start_char": 83683,
+    "end_char": 84463,
+    "character_count": 780,
+    "text_path": "cases\\C-03\\drafts\\baseline-3.txt"
+  },
+  {
+    "ordinal": 87,
+    "blind_id": "338549CB0B7D",
+    "start_char": 84468,
+    "end_char": 85192,
+    "character_count": 724,
+    "text_path": "cases\\A-03\\drafts\\route-2.txt"
+  },
+  {
+    "ordinal": 88,
+    "blind_id": "79F50E6D082C",
+    "start_char": 85197,
+    "end_char": 86171,
+    "character_count": 974,
+    "text_path": "cases\\C-05\\drafts\\route-2.txt"
+  },
+  {
+    "ordinal": 89,
+    "blind_id": "2BA1035E85D7",
+    "start_char": 86176,
+    "end_char": 86732,
+    "character_count": 556,
+    "text_path": "cases\\A-03\\drafts\\baseline-2.txt"
+  },
+  {
+    "ordinal": 90,
+    "blind_id": "7659CC08890E",
+    "start_char": 86737,
+    "end_char": 88502,
+    "character_count": 1765,
+    "text_path": "cases\\TASK-04\\drafts\\baseline-1.txt"
+  },
+  {
+    "ordinal": 91,
+    "blind_id": "D7E2F0715889",
+    "start_char": 88507,
+    "end_char": 89746,
+    "character_count": 1239,
+    "text_path": "cases\\A-05\\drafts\\baseline-1.txt"
+  },
+  {
+    "ordinal": 92,
+    "blind_id": "08FD4FABB9D6",
+    "start_char": 89751,
+    "end_char": 90869,
+    "character_count": 1118,
+    "text_path": "cases\\C-05\\drafts\\baseline-3.txt"
+  },
+  {
+    "ordinal": 93,
+    "blind_id": "E85F4D3C020F",
+    "start_char": 90874,
+    "end_char": 91986,
+    "character_count": 1112,
+    "text_path": "cases\\C-03\\drafts\\baseline-1.txt"
+  },
+  {
+    "ordinal": 94,
+    "blind_id": "C81DD9CCF0DC",
+    "start_char": 91991,
+    "end_char": 92519,
+    "character_count": 528,
+    "text_path": "cases\\A-06\\drafts\\baseline-2.txt"
+  },
+  {
+    "ordinal": 95,
+    "blind_id": "342EF47BB2F3",
+    "start_char": 92524,
+    "end_char": 93519,
+    "character_count": 995,
+    "text_path": "cases\\CAMPUS-04\\drafts\\baseline-2.txt"
+  },
+  {
+    "ordinal": 96,
+    "blind_id": "C6B5F491B39E",
+    "start_char": 93524,
+    "end_char": 94679,
+    "character_count": 1155,
+    "text_path": "cases\\C-04\\drafts\\baseline-2.txt"
+  },
+  {
+    "ordinal": 97,
+    "blind_id": "18F2F1C33881",
+    "start_char": 94684,
+    "end_char": 95605,
+    "character_count": 921,
+    "text_path": "cases\\CAMPUS-04\\drafts\\baseline-1.txt"
+  },
+  {
+    "ordinal": 98,
+    "blind_id": "85BB831007D1",
+    "start_char": 95610,
+    "end_char": 96301,
+    "character_count": 691,
+    "text_path": "cases\\ROMANCE-02\\drafts\\baseline-1.txt"
+  },
+  {
+    "ordinal": 99,
+    "blind_id": "A1F62A67BCAF",
+    "start_char": 96306,
+    "end_char": 96968,
+    "character_count": 662,
+    "text_path": "cases\\A-04\\drafts\\baseline-2.txt"
+  },
+  {
+    "ordinal": 100,
+    "blind_id": "805E0E11DAEE",
+    "start_char": 96973,
+    "end_char": 97796,
+    "character_count": 823,
+    "text_path": "cases\\B-04\\drafts\\baseline-3.txt"
+  },
+  {
+    "ordinal": 101,
+    "blind_id": "DCBC28EB4627",
+    "start_char": 97801,
+    "end_char": 98264,
+    "character_count": 463,
+    "text_path": "cases\\B-06\\drafts\\baseline-3.txt"
+  },
+  {
+    "ordinal": 102,
+    "blind_id": "B1E9130331D8",
+    "start_char": 98269,
+    "end_char": 99479,
+    "character_count": 1210,
+    "text_path": "cases\\B-05\\drafts\\route-1.txt"
+  },
+  {
+    "ordinal": 103,
+    "blind_id": "FB727C0D0C9C",
+    "start_char": 99484,
+    "end_char": 100865,
+    "character_count": 1381,
+    "text_path": "cases\\D-06\\drafts\\baseline-2.txt"
+  },
+  {
+    "ordinal": 104,
+    "blind_id": "71C7A79A8878",
+    "start_char": 100870,
+    "end_char": 101402,
+    "character_count": 532,
+    "text_path": "cases\\A-03\\drafts\\baseline-3.txt"
+  },
+  {
+    "ordinal": 105,
+    "blind_id": "179E988FC557",
+    "start_char": 101407,
+    "end_char": 102275,
+    "character_count": 868,
+    "text_path": "cases\\CAMPUS-04\\drafts\\route-1.txt"
+  },
+  {
+    "ordinal": 106,
+    "blind_id": "EECC842B5B9B",
+    "start_char": 102280,
+    "end_char": 102826,
+    "character_count": 546,
+    "text_path": "cases\\A-06\\drafts\\baseline-3.txt"
+  },
+  {
+    "ordinal": 107,
+    "blind_id": "C38152F04248",
+    "start_char": 102831,
+    "end_char": 103827,
+    "character_count": 996,
+    "text_path": "cases\\C-04\\drafts\\route-2.txt"
+  },
+  {
+    "ordinal": 108,
+    "blind_id": "E1B08FE6F594",
+    "start_char": 103832,
+    "end_char": 104437,
+    "character_count": 605,
+    "text_path": "cases\\B-03\\drafts\\route-3.txt"
+  },
+  {
+    "ordinal": 109,
+    "blind_id": "D4B7B3DF0FFC",
+    "start_char": 104442,
+    "end_char": 105118,
+    "character_count": 676,
+    "text_path": "cases\\B-06\\drafts\\baseline-2.txt"
+  },
+  {
+    "ordinal": 110,
+    "blind_id": "2EA769AFD835",
+    "start_char": 105123,
+    "end_char": 105567,
+    "character_count": 444,
+    "text_path": "cases\\ROMANCE-04\\drafts\\route-3.txt"
+  },
+  {
+    "ordinal": 111,
+    "blind_id": "769CDF358D6F",
+    "start_char": 105572,
+    "end_char": 106487,
+    "character_count": 915,
+    "text_path": "cases\\C-05\\drafts\\route-1.txt"
+  },
+  {
+    "ordinal": 112,
+    "blind_id": "ADA7549CC0AC",
+    "start_char": 106492,
+    "end_char": 107527,
+    "character_count": 1035,
+    "text_path": "cases\\B-05\\drafts\\baseline-1.txt"
+  },
+  {
+    "ordinal": 113,
+    "blind_id": "86FD648EDD46",
+    "start_char": 107532,
+    "end_char": 107981,
+    "character_count": 449,
+    "text_path": "cases\\C-06\\drafts\\baseline-1.txt"
+  },
+  {
+    "ordinal": 114,
+    "blind_id": "E062D511F865",
+    "start_char": 107986,
+    "end_char": 108450,
+    "character_count": 464,
+    "text_path": "cases\\A-06\\drafts\\route-1.txt"
+  },
+  {
+    "ordinal": 115,
+    "blind_id": "DA031F306858",
+    "start_char": 108455,
+    "end_char": 108910,
+    "character_count": 455,
+    "text_path": "cases\\B-06\\drafts\\route-2.txt"
+  },
+  {
+    "ordinal": 116,
+    "blind_id": "38D415DFCA17",
+    "start_char": 108915,
+    "end_char": 109744,
+    "character_count": 829,
+    "text_path": "cases\\C-04\\drafts\\baseline-1.txt"
+  },
+  {
+    "ordinal": 117,
+    "blind_id": "99408533A393",
+    "start_char": 109749,
+    "end_char": 110561,
+    "character_count": 812,
+    "text_path": "cases\\C-03\\drafts\\route-3.txt"
+  },
+  {
+    "ordinal": 118,
+    "blind_id": "20D476246A38",
+    "start_char": 110566,
+    "end_char": 111486,
+    "character_count": 920,
+    "text_path": "cases\\A-05\\drafts\\baseline-3.txt"
+  },
+  {
+    "ordinal": 119,
+    "blind_id": "52CEE3578FFF",
+    "start_char": 111491,
+    "end_char": 112277,
+    "character_count": 786,
+    "text_path": "cases\\C-02\\drafts\\route-1.txt"
+  },
+  {
+    "ordinal": 120,
+    "blind_id": "1D000EBCE371",
+    "start_char": 112282,
+    "end_char": 113193,
+    "character_count": 911,
+    "text_path": "cases\\C-02\\drafts\\baseline-1.txt"
+  },
+  {
+    "ordinal": 121,
+    "blind_id": "775B81157A15",
+    "start_char": 113198,
+    "end_char": 115297,
+    "character_count": 2099,
+    "text_path": "cases\\D-04\\drafts\\route-2.txt"
+  },
+  {
+    "ordinal": 122,
+    "blind_id": "A2435BCF6778",
+    "start_char": 115302,
+    "end_char": 116143,
+    "character_count": 841,
+    "text_path": "cases\\TASK-02\\drafts\\baseline-1.txt"
+  },
+  {
+    "ordinal": 123,
+    "blind_id": "130D91A50981",
+    "start_char": 116148,
+    "end_char": 116638,
+    "character_count": 490,
+    "text_path": "cases\\A-06\\drafts\\baseline-1.txt"
+  },
+  {
+    "ordinal": 124,
+    "blind_id": "CADB7B7A053D",
+    "start_char": 116643,
+    "end_char": 117245,
+    "character_count": 602,
+    "text_path": "cases\\B-06\\drafts\\route-1.txt"
+  },
+  {
+    "ordinal": 125,
+    "blind_id": "2B35EC88DBF6",
+    "start_char": 117250,
+    "end_char": 118090,
+    "character_count": 840,
+    "text_path": "cases\\TASK-02\\drafts\\baseline-3.txt"
+  },
+  {
+    "ordinal": 126,
+    "blind_id": "B417523002DB",
+    "start_char": 118095,
+    "end_char": 118907,
+    "character_count": 812,
+    "text_path": "cases\\CAMPUS-02\\drafts\\baseline-1.txt"
+  },
+  {
+    "ordinal": 127,
+    "blind_id": "CC0E4A329C5F",
+    "start_char": 118912,
+    "end_char": 119744,
+    "character_count": 832,
+    "text_path": "cases\\C-06\\drafts\\route-2.txt"
+  },
+  {
+    "ordinal": 128,
+    "blind_id": "883C640CFEB0",
+    "start_char": 119749,
+    "end_char": 120869,
+    "character_count": 1120,
+    "text_path": "cases\\CAMPUS-02\\drafts\\route-2.txt"
+  }
+]

@@ -1,0 +1,153 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "林希在暴雨便利店门口偶遇同事温洲，面临共享唯一一把伞的抉择，通过行动而非言语展现两人关系的微妙变化。",
+  "location": "便利店门口的门廊下",
+  "time": "下班时分，暴雨",
+  "scene_state": {
+    "last_completed_action": "温洲先开口说“好大的雨”",
+    "present_characters": [
+      "林希",
+      "温洲",
+      "便利店店员"
+    ],
+    "visible_facts": [
+      "暴雨倾盆",
+      "只有一把公共伞挂在门口",
+      "便利店店员正在关卷帘门"
+    ],
+    "available_objects": [
+      "公共伞"
+    ],
+    "unresolved_problem": "两人都需要离开，但只有一把伞",
+    "already_existing_constraints": [
+      "两人是同事关系",
+      "两人之前并不熟络",
+      "暴雨环境限制行动"
+    ]
+  },
+  "characters": [
+    {
+      "name": "林希",
+      "goal": "决定如何应对共享雨伞的局面",
+      "known": [
+        "只有一把伞",
+        "温洲也站在这避雨",
+        "店员即将关门"
+      ],
+      "unknown": [
+        "温洲是否愿意共用伞",
+        "温洲对林希的真实态度"
+      ],
+      "mistaken_beliefs": [
+        "温洲可能只是礼貌性搭话，并不想深交"
+      ],
+      "constraints": [
+        "不能替温洲解释他为什么站在这",
+        "必须选择撑伞一起走、把伞让给他、或等雨停"
+      ],
+      "observed_evidence": [
+        "温洲主动说“好大的雨”",
+        "温洲站在门廊下没有伞",
+        "店员正在关卷帘门"
+      ],
+      "current_interpretation": "温洲可能也希望一起走，但出于礼貌或尴尬没有直接提出",
+      "how_interpretation_drives_action": "林希将选择撑开伞，示意一起走"
+    },
+    {
+      "name": "温洲",
+      "goal": "试探林希是否愿意共伞",
+      "known": [
+        "只有一把伞",
+        "林希也站在这里"
+      ],
+      "unknown": [
+        "林希是否会主动邀请共伞",
+        "林希对自己的真实看法"
+      ],
+      "mistaken_beliefs": [
+        "林希可能不想和自己一起走，因为平时交流不多"
+      ],
+      "constraints": [
+        "不能直接问‘要不要一起走’以维持自然",
+        "不能表现出急切"
+      ],
+      "observed_evidence": [
+        "林希站在门廊下，看着雨",
+        "店员在关门"
+      ],
+      "current_interpretation": "林希可能在犹豫，需要自己先开口打破僵局",
+      "how_interpretation_drives_action": "温洲先说“好大的雨”，为林希提供开口机会"
+    }
+  ],
+  "concrete_problem": "林希必须决定是撑开伞和温洲一起走，还是把伞让给他，或者等雨停",
+  "pressure": "暴雨越下越大，店员即将关门，两人困在门廊下只有一把伞",
+  "turning_point": "林希伸手取下公共伞，在撑开与不撑开之间犹豫，最终撑开伞，朝温洲微微侧头",
+  "end_condition": "林希撑开伞，两人并肩走进雨中",
+  "forbidden": [
+    "林希替温洲解释为什么站在这",
+    "直接表白或明确情感表达",
+    "伞意外损坏或第三方介入",
+    "使用手机叫车等外部解决方案"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "店员关卷帘门的响声和动作",
+      "character_interpretation": "林希意识到必须马上离开，不能再犹豫",
+      "character_next_action": "林希伸手取下公共伞并撑开",
+      "rejected_alternative": "林希可以继续站着等雨停，但那样会显得刻意回避温洲",
+      "immediate_consequence": "林希撑开了伞，创造了一个两人可以共同使用的空间",
+      "counterfactual_without_action": "如果林希不撑伞，两人将被困在已关门的便利店外，尴尬加剧",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "伞挂在门口，两人各自站着",
+        "after": "伞在林希手中撑开，两人距离拉近"
+      },
+      "cost_or_commitment": "林希主动打破了僵局，承担了被拒绝或尴尬的风险",
+      "next_constraint": "两人现在共处一把伞下，必须进行更近距离的互动",
+      "reader_must_infer": "林希选择撑伞并非仅仅因为雨大，更是对温洲的一种无声接纳",
+      "narrator_must_not_state": [
+        "林希对温洲有好感",
+        "林希的内心犹豫过程"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "店员正在关卷帘门，发出金属摩擦声",
+    "dominant_pressure": {
+      "kind": "social_friction",
+      "description": "时间紧迫，但真正阻碍行动的是两人之间尚未打破的同事距离感"
+    },
+    "allowed_viewpoint_misread": "温洲可能把林希的犹豫误解为不愿共伞",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "林希对温洲的真实感情程度"
+    ],
+    "stop_state": {
+      "type": "social_commitment",
+      "visible_fact": "林希撑开伞，温洲自然地走进伞下",
+      "what_is_now_different": "两人从各自避雨变成共同行动，形成了临时的同行约定",
+      "must_not_append": "不得描写伞下对话或后续路程"
+    },
+    "final_line_must_include": ""
+  }
+}

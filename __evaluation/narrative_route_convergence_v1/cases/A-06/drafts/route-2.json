@@ -1,0 +1,63 @@
+{
+  "group": "ROUTE-B_SHORT_RELATION",
+  "replica": 2,
+  "mode": "narrative_route",
+  "candidate_id": "145f6c0f-6c3b-4944-a338-cb134dc0b666",
+  "attempt_number": 1,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "route_decision": {
+      "route_name": "B_SHORT_RELATION",
+      "classifier_version": "narrative-route-v1",
+      "decision_reasons": [
+        "scene is relationship-oriented with no physical urgency",
+        "character action involves relational move (message, gesture, proximity)"
+      ],
+      "matched_rules": [
+        "RULE_B_SHORT_RELATION"
+      ],
+      "rejected_routes": [
+        "C_OBJECT_CAUSAL",
+        "A_LITE_INFORMATION_GAP"
+      ]
+    },
+    "compiled_brief_hash": "02b725513ea167bd711e771974962e39a571cd3fc30a45006c9ef13b6b613571",
+    "instruction_hash": "d7a76822408396dc71c4599a7f40f33368b90199f0d9c0712383961213437555",
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "孙然把手机屏幕按亮，盯着那条灰色的系统提示——【“周也”撤回了一条消息】。\n\n她拇指在屏幕上顿了一下。\n\n群聊界面还停在刚才的位置，三十多个人在线，有人在聊晚自习的座位安排，有人在发食堂晚饭的照片。那条撤回提示夹在中间，像一块被迅速抹掉的痕迹，但痕迹本身还在。\n\n周也的头像亮着。\n\n孙然没有点进私聊窗口。她切回群聊页面，打字：“今天的排练要改时间吗？还是按原来的？”\n\n发送。\n\n她看着消息出现在屏幕上，然后锁屏，把手机翻过来扣在桌面上。\n\n过了大概十秒，手机震了一下。\n\n她翻过来看——周也的回复已经出现在群里：“按原来的。”\n\n句号。不是句号，是带句号的三个字。\n\n孙然盯着那个句号看了两秒。\n\n然后周也又发了一个表情包——是一只猫举起爪子，底下配了三个字：收到啦。\n\n表情包发出来的时间，和上一条回复之间，隔了四秒。",
+  "raw_response": "孙然把手机屏幕按亮，盯着那条灰色的系统提示——【“周也”撤回了一条消息】。\n\n她拇指在屏幕上顿了一下。\n\n群聊界面还停在刚才的位置，三十多个人在线，有人在聊晚自习的座位安排，有人在发食堂晚饭的照片。那条撤回提示夹在中间，像一块被迅速抹掉的痕迹，但痕迹本身还在。\n\n周也的头像亮着。\n\n孙然没有点进私聊窗口。她切回群聊页面，打字：“今天的排练要改时间吗？还是按原来的？”\n\n发送。\n\n她看着消息出现在屏幕上，然后锁屏，把手机翻过来扣在桌面上。\n\n过了大概十秒，手机震了一下。\n\n她翻过来看——周也的回复已经出现在群里：“按原来的。”\n\n句号。不是句号，是带句号的三个字。\n\n孙然盯着那个句号看了两秒。\n\n然后周也又发了一个表情包——是一只猫举起爪子，底下配了三个字：收到啦。\n\n表情包发出来的时间，和上一条回复之间，隔了四秒。",
+  "input_tokens": 1325,
+  "output_tokens": 224,
+  "latency_ms": 6247,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "4cfb17d7cb516b071de8281cb57bae3dcbba9b3422fd91667f93b5acee99e1f0",
+  "route_name": null,
+  "route_decision": {
+    "route_name": "B_SHORT_RELATION",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "scene is relationship-oriented with no physical urgency",
+      "character action involves relational move (message, gesture, proximity)"
+    ],
+    "matched_rules": [
+      "RULE_B_SHORT_RELATION"
+    ],
+    "rejected_routes": [
+      "C_OBJECT_CAUSAL",
+      "A_LITE_INFORMATION_GAP"
+    ]
+  },
+  "compiled_brief_hash": "02b725513ea167bd711e771974962e39a571cd3fc30a45006c9ef13b6b613571",
+  "instruction_hash": "d7a76822408396dc71c4599a7f40f33368b90199f0d9c0712383961213437555",
+  "text_path": "cases\\A-06\\drafts\\route-2.txt"
+}

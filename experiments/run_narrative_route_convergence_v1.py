@@ -406,9 +406,9 @@ async def run(
             raise FileNotFoundError(f"blind_review_queue.json not found in {root}")
         package_zhuque_submission(root)
         return
-    if (root / "manifest.json").exists():
+    if (root / "manifest.json").exists() and case_start == 0 and not zhuque_only:
         raise RuntimeError(f"{EXPERIMENT} evidence already exists; refusing to rerun")
-    if not dry_run and database.exists():
+    if not dry_run and database.exists() and case_start == 0 and not zhuque_only:
         raise RuntimeError(f"isolated database already exists: {database}")
     selected_cases = CASE_SPECS[case_start:]
     if not selected_cases:
@@ -471,7 +471,8 @@ async def run(
         return
 
     # Real run: isolate DB and execute
-    shutil.copy2(REPO_ROOT / "data" / "novel_workbench.db", database)
+    if case_start == 0:
+        shutil.copy2(REPO_ROOT / "data" / "novel_workbench.db", database)
     engine = create_async_engine(f"sqlite+aiosqlite:///{database}")
     factory = async_sessionmaker(engine, class_=AsyncSession, expire_on_commit=False)
     exported: list[dict[str, Any]] = []

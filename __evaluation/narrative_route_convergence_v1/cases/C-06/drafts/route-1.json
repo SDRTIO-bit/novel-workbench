@@ -1,0 +1,67 @@
+{
+  "group": "ROUTE-B_DEFAULT",
+  "replica": 1,
+  "mode": "narrative_route",
+  "candidate_id": "57017430-eb04-4117-8b65-e8812aad1806",
+  "attempt_number": 1,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "route_decision": {
+      "route_name": "B_DEFAULT",
+      "classifier_version": "narrative-route-v1",
+      "decision_reasons": [
+        "no specific narrative mechanism detected"
+      ],
+      "matched_rules": [
+        "RULE_B_DEFAULT"
+      ],
+      "rejected_routes": [
+        "C_OBJECT_CAUSAL",
+        "A_LITE_INFORMATION_GAP",
+        "B_SHORT_RELATION",
+        "B_PHYSICAL_PROBLEM",
+        "D_FALLIBLE_TASK"
+      ]
+    },
+    "compiled_brief_hash": "81ff806084f8944ee3e5ebfb49acab9dcfdd3a8c2cbd1eaf7973ac9884a8d76d",
+    "instruction_hash": "7ec8bb8faba03e4eb5f6e789d779dd925a17feb93d29aab55ff151fa2bc43890",
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "陆柯站在外卖架前，手指悬在那袋没有名字的餐上方。\n\n架子上本来该有六袋餐。现在只剩五袋。他扫了两遍——第一遍从左到右，第二遍从右到左——写着自己名字的那袋确实不在。剩下的这袋塑料袋系得很紧，里面是个白色泡沫盒，外卖单上只印着“黄焖鸡米饭”，备注栏空白，没有公司名，没有工位号，没有手机尾号。\n\n他回头看了一眼前台。灯关了，电脑屏幕黑着，椅子推进桌底。\n\n外卖架靠墙，头顶天花板的摄像头对着电梯方向，架身刚好被消防栓的玻璃门挡住。\n\n陆柯把手机解锁，点开外卖平台的订单页面。骑手送达时间是18:43，送达照片拍的就是这个架子，自己的餐在最左边，塑料袋上贴着打印单，能看到“陆柯”两个字。现在是19:12。\n\n他把手机揣回裤兜，伸手把那袋无主餐提起来。分量不轻，泡沫盒底还温着。\n\n架子旁边贴墙立着一块亚克力板，上面夹着几张空白的外卖催单便签，旁边有支圆珠笔，用透明胶带连着板子。陆柯撕下一张便签，按在墙上写：拿错餐请电联，又补上自己的手机号，最后加了一句：架子上的餐我先取了。\n\n他把便签贴在架子最显眼的位置——就是照片里自己餐原来放的那一格。\n\n然后他提着那袋黄焖鸡米饭，转身走向电梯间。\n\n外卖架上只剩一张便签。",
+  "raw_response": "陆柯站在外卖架前，手指悬在那袋没有名字的餐上方。\n\n架子上本来该有六袋餐。现在只剩五袋。他扫了两遍——第一遍从左到右，第二遍从右到左——写着自己名字的那袋确实不在。剩下的这袋塑料袋系得很紧，里面是个白色泡沫盒，外卖单上只印着“黄焖鸡米饭”，备注栏空白，没有公司名，没有工位号，没有手机尾号。\n\n他回头看了一眼前台。灯关了，电脑屏幕黑着，椅子推进桌底。\n\n外卖架靠墙，头顶天花板的摄像头对着电梯方向，架身刚好被消防栓的玻璃门挡住。\n\n陆柯把手机解锁，点开外卖平台的订单页面。骑手送达时间是18:43，送达照片拍的就是这个架子，自己的餐在最左边，塑料袋上贴着打印单，能看到“陆柯”两个字。现在是19:12。\n\n他把手机揣回裤兜，伸手把那袋无主餐提起来。分量不轻，泡沫盒底还温着。\n\n架子旁边贴墙立着一块亚克力板，上面夹着几张空白的外卖催单便签，旁边有支圆珠笔，用透明胶带连着板子。陆柯撕下一张便签，按在墙上写：拿错餐请电联，又补上自己的手机号，最后加了一句：架子上的餐我先取了。\n\n他把便签贴在架子最显眼的位置——就是照片里自己餐原来放的那一格。\n\n然后他提着那袋黄焖鸡米饭，转身走向电梯间。\n\n外卖架上只剩一张便签。",
+  "input_tokens": 1242,
+  "output_tokens": 340,
+  "latency_ms": 9568,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "b57648d2ca55afaba12a6ad3f9654eee723fe43dcc464d8033086cb4619a8770",
+  "route_name": null,
+  "route_decision": {
+    "route_name": "B_DEFAULT",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "no specific narrative mechanism detected"
+    ],
+    "matched_rules": [
+      "RULE_B_DEFAULT"
+    ],
+    "rejected_routes": [
+      "C_OBJECT_CAUSAL",
+      "A_LITE_INFORMATION_GAP",
+      "B_SHORT_RELATION",
+      "B_PHYSICAL_PROBLEM",
+      "D_FALLIBLE_TASK"
+    ]
+  },
+  "compiled_brief_hash": "81ff806084f8944ee3e5ebfb49acab9dcfdd3a8c2cbd1eaf7973ac9884a8d76d",
+  "instruction_hash": "7ec8bb8faba03e4eb5f6e789d779dd925a17feb93d29aab55ff151fa2bc43890",
+  "text_path": "cases\\C-06\\drafts\\route-1.txt"
+}

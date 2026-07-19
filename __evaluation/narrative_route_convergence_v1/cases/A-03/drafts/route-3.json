@@ -1,0 +1,63 @@
+{
+  "group": "ROUTE-A_LITE_INFORMATION_GAP",
+  "replica": 3,
+  "mode": "narrative_route",
+  "candidate_id": "912e16b5-e3a4-48e1-afac-ab4012a9d412",
+  "attempt_number": 1,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "route_decision": {
+      "route_name": "A_LITE_INFORMATION_GAP",
+      "classifier_version": "narrative-route-v1",
+      "decision_reasons": [
+        "multiple characters with distinct information",
+        "viewpoint character has unknown facts and an interpretation",
+        "secondary character carries independent knowledge"
+      ],
+      "matched_rules": [
+        "RULE_A_LITE_INFORMATION_GAP"
+      ],
+      "rejected_routes": [
+        "C_OBJECT_CAUSAL"
+      ]
+    },
+    "compiled_brief_hash": "c17d346999b2c0c4343a025731963d95477667eadfa4bb75b305b86902975ce7",
+    "instruction_hash": "d368cbfa0846d1cb9adf452db083cbb58ba69154f281b3d6c895cb34da157cec",
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "韩雨抱着作业本走到办公室门口时，门正好从里面关上。\n\n她听见班主任的声音——“你们班的韩雨……”——然后门合拢，后半句话被截在门板后面。\n\n韩雨的手停在半空，指节离门板还有十厘米。走廊里有两个男生从她身后跑过去，球鞋在地砖上蹭出短促的吱嘎声。她没回头。\n\n门重新打开。\n\n班主任走出来，手里拿着一张表格，纸张边缘被拇指捏出细微的折痕。她看见韩雨，脚步顿了一下。\n\n停顿很短。不到一秒。\n\n韩雨把作业本往前递了递。“老师，我来交作业。”\n\n“哦。”班主任伸出手，接过作业本。她的视线从韩雨脸上移开，落到本子封面上，又移回来。“好的，放这里吧。”\n\n韩雨站着没动。\n\n班主任把表格翻了个面，背面朝上。纸张在指间发出轻微的沙响。\n\n“还有事吗？”\n\n“没有。”\n\n韩雨转身往楼梯口走。走出三步，她听见班主任的脚步声朝相反方向去了，鞋跟敲在水磨石地面上，节奏比平时快。\n\n走到楼梯拐角，韩雨停下来。她往走廊尽头看了一眼——班主任的背影正拐进年级组的办公室，表格仍然背面朝上，贴在腿侧。\n\n韩雨收回视线，把手插进口袋，摸到了手机。屏幕亮起来，她解锁，点进和同桌的对话框，打了几个字又删掉。\n\n她重新打了一行字，发送：课间帮我带瓶水。\n\n手机震动。同桌回：你人呢？\n\n韩雨把手机塞回口袋，走下楼梯。",
+  "raw_response": "韩雨抱着作业本走到办公室门口时，门正好从里面关上。\n\n她听见班主任的声音——“你们班的韩雨……”——然后门合拢，后半句话被截在门板后面。\n\n韩雨的手停在半空，指节离门板还有十厘米。走廊里有两个男生从她身后跑过去，球鞋在地砖上蹭出短促的吱嘎声。她没回头。\n\n门重新打开。\n\n班主任走出来，手里拿着一张表格，纸张边缘被拇指捏出细微的折痕。她看见韩雨，脚步顿了一下。\n\n停顿很短。不到一秒。\n\n韩雨把作业本往前递了递。“老师，我来交作业。”\n\n“哦。”班主任伸出手，接过作业本。她的视线从韩雨脸上移开，落到本子封面上，又移回来。“好的，放这里吧。”\n\n韩雨站着没动。\n\n班主任把表格翻了个面，背面朝上。纸张在指间发出轻微的沙响。\n\n“还有事吗？”\n\n“没有。”\n\n韩雨转身往楼梯口走。走出三步，她听见班主任的脚步声朝相反方向去了，鞋跟敲在水磨石地面上，节奏比平时快。\n\n走到楼梯拐角，韩雨停下来。她往走廊尽头看了一眼——班主任的背影正拐进年级组的办公室，表格仍然背面朝上，贴在腿侧。\n\n韩雨收回视线，把手插进口袋，摸到了手机。屏幕亮起来，她解锁，点进和同桌的对话框，打了几个字又删掉。\n\n她重新打了一行字，发送：课间帮我带瓶水。\n\n手机震动。同桌回：你人呢？\n\n韩雨把手机塞回口袋，走下楼梯。",
+  "input_tokens": 1414,
+  "output_tokens": 347,
+  "latency_ms": 8620,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "c9902eb798a77e44be0d3e7fc499f55299bfe3cbc6022c713182ef770053d9ec",
+  "route_name": null,
+  "route_decision": {
+    "route_name": "A_LITE_INFORMATION_GAP",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "multiple characters with distinct information",
+      "viewpoint character has unknown facts and an interpretation",
+      "secondary character carries independent knowledge"
+    ],
+    "matched_rules": [
+      "RULE_A_LITE_INFORMATION_GAP"
+    ],
+    "rejected_routes": [
+      "C_OBJECT_CAUSAL"
+    ]
+  },
+  "compiled_brief_hash": "c17d346999b2c0c4343a025731963d95477667eadfa4bb75b305b86902975ce7",
+  "instruction_hash": "d368cbfa0846d1cb9adf452db083cbb58ba69154f281b3d6c895cb34da157cec",
+  "text_path": "cases\\A-03\\drafts\\route-3.txt"
+}

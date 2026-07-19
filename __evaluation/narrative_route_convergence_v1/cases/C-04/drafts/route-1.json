@@ -1,0 +1,63 @@
+{
+  "group": "ROUTE-A_LITE_INFORMATION_GAP",
+  "replica": 1,
+  "mode": "narrative_route",
+  "candidate_id": "52930f01-cb31-43e7-abc1-506ef5a4ed16",
+  "attempt_number": 1,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "route_decision": {
+      "route_name": "A_LITE_INFORMATION_GAP",
+      "classifier_version": "narrative-route-v1",
+      "decision_reasons": [
+        "multiple characters with distinct information",
+        "viewpoint character has unknown facts and an interpretation",
+        "secondary character carries independent knowledge"
+      ],
+      "matched_rules": [
+        "RULE_A_LITE_INFORMATION_GAP"
+      ],
+      "rejected_routes": [
+        "C_OBJECT_CAUSAL"
+      ]
+    },
+    "compiled_brief_hash": "59450e2cf75757bee4ee9c6a6117ee59993f9fcba60733120eb9f3f8cc198ee1",
+    "instruction_hash": "d368cbfa0846d1cb9adf452db083cbb58ba69154f281b3d6c895cb34da157cec",
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "市场广播的最后一个字还在喇叭里嗡嗡作响，丁立的手已经攥紧了空荡荡的塑料袋提手。他的菜篮——那个竹编的、提手缠着蓝色布条的菜篮——此刻正搁在一个老太太的小推车上，离出口不到十米。\n\n老太太推得很慢，推车轮子在地砖缝上咯噔咯噔地响。她没回头。\n\n丁立迈出步子。不是跑，是快步——摊贩们正在收摊，过道里堆着泡沫箱和折叠桌，跑起来会撞翻东西。他的视线钉在老太太推车上的那个篮子里：牛皮纸药包的一角从芹菜叶子底下露出来，上面印着社区卫生服务中心的绿色标志。\n\n“阿姨。”\n\n老太太停下来，转过头。她戴着老花镜，镜片后面一双眼睛浑浊但警觉。\n\n“阿姨，我们好像拿错篮子啦。”丁立把手里那个篮子往前递了递，让篮子口朝向她，露出里面码得整整齐齐的上海青。那些上海青是老太太篮子里的——他在自己篮子被换走之前，亲眼看见她在隔壁菜摊挑了整整五分钟，一片叶子一片叶子翻着看。\n\n老太太低头看了看丁立递过来的篮子，又低头看了看自己推车上的篮子。两个篮子都是竹编的，提手都缠着布条，只不过她缠的是红色，丁立缠的是蓝色。\n\n“您看，”丁立指着她篮子里的芹菜，“您篮子里这芹菜，跟我买的差不多。我篮子里这上海青——”他又指了指自己手里的篮子，“这上海青挑得这么仔细，一看就是您的。咱俩在同一个摊上买菜，篮子搁一块儿，准是拿串了。”\n\n老太太没说话。她弯下腰，凑近自己推车上的篮子，用两根手指拨开芹菜叶子。\n\n丁立的指关节在塑料袋提手上勒出白印。\n\n老太太直起腰，看了看丁立手里的篮子，又看了看丁立的脸。她的目光在丁立额角的汗珠上停了一瞬。\n\n“上海青是我挑的。”她说。声音不大，但很稳。\n\n“是，一看就是您挑的。”丁立把篮子又往前递了半寸，“咱们换回来吧？”\n\n老太太伸手接过丁立递来的篮子，搁进推车。然后她把自己推车上的篮子拎起来，两只手端着，递给丁立。\n\n篮子交接的瞬间，丁立闻到了药包里透出来的中药味——熟地、当归，和处方单上写的一模一样。\n\n“谢谢阿姨。”\n\n老太太已经推着车往出口走了。推车轮子重新咯噔咯噔地响起来。\n\n丁立把篮子挎在胳膊上，侧过身让一个扛着折叠桌的摊贩过去。篮子内侧，牛皮纸药包从芹菜和两颗土豆之间露出大半，绿色的社区卫生服务中心标志正对着他的眼睛。\n\n药包静静地躺在篮子一角。",
+  "raw_response": "市场广播的最后一个字还在喇叭里嗡嗡作响，丁立的手已经攥紧了空荡荡的塑料袋提手。他的菜篮——那个竹编的、提手缠着蓝色布条的菜篮——此刻正搁在一个老太太的小推车上，离出口不到十米。\n\n老太太推得很慢，推车轮子在地砖缝上咯噔咯噔地响。她没回头。\n\n丁立迈出步子。不是跑，是快步——摊贩们正在收摊，过道里堆着泡沫箱和折叠桌，跑起来会撞翻东西。他的视线钉在老太太推车上的那个篮子里：牛皮纸药包的一角从芹菜叶子底下露出来，上面印着社区卫生服务中心的绿色标志。\n\n“阿姨。”\n\n老太太停下来，转过头。她戴着老花镜，镜片后面一双眼睛浑浊但警觉。\n\n“阿姨，我们好像拿错篮子啦。”丁立把手里那个篮子往前递了递，让篮子口朝向她，露出里面码得整整齐齐的上海青。那些上海青是老太太篮子里的——他在自己篮子被换走之前，亲眼看见她在隔壁菜摊挑了整整五分钟，一片叶子一片叶子翻着看。\n\n老太太低头看了看丁立递过来的篮子，又低头看了看自己推车上的篮子。两个篮子都是竹编的，提手都缠着布条，只不过她缠的是红色，丁立缠的是蓝色。\n\n“您看，”丁立指着她篮子里的芹菜，“您篮子里这芹菜，跟我买的差不多。我篮子里这上海青——”他又指了指自己手里的篮子，“这上海青挑得这么仔细，一看就是您的。咱俩在同一个摊上买菜，篮子搁一块儿，准是拿串了。”\n\n老太太没说话。她弯下腰，凑近自己推车上的篮子，用两根手指拨开芹菜叶子。\n\n丁立的指关节在塑料袋提手上勒出白印。\n\n老太太直起腰，看了看丁立手里的篮子，又看了看丁立的脸。她的目光在丁立额角的汗珠上停了一瞬。\n\n“上海青是我挑的。”她说。声音不大，但很稳。\n\n“是，一看就是您挑的。”丁立把篮子又往前递了半寸，“咱们换回来吧？”\n\n老太太伸手接过丁立递来的篮子，搁进推车。然后她把自己推车上的篮子拎起来，两只手端着，递给丁立。\n\n篮子交接的瞬间，丁立闻到了药包里透出来的中药味——熟地、当归，和处方单上写的一模一样。\n\n“谢谢阿姨。”\n\n老太太已经推着车往出口走了。推车轮子重新咯噔咯噔地响起来。\n\n丁立把篮子挎在胳膊上，侧过身让一个扛着折叠桌的摊贩过去。篮子内侧，牛皮纸药包从芹菜和两颗土豆之间露出大半，绿色的社区卫生服务中心标志正对着他的眼睛。\n\n药包静静地躺在篮子一角。",
+  "input_tokens": 1545,
+  "output_tokens": 611,
+  "latency_ms": 14729,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "5061530f9ee3c0d599e9dea2426a54c0533e38b507d9e5cfaa5e040bfb83e109",
+  "route_name": null,
+  "route_decision": {
+    "route_name": "A_LITE_INFORMATION_GAP",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "multiple characters with distinct information",
+      "viewpoint character has unknown facts and an interpretation",
+      "secondary character carries independent knowledge"
+    ],
+    "matched_rules": [
+      "RULE_A_LITE_INFORMATION_GAP"
+    ],
+    "rejected_routes": [
+      "C_OBJECT_CAUSAL"
+    ]
+  },
+  "compiled_brief_hash": "59450e2cf75757bee4ee9c6a6117ee59993f9fcba60733120eb9f3f8cc198ee1",
+  "instruction_hash": "d368cbfa0846d1cb9adf452db083cbb58ba69154f281b3d6c895cb34da157cec",
+  "text_path": "cases\\C-04\\drafts\\route-1.txt"
+}

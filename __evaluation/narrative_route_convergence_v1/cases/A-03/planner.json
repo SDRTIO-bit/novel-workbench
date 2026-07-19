@@ -1,0 +1,174 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "韩雨听到班主任的半句话后，基于有限信息做出一个具体行动，从而改变她与班主任或年级组长之间的关系状态，并为后续情节埋下伏笔。",
+  "location": "教师办公室门外走廊",
+  "time": "上午第二节课后课间",
+  "scene_state": {
+    "last_completed_action": "韩雨走到办公室门边，听见班主任说“你们班的韩雨……”，门随即被关上，下半句被截断。",
+    "present_characters": [
+      "韩雨",
+      "班主任",
+      "年级组长"
+    ],
+    "visible_facts": [
+      "班主任关上门，手里拿着一张表格走出办公室",
+      "韩雨站在门外，手里拿着作业本",
+      "走廊上有其他学生经过"
+    ],
+    "available_objects": [
+      "作业本",
+      "班主任手中的表格",
+      "办公室的门"
+    ],
+    "unresolved_problem": "韩雨不知道班主任和年级组长在谈论她的什么事情，但隐约感觉与自己有关。",
+    "already_existing_constraints": [
+      "韩雨不能追问班主任",
+      "韩雨不能偷看表格",
+      "韩雨必须在课间结束前返回教室"
+    ]
+  },
+  "characters": [
+    {
+      "name": "韩雨",
+      "goal": "弄清楚班主任谈话中关于自己的内容，并决定如何应对可能的问题。",
+      "known": [
+        "班主任提到了自己的名字",
+        "年级组长也在办公室内",
+        "班主任手里有表格"
+      ],
+      "unknown": [
+        "谈话的具体内容",
+        "表格上写了什么",
+        "谈话是好事还是坏事"
+      ],
+      "mistaken_beliefs": [
+        "可能以为自己犯了什么错误被讨论"
+      ],
+      "constraints": [
+        "不能直接追问班主任",
+        "不能偷看表格",
+        "不能表现出异常"
+      ],
+      "observed_evidence": [
+        "班主任关门前说的半句话“你们班的韩雨……”",
+        "班主任走出时手里的表格"
+      ],
+      "current_interpretation": "班主任和年级组长在讨论关于我的事情，可能是不好的事，因为语气听起来严肃。",
+      "how_interpretation_drives_action": "她决定假装偶遇，观察班主任的表情和反应，以获取更多信息。"
+    },
+    {
+      "name": "班主任",
+      "goal": "与年级组长沟通班级事务，可能涉及韩雨，但不希望学生听到。",
+      "known": [
+        "韩雨在班级的表现",
+        "表格上的内容",
+        "与年级组长讨论的目的"
+      ],
+      "unknown": [
+        "韩雨听到了半句话",
+        "韩雨在门外"
+      ],
+      "mistaken_beliefs": [
+        "以为谈话没有被学生听到"
+      ],
+      "constraints": [
+        "不能让学生知道谈话内容",
+        "必须按时处理表格"
+      ],
+      "observed_evidence": [],
+      "current_interpretation": "谈话已经结束，现在要去交表格。",
+      "how_interpretation_drives_action": "她走出办公室，准备前往教务处。"
+    },
+    {
+      "name": "年级组长",
+      "goal": "接收班主任的汇报，可能对韩雨有某种安排或评价。",
+      "known": [
+        "韩雨的基本情况",
+        "班主任汇报的内容"
+      ],
+      "unknown": [
+        "韩雨听到了谈话"
+      ],
+      "mistaken_beliefs": [],
+      "constraints": [
+        "不能泄露谈话内容"
+      ],
+      "observed_evidence": [],
+      "current_interpretation": "已经与班主任沟通完毕。",
+      "how_interpretation_drives_action": "留在办公室继续工作。"
+    }
+  ],
+  "concrete_problem": "韩雨必须决定：是假装偶遇班主任并观察反应，还是直接离开以避免暴露自己听到了谈话。",
+  "pressure": "课间时间有限，班主任随时可能离开，韩雨必须立即行动，否则将失去获取信息的机会。",
+  "turning_point": "韩雨选择主动迎上班主任，以交作业为借口，试图从班主任的微表情或言语中捕捉线索。",
+  "end_condition": "韩雨与班主任短暂互动后，班主任离开，韩雨站在原地，心中有了新的猜测，但无法确认。",
+  "forbidden": [
+    "韩雨不能直接追问谈话内容",
+    "韩雨不能偷看表格",
+    "不能揭示谈话的真实内容",
+    "不能使用任何超自然或非日常元素"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "班主任关上门，手里拿着一张表格走出办公室。",
+      "character_interpretation": "韩雨认为班主任手里的表格可能与谈话内容有关，而且班主任的表情似乎有些严肃。",
+      "character_next_action": "韩雨决定迎上前去，假装正好来交作业，并观察班主任的反应。",
+      "rejected_alternative": "韩雨本可以悄悄离开，假装没听到，但她选择冒险试探。",
+      "immediate_consequence": "班主任看到韩雨，稍微愣了一下，然后平静地接过作业本，说了句“好的，放这里吧”，但眼神有些闪烁。",
+      "counterfactual_without_action": "如果韩雨不行动，她会直接返回教室，但会一直猜测谈话内容，无法获得任何新信息。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "韩雨不知道班主任是否在谈论自己，处于信息空白状态。",
+        "after": "韩雨观察到班主任的微表情异常，确认谈话内容可能与自己有关，且可能不是完全正面。"
+      },
+      "cost_or_commitment": "韩雨暴露了自己在办公室附近，可能让班主任意识到她可能听到了什么。",
+      "next_constraint": "韩雨不能进一步追问，必须带着猜测离开，且班主任可能会更加注意谈话的私密性。",
+      "reader_must_infer": "班主任的闪烁眼神和简短回应暗示了谈话内容对韩雨可能有影响，但具体是好是坏仍不明确。",
+      "narrator_must_not_state": [
+        "班主任的真实想法",
+        "表格上的具体内容",
+        "谈话的完整内容"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "班主任关上门，手里拿着一张表格，正朝韩雨的方向走来。",
+    "dominant_pressure": {
+      "kind": "information_gap",
+      "description": "韩雨急需知道谈话内容，但无法直接获取，只能通过观察和试探来填补信息缺口。"
+    },
+    "allowed_viewpoint_misread": "韩雨可能把班主任的严肃表情误读为针对自己的负面评价，而实际上可能只是工作疲惫。",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "谈话的真实目的",
+      "表格的具体内容"
+    ],
+    "stop_state": {
+      "type": "information_conflict",
+      "visible_fact": "班主任接过作业本时眼神闪烁，回答简短。",
+      "what_is_now_different": "韩雨从完全不知情变为怀疑谈话内容可能对自己不利，且班主任可能意识到韩雨听到了什么。",
+      "must_not_append": "不得揭示班主任的真实想法或谈话内容。"
+    },
+    "final_line_must_include": ""
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "group": "ROUTE-A_LITE_INFORMATION_GAP",
+  "replica": 2,
+  "mode": "narrative_route",
+  "candidate_id": "131b4f46-d49f-4836-a22d-7427d213669e",
+  "attempt_number": 1,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "route_decision": {
+      "route_name": "A_LITE_INFORMATION_GAP",
+      "classifier_version": "narrative-route-v1",
+      "decision_reasons": [
+        "multiple characters with distinct information",
+        "viewpoint character has unknown facts and an interpretation",
+        "secondary character carries independent knowledge"
+      ],
+      "matched_rules": [
+        "RULE_A_LITE_INFORMATION_GAP"
+      ],
+      "rejected_routes": [
+        "C_OBJECT_CAUSAL"
+      ]
+    },
+    "compiled_brief_hash": "74160fce44d2dce330367e4dee503bfd141dc6960fda8f9455d409ccc6090ef6",
+    "instruction_hash": "d368cbfa0846d1cb9adf452db083cbb58ba69154f281b3d6c895cb34da157cec",
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "广播站门口的白墙上贴着一张A4纸。\n\n许澄停下来是因为看见了自己的名字。\n\n“第三周迟到名单”几个字印在最上面，她的名字排在第四行，黑色宋体，清清楚楚。走廊里日光灯嗡嗡响，名单边角被风吹得轻轻掀起又落下。\n\n她盯着那行字看了三秒。\n\n昨天下午她把学生证塞给周弈的时候，他正站在广播站门口啃面包。她说广播站签到马上截止，帮我去登一下，器材室那边我得去拿下午用的麦克风。周弈嘴里含着面包点头，接过学生证往口袋里一揣。\n\n现在名单上有她的名字。\n\n许澄从名单上移开视线，看见走廊另一头周弈正抱着两箱器材过来。黑色收纳箱摞在一起，最上面那个歪着，他下巴抵在箱子边上稳住平衡，走得慢。值班老师站在广播站门口旁边，手里拿着签到夹子，正翻页。\n\n周弈看见她了。\n\n他脚步顿了一下，像是想说什么，但箱子太重，他得先走到广播站门口把东西放下。他继续往前走，视线从她脸上移开，盯着脚下的路。\n\n许澄站在原地。\n\n周弈抱着箱子从她身边经过，距离不到一米。他没有停下来，没有说“名单的事我等下跟你说”，没有用下巴指指广播站里面示意她等一下。他走过去，把箱子放在广播站门口的地上，直起腰来。\n\n值班老师抬头看了他一眼，又低头翻签到夹。\n\n许澄转身往楼梯口走。\n\n她走得快，帆布鞋踩在水磨石地面上发出细碎的摩擦声。身后周弈好像叫了一声她的名字，声音被走廊里的回音搅散，听不清是“许澄”还是别的什么。她没有回头。\n\n下楼。二楼走廊拐角处有学生在擦黑板，粉笔灰扬起来，她侧身绕过去。一楼大厅的挂钟显示七点四十二分，早自习已经开始十二分钟。\n\n教导处在行政楼一楼，和教学楼隔着一个小操场。许澄推开玻璃门的时候，教导主任正坐在办公桌后面喝豆浆。桌上摊着一本签到表，旁边放着一支黑色签字笔。\n\n“老师，我迟到。”\n\n教导主任放下豆浆杯，看了她一眼，把签到表转过来推到她面前。表格上已经有两行记录，第一列是班级，第二列是姓名，第三列是迟到时间，第四列是扣分。\n\n许澄拿起笔。\n\n她的手指碰到笔身的时候停了一下。笔尖悬在姓名那一栏上方，距离纸面不到一厘米。教导主任在对面等着，手指敲了敲桌面。\n\n许澄在姓名栏写下自己的名字。\n\n教导主任伸手把签到表转回去，在扣分栏写了个“-1”，然后合上签到夹。“可以了，去上课。”\n\n许澄从教导处出来。小操场上有两个低年级学生在追跑，书包带子甩来甩去。她站在行政楼门口的台阶上，低头看着自己的手。\n\n手指上沾了一点黑色墨水。\n\n教学楼方向传来早读声，模糊的，隔着一整个操场。她把手在裤子上擦了一下，往教学楼走。\n\n教导处的门在她身后关上，签到表上她的名字旁边，扣分栏里的“-1”字迹还没干透。表格抬头印着“迟到确认登记表”，日期栏填着今天的日期。",
+  "raw_response": "广播站门口的白墙上贴着一张A4纸。\n\n许澄停下来是因为看见了自己的名字。\n\n“第三周迟到名单”几个字印在最上面，她的名字排在第四行，黑色宋体，清清楚楚。走廊里日光灯嗡嗡响，名单边角被风吹得轻轻掀起又落下。\n\n她盯着那行字看了三秒。\n\n昨天下午她把学生证塞给周弈的时候，他正站在广播站门口啃面包。她说广播站签到马上截止，帮我去登一下，器材室那边我得去拿下午用的麦克风。周弈嘴里含着面包点头，接过学生证往口袋里一揣。\n\n现在名单上有她的名字。\n\n许澄从名单上移开视线，看见走廊另一头周弈正抱着两箱器材过来。黑色收纳箱摞在一起，最上面那个歪着，他下巴抵在箱子边上稳住平衡，走得慢。值班老师站在广播站门口旁边，手里拿着签到夹子，正翻页。\n\n周弈看见她了。\n\n他脚步顿了一下，像是想说什么，但箱子太重，他得先走到广播站门口把东西放下。他继续往前走，视线从她脸上移开，盯着脚下的路。\n\n许澄站在原地。\n\n周弈抱着箱子从她身边经过，距离不到一米。他没有停下来，没有说“名单的事我等下跟你说”，没有用下巴指指广播站里面示意她等一下。他走过去，把箱子放在广播站门口的地上，直起腰来。\n\n值班老师抬头看了他一眼，又低头翻签到夹。\n\n许澄转身往楼梯口走。\n\n她走得快，帆布鞋踩在水磨石地面上发出细碎的摩擦声。身后周弈好像叫了一声她的名字，声音被走廊里的回音搅散，听不清是“许澄”还是别的什么。她没有回头。\n\n下楼。二楼走廊拐角处有学生在擦黑板，粉笔灰扬起来，她侧身绕过去。一楼大厅的挂钟显示七点四十二分，早自习已经开始十二分钟。\n\n教导处在行政楼一楼，和教学楼隔着一个小操场。许澄推开玻璃门的时候，教导主任正坐在办公桌后面喝豆浆。桌上摊着一本签到表，旁边放着一支黑色签字笔。\n\n“老师，我迟到。”\n\n教导主任放下豆浆杯，看了她一眼，把签到表转过来推到她面前。表格上已经有两行记录，第一列是班级，第二列是姓名，第三列是迟到时间，第四列是扣分。\n\n许澄拿起笔。\n\n她的手指碰到笔身的时候停了一下。笔尖悬在姓名那一栏上方，距离纸面不到一厘米。教导主任在对面等着，手指敲了敲桌面。\n\n许澄在姓名栏写下自己的名字。\n\n教导主任伸手把签到表转回去，在扣分栏写了个“-1”，然后合上签到夹。“可以了，去上课。”\n\n许澄从教导处出来。小操场上有两个低年级学生在追跑，书包带子甩来甩去。她站在行政楼门口的台阶上，低头看着自己的手。\n\n手指上沾了一点黑色墨水。\n\n教学楼方向传来早读声，模糊的，隔着一整个操场。她把手在裤子上擦了一下，往教学楼走。\n\n教导处的门在她身后关上，签到表上她的名字旁边，扣分栏里的“-1”字迹还没干透。表格抬头印着“迟到确认登记表”，日期栏填着今天的日期。",
+  "input_tokens": 1403,
+  "output_tokens": 710,
+  "latency_ms": 17929,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "c263b704282677e5a8f1ffb86bf5dae73e49dbae6491b4555ea46e2ca08012fc",
+  "route_name": null,
+  "route_decision": {
+    "route_name": "A_LITE_INFORMATION_GAP",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "multiple characters with distinct information",
+      "viewpoint character has unknown facts and an interpretation",
+      "secondary character carries independent knowledge"
+    ],
+    "matched_rules": [
+      "RULE_A_LITE_INFORMATION_GAP"
+    ],
+    "rejected_routes": [
+      "C_OBJECT_CAUSAL"
+    ]
+  },
+  "compiled_brief_hash": "74160fce44d2dce330367e4dee503bfd141dc6960fda8f9455d409ccc6090ef6",
+  "instruction_hash": "d368cbfa0846d1cb9adf452db083cbb58ba69154f281b3d6c895cb34da157cec",
+  "text_path": "cases\\CAMPUS-02\\drafts\\route-2.txt"
+}

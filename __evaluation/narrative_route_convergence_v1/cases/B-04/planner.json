@@ -1,0 +1,153 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "早晨六点半，沈辛在操场慢跑时看到余苒从对面跑来，两人并排跑了一段后余苒突然拐弯走了岔道。沈辛不能追过去问为什么，也不能推断对方心思。两人下午有共享的实验课。停在绕操场跑回来或离开的选择。",
+  "location": "学校操场",
+  "time": "早晨六点半",
+  "scene_state": {
+    "last_completed_action": "沈辛在操场慢跑，看到余苒从对面跑来",
+    "present_characters": [
+      "沈辛",
+      "余苒"
+    ],
+    "visible_facts": [
+      "沈辛在慢跑",
+      "余苒从对面跑来",
+      "两人并排跑了一段",
+      "余苒突然拐弯走了岔道"
+    ],
+    "available_objects": [
+      "跑道",
+      "岔道",
+      "晨光",
+      "操场围栏"
+    ],
+    "unresolved_problem": "余苒为什么突然拐弯离开？",
+    "already_existing_constraints": [
+      "沈辛不能追过去问为什么",
+      "沈辛不能推断对方心思",
+      "两人下午有共享的实验课"
+    ]
+  },
+  "characters": [
+    {
+      "name": "沈辛",
+      "goal": "决定是继续跑完还是离开操场",
+      "known": [
+        "余苒从对面跑来",
+        "两人并排跑了一段",
+        "余苒突然拐弯走了岔道"
+      ],
+      "unknown": [
+        "余苒为什么突然拐弯离开"
+      ],
+      "mistaken_beliefs": [
+        "余苒可能不想和他一起跑"
+      ],
+      "constraints": [
+        "不能追过去问为什么",
+        "不能推断对方心思",
+        "下午有共享实验课"
+      ],
+      "observed_evidence": [
+        "余苒突然拐弯走了岔道"
+      ],
+      "current_interpretation": "余苒可能临时有事，或者不想继续一起跑",
+      "how_interpretation_drives_action": "沈辛选择继续跑完自己的路线，不追问，为下午实验课保留自然相处的机会"
+    },
+    {
+      "name": "余苒",
+      "goal": "完成晨跑，避免尴尬",
+      "known": [
+        "沈辛在操场慢跑",
+        "两人并排跑了一段"
+      ],
+      "unknown": [
+        "沈辛是否注意到她的突然离开",
+        "沈辛会怎么想"
+      ],
+      "mistaken_beliefs": [
+        "沈辛可能没注意到她拐弯"
+      ],
+      "constraints": [
+        "不能解释为什么离开",
+        "下午有共享实验课"
+      ],
+      "observed_evidence": [
+        "沈辛没有追上来"
+      ],
+      "current_interpretation": "沈辛可能没在意，或者尊重她的选择",
+      "how_interpretation_drives_action": "余苒继续沿岔道跑完，然后离开操场，准备下午的实验课"
+    }
+  ],
+  "concrete_problem": "沈辛必须决定是继续绕操场跑回来还是直接离开，这一选择将影响下午实验课的氛围。",
+  "pressure": "早晨的时间有限，且下午实验课必须见面，沈辛需要在不追问的情况下为下午的相处留下余地。",
+  "turning_point": "沈辛选择继续绕操场跑完，不改变自己的路线，以示日常的稳定，同时避免让余苒感到被跟踪或追问。",
+  "end_condition": "沈辛跑完最后一圈，离开操场，余苒已不见踪影，但两人都知道下午实验课会再见。",
+  "forbidden": [
+    "沈辛追过去问余苒为什么离开",
+    "沈辛推断余苒的心思",
+    "两人在操场上再次相遇并对话"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "余苒突然拐弯走了岔道",
+      "character_interpretation": "余苒可能想自己跑，或者有别的安排",
+      "character_next_action": "沈辛继续沿跑道慢跑，完成自己的晨跑计划",
+      "rejected_alternative": "沈辛本可以追上去问清楚，但他选择尊重对方的空间",
+      "immediate_consequence": "沈辛没有与余苒发生进一步接触，两人各自完成晨跑",
+      "counterfactual_without_action": "如果沈辛追上去，可能会让余苒感到尴尬或压力",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "两人并排跑，余苒突然离开，沈辛面临选择",
+        "after": "沈辛继续跑完，余苒已从岔道离开，两人未再相遇"
+      },
+      "cost_or_commitment": "沈辛放弃了立即弄清原因的机会，承担了下午实验课可能存在的微妙气氛",
+      "next_constraint": "沈辛下午实验课时必须当作早晨什么都没发生",
+      "reader_must_infer": "沈辛的克制是为了长远的关系发展，而非冷漠",
+      "narrator_must_not_state": [
+        "沈辛内心的真正感受",
+        "余苒离开的真实原因"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "余苒突然拐弯离开，沈辛必须即刻决定自己的反应",
+    "dominant_pressure": {
+      "kind": "social_friction",
+      "description": "余苒的突然离开制造了社交上的不确定性，沈辛需要在不追问的情况下维护关系"
+    },
+    "allowed_viewpoint_misread": "读者可能误以为沈辛不在乎，但实际他在为下午考虑",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "余苒离开的真正原因",
+      "沈辛对余苒的真实感觉"
+    ],
+    "stop_state": {
+      "type": "physical_change",
+      "visible_fact": "沈辛跑完最后一圈，离开操场",
+      "what_is_now_different": "操场空无一人，早晨的偶遇已经结束，但下午实验课的约定仍然存在",
+      "must_not_append": "不得描写沈辛离开后的心理活动或对下午的预期"
+    },
+    "final_line_must_include": ""
+  }
+}

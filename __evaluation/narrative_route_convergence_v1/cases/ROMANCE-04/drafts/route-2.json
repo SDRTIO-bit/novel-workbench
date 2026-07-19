@@ -1,0 +1,63 @@
+{
+  "group": "ROUTE-B_SHORT_RELATION",
+  "replica": 2,
+  "mode": "narrative_route",
+  "candidate_id": "6bd55135-3e92-4713-80f1-d96286e6952e",
+  "attempt_number": 1,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "route_decision": {
+      "route_name": "B_SHORT_RELATION",
+      "classifier_version": "narrative-route-v1",
+      "decision_reasons": [
+        "scene is relationship-oriented with no physical urgency",
+        "character action involves relational move (message, gesture, proximity)"
+      ],
+      "matched_rules": [
+        "RULE_B_SHORT_RELATION"
+      ],
+      "rejected_routes": [
+        "C_OBJECT_CAUSAL",
+        "A_LITE_INFORMATION_GAP"
+      ]
+    },
+    "compiled_brief_hash": "d0d8bdf802662d19be75bcc163a2f2aa9bfb582a2fc1fcfb035b8f49e3cf8350",
+    "instruction_hash": "d7a76822408396dc71c4599a7f40f33368b90199f0d9c0712383961213437555",
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "朋友们陆续起身，椅子腿磨着地砖，笑声和告别挤在门口。陈述开始收拾桌上的碗筷，盘子摞起来，筷子横在碗沿。\n\n许岚拎起包，余光扫到桌角——一小盒生日蜡烛，包装纸还没拆，彩色的细蜡烛透过透明塑料膜露出来。她上周随口说过自己的生日日期，今天不是那个日子。\n\n陈述端着盘子从她身边经过，视线在蜡烛上停了一瞬，没说话，继续往厨房走。\n\n许岚伸手拿起那盒蜡烛，举到眼前晃了晃，声音带着笑：“这蜡烛没人要吗？那我带走了啊。”\n\n陈述在厨房门口回过头。他没否认，嘴角微微往上提了一下，然后转身把盘子放进水槽。\n\n许岚拉开包的拉链，把蜡烛塞进内层口袋。拉链合上的声音很轻。她没再问，他也没说。",
+  "raw_response": "朋友们陆续起身，椅子腿磨着地砖，笑声和告别挤在门口。陈述开始收拾桌上的碗筷，盘子摞起来，筷子横在碗沿。\n\n许岚拎起包，余光扫到桌角——一小盒生日蜡烛，包装纸还没拆，彩色的细蜡烛透过透明塑料膜露出来。她上周随口说过自己的生日日期，今天不是那个日子。\n\n陈述端着盘子从她身边经过，视线在蜡烛上停了一瞬，没说话，继续往厨房走。\n\n许岚伸手拿起那盒蜡烛，举到眼前晃了晃，声音带着笑：“这蜡烛没人要吗？那我带走了啊。”\n\n陈述在厨房门口回过头。他没否认，嘴角微微往上提了一下，然后转身把盘子放进水槽。\n\n许岚拉开包的拉链，把蜡烛塞进内层口袋。拉链合上的声音很轻。她没再问，他也没说。",
+  "input_tokens": 1357,
+  "output_tokens": 191,
+  "latency_ms": 5660,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "5d96f9fb2570d721ba2f6220df2123a1134838950accf3e69b32bac04507f595",
+  "route_name": null,
+  "route_decision": {
+    "route_name": "B_SHORT_RELATION",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "scene is relationship-oriented with no physical urgency",
+      "character action involves relational move (message, gesture, proximity)"
+    ],
+    "matched_rules": [
+      "RULE_B_SHORT_RELATION"
+    ],
+    "rejected_routes": [
+      "C_OBJECT_CAUSAL",
+      "A_LITE_INFORMATION_GAP"
+    ]
+  },
+  "compiled_brief_hash": "d0d8bdf802662d19be75bcc163a2f2aa9bfb582a2fc1fcfb035b8f49e3cf8350",
+  "instruction_hash": "d7a76822408396dc71c4599a7f40f33368b90199f0d9c0712383961213437555",
+  "text_path": "cases\\ROMANCE-04\\drafts\\route-2.txt"
+}

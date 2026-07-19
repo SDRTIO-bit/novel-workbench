@@ -1,0 +1,63 @@
+{
+  "group": "ROUTE-B_SHORT_RELATION",
+  "replica": 1,
+  "mode": "narrative_route",
+  "candidate_id": "7f45142c-8cb7-472f-9a62-d7224cb81894",
+  "attempt_number": 1,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "route_decision": {
+      "route_name": "B_SHORT_RELATION",
+      "classifier_version": "narrative-route-v1",
+      "decision_reasons": [
+        "scene is relationship-oriented with no physical urgency",
+        "character action involves relational move (message, gesture, proximity)"
+      ],
+      "matched_rules": [
+        "RULE_B_SHORT_RELATION"
+      ],
+      "rejected_routes": [
+        "C_OBJECT_CAUSAL",
+        "A_LITE_INFORMATION_GAP"
+      ]
+    },
+    "compiled_brief_hash": "d0d8bdf802662d19be75bcc163a2f2aa9bfb582a2fc1fcfb035b8f49e3cf8350",
+    "instruction_hash": "d7a76822408396dc71c4599a7f40f33368b90199f0d9c0712383961213437555",
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "朋友们陆续起身离席，椅子腿在地板上拖出零散的声响。许岚站起来帮陈述收桌上的盘子，手指刚碰到一只蘸碟的边缘，余光就扫到了桌角那个小盒子。\n\n蓝色的纸盒，没拆封，印着细碎的彩色圆点。\n\n她顿了顿。\n\n陈述正从她左手边端起三只杯子，动作没停，但视线在那只盒子上落了一瞬，又移开了。\n\n许岚把手从蘸碟上收回来，指尖抵住纸盒的边缘，往自己这边轻轻拨了半寸。盒底蹭过木桌面的声音很轻，轻到几乎被厨房水槽的水声盖过去。\n\n“这蜡烛没人要吗？”她把盒子拿起来，翻了个面，像是在检查包装上的字样，语气压得随意，“那我带走了。”\n\n陈述把杯子放进水槽，转过头看她。他没说话，但嘴角往上弯了弯，不是客气的笑，是那种被看穿了什么之后懒得再藏的笑。\n\n许岚没等他回答。她拉开自己挂在椅背上的帆布包，把蜡烛盒塞进内侧那个带拉链的小隔层里，拉链咬合的声音利落干脆。\n\n陈述收回目光，拧开水龙头冲盘子。\n\n她没再问，他也没说。",
+  "raw_response": "朋友们陆续起身离席，椅子腿在地板上拖出零散的声响。许岚站起来帮陈述收桌上的盘子，手指刚碰到一只蘸碟的边缘，余光就扫到了桌角那个小盒子。\n\n蓝色的纸盒，没拆封，印着细碎的彩色圆点。\n\n她顿了顿。\n\n陈述正从她左手边端起三只杯子，动作没停，但视线在那只盒子上落了一瞬，又移开了。\n\n许岚把手从蘸碟上收回来，指尖抵住纸盒的边缘，往自己这边轻轻拨了半寸。盒底蹭过木桌面的声音很轻，轻到几乎被厨房水槽的水声盖过去。\n\n“这蜡烛没人要吗？”她把盒子拿起来，翻了个面，像是在检查包装上的字样，语气压得随意，“那我带走了。”\n\n陈述把杯子放进水槽，转过头看她。他没说话，但嘴角往上弯了弯，不是客气的笑，是那种被看穿了什么之后懒得再藏的笑。\n\n许岚没等他回答。她拉开自己挂在椅背上的帆布包，把蜡烛盒塞进内侧那个带拉链的小隔层里，拉链咬合的声音利落干脆。\n\n陈述收回目光，拧开水龙头冲盘子。\n\n她没再问，他也没说。",
+  "input_tokens": 1357,
+  "output_tokens": 268,
+  "latency_ms": 6921,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "5d96f9fb2570d721ba2f6220df2123a1134838950accf3e69b32bac04507f595",
+  "route_name": null,
+  "route_decision": {
+    "route_name": "B_SHORT_RELATION",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "scene is relationship-oriented with no physical urgency",
+      "character action involves relational move (message, gesture, proximity)"
+    ],
+    "matched_rules": [
+      "RULE_B_SHORT_RELATION"
+    ],
+    "rejected_routes": [
+      "C_OBJECT_CAUSAL",
+      "A_LITE_INFORMATION_GAP"
+    ]
+  },
+  "compiled_brief_hash": "d0d8bdf802662d19be75bcc163a2f2aa9bfb582a2fc1fcfb035b8f49e3cf8350",
+  "instruction_hash": "d7a76822408396dc71c4599a7f40f33368b90199f0d9c0712383961213437555",
+  "text_path": "cases\\ROMANCE-04\\drafts\\route-1.txt"
+}

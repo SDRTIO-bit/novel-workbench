@@ -1,0 +1,63 @@
+{
+  "group": "ROUTE-B_SHORT_RELATION",
+  "replica": 1,
+  "mode": "narrative_route",
+  "candidate_id": "de4af637-1931-4a22-b297-96d5bc91f5ba",
+  "attempt_number": 1,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "route_decision": {
+      "route_name": "B_SHORT_RELATION",
+      "classifier_version": "narrative-route-v1",
+      "decision_reasons": [
+        "scene is relationship-oriented with no physical urgency",
+        "character action involves relational move (message, gesture, proximity)"
+      ],
+      "matched_rules": [
+        "RULE_B_SHORT_RELATION"
+      ],
+      "rejected_routes": [
+        "C_OBJECT_CAUSAL",
+        "A_LITE_INFORMATION_GAP"
+      ]
+    },
+    "compiled_brief_hash": "346f93501f865060b88a1c05d2bb21a1a3f1469b4c53891b795171f6eb88e3a3",
+    "instruction_hash": "d7a76822408396dc71c4599a7f40f33368b90199f0d9c0712383961213437555",
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "水蒸气从锅沿漫出来，扑上夏知的脸。\n\n韩川把手机扣在料理台边，屏幕朝下，手指已经伸进洗菜盆里。青菜叶子在水龙头底下翻动，他低着头，像根本没听见门口有人。\n\n灶台上的水咕嘟咕嘟滚着，泡沫快顶到锅盖。两只碗并排搁在桌角，筷子还没摆。\n\n夏知走进去，伸手把火拧小了两圈。滚水声落下来，厨房忽然安静得能听见隔壁的洗衣机在转。\n\n她拿起桌上一只碗，指尖碰到碗沿时顿了顿，然后转过身。\n\n“韩川。”\n\n他停下洗菜的手，水还在流。\n\n“要不要先盛饭？”\n\n韩川侧过脸看她。水珠从他手指上滴下来，滴在料理台边缘。他伸手把洗好的菜筐递过来，菜叶上挂着水，筐底还在往下淌。\n\n“好，谢谢。”\n\n夏知接过菜筐，手指擦过他湿漉漉的指节。凉的。\n\n韩川转身去端电饭煲。他打开锅盖，热气腾起来，模糊了他低头的侧脸。夏知把碗递过去的时候，他接住了，手指扣在碗沿，和她的手指隔着不到一寸。\n\n他往碗里压饭，米粒被压实的声响填满两个人之间的空隙。\n\n夏知把菜筐放在砧板旁边，没走开。灶台上的小火舔着锅底，水安静地冒着细泡。\n\n韩川盛好一碗，递回给她。她接过去，碗底烫得她换了一只手托住。\n\n他盛第二碗的时候，她站在灶台前没动。两个人并排站着，肩膀之间隔着一只碗的距离。",
+  "raw_response": "水蒸气从锅沿漫出来，扑上夏知的脸。\n\n韩川把手机扣在料理台边，屏幕朝下，手指已经伸进洗菜盆里。青菜叶子在水龙头底下翻动，他低着头，像根本没听见门口有人。\n\n灶台上的水咕嘟咕嘟滚着，泡沫快顶到锅盖。两只碗并排搁在桌角，筷子还没摆。\n\n夏知走进去，伸手把火拧小了两圈。滚水声落下来，厨房忽然安静得能听见隔壁的洗衣机在转。\n\n她拿起桌上一只碗，指尖碰到碗沿时顿了顿，然后转过身。\n\n“韩川。”\n\n他停下洗菜的手，水还在流。\n\n“要不要先盛饭？”\n\n韩川侧过脸看她。水珠从他手指上滴下来，滴在料理台边缘。他伸手把洗好的菜筐递过来，菜叶上挂着水，筐底还在往下淌。\n\n“好，谢谢。”\n\n夏知接过菜筐，手指擦过他湿漉漉的指节。凉的。\n\n韩川转身去端电饭煲。他打开锅盖，热气腾起来，模糊了他低头的侧脸。夏知把碗递过去的时候，他接住了，手指扣在碗沿，和她的手指隔着不到一寸。\n\n他往碗里压饭，米粒被压实的声响填满两个人之间的空隙。\n\n夏知把菜筐放在砧板旁边，没走开。灶台上的小火舔着锅底，水安静地冒着细泡。\n\n韩川盛好一碗，递回给她。她接过去，碗底烫得她换了一只手托住。\n\n他盛第二碗的时候，她站在灶台前没动。两个人并排站着，肩膀之间隔着一只碗的距离。",
+  "input_tokens": 1355,
+  "output_tokens": 369,
+  "latency_ms": 9462,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "c15a06b5cad7bb1a067830ee1bc7b132067f3977e0df48fe31baa16f527e6570",
+  "route_name": null,
+  "route_decision": {
+    "route_name": "B_SHORT_RELATION",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "scene is relationship-oriented with no physical urgency",
+      "character action involves relational move (message, gesture, proximity)"
+    ],
+    "matched_rules": [
+      "RULE_B_SHORT_RELATION"
+    ],
+    "rejected_routes": [
+      "C_OBJECT_CAUSAL",
+      "A_LITE_INFORMATION_GAP"
+    ]
+  },
+  "compiled_brief_hash": "346f93501f865060b88a1c05d2bb21a1a3f1469b4c53891b795171f6eb88e3a3",
+  "instruction_hash": "d7a76822408396dc71c4599a7f40f33368b90199f0d9c0712383961213437555",
+  "text_path": "cases\\ROMANCE-02\\drafts\\route-1.txt"
+}

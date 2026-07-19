@@ -1,0 +1,59 @@
+{
+  "group": "ROUTE-C_OBJECT_CAUSAL",
+  "replica": 3,
+  "mode": "narrative_route",
+  "candidate_id": "a68720a4-5db0-4f81-80e2-0d86c0a4b579",
+  "attempt_number": 1,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "route_decision": {
+      "route_name": "C_OBJECT_CAUSAL",
+      "classifier_version": "narrative-route-v1",
+      "decision_reasons": [
+        "scene_state.available_objects is non-empty",
+        "causal_transitions contains counterfactual_without_action or rejected_alternative",
+        "character_next_action involves physical object manipulation"
+      ],
+      "matched_rules": [
+        "RULE_C_OBJECT_CAUSAL"
+      ],
+      "rejected_routes": []
+    },
+    "compiled_brief_hash": "164f908cc00d1dccb682eef337f179ddb4458800887664a37596bbdf212655be",
+    "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "孟然站在储物柜前，短袖下的手臂还带着体育课后的汗意。\n\n更衣室的门半敞着，走廊里李一鸣的脚步声已经听不见了。孟然低头看了看自己的脚踝，肿起来的那一圈皮肤在白色袜口上方泛着红。他试着把重心挪过去，刺痛立刻从脚背窜上来。\n\n他停住了。\n\n长凳上那件黑色运动服还摊在那里。孟然伸手拎起来——领口的尺码标签写着XL，他自己的是L。他把外套翻了个面，袖子的内侧布料露出来，拉链头垂在一边晃了两下。\n\n孟然拎着外套往门口走。脚踝每踩一下都像被人用拇指按着骨缝往里压。他把外套放在更衣室门口的长凳上，这条长凳正对走廊，任何人从田径场方向回来都会第一眼看到它。\n\n然后他抓住右边那只袖子，从袖口开始往外翻。布料一层层叠上去，黑色的运动面料翻出灰色的网眼里衬，整条袖子像被剥开的香蕉皮那样耷拉在长凳边缘。左边袖子保持原样，垂在凳子下面。\n\n孟然退后一步。外套就那么躺着——半翻半挂，右袖子翻出内衬，左袖子拖到地上，拉链歪在一边。\n\n他在对面的长凳上坐下来。脚踝搁在书包上，更衣室的荧光灯嗡嗡响。走廊里远远传来田径场上的哨声，隔着几道墙，闷闷的。\n\n孟然没看手机，也没去翻书包。他就盯着门口那件外套右袖子翻出来的灰色里衬。\n\n大约过了四分钟，走廊里响起跑步声。不是冲刺那种，是跑到一半突然放慢的节奏。脚步在更衣室门口停住了。\n\n李一鸣站在门口，呼吸还没匀。他身上穿着孟然的外套——肩线明显窄了，袖口缩在手腕上方两指宽的位置。他先看了看长凳上那件翻出袖子的外套，又低头看了看自己身上这件。\n\n他把手伸进身上外套的口袋。\n\n右边口袋是空的。左边口袋——他的手指碰到了金属。\n\n李一鸣的动作停住了。口袋里的钥匙硌到了他的手。",
+  "raw_response": "孟然站在储物柜前，短袖下的手臂还带着体育课后的汗意。\n\n更衣室的门半敞着，走廊里李一鸣的脚步声已经听不见了。孟然低头看了看自己的脚踝，肿起来的那一圈皮肤在白色袜口上方泛着红。他试着把重心挪过去，刺痛立刻从脚背窜上来。\n\n他停住了。\n\n长凳上那件黑色运动服还摊在那里。孟然伸手拎起来——领口的尺码标签写着XL，他自己的是L。他把外套翻了个面，袖子的内侧布料露出来，拉链头垂在一边晃了两下。\n\n孟然拎着外套往门口走。脚踝每踩一下都像被人用拇指按着骨缝往里压。他把外套放在更衣室门口的长凳上，这条长凳正对走廊，任何人从田径场方向回来都会第一眼看到它。\n\n然后他抓住右边那只袖子，从袖口开始往外翻。布料一层层叠上去，黑色的运动面料翻出灰色的网眼里衬，整条袖子像被剥开的香蕉皮那样耷拉在长凳边缘。左边袖子保持原样，垂在凳子下面。\n\n孟然退后一步。外套就那么躺着——半翻半挂，右袖子翻出内衬，左袖子拖到地上，拉链歪在一边。\n\n他在对面的长凳上坐下来。脚踝搁在书包上，更衣室的荧光灯嗡嗡响。走廊里远远传来田径场上的哨声，隔着几道墙，闷闷的。\n\n孟然没看手机，也没去翻书包。他就盯着门口那件外套右袖子翻出来的灰色里衬。\n\n大约过了四分钟，走廊里响起跑步声。不是冲刺那种，是跑到一半突然放慢的节奏。脚步在更衣室门口停住了。\n\n李一鸣站在门口，呼吸还没匀。他身上穿着孟然的外套——肩线明显窄了，袖口缩在手腕上方两指宽的位置。他先看了看长凳上那件翻出袖子的外套，又低头看了看自己身上这件。\n\n他把手伸进身上外套的口袋。\n\n右边口袋是空的。左边口袋——他的手指碰到了金属。\n\n李一鸣的动作停住了。口袋里的钥匙硌到了他的手。",
+  "input_tokens": 1469,
+  "output_tokens": 472,
+  "latency_ms": 12205,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "ce81cf479d609dc871bfd801093a707c3265d71cfa093e55326969761550e90d",
+  "route_name": null,
+  "route_decision": {
+    "route_name": "C_OBJECT_CAUSAL",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "scene_state.available_objects is non-empty",
+      "causal_transitions contains counterfactual_without_action or rejected_alternative",
+      "character_next_action involves physical object manipulation"
+    ],
+    "matched_rules": [
+      "RULE_C_OBJECT_CAUSAL"
+    ],
+    "rejected_routes": []
+  },
+  "compiled_brief_hash": "164f908cc00d1dccb682eef337f179ddb4458800887664a37596bbdf212655be",
+  "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+  "text_path": "cases\\C-05\\drafts\\route-3.txt"
+}

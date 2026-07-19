@@ -1,0 +1,18 @@
+{
+  "case_id": "B-06",
+  "expected_route": "B_SHORT_RELATION",
+  "actual_route": "C_OBJECT_CAUSAL",
+  "decision": {
+    "route_name": "C_OBJECT_CAUSAL",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "scene_state.available_objects is non-empty",
+      "causal_transitions contains counterfactual_without_action or rejected_alternative",
+      "character_next_action involves physical object manipulation"
+    ],
+    "matched_rules": [
+      "RULE_C_OBJECT_CAUSAL"
+    ],
+    "rejected_routes": []
+  }
+}

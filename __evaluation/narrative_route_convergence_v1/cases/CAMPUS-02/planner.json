@@ -1,0 +1,155 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "许澄在广播站门口看见迟到名单上有自己的名字，误以为周弈忘了替她登记，基于名单和现场动作做出判断，放弃当面追问，做一件会带来具体麻烦的事。",
+  "location": "校园广播站门口走廊",
+  "time": "早自习结束后，第一节课前",
+  "scene_state": {
+    "last_completed_action": "许澄在广播站门口看到迟到名单，上面有自己的名字",
+    "present_characters": [
+      "许澄",
+      "周弈",
+      "值班老师"
+    ],
+    "visible_facts": [
+      "广播站门口贴着迟到名单",
+      "名单上有许澄的名字",
+      "周弈正抱着器材从走廊另一头过来",
+      "值班老师站在广播站门口旁边"
+    ],
+    "available_objects": [
+      "迟到名单",
+      "广播器材",
+      "许澄的书包"
+    ],
+    "unresolved_problem": "许澄的名字为何出现在迟到名单上",
+    "already_existing_constraints": [
+      "许澄不能直接向周弈求证",
+      "许澄不能向值班老师解释",
+      "许澄必须在上课前做出反应"
+    ]
+  },
+  "characters": [
+    {
+      "name": "许澄",
+      "goal": "确定周弈是否真的忘了替她登记，并做出反应",
+      "known": [
+        "自己托周弈帮忙登记",
+        "名单上有自己的名字",
+        "周弈正抱着器材过来"
+      ],
+      "unknown": [
+        "周弈是否真的忘了登记",
+        "周弈是否另有安排"
+      ],
+      "mistaken_beliefs": [
+        "周弈忘了替她登记"
+      ],
+      "constraints": [
+        "不能当面追问周弈",
+        "不能让值班老师察觉异常"
+      ],
+      "observed_evidence": [
+        "名单上自己的名字",
+        "周弈抱着器材走过来，没有主动解释"
+      ],
+      "current_interpretation": "周弈忘了登记，现在正忙着搬器材，没打算解释",
+      "how_interpretation_drives_action": "许澄放弃追问，转身离开，去教导处自首迟到，接受处罚"
+    },
+    {
+      "name": "周弈",
+      "goal": "把器材搬进广播站，完成老师交代的任务",
+      "known": [
+        "自己已经替许澄登记",
+        "名单是旧的，新名单还没贴出来"
+      ],
+      "unknown": [
+        "许澄看到了旧名单并误会了自己"
+      ],
+      "mistaken_beliefs": [
+        "许澄知道名单会更新"
+      ],
+      "constraints": [
+        "不能放下器材去解释",
+        "不能当着值班老师的面说名单有误"
+      ],
+      "observed_evidence": [
+        "许澄站在名单前，脸色不好",
+        "许澄转身离开"
+      ],
+      "current_interpretation": "许澄可能看到了旧名单，但应该知道我会处理",
+      "how_interpretation_drives_action": "周弈继续搬器材，打算忙完再找许澄"
+    }
+  ],
+  "concrete_problem": "许澄必须在周弈和值班老师都在场的情况下，仅凭名单和现场动作决定是否当面质问，还是采取其他行动。",
+  "pressure": "上课铃即将响起，许澄必须在短时间内做出选择，否则迟到记录将生效。",
+  "turning_point": "许澄看到周弈没有停下的意思，决定放弃质问，转身走向教导处。",
+  "end_condition": "许澄走进教导处，向老师承认自己迟到，接受扣分处罚。",
+  "forbidden": [
+    "周弈的真实安排",
+    "许澄与周弈的直接对话",
+    "值班老师的干预",
+    "名单更新的解释"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "迟到名单上许澄的名字",
+      "character_interpretation": "周弈忘了替我登记",
+      "character_next_action": "许澄转身离开，去教导处自首迟到",
+      "rejected_alternative": "许澄可以等周弈过来后当面质问，但她选择放弃",
+      "immediate_consequence": "许澄在教导处被记录迟到，扣班级分",
+      "counterfactual_without_action": "如果许澄不行动，她将错过上课时间，迟到记录自动生效，且可能被老师点名批评",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "许澄的名字在迟到名单上，但尚未被正式记录",
+        "after": "许澄主动承认迟到，迟到记录正式生效，班级分被扣"
+      },
+      "cost_or_commitment": "许澄付出了班级分被扣的代价，并承担了主动认错的心理压力",
+      "next_constraint": "许澄不能再以未迟到为由反驳任何记录",
+      "reader_must_infer": "周弈其实已经替许澄登记，但名单是旧的，新名单尚未贴出",
+      "narrator_must_not_state": [
+        "周弈替许澄登记的事实",
+        "名单是旧的原因"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "许澄看见名单上自己的名字，周弈正从走廊另一头过来",
+    "dominant_pressure": {
+      "kind": "information_gap",
+      "description": "许澄不知道名单为何有自己的名字，但时间紧迫，她必须决定如何应对"
+    },
+    "allowed_viewpoint_misread": "许澄可能把周弈的匆忙理解为心虚或不关心",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "周弈替许澄登记的事实",
+      "名单更新的具体时间"
+    ],
+    "stop_state": {
+      "type": "social_commitment",
+      "visible_fact": "许澄在教导处签到表上签名确认迟到",
+      "what_is_now_different": "许澄从可能被误记迟到变成主动承认迟到，形成了无法撤回的记录",
+      "must_not_append": "不得解释许澄实际并未迟到"
+    },
+    "final_line_must_include": "迟到确认"
+  }
+}

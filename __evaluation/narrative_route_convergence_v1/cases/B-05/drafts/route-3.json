@@ -1,0 +1,59 @@
+{
+  "group": "ROUTE-C_OBJECT_CAUSAL",
+  "replica": 3,
+  "mode": "narrative_route",
+  "candidate_id": "e34cca0b-25c1-4550-8825-cfa7c6d6704d",
+  "attempt_number": 1,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "route_decision": {
+      "route_name": "C_OBJECT_CAUSAL",
+      "classifier_version": "narrative-route-v1",
+      "decision_reasons": [
+        "scene_state.available_objects is non-empty",
+        "causal_transitions contains counterfactual_without_action or rejected_alternative",
+        "character_next_action involves physical object manipulation"
+      ],
+      "matched_rules": [
+        "RULE_C_OBJECT_CAUSAL"
+      ],
+      "rejected_routes": []
+    },
+    "compiled_brief_hash": "618d5664a3e5bc359e4381bc847521c7e62b788ad46f88ff5b5380f2033ace57",
+    "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "丁宁接过外套的时候，手指碰到了季然的手背。\n\n凉的。十月底的夜风把他的手吹得跟外套面料一个温度。她把外套抱在怀里，闻到上面残留的火锅味和一点洗衣液的清香。其他社团成员的笑声已经拐过街角，越来越远。路灯把分岔路口照得很亮，左边是回她宿舍的路，右边也是回她宿舍的路，只是方向不同。\n\n季然站在她面前，没有动。\n\n他把外套递还之后，手垂在身侧，整个人像钉在了人行道的地砖上。丁宁低头把外套叠了一下，这个动作其实不需要做，外套本来就不乱。她只是需要手上有个事情，好让自己不用立刻决定往哪边走。\n\n叠到袖口的时候，她注意到那截袖口被捏得有点皱。是之前递过来的时候，他手指多停了一秒留下的。\n\n丁宁抬起头。\n\n季然正看着她。不是那种恰好对视的“正看着”，是他本来就在看，她抬头只是确认了这件事。他的眼神没有躲，也没有顺势说点什么打破沉默。他就那么站着，手插在卫衣口袋里，肩膀微微收紧，像是也在等。\n\n丁宁可以把外套往包里一塞，说声谢谢，然后转身走上左边那条路。她的宿舍往左走更近，这个理由足够充分，谁都不会觉得奇怪。她已经张了张嘴，那声“谢谢”到了舌尖。\n\n但她没有说。\n\n她抱着外套的手收紧了一点，身体没有转向左边，也没有转向右边。她就站在分岔路口的正中间，和季然面对面，中间隔着两步的距离。这两步谁都没动。\n\n季然的喉结动了一下。\n\n他往右边那条路偏了偏下巴，动作很小，像是只是活动了一下脖子。但他的脚跟着转了几度，鞋尖从正对着她变成了朝向右边。\n\n丁宁看见了。\n\n她把外套塞进包里，拉链拉上。这个声音在安静的夜里很响，像是什么东西被决定了。然后她迈开步子，没有往左，也没有往右，只是往前走了一步——朝着季然站着的方向。\n\n季然后退了半步，不是躲，是让出空间。\n\n然后他转过身，和她面朝同一个方向。\n\n丁宁走上右边那条路的时候，心跳快得有点不像话。她没有看季然，但她听见他的球鞋踩在落叶上的声音，就在她右后方不到一步的距离。那个距离保持了三步，然后他迈了一大步，和她并排了。\n\n路灯把他们的影子投在前面的人行道上，两个分开的轮廓。\n\n丁宁放慢了脚步。\n\n不是刻意的，至少她可以对自己这么说。只是这条路树荫很密，月光被遮得断断续续，路面不太看得清。慢一点走比较安全。\n\n她的脚步放得很慢，慢到路灯把他们的影子拖成了一个人。",
+  "raw_response": "丁宁接过外套的时候，手指碰到了季然的手背。\n\n凉的。十月底的夜风把他的手吹得跟外套面料一个温度。她把外套抱在怀里，闻到上面残留的火锅味和一点洗衣液的清香。其他社团成员的笑声已经拐过街角，越来越远。路灯把分岔路口照得很亮，左边是回她宿舍的路，右边也是回她宿舍的路，只是方向不同。\n\n季然站在她面前，没有动。\n\n他把外套递还之后，手垂在身侧，整个人像钉在了人行道的地砖上。丁宁低头把外套叠了一下，这个动作其实不需要做，外套本来就不乱。她只是需要手上有个事情，好让自己不用立刻决定往哪边走。\n\n叠到袖口的时候，她注意到那截袖口被捏得有点皱。是之前递过来的时候，他手指多停了一秒留下的。\n\n丁宁抬起头。\n\n季然正看着她。不是那种恰好对视的“正看着”，是他本来就在看，她抬头只是确认了这件事。他的眼神没有躲，也没有顺势说点什么打破沉默。他就那么站着，手插在卫衣口袋里，肩膀微微收紧，像是也在等。\n\n丁宁可以把外套往包里一塞，说声谢谢，然后转身走上左边那条路。她的宿舍往左走更近，这个理由足够充分，谁都不会觉得奇怪。她已经张了张嘴，那声“谢谢”到了舌尖。\n\n但她没有说。\n\n她抱着外套的手收紧了一点，身体没有转向左边，也没有转向右边。她就站在分岔路口的正中间，和季然面对面，中间隔着两步的距离。这两步谁都没动。\n\n季然的喉结动了一下。\n\n他往右边那条路偏了偏下巴，动作很小，像是只是活动了一下脖子。但他的脚跟着转了几度，鞋尖从正对着她变成了朝向右边。\n\n丁宁看见了。\n\n她把外套塞进包里，拉链拉上。这个声音在安静的夜里很响，像是什么东西被决定了。然后她迈开步子，没有往左，也没有往右，只是往前走了一步——朝着季然站着的方向。\n\n季然后退了半步，不是躲，是让出空间。\n\n然后他转过身，和她面朝同一个方向。\n\n丁宁走上右边那条路的时候，心跳快得有点不像话。她没有看季然，但她听见他的球鞋踩在落叶上的声音，就在她右后方不到一步的距离。那个距离保持了三步，然后他迈了一大步，和她并排了。\n\n路灯把他们的影子投在前面的人行道上，两个分开的轮廓。\n\n丁宁放慢了脚步。\n\n不是刻意的，至少她可以对自己这么说。只是这条路树荫很密，月光被遮得断断续续，路面不太看得清。慢一点走比较安全。\n\n她的脚步放得很慢，慢到路灯把他们的影子拖成了一个人。",
+  "input_tokens": 1426,
+  "output_tokens": 593,
+  "latency_ms": 15779,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "f5a49832ae4ad61f87176f5748e22502cef14107bf6f5df6b53414e0df5adb93",
+  "route_name": null,
+  "route_decision": {
+    "route_name": "C_OBJECT_CAUSAL",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "scene_state.available_objects is non-empty",
+      "causal_transitions contains counterfactual_without_action or rejected_alternative",
+      "character_next_action involves physical object manipulation"
+    ],
+    "matched_rules": [
+      "RULE_C_OBJECT_CAUSAL"
+    ],
+    "rejected_routes": []
+  },
+  "compiled_brief_hash": "618d5664a3e5bc359e4381bc847521c7e62b788ad46f88ff5b5380f2033ace57",
+  "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+  "text_path": "cases\\B-05\\drafts\\route-3.txt"
+}

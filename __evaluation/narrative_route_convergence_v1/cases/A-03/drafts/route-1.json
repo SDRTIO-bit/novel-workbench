@@ -1,0 +1,63 @@
+{
+  "group": "ROUTE-A_LITE_INFORMATION_GAP",
+  "replica": 1,
+  "mode": "narrative_route",
+  "candidate_id": "96d41f58-a6ed-4ae0-bfb8-a7aa36584917",
+  "attempt_number": 1,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "route_decision": {
+      "route_name": "A_LITE_INFORMATION_GAP",
+      "classifier_version": "narrative-route-v1",
+      "decision_reasons": [
+        "multiple characters with distinct information",
+        "viewpoint character has unknown facts and an interpretation",
+        "secondary character carries independent knowledge"
+      ],
+      "matched_rules": [
+        "RULE_A_LITE_INFORMATION_GAP"
+      ],
+      "rejected_routes": [
+        "C_OBJECT_CAUSAL"
+      ]
+    },
+    "compiled_brief_hash": "c17d346999b2c0c4343a025731963d95477667eadfa4bb75b305b86902975ce7",
+    "instruction_hash": "d368cbfa0846d1cb9adf452db083cbb58ba69154f281b3d6c895cb34da157cec",
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "韩雨抱着作业本走到办公室门口时，门正好从里面关上。\n\n“你们班的韩雨……”\n\n班主任的声音被门板截断，后半句闷在了办公室里。韩雨的手指在作业本边缘停了一下。走廊上有两个男生追打着跑过去，球鞋在地砖上蹭出尖锐的声响。\n\n门重新打开了。\n\n班主任走出来，手里拿着一张表格，转身拉门的动作让纸张在空气里轻轻扇动了一下。她抬起头，正对上韩雨的视线。\n\n韩雨往前走了一步，把作业本往前递了递。“老师，我来交作业。”\n\n班主任愣了一下。那个停顿很短，但韩雨看见了——她的眼皮跳了一下，目光从韩雨脸上移开，落在那叠作业本上，又移回来。\n\n“好的，放这里吧。”\n\n班主任伸手接过作业本，手指碰到了韩雨的手背。她的手指有点凉。表格被她夹在胳膊底下，韩雨只能看见背面，上面印着学校的红头，有几个手写的字迹透过纸张洇出来，但看不出写了什么。\n\n班主任把作业本夹到腋下，和表格放在一起。她的嘴唇动了动，像是想说什么，但最终只是朝韩雨点了点头，然后侧身从她旁边走过去，皮鞋在地砖上敲出规律的声响。\n\n韩雨站在原地，看着班主任的背影拐过走廊尽头。\n\n作业本已经不在她手里了。",
+  "raw_response": "韩雨抱着作业本走到办公室门口时，门正好从里面关上。\n\n“你们班的韩雨……”\n\n班主任的声音被门板截断，后半句闷在了办公室里。韩雨的手指在作业本边缘停了一下。走廊上有两个男生追打着跑过去，球鞋在地砖上蹭出尖锐的声响。\n\n门重新打开了。\n\n班主任走出来，手里拿着一张表格，转身拉门的动作让纸张在空气里轻轻扇动了一下。她抬起头，正对上韩雨的视线。\n\n韩雨往前走了一步，把作业本往前递了递。“老师，我来交作业。”\n\n班主任愣了一下。那个停顿很短，但韩雨看见了——她的眼皮跳了一下，目光从韩雨脸上移开，落在那叠作业本上，又移回来。\n\n“好的，放这里吧。”\n\n班主任伸手接过作业本，手指碰到了韩雨的手背。她的手指有点凉。表格被她夹在胳膊底下，韩雨只能看见背面，上面印着学校的红头，有几个手写的字迹透过纸张洇出来，但看不出写了什么。\n\n班主任把作业本夹到腋下，和表格放在一起。她的嘴唇动了动，像是想说什么，但最终只是朝韩雨点了点头，然后侧身从她旁边走过去，皮鞋在地砖上敲出规律的声响。\n\n韩雨站在原地，看着班主任的背影拐过走廊尽头。\n\n作业本已经不在她手里了。",
+  "input_tokens": 1414,
+  "output_tokens": 285,
+  "latency_ms": 7102,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "c9902eb798a77e44be0d3e7fc499f55299bfe3cbc6022c713182ef770053d9ec",
+  "route_name": null,
+  "route_decision": {
+    "route_name": "A_LITE_INFORMATION_GAP",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "multiple characters with distinct information",
+      "viewpoint character has unknown facts and an interpretation",
+      "secondary character carries independent knowledge"
+    ],
+    "matched_rules": [
+      "RULE_A_LITE_INFORMATION_GAP"
+    ],
+    "rejected_routes": [
+      "C_OBJECT_CAUSAL"
+    ]
+  },
+  "compiled_brief_hash": "c17d346999b2c0c4343a025731963d95477667eadfa4bb75b305b86902975ce7",
+  "instruction_hash": "d368cbfa0846d1cb9adf452db083cbb58ba69154f281b3d6c895cb34da157cec",
+  "text_path": "cases\\A-03\\drafts\\route-1.txt"
+}

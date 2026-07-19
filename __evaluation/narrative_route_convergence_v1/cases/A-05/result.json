@@ -1,0 +1,338 @@
+{
+  "case_id": "A-05",
+  "category": "职场日常",
+  "title": "茶水间议论",
+  "run_id": "c1d3b813-0e6a-428a-bd01-4e7baa949153",
+  "expected_route": "A_LITE_INFORMATION_GAP",
+  "planner": {
+    "candidate_id": "fb126297-790d-4e72-b6de-54f1125eb544",
+    "attempt_number": 1,
+    "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+    "model_id": "deepseek-v4-pro",
+    "prompt_version_id": "f9052f8a-dc4e-5408-b14e-fc1badaf57f8",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 12288,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "json_object"
+    },
+    "text_output": "{\n  \"planner_contract_version\": 2,\n  \"scene_goal\": \"苏晴在茶水间偶然听到同事议论自己，必须决定如何处理这个信息，并采取一个具体行动来应对潜在的不利局面。\",\n  \"location\": \"公司茶水间\",\n  \"time\": \"午休时间\",\n  \"scene_state\": {\n    \"last_completed_action\": \"苏晴走到茶水间门边，听见两个同事在谈论自己，关键词是“那份提案”和“她不知道”。\",\n    \"present_characters\": [\"苏晴\", \"同事A\", \"同事B\"],\n    \"visible_facts\": [\"同事A端着咖啡走出茶水间\", \"苏晴站在门边\", \"茶水间内同事B仍在\"],\n    \"available_objects\": [\"咖啡机\", \"水杯\", \"咖啡杯\", \"提案文件（可能）\"],\n    \"unresolved_problem\": \"苏晴不清楚同事议论的具体内容，也不知道“那份提案”和“她不知道”指的是什么，但意识到可能对自己不利。\",\n    \"already_existing_constraints\": [\"苏晴不能直接追问同事议论内容\", \"苏晴不能假装没听见\", \"午休时间有限\"]\n  },\n  \"characters\": [\n    {\n      \"name\": \"苏晴\",\n      \"goal\": \"弄清同事议论的内容，并保护自己的职业利益\",\n      \"known\": [\"同事在谈论自己\", \"关键词是“那份提案”和“她不知道”\"],\n      \"unknown\": [\"具体是哪份提案\", \"同事为何说“她不知道”\", \"议论的完整背景\"],\n      \"mistaken_beliefs\": [\"可能以为同事在恶意中伤，但实际可能只是误解或信息差\"],\n      \"constraints\": [\"不能直接追问\", \"不能表现出已经听到\", \"必须维持专业形象\"],\n      \"observed_evidence\": [\"同事A端着咖啡走出，表情自然\", \"同事B仍在茶水间，可能还在\"],\n      \"current_interpretation\": \"同事可能正在讨论与我相关的提案，且有意隐瞒我什么。\",\n      \"how_interpretation_drives_action\": \"她决定进入茶水间，以倒水为掩护，观察同事B的反应，并尝试自然套话或收集更多线索。\"\n    },\n    {\n      \"name\": \"同事A\",\n      \"goal\": \"完成午休，可能继续之前的工作\",\n      \"known\": [\"与同事B议论了苏晴和提案\", \"苏晴可能不知道某些信息\"],\n      \"unknown\": [\"苏晴是否听到议论\"],\n      \"mistaken_beliefs\": [\"以为苏晴没听到，或者即使听到也不会在意\"],\n      \"constraints\": [\"不能主动向苏晴透露议论内容，除非被问及\"],\n      \"observed_evidence\": [\"走出茶水间时看到苏晴在门边\"],\n      \"current_interpretation\": \"苏晴可能刚来倒水，没听到什么。\",\n      \"how_interpretation_drives_action\": \"同事A选择自然地打招呼并离开，避免引起怀疑。\"\n    },\n    {\n      \"name\": \"同事B\",\n      \"goal\": \"整理思绪，可能继续讨论或离开\",\n      \"known\": [\"与同事A议论了苏晴和提案\", \"苏晴可能不知道某些信息\"],\n      \"unknown\": [\"苏晴是否听到议论\", \"苏晴已进入茶水间\"],\n      \"mistaken_beliefs\": [\"以为议论是私下进行的，不会被苏晴知晓\"],\n      \"constraints\": [\"不能主动向苏晴解释，除非被直接询问\"],\n      \"observed_evidence\": [\"同事A离开\", \"苏晴进入茶水间\"],\n      \"current_interpretation\": \"苏晴只是来倒水，与议论无关。\",\n      \"how_interpretation_drives_action\": \"同事B可能保持沉默，或若无其事地打招呼，试图观察苏晴的反应。\"\n    }\n  ],\n  \"concrete_problem\": \"苏晴如何在茶水间与同事B的自然互动中，获取关于“那份提案”和“她不知道”的更多信息，而不暴露自己已经听到议论？\",\n  \"pressure\": \"午休时间有限，且同事B随时可能离开，苏晴必须迅速行动。\",\n  \"turning_point\": \"苏晴选择进入茶水间，以倒水为掩护，向同事B抛出一个看似无关的问题，试图引导对方透露信息。\",\n  \"end_condition\": \"苏晴从同事B的回应或微表情中获得了新的可见信息（如紧张、回避或提及某个具体提案），但同事B并未直接解释议论内容。\",\n  \"forbidden\": [\"苏晴直接追问议论内容\", \"同事主动全盘托出\", \"苏晴假装没听见而不采取任何行动\", \"引入新的冲突源（如上级突然介入）\"],\n  \"causal_transitions\": [\n    {\n      \"id\": \"CT01\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"同事A端着咖啡走出茶水间，表情自然，未主动交谈。\",\n      \"character_interpretation\": \"苏晴认为同事A的镇定表明他们可能觉得议论是寻常话题，或者尚未意识到被听到。\",\n      \"character_next_action\": \"苏晴决定进入茶水间，直接面对同事B，以倒水为掩护。\",\n      \"rejected_alternative\": \"苏晴可以转身离开，假装没听到，但这样会失去弄清真相的机会。\",\n      \"immediate_consequence\": \"苏晴进入茶水间，与同事B共处一室。\",\n      \"counterfactual_without_action\": \"如果苏晴离开，她将无法获得任何新信息，且可能让同事意识到她已听到议论。\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"苏晴在茶水间门外，听见议论但不确定内容。\",\n        \"after\": \"苏晴进入茶水间，与同事B面对面，准备互动。\"\n      },\n      \"cost_or_commitment\": \"苏晴承担了被同事B察觉她可能听到议论的风险。\",\n      \"next_constraint\": \"苏晴必须在与同事B的互动中保持自然，不能直接提及议论。\",\n      \"reader_must_infer\": \"苏晴进入茶水间的真实动机是调查，而非单纯倒水。\",\n      \"narrator_must_not_state\": [\"苏晴决定调查议论内容\"]\n    },\n    {\n      \"id\": \"CT02\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"同事B看到苏晴进入，眼神略有闪躲，但随即微笑打招呼。\",\n      \"character_interpretation\": \"苏晴将同事B的闪躲解读为心虚或尴尬，可能议论内容确实敏感。\",\n      \"character_next_action\": \"苏晴一边倒水，一边用轻松的语气问：“刚才你们在聊什么项目吗？我好像听到提案什么的。”\",\n      \"rejected_alternative\": \"苏晴可以保持沉默，只倒水离开，但那样无法获取信息。\",\n      \"immediate_consequence\": \"同事B被问到，必须回应，可能透露部分信息或更加紧张。\",\n      \"counterfactual_without_action\": \"如果苏晴不问，同事B可能继续隐瞒，苏晴只能猜测。\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"苏晴与同事B共处一室，但尚未交流实质内容。\",\n        \"after\": \"苏晴主动提问，将话题引向提案，同事B面临回应压力。\"\n      },\n      \"cost_or_commitment\": \"苏晴暴露了自己可能听到了一些关键词，但未承认偷听。\",\n      \"next_constraint\": \"同事B的回应将决定苏晴下一步能获取多少信息，且苏晴不能追问过深。\",\n      \"reader_must_infer\": \"苏晴的问题设计是为了测试同事B的反应，而非真的好奇。\",\n      \"narrator_must_not_state\": [\"苏晴在试探同事B\"]\n    }\n  ],\n  \"tempo_guardrails\": {\n    \"entry_pressure\": \"同事A端着咖啡走出茶水间，苏晴必须立刻决定是否进入。\",\n    \"dominant_pressure\": {\n      \"kind\": \"information_gap\",\n      \"description\": \"苏晴缺少关于同事议论的具体信息，这直接影响她对自己职业处境的判断。\"\n    },\n    \"allowed_viewpoint_misread\": \"苏晴可能将同事B的紧张误读为恶意隐瞒，而实际上可能只是怕引起误会。\",\n    \"disclosure_cap\": 1,\n    \"must_remain_unclassified\": [\n      \"同事议论的完整真相\",\n      \"那份提案的具体内容和影响\"\n    ],\n    \"stop_state\": {\n      \"type\": \"information_conflict\",\n      \"visible_fact\": \"同事B在回应时无意中说出一个提案名称或细节，与苏晴已知信息矛盾。\",\n      \"what_is_now_different\": \"苏晴获得了一个具体的新信息点，意识到自己确实被蒙在鼓里，但尚未完全明白。\",\n      \"must_not_append\": \"不得让同事B直接解释为什么苏晴不知道，或全盘托出议论内容。\"\n    }\n  },\n  \"chapter_contract_check\": {\n    \"function_aligned\": true,\n    \"must_deliver_covered\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_enabled\": true,\n    \"main_payoff_prepared\": true,\n    \"ending_hook_established\": true,\n    \"causal_transitions_grounded\": true,\n    \"reader_inference_not_pre_resolved\": true,\n    \"scene_state_reconstructed\": true,\n    \"information_sources_legal\": true,\n    \"character_choice_is_real\": true,\n    \"consequence_is_counterfactual\": true,\n    \"state_delta_is_nonempty\": true,\n    \"next_constraint_is_new\": true,\n    \"stop_state_is_visible\": true,\n    \"stop_state_changes_future_actions\": true\n  }\n}",
+    "raw_response": "{\n  \"planner_contract_version\": 2,\n  \"scene_goal\": \"苏晴在茶水间偶然听到同事议论自己，必须决定如何处理这个信息，并采取一个具体行动来应对潜在的不利局面。\",\n  \"location\": \"公司茶水间\",\n  \"time\": \"午休时间\",\n  \"scene_state\": {\n    \"last_completed_action\": \"苏晴走到茶水间门边，听见两个同事在谈论自己，关键词是“那份提案”和“她不知道”。\",\n    \"present_characters\": [\"苏晴\", \"同事A\", \"同事B\"],\n    \"visible_facts\": [\"同事A端着咖啡走出茶水间\", \"苏晴站在门边\", \"茶水间内同事B仍在\"],\n    \"available_objects\": [\"咖啡机\", \"水杯\", \"咖啡杯\", \"提案文件（可能）\"],\n    \"unresolved_problem\": \"苏晴不清楚同事议论的具体内容，也不知道“那份提案”和“她不知道”指的是什么，但意识到可能对自己不利。\",\n    \"already_existing_constraints\": [\"苏晴不能直接追问同事议论内容\", \"苏晴不能假装没听见\", \"午休时间有限\"]\n  },\n  \"characters\": [\n    {\n      \"name\": \"苏晴\",\n      \"goal\": \"弄清同事议论的内容，并保护自己的职业利益\",\n      \"known\": [\"同事在谈论自己\", \"关键词是“那份提案”和“她不知道”\"],\n      \"unknown\": [\"具体是哪份提案\", \"同事为何说“她不知道”\", \"议论的完整背景\"],\n      \"mistaken_beliefs\": [\"可能以为同事在恶意中伤，但实际可能只是误解或信息差\"],\n      \"constraints\": [\"不能直接追问\", \"不能表现出已经听到\", \"必须维持专业形象\"],\n      \"observed_evidence\": [\"同事A端着咖啡走出，表情自然\", \"同事B仍在茶水间，可能还在\"],\n      \"current_interpretation\": \"同事可能正在讨论与我相关的提案，且有意隐瞒我什么。\",\n      \"how_interpretation_drives_action\": \"她决定进入茶水间，以倒水为掩护，观察同事B的反应，并尝试自然套话或收集更多线索。\"\n    },\n    {\n      \"name\": \"同事A\",\n      \"goal\": \"完成午休，可能继续之前的工作\",\n      \"known\": [\"与同事B议论了苏晴和提案\", \"苏晴可能不知道某些信息\"],\n      \"unknown\": [\"苏晴是否听到议论\"],\n      \"mistaken_beliefs\": [\"以为苏晴没听到，或者即使听到也不会在意\"],\n      \"constraints\": [\"不能主动向苏晴透露议论内容，除非被问及\"],\n      \"observed_evidence\": [\"走出茶水间时看到苏晴在门边\"],\n      \"current_interpretation\": \"苏晴可能刚来倒水，没听到什么。\",\n      \"how_interpretation_drives_action\": \"同事A选择自然地打招呼并离开，避免引起怀疑。\"\n    },\n    {\n      \"name\": \"同事B\",\n      \"goal\": \"整理思绪，可能继续讨论或离开\",\n      \"known\": [\"与同事A议论了苏晴和提案\", \"苏晴可能不知道某些信息\"],\n      \"unknown\": [\"苏晴是否听到议论\", \"苏晴已进入茶水间\"],\n      \"mistaken_beliefs\": [\"以为议论是私下进行的，不会被苏晴知晓\"],\n      \"constraints\": [\"不能主动向苏晴解释，除非被直接询问\"],\n      \"observed_evidence\": [\"同事A离开\", \"苏晴进入茶水间\"],\n      \"current_interpretation\": \"苏晴只是来倒水，与议论无关。\",\n      \"how_interpretation_drives_action\": \"同事B可能保持沉默，或若无其事地打招呼，试图观察苏晴的反应。\"\n    }\n  ],\n  \"concrete_problem\": \"苏晴如何在茶水间与同事B的自然互动中，获取关于“那份提案”和“她不知道”的更多信息，而不暴露自己已经听到议论？\",\n  \"pressure\": \"午休时间有限，且同事B随时可能离开，苏晴必须迅速行动。\",\n  \"turning_point\": \"苏晴选择进入茶水间，以倒水为掩护，向同事B抛出一个看似无关的问题，试图引导对方透露信息。\",\n  \"end_condition\": \"苏晴从同事B的回应或微表情中获得了新的可见信息（如紧张、回避或提及某个具体提案），但同事B并未直接解释议论内容。\",\n  \"forbidden\": [\"苏晴直接追问议论内容\", \"同事主动全盘托出\", \"苏晴假装没听见而不采取任何行动\", \"引入新的冲突源（如上级突然介入）\"],\n  \"causal_transitions\": [\n    {\n      \"id\": \"CT01\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"同事A端着咖啡走出茶水间，表情自然，未主动交谈。\",\n      \"character_interpretation\": \"苏晴认为同事A的镇定表明他们可能觉得议论是寻常话题，或者尚未意识到被听到。\",\n      \"character_next_action\": \"苏晴决定进入茶水间，直接面对同事B，以倒水为掩护。\",\n      \"rejected_alternative\": \"苏晴可以转身离开，假装没听到，但这样会失去弄清真相的机会。\",\n      \"immediate_consequence\": \"苏晴进入茶水间，与同事B共处一室。\",\n      \"counterfactual_without_action\": \"如果苏晴离开，她将无法获得任何新信息，且可能让同事意识到她已听到议论。\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"苏晴在茶水间门外，听见议论但不确定内容。\",\n        \"after\": \"苏晴进入茶水间，与同事B面对面，准备互动。\"\n      },\n      \"cost_or_commitment\": \"苏晴承担了被同事B察觉她可能听到议论的风险。\",\n      \"next_constraint\": \"苏晴必须在与同事B的互动中保持自然，不能直接提及议论。\",\n      \"reader_must_infer\": \"苏晴进入茶水间的真实动机是调查，而非单纯倒水。\",\n      \"narrator_must_not_state\": [\"苏晴决定调查议论内容\"]\n    },\n    {\n      \"id\": \"CT02\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"同事B看到苏晴进入，眼神略有闪躲，但随即微笑打招呼。\",\n      \"character_interpretation\": \"苏晴将同事B的闪躲解读为心虚或尴尬，可能议论内容确实敏感。\",\n      \"character_next_action\": \"苏晴一边倒水，一边用轻松的语气问：“刚才你们在聊什么项目吗？我好像听到提案什么的。”\",\n      \"rejected_alternative\": \"苏晴可以保持沉默，只倒水离开，但那样无法获取信息。\",\n      \"immediate_consequence\": \"同事B被问到，必须回应，可能透露部分信息或更加紧张。\",\n      \"counterfactual_without_action\": \"如果苏晴不问，同事B可能继续隐瞒，苏晴只能猜测。\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"苏晴与同事B共处一室，但尚未交流实质内容。\",\n        \"after\": \"苏晴主动提问，将话题引向提案，同事B面临回应压力。\"\n      },\n      \"cost_or_commitment\": \"苏晴暴露了自己可能听到了一些关键词，但未承认偷听。\",\n      \"next_constraint\": \"同事B的回应将决定苏晴下一步能获取多少信息，且苏晴不能追问过深。\",\n      \"reader_must_infer\": \"苏晴的问题设计是为了测试同事B的反应，而非真的好奇。\",\n      \"narrator_must_not_state\": [\"苏晴在试探同事B\"]\n    }\n  ],\n  \"tempo_guardrails\": {\n    \"entry_pressure\": \"同事A端着咖啡走出茶水间，苏晴必须立刻决定是否进入。\",\n    \"dominant_pressure\": {\n      \"kind\": \"information_gap\",\n      \"description\": \"苏晴缺少关于同事议论的具体信息，这直接影响她对自己职业处境的判断。\"\n    },\n    \"allowed_viewpoint_misread\": \"苏晴可能将同事B的紧张误读为恶意隐瞒，而实际上可能只是怕引起误会。\",\n    \"disclosure_cap\": 1,\n    \"must_remain_unclassified\": [\n      \"同事议论的完整真相\",\n      \"那份提案的具体内容和影响\"\n    ],\n    \"stop_state\": {\n      \"type\": \"information_conflict\",\n      \"visible_fact\": \"同事B在回应时无意中说出一个提案名称或细节，与苏晴已知信息矛盾。\",\n      \"what_is_now_different\": \"苏晴获得了一个具体的新信息点，意识到自己确实被蒙在鼓里，但尚未完全明白。\",\n      \"must_not_append\": \"不得让同事B直接解释为什么苏晴不知道，或全盘托出议论内容。\"\n    }\n  },\n  \"chapter_contract_check\": {\n    \"function_aligned\": true,\n    \"must_deliver_covered\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_enabled\": true,\n    \"main_payoff_prepared\": true,\n    \"ending_hook_established\": true,\n    \"causal_transitions_grounded\": true,\n    \"reader_inference_not_pre_resolved\": true,\n    \"scene_state_reconstructed\": true,\n    \"information_sources_legal\": true,\n    \"character_choice_is_real\": true,\n    \"consequence_is_counterfactual\": true,\n    \"state_delta_is_nonempty\": true,\n    \"next_constraint_is_new\": true,\n    \"stop_state_is_visible\": true,\n    \"stop_state_changes_future_actions\": true\n  }\n}",
+    "input_tokens": 3308,
+    "output_tokens": 2140,
+    "latency_ms": 30164,
+    "finish_reason": "stop",
+    "error_code": null,
+    "error_message": null,
+    "rendered_user_prompt_sha256": "6e841ec6c9ab1fe7630e1420c212fb039f8e254d0b67159ac2c9baf2941ae054",
+    "route_name": null,
+    "route_decision": null,
+    "compiled_brief_hash": null,
+    "instruction_hash": null
+  },
+  "drafts": [
+    {
+      "group": "ROUTE-A_LITE_INFORMATION_GAP",
+      "replica": 1,
+      "mode": "narrative_route",
+      "candidate_id": "17681539-2d0b-443c-85e5-a4029cffa679",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "A_LITE_INFORMATION_GAP",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "multiple characters with distinct information",
+            "viewpoint character has unknown facts and an interpretation",
+            "secondary character carries independent knowledge"
+          ],
+          "matched_rules": [
+            "RULE_A_LITE_INFORMATION_GAP"
+          ],
+          "rejected_routes": [
+            "C_OBJECT_CAUSAL"
+          ]
+        },
+        "compiled_brief_hash": "df7744b02aedffb0640d5a0c0fd9b2258111d13a0d771f16cd071e8a7fdb685c",
+        "instruction_hash": "d368cbfa0846d1cb9adf452db083cbb58ba69154f281b3d6c895cb34da157cec",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "苏晴的手指停在茶水间的磨砂玻璃门边。\n\n门内传出的声音不大，但走廊太安静了。“那份提案”四个字像钉子一样扎进来，紧接着是“她不知道”，语气里带着一种她分辨不清的东西——是惋惜，还是别的什么。\n\n脚步声朝门口移动。\n\n苏晴没有后退的时间。门向内拉开，林姐端着一杯冒着热气的咖啡走出来，看见她时脚步顿了一下，不到半秒。\n\n“哟，苏晴。”林姐笑了笑，咖啡杯稳在手里，表情和每天午休碰见时一模一样。\n\n“林姐。”苏晴点点头，手已经搭上了门边。\n\n林姐侧身让过她，朝走廊另一头走去。脚步声均匀，不快不慢。\n\n苏晴推开门。\n\n茶水间里，小周还站在靠窗的位置，手里捏着一袋没拆开的红茶包。窗外的光线打在她侧脸上，她看见苏晴进来，手指在茶包上收紧了一下。\n\n“苏晴姐。”小周的声音比平时高了半个调。\n\n苏晴走到饮水机前，把自己的杯子搁在接水盘上。热水键按下去，水流声填满了整个茶水间。\n\n小周还站在原地。\n\n“红茶？”苏晴偏过头，看了一眼她手里的茶包，“饮水机热水口刚修过，出水有点猛，小心烫。”\n\n“哦，好，谢谢苏晴姐。”小周走过来，撕开茶包的动作比平时慢。杯子放上接水盘的时候，瓷底磕在不锈钢面上，发出一声轻响。\n\n苏晴的杯子快满了。她松开热水键，直起身。\n\n小周盯着自己的杯子，热水冲在茶包上，深褐色的茶汤一圈圈晕开。\n\n“对了苏晴姐，”小周忽然开口，眼睛还看着杯子里旋转的茶包，“你们部门那个绿洲的项目方案，是不是周三之前要交？”\n\n苏晴握着杯子的手没动。\n\n“绿洲”是上个月立项的。但周三交方案这件事，她今天早上才在部门内部邮件里看到，邮件抄送名单里没有小周。\n\n“嗯，周三。”苏晴说。\n\n小周点点头，端起杯子抿了一口，被烫得缩了一下。\n\n“那挺赶的。”她说完，端着杯子朝门口走去。\n\n苏晴站在饮水机前，看着小周的背影消失在门后。\n\n热水机发出待机时低沉的嗡鸣声。她低头看自己的杯子，水面上浮着一层细小的气泡，一颗一颗破掉。\n\n绿洲项目的方案截止日期，她确实是今天早上才知道的。",
+      "raw_response": "苏晴的手指停在茶水间的磨砂玻璃门边。\n\n门内传出的声音不大，但走廊太安静了。“那份提案”四个字像钉子一样扎进来，紧接着是“她不知道”，语气里带着一种她分辨不清的东西——是惋惜，还是别的什么。\n\n脚步声朝门口移动。\n\n苏晴没有后退的时间。门向内拉开，林姐端着一杯冒着热气的咖啡走出来，看见她时脚步顿了一下，不到半秒。\n\n“哟，苏晴。”林姐笑了笑，咖啡杯稳在手里，表情和每天午休碰见时一模一样。\n\n“林姐。”苏晴点点头，手已经搭上了门边。\n\n林姐侧身让过她，朝走廊另一头走去。脚步声均匀，不快不慢。\n\n苏晴推开门。\n\n茶水间里，小周还站在靠窗的位置，手里捏着一袋没拆开的红茶包。窗外的光线打在她侧脸上，她看见苏晴进来，手指在茶包上收紧了一下。\n\n“苏晴姐。”小周的声音比平时高了半个调。\n\n苏晴走到饮水机前，把自己的杯子搁在接水盘上。热水键按下去，水流声填满了整个茶水间。\n\n小周还站在原地。\n\n“红茶？”苏晴偏过头，看了一眼她手里的茶包，“饮水机热水口刚修过，出水有点猛，小心烫。”\n\n“哦，好，谢谢苏晴姐。”小周走过来，撕开茶包的动作比平时慢。杯子放上接水盘的时候，瓷底磕在不锈钢面上，发出一声轻响。\n\n苏晴的杯子快满了。她松开热水键，直起身。\n\n小周盯着自己的杯子，热水冲在茶包上，深褐色的茶汤一圈圈晕开。\n\n“对了苏晴姐，”小周忽然开口，眼睛还看着杯子里旋转的茶包，“你们部门那个绿洲的项目方案，是不是周三之前要交？”\n\n苏晴握着杯子的手没动。\n\n“绿洲”是上个月立项的。但周三交方案这件事，她今天早上才在部门内部邮件里看到，邮件抄送名单里没有小周。\n\n“嗯，周三。”苏晴说。\n\n小周点点头，端起杯子抿了一口，被烫得缩了一下。\n\n“那挺赶的。”她说完，端着杯子朝门口走去。\n\n苏晴站在饮水机前，看着小周的背影消失在门后。\n\n热水机发出待机时低沉的嗡鸣声。她低头看自己的杯子，水面上浮着一层细小的气泡，一颗一颗破掉。\n\n绿洲项目的方案截止日期，她确实是今天早上才知道的。",
+      "input_tokens": 1421,
+      "output_tokens": 544,
+      "latency_ms": 12833,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "8dad6c068bbfaf55f9c6c1d387401b928374d256b03b87c86df5638f8c52a86c",
+      "route_name": null,
+      "route_decision": {
+        "route_name": "A_LITE_INFORMATION_GAP",
+        "classifier_version": "narrative-route-v1",
+        "decision_reasons": [
+          "multiple characters with distinct information",
+          "viewpoint character has unknown facts and an interpretation",
+          "secondary character carries independent knowledge"
+        ],
+        "matched_rules": [
+          "RULE_A_LITE_INFORMATION_GAP"
+        ],
+        "rejected_routes": [
+          "C_OBJECT_CAUSAL"
+        ]
+      },
+      "compiled_brief_hash": "df7744b02aedffb0640d5a0c0fd9b2258111d13a0d771f16cd071e8a7fdb685c",
+      "instruction_hash": "d368cbfa0846d1cb9adf452db083cbb58ba69154f281b3d6c895cb34da157cec",
+      "text_path": "cases\\A-05\\drafts\\route-1.txt"
+    },
+    {
+      "group": "ROUTE-A_LITE_INFORMATION_GAP",
+      "replica": 2,
+      "mode": "narrative_route",
+      "candidate_id": "4ff2f989-4a0b-4a4f-b939-baede7cd58d1",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "A_LITE_INFORMATION_GAP",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "multiple characters with distinct information",
+            "viewpoint character has unknown facts and an interpretation",
+            "secondary character carries independent knowledge"
+          ],
+          "matched_rules": [
+            "RULE_A_LITE_INFORMATION_GAP"
+          ],
+          "rejected_routes": [
+            "C_OBJECT_CAUSAL"
+          ]
+        },
+        "compiled_brief_hash": "df7744b02aedffb0640d5a0c0fd9b2258111d13a0d771f16cd071e8a7fdb685c",
+        "instruction_hash": "d368cbfa0846d1cb9adf452db083cbb58ba69154f281b3d6c895cb34da157cec",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "苏晴在茶水间门外停住。\n\n不是刻意要听，只是门半敞着，声音就这么漏出来。她握着杯子的手没动，指腹贴在杯壁上，刚才接的热水还留着温度。\n\n“——那份提案，她不知道。”\n\n说话的人是周敏，声音压得低，但茶水间的瓷砖墙面把每个字都弹得清清楚楚。\n\n另一个声音嗯了一声。是林姐。\n\n苏晴站在门框外侧，离门口不到半步。她的影子还没投进那道门缝里。\n\n林姐的杯子在台面上磕了一下，瓷碰瓷，短促而清脆。“她要是知道了——”\n\n脚步声。\n\n苏晴没有后退。后退反而更奇怪。她只是站在原地，像刚走到这里、什么都没听见一样，抬手理了一下耳边的碎发。\n\n林姐端着咖啡走出来。\n\n深蓝色的马克杯，杯口冒着热气，几乎擦着苏晴的肩膀过去。林姐抬头看见她，脚步没停，嘴角往上提了一下，是那种同事之间路过茶水间的标准弧度。\n\n“午休呢？”\n\n苏晴点头，“倒杯水。”\n\n林姐已经走过去了，鞋跟在走廊地板上敲出均匀的节奏，不快不慢。\n\n茶水间的门还敞着。\n\n苏晴走进去。\n\n周敏站在饮水机旁边，手里捏着一袋速溶咖啡，还没撕开。她看见苏晴进来，撕包装的动作顿了一瞬，然后继续，撕口拉得有点歪。\n\n“苏晴。”周敏叫她名字的时候，语气和平时一样，尾音微微上扬，像在打招呼。\n\n苏晴走到饮水机另一边，把杯子放到出水口下面，按下热水键。\n\n水流声填满了两秒的安静。\n\n“林姐刚走？”苏晴问。\n\n“嗯，她泡了杯咖啡就走了。”周敏把咖啡粉倒进杯子里，低头看着粉末堆成一个小山，“你不来一杯？”\n\n“下午还有会，怕困。”苏晴说，眼睛看着自己的杯子。水位线慢慢往上爬。\n\n周敏撕开糖包，倒进去，搅了两下。勺子碰杯壁的声音很轻。\n\n苏晴没有看她。她在等。\n\n周敏搅咖啡的动作慢了半拍，然后说：“对了，上次那个——”\n\n苏晴的手指在杯柄上收紧了一点。\n\n“——润丰的提案。”周敏把勺子抽出来，在杯沿上磕了磕，“你后来改过没有？我记得初版是你经手的。”\n\n润丰。\n\n苏晴的杯子满了。热水键自动弹起，咔哒一声。\n\n她经手过润丰的提案。三个月前的事了。那时候她做了初稿，交给林姐审，林姐说方向不太对，让她重新调整。她改了三天，交上去，林姐说可以了。然后这份提案就从她的工作流里消失了。没有人再跟她提过。\n\n她以为早就搁置了。\n\n“那个项目还在推进？”苏晴端起杯子，转过身，语气随意得像在问今天的食堂菜单。\n\n周敏端起咖啡抿了一口，眼睛从杯沿上方看了苏晴一眼。这一眼很短，短到可以解释为只是喝东西时的自然动作。\n\n“哦，我以为你知道。”周敏放下杯子，手指在杯壁上抹了一下，擦掉一滴水渍，“林姐上周还在说，润丰那边催得紧。”\n\n苏晴没说话。\n\n她记得上周的周会。项目进度表上根本没有润丰两个字。\n\n“催什么？”苏晴问。\n\n周敏把咖啡端起来，又喝了一口。这次喝得有点久。\n\n“就是——”她放下杯子，杯底磕在台面上，发出一声闷响，“细节上的东西吧。我也没太听清楚。”\n\n苏晴看着周敏。\n\n周敏低头去拿手机，“哎，我得回工位了，两点还有个表要交。”她把咖啡端起来，冲苏晴笑了一下，绕过她往门口走。\n\n“周敏。”苏晴叫住她。\n\n周敏停在门口，回头。\n\n苏晴端着杯子，语气很平：“润丰的提案现在谁在跟？”\n\n周敏的手指在杯柄上换了个位置。她张了张嘴，像是要说什么，然后说：“好像是陈磊那边在对接。”\n\n陈磊。\n\n陈磊是隔壁组的。\n\n苏晴的提案，跨组移交，没有任何人知会她。\n\n“这样。”苏晴说。\n\n周敏等了一秒，确定苏晴没有别的话，转身走了。她的脚步声比林姐快，几乎是小碎步，很快消失在走廊尽头。\n\n苏晴站在茶水间里。\n\n饮水机的指示灯从红色跳回绿色，发出细微的电流声。\n\n她端起杯子喝了一口水。水温刚好，不烫嘴。她慢慢喝完，把杯子放到水龙头下冲了一遍，关掉水，转身走出去。\n\n走廊里空荡荡的，午休时间还没结束。",
+      "raw_response": "苏晴在茶水间门外停住。\n\n不是刻意要听，只是门半敞着，声音就这么漏出来。她握着杯子的手没动，指腹贴在杯壁上，刚才接的热水还留着温度。\n\n“——那份提案，她不知道。”\n\n说话的人是周敏，声音压得低，但茶水间的瓷砖墙面把每个字都弹得清清楚楚。\n\n另一个声音嗯了一声。是林姐。\n\n苏晴站在门框外侧，离门口不到半步。她的影子还没投进那道门缝里。\n\n林姐的杯子在台面上磕了一下，瓷碰瓷，短促而清脆。“她要是知道了——”\n\n脚步声。\n\n苏晴没有后退。后退反而更奇怪。她只是站在原地，像刚走到这里、什么都没听见一样，抬手理了一下耳边的碎发。\n\n林姐端着咖啡走出来。\n\n深蓝色的马克杯，杯口冒着热气，几乎擦着苏晴的肩膀过去。林姐抬头看见她，脚步没停，嘴角往上提了一下，是那种同事之间路过茶水间的标准弧度。\n\n“午休呢？”\n\n苏晴点头，“倒杯水。”\n\n林姐已经走过去了，鞋跟在走廊地板上敲出均匀的节奏，不快不慢。\n\n茶水间的门还敞着。\n\n苏晴走进去。\n\n周敏站在饮水机旁边，手里捏着一袋速溶咖啡，还没撕开。她看见苏晴进来，撕包装的动作顿了一瞬，然后继续，撕口拉得有点歪。\n\n“苏晴。”周敏叫她名字的时候，语气和平时一样，尾音微微上扬，像在打招呼。\n\n苏晴走到饮水机另一边，把杯子放到出水口下面，按下热水键。\n\n水流声填满了两秒的安静。\n\n“林姐刚走？”苏晴问。\n\n“嗯，她泡了杯咖啡就走了。”周敏把咖啡粉倒进杯子里，低头看着粉末堆成一个小山，“你不来一杯？”\n\n“下午还有会，怕困。”苏晴说，眼睛看着自己的杯子。水位线慢慢往上爬。\n\n周敏撕开糖包，倒进去，搅了两下。勺子碰杯壁的声音很轻。\n\n苏晴没有看她。她在等。\n\n周敏搅咖啡的动作慢了半拍，然后说：“对了，上次那个——”\n\n苏晴的手指在杯柄上收紧了一点。\n\n“——润丰的提案。”周敏把勺子抽出来，在杯沿上磕了磕，“你后来改过没有？我记得初版是你经手的。”\n\n润丰。\n\n苏晴的杯子满了。热水键自动弹起，咔哒一声。\n\n她经手过润丰的提案。三个月前的事了。那时候她做了初稿，交给林姐审，林姐说方向不太对，让她重新调整。她改了三天，交上去，林姐说可以了。然后这份提案就从她的工作流里消失了。没有人再跟她提过。\n\n她以为早就搁置了。\n\n“那个项目还在推进？”苏晴端起杯子，转过身，语气随意得像在问今天的食堂菜单。\n\n周敏端起咖啡抿了一口，眼睛从杯沿上方看了苏晴一眼。这一眼很短，短到可以解释为只是喝东西时的自然动作。\n\n“哦，我以为你知道。”周敏放下杯子，手指在杯壁上抹了一下，擦掉一滴水渍，“林姐上周还在说，润丰那边催得紧。”\n\n苏晴没说话。\n\n她记得上周的周会。项目进度表上根本没有润丰两个字。\n\n“催什么？”苏晴问。\n\n周敏把咖啡端起来，又喝了一口。这次喝得有点久。\n\n“就是——”她放下杯子，杯底磕在台面上，发出一声闷响，“细节上的东西吧。我也没太听清楚。”\n\n苏晴看着周敏。\n\n周敏低头去拿手机，“哎，我得回工位了，两点还有个表要交。”她把咖啡端起来，冲苏晴笑了一下，绕过她往门口走。\n\n“周敏。”苏晴叫住她。\n\n周敏停在门口，回头。\n\n苏晴端着杯子，语气很平：“润丰的提案现在谁在跟？”\n\n周敏的手指在杯柄上换了个位置。她张了张嘴，像是要说什么，然后说：“好像是陈磊那边在对接。”\n\n陈磊。\n\n陈磊是隔壁组的。\n\n苏晴的提案，跨组移交，没有任何人知会她。\n\n“这样。”苏晴说。\n\n周敏等了一秒，确定苏晴没有别的话，转身走了。她的脚步声比林姐快，几乎是小碎步，很快消失在走廊尽头。\n\n苏晴站在茶水间里。\n\n饮水机的指示灯从红色跳回绿色，发出细微的电流声。\n\n她端起杯子喝了一口水。水温刚好，不烫嘴。她慢慢喝完，把杯子放到水龙头下冲了一遍，关掉水，转身走出去。\n\n走廊里空荡荡的，午休时间还没结束。",
+      "input_tokens": 1421,
+      "output_tokens": 1009,
+      "latency_ms": 21129,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "8dad6c068bbfaf55f9c6c1d387401b928374d256b03b87c86df5638f8c52a86c",
+      "route_name": null,
+      "route_decision": {
+        "route_name": "A_LITE_INFORMATION_GAP",
+        "classifier_version": "narrative-route-v1",
+        "decision_reasons": [
+          "multiple characters with distinct information",
+          "viewpoint character has unknown facts and an interpretation",
+          "secondary character carries independent knowledge"
+        ],
+        "matched_rules": [
+          "RULE_A_LITE_INFORMATION_GAP"
+        ],
+        "rejected_routes": [
+          "C_OBJECT_CAUSAL"
+        ]
+      },
+      "compiled_brief_hash": "df7744b02aedffb0640d5a0c0fd9b2258111d13a0d771f16cd071e8a7fdb685c",
+      "instruction_hash": "d368cbfa0846d1cb9adf452db083cbb58ba69154f281b3d6c895cb34da157cec",
+      "text_path": "cases\\A-05\\drafts\\route-2.txt"
+    },
+    {
+      "group": "ROUTE-A_LITE_INFORMATION_GAP",
+      "replica": 3,
+      "mode": "narrative_route",
+      "candidate_id": "a6a9e4b9-ce9e-4e3d-9ab3-b3756f1d7f0d",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "A_LITE_INFORMATION_GAP",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "multiple characters with distinct information",
+            "viewpoint character has unknown facts and an interpretation",
+            "secondary character carries independent knowledge"
+          ],
+          "matched_rules": [
+            "RULE_A_LITE_INFORMATION_GAP"
+          ],
+          "rejected_routes": [
+            "C_OBJECT_CAUSAL"
+          ]
+        },
+        "compiled_brief_hash": "df7744b02aedffb0640d5a0c0fd9b2258111d13a0d771f16cd071e8a7fdb685c",
+        "instruction_hash": "d368cbfa0846d1cb9adf452db083cbb58ba69154f281b3d6c895cb34da157cec",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "茶水间的门虚掩着，苏晴走到离门框还有两步的地方，听见了自己的名字。\n\n“——苏晴那份提案——”\n\n她停住了。\n\n“她不知道。”另一个声音接上，带着一种压低的笃定，像是陈述一个已经确认的事实。\n\n苏晴的手指在杯壁上收紧了一下。她的杯子是空的，杯底还残留着上午那杯绿茶泡过三道之后的寡淡痕迹。她站在原地，听见茶水间里传来杯勺碰撞瓷壁的声音，然后是脚步声，朝门的方向来。\n\n门被从里拉开。\n\n林姐端着一杯咖啡走出来，杯口冒着热气。她看见苏晴的时候脚步顿了一拍——非常短的一拍，短到如果苏晴不是正盯着她的脸，根本不会注意到。\n\n“苏晴。”林姐笑了一下，嘴角的弧度刚好够得上一个同事间偶遇的标准表情，“来倒水啊。”\n\n不是问句。是陈述。\n\n苏晴看着林姐手里的咖啡杯。杯子里是现磨的，茶水间那台咖啡机磨豆子的声音很大，她在走廊上没听见，说明咖啡是在她来之前就已经煮好的。\n\n“嗯。”苏晴说。\n\n林姐侧身从她旁边走过，咖啡的苦香气掠过鼻尖。苏晴没有回头看她走远的方向，也没有问任何问题。她推开了那扇虚掩的门。\n\n茶水间里只有一个人。\n\n周敏站在饮水机旁边，手里端着一个已经接满水的玻璃杯，正在喝。她看见苏晴进来，吞咽的动作停了一瞬，水含在嘴里，腮帮子微微鼓着。\n\n苏晴走到饮水机前，把杯子放在接水口下面。冷水键按下去，水柱砸在杯底发出空洞的声响。她的杯子里还有茶渍，一圈淡褐色沿着杯壁往上爬了三分之一，冷水冲上去，茶渍没有被冲掉，只是被水流搅得晃了晃。\n\n周敏咽下了那口水。\n\n“苏晴。”她说。\n\n苏晴没抬头，看着杯子里的水位线往上走。“周敏。”\n\n茶水间里只有饮水机制冷的嗡鸣声。冷水灌到杯子的三分之二处，苏晴关了水，但没把杯子拿起来。她抬起头，看着周敏。\n\n周敏今天穿了一件深蓝色的开衫，袖口的扣子有一粒没扣，线头松了一截。苏晴以前帮她缝过扣子，是去年秋天的事，在加班到十一点的那个晚上。周敏说这件开衫是她妈寄来的，扣子总是松。\n\n“你上午那个——”周敏开口，话说到一半，像是突然想起什么，把杯子举到嘴边又喝了一口。水杯挡住了她半张脸。\n\n苏晴看着周敏的手。周敏握杯子的方式是四根手指并拢贴在杯壁上，拇指压住杯沿。苏晴见过这个手势，在她入职第一周的那次部门会议上，周敏坐在会议室最后一排，也是这样握着保温杯，听当时的项目经理讲一个已经流产的方案。\n\n“哪个？”苏晴问。\n\n周敏放下杯子，杯底磕在不锈钢台面上，声音比正常放杯子大了一点。她的视线从苏晴脸上移开，落在了饮水机旁边的茶叶罐上。铁观音，罐子上贴着行政部统一打印的标签。\n\n“就是那个，”周敏说，“和德方那个。”\n\n苏晴的手指在杯沿上停住了。\n\n和德方。\n\n她手里的这个项目，合作方是华远。合同上写的是华远科技，公章是华远科技的章，对方对接人的名片上印的也是华远科技的logo。从头到尾，没有任何一份文件上出现过“德方”两个字。\n\n但苏晴知道德方是哪家公司。\n\n三周前，她在整理前任项目经理留下的归档文件时，在一个标注着“备选方案”的文件夹里见过一份意向书。意向书的抬头是德方实业，落款日期是今年二月。意向书的内容框架和她现在手上的华远项目高度相似，相似到可以用同一份模板只改公司名称。但那份意向书没有签字，没有盖章，最后一页的审批栏全是空的。\n\n她当时以为那是被废弃的备选方向。\n\n“哦，”苏晴说，声音平稳，“那个啊。”\n\n周敏的睫毛动了动。她伸手去拿茶叶罐，拧开盖子，又拧上。铁罐的螺纹咬合发出细小的金属摩擦声。\n\n“你——”周敏把茶叶罐放回原处，罐底没有对准原来的圈印，“你知道了？”\n\n苏晴没有回答这个问题。\n\n她把杯子从饮水机上拿起来，凉水在杯子里晃了一下，溅出来一滴落在手背上。她用拇指抹掉了那滴水。\n\n“德方那边，”苏晴说，看着周敏，“什么时候的事。”",
+      "raw_response": "茶水间的门虚掩着，苏晴走到离门框还有两步的地方，听见了自己的名字。\n\n“——苏晴那份提案——”\n\n她停住了。\n\n“她不知道。”另一个声音接上，带着一种压低的笃定，像是陈述一个已经确认的事实。\n\n苏晴的手指在杯壁上收紧了一下。她的杯子是空的，杯底还残留着上午那杯绿茶泡过三道之后的寡淡痕迹。她站在原地，听见茶水间里传来杯勺碰撞瓷壁的声音，然后是脚步声，朝门的方向来。\n\n门被从里拉开。\n\n林姐端着一杯咖啡走出来，杯口冒着热气。她看见苏晴的时候脚步顿了一拍——非常短的一拍，短到如果苏晴不是正盯着她的脸，根本不会注意到。\n\n“苏晴。”林姐笑了一下，嘴角的弧度刚好够得上一个同事间偶遇的标准表情，“来倒水啊。”\n\n不是问句。是陈述。\n\n苏晴看着林姐手里的咖啡杯。杯子里是现磨的，茶水间那台咖啡机磨豆子的声音很大，她在走廊上没听见，说明咖啡是在她来之前就已经煮好的。\n\n“嗯。”苏晴说。\n\n林姐侧身从她旁边走过，咖啡的苦香气掠过鼻尖。苏晴没有回头看她走远的方向，也没有问任何问题。她推开了那扇虚掩的门。\n\n茶水间里只有一个人。\n\n周敏站在饮水机旁边，手里端着一个已经接满水的玻璃杯，正在喝。她看见苏晴进来，吞咽的动作停了一瞬，水含在嘴里，腮帮子微微鼓着。\n\n苏晴走到饮水机前，把杯子放在接水口下面。冷水键按下去，水柱砸在杯底发出空洞的声响。她的杯子里还有茶渍，一圈淡褐色沿着杯壁往上爬了三分之一，冷水冲上去，茶渍没有被冲掉，只是被水流搅得晃了晃。\n\n周敏咽下了那口水。\n\n“苏晴。”她说。\n\n苏晴没抬头，看着杯子里的水位线往上走。“周敏。”\n\n茶水间里只有饮水机制冷的嗡鸣声。冷水灌到杯子的三分之二处，苏晴关了水，但没把杯子拿起来。她抬起头，看着周敏。\n\n周敏今天穿了一件深蓝色的开衫，袖口的扣子有一粒没扣，线头松了一截。苏晴以前帮她缝过扣子，是去年秋天的事，在加班到十一点的那个晚上。周敏说这件开衫是她妈寄来的，扣子总是松。\n\n“你上午那个——”周敏开口，话说到一半，像是突然想起什么，把杯子举到嘴边又喝了一口。水杯挡住了她半张脸。\n\n苏晴看着周敏的手。周敏握杯子的方式是四根手指并拢贴在杯壁上，拇指压住杯沿。苏晴见过这个手势，在她入职第一周的那次部门会议上，周敏坐在会议室最后一排，也是这样握着保温杯，听当时的项目经理讲一个已经流产的方案。\n\n“哪个？”苏晴问。\n\n周敏放下杯子，杯底磕在不锈钢台面上，声音比正常放杯子大了一点。她的视线从苏晴脸上移开，落在了饮水机旁边的茶叶罐上。铁观音，罐子上贴着行政部统一打印的标签。\n\n“就是那个，”周敏说，“和德方那个。”\n\n苏晴的手指在杯沿上停住了。\n\n和德方。\n\n她手里的这个项目，合作方是华远。合同上写的是华远科技，公章是华远科技的章，对方对接人的名片上印的也是华远科技的logo。从头到尾，没有任何一份文件上出现过“德方”两个字。\n\n但苏晴知道德方是哪家公司。\n\n三周前，她在整理前任项目经理留下的归档文件时，在一个标注着“备选方案”的文件夹里见过一份意向书。意向书的抬头是德方实业，落款日期是今年二月。意向书的内容框架和她现在手上的华远项目高度相似，相似到可以用同一份模板只改公司名称。但那份意向书没有签字，没有盖章，最后一页的审批栏全是空的。\n\n她当时以为那是被废弃的备选方向。\n\n“哦，”苏晴说，声音平稳，“那个啊。”\n\n周敏的睫毛动了动。她伸手去拿茶叶罐，拧开盖子，又拧上。铁罐的螺纹咬合发出细小的金属摩擦声。\n\n“你——”周敏把茶叶罐放回原处，罐底没有对准原来的圈印，“你知道了？”\n\n苏晴没有回答这个问题。\n\n她把杯子从饮水机上拿起来，凉水在杯子里晃了一下，溅出来一滴落在手背上。她用拇指抹掉了那滴水。\n\n“德方那边，”苏晴说，看着周敏，“什么时候的事。”",
+      "input_tokens": 1421,
+      "output_tokens": 1000,
+      "latency_ms": 22285,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "8dad6c068bbfaf55f9c6c1d387401b928374d256b03b87c86df5638f8c52a86c",
+      "route_name": null,
+      "route_decision": {
+        "route_name": "A_LITE_INFORMATION_GAP",
+        "classifier_version": "narrative-route-v1",
+        "decision_reasons": [
+          "multiple characters with distinct information",
+          "viewpoint character has unknown facts and an interpretation",
+          "secondary character carries independent knowledge"
+        ],
+        "matched_rules": [
+          "RULE_A_LITE_INFORMATION_GAP"
+        ],
+        "rejected_routes": [
+          "C_OBJECT_CAUSAL"
+        ]
+      },
+      "compiled_brief_hash": "df7744b02aedffb0640d5a0c0fd9b2258111d13a0d771f16cd071e8a7fdb685c",
+      "instruction_hash": "d368cbfa0846d1cb9adf452db083cbb58ba69154f281b3d6c895cb34da157cec",
+      "text_path": "cases\\A-05\\drafts\\route-3.txt"
+    },
+    {
+      "group": "BASELINE-complete_planner",
+      "replica": 1,
+      "mode": "complete_planner",
+      "candidate_id": "fe77af24-84ca-4570-97c2-f3244889d952",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "苏晴的手指在水杯上收紧了一下。\n\n同事A端着咖啡从茶水间走出来，步伐平稳，表情平淡，甚至在经过她身边时还微微点了下头——那种午休时最常见的、不带任何信息的点头。\n\n苏晴也点了点头。\n\n她没说话。她的眼睛已经越过同事A的肩膀，透过半开的门缝，看见同事B还站在茶水间里，正低头看着手机，咖啡杯搁在台面上，还冒着热气。\n\n门在同事A身后慢慢合拢。\n\n苏晴往前迈了一步，用手掌抵住了门。\n\n茶水间里弥漫着咖啡机刚运转过的焦香气。同事B听见门响，抬起头来，目光撞上苏晴的瞬间，手指在手机屏幕上顿了一下。那个停顿很短，短到几乎不算停顿，但苏晴看见了。\n\n然后同事B笑了。\n\n“苏晴，你也来倒水？”\n\n苏晴举起手里的空杯子，晃了晃，也笑了一下。她走向饮水机，按下热水键，水流声填满了两人之间的沉默。她没回头，但能感觉到同事B的视线在她背后停留了一秒，然后移开了。\n\n热水灌进杯子里，蒸汽蒙上杯壁。\n\n苏晴关上饮水机，转过身，靠在台沿上，用杯子的温度暖着手心。她看向同事B，语气随意得像在聊午饭吃什么。\n\n“刚才你们在聊什么项目吗？我好像听到提案什么的。”\n\n同事B端起咖啡杯，喝了一口。\n\n那个动作太快了。苏晴注意到她喝完之后杯沿在嘴唇上多停了一瞬，像是在用杯子挡住什么。\n\n“哦，没什么，”同事B放下杯子，手指在杯柄上摩挲了一下，“就随便聊聊。”\n\n苏晴点了点头，没追问。她低头吹了吹杯子里的热水，等。\n\n茶水间里只剩下空调的低频嗡鸣。\n\n同事B把手机翻了个面，屏幕朝下扣在台面上。“就是那个——”她顿了顿，视线从苏晴脸上移开，落在窗外的楼宇轮廓上，“康泰那个提案。你知道的。”\n\n苏晴的手指在杯壁上停住了。\n\n康泰。\n\n她知道的康泰提案，是上周部门会议上讨论过的那个。客户预算不高，需求模糊，当时分配给了另一个同事跟进。她记得会议纪要里写得很清楚。\n\n但同事B说的是“你知道的”。\n\n而且同事B说这三个字的时候，声音往下沉了一点，像是在确认什么，又像是在后悔自己说出来了。\n\n苏晴抬起眼，看见同事B正盯着自己的咖啡杯，嘴唇抿成一条线，右手食指在杯柄上来回刮了两下。\n\n“哦，康泰。”苏晴说，语气平稳，“那个我知道。”\n\n同事B的手指停住了。\n\n她抬起头，看了苏晴一眼。那一眼里有什么东西一闪而过——苏晴辨认不出来，但那个东西让同事B迅速抓起了手机，把咖啡杯端起来，往门口迈了一步。\n\n“我得回去弄个表，”同事B说，声音比刚才快了一截，“下午开会要用。”\n\n她走到门口，肩膀擦过门框，脚步在走廊里响了两下就远了。\n\n苏晴站在原地，杯子里的热水还在冒气。\n\n康泰。\n\n她脑子里快速过了一遍上周的会议纪要、邮件往来、工作群的消息记录。康泰那个提案，从分配到现在，没有任何人跟她同步过后续进展。没有抄送，没有更新，没有一句“苏晴你来看一下”。\n\n而同事B刚才说的是“你知道的”。\n\n她说“你知道的”的时候，以为苏晴应该知道。\n\n苏晴把杯子搁在台面上，陶瓷底磕在大理石上发出一声轻响。\n\n她不知道。",
+      "raw_response": "苏晴的手指在水杯上收紧了一下。\n\n同事A端着咖啡从茶水间走出来，步伐平稳，表情平淡，甚至在经过她身边时还微微点了下头——那种午休时最常见的、不带任何信息的点头。\n\n苏晴也点了点头。\n\n她没说话。她的眼睛已经越过同事A的肩膀，透过半开的门缝，看见同事B还站在茶水间里，正低头看着手机，咖啡杯搁在台面上，还冒着热气。\n\n门在同事A身后慢慢合拢。\n\n苏晴往前迈了一步，用手掌抵住了门。\n\n茶水间里弥漫着咖啡机刚运转过的焦香气。同事B听见门响，抬起头来，目光撞上苏晴的瞬间，手指在手机屏幕上顿了一下。那个停顿很短，短到几乎不算停顿，但苏晴看见了。\n\n然后同事B笑了。\n\n“苏晴，你也来倒水？”\n\n苏晴举起手里的空杯子，晃了晃，也笑了一下。她走向饮水机，按下热水键，水流声填满了两人之间的沉默。她没回头，但能感觉到同事B的视线在她背后停留了一秒，然后移开了。\n\n热水灌进杯子里，蒸汽蒙上杯壁。\n\n苏晴关上饮水机，转过身，靠在台沿上，用杯子的温度暖着手心。她看向同事B，语气随意得像在聊午饭吃什么。\n\n“刚才你们在聊什么项目吗？我好像听到提案什么的。”\n\n同事B端起咖啡杯，喝了一口。\n\n那个动作太快了。苏晴注意到她喝完之后杯沿在嘴唇上多停了一瞬，像是在用杯子挡住什么。\n\n“哦，没什么，”同事B放下杯子，手指在杯柄上摩挲了一下，“就随便聊聊。”\n\n苏晴点了点头，没追问。她低头吹了吹杯子里的热水，等。\n\n茶水间里只剩下空调的低频嗡鸣。\n\n同事B把手机翻了个面，屏幕朝下扣在台面上。“就是那个——”她顿了顿，视线从苏晴脸上移开，落在窗外的楼宇轮廓上，“康泰那个提案。你知道的。”\n\n苏晴的手指在杯壁上停住了。\n\n康泰。\n\n她知道的康泰提案，是上周部门会议上讨论过的那个。客户预算不高，需求模糊，当时分配给了另一个同事跟进。她记得会议纪要里写得很清楚。\n\n但同事B说的是“你知道的”。\n\n而且同事B说这三个字的时候，声音往下沉了一点，像是在确认什么，又像是在后悔自己说出来了。\n\n苏晴抬起眼，看见同事B正盯着自己的咖啡杯，嘴唇抿成一条线，右手食指在杯柄上来回刮了两下。\n\n“哦，康泰。”苏晴说，语气平稳，“那个我知道。”\n\n同事B的手指停住了。\n\n她抬起头，看了苏晴一眼。那一眼里有什么东西一闪而过——苏晴辨认不出来，但那个东西让同事B迅速抓起了手机，把咖啡杯端起来，往门口迈了一步。\n\n“我得回去弄个表，”同事B说，声音比刚才快了一截，“下午开会要用。”\n\n她走到门口，肩膀擦过门框，脚步在走廊里响了两下就远了。\n\n苏晴站在原地，杯子里的热水还在冒气。\n\n康泰。\n\n她脑子里快速过了一遍上周的会议纪要、邮件往来、工作群的消息记录。康泰那个提案，从分配到现在，没有任何人跟她同步过后续进展。没有抄送，没有更新，没有一句“苏晴你来看一下”。\n\n而同事B刚才说的是“你知道的”。\n\n她说“你知道的”的时候，以为苏晴应该知道。\n\n苏晴把杯子搁在台面上，陶瓷底磕在大理石上发出一声轻响。\n\n她不知道。",
+      "input_tokens": 3043,
+      "output_tokens": 759,
+      "latency_ms": 16143,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "02a58bc0d7a8294f909103f5e282dd727a7d0af53e66e43d918a067385bf2866",
+      "route_name": null,
+      "route_decision": null,
+      "compiled_brief_hash": null,
+      "instruction_hash": null,
+      "text_path": "cases\\A-05\\drafts\\baseline-1.txt"
+    },
+    {
+      "group": "BASELINE-complete_planner",
+      "replica": 2,
+      "mode": "complete_planner",
+      "candidate_id": "f4ec640f-262f-4b1b-b9cb-21a1ff35ecb2",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "苏晴在茶水间门外站了两秒。\n\n门框的阴影刚好遮住她半边身子。同事A端着咖啡杯走出来，杯沿冒着一缕热气，看见她时脚步顿了一下，然后笑了笑，说了句“午休啊”，没等她回应就侧身从她旁边过去了。\n\n苏晴闻见咖啡的味道，还有同事A身上那种淡淡的护手霜香。她没回头看他走远。\n\n茶水间里还有一个人。\n\n苏晴推开门走进去。饮水机发出低沉的嗡鸣，水桶里的气泡往上翻了一下。同事B站在窗边，手里拿着一支搅拌棒，杯子里明明什么都没有，她还在搅。\n\n“苏晴。”同事B抬起眼睛，嘴角弯了一下，又很快落回去，目光往旁边飘了飘才重新落在她脸上，“你也来倒水？”\n\n苏晴嗯了一声，把杯子放到饮水机下面，按下热水键。水流声很大，填满了整个空间。\n\n她盯着杯子里的水面往上升，没有看同事B。\n\n“刚才你们在聊什么项目吗？”苏晴说，语气跟问中午吃什么差不多，“我好像听到提案什么的。”\n\n热水停了。\n\n她听见同事B手里的搅拌棒磕在杯沿上，轻轻一声脆响。\n\n“啊？”同事B说。\n\n苏晴拧上杯盖，这才转过头看她。同事B把搅拌棒放下了，手指在杯壁上搓了一下，又搓了一下。\n\n“就是——”同事B开口，声音比刚才高了半度，“我们在说那个，那个跟市场部合作的方案。你之前也参与过的那个。”\n\n苏晴点点头，没接话。\n\n她参与过的市场部合作方案有三个，其中两个上个月已经结项了，剩下一个还在前期调研阶段，但项目负责人是同事A，不是她。\n\n同事B见她不说话，又补了一句：“就是那个嘛，上次开会提过的。”\n\n上次开会提过的方案有四个。\n\n“哦，”苏晴说，“那个啊。”\n\n同事B笑了一下，笑完就把杯子举到嘴边，喝了一口什么都没有的空杯子。她自己也发现了，愣了一下，转身去接水。\n\n苏晴看着她的后脑勺，看着她按下冷水键，水柱砸进杯底溅起来，溅到同事B的袖口上，她没擦。\n\n“那方案进度怎么样了？”苏晴问，“我这边好像一直没收到更新。”\n\n同事B的肩膀僵了一瞬。\n\n“还在弄，”她说，关掉水龙头，没有转身，“A那边说有些数据要重新核对，所以暂时还没发给你。”\n\n苏晴握着杯子的手指收紧了一点。\n\n那个方案的数据是她上周五整理完发给同事A的，邮件抄送了同事B。她手机里还存着已读回执。\n\n“这样，”苏晴说，“那我等你们消息。”\n\n同事B终于转过身来，点了点头，端着杯子往门口走。经过苏晴身边时脚步加快了一点，杯里的水晃出来几滴，落在地板上，她没停。\n\n茶水间的门被推开，又被弹簧拉回来，在门框上弹了两下才合上。\n\n苏晴站在原地，手里握着热水杯，杯壁烫着她的掌心。她低头看了一眼手机屏幕上的邮件已读回执，又看了一眼地板上那几滴没擦的水渍。\n\n数据她上周就给了。",
+      "raw_response": "苏晴在茶水间门外站了两秒。\n\n门框的阴影刚好遮住她半边身子。同事A端着咖啡杯走出来，杯沿冒着一缕热气，看见她时脚步顿了一下，然后笑了笑，说了句“午休啊”，没等她回应就侧身从她旁边过去了。\n\n苏晴闻见咖啡的味道，还有同事A身上那种淡淡的护手霜香。她没回头看他走远。\n\n茶水间里还有一个人。\n\n苏晴推开门走进去。饮水机发出低沉的嗡鸣，水桶里的气泡往上翻了一下。同事B站在窗边，手里拿着一支搅拌棒，杯子里明明什么都没有，她还在搅。\n\n“苏晴。”同事B抬起眼睛，嘴角弯了一下，又很快落回去，目光往旁边飘了飘才重新落在她脸上，“你也来倒水？”\n\n苏晴嗯了一声，把杯子放到饮水机下面，按下热水键。水流声很大，填满了整个空间。\n\n她盯着杯子里的水面往上升，没有看同事B。\n\n“刚才你们在聊什么项目吗？”苏晴说，语气跟问中午吃什么差不多，“我好像听到提案什么的。”\n\n热水停了。\n\n她听见同事B手里的搅拌棒磕在杯沿上，轻轻一声脆响。\n\n“啊？”同事B说。\n\n苏晴拧上杯盖，这才转过头看她。同事B把搅拌棒放下了，手指在杯壁上搓了一下，又搓了一下。\n\n“就是——”同事B开口，声音比刚才高了半度，“我们在说那个，那个跟市场部合作的方案。你之前也参与过的那个。”\n\n苏晴点点头，没接话。\n\n她参与过的市场部合作方案有三个，其中两个上个月已经结项了，剩下一个还在前期调研阶段，但项目负责人是同事A，不是她。\n\n同事B见她不说话，又补了一句：“就是那个嘛，上次开会提过的。”\n\n上次开会提过的方案有四个。\n\n“哦，”苏晴说，“那个啊。”\n\n同事B笑了一下，笑完就把杯子举到嘴边，喝了一口什么都没有的空杯子。她自己也发现了，愣了一下，转身去接水。\n\n苏晴看着她的后脑勺，看着她按下冷水键，水柱砸进杯底溅起来，溅到同事B的袖口上，她没擦。\n\n“那方案进度怎么样了？”苏晴问，“我这边好像一直没收到更新。”\n\n同事B的肩膀僵了一瞬。\n\n“还在弄，”她说，关掉水龙头，没有转身，“A那边说有些数据要重新核对，所以暂时还没发给你。”\n\n苏晴握着杯子的手指收紧了一点。\n\n那个方案的数据是她上周五整理完发给同事A的，邮件抄送了同事B。她手机里还存着已读回执。\n\n“这样，”苏晴说，“那我等你们消息。”\n\n同事B终于转过身来，点了点头，端着杯子往门口走。经过苏晴身边时脚步加快了一点，杯里的水晃出来几滴，落在地板上，她没停。\n\n茶水间的门被推开，又被弹簧拉回来，在门框上弹了两下才合上。\n\n苏晴站在原地，手里握着热水杯，杯壁烫着她的掌心。她低头看了一眼手机屏幕上的邮件已读回执，又看了一眼地板上那几滴没擦的水渍。\n\n数据她上周就给了。",
+      "input_tokens": 3043,
+      "output_tokens": 682,
+      "latency_ms": 16113,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "02a58bc0d7a8294f909103f5e282dd727a7d0af53e66e43d918a067385bf2866",
+      "route_name": null,
+      "route_decision": null,
+      "compiled_brief_hash": null,
+      "instruction_hash": null,
+      "text_path": "cases\\A-05\\drafts\\baseline-2.txt"
+    },
+    {
+      "group": "BASELINE-complete_planner",
+      "replica": 3,
+      "mode": "complete_planner",
+      "candidate_id": "885a2255-a098-4a14-b043-ccd356465868",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "苏晴停在茶水间门口，手指还搭在门框上。\n\n同事A已经端着咖啡走出来，距离她不到两步。咖啡的热气飘过来，混着一股速溶粉末的甜腻味。他看见她，脚步没停，只是微微点了下头，嘴角带着午休时那种惯常的松散笑意，说了句“苏晴啊”，然后侧身从她旁边走过去。\n\n她没来得及看清他眼神里有没有别的东西。\n\n茶水间里还有一个人。同事B站在靠窗的位置，手里握着杯子，正低头看手机。苏晴走进去的时候，她抬起头，视线碰了一下，然后很快移开，落在咖啡机上，又移回来，扯出一个笑。\n\n那个笑比平时快了一拍。\n\n苏晴也笑了笑，走到饮水机前，把杯子放上接水盘。水流声填满了整个空间，咕噜咕噜的，把沉默压下去又托上来。她盯着杯子里慢慢升高的水面，余光里同事B没有继续看手机，也没有喝杯子里的东西，就那么站着。\n\n水满了。\n\n苏晴端起杯子，转身，靠在台沿上，没急着走。她吹了吹杯口的热气，问：“刚才你们在聊什么项目吗？我好像听到提案什么的。”\n\n声音放得很轻，像是随口一提。\n\n同事B的手指在杯沿上收紧了一下。指甲盖泛白，又松开。\n\n“哦，”她说，“就是……市场部那个，下周要交的。”\n\n她没说是哪个。\n\n苏晴喝了一口水，点点头，没追问。她等着，让那个空当悬在两个人中间。饮水机的制热指示灯跳了一下，嗡嗡声停了。茶水间忽然很安静。\n\n同事B把杯子换到另一只手上，又说：“不过他们那边好像改了点方向，具体的……我也不太清楚。”\n\n“他们”是谁，“方向”是什么，全没说出来。但她说“具体的”三个字的时候，声音往下掉了一截，像踩空了半级台阶。\n\n苏晴看着她。同事B没看她，在看自己杯子里已经凉掉的茶包，线绳搭在杯沿外面，湿漉漉的。\n\n“行，”苏晴说，“那我回头问问。”\n\n同事B抬起眼，嘴唇动了动，像是想说什么，又没说出来。最后只“嗯”了一声。\n\n苏晴端着杯子走出茶水间。杯子是温的，手指却有点凉。\n\n市场部。下周要交。\n\n她上午刚和市场部的林姐对过一次进度，林姐提到的提案只有一份——那份她从头跟到尾、连数据和附件都校对过两遍的。林姐没说有改动，更没说有“她不知道”的部分。\n\n但刚才同事B说的“市场部那个”，不是那份。\n\n苏晴在走廊上停了半步，看着自己手里的杯子，然后继续往前走。",
+      "raw_response": "苏晴停在茶水间门口，手指还搭在门框上。\n\n同事A已经端着咖啡走出来，距离她不到两步。咖啡的热气飘过来，混着一股速溶粉末的甜腻味。他看见她，脚步没停，只是微微点了下头，嘴角带着午休时那种惯常的松散笑意，说了句“苏晴啊”，然后侧身从她旁边走过去。\n\n她没来得及看清他眼神里有没有别的东西。\n\n茶水间里还有一个人。同事B站在靠窗的位置，手里握着杯子，正低头看手机。苏晴走进去的时候，她抬起头，视线碰了一下，然后很快移开，落在咖啡机上，又移回来，扯出一个笑。\n\n那个笑比平时快了一拍。\n\n苏晴也笑了笑，走到饮水机前，把杯子放上接水盘。水流声填满了整个空间，咕噜咕噜的，把沉默压下去又托上来。她盯着杯子里慢慢升高的水面，余光里同事B没有继续看手机，也没有喝杯子里的东西，就那么站着。\n\n水满了。\n\n苏晴端起杯子，转身，靠在台沿上，没急着走。她吹了吹杯口的热气，问：“刚才你们在聊什么项目吗？我好像听到提案什么的。”\n\n声音放得很轻，像是随口一提。\n\n同事B的手指在杯沿上收紧了一下。指甲盖泛白，又松开。\n\n“哦，”她说，“就是……市场部那个，下周要交的。”\n\n她没说是哪个。\n\n苏晴喝了一口水，点点头，没追问。她等着，让那个空当悬在两个人中间。饮水机的制热指示灯跳了一下，嗡嗡声停了。茶水间忽然很安静。\n\n同事B把杯子换到另一只手上，又说：“不过他们那边好像改了点方向，具体的……我也不太清楚。”\n\n“他们”是谁，“方向”是什么，全没说出来。但她说“具体的”三个字的时候，声音往下掉了一截，像踩空了半级台阶。\n\n苏晴看着她。同事B没看她，在看自己杯子里已经凉掉的茶包，线绳搭在杯沿外面，湿漉漉的。\n\n“行，”苏晴说，“那我回头问问。”\n\n同事B抬起眼，嘴唇动了动，像是想说什么，又没说出来。最后只“嗯”了一声。\n\n苏晴端着杯子走出茶水间。杯子是温的，手指却有点凉。\n\n市场部。下周要交。\n\n她上午刚和市场部的林姐对过一次进度，林姐提到的提案只有一份——那份她从头跟到尾、连数据和附件都校对过两遍的。林姐没说有改动，更没说有“她不知道”的部分。\n\n但刚才同事B说的“市场部那个”，不是那份。\n\n苏晴在走廊上停了半步，看着自己手里的杯子，然后继续往前走。",
+      "input_tokens": 3043,
+      "output_tokens": 587,
+      "latency_ms": 13708,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "02a58bc0d7a8294f909103f5e282dd727a7d0af53e66e43d918a067385bf2866",
+      "route_name": null,
+      "route_decision": null,
+      "compiled_brief_hash": null,
+      "instruction_hash": null,
+      "text_path": "cases\\A-05\\drafts\\baseline-3.txt"
+    }
+  ],
+  "actual_route": "A_LITE_INFORMATION_GAP",
+  "route_decision": {
+    "route_name": "A_LITE_INFORMATION_GAP",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "multiple characters with distinct information",
+      "viewpoint character has unknown facts and an interpretation",
+      "secondary character carries independent knowledge"
+    ],
+    "matched_rules": [
+      "RULE_A_LITE_INFORMATION_GAP"
+    ],
+    "rejected_routes": [
+      "C_OBJECT_CAUSAL"
+    ]
+  }
+}

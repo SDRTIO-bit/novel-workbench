@@ -1,0 +1,63 @@
+{
+  "group": "ROUTE-B_SHORT_RELATION",
+  "replica": 3,
+  "mode": "narrative_route",
+  "candidate_id": "250847b9-0848-44c7-af26-85e3054874d8",
+  "attempt_number": 1,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "route_decision": {
+      "route_name": "B_SHORT_RELATION",
+      "classifier_version": "narrative-route-v1",
+      "decision_reasons": [
+        "scene is relationship-oriented with no physical urgency",
+        "character action involves relational move (message, gesture, proximity)"
+      ],
+      "matched_rules": [
+        "RULE_B_SHORT_RELATION"
+      ],
+      "rejected_routes": [
+        "C_OBJECT_CAUSAL",
+        "A_LITE_INFORMATION_GAP"
+      ]
+    },
+    "compiled_brief_hash": "fc25d584be59023d13a82f729dac11ab51382abb209fd019bef654fdbb030d01",
+    "instruction_hash": "d7a76822408396dc71c4599a7f40f33368b90199f0d9c0712383961213437555",
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "手机屏幕右上角的数字从8跳成了7。\n\n郑宣站在电梯口没动。B2层车库的日光灯管坏了一半，剩下的一半嗡嗡响着，把二十多根蓝色柱子照得发灰。他记得是蓝色柱子。但眼前这些柱子从电梯口一直排到深处阴影里，每一根都是蓝的。\n\n他打开手机手电筒。电量7%。\n\n光柱扫过最近的三根柱子。第一根干净。第二根底部有一小片黑色痕迹，像是轮胎蹭的。他蹲下去看——不是他的车留下的，痕迹太旧。第三根柱子也有，同样的黑色擦痕，位置稍高。\n\n他关掉手电筒。电量6%。\n\n污渍不是标记。是每根柱子都有的东西，可能是清洁车蹭的，可能是某个统一高度上的碰撞痕迹。他站直了，没往第四根走。\n\n他重新看了一遍车库。柱子旁有数字编号，白色漆字，被阴影吃掉一半。最近的柱子标着B2-17。他记得自己停的位置编号应该更大，因为进车库时他绕了好一阵才找到空位。\n\n他开始往编号增大的方向走。经过B2-18、B2-19时没停。脚步在混凝土墙之间弹回来，叠成重复的回声。\n\n走到B2-25时手机震了一下。低电量提醒弹出来，遮住了手电筒按钮。他划掉提醒，屏幕在手里暗了一瞬，又亮起来。\n\n然后彻底黑了。\n\n屏幕黑了。",
+  "raw_response": "手机屏幕右上角的数字从8跳成了7。\n\n郑宣站在电梯口没动。B2层车库的日光灯管坏了一半，剩下的一半嗡嗡响着，把二十多根蓝色柱子照得发灰。他记得是蓝色柱子。但眼前这些柱子从电梯口一直排到深处阴影里，每一根都是蓝的。\n\n他打开手机手电筒。电量7%。\n\n光柱扫过最近的三根柱子。第一根干净。第二根底部有一小片黑色痕迹，像是轮胎蹭的。他蹲下去看——不是他的车留下的，痕迹太旧。第三根柱子也有，同样的黑色擦痕，位置稍高。\n\n他关掉手电筒。电量6%。\n\n污渍不是标记。是每根柱子都有的东西，可能是清洁车蹭的，可能是某个统一高度上的碰撞痕迹。他站直了，没往第四根走。\n\n他重新看了一遍车库。柱子旁有数字编号，白色漆字，被阴影吃掉一半。最近的柱子标着B2-17。他记得自己停的位置编号应该更大，因为进车库时他绕了好一阵才找到空位。\n\n他开始往编号增大的方向走。经过B2-18、B2-19时没停。脚步在混凝土墙之间弹回来，叠成重复的回声。\n\n走到B2-25时手机震了一下。低电量提醒弹出来，遮住了手电筒按钮。他划掉提醒，屏幕在手里暗了一瞬，又亮起来。\n\n然后彻底黑了。\n\n屏幕黑了。",
+  "input_tokens": 1403,
+  "output_tokens": 320,
+  "latency_ms": 11423,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "b7a9b97332199ef32aefb323de603bdbe1eb9cac2c2e8d351bdfd93119b9aa2a",
+  "route_name": null,
+  "route_decision": {
+    "route_name": "B_SHORT_RELATION",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "scene is relationship-oriented with no physical urgency",
+      "character action involves relational move (message, gesture, proximity)"
+    ],
+    "matched_rules": [
+      "RULE_B_SHORT_RELATION"
+    ],
+    "rejected_routes": [
+      "C_OBJECT_CAUSAL",
+      "A_LITE_INFORMATION_GAP"
+    ]
+  },
+  "compiled_brief_hash": "fc25d584be59023d13a82f729dac11ab51382abb209fd019bef654fdbb030d01",
+  "instruction_hash": "d7a76822408396dc71c4599a7f40f33368b90199f0d9c0712383961213437555",
+  "text_path": "cases\\D-06\\drafts\\route-3.txt"
+}

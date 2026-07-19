@@ -1,0 +1,324 @@
+{
+  "case_id": "C-05",
+  "category": "校园误会",
+  "title": "更衣室错拿运动服",
+  "run_id": "544631a4-c86e-458e-8792-dc2f3cf0ebdc",
+  "expected_route": "C_OBJECT_CAUSAL",
+  "planner": {
+    "candidate_id": "b3ed3ddb-ac1a-40fb-92cb-6dc12baf20a5",
+    "attempt_number": 1,
+    "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+    "model_id": "deepseek-v4-pro",
+    "prompt_version_id": "f9052f8a-dc4e-5408-b14e-fc1badaf57f8",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 12288,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "json_object"
+    },
+    "text_output": "{\n  \"planner_contract_version\": 2,\n  \"scene_goal\": \"孟然在不追喊的情况下，让错拿外套的同学自己发现外套不属于他，从而拿回钥匙。\",\n  \"location\": \"学校体育馆男更衣室及门外走廊\",\n  \"time\": \"下午体育课后，临近放学\",\n  \"scene_state\": {\n    \"last_completed_action\": \"孟然发现自己的外套被穿走，口袋里装着家门钥匙。\",\n    \"present_characters\": [\"孟然\", \"错拿外套的同学（李一鸣）\"],\n    \"visible_facts\": [\n      \"孟然只穿着短袖，站在更衣室储物柜前\",\n      \"李一鸣穿着孟然的黑色运动服外套正跑向田径场\",\n      \"更衣室长凳上有一件与孟然外套同款的黑色运动服，但尺码不同\"\n    ],\n    \"available_objects\": [\"长凳上的黑色运动服\", \"孟然的书包\", \"更衣室储物柜\", \"手机\"],\n    \"unresolved_problem\": \"孟然需要拿回外套口袋里的家门钥匙，但不能追上去或大喊。\",\n    \"already_existing_constraints\": [\n      \"孟然不能跑动（刚扭伤脚踝）\",\n      \"更衣室内有其他同学，不能引起注意\",\n      \"李一鸣已经跑远，无法直接对话\"\n    ]\n  },\n  \"characters\": [\n    {\n      \"name\": \"孟然\",\n      \"goal\": \"让李一鸣意识到外套拿错，并拿回钥匙。\",\n      \"known\": [\n        \"自己的外套口袋里有家门钥匙\",\n        \"李一鸣穿走了自己的外套\",\n        \"自己脚踝扭伤不能跑\"\n      ],\n      \"unknown\": [\n        \"李一鸣是否注意到外套不合身\",\n        \"李一鸣是否会检查口袋\"\n      ],\n      \"mistaken_beliefs\": [\n        \"李一鸣可能只是匆忙中穿错，不是故意的\"\n      ],\n      \"constraints\": [\n        \"不能追上去\",\n        \"不能在更衣室大声喊叫\",\n        \"不能引起其他同学围观\"\n      ],\n      \"observed_evidence\": [\n        \"李一鸣穿着自己的外套跑远\",\n        \"长凳上有一件同款但尺码不同的外套\"\n      ],\n      \"current_interpretation\": \"那件长凳上的外套很可能是李一鸣的，如果让李一鸣发现自己的外套不见了，他会回来找。\",\n      \"how_interpretation_drives_action\": \"孟然决定用长凳上的外套作为信号，让李一鸣自己发现拿错。\"\n    },\n    {\n      \"name\": \"李一鸣\",\n      \"goal\": \"赶去田径场参加训练，可能未意识到穿错外套。\",\n      \"known\": [\n        \"自己有一件同款黑色运动服\",\n        \"训练要迟到了\"\n      ],\n      \"unknown\": [\n        \"穿走的外套是孟然的\",\n        \"外套口袋里有一把钥匙\"\n      ],\n      \"mistaken_beliefs\": [\n        \"以为长凳上的外套是自己的，匆忙中穿上\"\n      ],\n      \"constraints\": [\n        \"已经跑出更衣室，听不到孟然小声说话\",\n        \"训练时间紧迫，可能不会立刻返回\"\n      ],\n      \"observed_evidence\": [\n        \"身上外套的尺码可能略大或略小\"\n      ],\n      \"current_interpretation\": \"可能觉得外套有点不合身，但没时间多想。\",\n      \"how_interpretation_drives_action\": \"继续跑向田径场，除非有明确信号让他停下。\"\n    }\n  ],\n  \"concrete_problem\": \"孟然如何让已经跑远的李一鸣意识到外套拿错并主动返回？\",\n  \"pressure\": \"李一鸣越跑越远，一旦进入田径场，外套可能被混入更多同款衣服中，钥匙更难找回。\",\n  \"turning_point\": \"孟然拿起长凳上的外套，故意将一只袖子翻到外面，然后放在显眼处，并请一位路过的同学帮忙传话。\",\n  \"end_condition\": \"李一鸣看到外套或收到传话后返回更衣室，发现外套归属出现新事实。\",\n  \"forbidden\": [\n    \"孟然追上去\",\n    \"孟然在更衣室大喊\",\n    \"直接使用手机联系李一鸣（本章不透露孟然有手机）\",\n    \"其他同学主动发现并解决误会\",\n    \"李一鸣自己突然灵光一闪发现穿错\"\n  ],\n  \"causal_transitions\": [\n    {\n      \"id\": \"CT01\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"长凳上有一件与孟然外套同款的黑色运动服，但尺码明显不同。\",\n      \"character_interpretation\": \"这件外套很可能是李一鸣的，他匆忙中穿走了我的。\",\n      \"character_next_action\": \"孟然拿起那件外套，将一只袖子翻到外面，制造一个显眼的异常标记，然后放在更衣室门口的长凳上。\",\n      \"rejected_alternative\": \"孟然可以直接把外套拿去给李一鸣，但因脚伤不能跑；或者大声叫喊，但会引来围观。\",\n      \"immediate_consequence\": \"外套被放在显眼处，袖子外翻，成为视觉信号。\",\n      \"counterfactual_without_action\": \"如果孟然不做任何标记，外套只是普通放在那里，李一鸣即使返回也可能忽略。\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"外套整齐叠放在长凳上，无人注意。\",\n        \"after\": \"外套被移至门口，一只袖子外翻，显得突兀。\"\n      },\n      \"cost_or_commitment\": \"孟然牺牲了快速离开的机会，选择留在更衣室等待。\",\n      \"next_constraint\": \"李一鸣必须注意到外套的异常才会产生疑问。\",\n      \"reader_must_infer\": \"孟然希望李一鸣看到自己外套的异常状态，从而联想到自己可能穿错了。\",\n      \"narrator_must_not_state\": [\n        \"孟然内心对李一鸣的埋怨\",\n        \"孟然对钥匙丢失的焦虑程度\"\n      ]\n    },\n    {\n      \"id\": \"CT02\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"一个同学（非李一鸣）正好经过更衣室门口。\",\n      \"character_interpretation\": \"这个同学可能认识李一鸣，可以帮忙传话。\",\n      \"character_next_action\": \"孟然叫住那位同学，请他帮忙告诉李一鸣“你的外套在更衣室门口，好像拿错了”。\",\n      \"rejected_alternative\": \"孟然可以自己发消息，但手机不在身边；或者写纸条，但时间来不及。\",\n      \"immediate_consequence\": \"同学答应传话，朝田径场方向走去。\",\n      \"counterfactual_without_action\": \"如果孟然不请人传话，李一鸣可能直到训练结束才发现外套不对，钥匙可能丢失。\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"只有孟然知道外套错拿，信息未传递。\",\n        \"after\": \"传话人带着信息离开，李一鸣即将得知。\"\n      },\n      \"cost_or_commitment\": \"孟然欠下一个小人情，且暴露了自己在更衣室等待的事实。\",\n      \"next_constraint\": \"传话内容必须准确，否则李一鸣可能误解。\",\n      \"reader_must_infer\": \"孟然选择相信一个不太熟的同学，显示他此刻没有更好的办法。\",\n      \"narrator_must_not_state\": [\n        \"孟然对这个同学是否可靠的真实想法\",\n        \"传话同学是否真的会去通知\"\n      ]\n    }\n  ],\n  \"tempo_guardrails\": {\n    \"entry_pressure\": \"李一鸣穿着孟然的外套已经跑出更衣室，消失在走廊拐角。\",\n    \"dominant_pressure\": {\n      \"kind\": \"resource_constraint\",\n      \"description\": \"时间紧迫，李一鸣越跑越远，而孟然因脚伤无法追赶，可用的传信工具也受限。\"\n    },\n    \"allowed_viewpoint_misread\": \"李一鸣可能把外套的异常标记当作别人恶作剧，而不是拿错的信号。\",\n    \"disclosure_cap\": 1,\n    \"must_remain_unclassified\": [\n      \"孟然对李一鸣是否故意的猜测\",\n      \"家门钥匙的具体形状和钥匙扣细节\"\n    ],\n    \"stop_state\": {\n      \"type\": \"information_conflict\",\n      \"visible_fact\": \"李一鸣返回更衣室，看到自己外套的袖子外翻，同时发现自己身上外套的口袋里有钥匙。\",\n      \"what_is_now_different\": \"李一鸣意识到外套拿错，且钥匙的存在让他明白必须立刻归还。\",\n      \"must_not_append\": \"不得描述李一鸣返回后的心理活动或道歉。\"\n    },\n    \"final_line_must_include\": \"口袋里的钥匙硌到了他的手。\"\n  },\n  \"chapter_contract_check\": {\n    \"function_aligned\": true,\n    \"must_deliver_covered\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_enabled\": true,\n    \"main_payoff_prepared\": true,\n    \"ending_hook_established\": true,\n    \"causal_transitions_grounded\": true,\n    \"reader_inference_not_pre_resolved\": true,\n    \"scene_state_reconstructed\": true,\n    \"information_sources_legal\": true,\n    \"character_choice_is_real\": true,\n    \"consequence_is_counterfactual\": true,\n    \"state_delta_is_nonempty\": true,\n    \"next_constraint_is_new\": true,\n    \"stop_state_is_visible\": true,\n    \"stop_state_changes_future_actions\": true\n  }\n}",
+    "raw_response": "{\n  \"planner_contract_version\": 2,\n  \"scene_goal\": \"孟然在不追喊的情况下，让错拿外套的同学自己发现外套不属于他，从而拿回钥匙。\",\n  \"location\": \"学校体育馆男更衣室及门外走廊\",\n  \"time\": \"下午体育课后，临近放学\",\n  \"scene_state\": {\n    \"last_completed_action\": \"孟然发现自己的外套被穿走，口袋里装着家门钥匙。\",\n    \"present_characters\": [\"孟然\", \"错拿外套的同学（李一鸣）\"],\n    \"visible_facts\": [\n      \"孟然只穿着短袖，站在更衣室储物柜前\",\n      \"李一鸣穿着孟然的黑色运动服外套正跑向田径场\",\n      \"更衣室长凳上有一件与孟然外套同款的黑色运动服，但尺码不同\"\n    ],\n    \"available_objects\": [\"长凳上的黑色运动服\", \"孟然的书包\", \"更衣室储物柜\", \"手机\"],\n    \"unresolved_problem\": \"孟然需要拿回外套口袋里的家门钥匙，但不能追上去或大喊。\",\n    \"already_existing_constraints\": [\n      \"孟然不能跑动（刚扭伤脚踝）\",\n      \"更衣室内有其他同学，不能引起注意\",\n      \"李一鸣已经跑远，无法直接对话\"\n    ]\n  },\n  \"characters\": [\n    {\n      \"name\": \"孟然\",\n      \"goal\": \"让李一鸣意识到外套拿错，并拿回钥匙。\",\n      \"known\": [\n        \"自己的外套口袋里有家门钥匙\",\n        \"李一鸣穿走了自己的外套\",\n        \"自己脚踝扭伤不能跑\"\n      ],\n      \"unknown\": [\n        \"李一鸣是否注意到外套不合身\",\n        \"李一鸣是否会检查口袋\"\n      ],\n      \"mistaken_beliefs\": [\n        \"李一鸣可能只是匆忙中穿错，不是故意的\"\n      ],\n      \"constraints\": [\n        \"不能追上去\",\n        \"不能在更衣室大声喊叫\",\n        \"不能引起其他同学围观\"\n      ],\n      \"observed_evidence\": [\n        \"李一鸣穿着自己的外套跑远\",\n        \"长凳上有一件同款但尺码不同的外套\"\n      ],\n      \"current_interpretation\": \"那件长凳上的外套很可能是李一鸣的，如果让李一鸣发现自己的外套不见了，他会回来找。\",\n      \"how_interpretation_drives_action\": \"孟然决定用长凳上的外套作为信号，让李一鸣自己发现拿错。\"\n    },\n    {\n      \"name\": \"李一鸣\",\n      \"goal\": \"赶去田径场参加训练，可能未意识到穿错外套。\",\n      \"known\": [\n        \"自己有一件同款黑色运动服\",\n        \"训练要迟到了\"\n      ],\n      \"unknown\": [\n        \"穿走的外套是孟然的\",\n        \"外套口袋里有一把钥匙\"\n      ],\n      \"mistaken_beliefs\": [\n        \"以为长凳上的外套是自己的，匆忙中穿上\"\n      ],\n      \"constraints\": [\n        \"已经跑出更衣室，听不到孟然小声说话\",\n        \"训练时间紧迫，可能不会立刻返回\"\n      ],\n      \"observed_evidence\": [\n        \"身上外套的尺码可能略大或略小\"\n      ],\n      \"current_interpretation\": \"可能觉得外套有点不合身，但没时间多想。\",\n      \"how_interpretation_drives_action\": \"继续跑向田径场，除非有明确信号让他停下。\"\n    }\n  ],\n  \"concrete_problem\": \"孟然如何让已经跑远的李一鸣意识到外套拿错并主动返回？\",\n  \"pressure\": \"李一鸣越跑越远，一旦进入田径场，外套可能被混入更多同款衣服中，钥匙更难找回。\",\n  \"turning_point\": \"孟然拿起长凳上的外套，故意将一只袖子翻到外面，然后放在显眼处，并请一位路过的同学帮忙传话。\",\n  \"end_condition\": \"李一鸣看到外套或收到传话后返回更衣室，发现外套归属出现新事实。\",\n  \"forbidden\": [\n    \"孟然追上去\",\n    \"孟然在更衣室大喊\",\n    \"直接使用手机联系李一鸣（本章不透露孟然有手机）\",\n    \"其他同学主动发现并解决误会\",\n    \"李一鸣自己突然灵光一闪发现穿错\"\n  ],\n  \"causal_transitions\": [\n    {\n      \"id\": \"CT01\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"长凳上有一件与孟然外套同款的黑色运动服，但尺码明显不同。\",\n      \"character_interpretation\": \"这件外套很可能是李一鸣的，他匆忙中穿走了我的。\",\n      \"character_next_action\": \"孟然拿起那件外套，将一只袖子翻到外面，制造一个显眼的异常标记，然后放在更衣室门口的长凳上。\",\n      \"rejected_alternative\": \"孟然可以直接把外套拿去给李一鸣，但因脚伤不能跑；或者大声叫喊，但会引来围观。\",\n      \"immediate_consequence\": \"外套被放在显眼处，袖子外翻，成为视觉信号。\",\n      \"counterfactual_without_action\": \"如果孟然不做任何标记，外套只是普通放在那里，李一鸣即使返回也可能忽略。\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"外套整齐叠放在长凳上，无人注意。\",\n        \"after\": \"外套被移至门口，一只袖子外翻，显得突兀。\"\n      },\n      \"cost_or_commitment\": \"孟然牺牲了快速离开的机会，选择留在更衣室等待。\",\n      \"next_constraint\": \"李一鸣必须注意到外套的异常才会产生疑问。\",\n      \"reader_must_infer\": \"孟然希望李一鸣看到自己外套的异常状态，从而联想到自己可能穿错了。\",\n      \"narrator_must_not_state\": [\n        \"孟然内心对李一鸣的埋怨\",\n        \"孟然对钥匙丢失的焦虑程度\"\n      ]\n    },\n    {\n      \"id\": \"CT02\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"一个同学（非李一鸣）正好经过更衣室门口。\",\n      \"character_interpretation\": \"这个同学可能认识李一鸣，可以帮忙传话。\",\n      \"character_next_action\": \"孟然叫住那位同学，请他帮忙告诉李一鸣“你的外套在更衣室门口，好像拿错了”。\",\n      \"rejected_alternative\": \"孟然可以自己发消息，但手机不在身边；或者写纸条，但时间来不及。\",\n      \"immediate_consequence\": \"同学答应传话，朝田径场方向走去。\",\n      \"counterfactual_without_action\": \"如果孟然不请人传话，李一鸣可能直到训练结束才发现外套不对，钥匙可能丢失。\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"只有孟然知道外套错拿，信息未传递。\",\n        \"after\": \"传话人带着信息离开，李一鸣即将得知。\"\n      },\n      \"cost_or_commitment\": \"孟然欠下一个小人情，且暴露了自己在更衣室等待的事实。\",\n      \"next_constraint\": \"传话内容必须准确，否则李一鸣可能误解。\",\n      \"reader_must_infer\": \"孟然选择相信一个不太熟的同学，显示他此刻没有更好的办法。\",\n      \"narrator_must_not_state\": [\n        \"孟然对这个同学是否可靠的真实想法\",\n        \"传话同学是否真的会去通知\"\n      ]\n    }\n  ],\n  \"tempo_guardrails\": {\n    \"entry_pressure\": \"李一鸣穿着孟然的外套已经跑出更衣室，消失在走廊拐角。\",\n    \"dominant_pressure\": {\n      \"kind\": \"resource_constraint\",\n      \"description\": \"时间紧迫，李一鸣越跑越远，而孟然因脚伤无法追赶，可用的传信工具也受限。\"\n    },\n    \"allowed_viewpoint_misread\": \"李一鸣可能把外套的异常标记当作别人恶作剧，而不是拿错的信号。\",\n    \"disclosure_cap\": 1,\n    \"must_remain_unclassified\": [\n      \"孟然对李一鸣是否故意的猜测\",\n      \"家门钥匙的具体形状和钥匙扣细节\"\n    ],\n    \"stop_state\": {\n      \"type\": \"information_conflict\",\n      \"visible_fact\": \"李一鸣返回更衣室，看到自己外套的袖子外翻，同时发现自己身上外套的口袋里有钥匙。\",\n      \"what_is_now_different\": \"李一鸣意识到外套拿错，且钥匙的存在让他明白必须立刻归还。\",\n      \"must_not_append\": \"不得描述李一鸣返回后的心理活动或道歉。\"\n    },\n    \"final_line_must_include\": \"口袋里的钥匙硌到了他的手。\"\n  },\n  \"chapter_contract_check\": {\n    \"function_aligned\": true,\n    \"must_deliver_covered\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_enabled\": true,\n    \"main_payoff_prepared\": true,\n    \"ending_hook_established\": true,\n    \"causal_transitions_grounded\": true,\n    \"reader_inference_not_pre_resolved\": true,\n    \"scene_state_reconstructed\": true,\n    \"information_sources_legal\": true,\n    \"character_choice_is_real\": true,\n    \"consequence_is_counterfactual\": true,\n    \"state_delta_is_nonempty\": true,\n    \"next_constraint_is_new\": true,\n    \"stop_state_is_visible\": true,\n    \"stop_state_changes_future_actions\": true\n  }\n}",
+    "input_tokens": 3309,
+    "output_tokens": 2177,
+    "latency_ms": 31258,
+    "finish_reason": "stop",
+    "error_code": null,
+    "error_message": null,
+    "rendered_user_prompt_sha256": "2cc2fd0013eb1de2ce3e77378efb78b76bf23880cec6f80187b75f4649408f67",
+    "route_name": null,
+    "route_decision": null,
+    "compiled_brief_hash": null,
+    "instruction_hash": null
+  },
+  "drafts": [
+    {
+      "group": "ROUTE-C_OBJECT_CAUSAL",
+      "replica": 1,
+      "mode": "narrative_route",
+      "candidate_id": "4d55e044-7fd9-47d7-8368-236179573c8f",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "C_OBJECT_CAUSAL",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "scene_state.available_objects is non-empty",
+            "causal_transitions contains counterfactual_without_action or rejected_alternative",
+            "character_next_action involves physical object manipulation"
+          ],
+          "matched_rules": [
+            "RULE_C_OBJECT_CAUSAL"
+          ],
+          "rejected_routes": []
+        },
+        "compiled_brief_hash": "164f908cc00d1dccb682eef337f179ddb4458800887664a37596bbdf212655be",
+        "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "孟然站在储物柜前，手指还搭在柜门边上。\n\n更衣室里的热气正在散，铁皮柜子泛着潮味。他低头看了眼自己——短袖，校裤，左脚踝外侧肿着一圈，体育课跑四百米的时候崴的。刚才他坐在长凳上解鞋带，把外套搭在膝盖上，然后李一鸣从旁边跑过去，抓起一件黑色运动服就往身上一套，说“借我穿下外面冷”，人已经出了门。\n\n孟然那会儿正低头对付鞋带，等抬起头，走廊里只剩脚步声。\n\n现在长凳上还剩一件黑色运动服，团成一团，袖口翻着，拉链歪在一边。孟然拎起来看了一眼尺码标——比他平时穿的大一号。李一鸣比他高半个头。\n\n他放下外套，往门口走了两步。走廊那头，田径场方向传来哨子和笑闹声。他脚踝一受力就疼，扶着门框停下来。\n\n不能追。\n\n他回头看着长凳上那件外套。如果就这么放着，李一鸣回来可能看都不看，抓起就走，或者干脆不回来，等放学直接穿着他的外套出校门。口袋里那把钥匙，铜的，挂在一个旧钥匙扣上，是他家楼下铁门的。\n\n孟然把外套拿起来，抖开。\n\n他捏住左袖口，把整条袖子从里往外翻过来，衬里朝外，深灰色的网眼布露在外面。他又把翻好的袖子沿着肩线折了一下，让袖口搭在领口位置，形成一个不正常的凸起。然后他把外套摊平，拉链拉上一半，让那条外翻的袖子从拉链开口处支出来，像个没塞好的东西。\n\n他把外套放在更衣室门口的长凳上，靠外侧那头，正对走廊的方向。\n\n然后他退回自己的储物柜前，坐下。\n\n走廊里有人跑过去，不是李一鸣。又有人走过去，也不是。\n\n孟然把书包拎到膝盖上，没拉开。他脚踝搁在长凳底下，没动。更衣室的灯管嗡嗡响。\n\n大约过了四分钟，走廊里传来一阵急促的脚步，不是跑，是快步走，鞋底擦着水磨石地面。李一鸣出现在门口，呼吸还没匀，脸上带着运动后的红。他先看到孟然，愣了一下，然后视线往下，落在长凳上那件外套上。\n\n他盯着那条外翻的袖子看了两秒。然后他低头看自己身上穿的那件——拉链拉到头，袖子长度刚过手腕，肩膀有点紧。\n\n李一鸣把手插进身上外套的口袋里。\n\n右边口袋。\n\n他的手指停住了。\n\n然后他慢慢把手抽出来，指间夹着一把铜钥匙，钥匙扣上拴着一小块深棕色的皮标。\n\n李一鸣看着那把钥匙，又看向长凳上那件袖口外翻的外套。\n\n口袋里的钥匙硌到了他的手。",
+      "raw_response": "孟然站在储物柜前，手指还搭在柜门边上。\n\n更衣室里的热气正在散，铁皮柜子泛着潮味。他低头看了眼自己——短袖，校裤，左脚踝外侧肿着一圈，体育课跑四百米的时候崴的。刚才他坐在长凳上解鞋带，把外套搭在膝盖上，然后李一鸣从旁边跑过去，抓起一件黑色运动服就往身上一套，说“借我穿下外面冷”，人已经出了门。\n\n孟然那会儿正低头对付鞋带，等抬起头，走廊里只剩脚步声。\n\n现在长凳上还剩一件黑色运动服，团成一团，袖口翻着，拉链歪在一边。孟然拎起来看了一眼尺码标——比他平时穿的大一号。李一鸣比他高半个头。\n\n他放下外套，往门口走了两步。走廊那头，田径场方向传来哨子和笑闹声。他脚踝一受力就疼，扶着门框停下来。\n\n不能追。\n\n他回头看着长凳上那件外套。如果就这么放着，李一鸣回来可能看都不看，抓起就走，或者干脆不回来，等放学直接穿着他的外套出校门。口袋里那把钥匙，铜的，挂在一个旧钥匙扣上，是他家楼下铁门的。\n\n孟然把外套拿起来，抖开。\n\n他捏住左袖口，把整条袖子从里往外翻过来，衬里朝外，深灰色的网眼布露在外面。他又把翻好的袖子沿着肩线折了一下，让袖口搭在领口位置，形成一个不正常的凸起。然后他把外套摊平，拉链拉上一半，让那条外翻的袖子从拉链开口处支出来，像个没塞好的东西。\n\n他把外套放在更衣室门口的长凳上，靠外侧那头，正对走廊的方向。\n\n然后他退回自己的储物柜前，坐下。\n\n走廊里有人跑过去，不是李一鸣。又有人走过去，也不是。\n\n孟然把书包拎到膝盖上，没拉开。他脚踝搁在长凳底下，没动。更衣室的灯管嗡嗡响。\n\n大约过了四分钟，走廊里传来一阵急促的脚步，不是跑，是快步走，鞋底擦着水磨石地面。李一鸣出现在门口，呼吸还没匀，脸上带着运动后的红。他先看到孟然，愣了一下，然后视线往下，落在长凳上那件外套上。\n\n他盯着那条外翻的袖子看了两秒。然后他低头看自己身上穿的那件——拉链拉到头，袖子长度刚过手腕，肩膀有点紧。\n\n李一鸣把手插进身上外套的口袋里。\n\n右边口袋。\n\n他的手指停住了。\n\n然后他慢慢把手抽出来，指间夹着一把铜钥匙，钥匙扣上拴着一小块深棕色的皮标。\n\n李一鸣看着那把钥匙，又看向长凳上那件袖口外翻的外套。\n\n口袋里的钥匙硌到了他的手。",
+      "input_tokens": 1469,
+      "output_tokens": 628,
+      "latency_ms": 15561,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "ce81cf479d609dc871bfd801093a707c3265d71cfa093e55326969761550e90d",
+      "route_name": null,
+      "route_decision": {
+        "route_name": "C_OBJECT_CAUSAL",
+        "classifier_version": "narrative-route-v1",
+        "decision_reasons": [
+          "scene_state.available_objects is non-empty",
+          "causal_transitions contains counterfactual_without_action or rejected_alternative",
+          "character_next_action involves physical object manipulation"
+        ],
+        "matched_rules": [
+          "RULE_C_OBJECT_CAUSAL"
+        ],
+        "rejected_routes": []
+      },
+      "compiled_brief_hash": "164f908cc00d1dccb682eef337f179ddb4458800887664a37596bbdf212655be",
+      "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+      "text_path": "cases\\C-05\\drafts\\route-1.txt"
+    },
+    {
+      "group": "ROUTE-C_OBJECT_CAUSAL",
+      "replica": 2,
+      "mode": "narrative_route",
+      "candidate_id": "ef85e8b6-86f6-4d13-959b-9bdf01215c64",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "C_OBJECT_CAUSAL",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "scene_state.available_objects is non-empty",
+            "causal_transitions contains counterfactual_without_action or rejected_alternative",
+            "character_next_action involves physical object manipulation"
+          ],
+          "matched_rules": [
+            "RULE_C_OBJECT_CAUSAL"
+          ],
+          "rejected_routes": []
+        },
+        "compiled_brief_hash": "164f908cc00d1dccb682eef337f179ddb4458800887664a37596bbdf212655be",
+        "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "孟然站在原地，储物柜的铁门还开着，冷风从半敞的窗户灌进来，贴着他的短袖胳膊往上爬。\n\n走廊里的脚步声已经远了。李一鸣穿着他那件黑色运动服，跑过拐角，连影子都没留下。\n\n他低头看了一眼自己的脚踝。肿起来的那一圈皮肤撑在袜口外面，稍微挪一下重心就发酸。追不了。\n\n更衣室里还剩下几个换衣服的男生，正互相扔着球鞋，笑声撞在瓷砖墙上弹来弹去。孟然没看他们。他的视线落在长凳上。\n\n那件黑色运动服就搭在凳面边缘，袖子拖到地上，领口的拉链半开着。和他自己那件一样的款式，一样的黑色，但肩宽明显小了一号。李一鸣比他矮半个头，这件才是李一鸣的。\n\n孟然伸手把外套拿起来。面料冰凉，内衬还是翻着的，刚才被直接从身上扒下来扔在这儿。他捏着袖口，手指探进口袋——空的，什么都没有。\n\n自己的钥匙在那件被穿走的外套里。\n\n他把外套翻到正面，拉链拉到一半停住。然后他拎起左袖，沿着袖口往里推，整只袖子从肩膀处翻了出来，里衬的白网眼布露在外面，像一条翻卷的舌头。他把翻出来的袖子折了一下，让它保持外翻的状态，不会自己滑回去。\n\n更衣室门口的长凳正对着走廊。他把外套放上去，外翻的那只袖子朝上，白色里衬在黑色面料中间豁开一道。\n\n一个男生从他旁边走过去，扫了一眼凳子上的外套，没停。\n\n孟然退回到自己的储物柜前，把柜门关上，没锁。他靠在柜子上，脚踝不敢吃劲，重心压在右腿上。\n\n走廊里陆续有人跑过去，球鞋底磨着水磨石地面，声音尖而短。没有一个是往更衣室这边来的。\n\n他把手插进短裤口袋里，指尖碰到一块硬糖包装纸，捻了两下。\n\n田径场的方向传来哨声，三声短促的集合哨。体育老师的声音从远处闷闷地滚过来，听不清在喊谁的名字。\n\n孟然没动。\n\n那个翻卷的袖子还支在长凳边缘，白网眼朝上，走廊顶灯照在上面，反出一小片哑光。\n\n脚步声又响起来。这次不是跑，是走。节奏乱了，走走停停，鞋底蹭着地面。\n\n孟然抬起眼。\n\n李一鸣站在更衣室门口，已经换上了短裤和钉鞋，上身还穿着那件黑色运动服。拉链只拉到胸口，领子敞着。他正低头盯着长凳上的外套，盯着那只外翻的袖子。\n\n他的右手下意识抬起来，摸到自己身上这件外套的肩缝，手指沿着缝线捋了一下——肩宽不对，袖子长了半截。\n\n李一鸣把手伸进身上这件外套的口袋里。\n\n动作停住了。\n\n他没往外掏，手指在口袋里张开，又攥住。\n\n口袋里的钥匙硌到了他的手。",
+      "raw_response": "孟然站在原地，储物柜的铁门还开着，冷风从半敞的窗户灌进来，贴着他的短袖胳膊往上爬。\n\n走廊里的脚步声已经远了。李一鸣穿着他那件黑色运动服，跑过拐角，连影子都没留下。\n\n他低头看了一眼自己的脚踝。肿起来的那一圈皮肤撑在袜口外面，稍微挪一下重心就发酸。追不了。\n\n更衣室里还剩下几个换衣服的男生，正互相扔着球鞋，笑声撞在瓷砖墙上弹来弹去。孟然没看他们。他的视线落在长凳上。\n\n那件黑色运动服就搭在凳面边缘，袖子拖到地上，领口的拉链半开着。和他自己那件一样的款式，一样的黑色，但肩宽明显小了一号。李一鸣比他矮半个头，这件才是李一鸣的。\n\n孟然伸手把外套拿起来。面料冰凉，内衬还是翻着的，刚才被直接从身上扒下来扔在这儿。他捏着袖口，手指探进口袋——空的，什么都没有。\n\n自己的钥匙在那件被穿走的外套里。\n\n他把外套翻到正面，拉链拉到一半停住。然后他拎起左袖，沿着袖口往里推，整只袖子从肩膀处翻了出来，里衬的白网眼布露在外面，像一条翻卷的舌头。他把翻出来的袖子折了一下，让它保持外翻的状态，不会自己滑回去。\n\n更衣室门口的长凳正对着走廊。他把外套放上去，外翻的那只袖子朝上，白色里衬在黑色面料中间豁开一道。\n\n一个男生从他旁边走过去，扫了一眼凳子上的外套，没停。\n\n孟然退回到自己的储物柜前，把柜门关上，没锁。他靠在柜子上，脚踝不敢吃劲，重心压在右腿上。\n\n走廊里陆续有人跑过去，球鞋底磨着水磨石地面，声音尖而短。没有一个是往更衣室这边来的。\n\n他把手插进短裤口袋里，指尖碰到一块硬糖包装纸，捻了两下。\n\n田径场的方向传来哨声，三声短促的集合哨。体育老师的声音从远处闷闷地滚过来，听不清在喊谁的名字。\n\n孟然没动。\n\n那个翻卷的袖子还支在长凳边缘，白网眼朝上，走廊顶灯照在上面，反出一小片哑光。\n\n脚步声又响起来。这次不是跑，是走。节奏乱了，走走停停，鞋底蹭着地面。\n\n孟然抬起眼。\n\n李一鸣站在更衣室门口，已经换上了短裤和钉鞋，上身还穿着那件黑色运动服。拉链只拉到胸口，领子敞着。他正低头盯着长凳上的外套，盯着那只外翻的袖子。\n\n他的右手下意识抬起来，摸到自己身上这件外套的肩缝，手指沿着缝线捋了一下——肩宽不对，袖子长了半截。\n\n李一鸣把手伸进身上这件外套的口袋里。\n\n动作停住了。\n\n他没往外掏，手指在口袋里张开，又攥住。\n\n口袋里的钥匙硌到了他的手。",
+      "input_tokens": 1469,
+      "output_tokens": 658,
+      "latency_ms": 16411,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "ce81cf479d609dc871bfd801093a707c3265d71cfa093e55326969761550e90d",
+      "route_name": null,
+      "route_decision": {
+        "route_name": "C_OBJECT_CAUSAL",
+        "classifier_version": "narrative-route-v1",
+        "decision_reasons": [
+          "scene_state.available_objects is non-empty",
+          "causal_transitions contains counterfactual_without_action or rejected_alternative",
+          "character_next_action involves physical object manipulation"
+        ],
+        "matched_rules": [
+          "RULE_C_OBJECT_CAUSAL"
+        ],
+        "rejected_routes": []
+      },
+      "compiled_brief_hash": "164f908cc00d1dccb682eef337f179ddb4458800887664a37596bbdf212655be",
+      "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+      "text_path": "cases\\C-05\\drafts\\route-2.txt"
+    },
+    {
+      "group": "ROUTE-C_OBJECT_CAUSAL",
+      "replica": 3,
+      "mode": "narrative_route",
+      "candidate_id": "a68720a4-5db0-4f81-80e2-0d86c0a4b579",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "C_OBJECT_CAUSAL",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "scene_state.available_objects is non-empty",
+            "causal_transitions contains counterfactual_without_action or rejected_alternative",
+            "character_next_action involves physical object manipulation"
+          ],
+          "matched_rules": [
+            "RULE_C_OBJECT_CAUSAL"
+          ],
+          "rejected_routes": []
+        },
+        "compiled_brief_hash": "164f908cc00d1dccb682eef337f179ddb4458800887664a37596bbdf212655be",
+        "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "孟然站在储物柜前，短袖下的手臂还带着体育课后的汗意。\n\n更衣室的门半敞着，走廊里李一鸣的脚步声已经听不见了。孟然低头看了看自己的脚踝，肿起来的那一圈皮肤在白色袜口上方泛着红。他试着把重心挪过去，刺痛立刻从脚背窜上来。\n\n他停住了。\n\n长凳上那件黑色运动服还摊在那里。孟然伸手拎起来——领口的尺码标签写着XL，他自己的是L。他把外套翻了个面，袖子的内侧布料露出来，拉链头垂在一边晃了两下。\n\n孟然拎着外套往门口走。脚踝每踩一下都像被人用拇指按着骨缝往里压。他把外套放在更衣室门口的长凳上，这条长凳正对走廊，任何人从田径场方向回来都会第一眼看到它。\n\n然后他抓住右边那只袖子，从袖口开始往外翻。布料一层层叠上去，黑色的运动面料翻出灰色的网眼里衬，整条袖子像被剥开的香蕉皮那样耷拉在长凳边缘。左边袖子保持原样，垂在凳子下面。\n\n孟然退后一步。外套就那么躺着——半翻半挂，右袖子翻出内衬，左袖子拖到地上，拉链歪在一边。\n\n他在对面的长凳上坐下来。脚踝搁在书包上，更衣室的荧光灯嗡嗡响。走廊里远远传来田径场上的哨声，隔着几道墙，闷闷的。\n\n孟然没看手机，也没去翻书包。他就盯着门口那件外套右袖子翻出来的灰色里衬。\n\n大约过了四分钟，走廊里响起跑步声。不是冲刺那种，是跑到一半突然放慢的节奏。脚步在更衣室门口停住了。\n\n李一鸣站在门口，呼吸还没匀。他身上穿着孟然的外套——肩线明显窄了，袖口缩在手腕上方两指宽的位置。他先看了看长凳上那件翻出袖子的外套，又低头看了看自己身上这件。\n\n他把手伸进身上外套的口袋。\n\n右边口袋是空的。左边口袋——他的手指碰到了金属。\n\n李一鸣的动作停住了。口袋里的钥匙硌到了他的手。",
+      "raw_response": "孟然站在储物柜前，短袖下的手臂还带着体育课后的汗意。\n\n更衣室的门半敞着，走廊里李一鸣的脚步声已经听不见了。孟然低头看了看自己的脚踝，肿起来的那一圈皮肤在白色袜口上方泛着红。他试着把重心挪过去，刺痛立刻从脚背窜上来。\n\n他停住了。\n\n长凳上那件黑色运动服还摊在那里。孟然伸手拎起来——领口的尺码标签写着XL，他自己的是L。他把外套翻了个面，袖子的内侧布料露出来，拉链头垂在一边晃了两下。\n\n孟然拎着外套往门口走。脚踝每踩一下都像被人用拇指按着骨缝往里压。他把外套放在更衣室门口的长凳上，这条长凳正对走廊，任何人从田径场方向回来都会第一眼看到它。\n\n然后他抓住右边那只袖子，从袖口开始往外翻。布料一层层叠上去，黑色的运动面料翻出灰色的网眼里衬，整条袖子像被剥开的香蕉皮那样耷拉在长凳边缘。左边袖子保持原样，垂在凳子下面。\n\n孟然退后一步。外套就那么躺着——半翻半挂，右袖子翻出内衬，左袖子拖到地上，拉链歪在一边。\n\n他在对面的长凳上坐下来。脚踝搁在书包上，更衣室的荧光灯嗡嗡响。走廊里远远传来田径场上的哨声，隔着几道墙，闷闷的。\n\n孟然没看手机，也没去翻书包。他就盯着门口那件外套右袖子翻出来的灰色里衬。\n\n大约过了四分钟，走廊里响起跑步声。不是冲刺那种，是跑到一半突然放慢的节奏。脚步在更衣室门口停住了。\n\n李一鸣站在门口，呼吸还没匀。他身上穿着孟然的外套——肩线明显窄了，袖口缩在手腕上方两指宽的位置。他先看了看长凳上那件翻出袖子的外套，又低头看了看自己身上这件。\n\n他把手伸进身上外套的口袋。\n\n右边口袋是空的。左边口袋——他的手指碰到了金属。\n\n李一鸣的动作停住了。口袋里的钥匙硌到了他的手。",
+      "input_tokens": 1469,
+      "output_tokens": 472,
+      "latency_ms": 12205,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "ce81cf479d609dc871bfd801093a707c3265d71cfa093e55326969761550e90d",
+      "route_name": null,
+      "route_decision": {
+        "route_name": "C_OBJECT_CAUSAL",
+        "classifier_version": "narrative-route-v1",
+        "decision_reasons": [
+          "scene_state.available_objects is non-empty",
+          "causal_transitions contains counterfactual_without_action or rejected_alternative",
+          "character_next_action involves physical object manipulation"
+        ],
+        "matched_rules": [
+          "RULE_C_OBJECT_CAUSAL"
+        ],
+        "rejected_routes": []
+      },
+      "compiled_brief_hash": "164f908cc00d1dccb682eef337f179ddb4458800887664a37596bbdf212655be",
+      "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+      "text_path": "cases\\C-05\\drafts\\route-3.txt"
+    },
+    {
+      "group": "BASELINE-writer_brief",
+      "replica": 1,
+      "mode": "writer_brief",
+      "candidate_id": "553dcf28-d425-48aa-be58-ae9ca754bd16",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "孟然站在储物柜前，手指还搭在铁皮柜门的边缘。更衣室里只剩下他一个人，瓷砖地面上散着几团揉皱的纸巾，空气里混着汗味和沐浴露的甜腻。他低头看了看自己——短袖，运动裤，脚踝外侧还肿着一圈青紫。\n\n走廊尽头传来田径队的哨声。\n\n他转头看向长凳。那件黑色运动服外套摊在上面，袖子半拖到地上，拉链敞着，领口的尺码标翻了出来。孟然伸手拎起来，布料比他自己的那件轻，肩宽也窄了一截。他翻过内侧的水洗标，上面印着“175/92A”。\n\n不是他的。\n\n他把自己那件的尺码记得很清楚——180/100A，口袋内衬有个被钥匙磨出来的小洞。\n\n孟然攥着那件外套的领口，往门口走了两步。走廊里空荡荡的，尽头拐角处还能听见球鞋摩擦地板的尖响。他不能跑。脚踝每踩一步都像踩在碎玻璃上。\n\n他把外套抖开，抓住左袖的袖口，用力往上一翻，整条袖子从里到外翻了过来，浅灰色的网眼内衬露在外面。他又把翻好的袖子沿着肩线折回去，让那一截翻出的灰色在黑色布料上鼓成一个不规则的结。\n\n孟然拎着外套走到更衣室门口，把衣服铺在靠门最近的那条长凳上。翻出来的那只袖子朝上，正对门口，谁进来第一眼就能看见。\n\n他退后两步，靠在储物柜上，听着走廊里的声音。\n\n田径队的哨声停了。远处有人喊了一句什么，听不清。\n\n孟然把手插进短裤口袋里，指尖碰到了自己那把钥匙的备用——挂在书包拉链上的那把。不是家门那把。家门那把在李一鸣穿着跑走的外套口袋里，钥匙扣是个磨掉漆的金属小篮球。\n\n走廊里响起脚步声，不是跑，是走。鞋底拖着地，一下一下，越来越近。\n\n李一鸣出现在门口的时候还喘着气，额头上挂着汗，脸颊泛红。他穿着孟然的外套，袖子长出一截，盖过了手腕，肩线垮到上臂。他手里捏着一个哨子，看见孟然愣了一秒。\n\n“孟然？你怎么还在这儿——”\n\n他话没说完，视线落在了长凳上。那件外套摊在那里，一只袖子翻出灰色的里衬，像断掉的翅膀。\n\n李一鸣低头看了看自己身上那件，又看了看长凳上那件。他伸手去摸自己身上外套的口袋，手指探进去，动作停住了。\n\n口袋里的钥匙硌到了他的手。",
+      "raw_response": "孟然站在储物柜前，手指还搭在铁皮柜门的边缘。更衣室里只剩下他一个人，瓷砖地面上散着几团揉皱的纸巾，空气里混着汗味和沐浴露的甜腻。他低头看了看自己——短袖，运动裤，脚踝外侧还肿着一圈青紫。\n\n走廊尽头传来田径队的哨声。\n\n他转头看向长凳。那件黑色运动服外套摊在上面，袖子半拖到地上，拉链敞着，领口的尺码标翻了出来。孟然伸手拎起来，布料比他自己的那件轻，肩宽也窄了一截。他翻过内侧的水洗标，上面印着“175/92A”。\n\n不是他的。\n\n他把自己那件的尺码记得很清楚——180/100A，口袋内衬有个被钥匙磨出来的小洞。\n\n孟然攥着那件外套的领口，往门口走了两步。走廊里空荡荡的，尽头拐角处还能听见球鞋摩擦地板的尖响。他不能跑。脚踝每踩一步都像踩在碎玻璃上。\n\n他把外套抖开，抓住左袖的袖口，用力往上一翻，整条袖子从里到外翻了过来，浅灰色的网眼内衬露在外面。他又把翻好的袖子沿着肩线折回去，让那一截翻出的灰色在黑色布料上鼓成一个不规则的结。\n\n孟然拎着外套走到更衣室门口，把衣服铺在靠门最近的那条长凳上。翻出来的那只袖子朝上，正对门口，谁进来第一眼就能看见。\n\n他退后两步，靠在储物柜上，听着走廊里的声音。\n\n田径队的哨声停了。远处有人喊了一句什么，听不清。\n\n孟然把手插进短裤口袋里，指尖碰到了自己那把钥匙的备用——挂在书包拉链上的那把。不是家门那把。家门那把在李一鸣穿着跑走的外套口袋里，钥匙扣是个磨掉漆的金属小篮球。\n\n走廊里响起脚步声，不是跑，是走。鞋底拖着地，一下一下，越来越近。\n\n李一鸣出现在门口的时候还喘着气，额头上挂着汗，脸颊泛红。他穿着孟然的外套，袖子长出一截，盖过了手腕，肩线垮到上臂。他手里捏着一个哨子，看见孟然愣了一秒。\n\n“孟然？你怎么还在这儿——”\n\n他话没说完，视线落在了长凳上。那件外套摊在那里，一只袖子翻出灰色的里衬，像断掉的翅膀。\n\n李一鸣低头看了看自己身上那件，又看了看长凳上那件。他伸手去摸自己身上外套的口袋，手指探进去，动作停住了。\n\n口袋里的钥匙硌到了他的手。",
+      "input_tokens": 1252,
+      "output_tokens": 576,
+      "latency_ms": 14013,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "ea4c544cd8f1f675486bd0139f59febf65876be1710a3ec79b4c6de56f53f620",
+      "route_name": null,
+      "route_decision": null,
+      "compiled_brief_hash": null,
+      "instruction_hash": null,
+      "text_path": "cases\\C-05\\drafts\\baseline-1.txt"
+    },
+    {
+      "group": "BASELINE-writer_brief",
+      "replica": 2,
+      "mode": "writer_brief",
+      "candidate_id": "57bd4e32-d490-4665-9487-e13528407e92",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "孟然站在储物柜前，手指还搭在柜门把手上。更衣室里只剩他一个人，长条木凳上散着几件被遗落的衣物，空气里混着汗味和洗衣液的香精味。\n\n他低头看了看自己——短袖，校裤，左脚踝外侧还贴着肌效贴。\n\n李一鸣已经跑远了。\n\n孟然走到长凳前，那件黑色运动服外套就搭在凳面边缘。他拎起来看，领标上的尺码是175，自己的是180。他把外套放下，转头看向更衣室门口——走廊空荡荡的，田径场方向传来哨声。\n\n他拿起那件外套，左手捏住右手的袖口，从袖筒里往外一拉，整只袖子翻了过来，浅灰色的网眼布里子朝外。他把翻好的袖子捋平，让那一截灰色在整件黑色外套上格外扎眼。\n\n孟然走到更衣室门口，把外套摊开放在门边长凳的正中间，翻出的那只袖子垂在凳沿外。\n\n然后他退回自己的储物柜前，靠着柜门站定。\n\n田径场上的哨声又响了一次，接着是跑鞋踩在塑胶跑道上的闷响。走廊尽头的楼梯间有人跑过，脚步声从三楼往二楼去。\n\n孟然没动。\n\n脚步声在二楼停住。安静了大概十秒，又重新响起来，这次是往回跑，比刚才更快。\n\n李一鸣出现在更衣室门口时还在喘气。他穿着那件180尺码的黑色运动服外套，袖子盖过了手腕，下摆几乎到大腿中部。他看见孟然，又看见长凳上那件袖子外翻的外套，愣了一下。\n\n他低头看了看自己身上的外套，伸手去拉下摆，摸到口袋的位置。\n\n右手探进右边口袋，手指碰到金属和塑料的轮廓。\n\n动作停住了。\n\n口袋里的钥匙硌到了他的手。",
+      "raw_response": "孟然站在储物柜前，手指还搭在柜门把手上。更衣室里只剩他一个人，长条木凳上散着几件被遗落的衣物，空气里混着汗味和洗衣液的香精味。\n\n他低头看了看自己——短袖，校裤，左脚踝外侧还贴着肌效贴。\n\n李一鸣已经跑远了。\n\n孟然走到长凳前，那件黑色运动服外套就搭在凳面边缘。他拎起来看，领标上的尺码是175，自己的是180。他把外套放下，转头看向更衣室门口——走廊空荡荡的，田径场方向传来哨声。\n\n他拿起那件外套，左手捏住右手的袖口，从袖筒里往外一拉，整只袖子翻了过来，浅灰色的网眼布里子朝外。他把翻好的袖子捋平，让那一截灰色在整件黑色外套上格外扎眼。\n\n孟然走到更衣室门口，把外套摊开放在门边长凳的正中间，翻出的那只袖子垂在凳沿外。\n\n然后他退回自己的储物柜前，靠着柜门站定。\n\n田径场上的哨声又响了一次，接着是跑鞋踩在塑胶跑道上的闷响。走廊尽头的楼梯间有人跑过，脚步声从三楼往二楼去。\n\n孟然没动。\n\n脚步声在二楼停住。安静了大概十秒，又重新响起来，这次是往回跑，比刚才更快。\n\n李一鸣出现在更衣室门口时还在喘气。他穿着那件180尺码的黑色运动服外套，袖子盖过了手腕，下摆几乎到大腿中部。他看见孟然，又看见长凳上那件袖子外翻的外套，愣了一下。\n\n他低头看了看自己身上的外套，伸手去拉下摆，摸到口袋的位置。\n\n右手探进右边口袋，手指碰到金属和塑料的轮廓。\n\n动作停住了。\n\n口袋里的钥匙硌到了他的手。",
+      "input_tokens": 1252,
+      "output_tokens": 408,
+      "latency_ms": 10635,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "ea4c544cd8f1f675486bd0139f59febf65876be1710a3ec79b4c6de56f53f620",
+      "route_name": null,
+      "route_decision": null,
+      "compiled_brief_hash": null,
+      "instruction_hash": null,
+      "text_path": "cases\\C-05\\drafts\\baseline-2.txt"
+    },
+    {
+      "group": "BASELINE-writer_brief",
+      "replica": 3,
+      "mode": "writer_brief",
+      "candidate_id": "a376e2b6-ba23-406e-9d13-3e4299bfee5d",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "孟然盯着空了的储物柜隔层，手指还搭在冰冷的金属柜门上。\n\n李一鸣已经跑远了。走廊里最后一点脚步声也消失在拐角那边，只剩下更衣室里几个男生拉背包拉链、踢鞋子的零碎响动。\n\n他低头看了看自己——短袖，校裤，左脚踝上还缠着一圈弹性绷带。体育课跑四百米的时候踩到跑道边沿扭的，现在稍微承重就酸胀。\n\n家门钥匙在外套口袋里。\n\n那件黑色运动服外套。李一鸣穿走了。\n\n孟然转过身。长凳上果然还有一件，同样的黑色，同样的校服款式，揉成一团扔在凳角。他拎起来抖开——肩宽明显窄了一截，袖长也短。李一鸣比他矮半个头，这件才是李一鸣的。\n\n他攥着那件外套站了两秒。\n\n不能追。左脚踝不允许。也不能在走廊上喊，更衣室里还有别人，他不想把一件穿错衣服的事变成全班都知道的闹剧。\n\n李一鸣正往田径场跑，跑到了就会归队集合。体育老师让所有人下课后直接去田径场点名，没人会半路停下来翻口袋。\n\n除非他发现自己根本没穿外套。\n\n孟然把手里那件外套翻过来，捏住左袖的袖口，往外一拉，一整条袖子从里到外翻了出来，浅灰色的网眼里衬暴露在深色布面上。他把翻好的袖子捋平，让那道异常的灰色从袖口一直延伸到肩线，然后把整件外套拎到更衣室门口的长凳上，正面朝上摊开。\n\n翻出的左袖歪在凳子边缘，像个明显的错误。\n\n几个换好衣服的男生从旁边经过，没人多看一眼。孟然退回到自己的储物柜前，把柜门关上，靠着柜壁站定。\n\n左脚踝不能久站。他把重心挪到右腿，听着走廊那边的动静。\n\n田径场方向传来体育老师的哨声，短促的两声，然后是模糊的点名声。李一鸣应该已经到了。他会在队列里站一会儿，也许会感觉到身上这件外套肩线往下垮，袖子长出一截，也许会把手插进口袋——\n\n钥匙在外套右边口袋里。家门钥匙，铜的，挂在一个黑色塑料扣上。\n\n孟然盯着更衣室门口。\n\n走廊里有人跑动。不是田径场方向，是从教学楼那边过来的，两个女生说笑着经过更衣室门口，其中一个的鞋底在地砖上擦出尖音。\n\n然后安静下来。\n\n孟然听见自己的呼吸声。更衣室里只剩他一个人了。消毒水的气味从拖把池那边漫过来，混着运动鞋的橡胶味和汗味。\n\n走廊远处又响起脚步声。这次是从田径场方向来的，跑动的节奏，运动鞋底砸在水磨石地面上，由远及近。\n\n孟然没有动。\n\n脚步声在更衣室门口停住了。李一鸣喘着气站在门框里，额头上还挂着汗，身上穿着那件明显偏大的黑色运动服外套，肩线垮到了上臂。\n\n他先看见了长凳上的外套。\n\n那件摊开的黑色运动服，左袖整个翻在外面，灰色的里衬像一面旗一样搭在凳子边缘。\n\n李一鸣愣了一下，低头看了看自己身上这件，又看了看长凳上那件翻出的袖子。\n\n他把手伸进身上这件外套的右边口袋。\n\n停住了。\n\n口袋里的钥匙硌到了他的手。",
+      "raw_response": "孟然盯着空了的储物柜隔层，手指还搭在冰冷的金属柜门上。\n\n李一鸣已经跑远了。走廊里最后一点脚步声也消失在拐角那边，只剩下更衣室里几个男生拉背包拉链、踢鞋子的零碎响动。\n\n他低头看了看自己——短袖，校裤，左脚踝上还缠着一圈弹性绷带。体育课跑四百米的时候踩到跑道边沿扭的，现在稍微承重就酸胀。\n\n家门钥匙在外套口袋里。\n\n那件黑色运动服外套。李一鸣穿走了。\n\n孟然转过身。长凳上果然还有一件，同样的黑色，同样的校服款式，揉成一团扔在凳角。他拎起来抖开——肩宽明显窄了一截，袖长也短。李一鸣比他矮半个头，这件才是李一鸣的。\n\n他攥着那件外套站了两秒。\n\n不能追。左脚踝不允许。也不能在走廊上喊，更衣室里还有别人，他不想把一件穿错衣服的事变成全班都知道的闹剧。\n\n李一鸣正往田径场跑，跑到了就会归队集合。体育老师让所有人下课后直接去田径场点名，没人会半路停下来翻口袋。\n\n除非他发现自己根本没穿外套。\n\n孟然把手里那件外套翻过来，捏住左袖的袖口，往外一拉，一整条袖子从里到外翻了出来，浅灰色的网眼里衬暴露在深色布面上。他把翻好的袖子捋平，让那道异常的灰色从袖口一直延伸到肩线，然后把整件外套拎到更衣室门口的长凳上，正面朝上摊开。\n\n翻出的左袖歪在凳子边缘，像个明显的错误。\n\n几个换好衣服的男生从旁边经过，没人多看一眼。孟然退回到自己的储物柜前，把柜门关上，靠着柜壁站定。\n\n左脚踝不能久站。他把重心挪到右腿，听着走廊那边的动静。\n\n田径场方向传来体育老师的哨声，短促的两声，然后是模糊的点名声。李一鸣应该已经到了。他会在队列里站一会儿，也许会感觉到身上这件外套肩线往下垮，袖子长出一截，也许会把手插进口袋——\n\n钥匙在外套右边口袋里。家门钥匙，铜的，挂在一个黑色塑料扣上。\n\n孟然盯着更衣室门口。\n\n走廊里有人跑动。不是田径场方向，是从教学楼那边过来的，两个女生说笑着经过更衣室门口，其中一个的鞋底在地砖上擦出尖音。\n\n然后安静下来。\n\n孟然听见自己的呼吸声。更衣室里只剩他一个人了。消毒水的气味从拖把池那边漫过来，混着运动鞋的橡胶味和汗味。\n\n走廊远处又响起脚步声。这次是从田径场方向来的，跑动的节奏，运动鞋底砸在水磨石地面上，由远及近。\n\n孟然没有动。\n\n脚步声在更衣室门口停住了。李一鸣喘着气站在门框里，额头上还挂着汗，身上穿着那件明显偏大的黑色运动服外套，肩线垮到了上臂。\n\n他先看见了长凳上的外套。\n\n那件摊开的黑色运动服，左袖整个翻在外面，灰色的里衬像一面旗一样搭在凳子边缘。\n\n李一鸣愣了一下，低头看了看自己身上这件，又看了看长凳上那件翻出的袖子。\n\n他把手伸进身上这件外套的右边口袋。\n\n停住了。\n\n口袋里的钥匙硌到了他的手。",
+      "input_tokens": 1252,
+      "output_tokens": 733,
+      "latency_ms": 18129,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "ea4c544cd8f1f675486bd0139f59febf65876be1710a3ec79b4c6de56f53f620",
+      "route_name": null,
+      "route_decision": null,
+      "compiled_brief_hash": null,
+      "instruction_hash": null,
+      "text_path": "cases\\C-05\\drafts\\baseline-3.txt"
+    }
+  ],
+  "actual_route": "C_OBJECT_CAUSAL",
+  "route_decision": {
+    "route_name": "C_OBJECT_CAUSAL",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "scene_state.available_objects is non-empty",
+      "causal_transitions contains counterfactual_without_action or rejected_alternative",
+      "character_next_action involves physical object manipulation"
+    ],
+    "matched_rules": [
+      "RULE_C_OBJECT_CAUSAL"
+    ],
+    "rejected_routes": []
+  }
+}

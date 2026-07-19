@@ -1,0 +1,59 @@
+{
+  "group": "ROUTE-C_OBJECT_CAUSAL",
+  "replica": 1,
+  "mode": "narrative_route",
+  "candidate_id": "74efacbf-c5a6-4a0d-a2bf-52b1eea11bbd",
+  "attempt_number": 1,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "route_decision": {
+      "route_name": "C_OBJECT_CAUSAL",
+      "classifier_version": "narrative-route-v1",
+      "decision_reasons": [
+        "scene_state.available_objects is non-empty",
+        "causal_transitions contains counterfactual_without_action or rejected_alternative",
+        "character_next_action involves physical object manipulation"
+      ],
+      "matched_rules": [
+        "RULE_C_OBJECT_CAUSAL"
+      ],
+      "rejected_routes": []
+    },
+    "compiled_brief_hash": "534bf1bb7e7801789ac00cadd7204fb772720669933f98eed4f21f26af00d711",
+    "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "卷帘门发出刺耳的金属摩擦声，一节一节往下沉。\n\n林希站在便利店门口窄窄的门廊下，雨大得像有人在天上往下倒水。门口那个塑料伞架上只剩一把公共伞，灰扑扑的伞面，伞柄上贴着“便民借用”的褪色标签。\n\n她刚才出来的时候就注意到了。\n\n也注意到了另一个人。\n\n温洲站在门廊的另一侧，肩膀几乎贴着墙，深色衬衫的袖子已经溅上了几点雨渍。他没看林希，也没看雨，只是安静地站着，像是在等什么东西自己过去。\n\n卷帘门又往下沉了一截。\n\n“好大的雨。”\n\n温洲的声音不大，几乎要淹没在雨声里。林希偏过头，看见他正望着外面的雨幕，侧脸的线条被便利店即将熄灭的灯光勾出一层薄薄的轮廓。\n\n店员从里面拉下最后一截卷帘门，锁扣咔嗒一声扣死。那人隔着玻璃冲他们摆摆手，示意要关门了。\n\n门廊的灯灭了。\n\n只剩下雨声，和两个人。\n\n林希的手抬起来，握住了那把公共伞的伞柄。塑料柄上还有上一个人留下的微微潮气。她从伞架上取下来，感觉到伞骨的重量落在掌心里。\n\n她没有递给温洲。\n\n她按下了伞扣。\n\n伞面嘭地一声撑开，灰色的尼龙布在雨幕里展开一片干燥的空间。雨水立刻开始顺着伞骨的边缘滴落，在地面上砸出一圈深色的痕迹。\n\n林希握着伞柄，往前迈了一步，站在台阶边缘。\n\n伞撑在两个人的头顶之间。\n\n她没回头，没说“一起走吧”，没做任何多余的动作。只是撑开了伞，站在那里，留出了身边的位置。\n\n身后传来鞋底踩在水泥地上的声音。\n\n温洲走进了伞下。",
+  "raw_response": "卷帘门发出刺耳的金属摩擦声，一节一节往下沉。\n\n林希站在便利店门口窄窄的门廊下，雨大得像有人在天上往下倒水。门口那个塑料伞架上只剩一把公共伞，灰扑扑的伞面，伞柄上贴着“便民借用”的褪色标签。\n\n她刚才出来的时候就注意到了。\n\n也注意到了另一个人。\n\n温洲站在门廊的另一侧，肩膀几乎贴着墙，深色衬衫的袖子已经溅上了几点雨渍。他没看林希，也没看雨，只是安静地站着，像是在等什么东西自己过去。\n\n卷帘门又往下沉了一截。\n\n“好大的雨。”\n\n温洲的声音不大，几乎要淹没在雨声里。林希偏过头，看见他正望着外面的雨幕，侧脸的线条被便利店即将熄灭的灯光勾出一层薄薄的轮廓。\n\n店员从里面拉下最后一截卷帘门，锁扣咔嗒一声扣死。那人隔着玻璃冲他们摆摆手，示意要关门了。\n\n门廊的灯灭了。\n\n只剩下雨声，和两个人。\n\n林希的手抬起来，握住了那把公共伞的伞柄。塑料柄上还有上一个人留下的微微潮气。她从伞架上取下来，感觉到伞骨的重量落在掌心里。\n\n她没有递给温洲。\n\n她按下了伞扣。\n\n伞面嘭地一声撑开，灰色的尼龙布在雨幕里展开一片干燥的空间。雨水立刻开始顺着伞骨的边缘滴落，在地面上砸出一圈深色的痕迹。\n\n林希握着伞柄，往前迈了一步，站在台阶边缘。\n\n伞撑在两个人的头顶之间。\n\n她没回头，没说“一起走吧”，没做任何多余的动作。只是撑开了伞，站在那里，留出了身边的位置。\n\n身后传来鞋底踩在水泥地上的声音。\n\n温洲走进了伞下。",
+  "input_tokens": 1346,
+  "output_tokens": 378,
+  "latency_ms": 12249,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "d66a6c1a73e434e4b85c91fbac606318beb8f434f05e7e3bd135838fff9d7f86",
+  "route_name": null,
+  "route_decision": {
+    "route_name": "C_OBJECT_CAUSAL",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "scene_state.available_objects is non-empty",
+      "causal_transitions contains counterfactual_without_action or rejected_alternative",
+      "character_next_action involves physical object manipulation"
+    ],
+    "matched_rules": [
+      "RULE_C_OBJECT_CAUSAL"
+    ],
+    "rejected_routes": []
+  },
+  "compiled_brief_hash": "534bf1bb7e7801789ac00cadd7204fb772720669933f98eed4f21f26af00d711",
+  "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+  "text_path": "cases\\B-06\\drafts\\route-1.txt"
+}

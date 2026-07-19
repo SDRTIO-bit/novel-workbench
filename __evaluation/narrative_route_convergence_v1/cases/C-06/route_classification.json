@@ -1,0 +1,22 @@
+{
+  "case_id": "C-06",
+  "expected_route": "C_OBJECT_CAUSAL",
+  "actual_route": "B_DEFAULT",
+  "decision": {
+    "route_name": "B_DEFAULT",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "no specific narrative mechanism detected"
+    ],
+    "matched_rules": [
+      "RULE_B_DEFAULT"
+    ],
+    "rejected_routes": [
+      "C_OBJECT_CAUSAL",
+      "A_LITE_INFORMATION_GAP",
+      "B_SHORT_RELATION",
+      "B_PHYSICAL_PROBLEM",
+      "D_FALLIBLE_TASK"
+    ]
+  }
+}

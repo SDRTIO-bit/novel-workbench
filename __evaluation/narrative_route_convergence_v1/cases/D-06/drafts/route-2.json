@@ -1,0 +1,63 @@
+{
+  "group": "ROUTE-B_SHORT_RELATION",
+  "replica": 2,
+  "mode": "narrative_route",
+  "candidate_id": "f042f263-cb3c-442e-925b-c7a9c9d96fc5",
+  "attempt_number": 1,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "route_decision": {
+      "route_name": "B_SHORT_RELATION",
+      "classifier_version": "narrative-route-v1",
+      "decision_reasons": [
+        "scene is relationship-oriented with no physical urgency",
+        "character action involves relational move (message, gesture, proximity)"
+      ],
+      "matched_rules": [
+        "RULE_B_SHORT_RELATION"
+      ],
+      "rejected_routes": [
+        "C_OBJECT_CAUSAL",
+        "A_LITE_INFORMATION_GAP"
+      ]
+    },
+    "compiled_brief_hash": "fc25d584be59023d13a82f729dac11ab51382abb209fd019bef654fdbb030d01",
+    "instruction_hash": "d7a76822408396dc71c4599a7f40f33368b90199f0d9c0712383961213437555",
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "手机屏幕跳了一下——8%变成7%。\n\n郑宣站在电梯口，B2层车库铺展在眼前。蓝色柱子。他数的第一遍是二十三根，第二遍数到十九根就乱了，因为有些藏在阴影里，有些被承重墙挡住半边。\n\n他记得停车时瞥见的污渍——柱子中段有一片黑色刮痕，像是被什么车蹭过。就这个了。他迈步走向最近那根蓝色柱子，电梯口左前方五米。柱身干净，没有刮痕。\n\n第二根，在通道拐角。也没有。\n\n第三根，靠近消防栓。他走过去，手摸上柱面——有。黑色刮痕，形状不规则，从腰部高度斜拉下去。他转身看向旁边的车位，空的。不对。他又仔细看了一眼刮痕，手指沿着痕迹划过去，发现边缘泛白，是漆皮翻卷的方向不一样。\n\n他退后两步，望向下一排柱子。第四根蓝色柱子，就在斜对面，柱身上同样有道黑痕。\n\n他快步走过去。同样的刮痕，同样的高度，同样的斜角。他站在两根柱子之间，视线来回扫过——不是一处。每根柱子都可能被蹭过，这里每天进出上百辆车。\n\n手机屏幕亮了。他低头看。\n\n6%。\n\n他还没走完四分之一的车库。\n\n屏幕暗下去。他又按亮，打开手电筒，光柱扫向更深处——蓝色柱子排成两列，延伸进昏暗里，每根柱身都隐在阴影中，看不清有没有刮痕。\n\n他关掉手电筒。5%。\n\n他站了五秒，然后转身朝电梯口走回去，步子很快。经过第一根蓝色柱子时没停，经过第二根时也没停。走到电梯口，他按了上行键，按钮亮了，又灭了。\n\n他又按。没亮。\n\n手机屏幕彻底变黑。",
+  "raw_response": "手机屏幕跳了一下——8%变成7%。\n\n郑宣站在电梯口，B2层车库铺展在眼前。蓝色柱子。他数的第一遍是二十三根，第二遍数到十九根就乱了，因为有些藏在阴影里，有些被承重墙挡住半边。\n\n他记得停车时瞥见的污渍——柱子中段有一片黑色刮痕，像是被什么车蹭过。就这个了。他迈步走向最近那根蓝色柱子，电梯口左前方五米。柱身干净，没有刮痕。\n\n第二根，在通道拐角。也没有。\n\n第三根，靠近消防栓。他走过去，手摸上柱面——有。黑色刮痕，形状不规则，从腰部高度斜拉下去。他转身看向旁边的车位，空的。不对。他又仔细看了一眼刮痕，手指沿着痕迹划过去，发现边缘泛白，是漆皮翻卷的方向不一样。\n\n他退后两步，望向下一排柱子。第四根蓝色柱子，就在斜对面，柱身上同样有道黑痕。\n\n他快步走过去。同样的刮痕，同样的高度，同样的斜角。他站在两根柱子之间，视线来回扫过——不是一处。每根柱子都可能被蹭过，这里每天进出上百辆车。\n\n手机屏幕亮了。他低头看。\n\n6%。\n\n他还没走完四分之一的车库。\n\n屏幕暗下去。他又按亮，打开手电筒，光柱扫向更深处——蓝色柱子排成两列，延伸进昏暗里，每根柱身都隐在阴影中，看不清有没有刮痕。\n\n他关掉手电筒。5%。\n\n他站了五秒，然后转身朝电梯口走回去，步子很快。经过第一根蓝色柱子时没停，经过第二根时也没停。走到电梯口，他按了上行键，按钮亮了，又灭了。\n\n他又按。没亮。\n\n手机屏幕彻底变黑。",
+  "input_tokens": 1403,
+  "output_tokens": 395,
+  "latency_ms": 13696,
+  "finish_reason": "stop",
+  "error_code": "TEMPO_FINAL_LINE_MISMATCH",
+  "error_message": "TEMPO_FINAL_LINE_MISMATCH: final paragraph must include the required marker '屏幕黑了。'",
+  "rendered_user_prompt_sha256": "b7a9b97332199ef32aefb323de603bdbe1eb9cac2c2e8d351bdfd93119b9aa2a",
+  "route_name": null,
+  "route_decision": {
+    "route_name": "B_SHORT_RELATION",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "scene is relationship-oriented with no physical urgency",
+      "character action involves relational move (message, gesture, proximity)"
+    ],
+    "matched_rules": [
+      "RULE_B_SHORT_RELATION"
+    ],
+    "rejected_routes": [
+      "C_OBJECT_CAUSAL",
+      "A_LITE_INFORMATION_GAP"
+    ]
+  },
+  "compiled_brief_hash": "fc25d584be59023d13a82f729dac11ab51382abb209fd019bef654fdbb030d01",
+  "instruction_hash": "d7a76822408396dc71c4599a7f40f33368b90199f0d9c0712383961213437555",
+  "text_path": "cases\\D-06\\drafts\\route-2.txt"
+}

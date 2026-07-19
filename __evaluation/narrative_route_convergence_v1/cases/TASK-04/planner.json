@@ -1,0 +1,191 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "陶然在商场服务台附近发现走失男孩，必须在信息有限、不能离开现场且不能编造信息的情况下，做出可检验的选择，承担延误代价，并最终停在一个新的可见线索上。",
+  "location": "商场一楼服务台旁，靠近电梯口和人流通道",
+  "time": "周末下午，商场人流高峰，外面下着雨",
+  "scene_state": {
+    "last_completed_action": "陶然结束志愿者换班，准备离开商场时，在服务台旁注意到一个攥着湿电影票的小男孩独自站着。",
+    "present_characters": [
+      "陶然",
+      "走失男孩（约5-6岁）",
+      "服务台工作人员（背景）",
+      "保安（正在处理另一纠纷）"
+    ],
+    "visible_facts": [
+      "男孩手中攥着一张被雨打湿的电影票，票面时间显示为半小时前",
+      "男孩说不出家长在哪层，只反复指向电梯方向",
+      "服务台有广播按钮，但工作人员正忙于接电话",
+      "保安正在处理另一桩顾客纠纷，暂时无法分身",
+      "电梯口人流很大，男孩容易再次走失"
+    ],
+    "available_objects": [
+      "服务台广播话筒",
+      "商场楼层导览图",
+      "陶然的手机（可查影院位置）",
+      "湿电影票"
+    ],
+    "unresolved_problem": "男孩无法清晰描述家长位置，而陶然不能带他离开服务台区域，必须在有限信息下启动寻人流程。",
+    "already_existing_constraints": [
+      "陶然不能带孩子离开商场",
+      "陶然不能替孩子编造父母信息",
+      "保安暂时无法协助",
+      "男孩的表述不完整，只能提供碎片线索"
+    ]
+  },
+  "characters": [
+    {
+      "name": "陶然",
+      "goal": "在遵守规则的前提下，尽快帮男孩找到家长，同时确保孩子安全",
+      "known": [
+        "男孩走失了，电影票是唯一线索",
+        "服务台有广播系统，但需要准确信息",
+        "保安正忙，无法立即求助",
+        "自己不能离开商场或编造信息"
+      ],
+      "unknown": [
+        "家长的具体位置",
+        "男孩为何独自出现在服务台旁",
+        "电影票是否属于男孩或家人",
+        "家长是否也在寻找孩子"
+      ],
+      "mistaken_beliefs": [
+        "可能认为家长就在电影院附近，因为电影刚结束半小时"
+      ],
+      "constraints": [
+        "不能带孩子离开商场",
+        "不能替孩子编造父母信息",
+        "必须依据可见证据行动",
+        "不能强行从孩子口中逼问"
+      ],
+      "observed_evidence": [
+        "湿电影票上的影院名称和场次时间",
+        "男孩不断指向电梯的方向",
+        "电梯旁的楼层指南显示影院在五楼",
+        "服务台广播按钮的位置"
+      ],
+      "current_interpretation": "电影票是半小时前的场次，家长很可能还在影院楼层，男孩指向电梯可能意味着家长在楼上。",
+      "how_interpretation_drives_action": "陶然决定先通过广播发布寻人信息，并请求服务台工作人员协助照看男孩，自己则根据电影票信息前往五楼影院查看。"
+    },
+    {
+      "name": "走失男孩",
+      "goal": "找到家长，但无法清晰表达",
+      "known": [
+        "自己和家长走散了",
+        "手里有一张电影票"
+      ],
+      "unknown": [
+        "家长的具体楼层和位置",
+        "如何向大人求助"
+      ],
+      "mistaken_beliefs": [
+        "可能以为家长就在电梯附近，因为他最后看到家长是在电梯口"
+      ],
+      "constraints": [
+        "年龄小，表达不清",
+        "容易紧张，可能说错信息"
+      ],
+      "observed_evidence": [
+        "陶然蹲下来问他话",
+        "服务台周围很多人"
+      ],
+      "current_interpretation": "这个阿姨是来帮我的，但我不知道怎么说。",
+      "how_interpretation_drives_action": "男孩继续指向电梯，并重复‘妈妈’这个词。"
+    }
+  ],
+  "concrete_problem": "如何仅凭一张湿电影票和男孩模糊的指向，在不能离开服务台区域的情况下，启动有效的寻人流程？",
+  "pressure": "保安无暇分身，电梯口人流持续，男孩可能再次走失，广播寻人需要尽快决策，但信息不足可能延误或误导。",
+  "turning_point": "陶然决定按下广播按钮，发布一条基于电影票信息的寻人启事，同时请求工作人员临时看护男孩，自己则根据票面线索前往五楼影院。",
+  "end_condition": "陶然在五楼影院入口发现一名神色焦急的女性正在询问工作人员，她手中拿着与男孩电影票同场次的票根。",
+  "forbidden": [
+    "不能让孩子离开商场",
+    "不能替孩子编造父母信息",
+    "不能直接通过保安立即解决问题",
+    "不能让孩子说出完整信息",
+    "不能提前揭示家长是否在五楼",
+    "不能使用手机直接联系家长（无联系方式）"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "男孩手中的湿电影票显示影院为‘星光影城’，场次为14:30，当前时间已过15:00。",
+      "character_interpretation": "电影刚结束不久，家长很可能还在影院附近，甚至可能正在寻找孩子。",
+      "character_next_action": "陶然按下服务台广播按钮，发布寻人启事：‘请星光影城14:30场次的观众注意，您的孩子在一楼服务台等您。’",
+      "rejected_alternative": "等待保安处理完纠纷再来帮忙。",
+      "immediate_consequence": "广播播出后，周围一些顾客开始留意，但无人立即前来认领；同时，服务台工作人员同意暂时看护男孩。",
+      "counterfactual_without_action": "如果陶然不广播，仅原地等待，男孩可能因紧张而乱跑，或家长在别处盲目寻找，延误时间。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "男孩独自站在服务台旁，无人主动介入寻人流程。",
+        "after": "广播已发出，商场内部分区域获知走失信息；男孩由工作人员临时看护，陶然准备前往五楼。"
+      },
+      "cost_or_commitment": "陶然承担了广播可能不准确的风险，并承诺前往五楼核实，若家长不在那里，她将浪费更多时间。",
+      "next_constraint": "陶然必须在五楼找到与电影票信息匹配的线索，否则需返回重新评估。",
+      "reader_must_infer": "家长听到广播后是否会立即反应？电影票是否真的是男孩家长的？",
+      "narrator_must_not_state": [
+        "家长是否听到了广播",
+        "男孩的指向是否完全正确"
+      ]
+    },
+    {
+      "id": "CT02",
+      "kind": "constraint_to_choice",
+      "visible_trigger": "电梯口人流不断，男孩开始显得不安，拉扯陶然的衣角。",
+      "character_interpretation": "男孩的耐心正在耗尽，如果继续原地等待，他可能哭闹或跑开。",
+      "character_next_action": "陶然决定不等保安，立即请求服务台工作人员临时照看男孩，自己乘电梯上五楼。",
+      "rejected_alternative": "继续安抚男孩，直到保安有空。",
+      "immediate_consequence": "陶然离开一楼，男孩留在服务台内，工作人员答应看护；陶然进入电梯。",
+      "counterfactual_without_action": "如果陶然不离开，男孩可能因焦虑而挣脱她的手，跑向电梯，造成更大风险。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "陶然和男孩都在服务台旁，保安仍在处理纠纷。",
+        "after": "男孩在服务台内由工作人员看护，陶然在前往五楼的电梯中。"
+      },
+      "cost_or_commitment": "陶然暂时离开男孩，将孩子的安全托付给工作人员，自己承担了‘离开孩子’的心理压力。",
+      "next_constraint": "陶然必须在五楼找到明确线索，否则她将面临‘离开孩子却无果’的困境。",
+      "reader_must_infer": "工作人员是否真的会全力看护？男孩会不会再次走失？",
+      "narrator_must_not_state": [
+        "工作人员是否可靠",
+        "男孩在陶然离开后的情绪变化"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "男孩攥着湿电影票站在服务台旁，保安正忙于另一纠纷，电梯口人流不断。",
+    "dominant_pressure": {
+      "kind": "information_gap",
+      "description": "陶然必须尽快决策，但关键信息（家长位置）缺失，只能依靠碎片线索和有限资源行动。"
+    },
+    "allowed_viewpoint_misread": "陶然可能误以为男孩指向电梯就是家长在楼上，但实际上男孩可能只是记得从电梯下来的。",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "家长是否真的在五楼影院",
+      "男孩与家长走散的具体原因"
+    ],
+    "stop_state": {
+      "type": "physical_change",
+      "visible_fact": "陶然在五楼影院入口看到一名神色焦急的女性，手中拿着与男孩电影票同场次的票根。",
+      "what_is_now_different": "出现了一个高度疑似家长的人物，为下一步确认关系提供了直接线索。",
+      "must_not_append": "不得立即确认该女性就是家长，不得让陶然直接上前认亲。"
+    },
+    "final_line_must_include": ""
+  }
+}

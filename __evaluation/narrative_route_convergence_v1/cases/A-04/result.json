@@ -1,0 +1,324 @@
+{
+  "case_id": "A-04",
+  "category": "校园日常",
+  "title": "楼下撕碎的信",
+  "run_id": "ef120995-24b2-4dd4-a6fe-e7e5d0f3b2aa",
+  "expected_route": "A_LITE_INFORMATION_GAP",
+  "planner": {
+    "candidate_id": "1e8a32a2-442d-4911-8b06-96d3216e260a",
+    "attempt_number": 1,
+    "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+    "model_id": "deepseek-v4-pro",
+    "prompt_version_id": "f9052f8a-dc4e-5408-b14e-fc1badaf57f8",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 12288,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "json_object"
+    },
+    "text_output": "{\n  \"planner_contract_version\": 2,\n  \"scene_goal\": \"吴筝在楼梯口看到被撕碎的信件碎片，无法直接质问何屿，必须基于碎片信息采取一个具体行动，从而改变两人之间的互动状态，并留下新的悬念。\",\n  \"location\": \"教学楼楼梯口\",\n  \"time\": \"课间操刚结束，学生陆续回教室\",\n  \"scene_state\": {\n    \"last_completed_action\": \"吴筝在楼梯口看到地上被撕成四片的信纸碎片，何屿正从楼上走下来\",\n    \"present_characters\": [\"吴筝\", \"何屿\"],\n    \"visible_facts\": [\n      \"地上有四片撕碎的信纸碎片\",\n      \"碎片上是吴筝的笔迹\",\n      \"何屿正从楼梯上走下来，表情平静\",\n      \"周围没有其他学生\"\n    ],\n    \"available_objects\": [\"四片信纸碎片\", \"吴筝的书包\"],\n    \"unresolved_problem\": \"何屿是否读了信？他为什么撕碎信？吴筝无法直接询问，但必须做出回应\",\n    \"already_existing_constraints\": [\n      \"吴筝不能直接问何屿关于信的事\",\n      \"吴筝不能捡起碎片拼读，因为何屿正在看着\",\n      \"吴筝必须保持表面镇定，不能情绪失控\"\n    ]\n  },\n  \"characters\": [\n    {\n      \"name\": \"吴筝\",\n      \"goal\": \"弄清何屿对信的态度，并做出一个既能维护自尊又能传递信号的行动\",\n      \"known\": [\n        \"信是自己写的，内容涉及对何屿的复杂感情\",\n        \"信被撕碎散落在地，何屿正走过来\",\n        \"不能直接质问，否则会暴露自己的脆弱\"\n      ],\n      \"unknown\": [\n        \"何屿是否读了信的内容\",\n        \"何屿撕信的原因（拒绝、愤怒、误会，还是其他）\",\n        \"何屿此刻的真实情绪\"\n      ],\n      \"mistaken_beliefs\": [\n        \"也许何屿根本没看信，只是随手撕掉\",\n        \"何屿可能认为信是别人的恶作剧\"\n      ],\n      \"constraints\": [\n        \"不能捡起碎片拼读\",\n        \"不能直接问何屿\",\n        \"不能表现出过度的情绪反应\"\n      ],\n      \"observed_evidence\": [\n        \"信纸碎片散落在楼梯口，位置显眼\",\n        \"何屿下楼时目光扫过碎片，然后看向吴筝\",\n        \"何屿的脚步没有停顿，表情如常\"\n      ],\n      \"current_interpretation\": \"何屿看到了碎片，也知道吴筝看到了，但他不打算主动解释，这可能是试探或冷漠。\",\n      \"how_interpretation_drives_action\": \"吴筝决定不捡碎片，而是用脚将碎片轻轻拨到墙边，然后抬头对何屿说一句无关的话，以此表明自己不会乞求答案。\"\n    },\n    {\n      \"name\": \"何屿\",\n      \"goal\": \"观察吴筝的反应，确认她是否在意信的命运，同时维持自己的冷淡形象\",\n      \"known\": [\n        \"信是吴筝写的，内容他已读过\",\n        \"他故意将信撕碎放在吴筝必经之路\",\n        \"吴筝的性格骄傲，不会当面崩溃\"\n      ],\n      \"unknown\": [\n        \"吴筝接下来会如何行动\",\n        \"吴筝是否还留有信的副本\",\n        \"吴筝会否因此彻底放弃或更加执着\"\n      ],\n      \"mistaken_beliefs\": [\n        \"吴筝可能会假装没看见碎片\",\n        \"撕信足以让吴筝知难而退\"\n      ],\n      \"constraints\": [\n        \"不能主动提及信的内容\",\n        \"不能表现出对吴筝的关心\",\n        \"必须维持一贯的疏离态度\"\n      ],\n      \"observed_evidence\": [\n        \"吴筝低头看着碎片，肩膀微微绷紧\",\n        \"吴筝没有立即走开或哭泣\",\n        \"吴筝的鞋尖轻轻碰了一下碎片\"\n      ],\n      \"current_interpretation\": \"吴筝在克制情绪，她不会当众失态，但她的停顿表明她在意。\",\n      \"how_interpretation_drives_action\": \"何屿故意放慢脚步，等待吴筝先开口或行动，以此判断她的下一步。\"\n    }\n  ],\n  \"concrete_problem\": \"吴筝必须在不捡起碎片、不直接质问何屿的前提下，用一个具体行动回应地上的碎信，这个行动将决定两人接下来的关系走向。\",\n  \"pressure\": \"课间操结束的嘈杂声渐近，其他学生即将经过此处，吴筝必须在被围观前做出反应，同时何屿的沉默注视构成无形的社交压力。\",\n  \"turning_point\": \"吴筝选择用脚将碎片轻轻归拢到墙边，然后抬头对何屿说：'让一下，你挡路了。'——这个行动既没有乞求解释，也没有假装无事发生，而是用冷漠回应冷漠，迫使何屿重新评估她的态度。\",\n  \"end_condition\": \"何屿侧身让开，吴筝擦肩而过，其中一片碎片被风带起粘在吴筝鞋底，她头也不回地走开，留下何屿看着那片碎片。\",\n  \"forbidden\": [\n    \"吴筝不能捡起碎片拼读\",\n    \"吴筝不能直接问何屿关于信的任何问题\",\n    \"不能出现何屿主动解释或道歉\",\n    \"不能有第三人介入打破两人对峙\",\n    \"不能揭示信的具体内容\",\n    \"不能出现吴筝哭泣或情绪崩溃\",\n    \"不能使用内心独白直接说明吴筝的真实想法\"\n  ],\n  \"causal_transitions\": [\n    {\n      \"id\": \"CT01\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"何屿的目光从碎片移到吴筝脸上，嘴角似乎有一丝若有若无的弧度\",\n      \"character_interpretation\": \"吴筝认为何屿在等她崩溃或质问，以此证明她的在意，从而占据上风。\",\n      \"character_next_action\": \"吴筝没有看碎片，而是用鞋尖轻轻将碎片拨到墙边，然后抬头直视何屿。\",\n      \"rejected_alternative\": \"吴筝本可以假装没看见碎片，直接走开，但那样等于默认自己心虚。\",\n      \"immediate_consequence\": \"何屿的表情出现一瞬间的凝固，他没想到吴筝会用这样轻描淡写的动作处理碎片。\",\n      \"counterfactual_without_action\": \"如果吴筝直接走开，何屿会认为她软弱逃避，两人的关系将陷入更冷的僵局。\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"碎片散落在地，吴筝僵立，何屿带着审视观察\",\n        \"after\": \"碎片被归拢到墙边，吴筝主动打破沉默，何屿的预判落空\"\n      },\n      \"cost_or_commitment\": \"吴筝放弃了获取信被撕原因的机会，选择用骄傲武装自己，可能加深误会。\",\n      \"next_constraint\": \"何屿必须对吴筝的冷漠做出反应，不能继续沉默僵持\",\n      \"reader_must_infer\": \"吴筝的冷静是强装的，她内心其实很在意，但她的骄傲不允许她示弱。\",\n      \"narrator_must_not_state\": [\n        \"吴筝此刻的真实情绪是伤心或愤怒\",\n        \"何屿撕信的真正动机\"\n      ]\n    }\n  ],\n  \"tempo_guardrails\": {\n    \"entry_pressure\": \"吴筝看到碎片时，何屿已经走到楼梯中段，两人距离不足十步\",\n    \"dominant_pressure\": {\n      \"kind\": \"social_friction\",\n      \"description\": \"两人之间未言明的紧张关系因碎信而达到顶点，吴筝必须在维护自尊和寻求答案之间做出选择，而何屿的沉默注视加剧了社交摩擦。\"\n    },\n    \"allowed_viewpoint_misread\": \"吴筝可能把何屿的平静误读为冷酷，而何屿可能把吴筝的冷漠误读为不在乎\",\n    \"disclosure_cap\": 1,\n    \"must_remain_unclassified\": [\n      \"何屿撕信的真实原因\",\n      \"信的具体内容\",\n      \"吴筝对何屿的真实感情深度\"\n    ],\n    \"stop_state\": {\n      \"type\": \"relationship_shift\",\n      \"visible_fact\": \"吴筝头也不回地走开，一片碎片粘在她鞋底被带走\",\n      \"what_is_now_different\": \"两人的互动从何屿单方面施加压力，转变为吴筝用行动夺回主动权，何屿的预判被打破，关系进入新的博弈阶段。\",\n      \"must_not_append\": \"不得解释何屿看着碎片时的内心活动\"\n    },\n    \"final_line_must_include\": \"\"\n  },\n  \"chapter_contract_check\": {\n    \"function_aligned\": true,\n    \"must_deliver_covered\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_enabled\": true,\n    \"main_payoff_prepared\": true,\n    \"ending_hook_established\": true,\n    \"causal_transitions_grounded\": true,\n    \"reader_inference_not_pre_resolved\": true,\n    \"scene_state_reconstructed\": true,\n    \"information_sources_legal\": true,\n    \"character_choice_is_real\": true,\n    \"consequence_is_counterfactual\": true,\n    \"state_delta_is_nonempty\": true,\n    \"next_constraint_is_new\": true,\n    \"stop_state_is_visible\": true,\n    \"stop_state_changes_future_actions\": true\n  }\n}",
+    "raw_response": "{\n  \"planner_contract_version\": 2,\n  \"scene_goal\": \"吴筝在楼梯口看到被撕碎的信件碎片，无法直接质问何屿，必须基于碎片信息采取一个具体行动，从而改变两人之间的互动状态，并留下新的悬念。\",\n  \"location\": \"教学楼楼梯口\",\n  \"time\": \"课间操刚结束，学生陆续回教室\",\n  \"scene_state\": {\n    \"last_completed_action\": \"吴筝在楼梯口看到地上被撕成四片的信纸碎片，何屿正从楼上走下来\",\n    \"present_characters\": [\"吴筝\", \"何屿\"],\n    \"visible_facts\": [\n      \"地上有四片撕碎的信纸碎片\",\n      \"碎片上是吴筝的笔迹\",\n      \"何屿正从楼梯上走下来，表情平静\",\n      \"周围没有其他学生\"\n    ],\n    \"available_objects\": [\"四片信纸碎片\", \"吴筝的书包\"],\n    \"unresolved_problem\": \"何屿是否读了信？他为什么撕碎信？吴筝无法直接询问，但必须做出回应\",\n    \"already_existing_constraints\": [\n      \"吴筝不能直接问何屿关于信的事\",\n      \"吴筝不能捡起碎片拼读，因为何屿正在看着\",\n      \"吴筝必须保持表面镇定，不能情绪失控\"\n    ]\n  },\n  \"characters\": [\n    {\n      \"name\": \"吴筝\",\n      \"goal\": \"弄清何屿对信的态度，并做出一个既能维护自尊又能传递信号的行动\",\n      \"known\": [\n        \"信是自己写的，内容涉及对何屿的复杂感情\",\n        \"信被撕碎散落在地，何屿正走过来\",\n        \"不能直接质问，否则会暴露自己的脆弱\"\n      ],\n      \"unknown\": [\n        \"何屿是否读了信的内容\",\n        \"何屿撕信的原因（拒绝、愤怒、误会，还是其他）\",\n        \"何屿此刻的真实情绪\"\n      ],\n      \"mistaken_beliefs\": [\n        \"也许何屿根本没看信，只是随手撕掉\",\n        \"何屿可能认为信是别人的恶作剧\"\n      ],\n      \"constraints\": [\n        \"不能捡起碎片拼读\",\n        \"不能直接问何屿\",\n        \"不能表现出过度的情绪反应\"\n      ],\n      \"observed_evidence\": [\n        \"信纸碎片散落在楼梯口，位置显眼\",\n        \"何屿下楼时目光扫过碎片，然后看向吴筝\",\n        \"何屿的脚步没有停顿，表情如常\"\n      ],\n      \"current_interpretation\": \"何屿看到了碎片，也知道吴筝看到了，但他不打算主动解释，这可能是试探或冷漠。\",\n      \"how_interpretation_drives_action\": \"吴筝决定不捡碎片，而是用脚将碎片轻轻拨到墙边，然后抬头对何屿说一句无关的话，以此表明自己不会乞求答案。\"\n    },\n    {\n      \"name\": \"何屿\",\n      \"goal\": \"观察吴筝的反应，确认她是否在意信的命运，同时维持自己的冷淡形象\",\n      \"known\": [\n        \"信是吴筝写的，内容他已读过\",\n        \"他故意将信撕碎放在吴筝必经之路\",\n        \"吴筝的性格骄傲，不会当面崩溃\"\n      ],\n      \"unknown\": [\n        \"吴筝接下来会如何行动\",\n        \"吴筝是否还留有信的副本\",\n        \"吴筝会否因此彻底放弃或更加执着\"\n      ],\n      \"mistaken_beliefs\": [\n        \"吴筝可能会假装没看见碎片\",\n        \"撕信足以让吴筝知难而退\"\n      ],\n      \"constraints\": [\n        \"不能主动提及信的内容\",\n        \"不能表现出对吴筝的关心\",\n        \"必须维持一贯的疏离态度\"\n      ],\n      \"observed_evidence\": [\n        \"吴筝低头看着碎片，肩膀微微绷紧\",\n        \"吴筝没有立即走开或哭泣\",\n        \"吴筝的鞋尖轻轻碰了一下碎片\"\n      ],\n      \"current_interpretation\": \"吴筝在克制情绪，她不会当众失态，但她的停顿表明她在意。\",\n      \"how_interpretation_drives_action\": \"何屿故意放慢脚步，等待吴筝先开口或行动，以此判断她的下一步。\"\n    }\n  ],\n  \"concrete_problem\": \"吴筝必须在不捡起碎片、不直接质问何屿的前提下，用一个具体行动回应地上的碎信，这个行动将决定两人接下来的关系走向。\",\n  \"pressure\": \"课间操结束的嘈杂声渐近，其他学生即将经过此处，吴筝必须在被围观前做出反应，同时何屿的沉默注视构成无形的社交压力。\",\n  \"turning_point\": \"吴筝选择用脚将碎片轻轻归拢到墙边，然后抬头对何屿说：'让一下，你挡路了。'——这个行动既没有乞求解释，也没有假装无事发生，而是用冷漠回应冷漠，迫使何屿重新评估她的态度。\",\n  \"end_condition\": \"何屿侧身让开，吴筝擦肩而过，其中一片碎片被风带起粘在吴筝鞋底，她头也不回地走开，留下何屿看着那片碎片。\",\n  \"forbidden\": [\n    \"吴筝不能捡起碎片拼读\",\n    \"吴筝不能直接问何屿关于信的任何问题\",\n    \"不能出现何屿主动解释或道歉\",\n    \"不能有第三人介入打破两人对峙\",\n    \"不能揭示信的具体内容\",\n    \"不能出现吴筝哭泣或情绪崩溃\",\n    \"不能使用内心独白直接说明吴筝的真实想法\"\n  ],\n  \"causal_transitions\": [\n    {\n      \"id\": \"CT01\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"何屿的目光从碎片移到吴筝脸上，嘴角似乎有一丝若有若无的弧度\",\n      \"character_interpretation\": \"吴筝认为何屿在等她崩溃或质问，以此证明她的在意，从而占据上风。\",\n      \"character_next_action\": \"吴筝没有看碎片，而是用鞋尖轻轻将碎片拨到墙边，然后抬头直视何屿。\",\n      \"rejected_alternative\": \"吴筝本可以假装没看见碎片，直接走开，但那样等于默认自己心虚。\",\n      \"immediate_consequence\": \"何屿的表情出现一瞬间的凝固，他没想到吴筝会用这样轻描淡写的动作处理碎片。\",\n      \"counterfactual_without_action\": \"如果吴筝直接走开，何屿会认为她软弱逃避，两人的关系将陷入更冷的僵局。\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"碎片散落在地，吴筝僵立，何屿带着审视观察\",\n        \"after\": \"碎片被归拢到墙边，吴筝主动打破沉默，何屿的预判落空\"\n      },\n      \"cost_or_commitment\": \"吴筝放弃了获取信被撕原因的机会，选择用骄傲武装自己，可能加深误会。\",\n      \"next_constraint\": \"何屿必须对吴筝的冷漠做出反应，不能继续沉默僵持\",\n      \"reader_must_infer\": \"吴筝的冷静是强装的，她内心其实很在意，但她的骄傲不允许她示弱。\",\n      \"narrator_must_not_state\": [\n        \"吴筝此刻的真实情绪是伤心或愤怒\",\n        \"何屿撕信的真正动机\"\n      ]\n    }\n  ],\n  \"tempo_guardrails\": {\n    \"entry_pressure\": \"吴筝看到碎片时，何屿已经走到楼梯中段，两人距离不足十步\",\n    \"dominant_pressure\": {\n      \"kind\": \"social_friction\",\n      \"description\": \"两人之间未言明的紧张关系因碎信而达到顶点，吴筝必须在维护自尊和寻求答案之间做出选择，而何屿的沉默注视加剧了社交摩擦。\"\n    },\n    \"allowed_viewpoint_misread\": \"吴筝可能把何屿的平静误读为冷酷，而何屿可能把吴筝的冷漠误读为不在乎\",\n    \"disclosure_cap\": 1,\n    \"must_remain_unclassified\": [\n      \"何屿撕信的真实原因\",\n      \"信的具体内容\",\n      \"吴筝对何屿的真实感情深度\"\n    ],\n    \"stop_state\": {\n      \"type\": \"relationship_shift\",\n      \"visible_fact\": \"吴筝头也不回地走开，一片碎片粘在她鞋底被带走\",\n      \"what_is_now_different\": \"两人的互动从何屿单方面施加压力，转变为吴筝用行动夺回主动权，何屿的预判被打破，关系进入新的博弈阶段。\",\n      \"must_not_append\": \"不得解释何屿看着碎片时的内心活动\"\n    },\n    \"final_line_must_include\": \"\"\n  },\n  \"chapter_contract_check\": {\n    \"function_aligned\": true,\n    \"must_deliver_covered\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_enabled\": true,\n    \"main_payoff_prepared\": true,\n    \"ending_hook_established\": true,\n    \"causal_transitions_grounded\": true,\n    \"reader_inference_not_pre_resolved\": true,\n    \"scene_state_reconstructed\": true,\n    \"information_sources_legal\": true,\n    \"character_choice_is_real\": true,\n    \"consequence_is_counterfactual\": true,\n    \"state_delta_is_nonempty\": true,\n    \"next_constraint_is_new\": true,\n    \"stop_state_is_visible\": true,\n    \"stop_state_changes_future_actions\": true\n  }\n}",
+    "input_tokens": 3308,
+    "output_tokens": 2096,
+    "latency_ms": 30796,
+    "finish_reason": "stop",
+    "error_code": null,
+    "error_message": null,
+    "rendered_user_prompt_sha256": "89914a300875e388fef029c487cda046ec6b1f4901f3eb9b9ab18dfe159658c2",
+    "route_name": null,
+    "route_decision": null,
+    "compiled_brief_hash": null,
+    "instruction_hash": null
+  },
+  "drafts": [
+    {
+      "group": "ROUTE-C_OBJECT_CAUSAL",
+      "replica": 1,
+      "mode": "narrative_route",
+      "candidate_id": "e4cbc3a9-ab92-4561-bb7e-0ba5ca7530e8",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "C_OBJECT_CAUSAL",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "scene_state.available_objects is non-empty",
+            "causal_transitions contains counterfactual_without_action or rejected_alternative",
+            "character_next_action involves physical object manipulation"
+          ],
+          "matched_rules": [
+            "RULE_C_OBJECT_CAUSAL"
+          ],
+          "rejected_routes": []
+        },
+        "compiled_brief_hash": "cbe4fa5934e61303ecdd34ff4809da41663c9c10cd771e293fa399299cb09ed5",
+        "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "吴筝的脚步在楼梯口顿住。\n\n地上四片碎纸，白色信纸，边角撕得不算整齐。她认得那纸上的蓝色墨水痕，是自己昨晚在宿舍台灯下写的字。碎片散在台阶下最显眼的位置，像是被随手一扔，又像是特意摆在那里。\n\n她抬起头。\n\n何屿正从楼梯上走下来，校服拉链拉到胸口，书包单肩挂着。他的目光从地上的碎片扫过，然后落在她脸上。脚步没停，节奏没变，表情像在看今天食堂中午吃什么一样平静。\n\n两人之间不足十步。\n\n吴筝的呼吸在喉咙口卡了一秒。她没有蹲下去。没有看那些碎片上到底写了什么。她只是把右脚往前挪了半步，鞋尖抵住最近的一片碎纸，轻轻往墙根的方向一拨。\n\n纸片贴着地面滑了十几厘米，停在墙角。\n\n她又拨了第二片。动作很轻，像是在归置什么无关紧要的东西。第三片被风吹得翻了个面，她用鞋侧压住，推到第一片旁边。第四片在最靠近楼梯的位置，她走过去，脚尖一送，四片碎纸整整齐齐靠在墙根，像被扫到一起的废纸屑。\n\n整个过程中她没有低头看那些字。\n\n然后她抬起眼睛，直视何屿。\n\n他已经走到倒数第三级台阶，距离她不到三米。吴筝看见他的脚步终于停了——不是那种刻意的停顿，而是身体先于大脑的迟滞，右脚踩在台阶上，左脚悬了半秒才落下。\n\n他的表情有一瞬间没跟上。\n\n嘴角还是平的，但眉心动了一下，很轻，像水面被石子擦过的纹路。他显然没料到她会这么做。不是质问，不是慌张，不是假装没看见直接走开，而是用鞋尖把那封信当垃圾一样拨到墙边，连弯腰都省了。\n\n吴筝没说话。她只是看着他，等他先开口。\n\n楼梯间只有两个人的呼吸声和远处操场传来的哨响。何屿的手在裤缝边动了动，指节微微屈起，又松开。\n\n她没等到他开口。\n\n吴筝移开视线，转身朝走廊另一头走去。步子不快不慢，书包在背上晃了一下。\n\n走出三步的时候，她感觉右脚鞋底有点黏。但她没低头看，也没停。\n\n一片白色的碎纸粘在她鞋底，随着每一步在走廊地板上轻轻蹭过。",
+      "raw_response": "吴筝的脚步在楼梯口顿住。\n\n地上四片碎纸，白色信纸，边角撕得不算整齐。她认得那纸上的蓝色墨水痕，是自己昨晚在宿舍台灯下写的字。碎片散在台阶下最显眼的位置，像是被随手一扔，又像是特意摆在那里。\n\n她抬起头。\n\n何屿正从楼梯上走下来，校服拉链拉到胸口，书包单肩挂着。他的目光从地上的碎片扫过，然后落在她脸上。脚步没停，节奏没变，表情像在看今天食堂中午吃什么一样平静。\n\n两人之间不足十步。\n\n吴筝的呼吸在喉咙口卡了一秒。她没有蹲下去。没有看那些碎片上到底写了什么。她只是把右脚往前挪了半步，鞋尖抵住最近的一片碎纸，轻轻往墙根的方向一拨。\n\n纸片贴着地面滑了十几厘米，停在墙角。\n\n她又拨了第二片。动作很轻，像是在归置什么无关紧要的东西。第三片被风吹得翻了个面，她用鞋侧压住，推到第一片旁边。第四片在最靠近楼梯的位置，她走过去，脚尖一送，四片碎纸整整齐齐靠在墙根，像被扫到一起的废纸屑。\n\n整个过程中她没有低头看那些字。\n\n然后她抬起眼睛，直视何屿。\n\n他已经走到倒数第三级台阶，距离她不到三米。吴筝看见他的脚步终于停了——不是那种刻意的停顿，而是身体先于大脑的迟滞，右脚踩在台阶上，左脚悬了半秒才落下。\n\n他的表情有一瞬间没跟上。\n\n嘴角还是平的，但眉心动了一下，很轻，像水面被石子擦过的纹路。他显然没料到她会这么做。不是质问，不是慌张，不是假装没看见直接走开，而是用鞋尖把那封信当垃圾一样拨到墙边，连弯腰都省了。\n\n吴筝没说话。她只是看着他，等他先开口。\n\n楼梯间只有两个人的呼吸声和远处操场传来的哨响。何屿的手在裤缝边动了动，指节微微屈起，又松开。\n\n她没等到他开口。\n\n吴筝移开视线，转身朝走廊另一头走去。步子不快不慢，书包在背上晃了一下。\n\n走出三步的时候，她感觉右脚鞋底有点黏。但她没低头看，也没停。\n\n一片白色的碎纸粘在她鞋底，随着每一步在走廊地板上轻轻蹭过。",
+      "input_tokens": 1487,
+      "output_tokens": 512,
+      "latency_ms": 11968,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "55c1ec77976e5d335d334a9219d8c021ee5d9c18e870aec0491b71172052bb2f",
+      "route_name": null,
+      "route_decision": {
+        "route_name": "C_OBJECT_CAUSAL",
+        "classifier_version": "narrative-route-v1",
+        "decision_reasons": [
+          "scene_state.available_objects is non-empty",
+          "causal_transitions contains counterfactual_without_action or rejected_alternative",
+          "character_next_action involves physical object manipulation"
+        ],
+        "matched_rules": [
+          "RULE_C_OBJECT_CAUSAL"
+        ],
+        "rejected_routes": []
+      },
+      "compiled_brief_hash": "cbe4fa5934e61303ecdd34ff4809da41663c9c10cd771e293fa399299cb09ed5",
+      "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+      "text_path": "cases\\A-04\\drafts\\route-1.txt"
+    },
+    {
+      "group": "ROUTE-C_OBJECT_CAUSAL",
+      "replica": 2,
+      "mode": "narrative_route",
+      "candidate_id": "5e8004a8-b769-47d6-beb6-b013f90768c3",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "C_OBJECT_CAUSAL",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "scene_state.available_objects is non-empty",
+            "causal_transitions contains counterfactual_without_action or rejected_alternative",
+            "character_next_action involves physical object manipulation"
+          ],
+          "matched_rules": [
+            "RULE_C_OBJECT_CAUSAL"
+          ],
+          "rejected_routes": []
+        },
+        "compiled_brief_hash": "cbe4fa5934e61303ecdd34ff4809da41663c9c10cd771e293fa399299cb09ed5",
+        "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "吴筝的脚步停住了。\n\n楼梯口的水磨石地面上，四片信纸碎片散落着，像被人随手撕开又丢下的。纸上是她的字迹，深蓝色钢笔水，横折撇捺都是她一笔一笔写出来的。\n\n她没弯腰。\n\n何屿的脚步声从楼梯上下来，不紧不慢，运动鞋踩在水磨石上发出轻微的摩擦声。吴筝抬起眼，看见他的白色校服衣摆先出现在转角，然后是肩膀，然后是脸。\n\n他在看她。\n\n何屿的目光从地上的碎片扫过，然后落在她脸上。他的脚步没有停，表情没有变，就像地上那四片纸和楼梯口的灰尘一样，只是存在，不值得多看一眼。\n\n吴筝的右手攥紧了书包带子。\n\n她可以蹲下去。手指捏住纸片边缘，一片一片捡起来，拼在一起，读自己写过的每一个字，然后抬头问他——你为什么撕？你看了吗？你看懂了吗？\n\n何屿走到了楼梯中段。十步，也许八步。\n\n吴筝松开书包带子。\n\n她往前迈了一步，鞋尖碰到最靠近的那片碎片。纸片轻轻翻了个面，露出背面空白的部分。她没有低头看，而是用鞋尖将碎片拨向墙边，动作很轻，像清理一片落叶。然后是第二片，第三片，第四片。碎纸被推到墙根，贴着踢脚线，不再散在路中间。\n\n她抬起头，直视何屿。\n\n何屿的脚步顿了一下。只有一瞬间——他的右脚落地时慢了半拍，脸上的平静出现一道细小的裂缝，像冰面上突然出现的纹路，还没来得及扩散就被冻住了。\n\n他没想到。\n\n吴筝从他的眼睛里看到了这个。他以为她会弯腰，会捡，会问，会露出任何一种他预料中的表情。但她没有。\n\n她把目光从他脸上移开，像移开一件不需要再确认的东西。右手重新攥住书包带子，肩膀转过去，脚步迈出去。\n\n鞋底在地面上发出一声轻微的黏响。\n\n一片碎片粘在左脚鞋底，跟着她一起转身，一起往前走。纸片边缘从鞋底露出一角，随着每一步轻轻颤动。\n\n吴筝没有回头。\n\n她知道何屿还站在楼梯上，知道他的视线可能落在她背后，也可能落在地上的碎片上。她没有加快脚步，也没有放慢。走廊尽头的阳光从窗户照进来，把她的影子拉得很长，盖住了鞋底的那片纸。\n\n脚步声一下一下，不紧不慢。",
+      "raw_response": "吴筝的脚步停住了。\n\n楼梯口的水磨石地面上，四片信纸碎片散落着，像被人随手撕开又丢下的。纸上是她的字迹，深蓝色钢笔水，横折撇捺都是她一笔一笔写出来的。\n\n她没弯腰。\n\n何屿的脚步声从楼梯上下来，不紧不慢，运动鞋踩在水磨石上发出轻微的摩擦声。吴筝抬起眼，看见他的白色校服衣摆先出现在转角，然后是肩膀，然后是脸。\n\n他在看她。\n\n何屿的目光从地上的碎片扫过，然后落在她脸上。他的脚步没有停，表情没有变，就像地上那四片纸和楼梯口的灰尘一样，只是存在，不值得多看一眼。\n\n吴筝的右手攥紧了书包带子。\n\n她可以蹲下去。手指捏住纸片边缘，一片一片捡起来，拼在一起，读自己写过的每一个字，然后抬头问他——你为什么撕？你看了吗？你看懂了吗？\n\n何屿走到了楼梯中段。十步，也许八步。\n\n吴筝松开书包带子。\n\n她往前迈了一步，鞋尖碰到最靠近的那片碎片。纸片轻轻翻了个面，露出背面空白的部分。她没有低头看，而是用鞋尖将碎片拨向墙边，动作很轻，像清理一片落叶。然后是第二片，第三片，第四片。碎纸被推到墙根，贴着踢脚线，不再散在路中间。\n\n她抬起头，直视何屿。\n\n何屿的脚步顿了一下。只有一瞬间——他的右脚落地时慢了半拍，脸上的平静出现一道细小的裂缝，像冰面上突然出现的纹路，还没来得及扩散就被冻住了。\n\n他没想到。\n\n吴筝从他的眼睛里看到了这个。他以为她会弯腰，会捡，会问，会露出任何一种他预料中的表情。但她没有。\n\n她把目光从他脸上移开，像移开一件不需要再确认的东西。右手重新攥住书包带子，肩膀转过去，脚步迈出去。\n\n鞋底在地面上发出一声轻微的黏响。\n\n一片碎片粘在左脚鞋底，跟着她一起转身，一起往前走。纸片边缘从鞋底露出一角，随着每一步轻轻颤动。\n\n吴筝没有回头。\n\n她知道何屿还站在楼梯上，知道他的视线可能落在她背后，也可能落在地上的碎片上。她没有加快脚步，也没有放慢。走廊尽头的阳光从窗户照进来，把她的影子拉得很长，盖住了鞋底的那片纸。\n\n脚步声一下一下，不紧不慢。",
+      "input_tokens": 1487,
+      "output_tokens": 520,
+      "latency_ms": 12239,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "55c1ec77976e5d335d334a9219d8c021ee5d9c18e870aec0491b71172052bb2f",
+      "route_name": null,
+      "route_decision": {
+        "route_name": "C_OBJECT_CAUSAL",
+        "classifier_version": "narrative-route-v1",
+        "decision_reasons": [
+          "scene_state.available_objects is non-empty",
+          "causal_transitions contains counterfactual_without_action or rejected_alternative",
+          "character_next_action involves physical object manipulation"
+        ],
+        "matched_rules": [
+          "RULE_C_OBJECT_CAUSAL"
+        ],
+        "rejected_routes": []
+      },
+      "compiled_brief_hash": "cbe4fa5934e61303ecdd34ff4809da41663c9c10cd771e293fa399299cb09ed5",
+      "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+      "text_path": "cases\\A-04\\drafts\\route-2.txt"
+    },
+    {
+      "group": "ROUTE-C_OBJECT_CAUSAL",
+      "replica": 3,
+      "mode": "narrative_route",
+      "candidate_id": "753dae2c-da88-4f8e-b9e2-0b11b70ef297",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "C_OBJECT_CAUSAL",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "scene_state.available_objects is non-empty",
+            "causal_transitions contains counterfactual_without_action or rejected_alternative",
+            "character_next_action involves physical object manipulation"
+          ],
+          "matched_rules": [
+            "RULE_C_OBJECT_CAUSAL"
+          ],
+          "rejected_routes": []
+        },
+        "compiled_brief_hash": "cbe4fa5934e61303ecdd34ff4809da41663c9c10cd771e293fa399299cb09ed5",
+        "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "吴筝在楼梯口站住。\n\n地上散着四片纸，白色横格线，撕口毛糙。她认出自己的字迹，横折钩的收笔习惯，没人模仿得来。碎片就摊在第二级和第三级台阶之间，正对着下楼的方向，谁经过都能看见。\n\n何屿的脚步声从上面传下来，不快不慢，帆布鞋底磕在水磨石台阶上，闷闷的。\n\n吴筝没弯腰。她把书包带子往肩上拢了拢，右脚往前迈了一步，鞋尖抵住最近的一片碎片。纸片轻飘飘的，鞋尖一碰就往旁边滑。她没停，继续往前走，用鞋底把碎片往墙根拨，一下，两下，三下，四片纸全推到踢脚线边上，贴着白灰墙皮，像扫垃圾那样归成一堆。\n\n她抬起头。\n\n何屿正走到楼梯拐弯的平台，离她不到十步。他手里什么都没拿，校服拉链拉到胸口，露出里面黑色T恤的领口。他的视线从地上那堆碎片上移开，落在吴筝脸上。\n\n吴筝看着他，没说话。\n\n何屿的脚步顿了一下。真的只是顿了一下，右脚踩在平台上，左脚还悬在上一级台阶，大概半秒。他的表情像被什么东西轻轻刮了一下，不是惊讶，是某种更细微的东西——嘴角的弧度收了收，眼睑微微眯起。\n\n然后他继续往下走，恢复了刚才的节奏。\n\n吴筝转过身，背对楼梯口，朝走廊另一头走去。她的鞋底在地砖上发出轻微的摩擦声，走了三步，她听见何屿的脚步声在身后落地，踩在一楼的水泥地面上。\n\n她没有回头。\n\n走廊里的穿堂风从尽头的窗户灌进来，吹得她校服下摆翻了一下。她继续走，鞋底和地砖之间夹着什么东西，每走一步就发出极细微的沙沙声。\n\n一片信纸碎片粘在她右脚鞋底，随着她的步子，一下一下蹭在地上。纸片边缘已经磨烂了，沾着灰，字迹模糊成一条淡蓝色的线。\n\n吴筝拐过走廊转角，消失在教室门后。",
+      "raw_response": "吴筝在楼梯口站住。\n\n地上散着四片纸，白色横格线，撕口毛糙。她认出自己的字迹，横折钩的收笔习惯，没人模仿得来。碎片就摊在第二级和第三级台阶之间，正对着下楼的方向，谁经过都能看见。\n\n何屿的脚步声从上面传下来，不快不慢，帆布鞋底磕在水磨石台阶上，闷闷的。\n\n吴筝没弯腰。她把书包带子往肩上拢了拢，右脚往前迈了一步，鞋尖抵住最近的一片碎片。纸片轻飘飘的，鞋尖一碰就往旁边滑。她没停，继续往前走，用鞋底把碎片往墙根拨，一下，两下，三下，四片纸全推到踢脚线边上，贴着白灰墙皮，像扫垃圾那样归成一堆。\n\n她抬起头。\n\n何屿正走到楼梯拐弯的平台，离她不到十步。他手里什么都没拿，校服拉链拉到胸口，露出里面黑色T恤的领口。他的视线从地上那堆碎片上移开，落在吴筝脸上。\n\n吴筝看着他，没说话。\n\n何屿的脚步顿了一下。真的只是顿了一下，右脚踩在平台上，左脚还悬在上一级台阶，大概半秒。他的表情像被什么东西轻轻刮了一下，不是惊讶，是某种更细微的东西——嘴角的弧度收了收，眼睑微微眯起。\n\n然后他继续往下走，恢复了刚才的节奏。\n\n吴筝转过身，背对楼梯口，朝走廊另一头走去。她的鞋底在地砖上发出轻微的摩擦声，走了三步，她听见何屿的脚步声在身后落地，踩在一楼的水泥地面上。\n\n她没有回头。\n\n走廊里的穿堂风从尽头的窗户灌进来，吹得她校服下摆翻了一下。她继续走，鞋底和地砖之间夹着什么东西，每走一步就发出极细微的沙沙声。\n\n一片信纸碎片粘在她右脚鞋底，随着她的步子，一下一下蹭在地上。纸片边缘已经磨烂了，沾着灰，字迹模糊成一条淡蓝色的线。\n\n吴筝拐过走廊转角，消失在教室门后。",
+      "input_tokens": 1487,
+      "output_tokens": 464,
+      "latency_ms": 10890,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "55c1ec77976e5d335d334a9219d8c021ee5d9c18e870aec0491b71172052bb2f",
+      "route_name": null,
+      "route_decision": {
+        "route_name": "C_OBJECT_CAUSAL",
+        "classifier_version": "narrative-route-v1",
+        "decision_reasons": [
+          "scene_state.available_objects is non-empty",
+          "causal_transitions contains counterfactual_without_action or rejected_alternative",
+          "character_next_action involves physical object manipulation"
+        ],
+        "matched_rules": [
+          "RULE_C_OBJECT_CAUSAL"
+        ],
+        "rejected_routes": []
+      },
+      "compiled_brief_hash": "cbe4fa5934e61303ecdd34ff4809da41663c9c10cd771e293fa399299cb09ed5",
+      "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+      "text_path": "cases\\A-04\\drafts\\route-3.txt"
+    },
+    {
+      "group": "BASELINE-complete_planner",
+      "replica": 1,
+      "mode": "complete_planner",
+      "candidate_id": "59d19887-6a2c-42c4-9149-61cff693fb5c",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "吴筝的脚步在楼梯口顿住。\n\n地上散着四片纸，她一眼就认出那是自己的字迹——横折的转角带着她习惯性的圆钝，墨蓝色中性笔，是她写信时特意换的那支。纸片被撕得很干脆，边缘齐整，像有人沿着折痕慢慢扯开的。\n\n楼上传来脚步声。\n\n何屿从转角走下来，白色校服衬衫的袖子卷到小臂，书包只挂了一边肩膀。他看见她，脚步没停，目光从地上的碎片扫过，然后落在她脸上。\n\n吴筝的指尖在书包带上收紧了一下。\n\n何屿的表情很平静，像在等什么。他下楼的步子不快，运动鞋踩在水磨石台阶上，声音规律而清晰。他的视线从她眼睛移到地上的纸片，嘴角似乎动了一下——也许是抿紧，也许什么都不是。\n\n走廊那头传来学生回教室的喧哗声，越来越近。\n\n吴筝低下头，看着那四片纸。最大的一片上能看到“如果”两个字，剩下的笔划被撕断了。她的鞋尖离最近的碎片不到二十厘米。\n\n何屿走到最后两级台阶，停下来。他扶着栏杆，没说话。\n\n吴筝抬起脚。\n\n她没有弯腰去捡，也没有绕开。她用鞋尖抵住一片碎纸的边缘，轻轻往墙根推过去。纸片在水泥地上发出细微的摩擦声。第二片。第三片。第四片。她把它们拢在一起，贴着墙脚排成一条线，像在码放什么无关紧要的东西。\n\n然后她抬起头，看向站在两级台阶上的何屿。\n\n“让一下，”她说，“你挡路了。”\n\n何屿的手指在栏杆上轻轻叩了一下。那一瞬间他眼里有什么东西没来得及收住——不是愤怒，也不是歉意，而是某种预期落空后的短暂的空白。\n\n他侧身，让出通道。\n\n吴筝从他身边走过去，肩膀之间隔着不到一掌的距离。她闻到他身上洗衣液的味道，很淡，和她印象里的一样。\n\n她没有回头。\n\n走到走廊拐角时，她感觉右脚鞋底有轻微的异物感。一小片碎纸从鞋底边缘露出来，被踩实了，粘在橡胶鞋底的纹路里。\n\n她没停。走廊里的学生多起来，有人和她打招呼，她点了点头，继续往前走。\n\n身后，楼梯口安静了大约三秒。\n\n何屿还站在原处。他看着墙脚那三片碎纸，又看向走廊尽头吴筝的背影。她右脚的鞋底上，一小块白色纸片随着步伐一上一下地起伏。\n\n风吹过来，墙脚的三片纸轻轻颤了颤，没有散开。",
+      "raw_response": "吴筝的脚步在楼梯口顿住。\n\n地上散着四片纸，她一眼就认出那是自己的字迹——横折的转角带着她习惯性的圆钝，墨蓝色中性笔，是她写信时特意换的那支。纸片被撕得很干脆，边缘齐整，像有人沿着折痕慢慢扯开的。\n\n楼上传来脚步声。\n\n何屿从转角走下来，白色校服衬衫的袖子卷到小臂，书包只挂了一边肩膀。他看见她，脚步没停，目光从地上的碎片扫过，然后落在她脸上。\n\n吴筝的指尖在书包带上收紧了一下。\n\n何屿的表情很平静，像在等什么。他下楼的步子不快，运动鞋踩在水磨石台阶上，声音规律而清晰。他的视线从她眼睛移到地上的纸片，嘴角似乎动了一下——也许是抿紧，也许什么都不是。\n\n走廊那头传来学生回教室的喧哗声，越来越近。\n\n吴筝低下头，看着那四片纸。最大的一片上能看到“如果”两个字，剩下的笔划被撕断了。她的鞋尖离最近的碎片不到二十厘米。\n\n何屿走到最后两级台阶，停下来。他扶着栏杆，没说话。\n\n吴筝抬起脚。\n\n她没有弯腰去捡，也没有绕开。她用鞋尖抵住一片碎纸的边缘，轻轻往墙根推过去。纸片在水泥地上发出细微的摩擦声。第二片。第三片。第四片。她把它们拢在一起，贴着墙脚排成一条线，像在码放什么无关紧要的东西。\n\n然后她抬起头，看向站在两级台阶上的何屿。\n\n“让一下，”她说，“你挡路了。”\n\n何屿的手指在栏杆上轻轻叩了一下。那一瞬间他眼里有什么东西没来得及收住——不是愤怒，也不是歉意，而是某种预期落空后的短暂的空白。\n\n他侧身，让出通道。\n\n吴筝从他身边走过去，肩膀之间隔着不到一掌的距离。她闻到他身上洗衣液的味道，很淡，和她印象里的一样。\n\n她没有回头。\n\n走到走廊拐角时，她感觉右脚鞋底有轻微的异物感。一小片碎纸从鞋底边缘露出来，被踩实了，粘在橡胶鞋底的纹路里。\n\n她没停。走廊里的学生多起来，有人和她打招呼，她点了点头，继续往前走。\n\n身后，楼梯口安静了大约三秒。\n\n何屿还站在原处。他看着墙脚那三片碎纸，又看向走廊尽头吴筝的背影。她右脚的鞋底上，一小块白色纸片随着步伐一上一下地起伏。\n\n风吹过来，墙脚的三片纸轻轻颤了颤，没有散开。",
+      "input_tokens": 2888,
+      "output_tokens": 551,
+      "latency_ms": 12458,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "b7b124a7d801e1cca8d64756f4aa1f44fe4e5600444f3613eb135de9aab5aaf5",
+      "route_name": null,
+      "route_decision": null,
+      "compiled_brief_hash": null,
+      "instruction_hash": null,
+      "text_path": "cases\\A-04\\drafts\\baseline-1.txt"
+    },
+    {
+      "group": "BASELINE-complete_planner",
+      "replica": 2,
+      "mode": "complete_planner",
+      "candidate_id": "b146d495-7eba-4690-95ba-2d19ddebc68e",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "吴筝的脚步在楼梯口顿住。\n\n地上散着四片纸，她的笔迹被撕开的边缘毛糙地翘着。有一片正面朝上，她看见自己写的“屿”字被拦腰截断。\n\n楼上传来脚步声。\n\n何屿走下最后几级台阶，运动鞋踩在水磨石地面上几乎没有声音。他的目光先落在地上的碎片上，然后移到吴筝脸上。\n\n吴筝的右手在书包带子上收紧了一下。\n\n周围没有别人。走廊尽头传来课间操散场后的说话声，正在往这边涌。\n\n何屿停在倒数第三级台阶上，手插在裤兜里，表情像平时一样淡。他没说话，也没绕开走，就那么站着，视线从吴筝的眼睛移到地上的纸片，又移回来。\n\n他的嘴角似乎动了一下，不明显，更像是因为逆光造成的错觉。\n\n吴筝低下头。\n\n她用左脚鞋尖抵住最近的一片碎片——那张截断的“屿”字——轻轻往墙根拨过去。纸片蹭着地面发出细微的沙沙声。她没弯腰，没停顿，接着用同样的动作把第二片、第三片、第四片依次推到墙边，归拢成一撮。\n\n碎纸贴着白色墙根，像被人扫地时漏掉的垃圾。\n\n吴筝抬起头，直视何屿。\n\n“让一下，”她说，“你挡路了。”\n\n何屿的喉结动了一下。那个细微的弧度消失了。\n\n他侧过身，后背靠上楼梯扶手，让出通道。\n\n吴筝从他面前走过去，书包几乎擦到他的手臂。她没回头，也没加快脚步，鞋底敲在地面上节奏平稳。\n\n第三片碎片——那张截断的“屿”字——不知什么时候粘在了她左脚鞋底，被带着一步一步往走廊深处走。\n\n何屿没有叫住她。\n\n他看着那片碎片在吴筝的鞋底起伏，转弯，消失在楼梯口的墙角后面。\n\n走廊那头涌来第一批回教室的学生。何屿还站在原地，手插在裤兜里，指节慢慢收紧又松开。",
+      "raw_response": "吴筝的脚步在楼梯口顿住。\n\n地上散着四片纸，她的笔迹被撕开的边缘毛糙地翘着。有一片正面朝上，她看见自己写的“屿”字被拦腰截断。\n\n楼上传来脚步声。\n\n何屿走下最后几级台阶，运动鞋踩在水磨石地面上几乎没有声音。他的目光先落在地上的碎片上，然后移到吴筝脸上。\n\n吴筝的右手在书包带子上收紧了一下。\n\n周围没有别人。走廊尽头传来课间操散场后的说话声，正在往这边涌。\n\n何屿停在倒数第三级台阶上，手插在裤兜里，表情像平时一样淡。他没说话，也没绕开走，就那么站着，视线从吴筝的眼睛移到地上的纸片，又移回来。\n\n他的嘴角似乎动了一下，不明显，更像是因为逆光造成的错觉。\n\n吴筝低下头。\n\n她用左脚鞋尖抵住最近的一片碎片——那张截断的“屿”字——轻轻往墙根拨过去。纸片蹭着地面发出细微的沙沙声。她没弯腰，没停顿，接着用同样的动作把第二片、第三片、第四片依次推到墙边，归拢成一撮。\n\n碎纸贴着白色墙根，像被人扫地时漏掉的垃圾。\n\n吴筝抬起头，直视何屿。\n\n“让一下，”她说，“你挡路了。”\n\n何屿的喉结动了一下。那个细微的弧度消失了。\n\n他侧过身，后背靠上楼梯扶手，让出通道。\n\n吴筝从他面前走过去，书包几乎擦到他的手臂。她没回头，也没加快脚步，鞋底敲在地面上节奏平稳。\n\n第三片碎片——那张截断的“屿”字——不知什么时候粘在了她左脚鞋底，被带着一步一步往走廊深处走。\n\n何屿没有叫住她。\n\n他看着那片碎片在吴筝的鞋底起伏，转弯，消失在楼梯口的墙角后面。\n\n走廊那头涌来第一批回教室的学生。何屿还站在原地，手插在裤兜里，指节慢慢收紧又松开。",
+      "input_tokens": 2888,
+      "output_tokens": 426,
+      "latency_ms": 10382,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "b7b124a7d801e1cca8d64756f4aa1f44fe4e5600444f3613eb135de9aab5aaf5",
+      "route_name": null,
+      "route_decision": null,
+      "compiled_brief_hash": null,
+      "instruction_hash": null,
+      "text_path": "cases\\A-04\\drafts\\baseline-2.txt"
+    },
+    {
+      "group": "BASELINE-complete_planner",
+      "replica": 3,
+      "mode": "complete_planner",
+      "candidate_id": "0a70c1bd-37a7-4c74-ad53-a502ad6d449d",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "吴筝的鞋底在离碎片半步的地方停住。\n\n纸片被撕得很随意，四片。她的笔迹朝上翻着，横竖撇捺都清清楚楚——那是她写了三个晚上才誊好的信。\n\n楼梯上传来脚步声。不急不缓的节奏，她认得。\n\n何屿从拐角处转下来，校服拉链只拉到胸口，书包单肩挂着。他的视线先落在地上，扫过那些碎片，然后抬起来，对上她的眼睛。\n\n脚步没停。\n\n吴筝感到肩膀后面有根筋在发紧。课间操解散的音乐已经响过第二遍，再过几十秒，楼梯口就会涌进来人。何屿的目光停在她脸上，嘴角似乎动了一下——不是笑，是某种等待。\n\n她没看碎片。\n\n鞋尖伸出去，轻轻拨了一下最近的那片。纸片在地上滑过一小段距离，蹭到墙根。然后是第二片，第三片。她用鞋底把它们拨到一起，动作很慢，像在归拢几片落叶。\n\n第四片距离稍远。她走过去，鞋尖刚碰到纸边，何屿正好走到最后一级台阶。\n\n他停下来。\n\n两个人之间隔着三步远，那些碎片堆在墙边，像是从没被谁写过。\n\n吴筝直起腰，看向他。\n\n“让一下，”她说，“你挡路了。”\n\n何屿的表情凝住了一瞬。他侧过身，让出半个通道。\n\n吴筝从他面前走过去。她的肩膀离他的手臂只有一拳的距离，空气里有洗衣液的清淡味道。她没有加快脚步，也没有回头。\n\n身后传来轻微的声响——像是鞋底蹭过纸面的声音。\n\n她没停。\n\n经过走廊拐角时，她感到左脚鞋底粘了什么东西。薄薄一层，在瓷砖上发出细微的沙沙声。\n\n她没有低头看。",
+      "raw_response": "吴筝的鞋底在离碎片半步的地方停住。\n\n纸片被撕得很随意，四片。她的笔迹朝上翻着，横竖撇捺都清清楚楚——那是她写了三个晚上才誊好的信。\n\n楼梯上传来脚步声。不急不缓的节奏，她认得。\n\n何屿从拐角处转下来，校服拉链只拉到胸口，书包单肩挂着。他的视线先落在地上，扫过那些碎片，然后抬起来，对上她的眼睛。\n\n脚步没停。\n\n吴筝感到肩膀后面有根筋在发紧。课间操解散的音乐已经响过第二遍，再过几十秒，楼梯口就会涌进来人。何屿的目光停在她脸上，嘴角似乎动了一下——不是笑，是某种等待。\n\n她没看碎片。\n\n鞋尖伸出去，轻轻拨了一下最近的那片。纸片在地上滑过一小段距离，蹭到墙根。然后是第二片，第三片。她用鞋底把它们拨到一起，动作很慢，像在归拢几片落叶。\n\n第四片距离稍远。她走过去，鞋尖刚碰到纸边，何屿正好走到最后一级台阶。\n\n他停下来。\n\n两个人之间隔着三步远，那些碎片堆在墙边，像是从没被谁写过。\n\n吴筝直起腰，看向他。\n\n“让一下，”她说，“你挡路了。”\n\n何屿的表情凝住了一瞬。他侧过身，让出半个通道。\n\n吴筝从他面前走过去。她的肩膀离他的手臂只有一拳的距离，空气里有洗衣液的清淡味道。她没有加快脚步，也没有回头。\n\n身后传来轻微的声响——像是鞋底蹭过纸面的声音。\n\n她没停。\n\n经过走廊拐角时，她感到左脚鞋底粘了什么东西。薄薄一层，在瓷砖上发出细微的沙沙声。\n\n她没有低头看。",
+      "input_tokens": 2888,
+      "output_tokens": 382,
+      "latency_ms": 9468,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "b7b124a7d801e1cca8d64756f4aa1f44fe4e5600444f3613eb135de9aab5aaf5",
+      "route_name": null,
+      "route_decision": null,
+      "compiled_brief_hash": null,
+      "instruction_hash": null,
+      "text_path": "cases\\A-04\\drafts\\baseline-3.txt"
+    }
+  ],
+  "actual_route": "C_OBJECT_CAUSAL",
+  "route_decision": {
+    "route_name": "C_OBJECT_CAUSAL",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "scene_state.available_objects is non-empty",
+      "causal_transitions contains counterfactual_without_action or rejected_alternative",
+      "character_next_action involves physical object manipulation"
+    ],
+    "matched_rules": [
+      "RULE_C_OBJECT_CAUSAL"
+    ],
+    "rejected_routes": []
+  }
+}

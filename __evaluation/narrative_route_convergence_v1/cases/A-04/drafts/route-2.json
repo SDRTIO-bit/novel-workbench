@@ -1,0 +1,59 @@
+{
+  "group": "ROUTE-C_OBJECT_CAUSAL",
+  "replica": 2,
+  "mode": "narrative_route",
+  "candidate_id": "5e8004a8-b769-47d6-beb6-b013f90768c3",
+  "attempt_number": 1,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "route_decision": {
+      "route_name": "C_OBJECT_CAUSAL",
+      "classifier_version": "narrative-route-v1",
+      "decision_reasons": [
+        "scene_state.available_objects is non-empty",
+        "causal_transitions contains counterfactual_without_action or rejected_alternative",
+        "character_next_action involves physical object manipulation"
+      ],
+      "matched_rules": [
+        "RULE_C_OBJECT_CAUSAL"
+      ],
+      "rejected_routes": []
+    },
+    "compiled_brief_hash": "cbe4fa5934e61303ecdd34ff4809da41663c9c10cd771e293fa399299cb09ed5",
+    "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "吴筝的脚步停住了。\n\n楼梯口的水磨石地面上，四片信纸碎片散落着，像被人随手撕开又丢下的。纸上是她的字迹，深蓝色钢笔水，横折撇捺都是她一笔一笔写出来的。\n\n她没弯腰。\n\n何屿的脚步声从楼梯上下来，不紧不慢，运动鞋踩在水磨石上发出轻微的摩擦声。吴筝抬起眼，看见他的白色校服衣摆先出现在转角，然后是肩膀，然后是脸。\n\n他在看她。\n\n何屿的目光从地上的碎片扫过，然后落在她脸上。他的脚步没有停，表情没有变，就像地上那四片纸和楼梯口的灰尘一样，只是存在，不值得多看一眼。\n\n吴筝的右手攥紧了书包带子。\n\n她可以蹲下去。手指捏住纸片边缘，一片一片捡起来，拼在一起，读自己写过的每一个字，然后抬头问他——你为什么撕？你看了吗？你看懂了吗？\n\n何屿走到了楼梯中段。十步，也许八步。\n\n吴筝松开书包带子。\n\n她往前迈了一步，鞋尖碰到最靠近的那片碎片。纸片轻轻翻了个面，露出背面空白的部分。她没有低头看，而是用鞋尖将碎片拨向墙边，动作很轻，像清理一片落叶。然后是第二片，第三片，第四片。碎纸被推到墙根，贴着踢脚线，不再散在路中间。\n\n她抬起头，直视何屿。\n\n何屿的脚步顿了一下。只有一瞬间——他的右脚落地时慢了半拍，脸上的平静出现一道细小的裂缝，像冰面上突然出现的纹路，还没来得及扩散就被冻住了。\n\n他没想到。\n\n吴筝从他的眼睛里看到了这个。他以为她会弯腰，会捡，会问，会露出任何一种他预料中的表情。但她没有。\n\n她把目光从他脸上移开，像移开一件不需要再确认的东西。右手重新攥住书包带子，肩膀转过去，脚步迈出去。\n\n鞋底在地面上发出一声轻微的黏响。\n\n一片碎片粘在左脚鞋底，跟着她一起转身，一起往前走。纸片边缘从鞋底露出一角，随着每一步轻轻颤动。\n\n吴筝没有回头。\n\n她知道何屿还站在楼梯上，知道他的视线可能落在她背后，也可能落在地上的碎片上。她没有加快脚步，也没有放慢。走廊尽头的阳光从窗户照进来，把她的影子拉得很长，盖住了鞋底的那片纸。\n\n脚步声一下一下，不紧不慢。",
+  "raw_response": "吴筝的脚步停住了。\n\n楼梯口的水磨石地面上，四片信纸碎片散落着，像被人随手撕开又丢下的。纸上是她的字迹，深蓝色钢笔水，横折撇捺都是她一笔一笔写出来的。\n\n她没弯腰。\n\n何屿的脚步声从楼梯上下来，不紧不慢，运动鞋踩在水磨石上发出轻微的摩擦声。吴筝抬起眼，看见他的白色校服衣摆先出现在转角，然后是肩膀，然后是脸。\n\n他在看她。\n\n何屿的目光从地上的碎片扫过，然后落在她脸上。他的脚步没有停，表情没有变，就像地上那四片纸和楼梯口的灰尘一样，只是存在，不值得多看一眼。\n\n吴筝的右手攥紧了书包带子。\n\n她可以蹲下去。手指捏住纸片边缘，一片一片捡起来，拼在一起，读自己写过的每一个字，然后抬头问他——你为什么撕？你看了吗？你看懂了吗？\n\n何屿走到了楼梯中段。十步，也许八步。\n\n吴筝松开书包带子。\n\n她往前迈了一步，鞋尖碰到最靠近的那片碎片。纸片轻轻翻了个面，露出背面空白的部分。她没有低头看，而是用鞋尖将碎片拨向墙边，动作很轻，像清理一片落叶。然后是第二片，第三片，第四片。碎纸被推到墙根，贴着踢脚线，不再散在路中间。\n\n她抬起头，直视何屿。\n\n何屿的脚步顿了一下。只有一瞬间——他的右脚落地时慢了半拍，脸上的平静出现一道细小的裂缝，像冰面上突然出现的纹路，还没来得及扩散就被冻住了。\n\n他没想到。\n\n吴筝从他的眼睛里看到了这个。他以为她会弯腰，会捡，会问，会露出任何一种他预料中的表情。但她没有。\n\n她把目光从他脸上移开，像移开一件不需要再确认的东西。右手重新攥住书包带子，肩膀转过去，脚步迈出去。\n\n鞋底在地面上发出一声轻微的黏响。\n\n一片碎片粘在左脚鞋底，跟着她一起转身，一起往前走。纸片边缘从鞋底露出一角，随着每一步轻轻颤动。\n\n吴筝没有回头。\n\n她知道何屿还站在楼梯上，知道他的视线可能落在她背后，也可能落在地上的碎片上。她没有加快脚步，也没有放慢。走廊尽头的阳光从窗户照进来，把她的影子拉得很长，盖住了鞋底的那片纸。\n\n脚步声一下一下，不紧不慢。",
+  "input_tokens": 1487,
+  "output_tokens": 520,
+  "latency_ms": 12239,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "55c1ec77976e5d335d334a9219d8c021ee5d9c18e870aec0491b71172052bb2f",
+  "route_name": null,
+  "route_decision": {
+    "route_name": "C_OBJECT_CAUSAL",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "scene_state.available_objects is non-empty",
+      "causal_transitions contains counterfactual_without_action or rejected_alternative",
+      "character_next_action involves physical object manipulation"
+    ],
+    "matched_rules": [
+      "RULE_C_OBJECT_CAUSAL"
+    ],
+    "rejected_routes": []
+  },
+  "compiled_brief_hash": "cbe4fa5934e61303ecdd34ff4809da41663c9c10cd771e293fa399299cb09ed5",
+  "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+  "text_path": "cases\\A-04\\drafts\\route-2.txt"
+}

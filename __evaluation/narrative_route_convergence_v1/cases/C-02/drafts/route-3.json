@@ -1,0 +1,59 @@
+{
+  "group": "ROUTE-C_OBJECT_CAUSAL",
+  "replica": 3,
+  "mode": "narrative_route",
+  "candidate_id": "d11ee3d4-edef-460a-91ce-67ec6d2407ad",
+  "attempt_number": 1,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "route_decision": {
+      "route_name": "C_OBJECT_CAUSAL",
+      "classifier_version": "narrative-route-v1",
+      "decision_reasons": [
+        "scene_state.available_objects is non-empty",
+        "causal_transitions contains counterfactual_without_action or rejected_alternative",
+        "character_next_action involves physical object manipulation"
+      ],
+      "matched_rules": [
+        "RULE_C_OBJECT_CAUSAL"
+      ],
+      "rejected_routes": []
+    },
+    "compiled_brief_hash": "4884a09d1fe62b9a25aad055711d0b53b65ea3236a0b10b1dac155bde36eb095",
+    "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "赵遥站在课桌旁，盯着那个不属于她的灰色书包看了三秒。\n\n书包的拉链头是银色的，侧面网兜里塞着一只黑色水笔。她自己的书包拉链头是黑色的，网兜里常年放着一把折叠伞。眼前这个不是她的。\n\n她抬头看向走廊窗外。\n\n徐帆的背影正穿过楼前空地，肩上背着一个灰色书包。同样的灰色帆布，同样的尺寸，同样的黑色背带。那个书包的侧面网兜里露出一截深蓝色的伞柄——她的伞柄。\n\n赵遥的手指在窗框上收紧。\n\n徐帆离实验楼拐角还有不到二十米。他走得不快，步伐平稳，左手插在裤兜里，右肩的书包随着步子轻微晃动。再过半分钟，他就会转过那个拐角，从她的视线里消失。\n\n赵遥转身扫了一眼走廊。\n\n墙上的社团招新海报已经褪色，右下角翘起一片三角形，被窗缝漏进来的风掀得轻轻抖动。海报正下方是一个木制的失物招领箱，箱盖半开，里面堆着几件落灰的校服外套和一只孤零零的保温杯。\n\n她不能追上去。走廊里还有别的同学在走动，她如果抱着一个书包跑出去，徐帆会当众被指出拿错了东西。她不能假定他是故意的，她也不能让他难堪。\n\n但她也不能什么都不做。\n\n赵遥快步走到海报前，捏住翘起的那一角，用力撕下。纸张发出干涩的断裂声，她撕下一个巴掌大的三角片。海报上原本完整的图案缺了一块，断裂的边缘露出墙皮的白。\n\n她从口袋里摸出笔，在纸片背面画了一个书包的简笔轮廓。然后在旁边写了四个字：红色挂饰。\n\n她自己的书包拉链上挂着一只红色的橡胶小恐龙。徐帆背着的那个书包上，那只小恐龙现在应该正随着步伐轻轻晃荡。\n\n赵遥把纸片放进失物招领箱，摆在校服外套上面，让字朝上。\n\n然后她回到窗边。\n\n徐帆已经走到拐角附近。他迈出一步，两步，身体开始转向——然后停了。\n\n他低头看了一眼自己的肩膀。\n\n那个动作很轻，像是余光捕捉到了什么不对劲的东西。他抬起右手，摸到书包拉链上的红色小恐龙，捏了一下。然后他侧过头，视线落在书包侧面网兜露出的深蓝色伞柄上。\n\n他站住了。\n\n赵遥看着他的手从红色挂饰上移开，落在书包背带上，收紧，又松开。他的肩膀线条僵了一瞬，然后他转过身，朝教学楼的方向走了回来。",
+  "raw_response": "赵遥站在课桌旁，盯着那个不属于她的灰色书包看了三秒。\n\n书包的拉链头是银色的，侧面网兜里塞着一只黑色水笔。她自己的书包拉链头是黑色的，网兜里常年放着一把折叠伞。眼前这个不是她的。\n\n她抬头看向走廊窗外。\n\n徐帆的背影正穿过楼前空地，肩上背着一个灰色书包。同样的灰色帆布，同样的尺寸，同样的黑色背带。那个书包的侧面网兜里露出一截深蓝色的伞柄——她的伞柄。\n\n赵遥的手指在窗框上收紧。\n\n徐帆离实验楼拐角还有不到二十米。他走得不快，步伐平稳，左手插在裤兜里，右肩的书包随着步子轻微晃动。再过半分钟，他就会转过那个拐角，从她的视线里消失。\n\n赵遥转身扫了一眼走廊。\n\n墙上的社团招新海报已经褪色，右下角翘起一片三角形，被窗缝漏进来的风掀得轻轻抖动。海报正下方是一个木制的失物招领箱，箱盖半开，里面堆着几件落灰的校服外套和一只孤零零的保温杯。\n\n她不能追上去。走廊里还有别的同学在走动，她如果抱着一个书包跑出去，徐帆会当众被指出拿错了东西。她不能假定他是故意的，她也不能让他难堪。\n\n但她也不能什么都不做。\n\n赵遥快步走到海报前，捏住翘起的那一角，用力撕下。纸张发出干涩的断裂声，她撕下一个巴掌大的三角片。海报上原本完整的图案缺了一块，断裂的边缘露出墙皮的白。\n\n她从口袋里摸出笔，在纸片背面画了一个书包的简笔轮廓。然后在旁边写了四个字：红色挂饰。\n\n她自己的书包拉链上挂着一只红色的橡胶小恐龙。徐帆背着的那个书包上，那只小恐龙现在应该正随着步伐轻轻晃荡。\n\n赵遥把纸片放进失物招领箱，摆在校服外套上面，让字朝上。\n\n然后她回到窗边。\n\n徐帆已经走到拐角附近。他迈出一步，两步，身体开始转向——然后停了。\n\n他低头看了一眼自己的肩膀。\n\n那个动作很轻，像是余光捕捉到了什么不对劲的东西。他抬起右手，摸到书包拉链上的红色小恐龙，捏了一下。然后他侧过头，视线落在书包侧面网兜露出的深蓝色伞柄上。\n\n他站住了。\n\n赵遥看着他的手从红色挂饰上移开，落在书包背带上，收紧，又松开。他的肩膀线条僵了一瞬，然后他转过身，朝教学楼的方向走了回来。",
+  "input_tokens": 1517,
+  "output_tokens": 554,
+  "latency_ms": 13256,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "8b0d4d67e1e8c638d0be2357ca55a383dae59d76448632633b474096ba5ad603",
+  "route_name": null,
+  "route_decision": {
+    "route_name": "C_OBJECT_CAUSAL",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "scene_state.available_objects is non-empty",
+      "causal_transitions contains counterfactual_without_action or rejected_alternative",
+      "character_next_action involves physical object manipulation"
+    ],
+    "matched_rules": [
+      "RULE_C_OBJECT_CAUSAL"
+    ],
+    "rejected_routes": []
+  },
+  "compiled_brief_hash": "4884a09d1fe62b9a25aad055711d0b53b65ea3236a0b10b1dac155bde36eb095",
+  "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+  "text_path": "cases\\C-02\\drafts\\route-3.txt"
+}

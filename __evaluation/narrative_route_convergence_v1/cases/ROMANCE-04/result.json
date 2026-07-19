@@ -1,0 +1,338 @@
+{
+  "case_id": "ROMANCE-04",
+  "category": "恋爱日常",
+  "title": "生日蜡烛",
+  "run_id": "3ae3fa11-ee34-4960-9649-12ca3ccf4c72",
+  "expected_route": "B_SHORT_RELATION",
+  "planner": {
+    "candidate_id": "83912102-f143-4fe4-beee-0a6af479eb27",
+    "attempt_number": 1,
+    "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+    "model_id": "deepseek-v4-pro",
+    "prompt_version_id": "f9052f8a-dc4e-5408-b14e-fc1badaf57f8",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 12288,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "json_object"
+    },
+    "text_output": "{\n  \"planner_contract_version\": 2,\n  \"scene_goal\": \"许岚发现陈述为她准备的生日蜡烛，在不能直接询问的情况下，通过处理蜡烛做出选择，让陈述的意图和两人的关系产生可见的推进。\",\n  \"location\": \"餐厅包间，聚餐刚结束，桌上还有残羹和用过的餐具\",\n  \"time\": \"晚上九点，聚餐散场时\",\n  \"scene_state\": {\n    \"last_completed_action\": \"朋友们陆续离开，陈述主动起身收拾桌上的碗筷\",\n    \"present_characters\": [\"许岚\", \"陈述\"],\n    \"visible_facts\": [\n      \"桌角放着一小盒没点过的生日蜡烛\",\n      \"蜡烛盒是新的，包装完好\",\n      \"许岚上周随口说过自己的生日日期，但今天不是那个日期\",\n      \"陈述正在替大家收盘子，动作自然\"\n    ],\n    \"available_objects\": [\n      \"生日蜡烛盒\",\n      \"用过的餐具\",\n      \"剩菜\",\n      \"许岚的包\",\n      \"陈述的外套\"\n    ],\n    \"unresolved_problem\": \"许岚不能直接问蜡烛是否是陈述为她准备的，但需要决定如何处理这盒蜡烛\",\n    \"already_existing_constraints\": [\n      \"许岚不能直接询问蜡烛的来历或意图\",\n      \"陈述没有主动解释蜡烛\",\n      \"今天不是许岚的生日，但陈述知道她的生日日期\",\n      \"两人关系处于暧昧阶段，尚未明确\"\n    ]\n  },\n  \"characters\": [\n    {\n      \"name\": \"许岚\",\n      \"goal\": \"处理蜡烛，同时试探陈述的意图，并给出一个让双方都能下台的回应\",\n      \"known\": [\n        \"陈述知道她的生日日期\",\n        \"今天不是她的生日\",\n        \"蜡烛出现在她面前，很可能是陈述准备的\",\n        \"直接询问会破坏两人之间的微妙氛围\"\n      ],\n      \"unknown\": [\n        \"陈述是否真的为她准备了蜡烛\",\n        \"陈述为什么不直接给她\",\n        \"陈述对两人关系的具体期待\"\n      ],\n      \"mistaken_beliefs\": [\n        \"陈述可能只是随手放的，并非特意准备\"\n      ],\n      \"constraints\": [\n        \"不能直接问“这是给我的吗”\",\n        \"必须用行动而非语言来处理蜡烛\",\n        \"不能表现出过度的期待或失望\"\n      ],\n      \"observed_evidence\": [\n        \"桌角有一盒没点过的生日蜡烛\",\n        \"陈述在收盘子时，目光扫过蜡烛但没说话\"\n      ],\n      \"current_interpretation\": \"蜡烛很可能是陈述为她准备的，但他不好意思直接给，或者想等她主动发现\",\n      \"how_interpretation_drives_action\": \"她决定拿起蜡烛，用开玩笑的方式说‘这蜡烛没人要吗？那我带走了’，既给了陈述台阶，也主动接住了他的心意\"\n    },\n    {\n      \"name\": \"陈述\",\n      \"goal\": \"让许岚发现蜡烛，但不确定她是否接受这份心意，所以保持沉默观察她的反应\",\n      \"known\": [\n        \"他特意买了蜡烛，因为许岚上周说过生日日期\",\n        \"今天不是许岚生日，但他想借机表达关心\",\n        \"直接送蜡烛可能显得突兀\"\n      ],\n      \"unknown\": [\n        \"许岚是否注意到蜡烛\",\n        \"许岚会不会接受这份心意\",\n        \"许岚对两人关系的真实想法\"\n      ],\n      \"mistaken_beliefs\": [\n        \"许岚可能不会在意这盒蜡烛，或者觉得他多事\"\n      ],\n      \"constraints\": [\n        \"不能主动解释蜡烛的用途\",\n        \"不能强迫许岚接受\",\n        \"必须保持自然，不能表现出过度的期待\"\n      ],\n      \"observed_evidence\": [\n        \"许岚的目光停在蜡烛上\",\n        \"许岚犹豫了一下\"\n      ],\n      \"current_interpretation\": \"她看到了蜡烛，可能在猜是不是我放的\",\n      \"how_interpretation_drives_action\": \"他继续收盘子，没有主动提及，等待许岚先开口或行动\"\n    }\n  ],\n  \"concrete_problem\": \"许岚看到桌角的生日蜡烛，不能直接问陈述是不是给她准备的，她必须决定如何处理这盒蜡烛才能既不尴尬又让关系向前一步。\",\n  \"pressure\": \"朋友们刚走，两人独处的短暂窗口，如果许岚不立刻处理蜡烛，机会就会消失，陈述可能会收回心意。\",\n  \"turning_point\": \"许岚拿起蜡烛，用轻松的语气说‘这蜡烛没人要吗？那我带走了’，陈述没有否认，反而微微笑了一下，这个瞬间让两人的暧昧关系有了一个心照不宣的确认。\",\n  \"end_condition\": \"许岚把蜡烛放进包里，陈述没有阻止也没有解释，两人一起离开餐厅，但气氛明显比之前更亲近。\",\n  \"forbidden\": [\n    \"许岚直接询问‘这蜡烛是不是给我的’\",\n    \"陈述主动解释蜡烛的来历或意图\",\n    \"任何角色直接表白或明确关系\",\n    \"引入第三方角色干扰\",\n    \"使用内心独白直接揭示陈述的完整心理活动\"\n  ],\n  \"causal_transitions\": [\n    {\n      \"id\": \"CT01\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"桌角放着一盒没点过的生日蜡烛，而许岚上周刚说过自己的生日日期\",\n      \"character_interpretation\": \"许岚认为这很可能是陈述为她准备的，但他不好意思直接给\",\n      \"character_next_action\": \"许岚拿起蜡烛，用开玩笑的语气说‘这蜡烛没人要吗？那我带走了’\",\n      \"rejected_alternative\": \"装作没看见，直接离开，或者问陈述‘这是谁的’\",\n      \"immediate_consequence\": \"陈述没有否认，反而露出微笑，许岚把蜡烛放进了包里\",\n      \"counterfactual_without_action\": \"如果许岚不行动，蜡烛会被留在桌上，陈述可能会收回心意，两人关系停留在原地\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"蜡烛在桌上无人认领，两人之间隔着未说破的心意\",\n        \"after\": \"蜡烛被许岚带走，陈述的微笑默认了心意，两人关系产生心照不宣的进展\"\n      },\n      \"cost_or_commitment\": \"许岚主动接住了这份心意，等于给了陈述一个积极的信号，自己也承担了可能误解的风险\",\n      \"next_constraint\": \"许岚带走了蜡烛，未来她必须在某个时刻提及或使用蜡烛，不能永远回避\",\n      \"reader_must_infer\": \"陈述为什么选择在今天放蜡烛，而不是等到许岚真正的生日\",\n      \"narrator_must_not_state\": [\n        \"陈述此刻的完整心理活动\",\n        \"蜡烛的确切来源和购买动机\"\n      ]\n    }\n  ],\n  \"tempo_guardrails\": {\n    \"entry_pressure\": \"朋友们刚走，陈述在收盘子，许岚看到桌角的蜡烛，两人独处的时间有限\",\n    \"dominant_pressure\": {\n      \"kind\": \"social_friction\",\n      \"description\": \"两人之间的暧昧和未说破的心意造成沟通障碍，许岚必须在不直接询问的情况下处理蜡烛\"\n    },\n    \"allowed_viewpoint_misread\": \"许岚可能把陈述的沉默理解为蜡烛不是他准备的，或者他不希望她拿走\",\n    \"disclosure_cap\": 1,\n    \"must_remain_unclassified\": [\n      \"陈述为什么选择今天放蜡烛\",\n      \"蜡烛是否真的是为许岚准备的\"\n    ],\n    \"stop_state\": {\n      \"type\": \"relationship_shift\",\n      \"visible_fact\": \"许岚把蜡烛放进包里，陈述没有阻止，反而微笑\",\n      \"what_is_now_different\": \"两人之间有了一个心照不宣的秘密，关系从单纯的朋友聚餐向前迈了一步\",\n      \"must_not_append\": \"不得解释陈述微笑背后的具体想法，不得让许岚确认蜡烛就是给她的\"\n    },\n    \"final_line_must_include\": \"她没再问，他也没说。\"\n  },\n  \"chapter_contract_check\": {\n    \"function_aligned\": true,\n    \"must_deliver_covered\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_enabled\": true,\n    \"main_payoff_prepared\": true,\n    \"ending_hook_established\": true,\n    \"causal_transitions_grounded\": true,\n    \"reader_inference_not_pre_resolved\": true,\n    \"scene_state_reconstructed\": true,\n    \"information_sources_legal\": true,\n    \"character_choice_is_real\": true,\n    \"consequence_is_counterfactual\": true,\n    \"state_delta_is_nonempty\": true,\n    \"next_constraint_is_new\": true,\n    \"stop_state_is_visible\": true,\n    \"stop_state_changes_future_actions\": true\n  }\n}",
+    "raw_response": "{\n  \"planner_contract_version\": 2,\n  \"scene_goal\": \"许岚发现陈述为她准备的生日蜡烛，在不能直接询问的情况下，通过处理蜡烛做出选择，让陈述的意图和两人的关系产生可见的推进。\",\n  \"location\": \"餐厅包间，聚餐刚结束，桌上还有残羹和用过的餐具\",\n  \"time\": \"晚上九点，聚餐散场时\",\n  \"scene_state\": {\n    \"last_completed_action\": \"朋友们陆续离开，陈述主动起身收拾桌上的碗筷\",\n    \"present_characters\": [\"许岚\", \"陈述\"],\n    \"visible_facts\": [\n      \"桌角放着一小盒没点过的生日蜡烛\",\n      \"蜡烛盒是新的，包装完好\",\n      \"许岚上周随口说过自己的生日日期，但今天不是那个日期\",\n      \"陈述正在替大家收盘子，动作自然\"\n    ],\n    \"available_objects\": [\n      \"生日蜡烛盒\",\n      \"用过的餐具\",\n      \"剩菜\",\n      \"许岚的包\",\n      \"陈述的外套\"\n    ],\n    \"unresolved_problem\": \"许岚不能直接问蜡烛是否是陈述为她准备的，但需要决定如何处理这盒蜡烛\",\n    \"already_existing_constraints\": [\n      \"许岚不能直接询问蜡烛的来历或意图\",\n      \"陈述没有主动解释蜡烛\",\n      \"今天不是许岚的生日，但陈述知道她的生日日期\",\n      \"两人关系处于暧昧阶段，尚未明确\"\n    ]\n  },\n  \"characters\": [\n    {\n      \"name\": \"许岚\",\n      \"goal\": \"处理蜡烛，同时试探陈述的意图，并给出一个让双方都能下台的回应\",\n      \"known\": [\n        \"陈述知道她的生日日期\",\n        \"今天不是她的生日\",\n        \"蜡烛出现在她面前，很可能是陈述准备的\",\n        \"直接询问会破坏两人之间的微妙氛围\"\n      ],\n      \"unknown\": [\n        \"陈述是否真的为她准备了蜡烛\",\n        \"陈述为什么不直接给她\",\n        \"陈述对两人关系的具体期待\"\n      ],\n      \"mistaken_beliefs\": [\n        \"陈述可能只是随手放的，并非特意准备\"\n      ],\n      \"constraints\": [\n        \"不能直接问“这是给我的吗”\",\n        \"必须用行动而非语言来处理蜡烛\",\n        \"不能表现出过度的期待或失望\"\n      ],\n      \"observed_evidence\": [\n        \"桌角有一盒没点过的生日蜡烛\",\n        \"陈述在收盘子时，目光扫过蜡烛但没说话\"\n      ],\n      \"current_interpretation\": \"蜡烛很可能是陈述为她准备的，但他不好意思直接给，或者想等她主动发现\",\n      \"how_interpretation_drives_action\": \"她决定拿起蜡烛，用开玩笑的方式说‘这蜡烛没人要吗？那我带走了’，既给了陈述台阶，也主动接住了他的心意\"\n    },\n    {\n      \"name\": \"陈述\",\n      \"goal\": \"让许岚发现蜡烛，但不确定她是否接受这份心意，所以保持沉默观察她的反应\",\n      \"known\": [\n        \"他特意买了蜡烛，因为许岚上周说过生日日期\",\n        \"今天不是许岚生日，但他想借机表达关心\",\n        \"直接送蜡烛可能显得突兀\"\n      ],\n      \"unknown\": [\n        \"许岚是否注意到蜡烛\",\n        \"许岚会不会接受这份心意\",\n        \"许岚对两人关系的真实想法\"\n      ],\n      \"mistaken_beliefs\": [\n        \"许岚可能不会在意这盒蜡烛，或者觉得他多事\"\n      ],\n      \"constraints\": [\n        \"不能主动解释蜡烛的用途\",\n        \"不能强迫许岚接受\",\n        \"必须保持自然，不能表现出过度的期待\"\n      ],\n      \"observed_evidence\": [\n        \"许岚的目光停在蜡烛上\",\n        \"许岚犹豫了一下\"\n      ],\n      \"current_interpretation\": \"她看到了蜡烛，可能在猜是不是我放的\",\n      \"how_interpretation_drives_action\": \"他继续收盘子，没有主动提及，等待许岚先开口或行动\"\n    }\n  ],\n  \"concrete_problem\": \"许岚看到桌角的生日蜡烛，不能直接问陈述是不是给她准备的，她必须决定如何处理这盒蜡烛才能既不尴尬又让关系向前一步。\",\n  \"pressure\": \"朋友们刚走，两人独处的短暂窗口，如果许岚不立刻处理蜡烛，机会就会消失，陈述可能会收回心意。\",\n  \"turning_point\": \"许岚拿起蜡烛，用轻松的语气说‘这蜡烛没人要吗？那我带走了’，陈述没有否认，反而微微笑了一下，这个瞬间让两人的暧昧关系有了一个心照不宣的确认。\",\n  \"end_condition\": \"许岚把蜡烛放进包里，陈述没有阻止也没有解释，两人一起离开餐厅，但气氛明显比之前更亲近。\",\n  \"forbidden\": [\n    \"许岚直接询问‘这蜡烛是不是给我的’\",\n    \"陈述主动解释蜡烛的来历或意图\",\n    \"任何角色直接表白或明确关系\",\n    \"引入第三方角色干扰\",\n    \"使用内心独白直接揭示陈述的完整心理活动\"\n  ],\n  \"causal_transitions\": [\n    {\n      \"id\": \"CT01\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"桌角放着一盒没点过的生日蜡烛，而许岚上周刚说过自己的生日日期\",\n      \"character_interpretation\": \"许岚认为这很可能是陈述为她准备的，但他不好意思直接给\",\n      \"character_next_action\": \"许岚拿起蜡烛，用开玩笑的语气说‘这蜡烛没人要吗？那我带走了’\",\n      \"rejected_alternative\": \"装作没看见，直接离开，或者问陈述‘这是谁的’\",\n      \"immediate_consequence\": \"陈述没有否认，反而露出微笑，许岚把蜡烛放进了包里\",\n      \"counterfactual_without_action\": \"如果许岚不行动，蜡烛会被留在桌上，陈述可能会收回心意，两人关系停留在原地\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"蜡烛在桌上无人认领，两人之间隔着未说破的心意\",\n        \"after\": \"蜡烛被许岚带走，陈述的微笑默认了心意，两人关系产生心照不宣的进展\"\n      },\n      \"cost_or_commitment\": \"许岚主动接住了这份心意，等于给了陈述一个积极的信号，自己也承担了可能误解的风险\",\n      \"next_constraint\": \"许岚带走了蜡烛，未来她必须在某个时刻提及或使用蜡烛，不能永远回避\",\n      \"reader_must_infer\": \"陈述为什么选择在今天放蜡烛，而不是等到许岚真正的生日\",\n      \"narrator_must_not_state\": [\n        \"陈述此刻的完整心理活动\",\n        \"蜡烛的确切来源和购买动机\"\n      ]\n    }\n  ],\n  \"tempo_guardrails\": {\n    \"entry_pressure\": \"朋友们刚走，陈述在收盘子，许岚看到桌角的蜡烛，两人独处的时间有限\",\n    \"dominant_pressure\": {\n      \"kind\": \"social_friction\",\n      \"description\": \"两人之间的暧昧和未说破的心意造成沟通障碍，许岚必须在不直接询问的情况下处理蜡烛\"\n    },\n    \"allowed_viewpoint_misread\": \"许岚可能把陈述的沉默理解为蜡烛不是他准备的，或者他不希望她拿走\",\n    \"disclosure_cap\": 1,\n    \"must_remain_unclassified\": [\n      \"陈述为什么选择今天放蜡烛\",\n      \"蜡烛是否真的是为许岚准备的\"\n    ],\n    \"stop_state\": {\n      \"type\": \"relationship_shift\",\n      \"visible_fact\": \"许岚把蜡烛放进包里，陈述没有阻止，反而微笑\",\n      \"what_is_now_different\": \"两人之间有了一个心照不宣的秘密，关系从单纯的朋友聚餐向前迈了一步\",\n      \"must_not_append\": \"不得解释陈述微笑背后的具体想法，不得让许岚确认蜡烛就是给她的\"\n    },\n    \"final_line_must_include\": \"她没再问，他也没说。\"\n  },\n  \"chapter_contract_check\": {\n    \"function_aligned\": true,\n    \"must_deliver_covered\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_enabled\": true,\n    \"main_payoff_prepared\": true,\n    \"ending_hook_established\": true,\n    \"causal_transitions_grounded\": true,\n    \"reader_inference_not_pre_resolved\": true,\n    \"scene_state_reconstructed\": true,\n    \"information_sources_legal\": true,\n    \"character_choice_is_real\": true,\n    \"consequence_is_counterfactual\": true,\n    \"state_delta_is_nonempty\": true,\n    \"next_constraint_is_new\": true,\n    \"stop_state_is_visible\": true,\n    \"stop_state_changes_future_actions\": true\n  }\n}",
+    "input_tokens": 3321,
+    "output_tokens": 1906,
+    "latency_ms": 28458,
+    "finish_reason": "stop",
+    "error_code": null,
+    "error_message": null,
+    "rendered_user_prompt_sha256": "42071f947f2254313eab3ed4987c481ff0d848b763ac6c0f4654ab6c1851d518",
+    "route_name": null,
+    "route_decision": null,
+    "compiled_brief_hash": null,
+    "instruction_hash": null
+  },
+  "drafts": [
+    {
+      "group": "ROUTE-B_SHORT_RELATION",
+      "replica": 1,
+      "mode": "narrative_route",
+      "candidate_id": "7f45142c-8cb7-472f-9a62-d7224cb81894",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "B_SHORT_RELATION",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "scene is relationship-oriented with no physical urgency",
+            "character action involves relational move (message, gesture, proximity)"
+          ],
+          "matched_rules": [
+            "RULE_B_SHORT_RELATION"
+          ],
+          "rejected_routes": [
+            "C_OBJECT_CAUSAL",
+            "A_LITE_INFORMATION_GAP"
+          ]
+        },
+        "compiled_brief_hash": "d0d8bdf802662d19be75bcc163a2f2aa9bfb582a2fc1fcfb035b8f49e3cf8350",
+        "instruction_hash": "d7a76822408396dc71c4599a7f40f33368b90199f0d9c0712383961213437555",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "朋友们陆续起身离席，椅子腿在地板上拖出零散的声响。许岚站起来帮陈述收桌上的盘子，手指刚碰到一只蘸碟的边缘，余光就扫到了桌角那个小盒子。\n\n蓝色的纸盒，没拆封，印着细碎的彩色圆点。\n\n她顿了顿。\n\n陈述正从她左手边端起三只杯子，动作没停，但视线在那只盒子上落了一瞬，又移开了。\n\n许岚把手从蘸碟上收回来，指尖抵住纸盒的边缘，往自己这边轻轻拨了半寸。盒底蹭过木桌面的声音很轻，轻到几乎被厨房水槽的水声盖过去。\n\n“这蜡烛没人要吗？”她把盒子拿起来，翻了个面，像是在检查包装上的字样，语气压得随意，“那我带走了。”\n\n陈述把杯子放进水槽，转过头看她。他没说话，但嘴角往上弯了弯，不是客气的笑，是那种被看穿了什么之后懒得再藏的笑。\n\n许岚没等他回答。她拉开自己挂在椅背上的帆布包，把蜡烛盒塞进内侧那个带拉链的小隔层里，拉链咬合的声音利落干脆。\n\n陈述收回目光，拧开水龙头冲盘子。\n\n她没再问，他也没说。",
+      "raw_response": "朋友们陆续起身离席，椅子腿在地板上拖出零散的声响。许岚站起来帮陈述收桌上的盘子，手指刚碰到一只蘸碟的边缘，余光就扫到了桌角那个小盒子。\n\n蓝色的纸盒，没拆封，印着细碎的彩色圆点。\n\n她顿了顿。\n\n陈述正从她左手边端起三只杯子，动作没停，但视线在那只盒子上落了一瞬，又移开了。\n\n许岚把手从蘸碟上收回来，指尖抵住纸盒的边缘，往自己这边轻轻拨了半寸。盒底蹭过木桌面的声音很轻，轻到几乎被厨房水槽的水声盖过去。\n\n“这蜡烛没人要吗？”她把盒子拿起来，翻了个面，像是在检查包装上的字样，语气压得随意，“那我带走了。”\n\n陈述把杯子放进水槽，转过头看她。他没说话，但嘴角往上弯了弯，不是客气的笑，是那种被看穿了什么之后懒得再藏的笑。\n\n许岚没等他回答。她拉开自己挂在椅背上的帆布包，把蜡烛盒塞进内侧那个带拉链的小隔层里，拉链咬合的声音利落干脆。\n\n陈述收回目光，拧开水龙头冲盘子。\n\n她没再问，他也没说。",
+      "input_tokens": 1357,
+      "output_tokens": 268,
+      "latency_ms": 6921,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "5d96f9fb2570d721ba2f6220df2123a1134838950accf3e69b32bac04507f595",
+      "route_name": null,
+      "route_decision": {
+        "route_name": "B_SHORT_RELATION",
+        "classifier_version": "narrative-route-v1",
+        "decision_reasons": [
+          "scene is relationship-oriented with no physical urgency",
+          "character action involves relational move (message, gesture, proximity)"
+        ],
+        "matched_rules": [
+          "RULE_B_SHORT_RELATION"
+        ],
+        "rejected_routes": [
+          "C_OBJECT_CAUSAL",
+          "A_LITE_INFORMATION_GAP"
+        ]
+      },
+      "compiled_brief_hash": "d0d8bdf802662d19be75bcc163a2f2aa9bfb582a2fc1fcfb035b8f49e3cf8350",
+      "instruction_hash": "d7a76822408396dc71c4599a7f40f33368b90199f0d9c0712383961213437555",
+      "text_path": "cases\\ROMANCE-04\\drafts\\route-1.txt"
+    },
+    {
+      "group": "ROUTE-B_SHORT_RELATION",
+      "replica": 2,
+      "mode": "narrative_route",
+      "candidate_id": "6bd55135-3e92-4713-80f1-d96286e6952e",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "B_SHORT_RELATION",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "scene is relationship-oriented with no physical urgency",
+            "character action involves relational move (message, gesture, proximity)"
+          ],
+          "matched_rules": [
+            "RULE_B_SHORT_RELATION"
+          ],
+          "rejected_routes": [
+            "C_OBJECT_CAUSAL",
+            "A_LITE_INFORMATION_GAP"
+          ]
+        },
+        "compiled_brief_hash": "d0d8bdf802662d19be75bcc163a2f2aa9bfb582a2fc1fcfb035b8f49e3cf8350",
+        "instruction_hash": "d7a76822408396dc71c4599a7f40f33368b90199f0d9c0712383961213437555",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "朋友们陆续起身，椅子腿磨着地砖，笑声和告别挤在门口。陈述开始收拾桌上的碗筷，盘子摞起来，筷子横在碗沿。\n\n许岚拎起包，余光扫到桌角——一小盒生日蜡烛，包装纸还没拆，彩色的细蜡烛透过透明塑料膜露出来。她上周随口说过自己的生日日期，今天不是那个日子。\n\n陈述端着盘子从她身边经过，视线在蜡烛上停了一瞬，没说话，继续往厨房走。\n\n许岚伸手拿起那盒蜡烛，举到眼前晃了晃，声音带着笑：“这蜡烛没人要吗？那我带走了啊。”\n\n陈述在厨房门口回过头。他没否认，嘴角微微往上提了一下，然后转身把盘子放进水槽。\n\n许岚拉开包的拉链，把蜡烛塞进内层口袋。拉链合上的声音很轻。她没再问，他也没说。",
+      "raw_response": "朋友们陆续起身，椅子腿磨着地砖，笑声和告别挤在门口。陈述开始收拾桌上的碗筷，盘子摞起来，筷子横在碗沿。\n\n许岚拎起包，余光扫到桌角——一小盒生日蜡烛，包装纸还没拆，彩色的细蜡烛透过透明塑料膜露出来。她上周随口说过自己的生日日期，今天不是那个日子。\n\n陈述端着盘子从她身边经过，视线在蜡烛上停了一瞬，没说话，继续往厨房走。\n\n许岚伸手拿起那盒蜡烛，举到眼前晃了晃，声音带着笑：“这蜡烛没人要吗？那我带走了啊。”\n\n陈述在厨房门口回过头。他没否认，嘴角微微往上提了一下，然后转身把盘子放进水槽。\n\n许岚拉开包的拉链，把蜡烛塞进内层口袋。拉链合上的声音很轻。她没再问，他也没说。",
+      "input_tokens": 1357,
+      "output_tokens": 191,
+      "latency_ms": 5660,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "5d96f9fb2570d721ba2f6220df2123a1134838950accf3e69b32bac04507f595",
+      "route_name": null,
+      "route_decision": {
+        "route_name": "B_SHORT_RELATION",
+        "classifier_version": "narrative-route-v1",
+        "decision_reasons": [
+          "scene is relationship-oriented with no physical urgency",
+          "character action involves relational move (message, gesture, proximity)"
+        ],
+        "matched_rules": [
+          "RULE_B_SHORT_RELATION"
+        ],
+        "rejected_routes": [
+          "C_OBJECT_CAUSAL",
+          "A_LITE_INFORMATION_GAP"
+        ]
+      },
+      "compiled_brief_hash": "d0d8bdf802662d19be75bcc163a2f2aa9bfb582a2fc1fcfb035b8f49e3cf8350",
+      "instruction_hash": "d7a76822408396dc71c4599a7f40f33368b90199f0d9c0712383961213437555",
+      "text_path": "cases\\ROMANCE-04\\drafts\\route-2.txt"
+    },
+    {
+      "group": "ROUTE-B_SHORT_RELATION",
+      "replica": 3,
+      "mode": "narrative_route",
+      "candidate_id": "746eeaba-e094-458a-bb27-70d0428928e6",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "B_SHORT_RELATION",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "scene is relationship-oriented with no physical urgency",
+            "character action involves relational move (message, gesture, proximity)"
+          ],
+          "matched_rules": [
+            "RULE_B_SHORT_RELATION"
+          ],
+          "rejected_routes": [
+            "C_OBJECT_CAUSAL",
+            "A_LITE_INFORMATION_GAP"
+          ]
+        },
+        "compiled_brief_hash": "d0d8bdf802662d19be75bcc163a2f2aa9bfb582a2fc1fcfb035b8f49e3cf8350",
+        "instruction_hash": "d7a76822408396dc71c4599a7f40f33368b90199f0d9c0712383961213437555",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "朋友们陆续起身，椅子腿磨着地砖，笑声和“下次再约”的尾音还挂在门框上。陈述弯腰收桌上的碗碟，动作不紧不慢，像是做过很多遍。\n\n许岚拿起自己的包，视线扫过桌角时顿了一下。\n\n一盒没拆封的生日蜡烛，塑料壳包得整整齐齐，斜靠在一只空啤酒杯旁边。\n\n她上周在饭桌上随口说过自己的生日日期，当时陈述正夹菜，筷子停了一下，什么都没说。今天不是那个日期，今天只是朋友聚餐结束的普通晚上。\n\n蜡烛盒上印着小朵雏菊图案，不是饭店会备的那种。\n\n陈述直起身，端着一摞盘子从她身边经过，目光掠过桌角，掠过那盒蜡烛，然后移开了。\n\n他没说话。\n\n许岚伸手拿起蜡烛，塑料壳凉凉的，边缘硌在掌心。她侧过头，用开玩笑的语气说：“这蜡烛没人要吗？那我带走了。”\n\n陈述在厨房门口停了一秒。然后他回头看她，嘴角往上弯了一点，不是那种客气的弧度，是那种被撞见什么之后、干脆不藏了的弧度。\n\n他把盘子放进水槽，转身走出来，手在围裙上擦了擦，什么都没说。\n\n许岚拉开包，把蜡烛放进去。拉链合上的声音很轻。\n\n她没再问，他也没说。",
+      "raw_response": "朋友们陆续起身，椅子腿磨着地砖，笑声和“下次再约”的尾音还挂在门框上。陈述弯腰收桌上的碗碟，动作不紧不慢，像是做过很多遍。\n\n许岚拿起自己的包，视线扫过桌角时顿了一下。\n\n一盒没拆封的生日蜡烛，塑料壳包得整整齐齐，斜靠在一只空啤酒杯旁边。\n\n她上周在饭桌上随口说过自己的生日日期，当时陈述正夹菜，筷子停了一下，什么都没说。今天不是那个日期，今天只是朋友聚餐结束的普通晚上。\n\n蜡烛盒上印着小朵雏菊图案，不是饭店会备的那种。\n\n陈述直起身，端着一摞盘子从她身边经过，目光掠过桌角，掠过那盒蜡烛，然后移开了。\n\n他没说话。\n\n许岚伸手拿起蜡烛，塑料壳凉凉的，边缘硌在掌心。她侧过头，用开玩笑的语气说：“这蜡烛没人要吗？那我带走了。”\n\n陈述在厨房门口停了一秒。然后他回头看她，嘴角往上弯了一点，不是那种客气的弧度，是那种被撞见什么之后、干脆不藏了的弧度。\n\n他把盘子放进水槽，转身走出来，手在围裙上擦了擦，什么都没说。\n\n许岚拉开包，把蜡烛放进去。拉链合上的声音很轻。\n\n她没再问，他也没说。",
+      "input_tokens": 1357,
+      "output_tokens": 292,
+      "latency_ms": 7327,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "5d96f9fb2570d721ba2f6220df2123a1134838950accf3e69b32bac04507f595",
+      "route_name": null,
+      "route_decision": {
+        "route_name": "B_SHORT_RELATION",
+        "classifier_version": "narrative-route-v1",
+        "decision_reasons": [
+          "scene is relationship-oriented with no physical urgency",
+          "character action involves relational move (message, gesture, proximity)"
+        ],
+        "matched_rules": [
+          "RULE_B_SHORT_RELATION"
+        ],
+        "rejected_routes": [
+          "C_OBJECT_CAUSAL",
+          "A_LITE_INFORMATION_GAP"
+        ]
+      },
+      "compiled_brief_hash": "d0d8bdf802662d19be75bcc163a2f2aa9bfb582a2fc1fcfb035b8f49e3cf8350",
+      "instruction_hash": "d7a76822408396dc71c4599a7f40f33368b90199f0d9c0712383961213437555",
+      "text_path": "cases\\ROMANCE-04\\drafts\\route-3.txt"
+    },
+    {
+      "group": "BASELINE-writer_brief",
+      "replica": 1,
+      "mode": "writer_brief",
+      "candidate_id": "1c64f142-9615-408f-b13f-8ddb8007be2d",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "桌上的碗筷还没收完，火锅的余味混着酱料的气味飘在空气里。朋友们的声音刚消失在楼道，门还没关严实，陈述已经开始收拾盘子了。\n\n许岚站起来帮忙，手指碰到桌角时，指尖触到了什么东西。\n\n一小盒蜡烛。\n\n她低头看。透明的塑料盒，里面整整齐齐码着彩色的小蜡烛，包装完好，连封口贴纸都没撕开。不是刚才聚餐用过的东西——她们根本没点蜡烛。\n\n许岚的手指在盒子上停了一秒。\n\n她上周三下午，在公司茶水间等咖啡时随口说过一句。那天她翻手机日历，说今年生日正好赶上周六，可以睡一整天。陈述当时在旁边洗杯子，没接话。\n\n今天不是周六。\n\n陈述端着两摞盘子从她身边经过，脚步没停。但许岚看见他的视线在桌角扫了一下，又很快移开，像被烫到。\n\n他把盘子放进厨房水槽，瓷器碰出不轻不重的声响。\n\n许岚拿起那盒蜡烛。塑料盒有点凉，边缘硌在她掌心。\n\n“这蜡烛没人要吗？”她朝厨房方向举了举盒子，声音比平时高一点，带着笑，“那我带走了啊。”\n\n厨房里水龙头打开的声音停了两秒。\n\n陈述从门框边探出半个身子，手上还滴着水。他看了看她手里的蜡烛，又看了看她。\n\n他没说“那不是给你的”。也没说“那是刚才谁落下的”。他只是嘴角动了动，然后笑了。\n\n那种笑不是客气，不是敷衍。是被人逮到之后的认栽。\n\n许岚把蜡烛塞进包里，拉链拉上。动作不快，但没犹豫。\n\n陈述转身回去继续洗碗。水声又响起来，比之前大了一点。\n\n她站在桌边，手指还搭在包上。包里的蜡烛盒隔着布料硌出一个小硬角。\n\n她没再问，他也没说。",
+      "raw_response": "桌上的碗筷还没收完，火锅的余味混着酱料的气味飘在空气里。朋友们的声音刚消失在楼道，门还没关严实，陈述已经开始收拾盘子了。\n\n许岚站起来帮忙，手指碰到桌角时，指尖触到了什么东西。\n\n一小盒蜡烛。\n\n她低头看。透明的塑料盒，里面整整齐齐码着彩色的小蜡烛，包装完好，连封口贴纸都没撕开。不是刚才聚餐用过的东西——她们根本没点蜡烛。\n\n许岚的手指在盒子上停了一秒。\n\n她上周三下午，在公司茶水间等咖啡时随口说过一句。那天她翻手机日历，说今年生日正好赶上周六，可以睡一整天。陈述当时在旁边洗杯子，没接话。\n\n今天不是周六。\n\n陈述端着两摞盘子从她身边经过，脚步没停。但许岚看见他的视线在桌角扫了一下，又很快移开，像被烫到。\n\n他把盘子放进厨房水槽，瓷器碰出不轻不重的声响。\n\n许岚拿起那盒蜡烛。塑料盒有点凉，边缘硌在她掌心。\n\n“这蜡烛没人要吗？”她朝厨房方向举了举盒子，声音比平时高一点，带着笑，“那我带走了啊。”\n\n厨房里水龙头打开的声音停了两秒。\n\n陈述从门框边探出半个身子，手上还滴着水。他看了看她手里的蜡烛，又看了看她。\n\n他没说“那不是给你的”。也没说“那是刚才谁落下的”。他只是嘴角动了动，然后笑了。\n\n那种笑不是客气，不是敷衍。是被人逮到之后的认栽。\n\n许岚把蜡烛塞进包里，拉链拉上。动作不快，但没犹豫。\n\n陈述转身回去继续洗碗。水声又响起来，比之前大了一点。\n\n她站在桌边，手指还搭在包上。包里的蜡烛盒隔着布料硌出一个小硬角。\n\n她没再问，他也没说。",
+      "input_tokens": 1257,
+      "output_tokens": 405,
+      "latency_ms": 10520,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "94ffbd58c5816ffe54d0be385e3f5c39ab0e0569fd37ce2126c13245d3699dff",
+      "route_name": null,
+      "route_decision": null,
+      "compiled_brief_hash": null,
+      "instruction_hash": null,
+      "text_path": "cases\\ROMANCE-04\\drafts\\baseline-1.txt"
+    },
+    {
+      "group": "BASELINE-writer_brief",
+      "replica": 2,
+      "mode": "writer_brief",
+      "candidate_id": "b3d9a80d-4531-4950-829e-6eff15bba385",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "许岚把最后一只玻璃杯放进水槽，转身时余光扫到桌角。\n\n一个浅蓝色的小纸盒，巴掌大，斜靠在纸巾架旁边。她伸手拨开纸巾，看清上面的字——生日蜡烛，细长款，彩色火焰。\n\n不是刚才聚餐用过的。刚才根本没点蜡烛。没人过生日。\n\n她的手指在盒子上停了两秒。陈述正从她身后走过，端着叠好的盘子，脚步很轻，盘子碰在大理石台面上发出细微的磕碰声。\n\n许岚拿起那盒蜡烛，翻过来看背面。包装完好，塑料封膜还在，新的。\n\n“这蜡烛没人要吗？”\n\n她侧过身，把盒子举到肩膀高度，朝陈述晃了晃。语气压在“随口一问”的位置上，不高不低，不重。\n\n陈述正在擦灶台。他抬起头，视线先落在盒子上，然后移到她脸上。手上的抹布没停，继续沿着燃气灶边缘画圈。\n\n他没说话。\n\n但嘴角动了。\n\n不是那种被逗笑的弧度，是更浅的——嘴唇抿了一下，然后松开，像把什么话咽回去又没完全咽干净。\n\n许岚把盒子在掌心转了半圈，耸耸肩：“没人认领的话，我带走了啊。”\n\n陈述低下头继续擦灶台。这次嘴角的弧度更明显了，但依然什么都没说。\n\n许岚拉开包，把蜡烛盒塞进内侧口袋。拉链声在安静的厨房里格外清晰。\n\n她抬起头时，陈述正好把抹布搭在水龙头上，侧脸的线条在灯光下很平静。不是那种“我没听见”的平静，是那种“我听见了，我选择不说话”的平静。\n\n许岚把包扣好，拎起来挂在肩上。\n\n她没再问。\n\n他也没说。",
+      "raw_response": "许岚把最后一只玻璃杯放进水槽，转身时余光扫到桌角。\n\n一个浅蓝色的小纸盒，巴掌大，斜靠在纸巾架旁边。她伸手拨开纸巾，看清上面的字——生日蜡烛，细长款，彩色火焰。\n\n不是刚才聚餐用过的。刚才根本没点蜡烛。没人过生日。\n\n她的手指在盒子上停了两秒。陈述正从她身后走过，端着叠好的盘子，脚步很轻，盘子碰在大理石台面上发出细微的磕碰声。\n\n许岚拿起那盒蜡烛，翻过来看背面。包装完好，塑料封膜还在，新的。\n\n“这蜡烛没人要吗？”\n\n她侧过身，把盒子举到肩膀高度，朝陈述晃了晃。语气压在“随口一问”的位置上，不高不低，不重。\n\n陈述正在擦灶台。他抬起头，视线先落在盒子上，然后移到她脸上。手上的抹布没停，继续沿着燃气灶边缘画圈。\n\n他没说话。\n\n但嘴角动了。\n\n不是那种被逗笑的弧度，是更浅的——嘴唇抿了一下，然后松开，像把什么话咽回去又没完全咽干净。\n\n许岚把盒子在掌心转了半圈，耸耸肩：“没人认领的话，我带走了啊。”\n\n陈述低下头继续擦灶台。这次嘴角的弧度更明显了，但依然什么都没说。\n\n许岚拉开包，把蜡烛盒塞进内侧口袋。拉链声在安静的厨房里格外清晰。\n\n她抬起头时，陈述正好把抹布搭在水龙头上，侧脸的线条在灯光下很平静。不是那种“我没听见”的平静，是那种“我听见了，我选择不说话”的平静。\n\n许岚把包扣好，拎起来挂在肩上。\n\n她没再问。\n\n他也没说。",
+      "input_tokens": 1257,
+      "output_tokens": 376,
+      "latency_ms": 9548,
+      "finish_reason": "stop",
+      "error_code": "TEMPO_FINAL_LINE_MISMATCH",
+      "error_message": "TEMPO_FINAL_LINE_MISMATCH: final paragraph must include the required marker '她没再问，他也没说。'",
+      "rendered_user_prompt_sha256": "94ffbd58c5816ffe54d0be385e3f5c39ab0e0569fd37ce2126c13245d3699dff",
+      "route_name": null,
+      "route_decision": null,
+      "compiled_brief_hash": null,
+      "instruction_hash": null,
+      "text_path": "cases\\ROMANCE-04\\drafts\\baseline-2.txt"
+    },
+    {
+      "group": "BASELINE-writer_brief",
+      "replica": 3,
+      "mode": "writer_brief",
+      "candidate_id": "2241e044-13c6-4641-98ba-be0a7e831e4f",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "朋友们陆续起身，椅子腿在地板上刮出几声短促的响。门口那边还在互相道别，有人笑着说下次换谁请客，有人已经低头翻包找车钥匙。\n\n许岚没跟着往门口走。她站在餐桌边，视线落在桌角那盒蜡烛上。\n\n透明的塑料盒，六支，细长，白色，没拆封。刚才吃饭的时候肯定没有这东西，她记得很清楚，因为那块位置一开始放的是她的手机，后来她挪开了。现在蜡烛就搁在那里，像是被人随手放下，又像是刻意留下。\n\n她的手指在桌沿停了半秒，然后拿起来。\n\n塑料盒表面冰凉，边角硌了一下她的掌心。她翻了个面，没看见价签，也没看见任何字条。\n\n陈述正从对面走过来，两只手端着叠起来的盘子，筷子横放在最上面。他的脚步不急，视线扫过她手里的东西，然后继续往厨房走。\n\n“这蜡烛没人要吗？”许岚把盒子举起来一点，语气往上扬，带着笑意，“那我带走了啊。”\n\n陈述在厨房门口转过身。盘子还端在手里，他没立刻放。\n\n他笑了。\n\n不是客气的那种，也不是敷衍的。嘴角往上扬了一下，眼睛也跟着弯了一瞬，然后他低下头，把盘子放进水槽，没说话。\n\n许岚把蜡烛塞进包里。\n\n包不大，蜡烛盒斜着才勉强装进去，拉链拉到一半卡了一下，她用力扯过去。包被撑出一个方形轮廓，皮面鼓起一块。\n\n陈述从厨房出来，手里拿了个塑料袋，开始收拾桌上剩下的纸巾和一次性杯子。他瞥了一眼她的包，那个鼓起来的形状很明显，但他什么都没说。\n\n门口有人喊了一声：“许岚你走不走？电梯来了。”\n\n“来了。”她拎起包，带子滑到肩上。\n\n蜡烛在包里，包贴着她的腰侧，隔着皮面和一层塑料，硬硬地硌着。\n\n她走到门口换鞋的时候，陈述还在收拾桌子。她没回头，他也没叫她。\n\n她没再问，他也没说。",
+      "raw_response": "朋友们陆续起身，椅子腿在地板上刮出几声短促的响。门口那边还在互相道别，有人笑着说下次换谁请客，有人已经低头翻包找车钥匙。\n\n许岚没跟着往门口走。她站在餐桌边，视线落在桌角那盒蜡烛上。\n\n透明的塑料盒，六支，细长，白色，没拆封。刚才吃饭的时候肯定没有这东西，她记得很清楚，因为那块位置一开始放的是她的手机，后来她挪开了。现在蜡烛就搁在那里，像是被人随手放下，又像是刻意留下。\n\n她的手指在桌沿停了半秒，然后拿起来。\n\n塑料盒表面冰凉，边角硌了一下她的掌心。她翻了个面，没看见价签，也没看见任何字条。\n\n陈述正从对面走过来，两只手端着叠起来的盘子，筷子横放在最上面。他的脚步不急，视线扫过她手里的东西，然后继续往厨房走。\n\n“这蜡烛没人要吗？”许岚把盒子举起来一点，语气往上扬，带着笑意，“那我带走了啊。”\n\n陈述在厨房门口转过身。盘子还端在手里，他没立刻放。\n\n他笑了。\n\n不是客气的那种，也不是敷衍的。嘴角往上扬了一下，眼睛也跟着弯了一瞬，然后他低下头，把盘子放进水槽，没说话。\n\n许岚把蜡烛塞进包里。\n\n包不大，蜡烛盒斜着才勉强装进去，拉链拉到一半卡了一下，她用力扯过去。包被撑出一个方形轮廓，皮面鼓起一块。\n\n陈述从厨房出来，手里拿了个塑料袋，开始收拾桌上剩下的纸巾和一次性杯子。他瞥了一眼她的包，那个鼓起来的形状很明显，但他什么都没说。\n\n门口有人喊了一声：“许岚你走不走？电梯来了。”\n\n“来了。”她拎起包，带子滑到肩上。\n\n蜡烛在包里，包贴着她的腰侧，隔着皮面和一层塑料，硬硬地硌着。\n\n她走到门口换鞋的时候，陈述还在收拾桌子。她没回头，他也没叫她。\n\n她没再问，他也没说。",
+      "input_tokens": 1257,
+      "output_tokens": 434,
+      "latency_ms": 10940,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "94ffbd58c5816ffe54d0be385e3f5c39ab0e0569fd37ce2126c13245d3699dff",
+      "route_name": null,
+      "route_decision": null,
+      "compiled_brief_hash": null,
+      "instruction_hash": null,
+      "text_path": "cases\\ROMANCE-04\\drafts\\baseline-3.txt"
+    }
+  ],
+  "actual_route": "B_SHORT_RELATION",
+  "route_decision": {
+    "route_name": "B_SHORT_RELATION",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "scene is relationship-oriented with no physical urgency",
+      "character action involves relational move (message, gesture, proximity)"
+    ],
+    "matched_rules": [
+      "RULE_B_SHORT_RELATION"
+    ],
+    "rejected_routes": [
+      "C_OBJECT_CAUSAL",
+      "A_LITE_INFORMATION_GAP"
+    ]
+  }
+}

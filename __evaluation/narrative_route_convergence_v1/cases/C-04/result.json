@@ -1,0 +1,338 @@
+{
+  "case_id": "C-04",
+  "category": "日常任务",
+  "title": "菜市场错拿菜篮",
+  "run_id": "f4ce2214-d72e-4c09-bd1a-a03cae86cddc",
+  "expected_route": "C_OBJECT_CAUSAL",
+  "planner": {
+    "candidate_id": "439430cf-daff-4584-a7eb-ef110b565cb8",
+    "attempt_number": 1,
+    "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+    "model_id": "deepseek-v4-pro",
+    "prompt_version_id": "f9052f8a-dc4e-5408-b14e-fc1badaf57f8",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 12288,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "json_object"
+    },
+    "text_output": "{\n  \"planner_contract_version\": 2,\n  \"scene_goal\": \"丁立在菜市场收摊前，用现场物件巧妙换回被老太太拿错的菜篮，确保药安全回到手中，同时避免直接冲突。\",\n  \"location\": \"傍晚的菜市场，摊位间通道，靠近出口处\",\n  \"time\": \"收摊时分，天色渐暗，市场广播提醒即将关门\",\n  \"scene_state\": {\n    \"last_completed_action\": \"丁立发现自己的菜篮被换走，老太太正推着菜篮往出口走\",\n    \"present_characters\": [\n      \"丁立\",\n      \"老太太\",\n      \"附近摊主\"\n    ],\n    \"visible_facts\": [\n      \"丁立的菜篮和老太太的菜篮外观相似\",\n      \"老太太的菜篮里有丁立的药包\",\n      \"老太太正缓慢走向出口\",\n      \"市场即将收摊，人流渐少\",\n      \"附近有摊位正在收拾\",\n      \"老太太似乎未察觉拿错篮子\"\n    ],\n    \"available_objects\": [\n      \"丁立手中的老太太的菜篮（内装蔬菜）\",\n      \"老太太推着的丁立的菜篮（内有药包）\",\n      \"摊位上待售的相似蔬菜\",\n      \"摊主的秤和塑料袋\",\n      \"市场广播喇叭\"\n    ],\n    \"unresolved_problem\": \"丁立必须在不引起老太太惊慌或冲突的情况下，取回自己的菜篮和药。\",\n    \"already_existing_constraints\": [\n      \"不能直接追上去翻篮子\",\n      \"不能惊吓老太太\",\n      \"必须在收摊前完成\",\n      \"药必须今天带回家\"\n    ]\n  },\n  \"characters\": [\n    {\n      \"name\": \"丁立\",\n      \"goal\": \"用现场物件巧妙换回自己的菜篮和药，避免冲突\",\n      \"known\": [\n        \"自己的菜篮被老太太拿错\",\n        \"药在老太太推的篮子里\",\n        \"老太太似乎未察觉\"\n      ],\n      \"unknown\": [\n        \"老太太是否会接受交换提议\",\n        \"老太太是否听力或视力不佳\"\n      ],\n      \"mistaken_beliefs\": [\n        \"老太太可能完全不讲理\"\n      ],\n      \"constraints\": [\n        \"不能直接追上去翻篮子\",\n        \"不能惊吓老太太\",\n        \"必须在收摊前完成\"\n      ],\n      \"observed_evidence\": [\n        \"老太太菜篮里的药包与自己的处方一致\",\n        \"老太太步伐缓慢，未回头查看\",\n        \"附近摊位有相同品种的蔬菜\"\n      ],\n      \"current_interpretation\": \"老太太可能因为篮子相似而误拿，并未察觉，若直接指出可能引发抵触，不如用篮子里的菜作为交换理由。\",\n      \"how_interpretation_drives_action\": \"丁立决定利用老太太篮子里的菜与自己手中篮子的菜相似，假装自己也拿错了，提议交换回来。\"\n    },\n    {\n      \"name\": \"老太太\",\n      \"goal\": \"买完菜回家做饭\",\n      \"known\": [\n        \"自己买了一些蔬菜\",\n        \"菜篮外观与丁立的相似\"\n      ],\n      \"unknown\": [\n        \"拿错了篮子\",\n        \"篮子里有别人的药\"\n      ],\n      \"mistaken_beliefs\": [\n        \"手里的篮子就是自己的\"\n      ],\n      \"constraints\": [\n        \"年事已高，行动缓慢\",\n        \"可能听力不佳\"\n      ],\n      \"observed_evidence\": [\n        \"丁立走上前来，指着篮子里的菜\",\n        \"丁立手里也有一个相似的篮子\"\n      ],\n      \"current_interpretation\": \"这个年轻人可能也拿错了篮子，想和我换回来。\",\n      \"how_interpretation_drives_action\": \"老太太停下脚步，听丁立解释，并检查篮子里的菜。\"\n    },\n    {\n      \"name\": \"附近摊主\",\n      \"goal\": \"收摊回家\",\n      \"known\": [\n        \"两人篮子相似\",\n        \"市场快关门了\"\n      ],\n      \"unknown\": [\n        \"篮子里有药\",\n        \"丁立的真实意图\"\n      ],\n      \"mistaken_beliefs\": [],\n      \"constraints\": [\n        \"不能多管闲事耽误收摊\"\n      ],\n      \"observed_evidence\": [\n        \"丁立走向老太太\",\n        \"两人在交谈\"\n      ],\n      \"current_interpretation\": \"可能是熟人聊天或交易纠纷。\",\n      \"how_interpretation_drives_action\": \"继续收拾摊位，偶尔瞥一眼。\"\n    }\n  ],\n  \"concrete_problem\": \"丁立如何在不引起老太太惊慌或冲突的情况下，让老太太自愿交换篮子？\",\n  \"pressure\": \"市场广播催促收摊，老太太即将走出市场，时间紧迫，且直接冲突可能引发尴尬或纠纷。\",\n  \"turning_point\": \"丁立指着老太太篮子里的菜，称自己拿错了篮子，提议交换，老太太犹豫片刻后同意。\",\n  \"end_condition\": \"老太太和丁立交换菜篮，丁立确认药包仍在，老太太未察觉异常。\",\n  \"forbidden\": [\n    \"丁立直接追上去翻篮子\",\n    \"丁立大声呼喊或惊吓老太太\",\n    \"引入第三方强制干预\",\n    \"药包丢失或损坏\",\n    \"揭示老太太误拿的真正原因\"\n  ],\n  \"causal_transitions\": [\n    {\n      \"id\": \"CT01\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"老太太菜篮里的蔬菜与丁立手中篮子里的蔬菜品种相同（如都是青菜和萝卜）\",\n      \"character_interpretation\": \"丁立意识到可以利用蔬菜的相似性，假装自己也拿错了篮子，从而自然提议交换。\",\n      \"character_next_action\": \"丁立快步上前，微笑着对老太太说：“阿姨，我们好像拿错篮子啦，您看您篮子里的菜和我买的差不多，我篮子里的也像您的，咱们换回来吧。”\",\n      \"rejected_alternative\": \"直接告诉老太太她拿错了，里面有药，可能引发老太太的怀疑或慌乱。\",\n      \"immediate_consequence\": \"老太太停下脚步，低头查看篮子里的菜，犹豫了一下，然后同意交换。两只菜篮顺利互换。\",\n      \"counterfactual_without_action\": \"丁立若不上前搭话，老太太会走出市场，丁立可能失去药，或被迫追赶引发更大冲突。\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"老太太推着丁立的菜篮（内有药）走向出口，丁立站在原地拿着老太太的菜篮。\",\n        \"after\": \"老太太推着自己的菜篮离开，丁立拿回了自己的菜篮和药。\"\n      },\n      \"cost_or_commitment\": \"丁立放弃了直接澄清事实的机会，选择用善意的谎言避免冲突，承担了老太太可能拒绝的风险。\",\n      \"next_constraint\": \"丁立必须在交换后立即确认药包完好，且不能表现出急切。\",\n      \"reader_must_infer\": \"丁立为何不直接说明药的事？因为他判断老太太可能因被指认错误而防御，用相似蔬菜作为借口更易被接受。\",\n      \"narrator_must_not_state\": [\n        \"老太太是否真的相信了丁立的借口\",\n        \"丁立内心的全部紧张情绪\"\n      ]\n    }\n  ],\n  \"tempo_guardrails\": {\n    \"entry_pressure\": \"市场广播响起：“各位顾客，市场即将关门，请尽快离场。”老太太已经快到出口。\",\n    \"dominant_pressure\": {\n      \"kind\": \"resource_constraint\",\n      \"description\": \"时间正在耗尽，老太太即将离开市场，丁立必须在收摊前完成交换，否则药可能丢失。\"\n    },\n    \"allowed_viewpoint_misread\": \"老太太可能把丁立的微笑理解为友好，而非急切。\",\n    \"disclosure_cap\": 1,\n    \"must_remain_unclassified\": [\n      \"老太太是否察觉篮子被换过\",\n      \"丁立对老太太的同情程度\"\n    ],\n    \"stop_state\": {\n      \"type\": \"physical_change\",\n      \"visible_fact\": \"丁立手中提着自己的菜篮，药包在篮子内侧可见。\",\n      \"what_is_now_different\": \"菜篮归属已从老太太换回丁立，药包安全回到丁立手中。\",\n      \"must_not_append\": \"不得描述老太太离开后的心理活动或后续。\"\n    },\n    \"final_line_must_include\": \"药包静静地躺在篮子一角。\"\n  },\n  \"chapter_contract_check\": {\n    \"function_aligned\": true,\n    \"must_deliver_covered\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_enabled\": true,\n    \"main_payoff_prepared\": true,\n    \"ending_hook_established\": true,\n    \"causal_transitions_grounded\": true,\n    \"reader_inference_not_pre_resolved\": true,\n    \"scene_state_reconstructed\": true,\n    \"information_sources_legal\": true,\n    \"character_choice_is_real\": true,\n    \"consequence_is_counterfactual\": true,\n    \"state_delta_is_nonempty\": true,\n    \"next_constraint_is_new\": true,\n    \"stop_state_is_visible\": true,\n    \"stop_state_changes_future_actions\": true\n  }\n}",
+    "raw_response": "{\n  \"planner_contract_version\": 2,\n  \"scene_goal\": \"丁立在菜市场收摊前，用现场物件巧妙换回被老太太拿错的菜篮，确保药安全回到手中，同时避免直接冲突。\",\n  \"location\": \"傍晚的菜市场，摊位间通道，靠近出口处\",\n  \"time\": \"收摊时分，天色渐暗，市场广播提醒即将关门\",\n  \"scene_state\": {\n    \"last_completed_action\": \"丁立发现自己的菜篮被换走，老太太正推着菜篮往出口走\",\n    \"present_characters\": [\n      \"丁立\",\n      \"老太太\",\n      \"附近摊主\"\n    ],\n    \"visible_facts\": [\n      \"丁立的菜篮和老太太的菜篮外观相似\",\n      \"老太太的菜篮里有丁立的药包\",\n      \"老太太正缓慢走向出口\",\n      \"市场即将收摊，人流渐少\",\n      \"附近有摊位正在收拾\",\n      \"老太太似乎未察觉拿错篮子\"\n    ],\n    \"available_objects\": [\n      \"丁立手中的老太太的菜篮（内装蔬菜）\",\n      \"老太太推着的丁立的菜篮（内有药包）\",\n      \"摊位上待售的相似蔬菜\",\n      \"摊主的秤和塑料袋\",\n      \"市场广播喇叭\"\n    ],\n    \"unresolved_problem\": \"丁立必须在不引起老太太惊慌或冲突的情况下，取回自己的菜篮和药。\",\n    \"already_existing_constraints\": [\n      \"不能直接追上去翻篮子\",\n      \"不能惊吓老太太\",\n      \"必须在收摊前完成\",\n      \"药必须今天带回家\"\n    ]\n  },\n  \"characters\": [\n    {\n      \"name\": \"丁立\",\n      \"goal\": \"用现场物件巧妙换回自己的菜篮和药，避免冲突\",\n      \"known\": [\n        \"自己的菜篮被老太太拿错\",\n        \"药在老太太推的篮子里\",\n        \"老太太似乎未察觉\"\n      ],\n      \"unknown\": [\n        \"老太太是否会接受交换提议\",\n        \"老太太是否听力或视力不佳\"\n      ],\n      \"mistaken_beliefs\": [\n        \"老太太可能完全不讲理\"\n      ],\n      \"constraints\": [\n        \"不能直接追上去翻篮子\",\n        \"不能惊吓老太太\",\n        \"必须在收摊前完成\"\n      ],\n      \"observed_evidence\": [\n        \"老太太菜篮里的药包与自己的处方一致\",\n        \"老太太步伐缓慢，未回头查看\",\n        \"附近摊位有相同品种的蔬菜\"\n      ],\n      \"current_interpretation\": \"老太太可能因为篮子相似而误拿，并未察觉，若直接指出可能引发抵触，不如用篮子里的菜作为交换理由。\",\n      \"how_interpretation_drives_action\": \"丁立决定利用老太太篮子里的菜与自己手中篮子的菜相似，假装自己也拿错了，提议交换回来。\"\n    },\n    {\n      \"name\": \"老太太\",\n      \"goal\": \"买完菜回家做饭\",\n      \"known\": [\n        \"自己买了一些蔬菜\",\n        \"菜篮外观与丁立的相似\"\n      ],\n      \"unknown\": [\n        \"拿错了篮子\",\n        \"篮子里有别人的药\"\n      ],\n      \"mistaken_beliefs\": [\n        \"手里的篮子就是自己的\"\n      ],\n      \"constraints\": [\n        \"年事已高，行动缓慢\",\n        \"可能听力不佳\"\n      ],\n      \"observed_evidence\": [\n        \"丁立走上前来，指着篮子里的菜\",\n        \"丁立手里也有一个相似的篮子\"\n      ],\n      \"current_interpretation\": \"这个年轻人可能也拿错了篮子，想和我换回来。\",\n      \"how_interpretation_drives_action\": \"老太太停下脚步，听丁立解释，并检查篮子里的菜。\"\n    },\n    {\n      \"name\": \"附近摊主\",\n      \"goal\": \"收摊回家\",\n      \"known\": [\n        \"两人篮子相似\",\n        \"市场快关门了\"\n      ],\n      \"unknown\": [\n        \"篮子里有药\",\n        \"丁立的真实意图\"\n      ],\n      \"mistaken_beliefs\": [],\n      \"constraints\": [\n        \"不能多管闲事耽误收摊\"\n      ],\n      \"observed_evidence\": [\n        \"丁立走向老太太\",\n        \"两人在交谈\"\n      ],\n      \"current_interpretation\": \"可能是熟人聊天或交易纠纷。\",\n      \"how_interpretation_drives_action\": \"继续收拾摊位，偶尔瞥一眼。\"\n    }\n  ],\n  \"concrete_problem\": \"丁立如何在不引起老太太惊慌或冲突的情况下，让老太太自愿交换篮子？\",\n  \"pressure\": \"市场广播催促收摊，老太太即将走出市场，时间紧迫，且直接冲突可能引发尴尬或纠纷。\",\n  \"turning_point\": \"丁立指着老太太篮子里的菜，称自己拿错了篮子，提议交换，老太太犹豫片刻后同意。\",\n  \"end_condition\": \"老太太和丁立交换菜篮，丁立确认药包仍在，老太太未察觉异常。\",\n  \"forbidden\": [\n    \"丁立直接追上去翻篮子\",\n    \"丁立大声呼喊或惊吓老太太\",\n    \"引入第三方强制干预\",\n    \"药包丢失或损坏\",\n    \"揭示老太太误拿的真正原因\"\n  ],\n  \"causal_transitions\": [\n    {\n      \"id\": \"CT01\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"老太太菜篮里的蔬菜与丁立手中篮子里的蔬菜品种相同（如都是青菜和萝卜）\",\n      \"character_interpretation\": \"丁立意识到可以利用蔬菜的相似性，假装自己也拿错了篮子，从而自然提议交换。\",\n      \"character_next_action\": \"丁立快步上前，微笑着对老太太说：“阿姨，我们好像拿错篮子啦，您看您篮子里的菜和我买的差不多，我篮子里的也像您的，咱们换回来吧。”\",\n      \"rejected_alternative\": \"直接告诉老太太她拿错了，里面有药，可能引发老太太的怀疑或慌乱。\",\n      \"immediate_consequence\": \"老太太停下脚步，低头查看篮子里的菜，犹豫了一下，然后同意交换。两只菜篮顺利互换。\",\n      \"counterfactual_without_action\": \"丁立若不上前搭话，老太太会走出市场，丁立可能失去药，或被迫追赶引发更大冲突。\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"老太太推着丁立的菜篮（内有药）走向出口，丁立站在原地拿着老太太的菜篮。\",\n        \"after\": \"老太太推着自己的菜篮离开，丁立拿回了自己的菜篮和药。\"\n      },\n      \"cost_or_commitment\": \"丁立放弃了直接澄清事实的机会，选择用善意的谎言避免冲突，承担了老太太可能拒绝的风险。\",\n      \"next_constraint\": \"丁立必须在交换后立即确认药包完好，且不能表现出急切。\",\n      \"reader_must_infer\": \"丁立为何不直接说明药的事？因为他判断老太太可能因被指认错误而防御，用相似蔬菜作为借口更易被接受。\",\n      \"narrator_must_not_state\": [\n        \"老太太是否真的相信了丁立的借口\",\n        \"丁立内心的全部紧张情绪\"\n      ]\n    }\n  ],\n  \"tempo_guardrails\": {\n    \"entry_pressure\": \"市场广播响起：“各位顾客，市场即将关门，请尽快离场。”老太太已经快到出口。\",\n    \"dominant_pressure\": {\n      \"kind\": \"resource_constraint\",\n      \"description\": \"时间正在耗尽，老太太即将离开市场，丁立必须在收摊前完成交换，否则药可能丢失。\"\n    },\n    \"allowed_viewpoint_misread\": \"老太太可能把丁立的微笑理解为友好，而非急切。\",\n    \"disclosure_cap\": 1,\n    \"must_remain_unclassified\": [\n      \"老太太是否察觉篮子被换过\",\n      \"丁立对老太太的同情程度\"\n    ],\n    \"stop_state\": {\n      \"type\": \"physical_change\",\n      \"visible_fact\": \"丁立手中提着自己的菜篮，药包在篮子内侧可见。\",\n      \"what_is_now_different\": \"菜篮归属已从老太太换回丁立，药包安全回到丁立手中。\",\n      \"must_not_append\": \"不得描述老太太离开后的心理活动或后续。\"\n    },\n    \"final_line_must_include\": \"药包静静地躺在篮子一角。\"\n  },\n  \"chapter_contract_check\": {\n    \"function_aligned\": true,\n    \"must_deliver_covered\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_enabled\": true,\n    \"main_payoff_prepared\": true,\n    \"ending_hook_established\": true,\n    \"causal_transitions_grounded\": true,\n    \"reader_inference_not_pre_resolved\": true,\n    \"scene_state_reconstructed\": true,\n    \"information_sources_legal\": true,\n    \"character_choice_is_real\": true,\n    \"consequence_is_counterfactual\": true,\n    \"state_delta_is_nonempty\": true,\n    \"next_constraint_is_new\": true,\n    \"stop_state_is_visible\": true,\n    \"stop_state_changes_future_actions\": true\n  }\n}",
+    "input_tokens": 3310,
+    "output_tokens": 2004,
+    "latency_ms": 30287,
+    "finish_reason": "stop",
+    "error_code": null,
+    "error_message": null,
+    "rendered_user_prompt_sha256": "7ba022d0d69a42916c2e984bb39b630ceea7393a18b74638d3e5a01c7029338c",
+    "route_name": null,
+    "route_decision": null,
+    "compiled_brief_hash": null,
+    "instruction_hash": null
+  },
+  "drafts": [
+    {
+      "group": "ROUTE-A_LITE_INFORMATION_GAP",
+      "replica": 1,
+      "mode": "narrative_route",
+      "candidate_id": "52930f01-cb31-43e7-abc1-506ef5a4ed16",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "A_LITE_INFORMATION_GAP",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "multiple characters with distinct information",
+            "viewpoint character has unknown facts and an interpretation",
+            "secondary character carries independent knowledge"
+          ],
+          "matched_rules": [
+            "RULE_A_LITE_INFORMATION_GAP"
+          ],
+          "rejected_routes": [
+            "C_OBJECT_CAUSAL"
+          ]
+        },
+        "compiled_brief_hash": "59450e2cf75757bee4ee9c6a6117ee59993f9fcba60733120eb9f3f8cc198ee1",
+        "instruction_hash": "d368cbfa0846d1cb9adf452db083cbb58ba69154f281b3d6c895cb34da157cec",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "市场广播的最后一个字还在喇叭里嗡嗡作响，丁立的手已经攥紧了空荡荡的塑料袋提手。他的菜篮——那个竹编的、提手缠着蓝色布条的菜篮——此刻正搁在一个老太太的小推车上，离出口不到十米。\n\n老太太推得很慢，推车轮子在地砖缝上咯噔咯噔地响。她没回头。\n\n丁立迈出步子。不是跑，是快步——摊贩们正在收摊，过道里堆着泡沫箱和折叠桌，跑起来会撞翻东西。他的视线钉在老太太推车上的那个篮子里：牛皮纸药包的一角从芹菜叶子底下露出来，上面印着社区卫生服务中心的绿色标志。\n\n“阿姨。”\n\n老太太停下来，转过头。她戴着老花镜，镜片后面一双眼睛浑浊但警觉。\n\n“阿姨，我们好像拿错篮子啦。”丁立把手里那个篮子往前递了递，让篮子口朝向她，露出里面码得整整齐齐的上海青。那些上海青是老太太篮子里的——他在自己篮子被换走之前，亲眼看见她在隔壁菜摊挑了整整五分钟，一片叶子一片叶子翻着看。\n\n老太太低头看了看丁立递过来的篮子，又低头看了看自己推车上的篮子。两个篮子都是竹编的，提手都缠着布条，只不过她缠的是红色，丁立缠的是蓝色。\n\n“您看，”丁立指着她篮子里的芹菜，“您篮子里这芹菜，跟我买的差不多。我篮子里这上海青——”他又指了指自己手里的篮子，“这上海青挑得这么仔细，一看就是您的。咱俩在同一个摊上买菜，篮子搁一块儿，准是拿串了。”\n\n老太太没说话。她弯下腰，凑近自己推车上的篮子，用两根手指拨开芹菜叶子。\n\n丁立的指关节在塑料袋提手上勒出白印。\n\n老太太直起腰，看了看丁立手里的篮子，又看了看丁立的脸。她的目光在丁立额角的汗珠上停了一瞬。\n\n“上海青是我挑的。”她说。声音不大，但很稳。\n\n“是，一看就是您挑的。”丁立把篮子又往前递了半寸，“咱们换回来吧？”\n\n老太太伸手接过丁立递来的篮子，搁进推车。然后她把自己推车上的篮子拎起来，两只手端着，递给丁立。\n\n篮子交接的瞬间，丁立闻到了药包里透出来的中药味——熟地、当归，和处方单上写的一模一样。\n\n“谢谢阿姨。”\n\n老太太已经推着车往出口走了。推车轮子重新咯噔咯噔地响起来。\n\n丁立把篮子挎在胳膊上，侧过身让一个扛着折叠桌的摊贩过去。篮子内侧，牛皮纸药包从芹菜和两颗土豆之间露出大半，绿色的社区卫生服务中心标志正对着他的眼睛。\n\n药包静静地躺在篮子一角。",
+      "raw_response": "市场广播的最后一个字还在喇叭里嗡嗡作响，丁立的手已经攥紧了空荡荡的塑料袋提手。他的菜篮——那个竹编的、提手缠着蓝色布条的菜篮——此刻正搁在一个老太太的小推车上，离出口不到十米。\n\n老太太推得很慢，推车轮子在地砖缝上咯噔咯噔地响。她没回头。\n\n丁立迈出步子。不是跑，是快步——摊贩们正在收摊，过道里堆着泡沫箱和折叠桌，跑起来会撞翻东西。他的视线钉在老太太推车上的那个篮子里：牛皮纸药包的一角从芹菜叶子底下露出来，上面印着社区卫生服务中心的绿色标志。\n\n“阿姨。”\n\n老太太停下来，转过头。她戴着老花镜，镜片后面一双眼睛浑浊但警觉。\n\n“阿姨，我们好像拿错篮子啦。”丁立把手里那个篮子往前递了递，让篮子口朝向她，露出里面码得整整齐齐的上海青。那些上海青是老太太篮子里的——他在自己篮子被换走之前，亲眼看见她在隔壁菜摊挑了整整五分钟，一片叶子一片叶子翻着看。\n\n老太太低头看了看丁立递过来的篮子，又低头看了看自己推车上的篮子。两个篮子都是竹编的，提手都缠着布条，只不过她缠的是红色，丁立缠的是蓝色。\n\n“您看，”丁立指着她篮子里的芹菜，“您篮子里这芹菜，跟我买的差不多。我篮子里这上海青——”他又指了指自己手里的篮子，“这上海青挑得这么仔细，一看就是您的。咱俩在同一个摊上买菜，篮子搁一块儿，准是拿串了。”\n\n老太太没说话。她弯下腰，凑近自己推车上的篮子，用两根手指拨开芹菜叶子。\n\n丁立的指关节在塑料袋提手上勒出白印。\n\n老太太直起腰，看了看丁立手里的篮子，又看了看丁立的脸。她的目光在丁立额角的汗珠上停了一瞬。\n\n“上海青是我挑的。”她说。声音不大，但很稳。\n\n“是，一看就是您挑的。”丁立把篮子又往前递了半寸，“咱们换回来吧？”\n\n老太太伸手接过丁立递来的篮子，搁进推车。然后她把自己推车上的篮子拎起来，两只手端着，递给丁立。\n\n篮子交接的瞬间，丁立闻到了药包里透出来的中药味——熟地、当归，和处方单上写的一模一样。\n\n“谢谢阿姨。”\n\n老太太已经推着车往出口走了。推车轮子重新咯噔咯噔地响起来。\n\n丁立把篮子挎在胳膊上，侧过身让一个扛着折叠桌的摊贩过去。篮子内侧，牛皮纸药包从芹菜和两颗土豆之间露出大半，绿色的社区卫生服务中心标志正对着他的眼睛。\n\n药包静静地躺在篮子一角。",
+      "input_tokens": 1545,
+      "output_tokens": 611,
+      "latency_ms": 14729,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "5061530f9ee3c0d599e9dea2426a54c0533e38b507d9e5cfaa5e040bfb83e109",
+      "route_name": null,
+      "route_decision": {
+        "route_name": "A_LITE_INFORMATION_GAP",
+        "classifier_version": "narrative-route-v1",
+        "decision_reasons": [
+          "multiple characters with distinct information",
+          "viewpoint character has unknown facts and an interpretation",
+          "secondary character carries independent knowledge"
+        ],
+        "matched_rules": [
+          "RULE_A_LITE_INFORMATION_GAP"
+        ],
+        "rejected_routes": [
+          "C_OBJECT_CAUSAL"
+        ]
+      },
+      "compiled_brief_hash": "59450e2cf75757bee4ee9c6a6117ee59993f9fcba60733120eb9f3f8cc198ee1",
+      "instruction_hash": "d368cbfa0846d1cb9adf452db083cbb58ba69154f281b3d6c895cb34da157cec",
+      "text_path": "cases\\C-04\\drafts\\route-1.txt"
+    },
+    {
+      "group": "ROUTE-A_LITE_INFORMATION_GAP",
+      "replica": 2,
+      "mode": "narrative_route",
+      "candidate_id": "8dad685c-0a0a-4e96-906c-acca4728ca90",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "A_LITE_INFORMATION_GAP",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "multiple characters with distinct information",
+            "viewpoint character has unknown facts and an interpretation",
+            "secondary character carries independent knowledge"
+          ],
+          "matched_rules": [
+            "RULE_A_LITE_INFORMATION_GAP"
+          ],
+          "rejected_routes": [
+            "C_OBJECT_CAUSAL"
+          ]
+        },
+        "compiled_brief_hash": "59450e2cf75757bee4ee9c6a6117ee59993f9fcba60733120eb9f3f8cc198ee1",
+        "instruction_hash": "d368cbfa0846d1cb9adf452db083cbb58ba69154f281b3d6c895cb34da157cec",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "“各位顾客，市场即将关门，请尽快离场。”\n\n广播声还在头顶回荡，丁立的手已经伸向菜摊边那只竹篮。手指触到篮柄的瞬间，他停住了。\n\n这不是他的篮子。\n\n他的篮子里应该有一包药——褐色纸袋，白色处方签贴在侧面，上面写着他的名字。现在这只篮子里只有两把青菜、一袋土豆，还有一截用报纸裹着的藕。\n\n心脏猛跳了两下。他抬头扫视过道，视线越过正在收摊的菜贩、正在卷塑料布的鱼摊老板，最后落在出口方向。\n\n一个老太太正推着菜篮车，慢慢往门口走。\n\n那只篮子也是竹编的，也是半旧的，篮柄上也缠着红绳。\n\n丁立抓起面前的篮子追了上去。鞋底踩过湿漉漉的水泥地面，绕过一堆正在装筐的萝卜，在距离老太太三步远的地方放慢了脚步。\n\n老太太走得很慢，一只手扶着篮车把手，另一只手按在腰侧。她没有回头。\n\n丁立跟在她身后走了两步，视线落在她的篮子里——青菜、土豆、藕，还有一只褐色纸袋，压在藕段下面，只露出一个角。\n\n白色处方签的边沿从纸袋侧面支出来。\n\n他深吸一口气，快走两步，绕到老太太的左侧，让自己的菜篮和她的并排。\n\n“阿姨。”\n\n老太太转过头，眼睛眯起来，上下打量了他一眼。\n\n丁立把菜篮往前递了递，篮口朝向她，笑着说：“咱们俩的篮子好像拿错啦。您看，您篮子里这藕，这青菜——跟我买的差不多。我这篮子里的菜，看着倒像是您的。”\n\n老太太停下脚步，低头看了看自己篮车里的菜，又看了看丁立递过来的篮子。\n\n她抿着嘴，把两把青菜拨开，看了看底下的土豆，又翻了翻那截藕。\n\n“是吗？”她的声音不大，带着点迟疑。\n\n“是，您看这藕——”丁立指了指自己手里篮子里的藕，“跟我刚才在那边摊上挑的一样。您篮子里的菜也差不多，就是篮子拿混了。”\n\n老太太又看了看两只篮子。一样的竹编，一样的旧，篮柄上都缠着红绳。\n\n“哎哟，”她松开扶着腰的手，拍了拍篮子边缘，“还真是。我说怎么觉着菜有点不对呢。”\n\n她把篮车往旁边推了推，腾出空间。\n\n丁立把手中的篮子递过去，老太太接住，放在篮车上。她把自己篮车里的那只篮子提起来，递给丁立。\n\n两只篮子交换。\n\n丁立接住篮子的同时，拇指拨开最上面的青菜叶。\n\n褐色纸袋还在。压在藕段下面，白色处方签的边沿沾了一点水渍，但纸袋完好，没有破，没有瘪。\n\n他把菜叶盖回去。\n\n“谢谢阿姨，您慢走。”\n\n老太太点点头，推着篮车继续往出口走。\n\n丁立站在原地，手里提着菜篮。\n\n药包静静地躺在篮子一角。",
+      "raw_response": "“各位顾客，市场即将关门，请尽快离场。”\n\n广播声还在头顶回荡，丁立的手已经伸向菜摊边那只竹篮。手指触到篮柄的瞬间，他停住了。\n\n这不是他的篮子。\n\n他的篮子里应该有一包药——褐色纸袋，白色处方签贴在侧面，上面写着他的名字。现在这只篮子里只有两把青菜、一袋土豆，还有一截用报纸裹着的藕。\n\n心脏猛跳了两下。他抬头扫视过道，视线越过正在收摊的菜贩、正在卷塑料布的鱼摊老板，最后落在出口方向。\n\n一个老太太正推着菜篮车，慢慢往门口走。\n\n那只篮子也是竹编的，也是半旧的，篮柄上也缠着红绳。\n\n丁立抓起面前的篮子追了上去。鞋底踩过湿漉漉的水泥地面，绕过一堆正在装筐的萝卜，在距离老太太三步远的地方放慢了脚步。\n\n老太太走得很慢，一只手扶着篮车把手，另一只手按在腰侧。她没有回头。\n\n丁立跟在她身后走了两步，视线落在她的篮子里——青菜、土豆、藕，还有一只褐色纸袋，压在藕段下面，只露出一个角。\n\n白色处方签的边沿从纸袋侧面支出来。\n\n他深吸一口气，快走两步，绕到老太太的左侧，让自己的菜篮和她的并排。\n\n“阿姨。”\n\n老太太转过头，眼睛眯起来，上下打量了他一眼。\n\n丁立把菜篮往前递了递，篮口朝向她，笑着说：“咱们俩的篮子好像拿错啦。您看，您篮子里这藕，这青菜——跟我买的差不多。我这篮子里的菜，看着倒像是您的。”\n\n老太太停下脚步，低头看了看自己篮车里的菜，又看了看丁立递过来的篮子。\n\n她抿着嘴，把两把青菜拨开，看了看底下的土豆，又翻了翻那截藕。\n\n“是吗？”她的声音不大，带着点迟疑。\n\n“是，您看这藕——”丁立指了指自己手里篮子里的藕，“跟我刚才在那边摊上挑的一样。您篮子里的菜也差不多，就是篮子拿混了。”\n\n老太太又看了看两只篮子。一样的竹编，一样的旧，篮柄上都缠着红绳。\n\n“哎哟，”她松开扶着腰的手，拍了拍篮子边缘，“还真是。我说怎么觉着菜有点不对呢。”\n\n她把篮车往旁边推了推，腾出空间。\n\n丁立把手中的篮子递过去，老太太接住，放在篮车上。她把自己篮车里的那只篮子提起来，递给丁立。\n\n两只篮子交换。\n\n丁立接住篮子的同时，拇指拨开最上面的青菜叶。\n\n褐色纸袋还在。压在藕段下面，白色处方签的边沿沾了一点水渍，但纸袋完好，没有破，没有瘪。\n\n他把菜叶盖回去。\n\n“谢谢阿姨，您慢走。”\n\n老太太点点头，推着篮车继续往出口走。\n\n丁立站在原地，手里提着菜篮。\n\n药包静静地躺在篮子一角。",
+      "input_tokens": 1545,
+      "output_tokens": 631,
+      "latency_ms": 15654,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "5061530f9ee3c0d599e9dea2426a54c0533e38b507d9e5cfaa5e040bfb83e109",
+      "route_name": null,
+      "route_decision": {
+        "route_name": "A_LITE_INFORMATION_GAP",
+        "classifier_version": "narrative-route-v1",
+        "decision_reasons": [
+          "multiple characters with distinct information",
+          "viewpoint character has unknown facts and an interpretation",
+          "secondary character carries independent knowledge"
+        ],
+        "matched_rules": [
+          "RULE_A_LITE_INFORMATION_GAP"
+        ],
+        "rejected_routes": [
+          "C_OBJECT_CAUSAL"
+        ]
+      },
+      "compiled_brief_hash": "59450e2cf75757bee4ee9c6a6117ee59993f9fcba60733120eb9f3f8cc198ee1",
+      "instruction_hash": "d368cbfa0846d1cb9adf452db083cbb58ba69154f281b3d6c895cb34da157cec",
+      "text_path": "cases\\C-04\\drafts\\route-2.txt"
+    },
+    {
+      "group": "ROUTE-A_LITE_INFORMATION_GAP",
+      "replica": 3,
+      "mode": "narrative_route",
+      "candidate_id": "427468f4-249f-4e44-a7d1-7dfee0d8b95f",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "A_LITE_INFORMATION_GAP",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "multiple characters with distinct information",
+            "viewpoint character has unknown facts and an interpretation",
+            "secondary character carries independent knowledge"
+          ],
+          "matched_rules": [
+            "RULE_A_LITE_INFORMATION_GAP"
+          ],
+          "rejected_routes": [
+            "C_OBJECT_CAUSAL"
+          ]
+        },
+        "compiled_brief_hash": "59450e2cf75757bee4ee9c6a6117ee59993f9fcba60733120eb9f3f8cc198ee1",
+        "instruction_hash": "d368cbfa0846d1cb9adf452db083cbb58ba69154f281b3d6c895cb34da157cec",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "“各位顾客，市场即将关门，请尽快离场。”广播声从头顶的铁皮棚顶压下来，混着鱼腥味和塑料袋的窸窣响动。丁立把零钱塞进裤兜，弯腰去拎菜篮，手指摸到竹编把手的那一刻，整个人顿住了。\n\n篮子里躺着一捆芹菜、两颗土豆、一袋速冻饺子——没有药包。\n\n他猛地抬头，视线扫过正在收遮阳布的豆腐摊、正在往三轮车上搬泡沫箱的鱼贩，最后钉在二十米外的通道口。一个穿深蓝色碎花衬衫的老太太正推着菜篮拐过调料摊的转角，篮子里露出的塑料袋上印着“仁心药房”四个红字。\n\n那是他的药。\n\n丁立拎起篮子就追。老太太走得不快，推着带轮子的菜篮，每步都踩得很稳。两个篮子一模一样，都是市场门口那家竹器铺子的货，连把手上的磨损位置都差不多——难怪刚才结账时顺手一拎就错了。\n\n他追到调料摊前，老太太已经快走到出口的塑料门帘了。门帘外面是停车场，再往外就是马路。\n\n“阿姨！”丁立喊了一声。\n\n老太太没回头。广播又响了一遍，压住了他的声音。\n\n他加快几步，绕到老太太身侧，把步子放慢到和她并排，嘴角先往上提了一下，才开口：“阿姨，您等一下。”\n\n老太太停下，转过头看他。六十来岁，眼睛很亮，打量他的时候带着一点警惕。\n\n丁立把自己手里的篮子往前送了送，指着里面的芹菜：“阿姨，咱们好像拿错篮子啦。您看，我这篮子里头的菜——”\n\n他话没说完，老太太已经低头去看自己推着的篮子。她掀开上面盖的一层广告纸，露出里面的东西：一袋西红柿，一捆韭菜，一盒鸡蛋，还有那个印着“仁心药房”的塑料袋。\n\n丁立的眼睛盯在药袋上。袋子没破，里面药盒的轮廓还在。\n\n老太太抬起头看他，又看他手里的篮子，目光在两个篮子之间来回扫了一遍。她伸手翻了翻丁立篮子里那袋速冻饺子，饺子袋上结着一层白霜，已经有点软了。\n\n“这饺子不是我的，”她说，声音不大，但很清楚，“我买的是韭菜鸡蛋馅的，这是猪肉白菜。”\n\n丁立心里一紧，但脸上没变。他笑着指指自己篮子里的芹菜：“这捆芹菜总该是您的吧？我刚才看您篮子里也有芹菜。”\n\n老太太又低头看了看自己的篮子。她篮子里确实有一捆芹菜，和丁立篮子里那捆差不多粗细，都用红色的塑料绳捆着。\n\n“还真是，”她说，语气松了一点，“我说怎么多了一捆。”\n\n她把自己篮子里的芹菜拿出来，和丁立篮子里的比了比，然后点了点头。丁立把篮子递过去，老太太接住，又把自己推着的篮子往丁立这边推了推。\n\n两只篮子换手。\n\n丁立的手刚握住自己篮子的把手，指节就攥紧了。他没急着翻看，先把篮子放到地上，弯腰把老太太原来篮子里的那捆芹菜拿出来，递过去：“阿姨，这捆也给您，应该是您的。”\n\n老太太接过来，塞进篮子里，又看了他一眼：“小伙子眼神挺好。”\n\n“碰巧看见了，”丁立说，“您慢走。”\n\n老太太推着篮子掀开塑料门帘出去了。门帘落回来，打出一片哗啦啦的响声。\n\n丁立蹲下来，翻开篮子里的广告纸。西红柿下面，那个印着“仁心药房”的塑料袋被压得有点皱，但封口完好。他把袋子提出来，透过半透明的塑料皮看见里面的药盒——降压药，和他的处方一致。\n\n他把药袋放回篮子内侧，直起身，提稳篮子。\n\n药包静静地躺在篮子一角。",
+      "raw_response": "“各位顾客，市场即将关门，请尽快离场。”广播声从头顶的铁皮棚顶压下来，混着鱼腥味和塑料袋的窸窣响动。丁立把零钱塞进裤兜，弯腰去拎菜篮，手指摸到竹编把手的那一刻，整个人顿住了。\n\n篮子里躺着一捆芹菜、两颗土豆、一袋速冻饺子——没有药包。\n\n他猛地抬头，视线扫过正在收遮阳布的豆腐摊、正在往三轮车上搬泡沫箱的鱼贩，最后钉在二十米外的通道口。一个穿深蓝色碎花衬衫的老太太正推着菜篮拐过调料摊的转角，篮子里露出的塑料袋上印着“仁心药房”四个红字。\n\n那是他的药。\n\n丁立拎起篮子就追。老太太走得不快，推着带轮子的菜篮，每步都踩得很稳。两个篮子一模一样，都是市场门口那家竹器铺子的货，连把手上的磨损位置都差不多——难怪刚才结账时顺手一拎就错了。\n\n他追到调料摊前，老太太已经快走到出口的塑料门帘了。门帘外面是停车场，再往外就是马路。\n\n“阿姨！”丁立喊了一声。\n\n老太太没回头。广播又响了一遍，压住了他的声音。\n\n他加快几步，绕到老太太身侧，把步子放慢到和她并排，嘴角先往上提了一下，才开口：“阿姨，您等一下。”\n\n老太太停下，转过头看他。六十来岁，眼睛很亮，打量他的时候带着一点警惕。\n\n丁立把自己手里的篮子往前送了送，指着里面的芹菜：“阿姨，咱们好像拿错篮子啦。您看，我这篮子里头的菜——”\n\n他话没说完，老太太已经低头去看自己推着的篮子。她掀开上面盖的一层广告纸，露出里面的东西：一袋西红柿，一捆韭菜，一盒鸡蛋，还有那个印着“仁心药房”的塑料袋。\n\n丁立的眼睛盯在药袋上。袋子没破，里面药盒的轮廓还在。\n\n老太太抬起头看他，又看他手里的篮子，目光在两个篮子之间来回扫了一遍。她伸手翻了翻丁立篮子里那袋速冻饺子，饺子袋上结着一层白霜，已经有点软了。\n\n“这饺子不是我的，”她说，声音不大，但很清楚，“我买的是韭菜鸡蛋馅的，这是猪肉白菜。”\n\n丁立心里一紧，但脸上没变。他笑着指指自己篮子里的芹菜：“这捆芹菜总该是您的吧？我刚才看您篮子里也有芹菜。”\n\n老太太又低头看了看自己的篮子。她篮子里确实有一捆芹菜，和丁立篮子里那捆差不多粗细，都用红色的塑料绳捆着。\n\n“还真是，”她说，语气松了一点，“我说怎么多了一捆。”\n\n她把自己篮子里的芹菜拿出来，和丁立篮子里的比了比，然后点了点头。丁立把篮子递过去，老太太接住，又把自己推着的篮子往丁立这边推了推。\n\n两只篮子换手。\n\n丁立的手刚握住自己篮子的把手，指节就攥紧了。他没急着翻看，先把篮子放到地上，弯腰把老太太原来篮子里的那捆芹菜拿出来，递过去：“阿姨，这捆也给您，应该是您的。”\n\n老太太接过来，塞进篮子里，又看了他一眼：“小伙子眼神挺好。”\n\n“碰巧看见了，”丁立说，“您慢走。”\n\n老太太推着篮子掀开塑料门帘出去了。门帘落回来，打出一片哗啦啦的响声。\n\n丁立蹲下来，翻开篮子里的广告纸。西红柿下面，那个印着“仁心药房”的塑料袋被压得有点皱，但封口完好。他把袋子提出来，透过半透明的塑料皮看见里面的药盒——降压药，和他的处方一致。\n\n他把药袋放回篮子内侧，直起身，提稳篮子。\n\n药包静静地躺在篮子一角。",
+      "input_tokens": 1545,
+      "output_tokens": 823,
+      "latency_ms": 19980,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "5061530f9ee3c0d599e9dea2426a54c0533e38b507d9e5cfaa5e040bfb83e109",
+      "route_name": null,
+      "route_decision": {
+        "route_name": "A_LITE_INFORMATION_GAP",
+        "classifier_version": "narrative-route-v1",
+        "decision_reasons": [
+          "multiple characters with distinct information",
+          "viewpoint character has unknown facts and an interpretation",
+          "secondary character carries independent knowledge"
+        ],
+        "matched_rules": [
+          "RULE_A_LITE_INFORMATION_GAP"
+        ],
+        "rejected_routes": [
+          "C_OBJECT_CAUSAL"
+        ]
+      },
+      "compiled_brief_hash": "59450e2cf75757bee4ee9c6a6117ee59993f9fcba60733120eb9f3f8cc198ee1",
+      "instruction_hash": "d368cbfa0846d1cb9adf452db083cbb58ba69154f281b3d6c895cb34da157cec",
+      "text_path": "cases\\C-04\\drafts\\route-3.txt"
+    },
+    {
+      "group": "BASELINE-writer_brief",
+      "replica": 1,
+      "mode": "writer_brief",
+      "candidate_id": "97d117d9-accd-4b06-8b14-faa81e4c5949",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "市场广播响起：“各位顾客，市场即将关门，请尽快离场。”\n\n丁立抬头看了一眼出口方向。老太太正推着菜篮往那边走，步子不快，但已经到了水产区拐角。她的菜篮是竹编的，提手缠着红布条，和丁立手里这个一模一样。\n\n他低头看了看自己提着的篮子——一把芹菜，两棵白菜，一袋土豆。没有药包。\n\n丁立朝老太太的方向迈出一步，然后停住。出口处还有几个人在往外走，收摊的摊贩正把泡沫箱摞起来。他看了一眼老太太的背影，又看了一眼旁边蔬菜摊上还没收完的货——摊主正在往三轮车上搬整筐的西红柿，筐子旁边散着几把没来得及收的芹菜，和他篮子里的那把是同一个品种。\n\n丁立提起篮子，快步走到老太太身侧。\n\n“阿姨。”他声音不大，刚好够老太太听见。\n\n老太太转过头，手还搭在菜篮推手上。\n\n丁立把手里篮子往前递了递，让老太太能看清里面的菜。“咱们的篮子好像拿错了。您看——”他指了指自己篮子里的芹菜，“这把芹菜，还有白菜，跟您平时买的差不多吧？我刚才在那边看见您篮子里的菜，也跟我买的挺像。”\n\n老太太低头看了看他递过来的篮子，又低头看了看自己推着的篮子。她掀开自己篮子上盖的一块蓝布，里面是一把芹菜、两棵白菜、一袋土豆，菜的种类和摆放顺序几乎一样。篮子底部靠边的地方，有一个牛皮纸药包。\n\n“哎哟，”老太太把手从推手上拿开，“这俩篮子长得一样。”\n\n“是，连提手上的红布条都一样。”丁立把篮子又往前递了半寸，“咱们换回来吧。”\n\n老太太看了看他篮子里的菜，又看了看自己篮子里的，伸手接过丁立递来的篮子，把自己推着的那个往丁立方向推了推。\n\n“拿错了都不知道，”老太太说，“这菜买的都一样。”\n\n丁立接过篮子，手扶住篮边。他没低头去看，只是用拇指按住篮沿，食指在篮子内侧碰到了一个牛皮纸包的边角。\n\n“谢谢阿姨。”\n\n老太太摆摆手，推着换回来的篮子继续往出口走。\n\n丁立站在原地，手指还按在篮子内侧。牛皮纸包的温度透过纸面传到指尖，干燥，完整。他提起篮子，拇指扣住篮沿，药包静静地躺在篮子一角。",
+      "raw_response": "市场广播响起：“各位顾客，市场即将关门，请尽快离场。”\n\n丁立抬头看了一眼出口方向。老太太正推着菜篮往那边走，步子不快，但已经到了水产区拐角。她的菜篮是竹编的，提手缠着红布条，和丁立手里这个一模一样。\n\n他低头看了看自己提着的篮子——一把芹菜，两棵白菜，一袋土豆。没有药包。\n\n丁立朝老太太的方向迈出一步，然后停住。出口处还有几个人在往外走，收摊的摊贩正把泡沫箱摞起来。他看了一眼老太太的背影，又看了一眼旁边蔬菜摊上还没收完的货——摊主正在往三轮车上搬整筐的西红柿，筐子旁边散着几把没来得及收的芹菜，和他篮子里的那把是同一个品种。\n\n丁立提起篮子，快步走到老太太身侧。\n\n“阿姨。”他声音不大，刚好够老太太听见。\n\n老太太转过头，手还搭在菜篮推手上。\n\n丁立把手里篮子往前递了递，让老太太能看清里面的菜。“咱们的篮子好像拿错了。您看——”他指了指自己篮子里的芹菜，“这把芹菜，还有白菜，跟您平时买的差不多吧？我刚才在那边看见您篮子里的菜，也跟我买的挺像。”\n\n老太太低头看了看他递过来的篮子，又低头看了看自己推着的篮子。她掀开自己篮子上盖的一块蓝布，里面是一把芹菜、两棵白菜、一袋土豆，菜的种类和摆放顺序几乎一样。篮子底部靠边的地方，有一个牛皮纸药包。\n\n“哎哟，”老太太把手从推手上拿开，“这俩篮子长得一样。”\n\n“是，连提手上的红布条都一样。”丁立把篮子又往前递了半寸，“咱们换回来吧。”\n\n老太太看了看他篮子里的菜，又看了看自己篮子里的，伸手接过丁立递来的篮子，把自己推着的那个往丁立方向推了推。\n\n“拿错了都不知道，”老太太说，“这菜买的都一样。”\n\n丁立接过篮子，手扶住篮边。他没低头去看，只是用拇指按住篮沿，食指在篮子内侧碰到了一个牛皮纸包的边角。\n\n“谢谢阿姨。”\n\n老太太摆摆手，推着换回来的篮子继续往出口走。\n\n丁立站在原地，手指还按在篮子内侧。牛皮纸包的温度透过纸面传到指尖，干燥，完整。他提起篮子，拇指扣住篮沿，药包静静地躺在篮子一角。",
+      "input_tokens": 1274,
+      "output_tokens": 515,
+      "latency_ms": 12885,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "86f74da1d103d1f7756ecd25f0cd1af62cc90156bac43996f6e052180dc7d3d7",
+      "route_name": null,
+      "route_decision": null,
+      "compiled_brief_hash": null,
+      "instruction_hash": null,
+      "text_path": "cases\\C-04\\drafts\\baseline-1.txt"
+    },
+    {
+      "group": "BASELINE-writer_brief",
+      "replica": 2,
+      "mode": "writer_brief",
+      "candidate_id": "a7488b44-1310-43f7-9e7f-c75da3e3c622",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "市场广播从头顶的喇叭里淌下来，带着一点电流的嘶嘶声：“各位顾客，市场即将关门，请尽快离场。谢谢配合。”\n\n丁立抬头看了一眼。出口那边，卷帘门已经降下一半，阳光从底下那一截切进来，在人脚踝的高度亮成一条线。老太太的背影就在那条线前面，推着一个菜篮，步子不快，但方向很稳。\n\n丁立低头看了看自己手里提的篮子。\n\n篮子是那种最常见的红色塑料方篮，边角磨得发白，里面躺着一把芹菜、两棵大白菜，还有一袋土豆。他翻了翻芹菜叶子底下，空的。再翻白菜根旁边，也是空的。\n\n药包不在这个篮子里。\n\n他又抬头。老太太的篮子在出口拐角处停了一下，她侧身让过一个扛着泡沫箱的中年人，篮子跟着转了半圈。丁立看见了那篮子里的东西——同样一把芹菜，同样两棵白菜，菜叶子底下露出一个牛皮纸药袋的角，上面印着社区卫生服务中心的绿色十字标。\n\n那个角度他认得。上个月取药的时候，药剂师把处方单钉在袋口，钉子歪了一点，他撕的时候留下一个三角形的裂口。现在那个裂口正对着他，在老太太的菜篮子里。\n\n“收摊了收摊了——”旁边卖豆制品的摊主把最后两板豆腐往泡沫箱里一摞，水珠溅在地上。\n\n丁立拎着篮子往前走。他走了五步，然后改成小跑。\n\n“阿姨。”\n\n老太太没听见。她正推着篮子绕过出口地上的一个积水坑，轮子在湿瓷砖上碾出细碎的声响。\n\n“阿姨，”丁立追到她左后侧，把声音放轻，带着笑，“等一下——”\n\n老太太这才停下来，转过头。六十来岁，灰白头发梳得整齐，眼睛不大，看人的时候要眯一下。\n\n丁立把手里那只篮子往前递了递，另一只手指着她推的篮子，笑着说：“阿姨，咱们俩的篮子好像拿错了。您看看，您篮子里的菜——芹菜、白菜——跟我买的差不多，我篮子里的也像是您的。咱们换回来吧？”\n\n老太太低头看自己推的篮子。她掀开芹菜叶子，看了一眼底下的白菜，又看了看丁立手里的篮子。\n\n“哎哟，”她说，声音不大，尾音往上飘了一下，“可不是嘛。”\n\n她把手从推车把手上松开，在围裙上擦了擦，又看了看丁立的脸。\n\n“我说这白菜怎么不大对，”她说，“我买的是那种小棵的，这个太大了。”\n\n丁立把篮子递过去。老太太接过来，把自己推车上的篮子往丁立那边推了推。两只篮子并排放在一起，一模一样的红色方篮，一样的磨白边角。\n\n丁立接过篮子的时候，手指隔着塑料袋碰到了那个牛皮纸袋。他没用眼睛去看，只是把篮子提起来，往自己身边收了收。\n\n老太太把自己篮子里的菜重新摆了摆，把芹菜根朝外，白菜叶子拢到一边。“小伙子，不好意思啊。”\n\n“没事，”丁立说，“我也没注意。”\n\n老太太推着篮子往出口走，卷帘门又降了一截，她弯了下腰才过去。\n\n丁立站在原地，把篮子换到左手。篮子内侧，芹菜杆子和白菜帮子之间，牛皮纸袋的绿色十字标朝上，处方单还钉在袋口，三角形的裂口还在。药包静静地躺在篮子一角。",
+      "raw_response": "市场广播从头顶的喇叭里淌下来，带着一点电流的嘶嘶声：“各位顾客，市场即将关门，请尽快离场。谢谢配合。”\n\n丁立抬头看了一眼。出口那边，卷帘门已经降下一半，阳光从底下那一截切进来，在人脚踝的高度亮成一条线。老太太的背影就在那条线前面，推着一个菜篮，步子不快，但方向很稳。\n\n丁立低头看了看自己手里提的篮子。\n\n篮子是那种最常见的红色塑料方篮，边角磨得发白，里面躺着一把芹菜、两棵大白菜，还有一袋土豆。他翻了翻芹菜叶子底下，空的。再翻白菜根旁边，也是空的。\n\n药包不在这个篮子里。\n\n他又抬头。老太太的篮子在出口拐角处停了一下，她侧身让过一个扛着泡沫箱的中年人，篮子跟着转了半圈。丁立看见了那篮子里的东西——同样一把芹菜，同样两棵白菜，菜叶子底下露出一个牛皮纸药袋的角，上面印着社区卫生服务中心的绿色十字标。\n\n那个角度他认得。上个月取药的时候，药剂师把处方单钉在袋口，钉子歪了一点，他撕的时候留下一个三角形的裂口。现在那个裂口正对着他，在老太太的菜篮子里。\n\n“收摊了收摊了——”旁边卖豆制品的摊主把最后两板豆腐往泡沫箱里一摞，水珠溅在地上。\n\n丁立拎着篮子往前走。他走了五步，然后改成小跑。\n\n“阿姨。”\n\n老太太没听见。她正推着篮子绕过出口地上的一个积水坑，轮子在湿瓷砖上碾出细碎的声响。\n\n“阿姨，”丁立追到她左后侧，把声音放轻，带着笑，“等一下——”\n\n老太太这才停下来，转过头。六十来岁，灰白头发梳得整齐，眼睛不大，看人的时候要眯一下。\n\n丁立把手里那只篮子往前递了递，另一只手指着她推的篮子，笑着说：“阿姨，咱们俩的篮子好像拿错了。您看看，您篮子里的菜——芹菜、白菜——跟我买的差不多，我篮子里的也像是您的。咱们换回来吧？”\n\n老太太低头看自己推的篮子。她掀开芹菜叶子，看了一眼底下的白菜，又看了看丁立手里的篮子。\n\n“哎哟，”她说，声音不大，尾音往上飘了一下，“可不是嘛。”\n\n她把手从推车把手上松开，在围裙上擦了擦，又看了看丁立的脸。\n\n“我说这白菜怎么不大对，”她说，“我买的是那种小棵的，这个太大了。”\n\n丁立把篮子递过去。老太太接过来，把自己推车上的篮子往丁立那边推了推。两只篮子并排放在一起，一模一样的红色方篮，一样的磨白边角。\n\n丁立接过篮子的时候，手指隔着塑料袋碰到了那个牛皮纸袋。他没用眼睛去看，只是把篮子提起来，往自己身边收了收。\n\n老太太把自己篮子里的菜重新摆了摆，把芹菜根朝外，白菜叶子拢到一边。“小伙子，不好意思啊。”\n\n“没事，”丁立说，“我也没注意。”\n\n老太太推着篮子往出口走，卷帘门又降了一截，她弯了下腰才过去。\n\n丁立站在原地，把篮子换到左手。篮子内侧，芹菜杆子和白菜帮子之间，牛皮纸袋的绿色十字标朝上，处方单还钉在袋口，三角形的裂口还在。药包静静地躺在篮子一角。",
+      "input_tokens": 1274,
+      "output_tokens": 733,
+      "latency_ms": 18231,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "86f74da1d103d1f7756ecd25f0cd1af62cc90156bac43996f6e052180dc7d3d7",
+      "route_name": null,
+      "route_decision": null,
+      "compiled_brief_hash": null,
+      "instruction_hash": null,
+      "text_path": "cases\\C-04\\drafts\\baseline-2.txt"
+    },
+    {
+      "group": "BASELINE-writer_brief",
+      "replica": 3,
+      "mode": "writer_brief",
+      "candidate_id": "8bae1d3a-435a-4fa9-8314-a9e9657a3bf4",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "市场广播的电流声刺啦一响：“各位顾客，市场即将关门，请尽快离场。”\n\n丁立抬起头，视线越过菜摊上摞起的空筐，看见那个灰白头发的老太太已经推着菜篮走到了出口通道的半截位置。她走得不快，一只手扶着篮柄，另一只手捏着零钱包，步子碎而稳。\n\n他的目光落在她推着的那个篮子上——竹编，深褐色，提手缠着红布条。和他自己的篮子一模一样。\n\n丁立低头看了一眼脚边那个篮子。也是竹编，也是深褐色，提手也缠着红布条。他蹲下去，伸手拨开上面盖着的几棵大葱，底下露出一包用牛皮纸裹好的东西，纸面上写着别人的名字。\n\n不是他的药。\n\n他站起来，脚边的篮子没动，视线重新锁回出口方向。老太太已经走到卖豆制品的摊位旁边，再过十来步就是卷帘门。\n\n“收摊了啊！没走的快点儿！”卖菜的大姐把最后一筐土豆搬上三轮车，塑料筐底磕在车斗铁皮上，哐的一声。\n\n丁立转身，目光扫过身旁的菜摊。摊位上还剩几把没卖完的小油菜，和他自己篮子里那捆几乎一模一样，连捆扎的稻草绳都是同一个颜色。他伸手拿起一把，快步朝出口走去。\n\n“阿姨！”\n\n老太太没停。丁立加快几步，绕到她侧前方，把手里那把油菜举到两人中间的位置，脸上带出一点笑。\n\n“阿姨，您看这个。”他把油菜往前递了递，另一只手指了指她篮子里那捆同样用稻草绳扎着的油菜，“咱俩买的菜都差不多，刚才在那边摊上——”他回头朝刚才的菜摊方向偏了偏下巴，“咱俩篮子放一块儿来着，可能拿串了。”\n\n老太太停下脚步，先看了看他手里的油菜，又低头看了看自己篮子里那捆。\n\n“您瞧，这捆菜跟您篮子里的东西配不上，”丁立把声音放平，不急不缓，“我那个篮子里有包药，牛皮纸包的，您篮子里也有这么一包——咱俩换回来，各拿各的。”\n\n老太太松开零钱包，两只手扶住篮柄，把篮子往自己面前拉了拉。她弯腰拨开上面盖的菜叶子，手指碰到那包牛皮纸裹好的药包，停了一下。然后她抬起头，看了看丁立脚边——那里什么都没有。\n\n“你的篮子呢？”她问。\n\n“在后头，”丁立说，“我给您拿过来。”\n\n他转身快步走回刚才站的位置，提起脚边那个篮子，三步并两步回到老太太跟前，把篮子放在两人中间的地面上，篮柄朝她那边。\n\n老太太低头看看地上那个篮子，又看看自己推着的这个。两个篮子并排放在一起，一模一样。她把手里那个篮子往外推了半寸，丁立伸手接住篮柄，同时把自己提来的那个朝她手边送了送。\n\n老太太握住新篮子的提手，往里看了一眼。\n\n“药在您那个里头呢，”丁立说，“牛皮纸包的。”\n\n他把换回来的篮子拉到自己脚边，手指拨开上面压着的两棵大葱，内侧贴着篮壁的位置，牛皮纸包的一角露出来。他伸手把药包往里按了按，确认它没有散开。\n\n老太太推着换好的篮子，转过身，继续往出口走。\n\n丁立站在原地，手里提着那个深褐色的竹编菜篮。篮子里的大葱歪倒了，他伸手扶正，露出篮子内侧那包药。牛皮纸包得整整齐齐，药包静静地躺在篮子一角。",
+      "raw_response": "市场广播的电流声刺啦一响：“各位顾客，市场即将关门，请尽快离场。”\n\n丁立抬起头，视线越过菜摊上摞起的空筐，看见那个灰白头发的老太太已经推着菜篮走到了出口通道的半截位置。她走得不快，一只手扶着篮柄，另一只手捏着零钱包，步子碎而稳。\n\n他的目光落在她推着的那个篮子上——竹编，深褐色，提手缠着红布条。和他自己的篮子一模一样。\n\n丁立低头看了一眼脚边那个篮子。也是竹编，也是深褐色，提手也缠着红布条。他蹲下去，伸手拨开上面盖着的几棵大葱，底下露出一包用牛皮纸裹好的东西，纸面上写着别人的名字。\n\n不是他的药。\n\n他站起来，脚边的篮子没动，视线重新锁回出口方向。老太太已经走到卖豆制品的摊位旁边，再过十来步就是卷帘门。\n\n“收摊了啊！没走的快点儿！”卖菜的大姐把最后一筐土豆搬上三轮车，塑料筐底磕在车斗铁皮上，哐的一声。\n\n丁立转身，目光扫过身旁的菜摊。摊位上还剩几把没卖完的小油菜，和他自己篮子里那捆几乎一模一样，连捆扎的稻草绳都是同一个颜色。他伸手拿起一把，快步朝出口走去。\n\n“阿姨！”\n\n老太太没停。丁立加快几步，绕到她侧前方，把手里那把油菜举到两人中间的位置，脸上带出一点笑。\n\n“阿姨，您看这个。”他把油菜往前递了递，另一只手指了指她篮子里那捆同样用稻草绳扎着的油菜，“咱俩买的菜都差不多，刚才在那边摊上——”他回头朝刚才的菜摊方向偏了偏下巴，“咱俩篮子放一块儿来着，可能拿串了。”\n\n老太太停下脚步，先看了看他手里的油菜，又低头看了看自己篮子里那捆。\n\n“您瞧，这捆菜跟您篮子里的东西配不上，”丁立把声音放平，不急不缓，“我那个篮子里有包药，牛皮纸包的，您篮子里也有这么一包——咱俩换回来，各拿各的。”\n\n老太太松开零钱包，两只手扶住篮柄，把篮子往自己面前拉了拉。她弯腰拨开上面盖的菜叶子，手指碰到那包牛皮纸裹好的药包，停了一下。然后她抬起头，看了看丁立脚边——那里什么都没有。\n\n“你的篮子呢？”她问。\n\n“在后头，”丁立说，“我给您拿过来。”\n\n他转身快步走回刚才站的位置，提起脚边那个篮子，三步并两步回到老太太跟前，把篮子放在两人中间的地面上，篮柄朝她那边。\n\n老太太低头看看地上那个篮子，又看看自己推着的这个。两个篮子并排放在一起，一模一样。她把手里那个篮子往外推了半寸，丁立伸手接住篮柄，同时把自己提来的那个朝她手边送了送。\n\n老太太握住新篮子的提手，往里看了一眼。\n\n“药在您那个里头呢，”丁立说，“牛皮纸包的。”\n\n他把换回来的篮子拉到自己脚边，手指拨开上面压着的两棵大葱，内侧贴着篮壁的位置，牛皮纸包的一角露出来。他伸手把药包往里按了按，确认它没有散开。\n\n老太太推着换好的篮子，转过身，继续往出口走。\n\n丁立站在原地，手里提着那个深褐色的竹编菜篮。篮子里的大葱歪倒了，他伸手扶正，露出篮子内侧那包药。牛皮纸包得整整齐齐，药包静静地躺在篮子一角。",
+      "input_tokens": 1274,
+      "output_tokens": 777,
+      "latency_ms": 19328,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "86f74da1d103d1f7756ecd25f0cd1af62cc90156bac43996f6e052180dc7d3d7",
+      "route_name": null,
+      "route_decision": null,
+      "compiled_brief_hash": null,
+      "instruction_hash": null,
+      "text_path": "cases\\C-04\\drafts\\baseline-3.txt"
+    }
+  ],
+  "actual_route": "A_LITE_INFORMATION_GAP",
+  "route_decision": {
+    "route_name": "A_LITE_INFORMATION_GAP",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "multiple characters with distinct information",
+      "viewpoint character has unknown facts and an interpretation",
+      "secondary character carries independent knowledge"
+    ],
+    "matched_rules": [
+      "RULE_A_LITE_INFORMATION_GAP"
+    ],
+    "rejected_routes": [
+      "C_OBJECT_CAUSAL"
+    ]
+  }
+}

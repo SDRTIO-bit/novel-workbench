@@ -1,0 +1,59 @@
+{
+  "group": "ROUTE-C_OBJECT_CAUSAL",
+  "replica": 2,
+  "mode": "narrative_route",
+  "candidate_id": "5d02734a-dc5d-49e4-83f4-b93ca512b7a4",
+  "attempt_number": 1,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "route_decision": {
+      "route_name": "C_OBJECT_CAUSAL",
+      "classifier_version": "narrative-route-v1",
+      "decision_reasons": [
+        "scene_state.available_objects is non-empty",
+        "causal_transitions contains counterfactual_without_action or rejected_alternative",
+        "character_next_action involves physical object manipulation"
+      ],
+      "matched_rules": [
+        "RULE_C_OBJECT_CAUSAL"
+      ],
+      "rejected_routes": []
+    },
+    "compiled_brief_hash": "534bf1bb7e7801789ac00cadd7204fb772720669933f98eed4f21f26af00d711",
+    "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "卷帘门咔嗒咔嗒地往下滑，金属片相互撞击的声音在雨幕里显得格外刺耳。\n\n林希站在便利店窄窄的门廊下，雨水顺着檐角砸下来，溅湿了她的帆布鞋尖。门口那把公共伞还挂在塑料挂钩上，深蓝色的伞面，伞柄上贴着“便民伞”三个字，边角有点磨损。\n\n温洲就站在她右手边，不到一臂的距离。他衬衫的肩头已经洇湿了一片，深色布料贴在皮肤上。\n\n“好大的雨。”温洲说。\n\n他的声音不高，但刚好盖过雨声。\n\n林希转头看了他一眼。温洲的视线正落在门外的积水潭上，雨滴砸下去，水面翻起密密匝匝的气泡。他没有看她。\n\n店员从里面探出半个身子，冲他们喊了一声：“要关门了啊！”\n\n卷帘门已经降到了膝盖的高度。\n\n林希的手抬起来，抓住了那把公共伞的伞柄。塑料挂钩发出一声轻响，伞脱离了挂槽。\n\n她按下伞柄上的按钮。\n\n“砰”的一声，深蓝色的伞面弹开，雨水立刻开始在伞面上敲出密集的鼓点。伞骨撑开的瞬间，一片阴影罩住了两个人之间的空隙。\n\n温洲侧过脸，看了一眼撑开的伞面，然后一步跨进了伞下。\n\n他的肩膀离她的肩膀很近，近到能感觉到他衬衫上带着的潮气。",
+  "raw_response": "卷帘门咔嗒咔嗒地往下滑，金属片相互撞击的声音在雨幕里显得格外刺耳。\n\n林希站在便利店窄窄的门廊下，雨水顺着檐角砸下来，溅湿了她的帆布鞋尖。门口那把公共伞还挂在塑料挂钩上，深蓝色的伞面，伞柄上贴着“便民伞”三个字，边角有点磨损。\n\n温洲就站在她右手边，不到一臂的距离。他衬衫的肩头已经洇湿了一片，深色布料贴在皮肤上。\n\n“好大的雨。”温洲说。\n\n他的声音不高，但刚好盖过雨声。\n\n林希转头看了他一眼。温洲的视线正落在门外的积水潭上，雨滴砸下去，水面翻起密密匝匝的气泡。他没有看她。\n\n店员从里面探出半个身子，冲他们喊了一声：“要关门了啊！”\n\n卷帘门已经降到了膝盖的高度。\n\n林希的手抬起来，抓住了那把公共伞的伞柄。塑料挂钩发出一声轻响，伞脱离了挂槽。\n\n她按下伞柄上的按钮。\n\n“砰”的一声，深蓝色的伞面弹开，雨水立刻开始在伞面上敲出密集的鼓点。伞骨撑开的瞬间，一片阴影罩住了两个人之间的空隙。\n\n温洲侧过脸，看了一眼撑开的伞面，然后一步跨进了伞下。\n\n他的肩膀离她的肩膀很近，近到能感觉到他衬衫上带着的潮气。",
+  "input_tokens": 1346,
+  "output_tokens": 302,
+  "latency_ms": 9967,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "d66a6c1a73e434e4b85c91fbac606318beb8f434f05e7e3bd135838fff9d7f86",
+  "route_name": null,
+  "route_decision": {
+    "route_name": "C_OBJECT_CAUSAL",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "scene_state.available_objects is non-empty",
+      "causal_transitions contains counterfactual_without_action or rejected_alternative",
+      "character_next_action involves physical object manipulation"
+    ],
+    "matched_rules": [
+      "RULE_C_OBJECT_CAUSAL"
+    ],
+    "rejected_routes": []
+  },
+  "compiled_brief_hash": "534bf1bb7e7801789ac00cadd7204fb772720669933f98eed4f21f26af00d711",
+  "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+  "text_path": "cases\\B-06\\drafts\\route-2.txt"
+}

@@ -1,0 +1,338 @@
+{
+  "case_id": "ROMANCE-02",
+  "category": "恋爱日常",
+  "title": "未读消息",
+  "run_id": "1fc38764-3941-452f-a8ff-4e7faf63cd00",
+  "expected_route": "B_SHORT_RELATION",
+  "planner": {
+    "candidate_id": "4056e201-9959-4fb5-bd25-1f1e7bf6ac47",
+    "attempt_number": 1,
+    "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+    "model_id": "deepseek-v4-pro",
+    "prompt_version_id": "f9052f8a-dc4e-5408-b14e-fc1badaf57f8",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 12288,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "json_object"
+    },
+    "text_output": "{\n  \"planner_contract_version\": 2,\n  \"scene_goal\": \"夏知在厨房发现韩川手机亮起自己的未读消息，但韩川却扣下手机去洗菜，她必须在不确定对方是否故意回避的情况下，决定是继续帮忙做饭、离开还是试探，从而让两人的关系产生微妙但不可逆的变化。\",\n  \"location\": \"合租屋厨房\",\n  \"time\": \"傍晚，晚饭准备时间\",\n  \"scene_state\": {\n    \"last_completed_action\": \"韩川把手机扣在桌上，转身去水槽洗菜\",\n    \"present_characters\": [\"夏知\", \"韩川\"],\n    \"visible_facts\": [\n      \"韩川的手机屏幕曾亮起，显示夏知的未读消息\",\n      \"韩川没有查看消息，而是直接扣下手机\",\n      \"灶台上的水已经烧开\",\n      \"桌上摆着两只碗\",\n      \"韩川正在洗菜\"\n    ],\n    \"available_objects\": [\n      \"韩川的手机（扣在桌上）\",\n      \"两只碗\",\n      \"烧开的水\",\n      \"洗菜的水槽\",\n      \"未处理的食材\"\n    ],\n    \"unresolved_problem\": \"夏知不知道韩川是否看到了自己的消息，也不确定他扣下手机是回避还是巧合。\",\n    \"already_existing_constraints\": [\n      \"夏知不能偷看韩川的手机\",\n      \"夏知不能直接质问韩川为什么没回消息\",\n      \"两人是合租关系，需要维持日常礼貌\"\n    ]\n  },\n  \"characters\": [\n    {\n      \"name\": \"夏知\",\n      \"goal\": \"决定下一步行动：继续帮忙做饭、离开厨房，还是用其他方式试探韩川的态度\",\n      \"known\": [\n        \"自己昨晚给韩川发了消息\",\n        \"消息至今未读\",\n        \"韩川刚才把亮起的手机扣在桌上\"\n      ],\n      \"unknown\": [\n        \"韩川是否看到了消息通知\",\n        \"韩川扣下手机的真实原因\",\n        \"韩川对自己消息的态度\"\n      ],\n      \"mistaken_beliefs\": [\n        \"韩川可能故意不看消息，是在回避自己\"\n      ],\n      \"constraints\": [\n        \"不能偷看手机\",\n        \"不能直接质问\",\n        \"不能表现出过度在意\"\n      ],\n      \"observed_evidence\": [\n        \"手机屏幕亮起时显示了自己的名字\",\n        \"韩川瞥了一眼屏幕后立刻扣下手机\",\n        \"韩川转身洗菜，没有主动说话\"\n      ],\n      \"current_interpretation\": \"韩川看到了消息但选择无视，可能对自己有意见或想保持距离。\",\n      \"how_interpretation_drives_action\": \"夏知决定留在厨房帮忙，但会减少主动交流，观察韩川的反应，以此测试对方的真实态度。\"\n    },\n    {\n      \"name\": \"韩川\",\n      \"goal\": \"完成晚饭准备，避免在做饭时讨论可能引起尴尬的消息话题\",\n      \"known\": [\n        \"手机收到了夏知的消息\",\n        \"消息是昨晚发的\",\n        \"自己还没看具体内容\"\n      ],\n      \"unknown\": [\n        \"夏知是否注意到自己扣手机的动作\",\n        \"夏知对自己未回消息的感受\",\n        \"消息的具体内容\"\n      ],\n      \"mistaken_beliefs\": [\n        \"夏知可能只是发普通信息，不会太在意自己回不回\"\n      ],\n      \"constraints\": [\n        \"不能当着夏知的面查看消息\",\n        \"不能主动解释为什么没回\",\n        \"需要维持合租室友的自然互动\"\n      ],\n      \"observed_evidence\": [\n        \"夏知走进厨房时看到了手机屏幕\",\n        \"夏知的表情略微僵硬\",\n        \"夏知没有立刻说话\"\n      ],\n      \"current_interpretation\": \"夏知可能已经发现我没看消息，现在有点尴尬，但我不想在做饭时处理这件事。\",\n      \"how_interpretation_drives_action\": \"韩川继续洗菜，用准备晚饭的动作来回避直接交流，打算等气氛缓和后再自然地聊天。\"\n    }\n  ],\n  \"concrete_problem\": \"夏知必须决定：是帮忙做饭但减少交流、借口离开厨房，还是用帮忙拿碗筷等动作试探韩川的反应？\",\n  \"pressure\": \"水已经烧开，再不做饭就会浪费；两人独处的厨房里，沉默正在放大未读消息的尴尬。\",\n  \"turning_point\": \"夏知选择拿起一只碗，问韩川需不需要她盛饭，这个简单的提问迫使韩川必须回应，从而打破了回避状态。\",\n  \"end_condition\": \"韩川回应了夏知，两人开始像往常一样合作做饭，但夏知没有再问消息的事，韩川也没有主动提起。\",\n  \"forbidden\": [\n    \"夏知偷看韩川手机\",\n    \"夏知直接质问消息\",\n    \"韩川主动解释未回消息的原因\",\n    \"外部事件打断两人（如他人进入厨房）\",\n    \"任何角色直接说出内心想法\",\n    \"使用内心独白揭示角色真实动机\"\n  ],\n  \"causal_transitions\": [\n    {\n      \"id\": \"CT01\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"灶台上的水沸腾溢出，发出嘶嘶声\",\n      \"character_interpretation\": \"水开了，再不做饭就会烧干锅，必须有人处理\",\n      \"character_next_action\": \"夏知上前关小火，并拿起一只碗问韩川要不要盛饭\",\n      \"rejected_alternative\": \"夏知可以假装没注意，等韩川自己处理，但那样会显得冷漠\",\n      \"immediate_consequence\": \"韩川转过身，回答“好，谢谢”，并递过洗好的菜\",\n      \"counterfactual_without_action\": \"如果夏知不行动，水会继续溢出，韩川可能手忙脚乱，两人间的尴尬会加剧\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"两人沉默，水沸腾无人管\",\n        \"after\": \"夏知主动帮忙，韩川回应，开始协作\"\n      },\n      \"cost_or_commitment\": \"夏知放下了对消息的纠结，主动维持日常互动\",\n      \"next_constraint\": \"两人必须继续合作完成做饭，不能突然离开或停止交流\",\n      \"reader_must_infer\": \"夏知选择帮忙不是因为不介意，而是不想让关系变得更僵\",\n      \"narrator_must_not_state\": [\n        \"夏知内心是否真的原谅了韩川\",\n        \"韩川是否松了一口气\"\n      ]\n    }\n  ],\n  \"tempo_guardrails\": {\n    \"entry_pressure\": \"水已烧开，桌上只有两只碗，韩川却还在洗菜，夏知站在门口不知该进该退\",\n    \"dominant_pressure\": {\n      \"kind\": \"social_friction\",\n      \"description\": \"未读消息造成的尴尬正在主导互动，两人都避免直接提及，但沉默和回避动作让气氛越来越紧张\"\n    },\n    \"allowed_viewpoint_misread\": \"夏知可能把韩川的沉默解读为冷漠或反感\",\n    \"disclosure_cap\": 1,\n    \"must_remain_unclassified\": [\n      \"韩川未回消息的真正原因\",\n      \"夏知消息的具体内容\"\n    ],\n    \"stop_state\": {\n      \"type\": \"relationship_shift\",\n      \"visible_fact\": \"韩川接过夏知递来的碗，开始盛饭，两人并肩站在灶台前\",\n      \"what_is_now_different\": \"两人从回避状态转为日常协作，但未读消息成为心照不宣的禁区\",\n      \"must_not_append\": \"不得解释为什么韩川最终没有提起消息\"\n    },\n    \"final_line_must_include\": \"\"\n  },\n  \"chapter_contract_check\": {\n    \"function_aligned\": true,\n    \"must_deliver_covered\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_enabled\": true,\n    \"main_payoff_prepared\": true,\n    \"ending_hook_established\": true,\n    \"causal_transitions_grounded\": true,\n    \"reader_inference_not_pre_resolved\": true,\n    \"scene_state_reconstructed\": true,\n    \"information_sources_legal\": true,\n    \"character_choice_is_real\": true,\n    \"consequence_is_counterfactual\": true,\n    \"state_delta_is_nonempty\": true,\n    \"next_constraint_is_new\": true,\n    \"stop_state_is_visible\": true,\n    \"stop_state_changes_future_actions\": true\n  }\n}",
+    "raw_response": "{\n  \"planner_contract_version\": 2,\n  \"scene_goal\": \"夏知在厨房发现韩川手机亮起自己的未读消息，但韩川却扣下手机去洗菜，她必须在不确定对方是否故意回避的情况下，决定是继续帮忙做饭、离开还是试探，从而让两人的关系产生微妙但不可逆的变化。\",\n  \"location\": \"合租屋厨房\",\n  \"time\": \"傍晚，晚饭准备时间\",\n  \"scene_state\": {\n    \"last_completed_action\": \"韩川把手机扣在桌上，转身去水槽洗菜\",\n    \"present_characters\": [\"夏知\", \"韩川\"],\n    \"visible_facts\": [\n      \"韩川的手机屏幕曾亮起，显示夏知的未读消息\",\n      \"韩川没有查看消息，而是直接扣下手机\",\n      \"灶台上的水已经烧开\",\n      \"桌上摆着两只碗\",\n      \"韩川正在洗菜\"\n    ],\n    \"available_objects\": [\n      \"韩川的手机（扣在桌上）\",\n      \"两只碗\",\n      \"烧开的水\",\n      \"洗菜的水槽\",\n      \"未处理的食材\"\n    ],\n    \"unresolved_problem\": \"夏知不知道韩川是否看到了自己的消息，也不确定他扣下手机是回避还是巧合。\",\n    \"already_existing_constraints\": [\n      \"夏知不能偷看韩川的手机\",\n      \"夏知不能直接质问韩川为什么没回消息\",\n      \"两人是合租关系，需要维持日常礼貌\"\n    ]\n  },\n  \"characters\": [\n    {\n      \"name\": \"夏知\",\n      \"goal\": \"决定下一步行动：继续帮忙做饭、离开厨房，还是用其他方式试探韩川的态度\",\n      \"known\": [\n        \"自己昨晚给韩川发了消息\",\n        \"消息至今未读\",\n        \"韩川刚才把亮起的手机扣在桌上\"\n      ],\n      \"unknown\": [\n        \"韩川是否看到了消息通知\",\n        \"韩川扣下手机的真实原因\",\n        \"韩川对自己消息的态度\"\n      ],\n      \"mistaken_beliefs\": [\n        \"韩川可能故意不看消息，是在回避自己\"\n      ],\n      \"constraints\": [\n        \"不能偷看手机\",\n        \"不能直接质问\",\n        \"不能表现出过度在意\"\n      ],\n      \"observed_evidence\": [\n        \"手机屏幕亮起时显示了自己的名字\",\n        \"韩川瞥了一眼屏幕后立刻扣下手机\",\n        \"韩川转身洗菜，没有主动说话\"\n      ],\n      \"current_interpretation\": \"韩川看到了消息但选择无视，可能对自己有意见或想保持距离。\",\n      \"how_interpretation_drives_action\": \"夏知决定留在厨房帮忙，但会减少主动交流，观察韩川的反应，以此测试对方的真实态度。\"\n    },\n    {\n      \"name\": \"韩川\",\n      \"goal\": \"完成晚饭准备，避免在做饭时讨论可能引起尴尬的消息话题\",\n      \"known\": [\n        \"手机收到了夏知的消息\",\n        \"消息是昨晚发的\",\n        \"自己还没看具体内容\"\n      ],\n      \"unknown\": [\n        \"夏知是否注意到自己扣手机的动作\",\n        \"夏知对自己未回消息的感受\",\n        \"消息的具体内容\"\n      ],\n      \"mistaken_beliefs\": [\n        \"夏知可能只是发普通信息，不会太在意自己回不回\"\n      ],\n      \"constraints\": [\n        \"不能当着夏知的面查看消息\",\n        \"不能主动解释为什么没回\",\n        \"需要维持合租室友的自然互动\"\n      ],\n      \"observed_evidence\": [\n        \"夏知走进厨房时看到了手机屏幕\",\n        \"夏知的表情略微僵硬\",\n        \"夏知没有立刻说话\"\n      ],\n      \"current_interpretation\": \"夏知可能已经发现我没看消息，现在有点尴尬，但我不想在做饭时处理这件事。\",\n      \"how_interpretation_drives_action\": \"韩川继续洗菜，用准备晚饭的动作来回避直接交流，打算等气氛缓和后再自然地聊天。\"\n    }\n  ],\n  \"concrete_problem\": \"夏知必须决定：是帮忙做饭但减少交流、借口离开厨房，还是用帮忙拿碗筷等动作试探韩川的反应？\",\n  \"pressure\": \"水已经烧开，再不做饭就会浪费；两人独处的厨房里，沉默正在放大未读消息的尴尬。\",\n  \"turning_point\": \"夏知选择拿起一只碗，问韩川需不需要她盛饭，这个简单的提问迫使韩川必须回应，从而打破了回避状态。\",\n  \"end_condition\": \"韩川回应了夏知，两人开始像往常一样合作做饭，但夏知没有再问消息的事，韩川也没有主动提起。\",\n  \"forbidden\": [\n    \"夏知偷看韩川手机\",\n    \"夏知直接质问消息\",\n    \"韩川主动解释未回消息的原因\",\n    \"外部事件打断两人（如他人进入厨房）\",\n    \"任何角色直接说出内心想法\",\n    \"使用内心独白揭示角色真实动机\"\n  ],\n  \"causal_transitions\": [\n    {\n      \"id\": \"CT01\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"灶台上的水沸腾溢出，发出嘶嘶声\",\n      \"character_interpretation\": \"水开了，再不做饭就会烧干锅，必须有人处理\",\n      \"character_next_action\": \"夏知上前关小火，并拿起一只碗问韩川要不要盛饭\",\n      \"rejected_alternative\": \"夏知可以假装没注意，等韩川自己处理，但那样会显得冷漠\",\n      \"immediate_consequence\": \"韩川转过身，回答“好，谢谢”，并递过洗好的菜\",\n      \"counterfactual_without_action\": \"如果夏知不行动，水会继续溢出，韩川可能手忙脚乱，两人间的尴尬会加剧\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"两人沉默，水沸腾无人管\",\n        \"after\": \"夏知主动帮忙，韩川回应，开始协作\"\n      },\n      \"cost_or_commitment\": \"夏知放下了对消息的纠结，主动维持日常互动\",\n      \"next_constraint\": \"两人必须继续合作完成做饭，不能突然离开或停止交流\",\n      \"reader_must_infer\": \"夏知选择帮忙不是因为不介意，而是不想让关系变得更僵\",\n      \"narrator_must_not_state\": [\n        \"夏知内心是否真的原谅了韩川\",\n        \"韩川是否松了一口气\"\n      ]\n    }\n  ],\n  \"tempo_guardrails\": {\n    \"entry_pressure\": \"水已烧开，桌上只有两只碗，韩川却还在洗菜，夏知站在门口不知该进该退\",\n    \"dominant_pressure\": {\n      \"kind\": \"social_friction\",\n      \"description\": \"未读消息造成的尴尬正在主导互动，两人都避免直接提及，但沉默和回避动作让气氛越来越紧张\"\n    },\n    \"allowed_viewpoint_misread\": \"夏知可能把韩川的沉默解读为冷漠或反感\",\n    \"disclosure_cap\": 1,\n    \"must_remain_unclassified\": [\n      \"韩川未回消息的真正原因\",\n      \"夏知消息的具体内容\"\n    ],\n    \"stop_state\": {\n      \"type\": \"relationship_shift\",\n      \"visible_fact\": \"韩川接过夏知递来的碗，开始盛饭，两人并肩站在灶台前\",\n      \"what_is_now_different\": \"两人从回避状态转为日常协作，但未读消息成为心照不宣的禁区\",\n      \"must_not_append\": \"不得解释为什么韩川最终没有提起消息\"\n    },\n    \"final_line_must_include\": \"\"\n  },\n  \"chapter_contract_check\": {\n    \"function_aligned\": true,\n    \"must_deliver_covered\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_enabled\": true,\n    \"main_payoff_prepared\": true,\n    \"ending_hook_established\": true,\n    \"causal_transitions_grounded\": true,\n    \"reader_inference_not_pre_resolved\": true,\n    \"scene_state_reconstructed\": true,\n    \"information_sources_legal\": true,\n    \"character_choice_is_real\": true,\n    \"consequence_is_counterfactual\": true,\n    \"state_delta_is_nonempty\": true,\n    \"next_constraint_is_new\": true,\n    \"stop_state_is_visible\": true,\n    \"stop_state_changes_future_actions\": true\n  }\n}",
+    "input_tokens": 3324,
+    "output_tokens": 1858,
+    "latency_ms": 27431,
+    "finish_reason": "stop",
+    "error_code": null,
+    "error_message": null,
+    "rendered_user_prompt_sha256": "0875271083d24f079a15cd3bc370258dcbcad6f52144a14e343b987eb35682f3",
+    "route_name": null,
+    "route_decision": null,
+    "compiled_brief_hash": null,
+    "instruction_hash": null
+  },
+  "drafts": [
+    {
+      "group": "ROUTE-B_SHORT_RELATION",
+      "replica": 1,
+      "mode": "narrative_route",
+      "candidate_id": "de4af637-1931-4a22-b297-96d5bc91f5ba",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "B_SHORT_RELATION",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "scene is relationship-oriented with no physical urgency",
+            "character action involves relational move (message, gesture, proximity)"
+          ],
+          "matched_rules": [
+            "RULE_B_SHORT_RELATION"
+          ],
+          "rejected_routes": [
+            "C_OBJECT_CAUSAL",
+            "A_LITE_INFORMATION_GAP"
+          ]
+        },
+        "compiled_brief_hash": "346f93501f865060b88a1c05d2bb21a1a3f1469b4c53891b795171f6eb88e3a3",
+        "instruction_hash": "d7a76822408396dc71c4599a7f40f33368b90199f0d9c0712383961213437555",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "水蒸气从锅沿漫出来，扑上夏知的脸。\n\n韩川把手机扣在料理台边，屏幕朝下，手指已经伸进洗菜盆里。青菜叶子在水龙头底下翻动，他低着头，像根本没听见门口有人。\n\n灶台上的水咕嘟咕嘟滚着，泡沫快顶到锅盖。两只碗并排搁在桌角，筷子还没摆。\n\n夏知走进去，伸手把火拧小了两圈。滚水声落下来，厨房忽然安静得能听见隔壁的洗衣机在转。\n\n她拿起桌上一只碗，指尖碰到碗沿时顿了顿，然后转过身。\n\n“韩川。”\n\n他停下洗菜的手，水还在流。\n\n“要不要先盛饭？”\n\n韩川侧过脸看她。水珠从他手指上滴下来，滴在料理台边缘。他伸手把洗好的菜筐递过来，菜叶上挂着水，筐底还在往下淌。\n\n“好，谢谢。”\n\n夏知接过菜筐，手指擦过他湿漉漉的指节。凉的。\n\n韩川转身去端电饭煲。他打开锅盖，热气腾起来，模糊了他低头的侧脸。夏知把碗递过去的时候，他接住了，手指扣在碗沿，和她的手指隔着不到一寸。\n\n他往碗里压饭，米粒被压实的声响填满两个人之间的空隙。\n\n夏知把菜筐放在砧板旁边，没走开。灶台上的小火舔着锅底，水安静地冒着细泡。\n\n韩川盛好一碗，递回给她。她接过去，碗底烫得她换了一只手托住。\n\n他盛第二碗的时候，她站在灶台前没动。两个人并排站着，肩膀之间隔着一只碗的距离。",
+      "raw_response": "水蒸气从锅沿漫出来，扑上夏知的脸。\n\n韩川把手机扣在料理台边，屏幕朝下，手指已经伸进洗菜盆里。青菜叶子在水龙头底下翻动，他低着头，像根本没听见门口有人。\n\n灶台上的水咕嘟咕嘟滚着，泡沫快顶到锅盖。两只碗并排搁在桌角，筷子还没摆。\n\n夏知走进去，伸手把火拧小了两圈。滚水声落下来，厨房忽然安静得能听见隔壁的洗衣机在转。\n\n她拿起桌上一只碗，指尖碰到碗沿时顿了顿，然后转过身。\n\n“韩川。”\n\n他停下洗菜的手，水还在流。\n\n“要不要先盛饭？”\n\n韩川侧过脸看她。水珠从他手指上滴下来，滴在料理台边缘。他伸手把洗好的菜筐递过来，菜叶上挂着水，筐底还在往下淌。\n\n“好，谢谢。”\n\n夏知接过菜筐，手指擦过他湿漉漉的指节。凉的。\n\n韩川转身去端电饭煲。他打开锅盖，热气腾起来，模糊了他低头的侧脸。夏知把碗递过去的时候，他接住了，手指扣在碗沿，和她的手指隔着不到一寸。\n\n他往碗里压饭，米粒被压实的声响填满两个人之间的空隙。\n\n夏知把菜筐放在砧板旁边，没走开。灶台上的小火舔着锅底，水安静地冒着细泡。\n\n韩川盛好一碗，递回给她。她接过去，碗底烫得她换了一只手托住。\n\n他盛第二碗的时候，她站在灶台前没动。两个人并排站着，肩膀之间隔着一只碗的距离。",
+      "input_tokens": 1355,
+      "output_tokens": 369,
+      "latency_ms": 9462,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "c15a06b5cad7bb1a067830ee1bc7b132067f3977e0df48fe31baa16f527e6570",
+      "route_name": null,
+      "route_decision": {
+        "route_name": "B_SHORT_RELATION",
+        "classifier_version": "narrative-route-v1",
+        "decision_reasons": [
+          "scene is relationship-oriented with no physical urgency",
+          "character action involves relational move (message, gesture, proximity)"
+        ],
+        "matched_rules": [
+          "RULE_B_SHORT_RELATION"
+        ],
+        "rejected_routes": [
+          "C_OBJECT_CAUSAL",
+          "A_LITE_INFORMATION_GAP"
+        ]
+      },
+      "compiled_brief_hash": "346f93501f865060b88a1c05d2bb21a1a3f1469b4c53891b795171f6eb88e3a3",
+      "instruction_hash": "d7a76822408396dc71c4599a7f40f33368b90199f0d9c0712383961213437555",
+      "text_path": "cases\\ROMANCE-02\\drafts\\route-1.txt"
+    },
+    {
+      "group": "ROUTE-B_SHORT_RELATION",
+      "replica": 2,
+      "mode": "narrative_route",
+      "candidate_id": "3321f1c2-d32f-4735-9155-aae65c1ede26",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "B_SHORT_RELATION",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "scene is relationship-oriented with no physical urgency",
+            "character action involves relational move (message, gesture, proximity)"
+          ],
+          "matched_rules": [
+            "RULE_B_SHORT_RELATION"
+          ],
+          "rejected_routes": [
+            "C_OBJECT_CAUSAL",
+            "A_LITE_INFORMATION_GAP"
+          ]
+        },
+        "compiled_brief_hash": "346f93501f865060b88a1c05d2bb21a1a3f1469b4c53891b795171f6eb88e3a3",
+        "instruction_hash": "d7a76822408396dc71c4599a7f40f33368b90199f0d9c0712383961213437555",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "水烧开的声音咕嘟咕嘟响着，蒸汽从锅盖边缘挤出来。\n\n夏知站在厨房门口，手指抠在门框边沿。桌上两只碗，筷子已经摆好。韩川背对着她，水龙头哗哗响，他正把青菜一片一片掰开冲洗。他的手机扣在料理台角落，屏幕朝下。\n\n刚才她走进来时，那部手机还亮着。屏幕上是她的名字，消息预览框里躺着昨晚发出去的那行字。韩川瞥了一眼，然后翻过手机，转身去洗菜。\n\n一个字没说。\n\n夏知看着他的后背。灰色T恤，肩胛骨的轮廓在布料下微微起伏。水还在烧，锅盖被蒸汽顶得轻轻跳动。\n\n她走进去，伸手把灶火拧小。火苗缩下去，咕嘟声缓了。\n\n韩川没回头。\n\n夏知拿起桌上一只碗，指腹贴在碗沿的釉面上，凉的。她转过身，把碗举到韩川肩膀旁边。\n\n“要不要先盛饭？”\n\n韩川的手停在水龙头下。青菜叶子被水流冲得翻了个面。\n\n他关了水，直起腰，转过来。目光从她手里的碗移到她脸上，停了一秒。\n\n“好，谢谢。”\n\n他把沥水篮递过来。洗好的青菜叶子上挂着水珠，顺着篮底往下滴。夏知接住，篮子把手是湿的，凉的。她换到另一只手上，把碗搁在韩川手边。\n\n韩川拿起那只碗，打开电饭煲。米饭的热气涌出来，白茫茫一片。他盛了满满一碗，递给夏知。然后又拿起桌上另一只碗，给自己盛。\n\n夏知端着碗站到他旁边，把沥水篮放在灶台上。锅里的水又开了，她把青菜倒进去。叶片沉底，又慢慢浮起来，在水面上摊开。韩川伸手把火调大，手臂擦过她的肩膀，没躲开，也没停。",
+      "raw_response": "水烧开的声音咕嘟咕嘟响着，蒸汽从锅盖边缘挤出来。\n\n夏知站在厨房门口，手指抠在门框边沿。桌上两只碗，筷子已经摆好。韩川背对着她，水龙头哗哗响，他正把青菜一片一片掰开冲洗。他的手机扣在料理台角落，屏幕朝下。\n\n刚才她走进来时，那部手机还亮着。屏幕上是她的名字，消息预览框里躺着昨晚发出去的那行字。韩川瞥了一眼，然后翻过手机，转身去洗菜。\n\n一个字没说。\n\n夏知看着他的后背。灰色T恤，肩胛骨的轮廓在布料下微微起伏。水还在烧，锅盖被蒸汽顶得轻轻跳动。\n\n她走进去，伸手把灶火拧小。火苗缩下去，咕嘟声缓了。\n\n韩川没回头。\n\n夏知拿起桌上一只碗，指腹贴在碗沿的釉面上，凉的。她转过身，把碗举到韩川肩膀旁边。\n\n“要不要先盛饭？”\n\n韩川的手停在水龙头下。青菜叶子被水流冲得翻了个面。\n\n他关了水，直起腰，转过来。目光从她手里的碗移到她脸上，停了一秒。\n\n“好，谢谢。”\n\n他把沥水篮递过来。洗好的青菜叶子上挂着水珠，顺着篮底往下滴。夏知接住，篮子把手是湿的，凉的。她换到另一只手上，把碗搁在韩川手边。\n\n韩川拿起那只碗，打开电饭煲。米饭的热气涌出来，白茫茫一片。他盛了满满一碗，递给夏知。然后又拿起桌上另一只碗，给自己盛。\n\n夏知端着碗站到他旁边，把沥水篮放在灶台上。锅里的水又开了，她把青菜倒进去。叶片沉底，又慢慢浮起来，在水面上摊开。韩川伸手把火调大，手臂擦过她的肩膀，没躲开，也没停。",
+      "input_tokens": 1355,
+      "output_tokens": 422,
+      "latency_ms": 9833,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "c15a06b5cad7bb1a067830ee1bc7b132067f3977e0df48fe31baa16f527e6570",
+      "route_name": null,
+      "route_decision": {
+        "route_name": "B_SHORT_RELATION",
+        "classifier_version": "narrative-route-v1",
+        "decision_reasons": [
+          "scene is relationship-oriented with no physical urgency",
+          "character action involves relational move (message, gesture, proximity)"
+        ],
+        "matched_rules": [
+          "RULE_B_SHORT_RELATION"
+        ],
+        "rejected_routes": [
+          "C_OBJECT_CAUSAL",
+          "A_LITE_INFORMATION_GAP"
+        ]
+      },
+      "compiled_brief_hash": "346f93501f865060b88a1c05d2bb21a1a3f1469b4c53891b795171f6eb88e3a3",
+      "instruction_hash": "d7a76822408396dc71c4599a7f40f33368b90199f0d9c0712383961213437555",
+      "text_path": "cases\\ROMANCE-02\\drafts\\route-2.txt"
+    },
+    {
+      "group": "ROUTE-B_SHORT_RELATION",
+      "replica": 3,
+      "mode": "narrative_route",
+      "candidate_id": "d422083f-3b0c-44b9-9f33-df33abd34406",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "B_SHORT_RELATION",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "scene is relationship-oriented with no physical urgency",
+            "character action involves relational move (message, gesture, proximity)"
+          ],
+          "matched_rules": [
+            "RULE_B_SHORT_RELATION"
+          ],
+          "rejected_routes": [
+            "C_OBJECT_CAUSAL",
+            "A_LITE_INFORMATION_GAP"
+          ]
+        },
+        "compiled_brief_hash": "346f93501f865060b88a1c05d2bb21a1a3f1469b4c53891b795171f6eb88e3a3",
+        "instruction_hash": "d7a76822408396dc71c4599a7f40f33368b90199f0d9c0712383961213437555",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "水开了有一阵了，咕嘟咕嘟顶着锅盖。\n\n夏知站在厨房门口，看见韩川的手机扣在料理台边上。刚才屏幕亮过，她瞥见自己的名字——未读消息，昨晚发的。韩川拿起来看了一眼，翻了个面，直接扣下去，然后转身去洗菜。水龙头哗哗响，他低着头，没说话。\n\n灶台上的火还开着最大，锅盖被蒸汽冲得轻轻跳动。桌上两只碗，空着，并排摆在那里。\n\n夏知走进去，伸手把燃气灶的旋钮往左拧了两圈。火苗缩下去，水声从暴躁变成咕噜噜的低响。她拿起桌上一只碗，瓷面温热，不知道是韩川提前烫过还是被蒸汽烘的。\n\n“要盛饭吗？”她问。\n\n韩川关掉水龙头，甩了甩手上的水珠，转过身。他看了她一眼，又看了看她手里的碗。\n\n“好，谢谢。”\n\n他把沥水篮里洗好的青菜递过来，夏知接住。菜叶上还挂着水，滴在她手背上，凉的。\n\n韩川打开电饭煲，从她手里接过那只碗。手指碰到碗边的时候，夏知没松手，他也没立刻拿过去。停顿了大概一秒，韩川的手指往旁边挪了半寸，避开她的指尖，把碗接走。\n\n他转身去盛饭。夏知端着菜走到灶台边，把青菜倒进炒锅，油还没热，菜叶上的水珠在锅底滚了两圈。\n\n韩川盛好饭，端着碗站在她旁边。两个人并肩对着灶台，锅里的油开始滋滋响。",
+      "raw_response": "水开了有一阵了，咕嘟咕嘟顶着锅盖。\n\n夏知站在厨房门口，看见韩川的手机扣在料理台边上。刚才屏幕亮过，她瞥见自己的名字——未读消息，昨晚发的。韩川拿起来看了一眼，翻了个面，直接扣下去，然后转身去洗菜。水龙头哗哗响，他低着头，没说话。\n\n灶台上的火还开着最大，锅盖被蒸汽冲得轻轻跳动。桌上两只碗，空着，并排摆在那里。\n\n夏知走进去，伸手把燃气灶的旋钮往左拧了两圈。火苗缩下去，水声从暴躁变成咕噜噜的低响。她拿起桌上一只碗，瓷面温热，不知道是韩川提前烫过还是被蒸汽烘的。\n\n“要盛饭吗？”她问。\n\n韩川关掉水龙头，甩了甩手上的水珠，转过身。他看了她一眼，又看了看她手里的碗。\n\n“好，谢谢。”\n\n他把沥水篮里洗好的青菜递过来，夏知接住。菜叶上还挂着水，滴在她手背上，凉的。\n\n韩川打开电饭煲，从她手里接过那只碗。手指碰到碗边的时候，夏知没松手，他也没立刻拿过去。停顿了大概一秒，韩川的手指往旁边挪了半寸，避开她的指尖，把碗接走。\n\n他转身去盛饭。夏知端着菜走到灶台边，把青菜倒进炒锅，油还没热，菜叶上的水珠在锅底滚了两圈。\n\n韩川盛好饭，端着碗站在她旁边。两个人并肩对着灶台，锅里的油开始滋滋响。",
+      "input_tokens": 1355,
+      "output_tokens": 356,
+      "latency_ms": 8502,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "c15a06b5cad7bb1a067830ee1bc7b132067f3977e0df48fe31baa16f527e6570",
+      "route_name": null,
+      "route_decision": {
+        "route_name": "B_SHORT_RELATION",
+        "classifier_version": "narrative-route-v1",
+        "decision_reasons": [
+          "scene is relationship-oriented with no physical urgency",
+          "character action involves relational move (message, gesture, proximity)"
+        ],
+        "matched_rules": [
+          "RULE_B_SHORT_RELATION"
+        ],
+        "rejected_routes": [
+          "C_OBJECT_CAUSAL",
+          "A_LITE_INFORMATION_GAP"
+        ]
+      },
+      "compiled_brief_hash": "346f93501f865060b88a1c05d2bb21a1a3f1469b4c53891b795171f6eb88e3a3",
+      "instruction_hash": "d7a76822408396dc71c4599a7f40f33368b90199f0d9c0712383961213437555",
+      "text_path": "cases\\ROMANCE-02\\drafts\\route-3.txt"
+    },
+    {
+      "group": "BASELINE-writer_brief",
+      "replica": 1,
+      "mode": "writer_brief",
+      "candidate_id": "07759ec9-6ee8-4eb3-a22d-87c15f97d289",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "厨房里的水已经烧开好一会儿了。\n\n夏知站在门口，手指还搭在门框上。灶台上的锅盖被蒸汽顶得轻轻跳动，咕嘟咕嘟的水声填满了整个空间。韩川背对着她站在水槽前，水龙头开得不大，细细的水流冲在青菜叶子上。\n\n她看见他的手机扣在餐桌边缘，屏幕朝下。\n\n刚才她走进来的时候，那屏幕还亮着。她的名字明晃晃地浮在锁屏通知栏上，底下是自己昨晚发的那条消息的前几个字——“韩川，明天早上……”后面的内容被折叠了，但足够让人认出来。韩川当时正从冰箱里拿菜，瞥了一眼亮起的屏幕，手指顿了一下，然后就把手机翻了过去。\n\n动作很轻，像是顺手。\n\n然后他拧开水龙头，开始洗菜。\n\n夏知看着那两只碗。白色瓷碗，并排放在桌面上，筷子已经摆好了。锅里的水还在滚，蒸汽升起来又散开。韩川没有回头。\n\n她走进厨房。\n\n帆布鞋踩在地砖上没有声音，她绕过餐桌，伸手把灶台的旋钮往左拧了两格。火焰从猛火收成文火，锅里的沸腾缓下来，水泡从激烈的大滚变成细密的小泡。\n\n韩川关掉水龙头，甩了甩手上的水珠，转过头。\n\n夏知拿起桌上一只碗，碗底磕在桌面发出轻轻一声响。她抬眼看韩川：“要盛饭吗？”\n\n韩川看了她一眼，视线在她脸上停了不到一秒，然后落在那只碗上。“好，谢谢。”\n\n他转身从水槽里捞出洗好的菜，放进沥水篮里，把篮子往她这边推了推。“菜洗好了。”\n\n夏知接过沥水篮，手指碰到篮子的塑料边缘，上面还挂着水珠。她把篮子放在案板旁边，转身去够电饭煲。韩川已经拿起另一只碗，站到了她旁边。\n\n电饭煲的盖子掀开，白气涌上来。夏知盛了一碗，压实了，又松了松，递给韩川。韩川接过去，把空碗换给她。\n\n两个人并肩站在灶台前，锅里的水重新滚起来。",
+      "raw_response": "厨房里的水已经烧开好一会儿了。\n\n夏知站在门口，手指还搭在门框上。灶台上的锅盖被蒸汽顶得轻轻跳动，咕嘟咕嘟的水声填满了整个空间。韩川背对着她站在水槽前，水龙头开得不大，细细的水流冲在青菜叶子上。\n\n她看见他的手机扣在餐桌边缘，屏幕朝下。\n\n刚才她走进来的时候，那屏幕还亮着。她的名字明晃晃地浮在锁屏通知栏上，底下是自己昨晚发的那条消息的前几个字——“韩川，明天早上……”后面的内容被折叠了，但足够让人认出来。韩川当时正从冰箱里拿菜，瞥了一眼亮起的屏幕，手指顿了一下，然后就把手机翻了过去。\n\n动作很轻，像是顺手。\n\n然后他拧开水龙头，开始洗菜。\n\n夏知看着那两只碗。白色瓷碗，并排放在桌面上，筷子已经摆好了。锅里的水还在滚，蒸汽升起来又散开。韩川没有回头。\n\n她走进厨房。\n\n帆布鞋踩在地砖上没有声音，她绕过餐桌，伸手把灶台的旋钮往左拧了两格。火焰从猛火收成文火，锅里的沸腾缓下来，水泡从激烈的大滚变成细密的小泡。\n\n韩川关掉水龙头，甩了甩手上的水珠，转过头。\n\n夏知拿起桌上一只碗，碗底磕在桌面发出轻轻一声响。她抬眼看韩川：“要盛饭吗？”\n\n韩川看了她一眼，视线在她脸上停了不到一秒，然后落在那只碗上。“好，谢谢。”\n\n他转身从水槽里捞出洗好的菜，放进沥水篮里，把篮子往她这边推了推。“菜洗好了。”\n\n夏知接过沥水篮，手指碰到篮子的塑料边缘，上面还挂着水珠。她把篮子放在案板旁边，转身去够电饭煲。韩川已经拿起另一只碗，站到了她旁边。\n\n电饭煲的盖子掀开，白气涌上来。夏知盛了一碗，压实了，又松了松，递给韩川。韩川接过去，把空碗换给她。\n\n两个人并肩站在灶台前，锅里的水重新滚起来。",
+      "input_tokens": 1255,
+      "output_tokens": 478,
+      "latency_ms": 10797,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "84f19c43ab6c4221f4fee8c8d7882ab59e5a09b7bed5b99209cfa517414a30fa",
+      "route_name": null,
+      "route_decision": null,
+      "compiled_brief_hash": null,
+      "instruction_hash": null,
+      "text_path": "cases\\ROMANCE-02\\drafts\\baseline-1.txt"
+    },
+    {
+      "group": "BASELINE-writer_brief",
+      "replica": 2,
+      "mode": "writer_brief",
+      "candidate_id": "08ec2f74-6d52-4bfd-a11e-f7e73d139b9f",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "夏知站在厨房门口，手指还搭在门框上。\n\n灶台上的锅盖被蒸汽顶得轻轻跳动，咕嘟咕嘟的水声填满了整个空间。桌上两只白瓷碗并排摆着，筷子已经架好了。韩川背对着她，站在水槽前，水龙头哗哗响着，他手里的青菜叶子一片一片翻过去，冲了又冲。\n\n她看见他的手机扣在料理台边上，屏幕朝下。\n\n刚才她走进来时，那屏幕还亮着。她的名字就在通知栏里，底下压着她昨晚发的那条消息。韩川当时正从冰箱里拿出青菜，瞥了一眼屏幕，手指在手机上停了一秒，然后翻过去，扣在台面上，转身去开水龙头。\n\n水还在烧。锅盖快要被顶开了。\n\n夏知走进去。\n\n她绕过餐桌，经过那把空着的椅子，直接走到灶台前。手指碰到旋钮时有点烫，她往左拧到底，火焰缩下去，锅里的翻滚声慢慢平息，蒸汽散开一些。她把锅盖掀开一条缝，热气扑在脸上，眯了眯眼。\n\n然后她拿起桌上的一只碗，转过身。\n\n韩川还在洗菜。水龙头的声音没停，但他的动作慢下来了，手指捏着一片菜叶的边缘，反复搓着同一个位置。\n\n“韩川。”夏知把碗举了举，“要不要先盛饭？”\n\n水声停了。\n\n韩川甩了甩手上的水，转过身来。他看了她一眼，目光在她脸上停了一瞬，然后落到她手里的碗上。\n\n“好。”他说，“谢谢。”\n\n他把洗好的菜从沥水篮里捞出来，装进一个玻璃盆里，递过来。菜叶上还挂着水珠，顺着盆边往下淌。夏知接过来，手指碰到盆底，凉的。\n\n她把菜盆放在灶台边，转身去电饭煲前。锅盖掀开，米饭的热气升起来，她拿起饭勺，开始往碗里盛饭。第一勺，第二勺，压平，再添半勺。\n\n韩川从她身后走过去，打开橱柜，拿出一个汤碗。两个人的肩膀之间隔着一个拳头的距离。他回到灶台前，把烧开的水倒进汤碗里，拆开一包紫菜，撕成小块丢进去。\n\n夏知盛好两碗饭，放在桌上。两只碗，位置和刚才一样，但饭已经在了。\n\n韩川把汤碗端过来，放在两碗饭中间。他拉开椅子坐下，拿起筷子。\n\n夏知坐在他对面。\n\n桌上冒着热气。饭是热的，汤是热的，洗好的青菜还在灶台上等着下锅。韩川夹了一筷子菜放进汤里，烫了几秒，捞出来放进自己碗里。然后他抬起眼，把筷子伸向菜盆，夹起一筷子青菜，放进了夏知碗里。\n\n动作很快，没说话。\n\n夏知看着碗里多出来的青菜，拿起筷子，低头吃了一口饭。",
+      "raw_response": "夏知站在厨房门口，手指还搭在门框上。\n\n灶台上的锅盖被蒸汽顶得轻轻跳动，咕嘟咕嘟的水声填满了整个空间。桌上两只白瓷碗并排摆着，筷子已经架好了。韩川背对着她，站在水槽前，水龙头哗哗响着，他手里的青菜叶子一片一片翻过去，冲了又冲。\n\n她看见他的手机扣在料理台边上，屏幕朝下。\n\n刚才她走进来时，那屏幕还亮着。她的名字就在通知栏里，底下压着她昨晚发的那条消息。韩川当时正从冰箱里拿出青菜，瞥了一眼屏幕，手指在手机上停了一秒，然后翻过去，扣在台面上，转身去开水龙头。\n\n水还在烧。锅盖快要被顶开了。\n\n夏知走进去。\n\n她绕过餐桌，经过那把空着的椅子，直接走到灶台前。手指碰到旋钮时有点烫，她往左拧到底，火焰缩下去，锅里的翻滚声慢慢平息，蒸汽散开一些。她把锅盖掀开一条缝，热气扑在脸上，眯了眯眼。\n\n然后她拿起桌上的一只碗，转过身。\n\n韩川还在洗菜。水龙头的声音没停，但他的动作慢下来了，手指捏着一片菜叶的边缘，反复搓着同一个位置。\n\n“韩川。”夏知把碗举了举，“要不要先盛饭？”\n\n水声停了。\n\n韩川甩了甩手上的水，转过身来。他看了她一眼，目光在她脸上停了一瞬，然后落到她手里的碗上。\n\n“好。”他说，“谢谢。”\n\n他把洗好的菜从沥水篮里捞出来，装进一个玻璃盆里，递过来。菜叶上还挂着水珠，顺着盆边往下淌。夏知接过来，手指碰到盆底，凉的。\n\n她把菜盆放在灶台边，转身去电饭煲前。锅盖掀开，米饭的热气升起来，她拿起饭勺，开始往碗里盛饭。第一勺，第二勺，压平，再添半勺。\n\n韩川从她身后走过去，打开橱柜，拿出一个汤碗。两个人的肩膀之间隔着一个拳头的距离。他回到灶台前，把烧开的水倒进汤碗里，拆开一包紫菜，撕成小块丢进去。\n\n夏知盛好两碗饭，放在桌上。两只碗，位置和刚才一样，但饭已经在了。\n\n韩川把汤碗端过来，放在两碗饭中间。他拉开椅子坐下，拿起筷子。\n\n夏知坐在他对面。\n\n桌上冒着热气。饭是热的，汤是热的，洗好的青菜还在灶台上等着下锅。韩川夹了一筷子菜放进汤里，烫了几秒，捞出来放进自己碗里。然后他抬起眼，把筷子伸向菜盆，夹起一筷子青菜，放进了夏知碗里。\n\n动作很快，没说话。\n\n夏知看着碗里多出来的青菜，拿起筷子，低头吃了一口饭。",
+      "input_tokens": 1255,
+      "output_tokens": 635,
+      "latency_ms": 14135,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "84f19c43ab6c4221f4fee8c8d7882ab59e5a09b7bed5b99209cfa517414a30fa",
+      "route_name": null,
+      "route_decision": null,
+      "compiled_brief_hash": null,
+      "instruction_hash": null,
+      "text_path": "cases\\ROMANCE-02\\drafts\\baseline-2.txt"
+    },
+    {
+      "group": "BASELINE-writer_brief",
+      "replica": 3,
+      "mode": "writer_brief",
+      "candidate_id": "10e31b2e-ed8f-4ee6-9f64-aa8e6931e386",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "水蒸气从锅沿漫出来，白蒙蒙地扑向抽油烟机的滤网。\n\n夏知站在厨房门口，手指还搭在门框上。灶台上的不锈钢锅咕嘟咕嘟冒着泡，盖子被蒸汽顶得轻轻跳动。桌上两只白瓷碗并排摆着，筷子已经搁好了。\n\n韩川背对着她，站在水槽前。水龙头哗哗响，他低着头洗一把小青菜，菜叶在水流里翻来翻去。他的手机扣在砧板旁边，屏幕朝下，黑色的手机壳上沾了一点水渍。\n\n刚才她走进来时，那屏幕还亮着。她的名字挂在通知栏里，下面压着她昨晚发的那条消息。韩川当时正从冰箱里拿菜，瞥了一眼屏幕，伸手把手机翻了过去。动作很轻，像翻一页书。\n\n然后他转身去洗菜。\n\n水流声没停过。韩川把洗好的菜捞起来甩了甩水，搁在沥水篮里，又拿起下一把。\n\n锅里的水还在滚。泡沫从锅盖边缘溢出来，顺着锅壁往下淌，滴在灶台上，嗞一声蒸发成一小团白气。\n\n夏知松开扶着门框的手，走进去。\n\n她绕过桌子，经过那把空着的椅子，伸手把燃气灶的旋钮往左拧了半圈。火焰缩下去，从蓝色火苗变成一圈细小的火点。锅里的翻滚缓下来，水面晃了晃，重新安静。\n\n韩川洗菜的手停了一下。\n\n夏知拿起桌上一只碗。瓷碗有点烫，是刚用热水烫过的。她转身朝向韩川，碗端在手里，指腹贴着碗底的热度。\n\n“要不要先盛饭？”\n\n韩川转过头看她。\n\n他手上还抓着一把湿淋淋的菜，水顺着指缝往下滴。他看了她一眼，又看了看她手里的碗，点了点头。\n\n“好，谢谢。”\n\n他把水龙头关了。\n\n厨房突然安静下来，只剩下锅里小火咕嘟的声音。韩川把手里的菜放进沥水篮，在围裙上擦了擦手，然后端起那篮洗好的菜递过来。\n\n夏知接过沥水篮，菜叶上还挂着水珠，冰冰凉凉地贴着她的手指。她把篮子放在灶台边，转身去拿饭勺。\n\n韩川从她手里接过那只碗，走到电饭煲前。\n\n锅盖掀开，白米饭的热气涌上来。他盛了一碗，压实，又盛第二碗。\n\n夏知把炒锅架到另一个灶眼上，拧开火，往锅里倒了点油。油热起来，她把沥水篮里的青菜倒进去，锅铲翻动，菜叶在热油里嗞啦作响。\n\n韩川把盛好的两碗饭端到桌上，一碗放在她常坐的那边，一碗放在自己那边。然后他走回来，站在她旁边，伸手把抽油烟机开到最大档。\n\n锅里的菜已经变了色，油亮亮的。夏知加了一小勺盐，翻了两下，关火。\n\n她把菜盛进盘子里。\n\n韩川接过盘子端上桌。夏知把炒锅放进水槽，拧开水龙头冲了一下，嗞的一声，水汽腾起来。她关了水，擦了擦手，走到桌边。\n\n韩川已经坐下了，正把筷子摆正。\n\n夏知拉开椅子坐下。\n\n两碗饭，一盘青菜，锅里还有一锅番茄蛋汤小火煨着。韩川起身去关火，把汤端过来，搁在桌子中间的隔热垫上。\n\n他重新坐下，拿起筷子。\n\n夏知也拿起筷子。",
+      "raw_response": "水蒸气从锅沿漫出来，白蒙蒙地扑向抽油烟机的滤网。\n\n夏知站在厨房门口，手指还搭在门框上。灶台上的不锈钢锅咕嘟咕嘟冒着泡，盖子被蒸汽顶得轻轻跳动。桌上两只白瓷碗并排摆着，筷子已经搁好了。\n\n韩川背对着她，站在水槽前。水龙头哗哗响，他低着头洗一把小青菜，菜叶在水流里翻来翻去。他的手机扣在砧板旁边，屏幕朝下，黑色的手机壳上沾了一点水渍。\n\n刚才她走进来时，那屏幕还亮着。她的名字挂在通知栏里，下面压着她昨晚发的那条消息。韩川当时正从冰箱里拿菜，瞥了一眼屏幕，伸手把手机翻了过去。动作很轻，像翻一页书。\n\n然后他转身去洗菜。\n\n水流声没停过。韩川把洗好的菜捞起来甩了甩水，搁在沥水篮里，又拿起下一把。\n\n锅里的水还在滚。泡沫从锅盖边缘溢出来，顺着锅壁往下淌，滴在灶台上，嗞一声蒸发成一小团白气。\n\n夏知松开扶着门框的手，走进去。\n\n她绕过桌子，经过那把空着的椅子，伸手把燃气灶的旋钮往左拧了半圈。火焰缩下去，从蓝色火苗变成一圈细小的火点。锅里的翻滚缓下来，水面晃了晃，重新安静。\n\n韩川洗菜的手停了一下。\n\n夏知拿起桌上一只碗。瓷碗有点烫，是刚用热水烫过的。她转身朝向韩川，碗端在手里，指腹贴着碗底的热度。\n\n“要不要先盛饭？”\n\n韩川转过头看她。\n\n他手上还抓着一把湿淋淋的菜，水顺着指缝往下滴。他看了她一眼，又看了看她手里的碗，点了点头。\n\n“好，谢谢。”\n\n他把水龙头关了。\n\n厨房突然安静下来，只剩下锅里小火咕嘟的声音。韩川把手里的菜放进沥水篮，在围裙上擦了擦手，然后端起那篮洗好的菜递过来。\n\n夏知接过沥水篮，菜叶上还挂着水珠，冰冰凉凉地贴着她的手指。她把篮子放在灶台边，转身去拿饭勺。\n\n韩川从她手里接过那只碗，走到电饭煲前。\n\n锅盖掀开，白米饭的热气涌上来。他盛了一碗，压实，又盛第二碗。\n\n夏知把炒锅架到另一个灶眼上，拧开火，往锅里倒了点油。油热起来，她把沥水篮里的青菜倒进去，锅铲翻动，菜叶在热油里嗞啦作响。\n\n韩川把盛好的两碗饭端到桌上，一碗放在她常坐的那边，一碗放在自己那边。然后他走回来，站在她旁边，伸手把抽油烟机开到最大档。\n\n锅里的菜已经变了色，油亮亮的。夏知加了一小勺盐，翻了两下，关火。\n\n她把菜盛进盘子里。\n\n韩川接过盘子端上桌。夏知把炒锅放进水槽，拧开水龙头冲了一下，嗞的一声，水汽腾起来。她关了水，擦了擦手，走到桌边。\n\n韩川已经坐下了，正把筷子摆正。\n\n夏知拉开椅子坐下。\n\n两碗饭，一盘青菜，锅里还有一锅番茄蛋汤小火煨着。韩川起身去关火，把汤端过来，搁在桌子中间的隔热垫上。\n\n他重新坐下，拿起筷子。\n\n夏知也拿起筷子。",
+      "input_tokens": 1255,
+      "output_tokens": 773,
+      "latency_ms": 15846,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "84f19c43ab6c4221f4fee8c8d7882ab59e5a09b7bed5b99209cfa517414a30fa",
+      "route_name": null,
+      "route_decision": null,
+      "compiled_brief_hash": null,
+      "instruction_hash": null,
+      "text_path": "cases\\ROMANCE-02\\drafts\\baseline-3.txt"
+    }
+  ],
+  "actual_route": "B_SHORT_RELATION",
+  "route_decision": {
+    "route_name": "B_SHORT_RELATION",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "scene is relationship-oriented with no physical urgency",
+      "character action involves relational move (message, gesture, proximity)"
+    ],
+    "matched_rules": [
+      "RULE_B_SHORT_RELATION"
+    ],
+    "rejected_routes": [
+      "C_OBJECT_CAUSAL",
+      "A_LITE_INFORMATION_GAP"
+    ]
+  }
+}

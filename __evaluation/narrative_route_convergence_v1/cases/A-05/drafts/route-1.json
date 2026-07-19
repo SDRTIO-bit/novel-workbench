@@ -1,0 +1,63 @@
+{
+  "group": "ROUTE-A_LITE_INFORMATION_GAP",
+  "replica": 1,
+  "mode": "narrative_route",
+  "candidate_id": "17681539-2d0b-443c-85e5-a4029cffa679",
+  "attempt_number": 1,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "route_decision": {
+      "route_name": "A_LITE_INFORMATION_GAP",
+      "classifier_version": "narrative-route-v1",
+      "decision_reasons": [
+        "multiple characters with distinct information",
+        "viewpoint character has unknown facts and an interpretation",
+        "secondary character carries independent knowledge"
+      ],
+      "matched_rules": [
+        "RULE_A_LITE_INFORMATION_GAP"
+      ],
+      "rejected_routes": [
+        "C_OBJECT_CAUSAL"
+      ]
+    },
+    "compiled_brief_hash": "df7744b02aedffb0640d5a0c0fd9b2258111d13a0d771f16cd071e8a7fdb685c",
+    "instruction_hash": "d368cbfa0846d1cb9adf452db083cbb58ba69154f281b3d6c895cb34da157cec",
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "苏晴的手指停在茶水间的磨砂玻璃门边。\n\n门内传出的声音不大，但走廊太安静了。“那份提案”四个字像钉子一样扎进来，紧接着是“她不知道”，语气里带着一种她分辨不清的东西——是惋惜，还是别的什么。\n\n脚步声朝门口移动。\n\n苏晴没有后退的时间。门向内拉开，林姐端着一杯冒着热气的咖啡走出来，看见她时脚步顿了一下，不到半秒。\n\n“哟，苏晴。”林姐笑了笑，咖啡杯稳在手里，表情和每天午休碰见时一模一样。\n\n“林姐。”苏晴点点头，手已经搭上了门边。\n\n林姐侧身让过她，朝走廊另一头走去。脚步声均匀，不快不慢。\n\n苏晴推开门。\n\n茶水间里，小周还站在靠窗的位置，手里捏着一袋没拆开的红茶包。窗外的光线打在她侧脸上，她看见苏晴进来，手指在茶包上收紧了一下。\n\n“苏晴姐。”小周的声音比平时高了半个调。\n\n苏晴走到饮水机前，把自己的杯子搁在接水盘上。热水键按下去，水流声填满了整个茶水间。\n\n小周还站在原地。\n\n“红茶？”苏晴偏过头，看了一眼她手里的茶包，“饮水机热水口刚修过，出水有点猛，小心烫。”\n\n“哦，好，谢谢苏晴姐。”小周走过来，撕开茶包的动作比平时慢。杯子放上接水盘的时候，瓷底磕在不锈钢面上，发出一声轻响。\n\n苏晴的杯子快满了。她松开热水键，直起身。\n\n小周盯着自己的杯子，热水冲在茶包上，深褐色的茶汤一圈圈晕开。\n\n“对了苏晴姐，”小周忽然开口，眼睛还看着杯子里旋转的茶包，“你们部门那个绿洲的项目方案，是不是周三之前要交？”\n\n苏晴握着杯子的手没动。\n\n“绿洲”是上个月立项的。但周三交方案这件事，她今天早上才在部门内部邮件里看到，邮件抄送名单里没有小周。\n\n“嗯，周三。”苏晴说。\n\n小周点点头，端起杯子抿了一口，被烫得缩了一下。\n\n“那挺赶的。”她说完，端着杯子朝门口走去。\n\n苏晴站在饮水机前，看着小周的背影消失在门后。\n\n热水机发出待机时低沉的嗡鸣声。她低头看自己的杯子，水面上浮着一层细小的气泡，一颗一颗破掉。\n\n绿洲项目的方案截止日期，她确实是今天早上才知道的。",
+  "raw_response": "苏晴的手指停在茶水间的磨砂玻璃门边。\n\n门内传出的声音不大，但走廊太安静了。“那份提案”四个字像钉子一样扎进来，紧接着是“她不知道”，语气里带着一种她分辨不清的东西——是惋惜，还是别的什么。\n\n脚步声朝门口移动。\n\n苏晴没有后退的时间。门向内拉开，林姐端着一杯冒着热气的咖啡走出来，看见她时脚步顿了一下，不到半秒。\n\n“哟，苏晴。”林姐笑了笑，咖啡杯稳在手里，表情和每天午休碰见时一模一样。\n\n“林姐。”苏晴点点头，手已经搭上了门边。\n\n林姐侧身让过她，朝走廊另一头走去。脚步声均匀，不快不慢。\n\n苏晴推开门。\n\n茶水间里，小周还站在靠窗的位置，手里捏着一袋没拆开的红茶包。窗外的光线打在她侧脸上，她看见苏晴进来，手指在茶包上收紧了一下。\n\n“苏晴姐。”小周的声音比平时高了半个调。\n\n苏晴走到饮水机前，把自己的杯子搁在接水盘上。热水键按下去，水流声填满了整个茶水间。\n\n小周还站在原地。\n\n“红茶？”苏晴偏过头，看了一眼她手里的茶包，“饮水机热水口刚修过，出水有点猛，小心烫。”\n\n“哦，好，谢谢苏晴姐。”小周走过来，撕开茶包的动作比平时慢。杯子放上接水盘的时候，瓷底磕在不锈钢面上，发出一声轻响。\n\n苏晴的杯子快满了。她松开热水键，直起身。\n\n小周盯着自己的杯子，热水冲在茶包上，深褐色的茶汤一圈圈晕开。\n\n“对了苏晴姐，”小周忽然开口，眼睛还看着杯子里旋转的茶包，“你们部门那个绿洲的项目方案，是不是周三之前要交？”\n\n苏晴握着杯子的手没动。\n\n“绿洲”是上个月立项的。但周三交方案这件事，她今天早上才在部门内部邮件里看到，邮件抄送名单里没有小周。\n\n“嗯，周三。”苏晴说。\n\n小周点点头，端起杯子抿了一口，被烫得缩了一下。\n\n“那挺赶的。”她说完，端着杯子朝门口走去。\n\n苏晴站在饮水机前，看着小周的背影消失在门后。\n\n热水机发出待机时低沉的嗡鸣声。她低头看自己的杯子，水面上浮着一层细小的气泡，一颗一颗破掉。\n\n绿洲项目的方案截止日期，她确实是今天早上才知道的。",
+  "input_tokens": 1421,
+  "output_tokens": 544,
+  "latency_ms": 12833,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "8dad6c068bbfaf55f9c6c1d387401b928374d256b03b87c86df5638f8c52a86c",
+  "route_name": null,
+  "route_decision": {
+    "route_name": "A_LITE_INFORMATION_GAP",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "multiple characters with distinct information",
+      "viewpoint character has unknown facts and an interpretation",
+      "secondary character carries independent knowledge"
+    ],
+    "matched_rules": [
+      "RULE_A_LITE_INFORMATION_GAP"
+    ],
+    "rejected_routes": [
+      "C_OBJECT_CAUSAL"
+    ]
+  },
+  "compiled_brief_hash": "df7744b02aedffb0640d5a0c0fd9b2258111d13a0d771f16cd071e8a7fdb685c",
+  "instruction_hash": "d368cbfa0846d1cb9adf452db083cbb58ba69154f281b3d6c895cb34da157cec",
+  "text_path": "cases\\A-05\\drafts\\route-1.txt"
+}

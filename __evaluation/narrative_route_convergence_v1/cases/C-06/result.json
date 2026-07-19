@@ -1,0 +1,352 @@
+{
+  "case_id": "C-06",
+  "category": "城市日常",
+  "title": "外卖架错拿餐",
+  "run_id": "480d2ab9-213e-4478-8477-f09b67b125fa",
+  "expected_route": "C_OBJECT_CAUSAL",
+  "planner": {
+    "candidate_id": "bef8fc53-5e2a-48fa-a862-f4f5b8d223b4",
+    "attempt_number": 1,
+    "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+    "model_id": "deepseek-v4-pro",
+    "prompt_version_id": "f9052f8a-dc4e-5408-b14e-fc1badaf57f8",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 12288,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "json_object"
+    },
+    "text_output": "{\n  \"planner_contract_version\": 2,\n  \"scene_goal\": \"陆柯发现外卖被错拿后，利用现场另一袋无主餐和外卖架上的便签纸，留下信息并取走替代餐，在规则与便利之间做出选择。\",\n  \"location\": \"写字楼一楼大厅外卖架区域\",\n  \"time\": \"傍晚下班时分，前台已下班，监控死角\",\n  \"scene_state\": {\n    \"last_completed_action\": \"陆柯下班走到外卖架，发现自己名字的餐不见了，只剩一袋无名字的餐。\",\n    \"present_characters\": [\"陆柯\"],\n    \"visible_facts\": [\n      \"外卖架上有一袋标注陆柯名字的餐不见了\",\n      \"架子上只剩一袋没有名字的餐\",\n      \"外卖架位于监控死角\",\n      \"前台已下班，无人可询问\"\n    ],\n    \"available_objects\": [\n      \"一袋无名字的外卖\",\n      \"外卖架上的便签纸和笔\",\n      \"陆柯的手机\"\n    ],\n    \"unresolved_problem\": \"陆柯的餐被错拿，无法确定是谁拿走的，也无法直接联系错拿者。\",\n    \"already_existing_constraints\": [\n      \"监控死角，无法查看录像\",\n      \"前台已下班，无法求助工作人员\",\n      \"错拿者身份未知\"\n    ]\n  },\n  \"characters\": [\n    {\n      \"name\": \"陆柯\",\n      \"goal\": \"解决晚餐问题，同时尽量减少对他人的影响\",\n      \"known\": [\n        \"自己的餐被错拿\",\n        \"现场有一袋无主餐\",\n        \"监控死角，前台已下班\"\n      ],\n      \"unknown\": [\n        \"谁拿走了自己的餐\",\n        \"无主餐的主人是谁\",\n        \"错拿者是否会回来换餐\"\n      ],\n      \"mistaken_beliefs\": [\n        \"错拿者可能很快会发现自己拿错了并返回\"\n      ],\n      \"constraints\": [\n        \"不能直接联系错拿者\",\n        \"不能无限期等待\",\n        \"不能随意拿走别人的餐而不留信息\"\n      ],\n      \"observed_evidence\": [\n        \"外卖架上自己名字的餐不见了\",\n        \"只剩一袋没有名字的餐\"\n      ],\n      \"current_interpretation\": \"有人误拿了自己的餐，而留下的这袋餐可能是错拿者的，或者另一个被错拿的。\",\n      \"how_interpretation_drives_action\": \"陆柯决定用便签纸留下自己的联系方式，并取走那袋无主餐作为临时替代，以便错拿者联系自己交换。\"\n    }\n  ],\n  \"concrete_problem\": \"陆柯必须决定是等待错拿者返回、放弃晚餐，还是取走那袋无主餐并留下信息。\",\n  \"pressure\": \"下班时间饥饿感增加，且错拿者随时可能离开大楼，但等待时间不确定。\",\n  \"turning_point\": \"陆柯在便签上写下自己的电话号码和说明，贴在无主餐原来的位置，然后取走那袋餐，从而将被动等待转为主动建立联系的可能。\",\n  \"end_condition\": \"陆柯带着无主餐离开，外卖架上留下便签，错拿问题暂时搁置，但建立了后续联系的通道。\",\n  \"forbidden\": [\n    \"错拿者直接出现并交换餐\",\n    \"通过监控找到错拿者\",\n    \"前台或保安介入\",\n    \"陆柯放弃晚餐或直接丢弃无主餐\"\n  ],\n  \"causal_transitions\": [\n    {\n      \"id\": \"CT01\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"外卖架上只剩一袋没有名字的餐，且自己的餐不见了。\",\n      \"character_interpretation\": \"这袋餐很可能是错拿者留下的，或者另一个被误放的餐，自己拿走它可以解决晚餐，但需要给错拿者一个交代。\",\n      \"character_next_action\": \"陆柯从外卖架上拿起便签纸和笔，写下自己的电话号码和情况说明，贴在无主餐原来的位置，然后取走那袋餐。\",\n      \"rejected_alternative\": \"陆柯本可以放弃晚餐直接离开，或者等待错拿者返回，但饥饿和不确定性让他选择了更主动的方式。\",\n      \"immediate_consequence\": \"陆柯获得了晚餐，但承担了可能被指责私自拿走他人餐的风险，同时为错拿者提供了联系自己的途径。\",\n      \"counterfactual_without_action\": \"如果陆柯不采取行动，他只能饿着肚子离开，或者继续等待一个可能永远不会回来的错拿者。\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"外卖架上有陆柯的餐（已被拿走）和一袋无主餐，无任何信息。\",\n        \"after\": \"外卖架上无任何餐，但有一张便签写着陆柯的联系方式和说明。\"\n      },\n      \"cost_or_commitment\": \"陆柯承担了私自取走他人餐的道德风险，并承诺如果错拿者联系他，他会配合解决。\",\n      \"next_constraint\": \"如果错拿者联系陆柯，他必须抽出时间处理换餐事宜。\",\n      \"reader_must_infer\": \"陆柯的便签是否会被错拿者看到，以及错拿者是否会联系他。\",\n      \"narrator_must_not_state\": [\n        \"错拿者一定会看到便签\",\n        \"陆柯的行为是完全正确的\"\n      ]\n    }\n  ],\n  \"tempo_guardrails\": {\n    \"entry_pressure\": \"陆柯站在外卖架前，发现自己的餐不见了，只剩一袋无主餐。\",\n    \"dominant_pressure\": {\n      \"kind\": \"resource_constraint\",\n      \"description\": \"陆柯面临晚餐资源缺失，同时时间有限，必须快速做出决定。\"\n    },\n    \"allowed_viewpoint_misread\": \"陆柯可能误以为错拿者是故意偷餐，而非无心之失。\",\n    \"disclosure_cap\": 1,\n    \"must_remain_unclassified\": [\n      \"错拿者的身份和动机\",\n      \"无主餐的实际主人是谁\"\n    ],\n    \"stop_state\": {\n      \"type\": \"physical_change\",\n      \"visible_fact\": \"外卖架上只剩一张便签，陆柯提着无主餐离开。\",\n      \"what_is_now_different\": \"外卖架上的餐品状态改变，陆柯的晚餐问题暂时解决，但留下了联系线索，为后续可能的互动埋下伏笔。\",\n      \"must_not_append\": \"不得描写陆柯离开后外卖架前的任何情况。\"\n    },\n    \"final_line_must_include\": \"\"\n  },\n  \"chapter_contract_check\": {\n    \"function_aligned\": true,\n    \"must_deliver_covered\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_enabled\": true,\n    \"main_payoff_prepared\": true,\n    \"ending_hook_established\": true,\n    \"causal_transitions_grounded\": true,\n    \"reader_inference_not_pre_resolved\": true,\n    \"scene_state_reconstructed\": true,\n    \"information_sources_legal\": true,\n    \"character_choice_is_real\": true,\n    \"consequence_is_counterfactual\": true,\n    \"state_delta_is_nonempty\": true,\n    \"next_constraint_is_new\": true,\n    \"stop_state_is_visible\": true,\n    \"stop_state_changes_future_actions\": true\n  }\n}",
+    "raw_response": "{\n  \"planner_contract_version\": 2,\n  \"scene_goal\": \"陆柯发现外卖被错拿后，利用现场另一袋无主餐和外卖架上的便签纸，留下信息并取走替代餐，在规则与便利之间做出选择。\",\n  \"location\": \"写字楼一楼大厅外卖架区域\",\n  \"time\": \"傍晚下班时分，前台已下班，监控死角\",\n  \"scene_state\": {\n    \"last_completed_action\": \"陆柯下班走到外卖架，发现自己名字的餐不见了，只剩一袋无名字的餐。\",\n    \"present_characters\": [\"陆柯\"],\n    \"visible_facts\": [\n      \"外卖架上有一袋标注陆柯名字的餐不见了\",\n      \"架子上只剩一袋没有名字的餐\",\n      \"外卖架位于监控死角\",\n      \"前台已下班，无人可询问\"\n    ],\n    \"available_objects\": [\n      \"一袋无名字的外卖\",\n      \"外卖架上的便签纸和笔\",\n      \"陆柯的手机\"\n    ],\n    \"unresolved_problem\": \"陆柯的餐被错拿，无法确定是谁拿走的，也无法直接联系错拿者。\",\n    \"already_existing_constraints\": [\n      \"监控死角，无法查看录像\",\n      \"前台已下班，无法求助工作人员\",\n      \"错拿者身份未知\"\n    ]\n  },\n  \"characters\": [\n    {\n      \"name\": \"陆柯\",\n      \"goal\": \"解决晚餐问题，同时尽量减少对他人的影响\",\n      \"known\": [\n        \"自己的餐被错拿\",\n        \"现场有一袋无主餐\",\n        \"监控死角，前台已下班\"\n      ],\n      \"unknown\": [\n        \"谁拿走了自己的餐\",\n        \"无主餐的主人是谁\",\n        \"错拿者是否会回来换餐\"\n      ],\n      \"mistaken_beliefs\": [\n        \"错拿者可能很快会发现自己拿错了并返回\"\n      ],\n      \"constraints\": [\n        \"不能直接联系错拿者\",\n        \"不能无限期等待\",\n        \"不能随意拿走别人的餐而不留信息\"\n      ],\n      \"observed_evidence\": [\n        \"外卖架上自己名字的餐不见了\",\n        \"只剩一袋没有名字的餐\"\n      ],\n      \"current_interpretation\": \"有人误拿了自己的餐，而留下的这袋餐可能是错拿者的，或者另一个被错拿的。\",\n      \"how_interpretation_drives_action\": \"陆柯决定用便签纸留下自己的联系方式，并取走那袋无主餐作为临时替代，以便错拿者联系自己交换。\"\n    }\n  ],\n  \"concrete_problem\": \"陆柯必须决定是等待错拿者返回、放弃晚餐，还是取走那袋无主餐并留下信息。\",\n  \"pressure\": \"下班时间饥饿感增加，且错拿者随时可能离开大楼，但等待时间不确定。\",\n  \"turning_point\": \"陆柯在便签上写下自己的电话号码和说明，贴在无主餐原来的位置，然后取走那袋餐，从而将被动等待转为主动建立联系的可能。\",\n  \"end_condition\": \"陆柯带着无主餐离开，外卖架上留下便签，错拿问题暂时搁置，但建立了后续联系的通道。\",\n  \"forbidden\": [\n    \"错拿者直接出现并交换餐\",\n    \"通过监控找到错拿者\",\n    \"前台或保安介入\",\n    \"陆柯放弃晚餐或直接丢弃无主餐\"\n  ],\n  \"causal_transitions\": [\n    {\n      \"id\": \"CT01\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"外卖架上只剩一袋没有名字的餐，且自己的餐不见了。\",\n      \"character_interpretation\": \"这袋餐很可能是错拿者留下的，或者另一个被误放的餐，自己拿走它可以解决晚餐，但需要给错拿者一个交代。\",\n      \"character_next_action\": \"陆柯从外卖架上拿起便签纸和笔，写下自己的电话号码和情况说明，贴在无主餐原来的位置，然后取走那袋餐。\",\n      \"rejected_alternative\": \"陆柯本可以放弃晚餐直接离开，或者等待错拿者返回，但饥饿和不确定性让他选择了更主动的方式。\",\n      \"immediate_consequence\": \"陆柯获得了晚餐，但承担了可能被指责私自拿走他人餐的风险，同时为错拿者提供了联系自己的途径。\",\n      \"counterfactual_without_action\": \"如果陆柯不采取行动，他只能饿着肚子离开，或者继续等待一个可能永远不会回来的错拿者。\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"外卖架上有陆柯的餐（已被拿走）和一袋无主餐，无任何信息。\",\n        \"after\": \"外卖架上无任何餐，但有一张便签写着陆柯的联系方式和说明。\"\n      },\n      \"cost_or_commitment\": \"陆柯承担了私自取走他人餐的道德风险，并承诺如果错拿者联系他，他会配合解决。\",\n      \"next_constraint\": \"如果错拿者联系陆柯，他必须抽出时间处理换餐事宜。\",\n      \"reader_must_infer\": \"陆柯的便签是否会被错拿者看到，以及错拿者是否会联系他。\",\n      \"narrator_must_not_state\": [\n        \"错拿者一定会看到便签\",\n        \"陆柯的行为是完全正确的\"\n      ]\n    }\n  ],\n  \"tempo_guardrails\": {\n    \"entry_pressure\": \"陆柯站在外卖架前，发现自己的餐不见了，只剩一袋无主餐。\",\n    \"dominant_pressure\": {\n      \"kind\": \"resource_constraint\",\n      \"description\": \"陆柯面临晚餐资源缺失，同时时间有限，必须快速做出决定。\"\n    },\n    \"allowed_viewpoint_misread\": \"陆柯可能误以为错拿者是故意偷餐，而非无心之失。\",\n    \"disclosure_cap\": 1,\n    \"must_remain_unclassified\": [\n      \"错拿者的身份和动机\",\n      \"无主餐的实际主人是谁\"\n    ],\n    \"stop_state\": {\n      \"type\": \"physical_change\",\n      \"visible_fact\": \"外卖架上只剩一张便签，陆柯提着无主餐离开。\",\n      \"what_is_now_different\": \"外卖架上的餐品状态改变，陆柯的晚餐问题暂时解决，但留下了联系线索，为后续可能的互动埋下伏笔。\",\n      \"must_not_append\": \"不得描写陆柯离开后外卖架前的任何情况。\"\n    },\n    \"final_line_must_include\": \"\"\n  },\n  \"chapter_contract_check\": {\n    \"function_aligned\": true,\n    \"must_deliver_covered\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_enabled\": true,\n    \"main_payoff_prepared\": true,\n    \"ending_hook_established\": true,\n    \"causal_transitions_grounded\": true,\n    \"reader_inference_not_pre_resolved\": true,\n    \"scene_state_reconstructed\": true,\n    \"information_sources_legal\": true,\n    \"character_choice_is_real\": true,\n    \"consequence_is_counterfactual\": true,\n    \"state_delta_is_nonempty\": true,\n    \"next_constraint_is_new\": true,\n    \"stop_state_is_visible\": true,\n    \"stop_state_changes_future_actions\": true\n  }\n}",
+    "input_tokens": 3311,
+    "output_tokens": 1622,
+    "latency_ms": 24135,
+    "finish_reason": "stop",
+    "error_code": null,
+    "error_message": null,
+    "rendered_user_prompt_sha256": "46ede1b6413b8394a1642279b11589ba253c9847c103743bba4d790ccf746915",
+    "route_name": null,
+    "route_decision": null,
+    "compiled_brief_hash": null,
+    "instruction_hash": null
+  },
+  "drafts": [
+    {
+      "group": "ROUTE-B_DEFAULT",
+      "replica": 1,
+      "mode": "narrative_route",
+      "candidate_id": "57017430-eb04-4117-8b65-e8812aad1806",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "B_DEFAULT",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "no specific narrative mechanism detected"
+          ],
+          "matched_rules": [
+            "RULE_B_DEFAULT"
+          ],
+          "rejected_routes": [
+            "C_OBJECT_CAUSAL",
+            "A_LITE_INFORMATION_GAP",
+            "B_SHORT_RELATION",
+            "B_PHYSICAL_PROBLEM",
+            "D_FALLIBLE_TASK"
+          ]
+        },
+        "compiled_brief_hash": "81ff806084f8944ee3e5ebfb49acab9dcfdd3a8c2cbd1eaf7973ac9884a8d76d",
+        "instruction_hash": "7ec8bb8faba03e4eb5f6e789d779dd925a17feb93d29aab55ff151fa2bc43890",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "陆柯站在外卖架前，手指悬在那袋没有名字的餐上方。\n\n架子上本来该有六袋餐。现在只剩五袋。他扫了两遍——第一遍从左到右，第二遍从右到左——写着自己名字的那袋确实不在。剩下的这袋塑料袋系得很紧，里面是个白色泡沫盒，外卖单上只印着“黄焖鸡米饭”，备注栏空白，没有公司名，没有工位号，没有手机尾号。\n\n他回头看了一眼前台。灯关了，电脑屏幕黑着，椅子推进桌底。\n\n外卖架靠墙，头顶天花板的摄像头对着电梯方向，架身刚好被消防栓的玻璃门挡住。\n\n陆柯把手机解锁，点开外卖平台的订单页面。骑手送达时间是18:43，送达照片拍的就是这个架子，自己的餐在最左边，塑料袋上贴着打印单，能看到“陆柯”两个字。现在是19:12。\n\n他把手机揣回裤兜，伸手把那袋无主餐提起来。分量不轻，泡沫盒底还温着。\n\n架子旁边贴墙立着一块亚克力板，上面夹着几张空白的外卖催单便签，旁边有支圆珠笔，用透明胶带连着板子。陆柯撕下一张便签，按在墙上写：拿错餐请电联，又补上自己的手机号，最后加了一句：架子上的餐我先取了。\n\n他把便签贴在架子最显眼的位置——就是照片里自己餐原来放的那一格。\n\n然后他提着那袋黄焖鸡米饭，转身走向电梯间。\n\n外卖架上只剩一张便签。",
+      "raw_response": "陆柯站在外卖架前，手指悬在那袋没有名字的餐上方。\n\n架子上本来该有六袋餐。现在只剩五袋。他扫了两遍——第一遍从左到右，第二遍从右到左——写着自己名字的那袋确实不在。剩下的这袋塑料袋系得很紧，里面是个白色泡沫盒，外卖单上只印着“黄焖鸡米饭”，备注栏空白，没有公司名，没有工位号，没有手机尾号。\n\n他回头看了一眼前台。灯关了，电脑屏幕黑着，椅子推进桌底。\n\n外卖架靠墙，头顶天花板的摄像头对着电梯方向，架身刚好被消防栓的玻璃门挡住。\n\n陆柯把手机解锁，点开外卖平台的订单页面。骑手送达时间是18:43，送达照片拍的就是这个架子，自己的餐在最左边，塑料袋上贴着打印单，能看到“陆柯”两个字。现在是19:12。\n\n他把手机揣回裤兜，伸手把那袋无主餐提起来。分量不轻，泡沫盒底还温着。\n\n架子旁边贴墙立着一块亚克力板，上面夹着几张空白的外卖催单便签，旁边有支圆珠笔，用透明胶带连着板子。陆柯撕下一张便签，按在墙上写：拿错餐请电联，又补上自己的手机号，最后加了一句：架子上的餐我先取了。\n\n他把便签贴在架子最显眼的位置——就是照片里自己餐原来放的那一格。\n\n然后他提着那袋黄焖鸡米饭，转身走向电梯间。\n\n外卖架上只剩一张便签。",
+      "input_tokens": 1242,
+      "output_tokens": 340,
+      "latency_ms": 9568,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "b57648d2ca55afaba12a6ad3f9654eee723fe43dcc464d8033086cb4619a8770",
+      "route_name": null,
+      "route_decision": {
+        "route_name": "B_DEFAULT",
+        "classifier_version": "narrative-route-v1",
+        "decision_reasons": [
+          "no specific narrative mechanism detected"
+        ],
+        "matched_rules": [
+          "RULE_B_DEFAULT"
+        ],
+        "rejected_routes": [
+          "C_OBJECT_CAUSAL",
+          "A_LITE_INFORMATION_GAP",
+          "B_SHORT_RELATION",
+          "B_PHYSICAL_PROBLEM",
+          "D_FALLIBLE_TASK"
+        ]
+      },
+      "compiled_brief_hash": "81ff806084f8944ee3e5ebfb49acab9dcfdd3a8c2cbd1eaf7973ac9884a8d76d",
+      "instruction_hash": "7ec8bb8faba03e4eb5f6e789d779dd925a17feb93d29aab55ff151fa2bc43890",
+      "text_path": "cases\\C-06\\drafts\\route-1.txt"
+    },
+    {
+      "group": "ROUTE-B_DEFAULT",
+      "replica": 2,
+      "mode": "narrative_route",
+      "candidate_id": "aac67cdb-80fc-4674-acb6-6c0f1bb9f2b7",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "B_DEFAULT",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "no specific narrative mechanism detected"
+          ],
+          "matched_rules": [
+            "RULE_B_DEFAULT"
+          ],
+          "rejected_routes": [
+            "C_OBJECT_CAUSAL",
+            "A_LITE_INFORMATION_GAP",
+            "B_SHORT_RELATION",
+            "B_PHYSICAL_PROBLEM",
+            "D_FALLIBLE_TASK"
+          ]
+        },
+        "compiled_brief_hash": "81ff806084f8944ee3e5ebfb49acab9dcfdd3a8c2cbd1eaf7973ac9884a8d76d",
+        "instruction_hash": "7ec8bb8faba03e4eb5f6e789d779dd925a17feb93d29aab55ff151fa2bc43890",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "陆柯站在外卖架前，手指悬在第二层隔板边缘。\n\n标着“陆柯”的标签还在——那张黄色便利贴粘在隔板正中间，字迹是前台小张的圆珠笔印。但便利贴下面什么都没有。空的。隔板上只剩一圈冷凝水留下的浅印，直径刚好是一个塑料餐盒底。\n\n他往旁边扫了一眼。第三层隔板上搁着一袋餐，透明塑料袋，里面是两个叠放的黑色餐盒，袋口系了个死扣。袋子上没有标签，没有便利贴，没有名字。\n\n陆柯往后退了一步，视线扫过整个架子。十二个隔层，七袋餐，每袋都有自己的黄色标签。除了第三层那袋。\n\n他把手机掏出来，外卖APP的订单页面还开着——骑手照片，送达时间18:47，备注栏写着“放一楼外卖架”。送达状态旁边有个绿色对勾。\n\n他锁屏，抬头看了一眼墙角。监控摄像头的支架还在，但镜头朝天花板翻着，电源线垂下来一截。上周物业通知过要修，现在还没修好。\n\n前台玻璃窗拉着百叶帘，灯已经关了。\n\n陆柯把手机揣回裤兜，走到前台窗口前。百叶帘的缝隙里能看到电脑显示器黑着，键盘推进了抽屉，椅背上搭着件蓝色工装外套。窗口右下角粘着张A4纸，打印体：“外卖统一放置一楼东侧外卖架，前台不代收。如有丢失，请联系物业调取监控。”\n\n他转身走回外卖架。\n\n第二层隔板上那张“陆柯”标签还在。他用拇指捻了一下便利贴的边角，胶还粘着，纸面干爽，没人撕过。\n\n第三层那袋无名餐还在原处。他拎起来掂了掂——沉的，两个餐盒叠在一起，袋子里有筷子碰撞的声响。塑料袋外侧没起雾，餐已经凉了一段时间。\n\n他把袋子放回去，从第二层隔板上撕下那张“陆柯”标签，翻到背面。空白的。\n\n外卖架旁边的台面上搁着一叠空白便利贴，旁边是前台常用的那支蓝色圆珠笔，笔帽裂了一条缝。\n\n陆柯拿起笔，在便利贴上写了自己的手机号，然后在号码下面加了一行字：“你的餐可能在我这。联系我换。”\n\n他把便利贴粘在第二层隔板正中间，按了两下，确保胶条贴实。\n\n然后他拎起第三层那袋无名餐，转身往电梯间走。\n\n外卖架上只剩那张新贴的便利贴，蓝字，十一位数字，一行说明。",
+      "raw_response": "陆柯站在外卖架前，手指悬在第二层隔板边缘。\n\n标着“陆柯”的标签还在——那张黄色便利贴粘在隔板正中间，字迹是前台小张的圆珠笔印。但便利贴下面什么都没有。空的。隔板上只剩一圈冷凝水留下的浅印，直径刚好是一个塑料餐盒底。\n\n他往旁边扫了一眼。第三层隔板上搁着一袋餐，透明塑料袋，里面是两个叠放的黑色餐盒，袋口系了个死扣。袋子上没有标签，没有便利贴，没有名字。\n\n陆柯往后退了一步，视线扫过整个架子。十二个隔层，七袋餐，每袋都有自己的黄色标签。除了第三层那袋。\n\n他把手机掏出来，外卖APP的订单页面还开着——骑手照片，送达时间18:47，备注栏写着“放一楼外卖架”。送达状态旁边有个绿色对勾。\n\n他锁屏，抬头看了一眼墙角。监控摄像头的支架还在，但镜头朝天花板翻着，电源线垂下来一截。上周物业通知过要修，现在还没修好。\n\n前台玻璃窗拉着百叶帘，灯已经关了。\n\n陆柯把手机揣回裤兜，走到前台窗口前。百叶帘的缝隙里能看到电脑显示器黑着，键盘推进了抽屉，椅背上搭着件蓝色工装外套。窗口右下角粘着张A4纸，打印体：“外卖统一放置一楼东侧外卖架，前台不代收。如有丢失，请联系物业调取监控。”\n\n他转身走回外卖架。\n\n第二层隔板上那张“陆柯”标签还在。他用拇指捻了一下便利贴的边角，胶还粘着，纸面干爽，没人撕过。\n\n第三层那袋无名餐还在原处。他拎起来掂了掂——沉的，两个餐盒叠在一起，袋子里有筷子碰撞的声响。塑料袋外侧没起雾，餐已经凉了一段时间。\n\n他把袋子放回去，从第二层隔板上撕下那张“陆柯”标签，翻到背面。空白的。\n\n外卖架旁边的台面上搁着一叠空白便利贴，旁边是前台常用的那支蓝色圆珠笔，笔帽裂了一条缝。\n\n陆柯拿起笔，在便利贴上写了自己的手机号，然后在号码下面加了一行字：“你的餐可能在我这。联系我换。”\n\n他把便利贴粘在第二层隔板正中间，按了两下，确保胶条贴实。\n\n然后他拎起第三层那袋无名餐，转身往电梯间走。\n\n外卖架上只剩那张新贴的便利贴，蓝字，十一位数字，一行说明。",
+      "input_tokens": 1242,
+      "output_tokens": 554,
+      "latency_ms": 14326,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "b57648d2ca55afaba12a6ad3f9654eee723fe43dcc464d8033086cb4619a8770",
+      "route_name": null,
+      "route_decision": {
+        "route_name": "B_DEFAULT",
+        "classifier_version": "narrative-route-v1",
+        "decision_reasons": [
+          "no specific narrative mechanism detected"
+        ],
+        "matched_rules": [
+          "RULE_B_DEFAULT"
+        ],
+        "rejected_routes": [
+          "C_OBJECT_CAUSAL",
+          "A_LITE_INFORMATION_GAP",
+          "B_SHORT_RELATION",
+          "B_PHYSICAL_PROBLEM",
+          "D_FALLIBLE_TASK"
+        ]
+      },
+      "compiled_brief_hash": "81ff806084f8944ee3e5ebfb49acab9dcfdd3a8c2cbd1eaf7973ac9884a8d76d",
+      "instruction_hash": "7ec8bb8faba03e4eb5f6e789d779dd925a17feb93d29aab55ff151fa2bc43890",
+      "text_path": "cases\\C-06\\drafts\\route-2.txt"
+    },
+    {
+      "group": "ROUTE-B_DEFAULT",
+      "replica": 3,
+      "mode": "narrative_route",
+      "candidate_id": "aa2c2e93-dedc-4e7b-84e1-6db5b36f0a74",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "B_DEFAULT",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "no specific narrative mechanism detected"
+          ],
+          "matched_rules": [
+            "RULE_B_DEFAULT"
+          ],
+          "rejected_routes": [
+            "C_OBJECT_CAUSAL",
+            "A_LITE_INFORMATION_GAP",
+            "B_SHORT_RELATION",
+            "B_PHYSICAL_PROBLEM",
+            "D_FALLIBLE_TASK"
+          ]
+        },
+        "compiled_brief_hash": "81ff806084f8944ee3e5ebfb49acab9dcfdd3a8c2cbd1eaf7973ac9884a8d76d",
+        "instruction_hash": "7ec8bb8faba03e4eb5f6e789d779dd925a17feb93d29aab55ff151fa2bc43890",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "陆柯站在外卖架前，手指悬在那袋没写名字的餐上方。\n\n架子上四层格，第三层左边本该放着他那袋标注“陆柯”的黄焖鸡米饭。现在那个位置空着，旁边歪着一袋透明塑料袋，里面是份盖浇饭，袋口没系紧，能看到青椒肉丝的油渗出来，塑料袋外壁凝了一层水珠。没有小票，没有手写名，什么都没有。\n\n他低头看了眼手机上的外卖订单——已送达，18:47。现在是18:53。六分钟。\n\n陆柯把手机揣回裤兜，伸手翻开那袋无主餐的袋口往里看了一眼。青椒肉丝盖饭，一次性筷子，没有纸条，没有联系方式。他把袋子放回去，视线扫过外卖架旁边的墙面——墙角天花板的监控探头朝向走廊另一侧，镜头背对着这个架子。前台灯黑着，玻璃门后的转椅上没人，桌面上电脑屏幕已经熄了。\n\n他站在原地想了想，然后走到前台台面上扫了一圈。笔筒里插着几支黑色签字笔，旁边压着一叠黄色方形便签纸。他抽了一张，拔开笔帽，在便签上写：\n\n“拿错餐的朋友：你的青椒肉丝盖饭在架子上。我的黄焖鸡你拿走了。联系我 138——”，他停了一下，划掉“138”，改成“陆柯”，然后写下手机号。写完后又补了一句：“餐我先拿走吃，联系我换。”\n\n他把便签贴在外卖架第三层那个空位上，用力按了两下边角，让胶粘牢。然后他拿起那袋青椒肉丝盖饭，把袋口系紧，转身朝电梯间走去。\n\n外卖架上只剩一张黄色便签，贴在空了的格层边缘。",
+      "raw_response": "陆柯站在外卖架前，手指悬在那袋没写名字的餐上方。\n\n架子上四层格，第三层左边本该放着他那袋标注“陆柯”的黄焖鸡米饭。现在那个位置空着，旁边歪着一袋透明塑料袋，里面是份盖浇饭，袋口没系紧，能看到青椒肉丝的油渗出来，塑料袋外壁凝了一层水珠。没有小票，没有手写名，什么都没有。\n\n他低头看了眼手机上的外卖订单——已送达，18:47。现在是18:53。六分钟。\n\n陆柯把手机揣回裤兜，伸手翻开那袋无主餐的袋口往里看了一眼。青椒肉丝盖饭，一次性筷子，没有纸条，没有联系方式。他把袋子放回去，视线扫过外卖架旁边的墙面——墙角天花板的监控探头朝向走廊另一侧，镜头背对着这个架子。前台灯黑着，玻璃门后的转椅上没人，桌面上电脑屏幕已经熄了。\n\n他站在原地想了想，然后走到前台台面上扫了一圈。笔筒里插着几支黑色签字笔，旁边压着一叠黄色方形便签纸。他抽了一张，拔开笔帽，在便签上写：\n\n“拿错餐的朋友：你的青椒肉丝盖饭在架子上。我的黄焖鸡你拿走了。联系我 138——”，他停了一下，划掉“138”，改成“陆柯”，然后写下手机号。写完后又补了一句：“餐我先拿走吃，联系我换。”\n\n他把便签贴在外卖架第三层那个空位上，用力按了两下边角，让胶粘牢。然后他拿起那袋青椒肉丝盖饭，把袋口系紧，转身朝电梯间走去。\n\n外卖架上只剩一张黄色便签，贴在空了的格层边缘。",
+      "input_tokens": 1242,
+      "output_tokens": 382,
+      "latency_ms": 9924,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "b57648d2ca55afaba12a6ad3f9654eee723fe43dcc464d8033086cb4619a8770",
+      "route_name": null,
+      "route_decision": {
+        "route_name": "B_DEFAULT",
+        "classifier_version": "narrative-route-v1",
+        "decision_reasons": [
+          "no specific narrative mechanism detected"
+        ],
+        "matched_rules": [
+          "RULE_B_DEFAULT"
+        ],
+        "rejected_routes": [
+          "C_OBJECT_CAUSAL",
+          "A_LITE_INFORMATION_GAP",
+          "B_SHORT_RELATION",
+          "B_PHYSICAL_PROBLEM",
+          "D_FALLIBLE_TASK"
+        ]
+      },
+      "compiled_brief_hash": "81ff806084f8944ee3e5ebfb49acab9dcfdd3a8c2cbd1eaf7973ac9884a8d76d",
+      "instruction_hash": "7ec8bb8faba03e4eb5f6e789d779dd925a17feb93d29aab55ff151fa2bc43890",
+      "text_path": "cases\\C-06\\drafts\\route-3.txt"
+    },
+    {
+      "group": "BASELINE-writer_brief",
+      "replica": 1,
+      "mode": "writer_brief",
+      "candidate_id": "980d21b0-2f6a-45a2-a28d-5b28ae2051e4",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "陆柯站在外卖架前，盯着那排铝制搁板。\n\n标注自己名字的餐不见了。他弯腰又扫了一遍——宫保鸡丁、鱼香肉丝、两份麻辣烫、一袋没有小票的塑料袋。没有“陆柯”两个字。他直起身，手指在手机屏幕上划开外卖订单，再次确认送达时间和取餐码，然后抬头看了看外卖架上方墙角——空的，没有摄像头对着这个方向。\n\n前台灯已经灭了，玻璃门后面那排工位只剩显示器待机的蓝光。\n\n陆柯把手机关掉，塞进裤兜。他伸手拎起那袋没有名字的餐，塑料袋提手勒进指节，里面是个一次性餐盒，隔着袋子能摸到底部还温着。他拉开袋口看了一眼——回锅肉盖饭，米饭被菜汤浸透了一块。\n\n他把餐放回去。\n\n外卖架旁边的台面上有一叠便签纸，旁边插着支圆珠笔，是前台登记快递用的。陆柯撕下一张，按在台面上写字：你的餐在我这，错拿了联系我。然后写下手机号。他停了一秒，又在下面补了一句：我拿走了架子上那袋没写名字的。\n\n他把便签摁在外卖架第二层正中间——就是自己那袋餐本该在的位置——摁了两下，纸背的胶粘在铝板上。\n\n然后他拎起那袋回锅肉盖饭，转身朝电梯间走去。",
+      "raw_response": "陆柯站在外卖架前，盯着那排铝制搁板。\n\n标注自己名字的餐不见了。他弯腰又扫了一遍——宫保鸡丁、鱼香肉丝、两份麻辣烫、一袋没有小票的塑料袋。没有“陆柯”两个字。他直起身，手指在手机屏幕上划开外卖订单，再次确认送达时间和取餐码，然后抬头看了看外卖架上方墙角——空的，没有摄像头对着这个方向。\n\n前台灯已经灭了，玻璃门后面那排工位只剩显示器待机的蓝光。\n\n陆柯把手机关掉，塞进裤兜。他伸手拎起那袋没有名字的餐，塑料袋提手勒进指节，里面是个一次性餐盒，隔着袋子能摸到底部还温着。他拉开袋口看了一眼——回锅肉盖饭，米饭被菜汤浸透了一块。\n\n他把餐放回去。\n\n外卖架旁边的台面上有一叠便签纸，旁边插着支圆珠笔，是前台登记快递用的。陆柯撕下一张，按在台面上写字：你的餐在我这，错拿了联系我。然后写下手机号。他停了一秒，又在下面补了一句：我拿走了架子上那袋没写名字的。\n\n他把便签摁在外卖架第二层正中间——就是自己那袋餐本该在的位置——摁了两下，纸背的胶粘在铝板上。\n\n然后他拎起那袋回锅肉盖饭，转身朝电梯间走去。",
+      "input_tokens": 1221,
+      "output_tokens": 310,
+      "latency_ms": 9147,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "96bc484cabdfab802e2db1957549badafd84b432701566b74ca068915c9a041d",
+      "route_name": null,
+      "route_decision": null,
+      "compiled_brief_hash": null,
+      "instruction_hash": null,
+      "text_path": "cases\\C-06\\drafts\\baseline-1.txt"
+    },
+    {
+      "group": "BASELINE-writer_brief",
+      "replica": 2,
+      "mode": "writer_brief",
+      "candidate_id": "40e3736f-fffb-43e4-8ed8-c18a361280a2",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "陆柯站在外卖架前，手指还悬在半空。\n\n架子上那袋标注“陆柯”的餐不见了。他蹲下来，把第三层的塑料袋挨个拨开看——宫保鸡丁、麻辣烫、两份黄焖鸡。没有他的名字。\n\n他站起身，视线落在最上层唯一剩下的那袋餐上。透明塑料袋，白色泡沫餐盒，没有小票，没有记号笔写的名字。他拎起袋子翻了个面，底部什么都没有。\n\n前台灯已经灭了。他回头看了一眼，大厅只剩自动门外的路灯光投进来，灰蒙蒙地铺在地砖上。监控摄像头的指示灯没亮，黑色半球壳对着天花板。\n\n陆柯掏出手机，外卖平台的订单页面显示“已送达”，送达时间是六点四十三分。现在是七点十分。\n\n他把手机塞回口袋，手指碰到工牌边缘。他抽出工牌，又放回去。\n\n外卖架侧面的塑料笔筒里插着一支圆珠笔，旁边压着一本便签纸，黄色，只剩最后几张。陆柯抽了一张，撕下来时边缘歪了，他没管。他把便签按在架子的金属横梁上，圆珠笔划了两下才出水。\n\n他写：拿错餐的请联系我，你的餐在架子上我没动。然后写下手机号。\n\n写完他盯着便签看了两秒，又加了一行：我的餐写了名字。\n\n他把笔插回笔筒，将便签贴在外卖架第三层——原本他餐该在的位置。便签翘起一个角，他用拇指压了三次，第三次才勉强贴住。\n\n然后他伸手，把最上层那袋没有名字的餐拎下来。\n\n塑料袋在手心勒出一道白印。他转身往电梯间走，鞋底在大理石地面上发出摩擦声。自动门在他身后合拢，外卖架上只剩一张黄色便签，边角微微卷起。",
+      "raw_response": "陆柯站在外卖架前，手指还悬在半空。\n\n架子上那袋标注“陆柯”的餐不见了。他蹲下来，把第三层的塑料袋挨个拨开看——宫保鸡丁、麻辣烫、两份黄焖鸡。没有他的名字。\n\n他站起身，视线落在最上层唯一剩下的那袋餐上。透明塑料袋，白色泡沫餐盒，没有小票，没有记号笔写的名字。他拎起袋子翻了个面，底部什么都没有。\n\n前台灯已经灭了。他回头看了一眼，大厅只剩自动门外的路灯光投进来，灰蒙蒙地铺在地砖上。监控摄像头的指示灯没亮，黑色半球壳对着天花板。\n\n陆柯掏出手机，外卖平台的订单页面显示“已送达”，送达时间是六点四十三分。现在是七点十分。\n\n他把手机塞回口袋，手指碰到工牌边缘。他抽出工牌，又放回去。\n\n外卖架侧面的塑料笔筒里插着一支圆珠笔，旁边压着一本便签纸，黄色，只剩最后几张。陆柯抽了一张，撕下来时边缘歪了，他没管。他把便签按在架子的金属横梁上，圆珠笔划了两下才出水。\n\n他写：拿错餐的请联系我，你的餐在架子上我没动。然后写下手机号。\n\n写完他盯着便签看了两秒，又加了一行：我的餐写了名字。\n\n他把笔插回笔筒，将便签贴在外卖架第三层——原本他餐该在的位置。便签翘起一个角，他用拇指压了三次，第三次才勉强贴住。\n\n然后他伸手，把最上层那袋没有名字的餐拎下来。\n\n塑料袋在手心勒出一道白印。他转身往电梯间走，鞋底在大理石地面上发出摩擦声。自动门在他身后合拢，外卖架上只剩一张黄色便签，边角微微卷起。",
+      "input_tokens": 1221,
+      "output_tokens": 399,
+      "latency_ms": 10661,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "96bc484cabdfab802e2db1957549badafd84b432701566b74ca068915c9a041d",
+      "route_name": null,
+      "route_decision": null,
+      "compiled_brief_hash": null,
+      "instruction_hash": null,
+      "text_path": "cases\\C-06\\drafts\\baseline-2.txt"
+    },
+    {
+      "group": "BASELINE-writer_brief",
+      "replica": 3,
+      "mode": "writer_brief",
+      "candidate_id": "678ceb68-eb4c-4386-9527-eff3c08adc8e",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "陆柯站在外卖架前，手指还悬在刚才放自己餐的那个位置。\n\n架子上空了一块。标注他名字的塑料袋不见了，旁边孤零零剩着一袋餐，透明袋身里能看见一个白色餐盒，袋口封得整齐，外面什么都没写。\n\n他左右扫了一眼。大厅灯还亮着，前台电脑已经关了，椅子推进桌底，工牌扣在桌上。监控摄像头的方向对着电梯间，外卖架刚好卡在柱子后面。\n\n陆柯把手机锁屏，蹲下来重新看了一遍架子。三层隔板，二十几袋餐，每一袋上都有字——除了那一袋。\n\n他直起身，拇指在手机壳边缘蹭了两下。\n\n架子旁边的小桌上放着前台用来记快递的便签本和一支圆珠笔。陆柯走过去，撕下一张黄色便签，拔开笔帽，在纸面上压出字来：\n\n“你的餐在架子上被错拿了。如果发现拿错，请联系我。”\n\n下面写了自己的手机号码。\n\n他把便签贴在外卖架空出来的那个位置正中间，压平四个角。然后伸手拿起那袋没名字的餐，塑料袋在他手指间发出细碎的响声。\n\n袋子里是白色餐盒，透过盒盖能看见米饭上铺着红烧肉和青菜，还温着。\n\n陆柯把笔帽盖回去，放回桌上。他提着手里的餐，转身朝电梯间走，鞋底在大理石地板上发出短促的摩擦声。\n\n身后外卖架上，那张黄色便签贴着空位，笔迹还没完全干透。",
+      "raw_response": "陆柯站在外卖架前，手指还悬在刚才放自己餐的那个位置。\n\n架子上空了一块。标注他名字的塑料袋不见了，旁边孤零零剩着一袋餐，透明袋身里能看见一个白色餐盒，袋口封得整齐，外面什么都没写。\n\n他左右扫了一眼。大厅灯还亮着，前台电脑已经关了，椅子推进桌底，工牌扣在桌上。监控摄像头的方向对着电梯间，外卖架刚好卡在柱子后面。\n\n陆柯把手机锁屏，蹲下来重新看了一遍架子。三层隔板，二十几袋餐，每一袋上都有字——除了那一袋。\n\n他直起身，拇指在手机壳边缘蹭了两下。\n\n架子旁边的小桌上放着前台用来记快递的便签本和一支圆珠笔。陆柯走过去，撕下一张黄色便签，拔开笔帽，在纸面上压出字来：\n\n“你的餐在架子上被错拿了。如果发现拿错，请联系我。”\n\n下面写了自己的手机号码。\n\n他把便签贴在外卖架空出来的那个位置正中间，压平四个角。然后伸手拿起那袋没名字的餐，塑料袋在他手指间发出细碎的响声。\n\n袋子里是白色餐盒，透过盒盖能看见米饭上铺着红烧肉和青菜，还温着。\n\n陆柯把笔帽盖回去，放回桌上。他提着手里的餐，转身朝电梯间走，鞋底在大理石地板上发出短促的摩擦声。\n\n身后外卖架上，那张黄色便签贴着空位，笔迹还没完全干透。",
+      "input_tokens": 1221,
+      "output_tokens": 334,
+      "latency_ms": 9759,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "96bc484cabdfab802e2db1957549badafd84b432701566b74ca068915c9a041d",
+      "route_name": null,
+      "route_decision": null,
+      "compiled_brief_hash": null,
+      "instruction_hash": null,
+      "text_path": "cases\\C-06\\drafts\\baseline-3.txt"
+    }
+  ],
+  "actual_route": "B_DEFAULT",
+  "route_decision": {
+    "route_name": "B_DEFAULT",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "no specific narrative mechanism detected"
+    ],
+    "matched_rules": [
+      "RULE_B_DEFAULT"
+    ],
+    "rejected_routes": [
+      "C_OBJECT_CAUSAL",
+      "A_LITE_INFORMATION_GAP",
+      "B_SHORT_RELATION",
+      "B_PHYSICAL_PROBLEM",
+      "D_FALLIBLE_TASK"
+    ]
+  }
+}

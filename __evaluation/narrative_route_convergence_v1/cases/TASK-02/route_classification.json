@@ -1,0 +1,22 @@
+{
+  "case_id": "TASK-02",
+  "expected_route": "D_FALLIBLE_TASK",
+  "actual_route": "D_FALLIBLE_TASK",
+  "decision": {
+    "route_name": "D_FALLIBLE_TASK",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "scene involves search, infiltration, lost item, or task execution",
+      "character must make choices under incomplete information"
+    ],
+    "matched_rules": [
+      "RULE_D_FALLIBLE_TASK"
+    ],
+    "rejected_routes": [
+      "C_OBJECT_CAUSAL",
+      "A_LITE_INFORMATION_GAP",
+      "B_SHORT_RELATION",
+      "B_PHYSICAL_PROBLEM"
+    ]
+  }
+}

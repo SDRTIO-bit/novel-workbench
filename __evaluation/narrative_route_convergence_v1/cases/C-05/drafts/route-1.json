@@ -1,0 +1,59 @@
+{
+  "group": "ROUTE-C_OBJECT_CAUSAL",
+  "replica": 1,
+  "mode": "narrative_route",
+  "candidate_id": "4d55e044-7fd9-47d7-8368-236179573c8f",
+  "attempt_number": 1,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "route_decision": {
+      "route_name": "C_OBJECT_CAUSAL",
+      "classifier_version": "narrative-route-v1",
+      "decision_reasons": [
+        "scene_state.available_objects is non-empty",
+        "causal_transitions contains counterfactual_without_action or rejected_alternative",
+        "character_next_action involves physical object manipulation"
+      ],
+      "matched_rules": [
+        "RULE_C_OBJECT_CAUSAL"
+      ],
+      "rejected_routes": []
+    },
+    "compiled_brief_hash": "164f908cc00d1dccb682eef337f179ddb4458800887664a37596bbdf212655be",
+    "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "孟然站在储物柜前，手指还搭在柜门边上。\n\n更衣室里的热气正在散，铁皮柜子泛着潮味。他低头看了眼自己——短袖，校裤，左脚踝外侧肿着一圈，体育课跑四百米的时候崴的。刚才他坐在长凳上解鞋带，把外套搭在膝盖上，然后李一鸣从旁边跑过去，抓起一件黑色运动服就往身上一套，说“借我穿下外面冷”，人已经出了门。\n\n孟然那会儿正低头对付鞋带，等抬起头，走廊里只剩脚步声。\n\n现在长凳上还剩一件黑色运动服，团成一团，袖口翻着，拉链歪在一边。孟然拎起来看了一眼尺码标——比他平时穿的大一号。李一鸣比他高半个头。\n\n他放下外套，往门口走了两步。走廊那头，田径场方向传来哨子和笑闹声。他脚踝一受力就疼，扶着门框停下来。\n\n不能追。\n\n他回头看着长凳上那件外套。如果就这么放着，李一鸣回来可能看都不看，抓起就走，或者干脆不回来，等放学直接穿着他的外套出校门。口袋里那把钥匙，铜的，挂在一个旧钥匙扣上，是他家楼下铁门的。\n\n孟然把外套拿起来，抖开。\n\n他捏住左袖口，把整条袖子从里往外翻过来，衬里朝外，深灰色的网眼布露在外面。他又把翻好的袖子沿着肩线折了一下，让袖口搭在领口位置，形成一个不正常的凸起。然后他把外套摊平，拉链拉上一半，让那条外翻的袖子从拉链开口处支出来，像个没塞好的东西。\n\n他把外套放在更衣室门口的长凳上，靠外侧那头，正对走廊的方向。\n\n然后他退回自己的储物柜前，坐下。\n\n走廊里有人跑过去，不是李一鸣。又有人走过去，也不是。\n\n孟然把书包拎到膝盖上，没拉开。他脚踝搁在长凳底下，没动。更衣室的灯管嗡嗡响。\n\n大约过了四分钟，走廊里传来一阵急促的脚步，不是跑，是快步走，鞋底擦着水磨石地面。李一鸣出现在门口，呼吸还没匀，脸上带着运动后的红。他先看到孟然，愣了一下，然后视线往下，落在长凳上那件外套上。\n\n他盯着那条外翻的袖子看了两秒。然后他低头看自己身上穿的那件——拉链拉到头，袖子长度刚过手腕，肩膀有点紧。\n\n李一鸣把手插进身上外套的口袋里。\n\n右边口袋。\n\n他的手指停住了。\n\n然后他慢慢把手抽出来，指间夹着一把铜钥匙，钥匙扣上拴着一小块深棕色的皮标。\n\n李一鸣看着那把钥匙，又看向长凳上那件袖口外翻的外套。\n\n口袋里的钥匙硌到了他的手。",
+  "raw_response": "孟然站在储物柜前，手指还搭在柜门边上。\n\n更衣室里的热气正在散，铁皮柜子泛着潮味。他低头看了眼自己——短袖，校裤，左脚踝外侧肿着一圈，体育课跑四百米的时候崴的。刚才他坐在长凳上解鞋带，把外套搭在膝盖上，然后李一鸣从旁边跑过去，抓起一件黑色运动服就往身上一套，说“借我穿下外面冷”，人已经出了门。\n\n孟然那会儿正低头对付鞋带，等抬起头，走廊里只剩脚步声。\n\n现在长凳上还剩一件黑色运动服，团成一团，袖口翻着，拉链歪在一边。孟然拎起来看了一眼尺码标——比他平时穿的大一号。李一鸣比他高半个头。\n\n他放下外套，往门口走了两步。走廊那头，田径场方向传来哨子和笑闹声。他脚踝一受力就疼，扶着门框停下来。\n\n不能追。\n\n他回头看着长凳上那件外套。如果就这么放着，李一鸣回来可能看都不看，抓起就走，或者干脆不回来，等放学直接穿着他的外套出校门。口袋里那把钥匙，铜的，挂在一个旧钥匙扣上，是他家楼下铁门的。\n\n孟然把外套拿起来，抖开。\n\n他捏住左袖口，把整条袖子从里往外翻过来，衬里朝外，深灰色的网眼布露在外面。他又把翻好的袖子沿着肩线折了一下，让袖口搭在领口位置，形成一个不正常的凸起。然后他把外套摊平，拉链拉上一半，让那条外翻的袖子从拉链开口处支出来，像个没塞好的东西。\n\n他把外套放在更衣室门口的长凳上，靠外侧那头，正对走廊的方向。\n\n然后他退回自己的储物柜前，坐下。\n\n走廊里有人跑过去，不是李一鸣。又有人走过去，也不是。\n\n孟然把书包拎到膝盖上，没拉开。他脚踝搁在长凳底下，没动。更衣室的灯管嗡嗡响。\n\n大约过了四分钟，走廊里传来一阵急促的脚步，不是跑，是快步走，鞋底擦着水磨石地面。李一鸣出现在门口，呼吸还没匀，脸上带着运动后的红。他先看到孟然，愣了一下，然后视线往下，落在长凳上那件外套上。\n\n他盯着那条外翻的袖子看了两秒。然后他低头看自己身上穿的那件——拉链拉到头，袖子长度刚过手腕，肩膀有点紧。\n\n李一鸣把手插进身上外套的口袋里。\n\n右边口袋。\n\n他的手指停住了。\n\n然后他慢慢把手抽出来，指间夹着一把铜钥匙，钥匙扣上拴着一小块深棕色的皮标。\n\n李一鸣看着那把钥匙，又看向长凳上那件袖口外翻的外套。\n\n口袋里的钥匙硌到了他的手。",
+  "input_tokens": 1469,
+  "output_tokens": 628,
+  "latency_ms": 15561,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "ce81cf479d609dc871bfd801093a707c3265d71cfa093e55326969761550e90d",
+  "route_name": null,
+  "route_decision": {
+    "route_name": "C_OBJECT_CAUSAL",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "scene_state.available_objects is non-empty",
+      "causal_transitions contains counterfactual_without_action or rejected_alternative",
+      "character_next_action involves physical object manipulation"
+    ],
+    "matched_rules": [
+      "RULE_C_OBJECT_CAUSAL"
+    ],
+    "rejected_routes": []
+  },
+  "compiled_brief_hash": "164f908cc00d1dccb682eef337f179ddb4458800887664a37596bbdf212655be",
+  "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+  "text_path": "cases\\C-05\\drafts\\route-1.txt"
+}

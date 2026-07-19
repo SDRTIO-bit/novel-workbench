@@ -1,0 +1,324 @@
+{
+  "case_id": "B-05",
+  "category": "恋爱日常",
+  "title": "社团聚餐散场",
+  "run_id": "a3936f79-74c0-4839-bfa7-153245943d42",
+  "expected_route": "B_SHORT_RELATION",
+  "planner": {
+    "candidate_id": "b2844054-5590-4da6-b06c-f27aa8140282",
+    "attempt_number": 1,
+    "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+    "model_id": "deepseek-v4-pro",
+    "prompt_version_id": "f9052f8a-dc4e-5408-b14e-fc1badaf57f8",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 12288,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "json_object"
+    },
+    "text_output": "{\n  \"planner_contract_version\": 2,\n  \"scene_goal\": \"丁宁在路口通过一个动作完成与季然的短暂同行或分道，从而确认两人之间是否还有未说完的话，并为后续单独相处埋下钩子。\",\n  \"location\": \"学校附近街道路口，社团聚餐散场后的人行道分岔处\",\n  \"time\": \"晚九点左右，聚餐散场后\",\n  \"scene_state\": {\n    \"last_completed_action\": \"季然把外套递还给丁宁，然后站在原地等她先走\",\n    \"present_characters\": [\"丁宁\", \"季然\"],\n    \"visible_facts\": [\n      \"其他社团成员已朝相反方向离开\",\n      \"丁宁和季然被分配同一条回宿舍的路\",\n      \"季然把外套递还后停在原地未动\"\n    ],\n    \"available_objects\": [\"季然递还的外套\", \"路灯下的分岔路口\"],\n    \"unresolved_problem\": \"丁宁不知道季然是否真的想和她同行还是只是出于礼貌等待\",\n    \"already_existing_constraints\": [\n      \"丁宁不能直接问‘你是不是有话要说’\",\n      \"两人关系尚未明朗，不能过于直白\"\n    ]\n  },\n  \"characters\": [\n    {\n      \"name\": \"丁宁\",\n      \"goal\": \"在不暴露自己真实意图的前提下，试探季然是否愿意同行\",\n      \"known\": [\n        \"外套是季然在聚餐时借给她的\",\n        \"其他人都走了，只剩他们两人\",\n        \"季然把外套递还后没有立即离开\"\n      ],\n      \"unknown\": [\n        \"季然是否有话想单独对她说\",\n        \"季然停在原地是出于礼节还是真心等待\"\n      ],\n      \"mistaken_beliefs\": [\n        \"季然可能只是出于社团前辈的责任感才等她\"\n      ],\n      \"constraints\": [\n        \"不能直接问‘你是不是有话要说’\",\n        \"必须在路口做出选择，不能犹豫太久\"\n      ],\n      \"observed_evidence\": [\n        \"季然递还外套时手指在袖口多停了一秒\",\n        \"其他成员哄笑着往反方向走时，季然没有跟上去\"\n      ],\n      \"current_interpretation\": \"季然可能也在犹豫，递外套和停留都是给她一个选择的机会\",\n      \"how_interpretation_drives_action\": \"她决定先往共同方向迈出一步，但停住回头，把决定权交还给季然\"\n    },\n    {\n      \"name\": \"季然\",\n      \"goal\": \"确认丁宁是否愿意和自己单独走一段，但不愿给她压力\",\n      \"known\": [\n        \"外套已经归还\",\n        \"其他人都走了\",\n        \"丁宁在路口停住了\"\n      ],\n      \"unknown\": [\n        \"丁宁是否察觉他的心意\",\n        \"丁宁是否愿意和他单独同行\"\n      ],\n      \"mistaken_beliefs\": [\n        \"丁宁可能只想赶快回宿舍，并不想和他多待\"\n      ],\n      \"constraints\": [\n        \"不能直接表白或追问\",\n        \"必须在丁宁做出选择后配合，不能强求\"\n      ],\n      \"observed_evidence\": [\n        \"丁宁接过外套后没有立刻离开\",\n        \"丁宁往共同方向迈了一步，但回头看他\"\n      ],\n      \"current_interpretation\": \"丁宁在给他一个信号，她愿意一起走，但需要他主动跟上\",\n      \"how_interpretation_drives_action\": \"他迈步跟上，与丁宁保持一个肩膀的距离，不开口打破沉默\"\n    }\n  ],\n  \"concrete_problem\": \"丁宁必须在路口分岔处用一个动作决定是独自离开还是与季然同行，这个动作将暴露她的真实意愿。\",\n  \"pressure\": \"路灯下的沉默正在累积尴尬，其他成员的笑声已远去，两人不能再僵持不动\",\n  \"turning_point\": \"丁宁没有直接走掉，而是往共同方向迈出一步后停住回头，这个动作迫使季然必须做出是否跟上的选择，从而将决定权交还给他，两人关系从被动等待转向主动试探。\",\n  \"end_condition\": \"季然迈步跟上，两人并肩走入路灯照不到的树荫下，丁宁没有开口，但脚步放慢了\",\n  \"forbidden\": [\n    \"丁宁不能直接问‘你是不是有话要说’\",\n    \"不能出现内心独白直接解释两人感情\",\n    \"不能有其他角色突然出现打断\",\n    \"不能使用‘喜欢’‘心动’等直白词汇\",\n    \"本期不能燃烧的燃料：季然的秘密（后续章节揭示）\"\n  ],\n  \"causal_transitions\": [\n    {\n      \"id\": \"CT01\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"季然递还外套时，手指在袖口多停了一秒\",\n      \"character_interpretation\": \"丁宁注意到这个细节，认为季然并非急于结束互动\",\n      \"character_next_action\": \"丁宁接过外套后没有立即转身，而是抬头看了季然一眼\",\n      \"rejected_alternative\": \"丁宁本可以简单道谢后快步离开\",\n      \"immediate_consequence\": \"季然接收到丁宁的视线，没有退后，两人之间形成短暂的对视\",\n      \"counterfactual_without_action\": \"如果丁宁直接道谢离开，季然可能会以为她不想同行而独自回去\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"季然递还外套，两人之间无眼神交流\",\n        \"after\": \"丁宁抬头与季然对视，气氛从礼貌疏离转为微妙试探\"\n      },\n      \"cost_or_commitment\": \"丁宁暴露了自己并不急于离开的意图\",\n      \"next_constraint\": \"对视之后，丁宁必须用下一个动作决定是走是留，不能继续沉默\",\n      \"reader_must_infer\": \"季然多停一秒的手指并非无意，而是他也在等待信号\",\n      \"narrator_must_not_state\": [\n        \"季然故意多停一秒是为了试探丁宁\",\n        \"丁宁抬头是因为喜欢季然\"\n      ]\n    },\n    {\n      \"id\": \"CT02\",\n      \"kind\": \"constraint_to_choice\",\n      \"visible_trigger\": \"路口分岔处，左边通向丁宁宿舍，右边通向季然宿舍，但两人被分配了同一条路\",\n      \"character_interpretation\": \"丁宁意识到所谓的‘同一条路’其实是社团成员的刻意安排，她必须决定是否接受这个安排\",\n      \"character_next_action\": \"丁宁先往共同方向迈出一步，然后停住，回头看向季然\",\n      \"rejected_alternative\": \"丁宁本可以假装不知道，直接往自己宿舍方向走\",\n      \"immediate_consequence\": \"季然迈步跟上，两人并肩走入树荫下\",\n      \"counterfactual_without_action\": \"如果丁宁直接走掉，季然会认为她不想同行，两人关系退回原点\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"两人僵持在路口，丁宁未做出选择\",\n        \"after\": \"丁宁用动作发出邀请，季然跟上，两人正式同行\"\n      },\n      \"cost_or_commitment\": \"丁宁主动制造了同行机会，承担了可能被拒绝的风险\",\n      \"next_constraint\": \"同行后两人必须面对沉默，丁宁不能开口打破氛围，只能靠肢体语言交流\",\n      \"reader_must_infer\": \"丁宁的停步回头是经过计算的，她故意把决定权交还给季然\",\n      \"narrator_must_not_state\": [\n        \"丁宁心里希望季然跟上\",\n        \"季然跟上是因为喜欢丁宁\"\n      ]\n    }\n  ],\n  \"tempo_guardrails\": {\n    \"entry_pressure\": \"季然把外套递还后站在原地，丁宁必须立刻决定是走是留\",\n    \"dominant_pressure\": {\n      \"kind\": \"social_friction\",\n      \"description\": \"两人之间的沉默和未明说的期待构成主要压力，时间流逝增加尴尬，但真正阻止行动的是双方都不敢先暴露心意\"\n    },\n    \"allowed_viewpoint_misread\": \"季然可能把丁宁的停步回头误解为她有话要说，而非邀请同行\",\n    \"disclosure_cap\": 1,\n    \"must_remain_unclassified\": [\n      \"季然是否真的喜欢丁宁\",\n      \"丁宁对季然的真实感觉\"\n    ],\n    \"stop_state\": {\n      \"type\": \"relationship_shift\",\n      \"visible_fact\": \"季然迈步跟上，两人并肩走入树荫下\",\n      \"what_is_now_different\": \"两人从僵持的个体变为共同行动的搭档，关系从公开场合的礼貌转为私下空间的试探\",\n      \"must_not_append\": \"不得描写两人牵手或任何亲密动作，不得解释他们内心的情感变化\"\n    },\n    \"final_line_must_include\": \"她的脚步放得很慢，慢到路灯把他们的影子拖成了一个人。\"\n  },\n  \"chapter_contract_check\": {\n    \"function_aligned\": true,\n    \"must_deliver_covered\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_enabled\": true,\n    \"main_payoff_prepared\": true,\n    \"ending_hook_established\": true,\n    \"causal_transitions_grounded\": true,\n    \"reader_inference_not_pre_resolved\": true,\n    \"scene_state_reconstructed\": true,\n    \"information_sources_legal\": true,\n    \"character_choice_is_real\": true,\n    \"consequence_is_counterfactual\": true,\n    \"state_delta_is_nonempty\": true,\n    \"next_constraint_is_new\": true,\n    \"stop_state_is_visible\": true,\n    \"stop_state_changes_future_actions\": true\n  }\n}",
+    "raw_response": "{\n  \"planner_contract_version\": 2,\n  \"scene_goal\": \"丁宁在路口通过一个动作完成与季然的短暂同行或分道，从而确认两人之间是否还有未说完的话，并为后续单独相处埋下钩子。\",\n  \"location\": \"学校附近街道路口，社团聚餐散场后的人行道分岔处\",\n  \"time\": \"晚九点左右，聚餐散场后\",\n  \"scene_state\": {\n    \"last_completed_action\": \"季然把外套递还给丁宁，然后站在原地等她先走\",\n    \"present_characters\": [\"丁宁\", \"季然\"],\n    \"visible_facts\": [\n      \"其他社团成员已朝相反方向离开\",\n      \"丁宁和季然被分配同一条回宿舍的路\",\n      \"季然把外套递还后停在原地未动\"\n    ],\n    \"available_objects\": [\"季然递还的外套\", \"路灯下的分岔路口\"],\n    \"unresolved_problem\": \"丁宁不知道季然是否真的想和她同行还是只是出于礼貌等待\",\n    \"already_existing_constraints\": [\n      \"丁宁不能直接问‘你是不是有话要说’\",\n      \"两人关系尚未明朗，不能过于直白\"\n    ]\n  },\n  \"characters\": [\n    {\n      \"name\": \"丁宁\",\n      \"goal\": \"在不暴露自己真实意图的前提下，试探季然是否愿意同行\",\n      \"known\": [\n        \"外套是季然在聚餐时借给她的\",\n        \"其他人都走了，只剩他们两人\",\n        \"季然把外套递还后没有立即离开\"\n      ],\n      \"unknown\": [\n        \"季然是否有话想单独对她说\",\n        \"季然停在原地是出于礼节还是真心等待\"\n      ],\n      \"mistaken_beliefs\": [\n        \"季然可能只是出于社团前辈的责任感才等她\"\n      ],\n      \"constraints\": [\n        \"不能直接问‘你是不是有话要说’\",\n        \"必须在路口做出选择，不能犹豫太久\"\n      ],\n      \"observed_evidence\": [\n        \"季然递还外套时手指在袖口多停了一秒\",\n        \"其他成员哄笑着往反方向走时，季然没有跟上去\"\n      ],\n      \"current_interpretation\": \"季然可能也在犹豫，递外套和停留都是给她一个选择的机会\",\n      \"how_interpretation_drives_action\": \"她决定先往共同方向迈出一步，但停住回头，把决定权交还给季然\"\n    },\n    {\n      \"name\": \"季然\",\n      \"goal\": \"确认丁宁是否愿意和自己单独走一段，但不愿给她压力\",\n      \"known\": [\n        \"外套已经归还\",\n        \"其他人都走了\",\n        \"丁宁在路口停住了\"\n      ],\n      \"unknown\": [\n        \"丁宁是否察觉他的心意\",\n        \"丁宁是否愿意和他单独同行\"\n      ],\n      \"mistaken_beliefs\": [\n        \"丁宁可能只想赶快回宿舍，并不想和他多待\"\n      ],\n      \"constraints\": [\n        \"不能直接表白或追问\",\n        \"必须在丁宁做出选择后配合，不能强求\"\n      ],\n      \"observed_evidence\": [\n        \"丁宁接过外套后没有立刻离开\",\n        \"丁宁往共同方向迈了一步，但回头看他\"\n      ],\n      \"current_interpretation\": \"丁宁在给他一个信号，她愿意一起走，但需要他主动跟上\",\n      \"how_interpretation_drives_action\": \"他迈步跟上，与丁宁保持一个肩膀的距离，不开口打破沉默\"\n    }\n  ],\n  \"concrete_problem\": \"丁宁必须在路口分岔处用一个动作决定是独自离开还是与季然同行，这个动作将暴露她的真实意愿。\",\n  \"pressure\": \"路灯下的沉默正在累积尴尬，其他成员的笑声已远去，两人不能再僵持不动\",\n  \"turning_point\": \"丁宁没有直接走掉，而是往共同方向迈出一步后停住回头，这个动作迫使季然必须做出是否跟上的选择，从而将决定权交还给他，两人关系从被动等待转向主动试探。\",\n  \"end_condition\": \"季然迈步跟上，两人并肩走入路灯照不到的树荫下，丁宁没有开口，但脚步放慢了\",\n  \"forbidden\": [\n    \"丁宁不能直接问‘你是不是有话要说’\",\n    \"不能出现内心独白直接解释两人感情\",\n    \"不能有其他角色突然出现打断\",\n    \"不能使用‘喜欢’‘心动’等直白词汇\",\n    \"本期不能燃烧的燃料：季然的秘密（后续章节揭示）\"\n  ],\n  \"causal_transitions\": [\n    {\n      \"id\": \"CT01\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"季然递还外套时，手指在袖口多停了一秒\",\n      \"character_interpretation\": \"丁宁注意到这个细节，认为季然并非急于结束互动\",\n      \"character_next_action\": \"丁宁接过外套后没有立即转身，而是抬头看了季然一眼\",\n      \"rejected_alternative\": \"丁宁本可以简单道谢后快步离开\",\n      \"immediate_consequence\": \"季然接收到丁宁的视线，没有退后，两人之间形成短暂的对视\",\n      \"counterfactual_without_action\": \"如果丁宁直接道谢离开，季然可能会以为她不想同行而独自回去\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"季然递还外套，两人之间无眼神交流\",\n        \"after\": \"丁宁抬头与季然对视，气氛从礼貌疏离转为微妙试探\"\n      },\n      \"cost_or_commitment\": \"丁宁暴露了自己并不急于离开的意图\",\n      \"next_constraint\": \"对视之后，丁宁必须用下一个动作决定是走是留，不能继续沉默\",\n      \"reader_must_infer\": \"季然多停一秒的手指并非无意，而是他也在等待信号\",\n      \"narrator_must_not_state\": [\n        \"季然故意多停一秒是为了试探丁宁\",\n        \"丁宁抬头是因为喜欢季然\"\n      ]\n    },\n    {\n      \"id\": \"CT02\",\n      \"kind\": \"constraint_to_choice\",\n      \"visible_trigger\": \"路口分岔处，左边通向丁宁宿舍，右边通向季然宿舍，但两人被分配了同一条路\",\n      \"character_interpretation\": \"丁宁意识到所谓的‘同一条路’其实是社团成员的刻意安排，她必须决定是否接受这个安排\",\n      \"character_next_action\": \"丁宁先往共同方向迈出一步，然后停住，回头看向季然\",\n      \"rejected_alternative\": \"丁宁本可以假装不知道，直接往自己宿舍方向走\",\n      \"immediate_consequence\": \"季然迈步跟上，两人并肩走入树荫下\",\n      \"counterfactual_without_action\": \"如果丁宁直接走掉，季然会认为她不想同行，两人关系退回原点\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"两人僵持在路口，丁宁未做出选择\",\n        \"after\": \"丁宁用动作发出邀请，季然跟上，两人正式同行\"\n      },\n      \"cost_or_commitment\": \"丁宁主动制造了同行机会，承担了可能被拒绝的风险\",\n      \"next_constraint\": \"同行后两人必须面对沉默，丁宁不能开口打破氛围，只能靠肢体语言交流\",\n      \"reader_must_infer\": \"丁宁的停步回头是经过计算的，她故意把决定权交还给季然\",\n      \"narrator_must_not_state\": [\n        \"丁宁心里希望季然跟上\",\n        \"季然跟上是因为喜欢丁宁\"\n      ]\n    }\n  ],\n  \"tempo_guardrails\": {\n    \"entry_pressure\": \"季然把外套递还后站在原地，丁宁必须立刻决定是走是留\",\n    \"dominant_pressure\": {\n      \"kind\": \"social_friction\",\n      \"description\": \"两人之间的沉默和未明说的期待构成主要压力，时间流逝增加尴尬，但真正阻止行动的是双方都不敢先暴露心意\"\n    },\n    \"allowed_viewpoint_misread\": \"季然可能把丁宁的停步回头误解为她有话要说，而非邀请同行\",\n    \"disclosure_cap\": 1,\n    \"must_remain_unclassified\": [\n      \"季然是否真的喜欢丁宁\",\n      \"丁宁对季然的真实感觉\"\n    ],\n    \"stop_state\": {\n      \"type\": \"relationship_shift\",\n      \"visible_fact\": \"季然迈步跟上，两人并肩走入树荫下\",\n      \"what_is_now_different\": \"两人从僵持的个体变为共同行动的搭档，关系从公开场合的礼貌转为私下空间的试探\",\n      \"must_not_append\": \"不得描写两人牵手或任何亲密动作，不得解释他们内心的情感变化\"\n    },\n    \"final_line_must_include\": \"她的脚步放得很慢，慢到路灯把他们的影子拖成了一个人。\"\n  },\n  \"chapter_contract_check\": {\n    \"function_aligned\": true,\n    \"must_deliver_covered\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_enabled\": true,\n    \"main_payoff_prepared\": true,\n    \"ending_hook_established\": true,\n    \"causal_transitions_grounded\": true,\n    \"reader_inference_not_pre_resolved\": true,\n    \"scene_state_reconstructed\": true,\n    \"information_sources_legal\": true,\n    \"character_choice_is_real\": true,\n    \"consequence_is_counterfactual\": true,\n    \"state_delta_is_nonempty\": true,\n    \"next_constraint_is_new\": true,\n    \"stop_state_is_visible\": true,\n    \"stop_state_changes_future_actions\": true\n  }\n}",
+    "input_tokens": 3312,
+    "output_tokens": 2154,
+    "latency_ms": 35784,
+    "finish_reason": "stop",
+    "error_code": null,
+    "error_message": null,
+    "rendered_user_prompt_sha256": "8cb92a4d598aeb6363f112ae3d26a8a0a038de1dc13b080e876e901f843e9e81",
+    "route_name": null,
+    "route_decision": null,
+    "compiled_brief_hash": null,
+    "instruction_hash": null
+  },
+  "drafts": [
+    {
+      "group": "ROUTE-C_OBJECT_CAUSAL",
+      "replica": 1,
+      "mode": "narrative_route",
+      "candidate_id": "5a39d4ff-d054-4b31-8b7b-32b8192dfa0f",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "C_OBJECT_CAUSAL",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "scene_state.available_objects is non-empty",
+            "causal_transitions contains counterfactual_without_action or rejected_alternative",
+            "character_next_action involves physical object manipulation"
+          ],
+          "matched_rules": [
+            "RULE_C_OBJECT_CAUSAL"
+          ],
+          "rejected_routes": []
+        },
+        "compiled_brief_hash": "618d5664a3e5bc359e4381bc847521c7e62b788ad46f88ff5b5380f2033ace57",
+        "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "丁宁接过外套的时候，手指碰到了季然的指尖。\n\n凉的。十月底的夜风从梧桐树梢灌下来，季然的手背还带着刚才端冰啤酒的温度，但指节是凉的。她把外套抱在怀里，棉质内衬上残留着火锅店的气味，混着季然洗衣液的皂香。\n\n身后那群人的笑声已经远了。陈嘉怡走之前还回头喊了一句“你们俩顺路啊”，尾音拖得长长的，被王浩拽着胳膊拉走了。脚步声零零散散地往南门方向去，越来越轻。\n\n季然站在原地没动。\n\n他穿着深灰色的卫衣，双手插在口袋里，肩膀微微耸起。路灯从他背后打过来，在水泥地面上投出一道瘦长的影子，影子的边缘刚好停在丁宁的帆布鞋尖前。\n\n丁宁把外套搭在手臂上。她应该说的那句话卡在喉咙里——“谢谢”——两个字而已，但她没有说。她抬起头。\n\n季然正看着她。\n\n不是那种刚好对上的视线。他就是在看她。丁宁抬头的时候，他的目光已经等在那里了，像是从一开始就没移开过。路灯的光落在他睫毛上，在眼睑下方投下一小片阴影。他没有退后，也没有把视线转开。\n\n两秒钟。或者三秒。\n\n丁宁的手指攥紧了怀里的外套。\n\n她可以走的。往右拐是图书馆后门那条路，穿过篮球场再过一座小桥，十五分钟到宿舍。她走快一点，季然大概不会跟上来。他从来不是那种会追上去的人。\n\n丁宁的脚尖往右偏了一寸。\n\n季然没有动。\n\n她又把脚尖收回来了。\n\n这个动作太小了，小到她自己都说不清是不是故意的。但季然的视线往下落了一瞬，落在她的帆布鞋上，然后又抬起来。他看见了。\n\n丁宁的耳根开始发烫。\n\n她把外套换到左手，右手空出来，不知道该往哪儿放。最后她把手塞进了卫衣口袋里，肩膀往左转了一个很小的角度——朝向那条更远的路。要绕过操场东侧，多走十分钟，但树荫多，路灯也暗一些。\n\n她没看季然。她只是把身体转向了那个方向，然后停了一拍。\n\n身后传来鞋底摩擦水泥地面的声音。\n\n季然迈了一步。然后是第二步。\n\n他走到了她右手边，隔了大概半臂的距离。丁宁能闻到他卫衣上残留的火锅味，还有一点点薄荷糖的味道。他在聚餐后半程一直在嚼那种白盒子的薄荷糖，一粒一粒地倒，没分给任何人。\n\n丁宁开始往前走。\n\n她没有走得很快。季然的步幅比她大，但他也没有走快。两个人的脚步慢慢叠在一起，帆布鞋和运动鞋交替落在水泥路面上，节奏越来越近，最后几乎同步。\n\n路灯把他们的影子投在身后。丁宁低着头，看见地面上两道黑色的轮廓正在慢慢靠近。季然的影子比她的长出一截，肩膀的部分快要碰到她的影子了。\n\n她放慢了脚步。\n\n慢到几乎像是在走平衡木。左脚落下，右脚抬起，每一步都踩得很轻。地面上那两道影子晃了晃，边缘开始重叠。季然的影子肩膀融进了她的影子里，分不出哪一部分是谁的。\n\n她没有加快。\n\n季然也没有。\n\n梧桐树的枝叶在头顶合拢，路灯的光碎成一片一片的，落在他们身上又滑过去。前面的路暗下来，树荫浓得像是另一层夜色。\n\n丁宁抱着季然的外套，指节慢慢松开了。\n\n她的脚步放得很慢，慢到路灯把他们的影子拖成了一个人。",
+      "raw_response": "丁宁接过外套的时候，手指碰到了季然的指尖。\n\n凉的。十月底的夜风从梧桐树梢灌下来，季然的手背还带着刚才端冰啤酒的温度，但指节是凉的。她把外套抱在怀里，棉质内衬上残留着火锅店的气味，混着季然洗衣液的皂香。\n\n身后那群人的笑声已经远了。陈嘉怡走之前还回头喊了一句“你们俩顺路啊”，尾音拖得长长的，被王浩拽着胳膊拉走了。脚步声零零散散地往南门方向去，越来越轻。\n\n季然站在原地没动。\n\n他穿着深灰色的卫衣，双手插在口袋里，肩膀微微耸起。路灯从他背后打过来，在水泥地面上投出一道瘦长的影子，影子的边缘刚好停在丁宁的帆布鞋尖前。\n\n丁宁把外套搭在手臂上。她应该说的那句话卡在喉咙里——“谢谢”——两个字而已，但她没有说。她抬起头。\n\n季然正看着她。\n\n不是那种刚好对上的视线。他就是在看她。丁宁抬头的时候，他的目光已经等在那里了，像是从一开始就没移开过。路灯的光落在他睫毛上，在眼睑下方投下一小片阴影。他没有退后，也没有把视线转开。\n\n两秒钟。或者三秒。\n\n丁宁的手指攥紧了怀里的外套。\n\n她可以走的。往右拐是图书馆后门那条路，穿过篮球场再过一座小桥，十五分钟到宿舍。她走快一点，季然大概不会跟上来。他从来不是那种会追上去的人。\n\n丁宁的脚尖往右偏了一寸。\n\n季然没有动。\n\n她又把脚尖收回来了。\n\n这个动作太小了，小到她自己都说不清是不是故意的。但季然的视线往下落了一瞬，落在她的帆布鞋上，然后又抬起来。他看见了。\n\n丁宁的耳根开始发烫。\n\n她把外套换到左手，右手空出来，不知道该往哪儿放。最后她把手塞进了卫衣口袋里，肩膀往左转了一个很小的角度——朝向那条更远的路。要绕过操场东侧，多走十分钟，但树荫多，路灯也暗一些。\n\n她没看季然。她只是把身体转向了那个方向，然后停了一拍。\n\n身后传来鞋底摩擦水泥地面的声音。\n\n季然迈了一步。然后是第二步。\n\n他走到了她右手边，隔了大概半臂的距离。丁宁能闻到他卫衣上残留的火锅味，还有一点点薄荷糖的味道。他在聚餐后半程一直在嚼那种白盒子的薄荷糖，一粒一粒地倒，没分给任何人。\n\n丁宁开始往前走。\n\n她没有走得很快。季然的步幅比她大，但他也没有走快。两个人的脚步慢慢叠在一起，帆布鞋和运动鞋交替落在水泥路面上，节奏越来越近，最后几乎同步。\n\n路灯把他们的影子投在身后。丁宁低着头，看见地面上两道黑色的轮廓正在慢慢靠近。季然的影子比她的长出一截，肩膀的部分快要碰到她的影子了。\n\n她放慢了脚步。\n\n慢到几乎像是在走平衡木。左脚落下，右脚抬起，每一步都踩得很轻。地面上那两道影子晃了晃，边缘开始重叠。季然的影子肩膀融进了她的影子里，分不出哪一部分是谁的。\n\n她没有加快。\n\n季然也没有。\n\n梧桐树的枝叶在头顶合拢，路灯的光碎成一片一片的，落在他们身上又滑过去。前面的路暗下来，树荫浓得像是另一层夜色。\n\n丁宁抱着季然的外套，指节慢慢松开了。\n\n她的脚步放得很慢，慢到路灯把他们的影子拖成了一个人。",
+      "input_tokens": 1426,
+      "output_tokens": 761,
+      "latency_ms": 19696,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "f5a49832ae4ad61f87176f5748e22502cef14107bf6f5df6b53414e0df5adb93",
+      "route_name": null,
+      "route_decision": {
+        "route_name": "C_OBJECT_CAUSAL",
+        "classifier_version": "narrative-route-v1",
+        "decision_reasons": [
+          "scene_state.available_objects is non-empty",
+          "causal_transitions contains counterfactual_without_action or rejected_alternative",
+          "character_next_action involves physical object manipulation"
+        ],
+        "matched_rules": [
+          "RULE_C_OBJECT_CAUSAL"
+        ],
+        "rejected_routes": []
+      },
+      "compiled_brief_hash": "618d5664a3e5bc359e4381bc847521c7e62b788ad46f88ff5b5380f2033ace57",
+      "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+      "text_path": "cases\\B-05\\drafts\\route-1.txt"
+    },
+    {
+      "group": "ROUTE-C_OBJECT_CAUSAL",
+      "replica": 2,
+      "mode": "narrative_route",
+      "candidate_id": "83f9486c-3346-497c-a8eb-cceabdf9ed1c",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "C_OBJECT_CAUSAL",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "scene_state.available_objects is non-empty",
+            "causal_transitions contains counterfactual_without_action or rejected_alternative",
+            "character_next_action involves physical object manipulation"
+          ],
+          "matched_rules": [
+            "RULE_C_OBJECT_CAUSAL"
+          ],
+          "rejected_routes": []
+        },
+        "compiled_brief_hash": "618d5664a3e5bc359e4381bc847521c7e62b788ad46f88ff5b5380f2033ace57",
+        "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "社团聚餐散场的时候，丁宁还没反应过来，其他人已经哄笑着往反方向走了。\n\n“你俩顺路嘛，我们走这边！”\n\n不知道谁喊了这么一句，七八个人嘻嘻哈哈地拐进了岔路口的另一边，脚步声和说笑声很快被夜风卷走。丁宁站在原地，手里还攥着那件外套的袖口，愣了一下才意识到——现在就剩她和季然两个人了。\n\n路灯把分岔路口照得很亮。左边通向她的宿舍区，右边也是。\n\n季然站在她两步远的地方，把外套递过来的时候没说话。丁宁接过去，手指碰到袖口那截布料，感觉到他松开得慢了一拍。不是犹豫的那种慢。是他在最后一秒才松手。\n\n外套上还带着一点温度，不知道是她的还是他的。\n\n丁宁把外套抱在怀里，低头看了一眼袖口。然后她抬起头。\n\n季然没退后。\n\n他站在路灯底下，双手插在卫衣口袋里，肩膀微微侧着，像是本来打算转身，但没转。他的视线落在她脸上，没躲开，也没催她。\n\n丁宁本可以道谢然后走。\n\n她已经张了张嘴，那声“谢谢”就在舌尖上。她可以说完这两个字，冲他点点头，抱着外套走进左边那条路，步子快一点，三十秒就能拐过弯，让树影把他挡在身后。她可以假装没注意到他递外套时手指多停的那一秒，假装没看见其他人哄笑时他没有跟上去，假装他站在这里等她先走只是出于礼貌。\n\n她可以。\n\n丁宁没有说谢谢。\n\n她抱着外套，抬头看着他，路灯的光从头顶浇下来，把她和他的影子拉得很长。她看见季然的喉结动了一下，像是想说什么，又咽了回去。他的视线从她眼睛上移开，落在她怀里的外套上，然后又抬起来。\n\n他没退后。\n\n丁宁意识到自己也没往前走。\n\n这个认知像一根针，轻轻扎了她一下。她抱着外套的手指收紧了一点，袖口那截布料被攥出几道褶。她站在分岔路口，左边是回宿舍的路，右边也是，但季然站在两盏路灯之间，像一条路的起点。\n\n她转过身，往左边迈了一步。\n\n然后停下来。\n\n丁宁回头看了一眼。季然还站在原地，手从口袋里抽出来一只，垂在身侧，手指微微蜷着。他没有叫她，没有追上来，只是站在那里，像在等她做一个最终的决定。\n\n丁宁深吸一口气，把外套展开，披在肩上。她没有把胳膊伸进袖子里，只是让外套搭在肩膀两侧，像披着一件还没决定要穿的盔甲。\n\n然后她往前走。\n\n步子很慢。\n\n身后安静了两秒。接着，她听见运动鞋踩在柏油路面上的声音——不紧不慢，隔着三步的距离，跟了上来。\n\n丁宁没有回头。她把外套的领口拢了拢，下巴埋进布料里，闻到上面残留的洗衣液味道，还有一点点火锅底料的辛辣气息。夜风从树梢间穿过来，把她额前的碎发吹散，她抬手别了一下，余光里看见季然的影子从她身后移到了她右手边。\n\n他跟上来了。\n\n没有问“一起走吗”，没有说“我送你”，只是走到了和她并肩的位置，双手重新插回口袋里，步子放得和她一样慢。\n\n丁宁垂下眼，看着地上两道影子。路灯一盏接一盏地从头顶滑过，每一次光线从身后打过来，都把他们的影子往前推，推到同一块地砖上，推到同一片树影里，推到同一个方向。\n\n她的脚步放得很慢，慢到路灯把他们的影子拖成了一个人。",
+      "raw_response": "社团聚餐散场的时候，丁宁还没反应过来，其他人已经哄笑着往反方向走了。\n\n“你俩顺路嘛，我们走这边！”\n\n不知道谁喊了这么一句，七八个人嘻嘻哈哈地拐进了岔路口的另一边，脚步声和说笑声很快被夜风卷走。丁宁站在原地，手里还攥着那件外套的袖口，愣了一下才意识到——现在就剩她和季然两个人了。\n\n路灯把分岔路口照得很亮。左边通向她的宿舍区，右边也是。\n\n季然站在她两步远的地方，把外套递过来的时候没说话。丁宁接过去，手指碰到袖口那截布料，感觉到他松开得慢了一拍。不是犹豫的那种慢。是他在最后一秒才松手。\n\n外套上还带着一点温度，不知道是她的还是他的。\n\n丁宁把外套抱在怀里，低头看了一眼袖口。然后她抬起头。\n\n季然没退后。\n\n他站在路灯底下，双手插在卫衣口袋里，肩膀微微侧着，像是本来打算转身，但没转。他的视线落在她脸上，没躲开，也没催她。\n\n丁宁本可以道谢然后走。\n\n她已经张了张嘴，那声“谢谢”就在舌尖上。她可以说完这两个字，冲他点点头，抱着外套走进左边那条路，步子快一点，三十秒就能拐过弯，让树影把他挡在身后。她可以假装没注意到他递外套时手指多停的那一秒，假装没看见其他人哄笑时他没有跟上去，假装他站在这里等她先走只是出于礼貌。\n\n她可以。\n\n丁宁没有说谢谢。\n\n她抱着外套，抬头看着他，路灯的光从头顶浇下来，把她和他的影子拉得很长。她看见季然的喉结动了一下，像是想说什么，又咽了回去。他的视线从她眼睛上移开，落在她怀里的外套上，然后又抬起来。\n\n他没退后。\n\n丁宁意识到自己也没往前走。\n\n这个认知像一根针，轻轻扎了她一下。她抱着外套的手指收紧了一点，袖口那截布料被攥出几道褶。她站在分岔路口，左边是回宿舍的路，右边也是，但季然站在两盏路灯之间，像一条路的起点。\n\n她转过身，往左边迈了一步。\n\n然后停下来。\n\n丁宁回头看了一眼。季然还站在原地，手从口袋里抽出来一只，垂在身侧，手指微微蜷着。他没有叫她，没有追上来，只是站在那里，像在等她做一个最终的决定。\n\n丁宁深吸一口气，把外套展开，披在肩上。她没有把胳膊伸进袖子里，只是让外套搭在肩膀两侧，像披着一件还没决定要穿的盔甲。\n\n然后她往前走。\n\n步子很慢。\n\n身后安静了两秒。接着，她听见运动鞋踩在柏油路面上的声音——不紧不慢，隔着三步的距离，跟了上来。\n\n丁宁没有回头。她把外套的领口拢了拢，下巴埋进布料里，闻到上面残留的洗衣液味道，还有一点点火锅底料的辛辣气息。夜风从树梢间穿过来，把她额前的碎发吹散，她抬手别了一下，余光里看见季然的影子从她身后移到了她右手边。\n\n他跟上来了。\n\n没有问“一起走吗”，没有说“我送你”，只是走到了和她并肩的位置，双手重新插回口袋里，步子放得和她一样慢。\n\n丁宁垂下眼，看着地上两道影子。路灯一盏接一盏地从头顶滑过，每一次光线从身后打过来，都把他们的影子往前推，推到同一块地砖上，推到同一片树影里，推到同一个方向。\n\n她的脚步放得很慢，慢到路灯把他们的影子拖成了一个人。",
+      "input_tokens": 1426,
+      "output_tokens": 774,
+      "latency_ms": 21187,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "f5a49832ae4ad61f87176f5748e22502cef14107bf6f5df6b53414e0df5adb93",
+      "route_name": null,
+      "route_decision": {
+        "route_name": "C_OBJECT_CAUSAL",
+        "classifier_version": "narrative-route-v1",
+        "decision_reasons": [
+          "scene_state.available_objects is non-empty",
+          "causal_transitions contains counterfactual_without_action or rejected_alternative",
+          "character_next_action involves physical object manipulation"
+        ],
+        "matched_rules": [
+          "RULE_C_OBJECT_CAUSAL"
+        ],
+        "rejected_routes": []
+      },
+      "compiled_brief_hash": "618d5664a3e5bc359e4381bc847521c7e62b788ad46f88ff5b5380f2033ace57",
+      "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+      "text_path": "cases\\B-05\\drafts\\route-2.txt"
+    },
+    {
+      "group": "ROUTE-C_OBJECT_CAUSAL",
+      "replica": 3,
+      "mode": "narrative_route",
+      "candidate_id": "e34cca0b-25c1-4550-8825-cfa7c6d6704d",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "C_OBJECT_CAUSAL",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "scene_state.available_objects is non-empty",
+            "causal_transitions contains counterfactual_without_action or rejected_alternative",
+            "character_next_action involves physical object manipulation"
+          ],
+          "matched_rules": [
+            "RULE_C_OBJECT_CAUSAL"
+          ],
+          "rejected_routes": []
+        },
+        "compiled_brief_hash": "618d5664a3e5bc359e4381bc847521c7e62b788ad46f88ff5b5380f2033ace57",
+        "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "丁宁接过外套的时候，手指碰到了季然的手背。\n\n凉的。十月底的夜风把他的手吹得跟外套面料一个温度。她把外套抱在怀里，闻到上面残留的火锅味和一点洗衣液的清香。其他社团成员的笑声已经拐过街角，越来越远。路灯把分岔路口照得很亮，左边是回她宿舍的路，右边也是回她宿舍的路，只是方向不同。\n\n季然站在她面前，没有动。\n\n他把外套递还之后，手垂在身侧，整个人像钉在了人行道的地砖上。丁宁低头把外套叠了一下，这个动作其实不需要做，外套本来就不乱。她只是需要手上有个事情，好让自己不用立刻决定往哪边走。\n\n叠到袖口的时候，她注意到那截袖口被捏得有点皱。是之前递过来的时候，他手指多停了一秒留下的。\n\n丁宁抬起头。\n\n季然正看着她。不是那种恰好对视的“正看着”，是他本来就在看，她抬头只是确认了这件事。他的眼神没有躲，也没有顺势说点什么打破沉默。他就那么站着，手插在卫衣口袋里，肩膀微微收紧，像是也在等。\n\n丁宁可以把外套往包里一塞，说声谢谢，然后转身走上左边那条路。她的宿舍往左走更近，这个理由足够充分，谁都不会觉得奇怪。她已经张了张嘴，那声“谢谢”到了舌尖。\n\n但她没有说。\n\n她抱着外套的手收紧了一点，身体没有转向左边，也没有转向右边。她就站在分岔路口的正中间，和季然面对面，中间隔着两步的距离。这两步谁都没动。\n\n季然的喉结动了一下。\n\n他往右边那条路偏了偏下巴，动作很小，像是只是活动了一下脖子。但他的脚跟着转了几度，鞋尖从正对着她变成了朝向右边。\n\n丁宁看见了。\n\n她把外套塞进包里，拉链拉上。这个声音在安静的夜里很响，像是什么东西被决定了。然后她迈开步子，没有往左，也没有往右，只是往前走了一步——朝着季然站着的方向。\n\n季然后退了半步，不是躲，是让出空间。\n\n然后他转过身，和她面朝同一个方向。\n\n丁宁走上右边那条路的时候，心跳快得有点不像话。她没有看季然，但她听见他的球鞋踩在落叶上的声音，就在她右后方不到一步的距离。那个距离保持了三步，然后他迈了一大步，和她并排了。\n\n路灯把他们的影子投在前面的人行道上，两个分开的轮廓。\n\n丁宁放慢了脚步。\n\n不是刻意的，至少她可以对自己这么说。只是这条路树荫很密，月光被遮得断断续续，路面不太看得清。慢一点走比较安全。\n\n她的脚步放得很慢，慢到路灯把他们的影子拖成了一个人。",
+      "raw_response": "丁宁接过外套的时候，手指碰到了季然的手背。\n\n凉的。十月底的夜风把他的手吹得跟外套面料一个温度。她把外套抱在怀里，闻到上面残留的火锅味和一点洗衣液的清香。其他社团成员的笑声已经拐过街角，越来越远。路灯把分岔路口照得很亮，左边是回她宿舍的路，右边也是回她宿舍的路，只是方向不同。\n\n季然站在她面前，没有动。\n\n他把外套递还之后，手垂在身侧，整个人像钉在了人行道的地砖上。丁宁低头把外套叠了一下，这个动作其实不需要做，外套本来就不乱。她只是需要手上有个事情，好让自己不用立刻决定往哪边走。\n\n叠到袖口的时候，她注意到那截袖口被捏得有点皱。是之前递过来的时候，他手指多停了一秒留下的。\n\n丁宁抬起头。\n\n季然正看着她。不是那种恰好对视的“正看着”，是他本来就在看，她抬头只是确认了这件事。他的眼神没有躲，也没有顺势说点什么打破沉默。他就那么站着，手插在卫衣口袋里，肩膀微微收紧，像是也在等。\n\n丁宁可以把外套往包里一塞，说声谢谢，然后转身走上左边那条路。她的宿舍往左走更近，这个理由足够充分，谁都不会觉得奇怪。她已经张了张嘴，那声“谢谢”到了舌尖。\n\n但她没有说。\n\n她抱着外套的手收紧了一点，身体没有转向左边，也没有转向右边。她就站在分岔路口的正中间，和季然面对面，中间隔着两步的距离。这两步谁都没动。\n\n季然的喉结动了一下。\n\n他往右边那条路偏了偏下巴，动作很小，像是只是活动了一下脖子。但他的脚跟着转了几度，鞋尖从正对着她变成了朝向右边。\n\n丁宁看见了。\n\n她把外套塞进包里，拉链拉上。这个声音在安静的夜里很响，像是什么东西被决定了。然后她迈开步子，没有往左，也没有往右，只是往前走了一步——朝着季然站着的方向。\n\n季然后退了半步，不是躲，是让出空间。\n\n然后他转过身，和她面朝同一个方向。\n\n丁宁走上右边那条路的时候，心跳快得有点不像话。她没有看季然，但她听见他的球鞋踩在落叶上的声音，就在她右后方不到一步的距离。那个距离保持了三步，然后他迈了一大步，和她并排了。\n\n路灯把他们的影子投在前面的人行道上，两个分开的轮廓。\n\n丁宁放慢了脚步。\n\n不是刻意的，至少她可以对自己这么说。只是这条路树荫很密，月光被遮得断断续续，路面不太看得清。慢一点走比较安全。\n\n她的脚步放得很慢，慢到路灯把他们的影子拖成了一个人。",
+      "input_tokens": 1426,
+      "output_tokens": 593,
+      "latency_ms": 15779,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "f5a49832ae4ad61f87176f5748e22502cef14107bf6f5df6b53414e0df5adb93",
+      "route_name": null,
+      "route_decision": {
+        "route_name": "C_OBJECT_CAUSAL",
+        "classifier_version": "narrative-route-v1",
+        "decision_reasons": [
+          "scene_state.available_objects is non-empty",
+          "causal_transitions contains counterfactual_without_action or rejected_alternative",
+          "character_next_action involves physical object manipulation"
+        ],
+        "matched_rules": [
+          "RULE_C_OBJECT_CAUSAL"
+        ],
+        "rejected_routes": []
+      },
+      "compiled_brief_hash": "618d5664a3e5bc359e4381bc847521c7e62b788ad46f88ff5b5380f2033ace57",
+      "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+      "text_path": "cases\\B-05\\drafts\\route-3.txt"
+    },
+    {
+      "group": "BASELINE-writer_brief",
+      "replica": 1,
+      "mode": "writer_brief",
+      "candidate_id": "5e32c2f5-370f-410d-b249-11eeb06210e3",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "丁宁接过外套的时候，指尖碰到的是季然袖口那一小块被夜风吹凉的面料。\n\n她低头把外套叠了一下，叠到一半才意识到自己其实不需要叠它。这个动作让她多站了两秒钟。其他成员的脚步声已经散尽了，拐过食堂后面的围墙，笑声和起哄声被风吹得零零碎碎，很快什么也听不见。\n\n季然还站在原来的位置。\n\n他没有看手机，没有整理书包带，没有做任何等待时人们通常会做的遮掩动作。他就是站在那里，双手插在卫衣口袋里，肩膀微微侧向路灯照不到的那一侧，像在等她先动。\n\n丁宁把叠好的外套抱在胸前，抬起头。\n\n季然的目光正落在她身上。\n\n不是那种刚好扫过的看。他的视线在她抬起头的瞬间没有移开，也没有刻意迎上来。它就停在那里，安静的，像他已经看了她一会儿，只是她刚刚才发现。\n\n丁宁的呼吸在喉咙口顿了一下。\n\n她没有转开脸。\n\n季然也没有退后。他的鞋尖朝着她的方向，没有挪动半寸。路灯的光从他们之间的梧桐树枝叶缝隙里漏下来，在他脸上切出几道细碎的光斑，其中一道刚好落在他右边眉骨上。\n\n丁宁的手指在外套边缘收紧了一下。\n\n路口就在她右手边三步远的地方。向左拐是回宿舍楼的大路，路灯亮堂，水泥路面平整，五分钟就能走到楼下。向右拐是一条穿过小树林的石板路，比大路绕远一些，但季然住的那栋楼就在林子另一头。\n\n她知道的。上学期社团活动结束，有一次他提过，说他从那片林子穿回去只要七分钟。\n\n现在其他人都走了。\n\n季然站在原地，没有跟上去。\n\n他把外套递还给她，手指在袖口多停了一秒。\n\n他现在还站在那里。\n\n丁宁把外套从胸前放下来，一只手拎着，另一只手把被风吹到脸颊上的头发拨到耳后。她朝路口迈了一步，然后停下来，侧过脸看了季然一眼。\n\n不是回头。\n\n是侧过脸，身体还朝着他的方向。\n\n季然的喉结动了一下。他把右手从口袋里抽出来，垂在身侧，手指微微蜷了一下，又松开了。\n\n丁宁转回脸，朝右拐进了那条石板路。\n\n她没有回头看他有没有跟上来。她只是把脚步放得很慢，慢到能听见身后梧桐叶被踩碎的声响——不是她踩的。\n\n那个声响在她身后两步远的地方，节奏和她自己的脚步几乎重叠在一起，但慢了半拍。\n\n她没有加快。\n\n身后的人也没有追上来。他保持着那两步的距离，踩着她刚刚踩过的石板，走进树荫投下的阴影里。\n\n路灯的光从背后照过来，把她的影子拉得很长，一直延伸到前面那片没有光的石板路上。然后另一个影子从她的影子里长出来，边缘模糊地叠在一起，像同一个人被两盏灯照着。\n\n她的脚步放得很慢，慢到路灯把他们的影子拖成了一个人。",
+      "raw_response": "丁宁接过外套的时候，指尖碰到的是季然袖口那一小块被夜风吹凉的面料。\n\n她低头把外套叠了一下，叠到一半才意识到自己其实不需要叠它。这个动作让她多站了两秒钟。其他成员的脚步声已经散尽了，拐过食堂后面的围墙，笑声和起哄声被风吹得零零碎碎，很快什么也听不见。\n\n季然还站在原来的位置。\n\n他没有看手机，没有整理书包带，没有做任何等待时人们通常会做的遮掩动作。他就是站在那里，双手插在卫衣口袋里，肩膀微微侧向路灯照不到的那一侧，像在等她先动。\n\n丁宁把叠好的外套抱在胸前，抬起头。\n\n季然的目光正落在她身上。\n\n不是那种刚好扫过的看。他的视线在她抬起头的瞬间没有移开，也没有刻意迎上来。它就停在那里，安静的，像他已经看了她一会儿，只是她刚刚才发现。\n\n丁宁的呼吸在喉咙口顿了一下。\n\n她没有转开脸。\n\n季然也没有退后。他的鞋尖朝着她的方向，没有挪动半寸。路灯的光从他们之间的梧桐树枝叶缝隙里漏下来，在他脸上切出几道细碎的光斑，其中一道刚好落在他右边眉骨上。\n\n丁宁的手指在外套边缘收紧了一下。\n\n路口就在她右手边三步远的地方。向左拐是回宿舍楼的大路，路灯亮堂，水泥路面平整，五分钟就能走到楼下。向右拐是一条穿过小树林的石板路，比大路绕远一些，但季然住的那栋楼就在林子另一头。\n\n她知道的。上学期社团活动结束，有一次他提过，说他从那片林子穿回去只要七分钟。\n\n现在其他人都走了。\n\n季然站在原地，没有跟上去。\n\n他把外套递还给她，手指在袖口多停了一秒。\n\n他现在还站在那里。\n\n丁宁把外套从胸前放下来，一只手拎着，另一只手把被风吹到脸颊上的头发拨到耳后。她朝路口迈了一步，然后停下来，侧过脸看了季然一眼。\n\n不是回头。\n\n是侧过脸，身体还朝着他的方向。\n\n季然的喉结动了一下。他把右手从口袋里抽出来，垂在身侧，手指微微蜷了一下，又松开了。\n\n丁宁转回脸，朝右拐进了那条石板路。\n\n她没有回头看他有没有跟上来。她只是把脚步放得很慢，慢到能听见身后梧桐叶被踩碎的声响——不是她踩的。\n\n那个声响在她身后两步远的地方，节奏和她自己的脚步几乎重叠在一起，但慢了半拍。\n\n她没有加快。\n\n身后的人也没有追上来。他保持着那两步的距离，踩着她刚刚踩过的石板，走进树荫投下的阴影里。\n\n路灯的光从背后照过来，把她的影子拉得很长，一直延伸到前面那片没有光的石板路上。然后另一个影子从她的影子里长出来，边缘模糊地叠在一起，像同一个人被两盏灯照着。\n\n她的脚步放得很慢，慢到路灯把他们的影子拖成了一个人。",
+      "input_tokens": 1241,
+      "output_tokens": 630,
+      "latency_ms": 18346,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "37a80f828acfef9b95653fffd12f1e86df9f4e35a1440364c84832cf1d9d0927",
+      "route_name": null,
+      "route_decision": null,
+      "compiled_brief_hash": null,
+      "instruction_hash": null,
+      "text_path": "cases\\B-05\\drafts\\baseline-1.txt"
+    },
+    {
+      "group": "BASELINE-writer_brief",
+      "replica": 2,
+      "mode": "writer_brief",
+      "candidate_id": "40629f71-256e-426c-b901-b0d277bc71f7",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "丁宁接过外套的时候，指尖碰到了季然的手背。\n\n凉的。\n\n十一月的夜风从梧桐树梢灌下来，把她刚披上的外套吹得往上一掀。她下意识按住衣摆，棉布上还残留着聚餐时火锅店的气味，混着一点季然洗衣液的淡香。手指攥紧袖口时，她摸到那截布料比别处更潮——是他刚才握过的地方。\n\n季然已经把手收回去了。\n\n他站在路灯底下，影子斜斜地投在她脚边。身后是空掉的烧烤摊和横七竖八的塑料凳，老板正在收折叠桌，铁管碰撞的声音隔了半条街传过来。其他人早就拐过了前面的路口，林晓的笑声还拖着一截尾巴，被风刮散了。\n\n丁宁抬起头。\n\n季然没走。\n\n他就站在那，双手插在卫衣口袋里，下巴往领口缩了一点。路灯把他半边脸照得很亮，另外半边藏在阴影里，表情看不清。但他没退后。\n\n丁宁的视线撞上去的时候，他的肩膀动了一下，像是想说什么，又没开口。\n\n风把她的头发吹到脸上，她没去拨。\n\n季然看着她的眼睛，喉结滚了一下。\n\n烧烤摊老板拉下了卷帘门，轰隆一声，整条街突然安静下来。只剩路灯的电流声嗡嗡地响，还有远处偶尔驶过的电动车。\n\n丁宁攥着外套的手指松开了。\n\n她往左迈了一步。\n\n不是转身往回走的方向，是朝前——朝路口的方向。步子不大，球鞋底蹭过地砖缝里长出来的杂草，发出很轻的沙沙声。\n\n身后没有脚步声。\n\n她走了三步，停下。\n\n没回头。\n\n风从背后吹过来，外套下摆拍在她腿上。她听见自己的呼吸声，还有心跳，太响了，响得她怕后面的人也能听见。\n\n然后她听见球鞋踩在碎石子上的声音。\n\n一步。\n\n两步。\n\n三步。\n\n季然走到她右边，隔了大概半个人的距离。他没说话，她也没看。但他的影子从后面移过来，落在她脚边，和她的影子并排躺在路灯下。\n\n丁宁重新迈开步子。\n\n这一次，她的脚步放得很慢，慢到路灯把他们的影子拖成了一个人。",
+      "raw_response": "丁宁接过外套的时候，指尖碰到了季然的手背。\n\n凉的。\n\n十一月的夜风从梧桐树梢灌下来，把她刚披上的外套吹得往上一掀。她下意识按住衣摆，棉布上还残留着聚餐时火锅店的气味，混着一点季然洗衣液的淡香。手指攥紧袖口时，她摸到那截布料比别处更潮——是他刚才握过的地方。\n\n季然已经把手收回去了。\n\n他站在路灯底下，影子斜斜地投在她脚边。身后是空掉的烧烤摊和横七竖八的塑料凳，老板正在收折叠桌，铁管碰撞的声音隔了半条街传过来。其他人早就拐过了前面的路口，林晓的笑声还拖着一截尾巴，被风刮散了。\n\n丁宁抬起头。\n\n季然没走。\n\n他就站在那，双手插在卫衣口袋里，下巴往领口缩了一点。路灯把他半边脸照得很亮，另外半边藏在阴影里，表情看不清。但他没退后。\n\n丁宁的视线撞上去的时候，他的肩膀动了一下，像是想说什么，又没开口。\n\n风把她的头发吹到脸上，她没去拨。\n\n季然看着她的眼睛，喉结滚了一下。\n\n烧烤摊老板拉下了卷帘门，轰隆一声，整条街突然安静下来。只剩路灯的电流声嗡嗡地响，还有远处偶尔驶过的电动车。\n\n丁宁攥着外套的手指松开了。\n\n她往左迈了一步。\n\n不是转身往回走的方向，是朝前——朝路口的方向。步子不大，球鞋底蹭过地砖缝里长出来的杂草，发出很轻的沙沙声。\n\n身后没有脚步声。\n\n她走了三步，停下。\n\n没回头。\n\n风从背后吹过来，外套下摆拍在她腿上。她听见自己的呼吸声，还有心跳，太响了，响得她怕后面的人也能听见。\n\n然后她听见球鞋踩在碎石子上的声音。\n\n一步。\n\n两步。\n\n三步。\n\n季然走到她右边，隔了大概半个人的距离。他没说话，她也没看。但他的影子从后面移过来，落在她脚边，和她的影子并排躺在路灯下。\n\n丁宁重新迈开步子。\n\n这一次，她的脚步放得很慢，慢到路灯把他们的影子拖成了一个人。",
+      "input_tokens": 1241,
+      "output_tokens": 481,
+      "latency_ms": 13518,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "37a80f828acfef9b95653fffd12f1e86df9f4e35a1440364c84832cf1d9d0927",
+      "route_name": null,
+      "route_decision": null,
+      "compiled_brief_hash": null,
+      "instruction_hash": null,
+      "text_path": "cases\\B-05\\drafts\\baseline-2.txt"
+    },
+    {
+      "group": "BASELINE-writer_brief",
+      "replica": 3,
+      "mode": "writer_brief",
+      "candidate_id": "edef63d5-b5aa-4d42-ab24-bfd9107e2af7",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "聚餐散场的时候，丁宁才意识到其他人都在往校门东边走。\n\n刘思琪挽着陈屿的胳膊，回头冲她摆了摆手，嗓门大得整条街都能听见：“我们往那边啦，你俩顺路，正好一道回！”几个男生跟着起哄笑了两声，被季然看了一眼之后又憋回去，推推搡搡地拐过了街角。\n\n丁宁站在原地，手里攥着那件外套。\n\n外套是季然的。一个半小时前她嫌空调太冷，季然从椅背上扯下来递给她，动作随意得像递一张纸巾。现在聚餐结束了，她把外套叠好，转身想还，发现其他人已经走出了二十米开外，只剩下季然站在路灯底下，没动。\n\n他伸手接过外套，手指在袖口的位置停了一秒，然后松开。\n\n然后他就那么站着了。\n\n丁宁把外套抱在怀里，脑子转得飞快。她可以现在追上去喊刘思琪，随便编个理由跟着他们绕远路回宿舍。她也可以直接转身往西走，这条路她一个人走过无数次，闭着眼都能回去。季然没有开口留她，他只是在等——或者说，他只是在站。\n\n她把外套从怀里拿下来，抬头看了他一眼。\n\n季然没有退后。他的手插在裤兜里，肩膀微微侧着，像在给某个还没发生的动作预留位置。路灯从他背后打过来，把他的表情藏进阴影里，但丁宁能感觉到他在看她，不是等得不耐烦的那种看，而是——她不确定。\n\n她不确定的事情太多了。不确定他递外套的时候为什么手指多停了一秒，不确定其他人哄笑着往反方向走的时候他为什么不跟上去，不确定他现在站在原地，到底是出于礼貌，还是别的什么。\n\n但她知道一件事。\n\n如果她现在转身走了，季然不会喊她。\n\n丁宁把外套叠了第二遍，叠成一个小方块，递过去。\n\n“你拿着吧，”她说，“晚上降温。”\n\n季然低头看了看那件外套，又看了看她。他没接。\n\n丁宁没把手收回来。她的胳膊举在那里，外套悬在他们中间，像一座桥的一头。她不知道另一头会不会搭上来，但她至少把这一头伸出去了。\n\n季然伸手接了。\n\n他的手指擦过她的指节，凉的。\n\n“走吗？”他说。\n\n丁宁转过身，往西边的路走。她听到身后季然的球鞋踩在水泥地上的声音，不紧不慢，隔着大约一步的距离。她没有回头看他有没有跟上来，因为脚步声已经告诉她了——他跟了。\n\n这条路从校门口往西，要穿过一条种满梧桐的巷子。路灯隔得很远，光是一团一团的，两团之间黑着一段。丁宁走进第一段黑暗的时候，听到身后的脚步变近了。\n\n不是突然拉近的那种近。是慢慢调整的，像在试探一个距离。\n\n她没有加快脚步，也没有放慢。她只是走着，抱着自己的胳膊，手指掐在肘弯的位置，用一点疼来确认这不是她在脑子里编出来的场景。\n\n季然从后面走到了她左边。\n\n他的步子比她的长，但他现在走得很慢，慢到每一步都刚好落在她旁边。两个人的影子在路灯下被拉成两条，一条长一条短，中间隔着一个拳头的距离。\n\n丁宁盯着地上的影子看了一会儿，然后把头转向前方。\n\n树荫遮住了下一盏路灯，他们的影子融进了黑暗里。\n\n她没有往旁边挪。\n\n季然也没有。\n\n两个人并肩走进了那片梧桐树的阴影下面。风从巷子口灌进来，丁宁闻到季然外套上的洗衣液味道，和她怀里抱了一晚上的那个味道一模一样。\n\n她的脚步放得很慢，慢到路灯把他们的影子拖成了一个人。",
+      "raw_response": "聚餐散场的时候，丁宁才意识到其他人都在往校门东边走。\n\n刘思琪挽着陈屿的胳膊，回头冲她摆了摆手，嗓门大得整条街都能听见：“我们往那边啦，你俩顺路，正好一道回！”几个男生跟着起哄笑了两声，被季然看了一眼之后又憋回去，推推搡搡地拐过了街角。\n\n丁宁站在原地，手里攥着那件外套。\n\n外套是季然的。一个半小时前她嫌空调太冷，季然从椅背上扯下来递给她，动作随意得像递一张纸巾。现在聚餐结束了，她把外套叠好，转身想还，发现其他人已经走出了二十米开外，只剩下季然站在路灯底下，没动。\n\n他伸手接过外套，手指在袖口的位置停了一秒，然后松开。\n\n然后他就那么站着了。\n\n丁宁把外套抱在怀里，脑子转得飞快。她可以现在追上去喊刘思琪，随便编个理由跟着他们绕远路回宿舍。她也可以直接转身往西走，这条路她一个人走过无数次，闭着眼都能回去。季然没有开口留她，他只是在等——或者说，他只是在站。\n\n她把外套从怀里拿下来，抬头看了他一眼。\n\n季然没有退后。他的手插在裤兜里，肩膀微微侧着，像在给某个还没发生的动作预留位置。路灯从他背后打过来，把他的表情藏进阴影里，但丁宁能感觉到他在看她，不是等得不耐烦的那种看，而是——她不确定。\n\n她不确定的事情太多了。不确定他递外套的时候为什么手指多停了一秒，不确定其他人哄笑着往反方向走的时候他为什么不跟上去，不确定他现在站在原地，到底是出于礼貌，还是别的什么。\n\n但她知道一件事。\n\n如果她现在转身走了，季然不会喊她。\n\n丁宁把外套叠了第二遍，叠成一个小方块，递过去。\n\n“你拿着吧，”她说，“晚上降温。”\n\n季然低头看了看那件外套，又看了看她。他没接。\n\n丁宁没把手收回来。她的胳膊举在那里，外套悬在他们中间，像一座桥的一头。她不知道另一头会不会搭上来，但她至少把这一头伸出去了。\n\n季然伸手接了。\n\n他的手指擦过她的指节，凉的。\n\n“走吗？”他说。\n\n丁宁转过身，往西边的路走。她听到身后季然的球鞋踩在水泥地上的声音，不紧不慢，隔着大约一步的距离。她没有回头看他有没有跟上来，因为脚步声已经告诉她了——他跟了。\n\n这条路从校门口往西，要穿过一条种满梧桐的巷子。路灯隔得很远，光是一团一团的，两团之间黑着一段。丁宁走进第一段黑暗的时候，听到身后的脚步变近了。\n\n不是突然拉近的那种近。是慢慢调整的，像在试探一个距离。\n\n她没有加快脚步，也没有放慢。她只是走着，抱着自己的胳膊，手指掐在肘弯的位置，用一点疼来确认这不是她在脑子里编出来的场景。\n\n季然从后面走到了她左边。\n\n他的步子比她的长，但他现在走得很慢，慢到每一步都刚好落在她旁边。两个人的影子在路灯下被拉成两条，一条长一条短，中间隔着一个拳头的距离。\n\n丁宁盯着地上的影子看了一会儿，然后把头转向前方。\n\n树荫遮住了下一盏路灯，他们的影子融进了黑暗里。\n\n她没有往旁边挪。\n\n季然也没有。\n\n两个人并肩走进了那片梧桐树的阴影下面。风从巷子口灌进来，丁宁闻到季然外套上的洗衣液味道，和她怀里抱了一晚上的那个味道一模一样。\n\n她的脚步放得很慢，慢到路灯把他们的影子拖成了一个人。",
+      "input_tokens": 1241,
+      "output_tokens": 780,
+      "latency_ms": 21131,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "37a80f828acfef9b95653fffd12f1e86df9f4e35a1440364c84832cf1d9d0927",
+      "route_name": null,
+      "route_decision": null,
+      "compiled_brief_hash": null,
+      "instruction_hash": null,
+      "text_path": "cases\\B-05\\drafts\\baseline-3.txt"
+    }
+  ],
+  "actual_route": "C_OBJECT_CAUSAL",
+  "route_decision": {
+    "route_name": "C_OBJECT_CAUSAL",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "scene_state.available_objects is non-empty",
+      "causal_transitions contains counterfactual_without_action or rejected_alternative",
+      "character_next_action involves physical object manipulation"
+    ],
+    "matched_rules": [
+      "RULE_C_OBJECT_CAUSAL"
+    ],
+    "rejected_routes": []
+  }
+}

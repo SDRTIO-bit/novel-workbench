@@ -1,0 +1,186 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "丁立在菜市场收摊前，用现场物件巧妙换回被老太太拿错的菜篮，确保药安全回到手中，同时避免直接冲突。",
+  "location": "傍晚的菜市场，摊位间通道，靠近出口处",
+  "time": "收摊时分，天色渐暗，市场广播提醒即将关门",
+  "scene_state": {
+    "last_completed_action": "丁立发现自己的菜篮被换走，老太太正推着菜篮往出口走",
+    "present_characters": [
+      "丁立",
+      "老太太",
+      "附近摊主"
+    ],
+    "visible_facts": [
+      "丁立的菜篮和老太太的菜篮外观相似",
+      "老太太的菜篮里有丁立的药包",
+      "老太太正缓慢走向出口",
+      "市场即将收摊，人流渐少",
+      "附近有摊位正在收拾",
+      "老太太似乎未察觉拿错篮子"
+    ],
+    "available_objects": [
+      "丁立手中的老太太的菜篮（内装蔬菜）",
+      "老太太推着的丁立的菜篮（内有药包）",
+      "摊位上待售的相似蔬菜",
+      "摊主的秤和塑料袋",
+      "市场广播喇叭"
+    ],
+    "unresolved_problem": "丁立必须在不引起老太太惊慌或冲突的情况下，取回自己的菜篮和药。",
+    "already_existing_constraints": [
+      "不能直接追上去翻篮子",
+      "不能惊吓老太太",
+      "必须在收摊前完成",
+      "药必须今天带回家"
+    ]
+  },
+  "characters": [
+    {
+      "name": "丁立",
+      "goal": "用现场物件巧妙换回自己的菜篮和药，避免冲突",
+      "known": [
+        "自己的菜篮被老太太拿错",
+        "药在老太太推的篮子里",
+        "老太太似乎未察觉"
+      ],
+      "unknown": [
+        "老太太是否会接受交换提议",
+        "老太太是否听力或视力不佳"
+      ],
+      "mistaken_beliefs": [
+        "老太太可能完全不讲理"
+      ],
+      "constraints": [
+        "不能直接追上去翻篮子",
+        "不能惊吓老太太",
+        "必须在收摊前完成"
+      ],
+      "observed_evidence": [
+        "老太太菜篮里的药包与自己的处方一致",
+        "老太太步伐缓慢，未回头查看",
+        "附近摊位有相同品种的蔬菜"
+      ],
+      "current_interpretation": "老太太可能因为篮子相似而误拿，并未察觉，若直接指出可能引发抵触，不如用篮子里的菜作为交换理由。",
+      "how_interpretation_drives_action": "丁立决定利用老太太篮子里的菜与自己手中篮子的菜相似，假装自己也拿错了，提议交换回来。"
+    },
+    {
+      "name": "老太太",
+      "goal": "买完菜回家做饭",
+      "known": [
+        "自己买了一些蔬菜",
+        "菜篮外观与丁立的相似"
+      ],
+      "unknown": [
+        "拿错了篮子",
+        "篮子里有别人的药"
+      ],
+      "mistaken_beliefs": [
+        "手里的篮子就是自己的"
+      ],
+      "constraints": [
+        "年事已高，行动缓慢",
+        "可能听力不佳"
+      ],
+      "observed_evidence": [
+        "丁立走上前来，指着篮子里的菜",
+        "丁立手里也有一个相似的篮子"
+      ],
+      "current_interpretation": "这个年轻人可能也拿错了篮子，想和我换回来。",
+      "how_interpretation_drives_action": "老太太停下脚步，听丁立解释，并检查篮子里的菜。"
+    },
+    {
+      "name": "附近摊主",
+      "goal": "收摊回家",
+      "known": [
+        "两人篮子相似",
+        "市场快关门了"
+      ],
+      "unknown": [
+        "篮子里有药",
+        "丁立的真实意图"
+      ],
+      "mistaken_beliefs": [],
+      "constraints": [
+        "不能多管闲事耽误收摊"
+      ],
+      "observed_evidence": [
+        "丁立走向老太太",
+        "两人在交谈"
+      ],
+      "current_interpretation": "可能是熟人聊天或交易纠纷。",
+      "how_interpretation_drives_action": "继续收拾摊位，偶尔瞥一眼。"
+    }
+  ],
+  "concrete_problem": "丁立如何在不引起老太太惊慌或冲突的情况下，让老太太自愿交换篮子？",
+  "pressure": "市场广播催促收摊，老太太即将走出市场，时间紧迫，且直接冲突可能引发尴尬或纠纷。",
+  "turning_point": "丁立指着老太太篮子里的菜，称自己拿错了篮子，提议交换，老太太犹豫片刻后同意。",
+  "end_condition": "老太太和丁立交换菜篮，丁立确认药包仍在，老太太未察觉异常。",
+  "forbidden": [
+    "丁立直接追上去翻篮子",
+    "丁立大声呼喊或惊吓老太太",
+    "引入第三方强制干预",
+    "药包丢失或损坏",
+    "揭示老太太误拿的真正原因"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "老太太菜篮里的蔬菜与丁立手中篮子里的蔬菜品种相同（如都是青菜和萝卜）",
+      "character_interpretation": "丁立意识到可以利用蔬菜的相似性，假装自己也拿错了篮子，从而自然提议交换。",
+      "character_next_action": "丁立快步上前，微笑着对老太太说：“阿姨，我们好像拿错篮子啦，您看您篮子里的菜和我买的差不多，我篮子里的也像您的，咱们换回来吧。”",
+      "rejected_alternative": "直接告诉老太太她拿错了，里面有药，可能引发老太太的怀疑或慌乱。",
+      "immediate_consequence": "老太太停下脚步，低头查看篮子里的菜，犹豫了一下，然后同意交换。两只菜篮顺利互换。",
+      "counterfactual_without_action": "丁立若不上前搭话，老太太会走出市场，丁立可能失去药，或被迫追赶引发更大冲突。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "老太太推着丁立的菜篮（内有药）走向出口，丁立站在原地拿着老太太的菜篮。",
+        "after": "老太太推着自己的菜篮离开，丁立拿回了自己的菜篮和药。"
+      },
+      "cost_or_commitment": "丁立放弃了直接澄清事实的机会，选择用善意的谎言避免冲突，承担了老太太可能拒绝的风险。",
+      "next_constraint": "丁立必须在交换后立即确认药包完好，且不能表现出急切。",
+      "reader_must_infer": "丁立为何不直接说明药的事？因为他判断老太太可能因被指认错误而防御，用相似蔬菜作为借口更易被接受。",
+      "narrator_must_not_state": [
+        "老太太是否真的相信了丁立的借口",
+        "丁立内心的全部紧张情绪"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "市场广播响起：“各位顾客，市场即将关门，请尽快离场。”老太太已经快到出口。",
+    "dominant_pressure": {
+      "kind": "resource_constraint",
+      "description": "时间正在耗尽，老太太即将离开市场，丁立必须在收摊前完成交换，否则药可能丢失。"
+    },
+    "allowed_viewpoint_misread": "老太太可能把丁立的微笑理解为友好，而非急切。",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "老太太是否察觉篮子被换过",
+      "丁立对老太太的同情程度"
+    ],
+    "stop_state": {
+      "type": "physical_change",
+      "visible_fact": "丁立手中提着自己的菜篮，药包在篮子内侧可见。",
+      "what_is_now_different": "菜篮归属已从老太太换回丁立，药包安全回到丁立手中。",
+      "must_not_append": "不得描述老太太离开后的心理活动或后续。"
+    },
+    "final_line_must_include": "药包静静地躺在篮子一角。"
+  }
+}

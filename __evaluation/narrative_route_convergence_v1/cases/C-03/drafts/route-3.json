@@ -1,0 +1,59 @@
+{
+  "group": "ROUTE-C_OBJECT_CAUSAL",
+  "replica": 3,
+  "mode": "narrative_route",
+  "candidate_id": "32779a45-f73f-46fe-9d21-cb281bcf7ce0",
+  "attempt_number": 1,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "route_decision": {
+      "route_name": "C_OBJECT_CAUSAL",
+      "classifier_version": "narrative-route-v1",
+      "decision_reasons": [
+        "scene_state.available_objects is non-empty",
+        "causal_transitions contains counterfactual_without_action or rejected_alternative",
+        "character_next_action involves physical object manipulation"
+      ],
+      "matched_rules": [
+        "RULE_C_OBJECT_CAUSAL"
+      ],
+      "rejected_routes": []
+    },
+    "compiled_brief_hash": "753f9a2216763480a624a1164f665497344d330942b099d53d728730457c0e54",
+    "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "闭馆的广播音刚落，陈川就看见那个女生推着归还车往电梯方向走了。\n\n他低头看了眼桌面——只剩几张草稿纸和一支笔。刚才他去书架那边找参考书，回来就发现桌上那本《电路原理》不见了。再抬头时，只来得及看见归还车侧面露出一角灰蓝色封面，正是他那本翻旧了的教材。女生推着车的背影已经快到借阅区出口。\n\n陈川站起来，步子迈了两步又停住。不能喊，图书馆里不能大声说话。也不能追上去翻归还车——那车里的书按规定只能由管理员经手。\n\n他盯着归还车越推越远，手指压在草稿纸边缘。女生推车的动作很快，像是在赶时间，根本没往身后看。那本《电路原理》夹在归还车上层两本厚书中间，封面的电路图露出一半。\n\n陈川抓起笔，在一张草稿纸背面写字。笔尖压得纸面往下凹，字迹潦草但很大——内有笔记，请退回。\n\n他把纸放在自己那张空荡荡的桌面上，用笔压住一角，转身朝管理员台走去。\n\n管理员的工位在借阅区另一侧，一个戴眼镜的中年女人正在整理桌上的借阅记录。陈川走到台前时，她已经站起来准备去收归还车。\n\n“老师，”陈川压低声音，“有本书被错放进归还车了，里面有我明天答辩要用的笔记。”\n\n管理员抬起眼看他，眼镜链晃了一下。“归还车里的书已经进系统流程了，不能自己拿。”\n\n“我知道，”陈川说，“我在桌上留了纸条说明。那本书是《电路原理》，封面有电路图。”\n\n管理员看了他一眼，没再说什么，推了推眼镜朝借阅区走去。陈川跟在后面，看见归还车已经被女生推到电梯口附近停着。女生不在旁边，电梯门刚合上。\n\n管理员走到归还车跟前，先看见了陈川桌上那张草稿纸。她拿起来看了一眼，又放回去，然后开始翻归还车里的书。一本，两本，第三本就是那本灰蓝色封面的《电路原理》。\n\n她把书抽出来，翻开封面。\n\n书页里夹着几张对折的A4纸，密密麻麻写满了公式推导和电路分析。管理员把书合上，递给陈川。\n\n“下次笔记单独放，别夹在公共图书里。”\n\n陈川接过书，手指压住书脊。书页间露出笔记的一角。",
+  "raw_response": "闭馆的广播音刚落，陈川就看见那个女生推着归还车往电梯方向走了。\n\n他低头看了眼桌面——只剩几张草稿纸和一支笔。刚才他去书架那边找参考书，回来就发现桌上那本《电路原理》不见了。再抬头时，只来得及看见归还车侧面露出一角灰蓝色封面，正是他那本翻旧了的教材。女生推着车的背影已经快到借阅区出口。\n\n陈川站起来，步子迈了两步又停住。不能喊，图书馆里不能大声说话。也不能追上去翻归还车——那车里的书按规定只能由管理员经手。\n\n他盯着归还车越推越远，手指压在草稿纸边缘。女生推车的动作很快，像是在赶时间，根本没往身后看。那本《电路原理》夹在归还车上层两本厚书中间，封面的电路图露出一半。\n\n陈川抓起笔，在一张草稿纸背面写字。笔尖压得纸面往下凹，字迹潦草但很大——内有笔记，请退回。\n\n他把纸放在自己那张空荡荡的桌面上，用笔压住一角，转身朝管理员台走去。\n\n管理员的工位在借阅区另一侧，一个戴眼镜的中年女人正在整理桌上的借阅记录。陈川走到台前时，她已经站起来准备去收归还车。\n\n“老师，”陈川压低声音，“有本书被错放进归还车了，里面有我明天答辩要用的笔记。”\n\n管理员抬起眼看他，眼镜链晃了一下。“归还车里的书已经进系统流程了，不能自己拿。”\n\n“我知道，”陈川说，“我在桌上留了纸条说明。那本书是《电路原理》，封面有电路图。”\n\n管理员看了他一眼，没再说什么，推了推眼镜朝借阅区走去。陈川跟在后面，看见归还车已经被女生推到电梯口附近停着。女生不在旁边，电梯门刚合上。\n\n管理员走到归还车跟前，先看见了陈川桌上那张草稿纸。她拿起来看了一眼，又放回去，然后开始翻归还车里的书。一本，两本，第三本就是那本灰蓝色封面的《电路原理》。\n\n她把书抽出来，翻开封面。\n\n书页里夹着几张对折的A4纸，密密麻麻写满了公式推导和电路分析。管理员把书合上，递给陈川。\n\n“下次笔记单独放，别夹在公共图书里。”\n\n陈川接过书，手指压住书脊。书页间露出笔记的一角。",
+  "input_tokens": 1451,
+  "output_tokens": 525,
+  "latency_ms": 12812,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "bc14dc479fe3314965a3c0c8df646458d2ef22a2f2b733ca92d9cf58fca7674e",
+  "route_name": null,
+  "route_decision": {
+    "route_name": "C_OBJECT_CAUSAL",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "scene_state.available_objects is non-empty",
+      "causal_transitions contains counterfactual_without_action or rejected_alternative",
+      "character_next_action involves physical object manipulation"
+    ],
+    "matched_rules": [
+      "RULE_C_OBJECT_CAUSAL"
+    ],
+    "rejected_routes": []
+  },
+  "compiled_brief_hash": "753f9a2216763480a624a1164f665497344d330942b099d53d728730457c0e54",
+  "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+  "text_path": "cases\\C-03\\drafts\\route-3.txt"
+}

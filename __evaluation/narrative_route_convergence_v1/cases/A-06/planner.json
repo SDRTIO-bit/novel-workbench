@@ -1,0 +1,140 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "孙然在晚自习前看到搭档撤回的@消息，必须在不私聊的前提下根据这个信号做出具体行动，从而改变两人之间的互动状态。",
+  "location": "教室",
+  "time": "晚自习前十分钟",
+  "scene_state": {
+    "last_completed_action": "孙然看到班级群里有人@了自己然后撤回了",
+    "present_characters": [
+      "孙然",
+      "搭档（未直接出场，但存在于群聊和教室环境中）"
+    ],
+    "visible_facts": [
+      "班级群里显示一条撤回消息的提示",
+      "撤回消息的昵称是经常和孙然排练的搭档",
+      "群里有三十多个人在线"
+    ],
+    "available_objects": [
+      "手机",
+      "班级群聊天界面",
+      "课桌",
+      "书本"
+    ],
+    "unresolved_problem": "搭档为什么@孙然又撤回？孙然该如何回应这个未完成的信号？",
+    "already_existing_constraints": [
+      "孙然不能私聊追问搭档",
+      "孙然不能假装没看见撤回消息",
+      "晚自习即将开始，时间有限",
+      "群里有三十多人在线，公开行动会被他人看到"
+    ]
+  },
+  "characters": [
+    {
+      "name": "孙然",
+      "goal": "根据搭档的撤回信号，采取一个具体行动来试探或回应，同时不违反不能私聊的约束",
+      "known": [
+        "搭档经常和自己排练",
+        "搭档在群里@了自己然后撤回了",
+        "群里有三十多个人在线"
+      ],
+      "unknown": [
+        "搭档撤回的具体内容",
+        "搭档撤回的真实原因",
+        "搭档此刻的心理状态"
+      ],
+      "mistaken_beliefs": [
+        "搭档可能是不小心发错了消息",
+        "搭档可能想约排练但不好意思公开说"
+      ],
+      "constraints": [
+        "不能私聊追问搭档",
+        "不能假装没看见",
+        "必须在晚自习前行动",
+        "行动可能被群里其他人看到"
+      ],
+      "observed_evidence": [
+        "群聊界面显示搭档撤回了一条消息",
+        "撤回提示中有自己的昵称",
+        "搭档的头像仍然在线"
+      ],
+      "current_interpretation": "搭档想对自己说某件事，但出于某种顾虑又撤销了，这件事可能涉及两人之间的私密约定或尴尬话题。",
+      "how_interpretation_drives_action": "孙然决定在群里发一条看似无关但只有搭档能懂的消息，间接回应撤回信号，同时观察搭档的反应。"
+    }
+  ],
+  "concrete_problem": "孙然必须在群里发一条消息，既能回应搭档的撤回信号，又不暴露自己已看到撤回，同时不引起其他群成员的注意。",
+  "pressure": "晚自习即将开始，孙然必须在短时间内行动，否则机会消失；群里有三十多人在线，公开行动有社交风险。",
+  "turning_point": "孙然发出的消息被搭档看到后，搭档做出一个微妙回应，使孙然确认搭档确实想传达某事，两人之间形成新的默契或张力。",
+  "end_condition": "搭档在群里对孙然的消息做出了一个可被孙然察觉的回应，但未直接挑明，局面进入新的不确定状态。",
+  "forbidden": [
+    "孙然私聊搭档",
+    "搭档直接解释撤回原因",
+    "其他群成员介入或解读两人的互动",
+    "孙然直接提及撤回消息",
+    "孙然假装没看见撤回",
+    "搭档主动私聊孙然",
+    "使用任何超出校园日常设定的戏剧化冲突"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "班级群里的撤回消息提示，显示搭档@了孙然",
+      "character_interpretation": "搭档可能想传达一个不便公开的消息，但又犹豫了，孙然认为这是一个需要回应的信号。",
+      "character_next_action": "孙然在群里发了一条与排练相关的模糊消息，例如“今天的排练要改时间吗？还是按原来的？”",
+      "rejected_alternative": "孙然本可以发一条完全无关的消息（如问作业），但那样无法回应搭档的信号；或者她可以保持沉默，但那样就违反了“不能假装没看见”的约束。",
+      "immediate_consequence": "搭档在群里回复了一个简短的、看似正常的答案，但回复的速度或措辞让孙然察觉到搭档确实在关注她的反应。",
+      "counterfactual_without_action": "如果孙然不发这条消息，搭档可能认为孙然没看到撤回，或者孙然故意忽略，两人之间会留下一个未解的信号，影响后续互动。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "孙然和搭档之间存在一个悬而未决的撤回信号，两人没有直接交流。",
+        "after": "孙然通过公开消息间接回应，搭档以微妙方式反馈，两人之间建立了一个只有彼此能察觉的互动线索。"
+      },
+      "cost_or_commitment": "孙然冒着被其他同学好奇或误解的风险，主动迈出一步；她承诺了自己对搭档信号的重视。",
+      "next_constraint": "搭档的回应虽然微妙，但并未完全澄清意图，孙然必须继续观察或等待进一步信号，不能直接追问。",
+      "reader_must_infer": "搭档回复的真正意图是什么？撤回的消息可能是什么内容？两人之间的默契程度是否超出了普通搭档？",
+      "narrator_must_not_state": [
+        "搭档撤回的具体内容",
+        "搭档此刻的真实想法",
+        "孙然是否完全猜对了搭档的意图"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "晚自习前十分钟，孙然盯着手机屏幕上那条撤回提示，周围同学陆续入座",
+    "dominant_pressure": {
+      "kind": "information_gap",
+      "description": "时间紧迫，但真正驱动孙然行动的是她对撤回内容的好奇和不能忽视信号的自我要求"
+    },
+    "allowed_viewpoint_misread": "孙然可能把搭档的撤回误读为搭档对她有特殊顾虑，而实际上可能只是搭档手误或临时改变主意",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "搭档撤回的具体消息内容",
+      "搭档撤回的真实动机"
+    ],
+    "stop_state": {
+      "type": "social_commitment",
+      "visible_fact": "搭档在群里回复了孙然的消息，且回复中带有一个只有孙然能察觉的微小停顿或表情符号",
+      "what_is_now_different": "两人之间从单向撤回信号变成了双向的、心照不宣的互动，孙然确认搭档在关注她的反应",
+      "must_not_append": "不得解释搭档回复的深层含义，不得让其他同学注意到异常"
+    },
+    "final_line_must_include": ""
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "group": "ROUTE-D_FALLIBLE_TASK",
+  "replica": 1,
+  "mode": "narrative_route",
+  "candidate_id": "2a66be45-0cb3-4f7c-8ca8-bcd2199af49e",
+  "attempt_number": 1,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "route_decision": {
+      "route_name": "D_FALLIBLE_TASK",
+      "classifier_version": "narrative-route-v1",
+      "decision_reasons": [
+        "scene involves search, infiltration, lost item, or task execution",
+        "character must make choices under incomplete information"
+      ],
+      "matched_rules": [
+        "RULE_D_FALLIBLE_TASK"
+      ],
+      "rejected_routes": [
+        "C_OBJECT_CAUSAL",
+        "A_LITE_INFORMATION_GAP",
+        "B_SHORT_RELATION",
+        "B_PHYSICAL_PROBLEM"
+      ]
+    },
+    "compiled_brief_hash": "590dc249f35c0e893164b179106aa65d3980a747d5d7a0f75f19af9cc72b139f",
+    "instruction_hash": "3fbfa117b49b7742a7ef0deedd8d3d6d342f22fee2b19d0481e5e19aa06bd7da",
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "周默低头看着手里的纸箱，箱角压着的那张说明书露出一行字——“今晚使用”。\n\n门外有人在打电话，声音压得很低，但每个字都往驿站里挤：“对，就是三号柜取出来的……箱子是米黄色的……上面有蓝色胶带。”\n\n周默的手指在箱子上收紧了一下。米黄色，蓝色胶带。他手里的箱子完全符合。\n\n柜台上还放着另一个同款纸箱，是他本该取走的那个。两个箱子并排放，他刚才接了个工作电话，随手拎了一个就走，直到走到门口，余光扫见那张说明书，才觉得不对劲。他没见过这个箱子，也没买过需要“今晚使用”的东西。\n\n门外的声音又近了。\n\n周默转过身，看见一个三十多岁的男人站在驿站门口，手机贴在耳朵上，另一只手反复划着屏幕，像是在核对取件码。男人抬起头，视线越过周默的肩膀，落在柜台上那个剩下的箱子上，然后迅速扫向周默手里的箱子。\n\n男人的表情变了。\n\n不是愤怒，是那种意识到自己的东西可能被别人动过之后的紧绷。他挂了电话，嘴唇动了一下，还没开口，周默已经把箱子递了过去。\n\n“这是你的吧，我取错了。”\n\n周默的声音很平，没有多余的解释。他没有说“我刚接了个电话”，没有说“两个箱子太像了”，也没有问对方能不能证明身份。他直接递了过去。\n\n男人接过箱子，动作很快，几乎是半抢。他没有接周默的话，而是立刻把箱子翻过来，检查封口。胶带完好，没有二次粘贴的痕迹。男人的拇指沿着胶带边缘按了一遍，然后才抬起眼，看了周默一眼。\n\n那一眼持续了不到一秒。\n\n不是感激。不是愤怒。是确认。\n\n确认封口没动过，确认这个人没有偷看，确认这件事可以到此为止。\n\n周默站在原地看着他检查。他可以解释，可以说“我还没拆”，可以要求对方出示取件码来证明这个箱子确实属于他。但他什么都没做。他放弃了这些选项，就像默认了自己确实处于一个需要被检查的位置。\n\n驿站的工作人员从里间走出来，看了一眼墙上的钟，开始收拾柜台上的扫描枪。男人把箱子夹在腋下，转身往外走，经过周默身边时，微微点了一下头。\n\n幅度很小，更像是一个结束的信号，而不是感谢。\n\n周默没有回应。他等男人走出门，才伸手拿起柜台上剩下的那个箱子。胶带下面压着他的名字，打印得清清楚楚。\n\n驿站的门在身后合上。",
+  "raw_response": "周默低头看着手里的纸箱，箱角压着的那张说明书露出一行字——“今晚使用”。\n\n门外有人在打电话，声音压得很低，但每个字都往驿站里挤：“对，就是三号柜取出来的……箱子是米黄色的……上面有蓝色胶带。”\n\n周默的手指在箱子上收紧了一下。米黄色，蓝色胶带。他手里的箱子完全符合。\n\n柜台上还放着另一个同款纸箱，是他本该取走的那个。两个箱子并排放，他刚才接了个工作电话，随手拎了一个就走，直到走到门口，余光扫见那张说明书，才觉得不对劲。他没见过这个箱子，也没买过需要“今晚使用”的东西。\n\n门外的声音又近了。\n\n周默转过身，看见一个三十多岁的男人站在驿站门口，手机贴在耳朵上，另一只手反复划着屏幕，像是在核对取件码。男人抬起头，视线越过周默的肩膀，落在柜台上那个剩下的箱子上，然后迅速扫向周默手里的箱子。\n\n男人的表情变了。\n\n不是愤怒，是那种意识到自己的东西可能被别人动过之后的紧绷。他挂了电话，嘴唇动了一下，还没开口，周默已经把箱子递了过去。\n\n“这是你的吧，我取错了。”\n\n周默的声音很平，没有多余的解释。他没有说“我刚接了个电话”，没有说“两个箱子太像了”，也没有问对方能不能证明身份。他直接递了过去。\n\n男人接过箱子，动作很快，几乎是半抢。他没有接周默的话，而是立刻把箱子翻过来，检查封口。胶带完好，没有二次粘贴的痕迹。男人的拇指沿着胶带边缘按了一遍，然后才抬起眼，看了周默一眼。\n\n那一眼持续了不到一秒。\n\n不是感激。不是愤怒。是确认。\n\n确认封口没动过，确认这个人没有偷看，确认这件事可以到此为止。\n\n周默站在原地看着他检查。他可以解释，可以说“我还没拆”，可以要求对方出示取件码来证明这个箱子确实属于他。但他什么都没做。他放弃了这些选项，就像默认了自己确实处于一个需要被检查的位置。\n\n驿站的工作人员从里间走出来，看了一眼墙上的钟，开始收拾柜台上的扫描枪。男人把箱子夹在腋下，转身往外走，经过周默身边时，微微点了一下头。\n\n幅度很小，更像是一个结束的信号，而不是感谢。\n\n周默没有回应。他等男人走出门，才伸手拿起柜台上剩下的那个箱子。胶带下面压着他的名字，打印得清清楚楚。\n\n驿站的门在身后合上。",
+  "input_tokens": 1458,
+  "output_tokens": 528,
+  "latency_ms": 17256,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "5b59c2beefef38b739bea97946a21e3aac9f5ad5ee5cd9441ce7bfbef0236e3a",
+  "route_name": null,
+  "route_decision": {
+    "route_name": "D_FALLIBLE_TASK",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "scene involves search, infiltration, lost item, or task execution",
+      "character must make choices under incomplete information"
+    ],
+    "matched_rules": [
+      "RULE_D_FALLIBLE_TASK"
+    ],
+    "rejected_routes": [
+      "C_OBJECT_CAUSAL",
+      "A_LITE_INFORMATION_GAP",
+      "B_SHORT_RELATION",
+      "B_PHYSICAL_PROBLEM"
+    ]
+  },
+  "compiled_brief_hash": "590dc249f35c0e893164b179106aa65d3980a747d5d7a0f75f19af9cc72b139f",
+  "instruction_hash": "3fbfa117b49b7742a7ef0deedd8d3d6d342f22fee2b19d0481e5e19aa06bd7da",
+  "text_path": "cases\\TASK-02\\drafts\\route-1.txt"
+}

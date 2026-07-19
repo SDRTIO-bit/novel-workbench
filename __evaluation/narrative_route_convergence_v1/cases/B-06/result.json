@@ -1,0 +1,324 @@
+{
+  "case_id": "B-06",
+  "category": "恋爱日常",
+  "title": "暴雨便利店",
+  "run_id": "ddb05c91-0a4c-4d1f-8d48-16e7895acbb3",
+  "expected_route": "B_SHORT_RELATION",
+  "planner": {
+    "candidate_id": "3ab69a3d-ed9d-4b0d-be43-7da89c7fa192",
+    "attempt_number": 1,
+    "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+    "model_id": "deepseek-v4-pro",
+    "prompt_version_id": "f9052f8a-dc4e-5408-b14e-fc1badaf57f8",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 12288,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "json_object"
+    },
+    "text_output": "{\n  \"planner_contract_version\": 2,\n  \"scene_goal\": \"林希在暴雨便利店门口偶遇同事温洲，面临共享唯一一把伞的抉择，通过行动而非言语展现两人关系的微妙变化。\",\n  \"location\": \"便利店门口的门廊下\",\n  \"time\": \"下班时分，暴雨\",\n  \"scene_state\": {\n    \"last_completed_action\": \"温洲先开口说“好大的雨”\",\n    \"present_characters\": [\"林希\", \"温洲\", \"便利店店员\"],\n    \"visible_facts\": [\"暴雨倾盆\", \"只有一把公共伞挂在门口\", \"便利店店员正在关卷帘门\"],\n    \"available_objects\": [\"公共伞\"],\n    \"unresolved_problem\": \"两人都需要离开，但只有一把伞\",\n    \"already_existing_constraints\": [\"两人是同事关系\", \"两人之前并不熟络\", \"暴雨环境限制行动\"]\n  },\n  \"characters\": [\n    {\n      \"name\": \"林希\",\n      \"goal\": \"决定如何应对共享雨伞的局面\",\n      \"known\": [\"只有一把伞\", \"温洲也站在这避雨\", \"店员即将关门\"],\n      \"unknown\": [\"温洲是否愿意共用伞\", \"温洲对林希的真实态度\"],\n      \"mistaken_beliefs\": [\"温洲可能只是礼貌性搭话，并不想深交\"],\n      \"constraints\": [\"不能替温洲解释他为什么站在这\", \"必须选择撑伞一起走、把伞让给他、或等雨停\"],\n      \"observed_evidence\": [\"温洲主动说“好大的雨”\", \"温洲站在门廊下没有伞\", \"店员正在关卷帘门\"],\n      \"current_interpretation\": \"温洲可能也希望一起走，但出于礼貌或尴尬没有直接提出\",\n      \"how_interpretation_drives_action\": \"林希将选择撑开伞，示意一起走\"\n    },\n    {\n      \"name\": \"温洲\",\n      \"goal\": \"试探林希是否愿意共伞\",\n      \"known\": [\"只有一把伞\", \"林希也站在这里\"],\n      \"unknown\": [\"林希是否会主动邀请共伞\", \"林希对自己的真实看法\"],\n      \"mistaken_beliefs\": [\"林希可能不想和自己一起走，因为平时交流不多\"],\n      \"constraints\": [\"不能直接问‘要不要一起走’以维持自然\", \"不能表现出急切\"],\n      \"observed_evidence\": [\"林希站在门廊下，看着雨\", \"店员在关门\"],\n      \"current_interpretation\": \"林希可能在犹豫，需要自己先开口打破僵局\",\n      \"how_interpretation_drives_action\": \"温洲先说“好大的雨”，为林希提供开口机会\"\n    }\n  ],\n  \"concrete_problem\": \"林希必须决定是撑开伞和温洲一起走，还是把伞让给他，或者等雨停\",\n  \"pressure\": \"暴雨越下越大，店员即将关门，两人困在门廊下只有一把伞\",\n  \"turning_point\": \"林希伸手取下公共伞，在撑开与不撑开之间犹豫，最终撑开伞，朝温洲微微侧头\",\n  \"end_condition\": \"林希撑开伞，两人并肩走进雨中\",\n  \"forbidden\": [\"林希替温洲解释为什么站在这\", \"直接表白或明确情感表达\", \"伞意外损坏或第三方介入\", \"使用手机叫车等外部解决方案\"],\n  \"causal_transitions\": [\n    {\n      \"id\": \"CT01\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"店员关卷帘门的响声和动作\",\n      \"character_interpretation\": \"林希意识到必须马上离开，不能再犹豫\",\n      \"character_next_action\": \"林希伸手取下公共伞并撑开\",\n      \"rejected_alternative\": \"林希可以继续站着等雨停，但那样会显得刻意回避温洲\",\n      \"immediate_consequence\": \"林希撑开了伞，创造了一个两人可以共同使用的空间\",\n      \"counterfactual_without_action\": \"如果林希不撑伞，两人将被困在已关门的便利店外，尴尬加剧\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"伞挂在门口，两人各自站着\",\n        \"after\": \"伞在林希手中撑开，两人距离拉近\"\n      },\n      \"cost_or_commitment\": \"林希主动打破了僵局，承担了被拒绝或尴尬的风险\",\n      \"next_constraint\": \"两人现在共处一把伞下，必须进行更近距离的互动\",\n      \"reader_must_infer\": \"林希选择撑伞并非仅仅因为雨大，更是对温洲的一种无声接纳\",\n      \"narrator_must_not_state\": [\"林希对温洲有好感\", \"林希的内心犹豫过程\"]\n    }\n  ],\n  \"tempo_guardrails\": {\n    \"entry_pressure\": \"店员正在关卷帘门，发出金属摩擦声\",\n    \"dominant_pressure\": {\n      \"kind\": \"social_friction\",\n      \"description\": \"时间紧迫，但真正阻碍行动的是两人之间尚未打破的同事距离感\"\n    },\n    \"allowed_viewpoint_misread\": \"温洲可能把林希的犹豫误解为不愿共伞\",\n    \"disclosure_cap\": 1,\n    \"must_remain_unclassified\": [\n      \"林希对温洲的真实感情程度\"\n    ],\n    \"stop_state\": {\n      \"type\": \"social_commitment\",\n      \"visible_fact\": \"林希撑开伞，温洲自然地走进伞下\",\n      \"what_is_now_different\": \"两人从各自避雨变成共同行动，形成了临时的同行约定\",\n      \"must_not_append\": \"不得描写伞下对话或后续路程\"\n    },\n    \"final_line_must_include\": \"\"\n  },\n  \"chapter_contract_check\": {\n    \"function_aligned\": true,\n    \"must_deliver_covered\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_enabled\": true,\n    \"main_payoff_prepared\": true,\n    \"ending_hook_established\": true,\n    \"causal_transitions_grounded\": true,\n    \"reader_inference_not_pre_resolved\": true,\n    \"scene_state_reconstructed\": true,\n    \"information_sources_legal\": true,\n    \"character_choice_is_real\": true,\n    \"consequence_is_counterfactual\": true,\n    \"state_delta_is_nonempty\": true,\n    \"next_constraint_is_new\": true,\n    \"stop_state_is_visible\": true,\n    \"stop_state_changes_future_actions\": true\n  }\n}",
+    "raw_response": "{\n  \"planner_contract_version\": 2,\n  \"scene_goal\": \"林希在暴雨便利店门口偶遇同事温洲，面临共享唯一一把伞的抉择，通过行动而非言语展现两人关系的微妙变化。\",\n  \"location\": \"便利店门口的门廊下\",\n  \"time\": \"下班时分，暴雨\",\n  \"scene_state\": {\n    \"last_completed_action\": \"温洲先开口说“好大的雨”\",\n    \"present_characters\": [\"林希\", \"温洲\", \"便利店店员\"],\n    \"visible_facts\": [\"暴雨倾盆\", \"只有一把公共伞挂在门口\", \"便利店店员正在关卷帘门\"],\n    \"available_objects\": [\"公共伞\"],\n    \"unresolved_problem\": \"两人都需要离开，但只有一把伞\",\n    \"already_existing_constraints\": [\"两人是同事关系\", \"两人之前并不熟络\", \"暴雨环境限制行动\"]\n  },\n  \"characters\": [\n    {\n      \"name\": \"林希\",\n      \"goal\": \"决定如何应对共享雨伞的局面\",\n      \"known\": [\"只有一把伞\", \"温洲也站在这避雨\", \"店员即将关门\"],\n      \"unknown\": [\"温洲是否愿意共用伞\", \"温洲对林希的真实态度\"],\n      \"mistaken_beliefs\": [\"温洲可能只是礼貌性搭话，并不想深交\"],\n      \"constraints\": [\"不能替温洲解释他为什么站在这\", \"必须选择撑伞一起走、把伞让给他、或等雨停\"],\n      \"observed_evidence\": [\"温洲主动说“好大的雨”\", \"温洲站在门廊下没有伞\", \"店员正在关卷帘门\"],\n      \"current_interpretation\": \"温洲可能也希望一起走，但出于礼貌或尴尬没有直接提出\",\n      \"how_interpretation_drives_action\": \"林希将选择撑开伞，示意一起走\"\n    },\n    {\n      \"name\": \"温洲\",\n      \"goal\": \"试探林希是否愿意共伞\",\n      \"known\": [\"只有一把伞\", \"林希也站在这里\"],\n      \"unknown\": [\"林希是否会主动邀请共伞\", \"林希对自己的真实看法\"],\n      \"mistaken_beliefs\": [\"林希可能不想和自己一起走，因为平时交流不多\"],\n      \"constraints\": [\"不能直接问‘要不要一起走’以维持自然\", \"不能表现出急切\"],\n      \"observed_evidence\": [\"林希站在门廊下，看着雨\", \"店员在关门\"],\n      \"current_interpretation\": \"林希可能在犹豫，需要自己先开口打破僵局\",\n      \"how_interpretation_drives_action\": \"温洲先说“好大的雨”，为林希提供开口机会\"\n    }\n  ],\n  \"concrete_problem\": \"林希必须决定是撑开伞和温洲一起走，还是把伞让给他，或者等雨停\",\n  \"pressure\": \"暴雨越下越大，店员即将关门，两人困在门廊下只有一把伞\",\n  \"turning_point\": \"林希伸手取下公共伞，在撑开与不撑开之间犹豫，最终撑开伞，朝温洲微微侧头\",\n  \"end_condition\": \"林希撑开伞，两人并肩走进雨中\",\n  \"forbidden\": [\"林希替温洲解释为什么站在这\", \"直接表白或明确情感表达\", \"伞意外损坏或第三方介入\", \"使用手机叫车等外部解决方案\"],\n  \"causal_transitions\": [\n    {\n      \"id\": \"CT01\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"店员关卷帘门的响声和动作\",\n      \"character_interpretation\": \"林希意识到必须马上离开，不能再犹豫\",\n      \"character_next_action\": \"林希伸手取下公共伞并撑开\",\n      \"rejected_alternative\": \"林希可以继续站着等雨停，但那样会显得刻意回避温洲\",\n      \"immediate_consequence\": \"林希撑开了伞，创造了一个两人可以共同使用的空间\",\n      \"counterfactual_without_action\": \"如果林希不撑伞，两人将被困在已关门的便利店外，尴尬加剧\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"伞挂在门口，两人各自站着\",\n        \"after\": \"伞在林希手中撑开，两人距离拉近\"\n      },\n      \"cost_or_commitment\": \"林希主动打破了僵局，承担了被拒绝或尴尬的风险\",\n      \"next_constraint\": \"两人现在共处一把伞下，必须进行更近距离的互动\",\n      \"reader_must_infer\": \"林希选择撑伞并非仅仅因为雨大，更是对温洲的一种无声接纳\",\n      \"narrator_must_not_state\": [\"林希对温洲有好感\", \"林希的内心犹豫过程\"]\n    }\n  ],\n  \"tempo_guardrails\": {\n    \"entry_pressure\": \"店员正在关卷帘门，发出金属摩擦声\",\n    \"dominant_pressure\": {\n      \"kind\": \"social_friction\",\n      \"description\": \"时间紧迫，但真正阻碍行动的是两人之间尚未打破的同事距离感\"\n    },\n    \"allowed_viewpoint_misread\": \"温洲可能把林希的犹豫误解为不愿共伞\",\n    \"disclosure_cap\": 1,\n    \"must_remain_unclassified\": [\n      \"林希对温洲的真实感情程度\"\n    ],\n    \"stop_state\": {\n      \"type\": \"social_commitment\",\n      \"visible_fact\": \"林希撑开伞，温洲自然地走进伞下\",\n      \"what_is_now_different\": \"两人从各自避雨变成共同行动，形成了临时的同行约定\",\n      \"must_not_append\": \"不得描写伞下对话或后续路程\"\n    },\n    \"final_line_must_include\": \"\"\n  },\n  \"chapter_contract_check\": {\n    \"function_aligned\": true,\n    \"must_deliver_covered\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_enabled\": true,\n    \"main_payoff_prepared\": true,\n    \"ending_hook_established\": true,\n    \"causal_transitions_grounded\": true,\n    \"reader_inference_not_pre_resolved\": true,\n    \"scene_state_reconstructed\": true,\n    \"information_sources_legal\": true,\n    \"character_choice_is_real\": true,\n    \"consequence_is_counterfactual\": true,\n    \"state_delta_is_nonempty\": true,\n    \"next_constraint_is_new\": true,\n    \"stop_state_is_visible\": true,\n    \"stop_state_changes_future_actions\": true\n  }\n}",
+    "input_tokens": 3324,
+    "output_tokens": 1455,
+    "latency_ms": 22480,
+    "finish_reason": "stop",
+    "error_code": null,
+    "error_message": null,
+    "rendered_user_prompt_sha256": "d45f9107e538b3d1ae51d497bbcabcbaed7f35b5419b8ba39aad425ca7a5a12c",
+    "route_name": null,
+    "route_decision": null,
+    "compiled_brief_hash": null,
+    "instruction_hash": null
+  },
+  "drafts": [
+    {
+      "group": "ROUTE-C_OBJECT_CAUSAL",
+      "replica": 1,
+      "mode": "narrative_route",
+      "candidate_id": "74efacbf-c5a6-4a0d-a2bf-52b1eea11bbd",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "C_OBJECT_CAUSAL",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "scene_state.available_objects is non-empty",
+            "causal_transitions contains counterfactual_without_action or rejected_alternative",
+            "character_next_action involves physical object manipulation"
+          ],
+          "matched_rules": [
+            "RULE_C_OBJECT_CAUSAL"
+          ],
+          "rejected_routes": []
+        },
+        "compiled_brief_hash": "534bf1bb7e7801789ac00cadd7204fb772720669933f98eed4f21f26af00d711",
+        "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "卷帘门发出刺耳的金属摩擦声，一节一节往下沉。\n\n林希站在便利店门口窄窄的门廊下，雨大得像有人在天上往下倒水。门口那个塑料伞架上只剩一把公共伞，灰扑扑的伞面，伞柄上贴着“便民借用”的褪色标签。\n\n她刚才出来的时候就注意到了。\n\n也注意到了另一个人。\n\n温洲站在门廊的另一侧，肩膀几乎贴着墙，深色衬衫的袖子已经溅上了几点雨渍。他没看林希，也没看雨，只是安静地站着，像是在等什么东西自己过去。\n\n卷帘门又往下沉了一截。\n\n“好大的雨。”\n\n温洲的声音不大，几乎要淹没在雨声里。林希偏过头，看见他正望着外面的雨幕，侧脸的线条被便利店即将熄灭的灯光勾出一层薄薄的轮廓。\n\n店员从里面拉下最后一截卷帘门，锁扣咔嗒一声扣死。那人隔着玻璃冲他们摆摆手，示意要关门了。\n\n门廊的灯灭了。\n\n只剩下雨声，和两个人。\n\n林希的手抬起来，握住了那把公共伞的伞柄。塑料柄上还有上一个人留下的微微潮气。她从伞架上取下来，感觉到伞骨的重量落在掌心里。\n\n她没有递给温洲。\n\n她按下了伞扣。\n\n伞面嘭地一声撑开，灰色的尼龙布在雨幕里展开一片干燥的空间。雨水立刻开始顺着伞骨的边缘滴落，在地面上砸出一圈深色的痕迹。\n\n林希握着伞柄，往前迈了一步，站在台阶边缘。\n\n伞撑在两个人的头顶之间。\n\n她没回头，没说“一起走吧”，没做任何多余的动作。只是撑开了伞，站在那里，留出了身边的位置。\n\n身后传来鞋底踩在水泥地上的声音。\n\n温洲走进了伞下。",
+      "raw_response": "卷帘门发出刺耳的金属摩擦声，一节一节往下沉。\n\n林希站在便利店门口窄窄的门廊下，雨大得像有人在天上往下倒水。门口那个塑料伞架上只剩一把公共伞，灰扑扑的伞面，伞柄上贴着“便民借用”的褪色标签。\n\n她刚才出来的时候就注意到了。\n\n也注意到了另一个人。\n\n温洲站在门廊的另一侧，肩膀几乎贴着墙，深色衬衫的袖子已经溅上了几点雨渍。他没看林希，也没看雨，只是安静地站着，像是在等什么东西自己过去。\n\n卷帘门又往下沉了一截。\n\n“好大的雨。”\n\n温洲的声音不大，几乎要淹没在雨声里。林希偏过头，看见他正望着外面的雨幕，侧脸的线条被便利店即将熄灭的灯光勾出一层薄薄的轮廓。\n\n店员从里面拉下最后一截卷帘门，锁扣咔嗒一声扣死。那人隔着玻璃冲他们摆摆手，示意要关门了。\n\n门廊的灯灭了。\n\n只剩下雨声，和两个人。\n\n林希的手抬起来，握住了那把公共伞的伞柄。塑料柄上还有上一个人留下的微微潮气。她从伞架上取下来，感觉到伞骨的重量落在掌心里。\n\n她没有递给温洲。\n\n她按下了伞扣。\n\n伞面嘭地一声撑开，灰色的尼龙布在雨幕里展开一片干燥的空间。雨水立刻开始顺着伞骨的边缘滴落，在地面上砸出一圈深色的痕迹。\n\n林希握着伞柄，往前迈了一步，站在台阶边缘。\n\n伞撑在两个人的头顶之间。\n\n她没回头，没说“一起走吧”，没做任何多余的动作。只是撑开了伞，站在那里，留出了身边的位置。\n\n身后传来鞋底踩在水泥地上的声音。\n\n温洲走进了伞下。",
+      "input_tokens": 1346,
+      "output_tokens": 378,
+      "latency_ms": 12249,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "d66a6c1a73e434e4b85c91fbac606318beb8f434f05e7e3bd135838fff9d7f86",
+      "route_name": null,
+      "route_decision": {
+        "route_name": "C_OBJECT_CAUSAL",
+        "classifier_version": "narrative-route-v1",
+        "decision_reasons": [
+          "scene_state.available_objects is non-empty",
+          "causal_transitions contains counterfactual_without_action or rejected_alternative",
+          "character_next_action involves physical object manipulation"
+        ],
+        "matched_rules": [
+          "RULE_C_OBJECT_CAUSAL"
+        ],
+        "rejected_routes": []
+      },
+      "compiled_brief_hash": "534bf1bb7e7801789ac00cadd7204fb772720669933f98eed4f21f26af00d711",
+      "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+      "text_path": "cases\\B-06\\drafts\\route-1.txt"
+    },
+    {
+      "group": "ROUTE-C_OBJECT_CAUSAL",
+      "replica": 2,
+      "mode": "narrative_route",
+      "candidate_id": "5d02734a-dc5d-49e4-83f4-b93ca512b7a4",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "C_OBJECT_CAUSAL",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "scene_state.available_objects is non-empty",
+            "causal_transitions contains counterfactual_without_action or rejected_alternative",
+            "character_next_action involves physical object manipulation"
+          ],
+          "matched_rules": [
+            "RULE_C_OBJECT_CAUSAL"
+          ],
+          "rejected_routes": []
+        },
+        "compiled_brief_hash": "534bf1bb7e7801789ac00cadd7204fb772720669933f98eed4f21f26af00d711",
+        "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "卷帘门咔嗒咔嗒地往下滑，金属片相互撞击的声音在雨幕里显得格外刺耳。\n\n林希站在便利店窄窄的门廊下，雨水顺着檐角砸下来，溅湿了她的帆布鞋尖。门口那把公共伞还挂在塑料挂钩上，深蓝色的伞面，伞柄上贴着“便民伞”三个字，边角有点磨损。\n\n温洲就站在她右手边，不到一臂的距离。他衬衫的肩头已经洇湿了一片，深色布料贴在皮肤上。\n\n“好大的雨。”温洲说。\n\n他的声音不高，但刚好盖过雨声。\n\n林希转头看了他一眼。温洲的视线正落在门外的积水潭上，雨滴砸下去，水面翻起密密匝匝的气泡。他没有看她。\n\n店员从里面探出半个身子，冲他们喊了一声：“要关门了啊！”\n\n卷帘门已经降到了膝盖的高度。\n\n林希的手抬起来，抓住了那把公共伞的伞柄。塑料挂钩发出一声轻响，伞脱离了挂槽。\n\n她按下伞柄上的按钮。\n\n“砰”的一声，深蓝色的伞面弹开，雨水立刻开始在伞面上敲出密集的鼓点。伞骨撑开的瞬间，一片阴影罩住了两个人之间的空隙。\n\n温洲侧过脸，看了一眼撑开的伞面，然后一步跨进了伞下。\n\n他的肩膀离她的肩膀很近，近到能感觉到他衬衫上带着的潮气。",
+      "raw_response": "卷帘门咔嗒咔嗒地往下滑，金属片相互撞击的声音在雨幕里显得格外刺耳。\n\n林希站在便利店窄窄的门廊下，雨水顺着檐角砸下来，溅湿了她的帆布鞋尖。门口那把公共伞还挂在塑料挂钩上，深蓝色的伞面，伞柄上贴着“便民伞”三个字，边角有点磨损。\n\n温洲就站在她右手边，不到一臂的距离。他衬衫的肩头已经洇湿了一片，深色布料贴在皮肤上。\n\n“好大的雨。”温洲说。\n\n他的声音不高，但刚好盖过雨声。\n\n林希转头看了他一眼。温洲的视线正落在门外的积水潭上，雨滴砸下去，水面翻起密密匝匝的气泡。他没有看她。\n\n店员从里面探出半个身子，冲他们喊了一声：“要关门了啊！”\n\n卷帘门已经降到了膝盖的高度。\n\n林希的手抬起来，抓住了那把公共伞的伞柄。塑料挂钩发出一声轻响，伞脱离了挂槽。\n\n她按下伞柄上的按钮。\n\n“砰”的一声，深蓝色的伞面弹开，雨水立刻开始在伞面上敲出密集的鼓点。伞骨撑开的瞬间，一片阴影罩住了两个人之间的空隙。\n\n温洲侧过脸，看了一眼撑开的伞面，然后一步跨进了伞下。\n\n他的肩膀离她的肩膀很近，近到能感觉到他衬衫上带着的潮气。",
+      "input_tokens": 1346,
+      "output_tokens": 302,
+      "latency_ms": 9967,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "d66a6c1a73e434e4b85c91fbac606318beb8f434f05e7e3bd135838fff9d7f86",
+      "route_name": null,
+      "route_decision": {
+        "route_name": "C_OBJECT_CAUSAL",
+        "classifier_version": "narrative-route-v1",
+        "decision_reasons": [
+          "scene_state.available_objects is non-empty",
+          "causal_transitions contains counterfactual_without_action or rejected_alternative",
+          "character_next_action involves physical object manipulation"
+        ],
+        "matched_rules": [
+          "RULE_C_OBJECT_CAUSAL"
+        ],
+        "rejected_routes": []
+      },
+      "compiled_brief_hash": "534bf1bb7e7801789ac00cadd7204fb772720669933f98eed4f21f26af00d711",
+      "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+      "text_path": "cases\\B-06\\drafts\\route-2.txt"
+    },
+    {
+      "group": "ROUTE-C_OBJECT_CAUSAL",
+      "replica": 3,
+      "mode": "narrative_route",
+      "candidate_id": "f4a2c2f6-1168-4158-8415-d9bb98766814",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "C_OBJECT_CAUSAL",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "scene_state.available_objects is non-empty",
+            "causal_transitions contains counterfactual_without_action or rejected_alternative",
+            "character_next_action involves physical object manipulation"
+          ],
+          "matched_rules": [
+            "RULE_C_OBJECT_CAUSAL"
+          ],
+          "rejected_routes": []
+        },
+        "compiled_brief_hash": "534bf1bb7e7801789ac00cadd7204fb772720669933f98eed4f21f26af00d711",
+        "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "卷帘门哗啦啦往下坠，铁片咬合的声音在暴雨里格外刺耳。\n\n林希往门廊里退了半步。雨水顺着廊檐砸下来，在地砖上溅成一片白雾，她的帆布鞋尖已经湿透了。\n\n“好大的雨。”\n\n声音从右边传来。林希偏过头，温洲站在廊柱旁边，黑色外套的肩膀上洇着深色的水痕，手里没有伞。\n\n他什么时候站在这的。\n\n林希攥紧了背包带子。便利店的白光在卷帘门彻底落地的瞬间熄灭了，门廊只剩下路灯昏黄的晕影。雨声填满了所有空隙。\n\n门口那把公共伞还挂在钩子上。深蓝色的，伞柄磨得发亮，是那种谁都可以用的旧伞。\n\n只有一把。\n\n林希盯着那把伞。雨水从廊檐灌下来，打在她小腿上。她可以继续站着。等雨停。等温洲先走。等随便什么打破这个僵局。\n\n她伸手取下了那把伞。\n\n伞柄是湿的，不知道被多少人握过。林希按下开关，伞面嘭地弹开，深蓝色的尼龙布在头顶撑出一片干燥的空间。\n\n她握着伞柄站在廊檐下，伞沿的雨水滴滴答答砸在地砖上。\n\n温洲往这边挪了一步。\n\n他的肩膀碰进了伞沿下，深蓝色的伞面遮住了路灯的光，在他脸上投下一片阴影。雨声突然变得闷闷的，像是被什么东西隔开了。\n\n林希握着伞柄的手指收紧了一点。温洲的袖子擦过她的手臂，带着雨水的凉意。",
+      "raw_response": "卷帘门哗啦啦往下坠，铁片咬合的声音在暴雨里格外刺耳。\n\n林希往门廊里退了半步。雨水顺着廊檐砸下来，在地砖上溅成一片白雾，她的帆布鞋尖已经湿透了。\n\n“好大的雨。”\n\n声音从右边传来。林希偏过头，温洲站在廊柱旁边，黑色外套的肩膀上洇着深色的水痕，手里没有伞。\n\n他什么时候站在这的。\n\n林希攥紧了背包带子。便利店的白光在卷帘门彻底落地的瞬间熄灭了，门廊只剩下路灯昏黄的晕影。雨声填满了所有空隙。\n\n门口那把公共伞还挂在钩子上。深蓝色的，伞柄磨得发亮，是那种谁都可以用的旧伞。\n\n只有一把。\n\n林希盯着那把伞。雨水从廊檐灌下来，打在她小腿上。她可以继续站着。等雨停。等温洲先走。等随便什么打破这个僵局。\n\n她伸手取下了那把伞。\n\n伞柄是湿的，不知道被多少人握过。林希按下开关，伞面嘭地弹开，深蓝色的尼龙布在头顶撑出一片干燥的空间。\n\n她握着伞柄站在廊檐下，伞沿的雨水滴滴答答砸在地砖上。\n\n温洲往这边挪了一步。\n\n他的肩膀碰进了伞沿下，深蓝色的伞面遮住了路灯的光，在他脸上投下一片阴影。雨声突然变得闷闷的，像是被什么东西隔开了。\n\n林希握着伞柄的手指收紧了一点。温洲的袖子擦过她的手臂，带着雨水的凉意。",
+      "input_tokens": 1346,
+      "output_tokens": 341,
+      "latency_ms": 10004,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "d66a6c1a73e434e4b85c91fbac606318beb8f434f05e7e3bd135838fff9d7f86",
+      "route_name": null,
+      "route_decision": {
+        "route_name": "C_OBJECT_CAUSAL",
+        "classifier_version": "narrative-route-v1",
+        "decision_reasons": [
+          "scene_state.available_objects is non-empty",
+          "causal_transitions contains counterfactual_without_action or rejected_alternative",
+          "character_next_action involves physical object manipulation"
+        ],
+        "matched_rules": [
+          "RULE_C_OBJECT_CAUSAL"
+        ],
+        "rejected_routes": []
+      },
+      "compiled_brief_hash": "534bf1bb7e7801789ac00cadd7204fb772720669933f98eed4f21f26af00d711",
+      "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+      "text_path": "cases\\B-06\\drafts\\route-3.txt"
+    },
+    {
+      "group": "BASELINE-writer_brief",
+      "replica": 1,
+      "mode": "writer_brief",
+      "candidate_id": "b5886d12-43f7-4b1b-b29a-d054f1bf84fd",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "卷帘门哗啦啦地往下坠，铁片咬合的声音碾过雨声。\n\n林希往门廊里退了半步。暴雨砸在遮阳棚上，水帘从边缘倾下来，把便利店门口圈成一小块孤岛。公共伞还挂在门口的钩子上，深蓝色，伞柄磨得发白，只有这一把。\n\n她看见温洲站在另一侧。\n\n他靠着墙，手里没伞，肩头的衬衫洇湿了一片。店员从收银台后面绕出来，钥匙串叮当作响，弯腰去够卷帘门底部的锁扣。\n\n“好大的雨。”\n\n温洲的声音从右侧传过来，不高，像是在陈述一个两人都清楚的事实。\n\n林希转头看他。他正望着外面的雨幕，侧脸被便利店的灯光切出一道干净的轮廓。她没有接话。她不知道他为什么站在这，是不是在等雨停，还是刚出来就发现走不了。她不能替他解释。\n\n店员拉下最后一截卷帘门，锁扣咔哒一声咬死。他直起腰看了他们一眼，从侧门钻出去，撑开自己的伞消失在雨里。\n\n门廊下只剩两个人。\n\n雨声更大了。\n\n林希看着那把公共伞。只有一个选择不需要解释。她伸手把伞从钩子上取下来，伞柄是凉的，沾着潮气。她握住伞柄中段，拇指抵住开关，往上一推。\n\n伞面嘭地撑开。\n\n深蓝色的伞面翻上来，雨水立刻在上头砸出细密的声响。她把伞举到两人之间，伞沿刚好能遮住两个人的位置。\n\n温洲从墙边走过来，低头让过伞骨，站进她右侧的空间里。伞面在他头顶投下一小片干燥的阴影，他肩头的衬衫又蹭到伞骨边缘，湿痕扩大了一点，但他没往后退。\n\n林希握紧伞柄，感觉到伞的重量从手腕传到手臂。雨从伞沿四周倾泻而下，把门廊、卷帘门和整条街都隔在外面。",
+      "raw_response": "卷帘门哗啦啦地往下坠，铁片咬合的声音碾过雨声。\n\n林希往门廊里退了半步。暴雨砸在遮阳棚上，水帘从边缘倾下来，把便利店门口圈成一小块孤岛。公共伞还挂在门口的钩子上，深蓝色，伞柄磨得发白，只有这一把。\n\n她看见温洲站在另一侧。\n\n他靠着墙，手里没伞，肩头的衬衫洇湿了一片。店员从收银台后面绕出来，钥匙串叮当作响，弯腰去够卷帘门底部的锁扣。\n\n“好大的雨。”\n\n温洲的声音从右侧传过来，不高，像是在陈述一个两人都清楚的事实。\n\n林希转头看他。他正望着外面的雨幕，侧脸被便利店的灯光切出一道干净的轮廓。她没有接话。她不知道他为什么站在这，是不是在等雨停，还是刚出来就发现走不了。她不能替他解释。\n\n店员拉下最后一截卷帘门，锁扣咔哒一声咬死。他直起腰看了他们一眼，从侧门钻出去，撑开自己的伞消失在雨里。\n\n门廊下只剩两个人。\n\n雨声更大了。\n\n林希看着那把公共伞。只有一个选择不需要解释。她伸手把伞从钩子上取下来，伞柄是凉的，沾着潮气。她握住伞柄中段，拇指抵住开关，往上一推。\n\n伞面嘭地撑开。\n\n深蓝色的伞面翻上来，雨水立刻在上头砸出细密的声响。她把伞举到两人之间，伞沿刚好能遮住两个人的位置。\n\n温洲从墙边走过来，低头让过伞骨，站进她右侧的空间里。伞面在他头顶投下一小片干燥的阴影，他肩头的衬衫又蹭到伞骨边缘，湿痕扩大了一点，但他没往后退。\n\n林希握紧伞柄，感觉到伞的重量从手腕传到手臂。雨从伞沿四周倾泻而下，把门廊、卷帘门和整条街都隔在外面。",
+      "input_tokens": 1160,
+      "output_tokens": 431,
+      "latency_ms": 13797,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "8e9271c7b5af684c3adb29e713fc44dff1e9b5f92b93071d6140d49ee64bbb9f",
+      "route_name": null,
+      "route_decision": null,
+      "compiled_brief_hash": null,
+      "instruction_hash": null,
+      "text_path": "cases\\B-06\\drafts\\baseline-1.txt"
+    },
+    {
+      "group": "BASELINE-writer_brief",
+      "replica": 2,
+      "mode": "writer_brief",
+      "candidate_id": "4cddb2ca-0a7a-4a9a-be73-86ca77e47bab",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "卷帘门哗啦啦往下坠，铁皮刮过轨道的声音在雨幕里刺耳地响。\n\n林希往门廊里又退了一步，肩膀几乎贴上玻璃门。雨大得像有人在天上掀翻了水缸，路面溅起的水花白茫茫一片，什么都看不清。\n\n那把公共伞就挂在门口的挂钩上，深蓝色，伞柄磨得发亮，孤零零一把。\n\n她伸手碰了碰伞柄，指尖刚触到冰凉的塑料，余光里瞥见右边还站着个人。\n\n温洲。\n\n他靠在墙边，双手插在裤兜里，衬衫袖口挽到小臂，肩头被斜飘进来的雨水洇湿了一片。他没看雨，也没看她，视线落在对面马路上某辆被雨砸得报警器乱响的车上。\n\n“好大的雨。”\n\n他开口了，声音不大，刚好盖过雨声传进她耳朵里。\n\n林希的手指还搭在伞柄上，没动。\n\n店员从收银台后面绕出来，钥匙串哗啦响，蹲下去够卷帘门底部的锁扣。金属碰撞声又尖又短，像在催人走。\n\n温洲转过头，看了她一眼。就一眼，然后又把目光移回雨里。\n\n林希握紧伞柄，把伞从挂钩上取下来。伞身比她想的沉，伞骨收拢时绷着一股劲，握在手里微微发颤。\n\n她按了一下伞扣。\n\n没开。\n\n又按了一下，拇指用力顶进去，弹簧咔哒一声弹开，伞面呼地撑起来，深蓝色的尼龙布在她头顶张开，雨水立刻噼里啪啦砸上去，力道顺着伞骨传到她手腕上。\n\n她握着伞，站在门廊边缘，雨水从伞沿淌下来，在她脚边汇成一小摊。\n\n温洲没说话，也没看她。\n\n林希把伞举高了一点，伞面倾斜，刚好遮住她和他之间的空隙。雨打在伞上的声音更密了，像有人在头顶敲鼓。\n\n温洲从墙边直起身，往前迈了一步，低下头，走进伞下。\n\n他的肩膀几乎贴上她的，深蓝色伞面把两个人罩在同一片阴影里。雨水顺着伞骨往下淌，在他们脚边围成一个圈。",
+      "raw_response": "卷帘门哗啦啦往下坠，铁皮刮过轨道的声音在雨幕里刺耳地响。\n\n林希往门廊里又退了一步，肩膀几乎贴上玻璃门。雨大得像有人在天上掀翻了水缸，路面溅起的水花白茫茫一片，什么都看不清。\n\n那把公共伞就挂在门口的挂钩上，深蓝色，伞柄磨得发亮，孤零零一把。\n\n她伸手碰了碰伞柄，指尖刚触到冰凉的塑料，余光里瞥见右边还站着个人。\n\n温洲。\n\n他靠在墙边，双手插在裤兜里，衬衫袖口挽到小臂，肩头被斜飘进来的雨水洇湿了一片。他没看雨，也没看她，视线落在对面马路上某辆被雨砸得报警器乱响的车上。\n\n“好大的雨。”\n\n他开口了，声音不大，刚好盖过雨声传进她耳朵里。\n\n林希的手指还搭在伞柄上，没动。\n\n店员从收银台后面绕出来，钥匙串哗啦响，蹲下去够卷帘门底部的锁扣。金属碰撞声又尖又短，像在催人走。\n\n温洲转过头，看了她一眼。就一眼，然后又把目光移回雨里。\n\n林希握紧伞柄，把伞从挂钩上取下来。伞身比她想的沉，伞骨收拢时绷着一股劲，握在手里微微发颤。\n\n她按了一下伞扣。\n\n没开。\n\n又按了一下，拇指用力顶进去，弹簧咔哒一声弹开，伞面呼地撑起来，深蓝色的尼龙布在她头顶张开，雨水立刻噼里啪啦砸上去，力道顺着伞骨传到她手腕上。\n\n她握着伞，站在门廊边缘，雨水从伞沿淌下来，在她脚边汇成一小摊。\n\n温洲没说话，也没看她。\n\n林希把伞举高了一点，伞面倾斜，刚好遮住她和他之间的空隙。雨打在伞上的声音更密了，像有人在头顶敲鼓。\n\n温洲从墙边直起身，往前迈了一步，低下头，走进伞下。\n\n他的肩膀几乎贴上她的，深蓝色伞面把两个人罩在同一片阴影里。雨水顺着伞骨往下淌，在他们脚边围成一个圈。",
+      "input_tokens": 1160,
+      "output_tokens": 479,
+      "latency_ms": 14213,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "8e9271c7b5af684c3adb29e713fc44dff1e9b5f92b93071d6140d49ee64bbb9f",
+      "route_name": null,
+      "route_decision": null,
+      "compiled_brief_hash": null,
+      "instruction_hash": null,
+      "text_path": "cases\\B-06\\drafts\\baseline-2.txt"
+    },
+    {
+      "group": "BASELINE-writer_brief",
+      "replica": 3,
+      "mode": "writer_brief",
+      "candidate_id": "11e71842-bb92-4189-8c34-bcfcdc852666",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "卷帘门哗啦啦地往下坠，铁片咬合的声音在暴雨里格外刺耳。\n\n林希站在便利店窄窄的门廊下，雨水顺着遮雨棚的边缘砸成一道密不透风的水帘。门口那把公共伞还挂在挂钩上，黑色的伞面，木柄磨得发亮。\n\n温洲就站在她左边，不到两步的距离。\n\n“好大的雨。”\n\n温洲的声音不大，被雨声裹着送过来。林希偏过头，看见他正望着外面被水雾吞掉的街景，衬衫领口有点潮，贴在锁骨的位置。\n\n店员从收银台后面走出来，弯腰抓住卷帘门底部的不锈钢把手，用力往下一拽。金属刮过轨道的声音又尖又长。\n\n林希伸手。\n\n手指碰到伞柄的时候，木头的温度比空气凉。她把伞从挂钩上取下来，手腕一转，伞尖朝下，另一只手摁住卡扣。\n\n咔嗒。\n\n伞面弹开的声音很轻，被雨吞掉了大半。黑色的伞布在她头顶张开，边缘的雨水顺着伞骨滑下来，在她脚边溅成细碎的水花。\n\n她握住伞柄，把伞举高了一点。\n\n伞下的空间刚好够两个人。\n\n温洲转过头。\n\n他没有说话，只是往前走了一步。肩膀擦过伞沿，人已经站在了伞下。雨声被伞面隔开，忽然变得闷闷的，像是从很远的地方传过来。\n\n林希的手指在伞柄上收紧。",
+      "raw_response": "卷帘门哗啦啦地往下坠，铁片咬合的声音在暴雨里格外刺耳。\n\n林希站在便利店窄窄的门廊下，雨水顺着遮雨棚的边缘砸成一道密不透风的水帘。门口那把公共伞还挂在挂钩上，黑色的伞面，木柄磨得发亮。\n\n温洲就站在她左边，不到两步的距离。\n\n“好大的雨。”\n\n温洲的声音不大，被雨声裹着送过来。林希偏过头，看见他正望着外面被水雾吞掉的街景，衬衫领口有点潮，贴在锁骨的位置。\n\n店员从收银台后面走出来，弯腰抓住卷帘门底部的不锈钢把手，用力往下一拽。金属刮过轨道的声音又尖又长。\n\n林希伸手。\n\n手指碰到伞柄的时候，木头的温度比空气凉。她把伞从挂钩上取下来，手腕一转，伞尖朝下，另一只手摁住卡扣。\n\n咔嗒。\n\n伞面弹开的声音很轻，被雨吞掉了大半。黑色的伞布在她头顶张开，边缘的雨水顺着伞骨滑下来，在她脚边溅成细碎的水花。\n\n她握住伞柄，把伞举高了一点。\n\n伞下的空间刚好够两个人。\n\n温洲转过头。\n\n他没有说话，只是往前走了一步。肩膀擦过伞沿，人已经站在了伞下。雨声被伞面隔开，忽然变得闷闷的，像是从很远的地方传过来。\n\n林希的手指在伞柄上收紧。",
+      "input_tokens": 1160,
+      "output_tokens": 311,
+      "latency_ms": 9554,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "8e9271c7b5af684c3adb29e713fc44dff1e9b5f92b93071d6140d49ee64bbb9f",
+      "route_name": null,
+      "route_decision": null,
+      "compiled_brief_hash": null,
+      "instruction_hash": null,
+      "text_path": "cases\\B-06\\drafts\\baseline-3.txt"
+    }
+  ],
+  "actual_route": "C_OBJECT_CAUSAL",
+  "route_decision": {
+    "route_name": "C_OBJECT_CAUSAL",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "scene_state.available_objects is non-empty",
+      "causal_transitions contains counterfactual_without_action or rejected_alternative",
+      "character_next_action involves physical object manipulation"
+    ],
+    "matched_rules": [
+      "RULE_C_OBJECT_CAUSAL"
+    ],
+    "rejected_routes": []
+  }
+}

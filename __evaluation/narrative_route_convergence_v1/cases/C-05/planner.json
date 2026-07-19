@@ -1,0 +1,178 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "孟然在不追喊的情况下，让错拿外套的同学自己发现外套不属于他，从而拿回钥匙。",
+  "location": "学校体育馆男更衣室及门外走廊",
+  "time": "下午体育课后，临近放学",
+  "scene_state": {
+    "last_completed_action": "孟然发现自己的外套被穿走，口袋里装着家门钥匙。",
+    "present_characters": [
+      "孟然",
+      "错拿外套的同学（李一鸣）"
+    ],
+    "visible_facts": [
+      "孟然只穿着短袖，站在更衣室储物柜前",
+      "李一鸣穿着孟然的黑色运动服外套正跑向田径场",
+      "更衣室长凳上有一件与孟然外套同款的黑色运动服，但尺码不同"
+    ],
+    "available_objects": [
+      "长凳上的黑色运动服",
+      "孟然的书包",
+      "更衣室储物柜",
+      "手机"
+    ],
+    "unresolved_problem": "孟然需要拿回外套口袋里的家门钥匙，但不能追上去或大喊。",
+    "already_existing_constraints": [
+      "孟然不能跑动（刚扭伤脚踝）",
+      "更衣室内有其他同学，不能引起注意",
+      "李一鸣已经跑远，无法直接对话"
+    ]
+  },
+  "characters": [
+    {
+      "name": "孟然",
+      "goal": "让李一鸣意识到外套拿错，并拿回钥匙。",
+      "known": [
+        "自己的外套口袋里有家门钥匙",
+        "李一鸣穿走了自己的外套",
+        "自己脚踝扭伤不能跑"
+      ],
+      "unknown": [
+        "李一鸣是否注意到外套不合身",
+        "李一鸣是否会检查口袋"
+      ],
+      "mistaken_beliefs": [
+        "李一鸣可能只是匆忙中穿错，不是故意的"
+      ],
+      "constraints": [
+        "不能追上去",
+        "不能在更衣室大声喊叫",
+        "不能引起其他同学围观"
+      ],
+      "observed_evidence": [
+        "李一鸣穿着自己的外套跑远",
+        "长凳上有一件同款但尺码不同的外套"
+      ],
+      "current_interpretation": "那件长凳上的外套很可能是李一鸣的，如果让李一鸣发现自己的外套不见了，他会回来找。",
+      "how_interpretation_drives_action": "孟然决定用长凳上的外套作为信号，让李一鸣自己发现拿错。"
+    },
+    {
+      "name": "李一鸣",
+      "goal": "赶去田径场参加训练，可能未意识到穿错外套。",
+      "known": [
+        "自己有一件同款黑色运动服",
+        "训练要迟到了"
+      ],
+      "unknown": [
+        "穿走的外套是孟然的",
+        "外套口袋里有一把钥匙"
+      ],
+      "mistaken_beliefs": [
+        "以为长凳上的外套是自己的，匆忙中穿上"
+      ],
+      "constraints": [
+        "已经跑出更衣室，听不到孟然小声说话",
+        "训练时间紧迫，可能不会立刻返回"
+      ],
+      "observed_evidence": [
+        "身上外套的尺码可能略大或略小"
+      ],
+      "current_interpretation": "可能觉得外套有点不合身，但没时间多想。",
+      "how_interpretation_drives_action": "继续跑向田径场，除非有明确信号让他停下。"
+    }
+  ],
+  "concrete_problem": "孟然如何让已经跑远的李一鸣意识到外套拿错并主动返回？",
+  "pressure": "李一鸣越跑越远，一旦进入田径场，外套可能被混入更多同款衣服中，钥匙更难找回。",
+  "turning_point": "孟然拿起长凳上的外套，故意将一只袖子翻到外面，然后放在显眼处，并请一位路过的同学帮忙传话。",
+  "end_condition": "李一鸣看到外套或收到传话后返回更衣室，发现外套归属出现新事实。",
+  "forbidden": [
+    "孟然追上去",
+    "孟然在更衣室大喊",
+    "直接使用手机联系李一鸣（本章不透露孟然有手机）",
+    "其他同学主动发现并解决误会",
+    "李一鸣自己突然灵光一闪发现穿错"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "长凳上有一件与孟然外套同款的黑色运动服，但尺码明显不同。",
+      "character_interpretation": "这件外套很可能是李一鸣的，他匆忙中穿走了我的。",
+      "character_next_action": "孟然拿起那件外套，将一只袖子翻到外面，制造一个显眼的异常标记，然后放在更衣室门口的长凳上。",
+      "rejected_alternative": "孟然可以直接把外套拿去给李一鸣，但因脚伤不能跑；或者大声叫喊，但会引来围观。",
+      "immediate_consequence": "外套被放在显眼处，袖子外翻，成为视觉信号。",
+      "counterfactual_without_action": "如果孟然不做任何标记，外套只是普通放在那里，李一鸣即使返回也可能忽略。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "外套整齐叠放在长凳上，无人注意。",
+        "after": "外套被移至门口，一只袖子外翻，显得突兀。"
+      },
+      "cost_or_commitment": "孟然牺牲了快速离开的机会，选择留在更衣室等待。",
+      "next_constraint": "李一鸣必须注意到外套的异常才会产生疑问。",
+      "reader_must_infer": "孟然希望李一鸣看到自己外套的异常状态，从而联想到自己可能穿错了。",
+      "narrator_must_not_state": [
+        "孟然内心对李一鸣的埋怨",
+        "孟然对钥匙丢失的焦虑程度"
+      ]
+    },
+    {
+      "id": "CT02",
+      "kind": "evidence_to_action",
+      "visible_trigger": "一个同学（非李一鸣）正好经过更衣室门口。",
+      "character_interpretation": "这个同学可能认识李一鸣，可以帮忙传话。",
+      "character_next_action": "孟然叫住那位同学，请他帮忙告诉李一鸣“你的外套在更衣室门口，好像拿错了”。",
+      "rejected_alternative": "孟然可以自己发消息，但手机不在身边；或者写纸条，但时间来不及。",
+      "immediate_consequence": "同学答应传话，朝田径场方向走去。",
+      "counterfactual_without_action": "如果孟然不请人传话，李一鸣可能直到训练结束才发现外套不对，钥匙可能丢失。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "只有孟然知道外套错拿，信息未传递。",
+        "after": "传话人带着信息离开，李一鸣即将得知。"
+      },
+      "cost_or_commitment": "孟然欠下一个小人情，且暴露了自己在更衣室等待的事实。",
+      "next_constraint": "传话内容必须准确，否则李一鸣可能误解。",
+      "reader_must_infer": "孟然选择相信一个不太熟的同学，显示他此刻没有更好的办法。",
+      "narrator_must_not_state": [
+        "孟然对这个同学是否可靠的真实想法",
+        "传话同学是否真的会去通知"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "李一鸣穿着孟然的外套已经跑出更衣室，消失在走廊拐角。",
+    "dominant_pressure": {
+      "kind": "resource_constraint",
+      "description": "时间紧迫，李一鸣越跑越远，而孟然因脚伤无法追赶，可用的传信工具也受限。"
+    },
+    "allowed_viewpoint_misread": "李一鸣可能把外套的异常标记当作别人恶作剧，而不是拿错的信号。",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "孟然对李一鸣是否故意的猜测",
+      "家门钥匙的具体形状和钥匙扣细节"
+    ],
+    "stop_state": {
+      "type": "information_conflict",
+      "visible_fact": "李一鸣返回更衣室，看到自己外套的袖子外翻，同时发现自己身上外套的口袋里有钥匙。",
+      "what_is_now_different": "李一鸣意识到外套拿错，且钥匙的存在让他明白必须立刻归还。",
+      "must_not_append": "不得描述李一鸣返回后的心理活动或道歉。"
+    },
+    "final_line_must_include": "口袋里的钥匙硌到了他的手。"
+  }
+}

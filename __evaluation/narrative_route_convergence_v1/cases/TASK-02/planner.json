@@ -1,0 +1,183 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "周默在驿站关门前处理错领的快递，在不能拆箱的情况下做出归还选择，并因此承担可见的后果与约束。",
+  "location": "小区快递驿站柜台前",
+  "time": "傍晚，驿站即将关门",
+  "scene_state": {
+    "last_completed_action": "周默发现自己取错了快递，真正的收件人正在门外找箱子",
+    "present_characters": [
+      "周默",
+      "真正的收件人"
+    ],
+    "visible_facts": [
+      "柜台上有一只被取错的同款纸箱",
+      "箱内露出一角说明书，写着“今晚使用”",
+      "柜台只剩一部固定电话和一辆推车",
+      "真正的收件人正在门外焦急寻找"
+    ],
+    "available_objects": [
+      "错领的纸箱",
+      "固定电话",
+      "推车",
+      "露出的一角说明书"
+    ],
+    "unresolved_problem": "如何在不能拆箱确认内容的情况下，将箱子归还给真正的收件人，同时避免额外纠纷",
+    "already_existing_constraints": [
+      "驿站即将关门",
+      "不能拆箱确认内容",
+      "不能假定箱内物品",
+      "不能直接询问收件人内容以验证"
+    ]
+  },
+  "characters": [
+    {
+      "name": "周默",
+      "goal": "尽快将错领的箱子归还给真正的收件人，避免因拖延或猜疑引发冲突",
+      "known": [
+        "自己取错了快递",
+        "真正的收件人正在门外找箱子",
+        "箱内有一角说明书写着“今晚使用”"
+      ],
+      "unknown": [
+        "箱内具体是什么物品",
+        "收件人是否会因物品被误领而追究责任"
+      ],
+      "mistaken_beliefs": [
+        "收件人可能认为周默故意取错或偷看"
+      ],
+      "constraints": [
+        "不能拆箱确认",
+        "不能假定内容",
+        "必须在关门前处理",
+        "不能使用电话求助他人"
+      ],
+      "observed_evidence": [
+        "收件人神情焦急，反复查看手机",
+        "箱内说明书一角写着“今晚使用”"
+      ],
+      "current_interpretation": "收件人急需这个箱子，但周默无法证明自己没有偷看或调包",
+      "how_interpretation_drives_action": "周默选择主动将箱子递给收件人，并坦诚说明自己取错，但不提及说明书内容，以避免对方猜疑"
+    },
+    {
+      "name": "真正的收件人",
+      "goal": "找回自己的快递，确保物品完好且未被窥探",
+      "known": [
+        "自己的快递被他人取走",
+        "一个陌生人在柜台拿着自己的箱子"
+      ],
+      "unknown": [
+        "周默是否已经看过箱内物品",
+        "周默是否值得信任"
+      ],
+      "mistaken_beliefs": [
+        "周默可能已经偷看了箱子里的东西"
+      ],
+      "constraints": [
+        "无法证明周默是否偷看",
+        "驿站即将关门，没时间调监控"
+      ],
+      "observed_evidence": [
+        "周默手中的箱子和自己的一模一样",
+        "周默表情紧张但主动递出箱子"
+      ],
+      "current_interpretation": "周默似乎想尽快脱手，可能有问题，但也可能只是好心归还",
+      "how_interpretation_drives_action": "收件人接过箱子，当场检查外观，并质问周默是否打开过"
+    }
+  ],
+  "concrete_problem": "周默必须在收件人怀疑的目光下，将箱子归还而不引发进一步冲突，同时不能拆箱或解释说明书内容。",
+  "pressure": "驿站关门时间逼近，收件人的焦急与怀疑正在升级，但周默无法用任何证据自证清白。",
+  "turning_point": "周默选择主动递出箱子并承认取错，而不是等收件人质问或要求查看监控，从而将局面从对峙转为交接，但也因此承担了被怀疑的后果。",
+  "end_condition": "收件人接过箱子，检查外观后脸色稍缓但仍有疑虑，周默没有追问，转身准备离开驿站。",
+  "forbidden": [
+    "拆箱确认物品",
+    "假定箱内物品性质",
+    "使用电话联系他人",
+    "解释说明书内容",
+    "收件人完全信任周默"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "收件人走进驿站，目光锁定周默手中的箱子",
+      "character_interpretation": "周默意识到对方就是真正的收件人，且对方已经看到箱子，拖延只会让怀疑加重",
+      "character_next_action": "周默立刻将箱子递向收件人，说“这是你的吧，我取错了”",
+      "rejected_alternative": "周默也可以先解释自己取错的原因，或要求对方证明身份，但这会显得心虚",
+      "immediate_consequence": "收件人接过箱子，但表情警惕，立即检查封口",
+      "counterfactual_without_action": "如果周默不主动递出，收件人可能会直接质问或要求查看监控，导致更长时间的僵持和更深的怀疑",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "箱子在周默手中，收件人尚未确认归属",
+        "after": "箱子转移到收件人手中，收件人开始检查"
+      },
+      "cost_or_commitment": "周默放弃了任何解释或验证的机会，直接将自己置于被怀疑的境地",
+      "next_constraint": "收件人检查箱子时，周默不能离开，必须等待对方确认",
+      "reader_must_infer": "周默之所以不解释，是因为任何解释都可能被解读为欲盖弥彰",
+      "narrator_must_not_state": [
+        "周默此刻的真实想法",
+        "箱子里的东西究竟是什么"
+      ]
+    },
+    {
+      "id": "CT02",
+      "kind": "constraint_to_choice",
+      "visible_trigger": "收件人检查箱子时，说明书的一角仍然露在外面",
+      "character_interpretation": "周默知道收件人一定会看到说明书，但自己不能主动提及，否则等于承认偷看",
+      "character_next_action": "周默移开视线，假装整理推车，给收件人空间检查",
+      "rejected_alternative": "周默可以提醒收件人说明书露出来了，但这会暴露自己已经看到",
+      "immediate_consequence": "收件人注意到说明书，迅速塞回箱内，然后抬头看了周默一眼，眼神复杂",
+      "counterfactual_without_action": "如果周默主动说出说明书，收件人可能会直接认定周默偷看过",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "收件人尚未注意到露出的说明书",
+        "after": "收件人发现说明书并处理，对周默的怀疑加深"
+      },
+      "cost_or_commitment": "周默选择沉默，但因此无法消除收件人的怀疑",
+      "next_constraint": "收件人虽然没有追问，但今后对周默的信任度极低",
+      "reader_must_infer": "收件人眼神复杂，是因为说明书的内容敏感，而周默的沉默反而坐实了某种猜测",
+      "narrator_must_not_state": [
+        "收件人具体怀疑什么",
+        "说明书全文内容"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "驿站即将关门，收件人已走到门外，周默手中拿着错领的箱子",
+    "dominant_pressure": {
+      "kind": "social_friction",
+      "description": "时间紧迫，但真正阻碍问题解决的是双方缺乏信任，收件人怀疑周默偷看，周默无法自证"
+    },
+    "allowed_viewpoint_misread": "收件人可能把周默的主动归还理解为心虚",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "箱子里的具体物品",
+      "说明书全文",
+      "周默是否真的偷看过"
+    ],
+    "stop_state": {
+      "type": "relationship_shift",
+      "visible_fact": "收件人接过箱子后，没有道谢，只是微微点头示意周默可以离开",
+      "what_is_now_different": "周默与收件人之间建立了陌生人的戒备关系，今后无法轻易互动",
+      "must_not_append": "不得解释收件人为什么没有道谢"
+    },
+    "final_line_must_include": ""
+  }
+}

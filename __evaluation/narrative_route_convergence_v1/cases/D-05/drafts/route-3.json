@@ -1,0 +1,63 @@
+{
+  "group": "ROUTE-A_LITE_INFORMATION_GAP",
+  "replica": 3,
+  "mode": "narrative_route",
+  "candidate_id": "fa7cdf83-6cf6-4b95-b8e3-14d2d94726c5",
+  "attempt_number": 1,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "route_decision": {
+      "route_name": "A_LITE_INFORMATION_GAP",
+      "classifier_version": "narrative-route-v1",
+      "decision_reasons": [
+        "multiple characters with distinct information",
+        "viewpoint character has unknown facts and an interpretation",
+        "secondary character carries independent knowledge"
+      ],
+      "matched_rules": [
+        "RULE_A_LITE_INFORMATION_GAP"
+      ],
+      "rejected_routes": [
+        "C_OBJECT_CAUSAL"
+      ]
+    },
+    "compiled_brief_hash": "806dfb07c1c392020274b2d4f756acfcfe05d1d61124839fe5b128f43d63ba8d",
+    "instruction_hash": "d368cbfa0846d1cb9adf452db083cbb58ba69154f281b3d6c895cb34da157cec",
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "唐婉从301室退出来，门在身后合上，门牌上“皮肤科”三个字还在眼前晃。她攥着挂号单站在走廊中间，左右两侧的白墙延伸到不同的方向。\n\n手机屏幕已经黑了，按侧键也没有反应。她看了一眼挂号单上打印的时间——14:45，现在十四点三十分整。\n\n走廊左侧尽头是电梯间，能看见不锈钢门反射的冷光。右侧是一条更长的走廊，两侧排列着诊室门，最近的一扇门上挂着302的牌子。\n\n墙上的楼层指示牌就在她左手边三步远，但一辆清洁推车紧紧贴着墙面停在那里，黄色的塑料桶和拖把柄正好挡住指示牌的中间一行。她能看见最上面一排写着“301皮肤科”，最下面一排露出“305骨科”几个字，中间那一行被遮得严严实实。\n\n刚才那个护士说“三楼另一侧”。唐婉转头看左侧——电梯间，消防通道标识，没有诊室门。她再看右侧——302，303，一扇接一扇的门延伸进去。\n\n她向右走。\n\n302室的门关着，门牌是“消化内科”。她没停，继续往前走。303室“心内科”，门开着一条缝，里面有人说话。304室“呼吸内科”。她的脚步越来越快，帆布鞋踩在水磨石地面上发出细碎的摩擦声。\n\n305室“骨科”——这是指示牌上她能看见的最后一行。她继续往前，306室“神经内科”，307室“肾内科”，308室“风湿免疫科”。\n\n走廊到了尽头。面前是一扇窗户，窗外是另一栋楼的灰色墙面。\n\n唐婉转过身，视线扫过整条走廊。308，307，306，305——她刚才走过的每一扇门都在原位。清洁推车还停在指示牌前面，从这个角度看，推车后面那一行字露出了一点点边缘。\n\n她往回跑。\n\n帆布鞋的声音在走廊里变得急促。经过308室时她瞥见墙上有一个小型的科室分布图，上面印着“302-308”后面跟着一行小字，她没停，但眼睛已经捕捉到那几个字——内分泌科。\n\n302到308。\n\n她刚才从302走到了308。\n\n挂号单在她手里被攥出了褶皱。她跑到302室门口时看了一眼手机——还是黑屏。走廊墙上挂着一个圆形的时钟，分针指着6，14:30已经过去了。\n\n302室的门关着。\n\n门口墙上装着一台灰色的签到机，屏幕亮着，上面显示“请刷挂号单或输入就诊卡号”。机器下方的扫描区发出微弱的红光。\n\n唐婉把挂号单摊平，条形码朝下按在扫描区上。\n\n机器发出一声短促的“嘀”。\n\n屏幕跳转，显示出她的名字和一个绿色的对勾，下方出现三个字——“签到成功”。",
+  "raw_response": "唐婉从301室退出来，门在身后合上，门牌上“皮肤科”三个字还在眼前晃。她攥着挂号单站在走廊中间，左右两侧的白墙延伸到不同的方向。\n\n手机屏幕已经黑了，按侧键也没有反应。她看了一眼挂号单上打印的时间——14:45，现在十四点三十分整。\n\n走廊左侧尽头是电梯间，能看见不锈钢门反射的冷光。右侧是一条更长的走廊，两侧排列着诊室门，最近的一扇门上挂着302的牌子。\n\n墙上的楼层指示牌就在她左手边三步远，但一辆清洁推车紧紧贴着墙面停在那里，黄色的塑料桶和拖把柄正好挡住指示牌的中间一行。她能看见最上面一排写着“301皮肤科”，最下面一排露出“305骨科”几个字，中间那一行被遮得严严实实。\n\n刚才那个护士说“三楼另一侧”。唐婉转头看左侧——电梯间，消防通道标识，没有诊室门。她再看右侧——302，303，一扇接一扇的门延伸进去。\n\n她向右走。\n\n302室的门关着，门牌是“消化内科”。她没停，继续往前走。303室“心内科”，门开着一条缝，里面有人说话。304室“呼吸内科”。她的脚步越来越快，帆布鞋踩在水磨石地面上发出细碎的摩擦声。\n\n305室“骨科”——这是指示牌上她能看见的最后一行。她继续往前，306室“神经内科”，307室“肾内科”，308室“风湿免疫科”。\n\n走廊到了尽头。面前是一扇窗户，窗外是另一栋楼的灰色墙面。\n\n唐婉转过身，视线扫过整条走廊。308，307，306，305——她刚才走过的每一扇门都在原位。清洁推车还停在指示牌前面，从这个角度看，推车后面那一行字露出了一点点边缘。\n\n她往回跑。\n\n帆布鞋的声音在走廊里变得急促。经过308室时她瞥见墙上有一个小型的科室分布图，上面印着“302-308”后面跟着一行小字，她没停，但眼睛已经捕捉到那几个字——内分泌科。\n\n302到308。\n\n她刚才从302走到了308。\n\n挂号单在她手里被攥出了褶皱。她跑到302室门口时看了一眼手机——还是黑屏。走廊墙上挂着一个圆形的时钟，分针指着6，14:30已经过去了。\n\n302室的门关着。\n\n门口墙上装着一台灰色的签到机，屏幕亮着，上面显示“请刷挂号单或输入就诊卡号”。机器下方的扫描区发出微弱的红光。\n\n唐婉把挂号单摊平，条形码朝下按在扫描区上。\n\n机器发出一声短促的“嘀”。\n\n屏幕跳转，显示出她的名字和一个绿色的对勾，下方出现三个字——“签到成功”。",
+  "input_tokens": 1603,
+  "output_tokens": 593,
+  "latency_ms": 18296,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "cb3eb41199a4ee306e6718acb5e428db2c02c4f28cc2c73819e01bd317794e50",
+  "route_name": null,
+  "route_decision": {
+    "route_name": "A_LITE_INFORMATION_GAP",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "multiple characters with distinct information",
+      "viewpoint character has unknown facts and an interpretation",
+      "secondary character carries independent knowledge"
+    ],
+    "matched_rules": [
+      "RULE_A_LITE_INFORMATION_GAP"
+    ],
+    "rejected_routes": [
+      "C_OBJECT_CAUSAL"
+    ]
+  },
+  "compiled_brief_hash": "806dfb07c1c392020274b2d4f756acfcfe05d1d61124839fe5b128f43d63ba8d",
+  "instruction_hash": "d368cbfa0846d1cb9adf452db083cbb58ba69154f281b3d6c895cb34da157cec",
+  "text_path": "cases\\D-05\\drafts\\route-3.txt"
+}

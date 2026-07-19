@@ -1,0 +1,198 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "苏晴在茶水间偶然听到同事议论自己，必须决定如何处理这个信息，并采取一个具体行动来应对潜在的不利局面。",
+  "location": "公司茶水间",
+  "time": "午休时间",
+  "scene_state": {
+    "last_completed_action": "苏晴走到茶水间门边，听见两个同事在谈论自己，关键词是“那份提案”和“她不知道”。",
+    "present_characters": [
+      "苏晴",
+      "同事A",
+      "同事B"
+    ],
+    "visible_facts": [
+      "同事A端着咖啡走出茶水间",
+      "苏晴站在门边",
+      "茶水间内同事B仍在"
+    ],
+    "available_objects": [
+      "咖啡机",
+      "水杯",
+      "咖啡杯",
+      "提案文件（可能）"
+    ],
+    "unresolved_problem": "苏晴不清楚同事议论的具体内容，也不知道“那份提案”和“她不知道”指的是什么，但意识到可能对自己不利。",
+    "already_existing_constraints": [
+      "苏晴不能直接追问同事议论内容",
+      "苏晴不能假装没听见",
+      "午休时间有限"
+    ]
+  },
+  "characters": [
+    {
+      "name": "苏晴",
+      "goal": "弄清同事议论的内容，并保护自己的职业利益",
+      "known": [
+        "同事在谈论自己",
+        "关键词是“那份提案”和“她不知道”"
+      ],
+      "unknown": [
+        "具体是哪份提案",
+        "同事为何说“她不知道”",
+        "议论的完整背景"
+      ],
+      "mistaken_beliefs": [
+        "可能以为同事在恶意中伤，但实际可能只是误解或信息差"
+      ],
+      "constraints": [
+        "不能直接追问",
+        "不能表现出已经听到",
+        "必须维持专业形象"
+      ],
+      "observed_evidence": [
+        "同事A端着咖啡走出，表情自然",
+        "同事B仍在茶水间，可能还在"
+      ],
+      "current_interpretation": "同事可能正在讨论与我相关的提案，且有意隐瞒我什么。",
+      "how_interpretation_drives_action": "她决定进入茶水间，以倒水为掩护，观察同事B的反应，并尝试自然套话或收集更多线索。"
+    },
+    {
+      "name": "同事A",
+      "goal": "完成午休，可能继续之前的工作",
+      "known": [
+        "与同事B议论了苏晴和提案",
+        "苏晴可能不知道某些信息"
+      ],
+      "unknown": [
+        "苏晴是否听到议论"
+      ],
+      "mistaken_beliefs": [
+        "以为苏晴没听到，或者即使听到也不会在意"
+      ],
+      "constraints": [
+        "不能主动向苏晴透露议论内容，除非被问及"
+      ],
+      "observed_evidence": [
+        "走出茶水间时看到苏晴在门边"
+      ],
+      "current_interpretation": "苏晴可能刚来倒水，没听到什么。",
+      "how_interpretation_drives_action": "同事A选择自然地打招呼并离开，避免引起怀疑。"
+    },
+    {
+      "name": "同事B",
+      "goal": "整理思绪，可能继续讨论或离开",
+      "known": [
+        "与同事A议论了苏晴和提案",
+        "苏晴可能不知道某些信息"
+      ],
+      "unknown": [
+        "苏晴是否听到议论",
+        "苏晴已进入茶水间"
+      ],
+      "mistaken_beliefs": [
+        "以为议论是私下进行的，不会被苏晴知晓"
+      ],
+      "constraints": [
+        "不能主动向苏晴解释，除非被直接询问"
+      ],
+      "observed_evidence": [
+        "同事A离开",
+        "苏晴进入茶水间"
+      ],
+      "current_interpretation": "苏晴只是来倒水，与议论无关。",
+      "how_interpretation_drives_action": "同事B可能保持沉默，或若无其事地打招呼，试图观察苏晴的反应。"
+    }
+  ],
+  "concrete_problem": "苏晴如何在茶水间与同事B的自然互动中，获取关于“那份提案”和“她不知道”的更多信息，而不暴露自己已经听到议论？",
+  "pressure": "午休时间有限，且同事B随时可能离开，苏晴必须迅速行动。",
+  "turning_point": "苏晴选择进入茶水间，以倒水为掩护，向同事B抛出一个看似无关的问题，试图引导对方透露信息。",
+  "end_condition": "苏晴从同事B的回应或微表情中获得了新的可见信息（如紧张、回避或提及某个具体提案），但同事B并未直接解释议论内容。",
+  "forbidden": [
+    "苏晴直接追问议论内容",
+    "同事主动全盘托出",
+    "苏晴假装没听见而不采取任何行动",
+    "引入新的冲突源（如上级突然介入）"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "同事A端着咖啡走出茶水间，表情自然，未主动交谈。",
+      "character_interpretation": "苏晴认为同事A的镇定表明他们可能觉得议论是寻常话题，或者尚未意识到被听到。",
+      "character_next_action": "苏晴决定进入茶水间，直接面对同事B，以倒水为掩护。",
+      "rejected_alternative": "苏晴可以转身离开，假装没听到，但这样会失去弄清真相的机会。",
+      "immediate_consequence": "苏晴进入茶水间，与同事B共处一室。",
+      "counterfactual_without_action": "如果苏晴离开，她将无法获得任何新信息，且可能让同事意识到她已听到议论。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "苏晴在茶水间门外，听见议论但不确定内容。",
+        "after": "苏晴进入茶水间，与同事B面对面，准备互动。"
+      },
+      "cost_or_commitment": "苏晴承担了被同事B察觉她可能听到议论的风险。",
+      "next_constraint": "苏晴必须在与同事B的互动中保持自然，不能直接提及议论。",
+      "reader_must_infer": "苏晴进入茶水间的真实动机是调查，而非单纯倒水。",
+      "narrator_must_not_state": [
+        "苏晴决定调查议论内容"
+      ]
+    },
+    {
+      "id": "CT02",
+      "kind": "evidence_to_action",
+      "visible_trigger": "同事B看到苏晴进入，眼神略有闪躲，但随即微笑打招呼。",
+      "character_interpretation": "苏晴将同事B的闪躲解读为心虚或尴尬，可能议论内容确实敏感。",
+      "character_next_action": "苏晴一边倒水，一边用轻松的语气问：“刚才你们在聊什么项目吗？我好像听到提案什么的。”",
+      "rejected_alternative": "苏晴可以保持沉默，只倒水离开，但那样无法获取信息。",
+      "immediate_consequence": "同事B被问到，必须回应，可能透露部分信息或更加紧张。",
+      "counterfactual_without_action": "如果苏晴不问，同事B可能继续隐瞒，苏晴只能猜测。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "苏晴与同事B共处一室，但尚未交流实质内容。",
+        "after": "苏晴主动提问，将话题引向提案，同事B面临回应压力。"
+      },
+      "cost_or_commitment": "苏晴暴露了自己可能听到了一些关键词，但未承认偷听。",
+      "next_constraint": "同事B的回应将决定苏晴下一步能获取多少信息，且苏晴不能追问过深。",
+      "reader_must_infer": "苏晴的问题设计是为了测试同事B的反应，而非真的好奇。",
+      "narrator_must_not_state": [
+        "苏晴在试探同事B"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "同事A端着咖啡走出茶水间，苏晴必须立刻决定是否进入。",
+    "dominant_pressure": {
+      "kind": "information_gap",
+      "description": "苏晴缺少关于同事议论的具体信息，这直接影响她对自己职业处境的判断。"
+    },
+    "allowed_viewpoint_misread": "苏晴可能将同事B的紧张误读为恶意隐瞒，而实际上可能只是怕引起误会。",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "同事议论的完整真相",
+      "那份提案的具体内容和影响"
+    ],
+    "stop_state": {
+      "type": "information_conflict",
+      "visible_fact": "同事B在回应时无意中说出一个提案名称或细节，与苏晴已知信息矛盾。",
+      "what_is_now_different": "苏晴获得了一个具体的新信息点，意识到自己确实被蒙在鼓里，但尚未完全明白。",
+      "must_not_append": "不得让同事B直接解释为什么苏晴不知道，或全盘托出议论内容。"
+    },
+    "final_line_must_include": ""
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "group": "ROUTE-B_SHORT_RELATION",
+  "replica": 1,
+  "mode": "narrative_route",
+  "candidate_id": "7af7baa5-5fcf-4b01-942c-0fa9e6d5e365",
+  "attempt_number": 1,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "route_decision": {
+      "route_name": "B_SHORT_RELATION",
+      "classifier_version": "narrative-route-v1",
+      "decision_reasons": [
+        "scene is relationship-oriented with no physical urgency",
+        "character action involves relational move (message, gesture, proximity)"
+      ],
+      "matched_rules": [
+        "RULE_B_SHORT_RELATION"
+      ],
+      "rejected_routes": [
+        "C_OBJECT_CAUSAL",
+        "A_LITE_INFORMATION_GAP"
+      ]
+    },
+    "compiled_brief_hash": "02b725513ea167bd711e771974962e39a571cd3fc30a45006c9ef13b6b613571",
+    "instruction_hash": "d7a76822408396dc71c4599a7f40f33368b90199f0d9c0712383961213437555",
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "晚自习前十分钟，教室里人已经坐了大半。孙然把手机搁在桌面上，屏幕亮着，班级群的消息列表停在一条灰底提示上——“搭档”撤回了一条消息。\n\n她盯着那行字看了几秒。\n\n撤回提示里嵌着她的昵称，前面带着@符号。群里三十多个人在线，刚才那一瞬间应该有不少人看到了弹窗。但没人接话，聊天记录往上翻，只有两条无关的表情包和英语课代表发的作业提醒。\n\n搭档的头像还亮着，在线状态没变。\n\n孙然把手机拿起来，拇指在屏幕上停了一下。她没有点开私聊窗口。\n\n她切回群聊界面，打字，发送。\n\n“今天的排练要改时间吗？还是按原来的？”\n\n消息发出去之后，她把手机屏幕朝下扣在桌面上，伸手去翻书包里的笔记本。翻了两页，手机震了一下。\n\n她翻过来看。\n\n搭档的回复只有一行字：“按原来的。”\n\n句号。没有多余的字，没有表情包。但回复速度很快，几乎是秒回。\n\n孙然正准备锁屏，屏幕上又弹出一条新消息——搭档紧跟着补了一个表情符号，是一个歪头的小黄脸，眼睛斜斜地看向一边。\n\n这个表情和前面那句“按原来的”之间隔了不到一秒。\n\n孙然把手机重新扣在桌上，没再回复。",
+  "raw_response": "晚自习前十分钟，教室里人已经坐了大半。孙然把手机搁在桌面上，屏幕亮着，班级群的消息列表停在一条灰底提示上——“搭档”撤回了一条消息。\n\n她盯着那行字看了几秒。\n\n撤回提示里嵌着她的昵称，前面带着@符号。群里三十多个人在线，刚才那一瞬间应该有不少人看到了弹窗。但没人接话，聊天记录往上翻，只有两条无关的表情包和英语课代表发的作业提醒。\n\n搭档的头像还亮着，在线状态没变。\n\n孙然把手机拿起来，拇指在屏幕上停了一下。她没有点开私聊窗口。\n\n她切回群聊界面，打字，发送。\n\n“今天的排练要改时间吗？还是按原来的？”\n\n消息发出去之后，她把手机屏幕朝下扣在桌面上，伸手去翻书包里的笔记本。翻了两页，手机震了一下。\n\n她翻过来看。\n\n搭档的回复只有一行字：“按原来的。”\n\n句号。没有多余的字，没有表情包。但回复速度很快，几乎是秒回。\n\n孙然正准备锁屏，屏幕上又弹出一条新消息——搭档紧跟着补了一个表情符号，是一个歪头的小黄脸，眼睛斜斜地看向一边。\n\n这个表情和前面那句“按原来的”之间隔了不到一秒。\n\n孙然把手机重新扣在桌上，没再回复。",
+  "input_tokens": 1325,
+  "output_tokens": 286,
+  "latency_ms": 7071,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "4cfb17d7cb516b071de8281cb57bae3dcbba9b3422fd91667f93b5acee99e1f0",
+  "route_name": null,
+  "route_decision": {
+    "route_name": "B_SHORT_RELATION",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "scene is relationship-oriented with no physical urgency",
+      "character action involves relational move (message, gesture, proximity)"
+    ],
+    "matched_rules": [
+      "RULE_B_SHORT_RELATION"
+    ],
+    "rejected_routes": [
+      "C_OBJECT_CAUSAL",
+      "A_LITE_INFORMATION_GAP"
+    ]
+  },
+  "compiled_brief_hash": "02b725513ea167bd711e771974962e39a571cd3fc30a45006c9ef13b6b613571",
+  "instruction_hash": "d7a76822408396dc71c4599a7f40f33368b90199f0d9c0712383961213437555",
+  "text_path": "cases\\A-06\\drafts\\route-1.txt"
+}
