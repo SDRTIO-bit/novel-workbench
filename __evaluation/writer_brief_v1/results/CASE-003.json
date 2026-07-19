@@ -1,0 +1,50 @@
+{
+  "case_id": "CASE-003",
+  "blind_pass": {
+    "preferred": "B",
+    "limited_information": "B",
+    "concrete_problem": "B",
+    "choice_and_consequence": "B",
+    "ending_restraint": "B",
+    "prose_naturalness": "B",
+    "evidence": [
+      "A continues after the contractual stop into ?????????????, turning the unknown into speculative narration.",
+      "B ends exactly on ????????????????????? after the rejected alternative and concrete key-taking consequence."
+    ]
+  },
+  "contract_pass": {
+    "text_a": {
+      "visible_trigger": "present",
+      "rejected_alternative": "present",
+      "character_choice": "present",
+      "cost_or_commitment": "present",
+      "immediate_consequence": "present",
+      "next_constraint": "present",
+      "stop_state": "partial",
+      "must_not_append": "contradicted"
+    },
+    "text_b": {
+      "visible_trigger": "present",
+      "rejected_alternative": "present",
+      "character_choice": "present",
+      "cost_or_commitment": "present",
+      "immediate_consequence": "present",
+      "next_constraint": "present",
+      "stop_state": "present",
+      "must_not_append": "present"
+    }
+  },
+  "pipeline_pass": {
+    "critic_diagnosis_correct": false,
+    "reviser_fixed_confirmed_issues": false,
+    "reviser_added_new_facts": false,
+    "judge_local_choices_supported": false,
+    "final_regressed_from_writer": false,
+    "evidence": [
+      "Writer-only A/B: downstream pipeline stages were intentionally not run.",
+      "Neither text reveals where ?? went or why; the added guard dialogue is not a material Planner-external fact."
+    ]
+  },
+  "confidence": 0.93,
+  "notes": "Blind pass was completed before source mapping. B is WriterBrief vNext after mapping."
+}

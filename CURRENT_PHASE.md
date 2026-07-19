@@ -2,17 +2,17 @@
 
 ## Status
 
-WRITER_BRIEF_AB_TEST_V1_PRECHECK_FAILED
+WRITER_BRIEF_AB_TEST_V1_COMPLETED
 
 ## Evidence-based decision
 
 Current evidence does not support the complete five-stage pipeline as the
 default generation path.
 
-Default path:
+Default product path:
 
 ```text
-Planner → Writer
+Planner → WriterBriefCompiler → Writer
 ```
 
 Optional review path:
@@ -40,21 +40,31 @@ not demonstrated that it is more reliable than a single Writer draft.
 
 ## WRITER_BRIEF_AB_TEST_V1
 
-All four reused cases stopped in the frozen preflight before any Writer call.
-The deterministic compiler omits the full Planner JSON and places the brief at
-the end of the Writer prompt, but it does not provide an explicit
-`unknown_information`, `current_assumption`, or `assumption_basis` field and
-has no declared active-project-facts cap.
+The prior precheck finding was corrected as an input-contract alignment issue:
+the canonical field is `unknown_facts`, and `current_assumption` plus
+`assumption_basis` are conditionally empty. The compiler now uses one
+canonical validation path, retains no full Planner JSON, and caps deterministic
+active project facts at five.
 
-Therefore no blind pair, contract comparison, token comparison, or pass-rate
-claim exists for WriterBrief v1. This is an input-contract engineering failure,
-not evidence that either baseline Writer or WriterBrief Writer writes better
-prose.
+The four saved Planner candidates passed preflight and each received exactly
+one WriterBrief Writer call. No Planner, Critic, Reviser, Judge, TGbreak,
+retry, or candidate selection occurred.
+
+- vNext blind wins: 3/4; losses: 1/4
+- vNext has fewer key Planner-contract errors: 3/4
+- Important Planner-external facts in vNext: 0/4
+- vNext stop facts accurate: 4/4
+- vNext input tokens: 5,101 versus baseline 10,262
+- vNext latency: 50,824 ms versus baseline 41,908 ms
+
+The frozen primary, blind, and safety gates pass. This supports retaining the
+deterministic WriterBrief path for these evaluated cases; it does not support a
+claim about broader scene distributions or downstream review stages.
 
 ## Next phase
 
-WRITER_BRIEF_CONTRACT_DECISION_REQUIRED
+WRITER_BRIEF_AB_TEST_V1_RECORDED
 
-The frozen A/B protocol cannot continue until the WriterBrief input contract is
-explicitly decided. No Prompt, schema, stage, compiler, provider, or evaluation
-standard was changed during this failed precheck.
+The next decision should use additional held-out cases if broader reliability
+or latency claims are required. This report does not change Prompt, provider,
+or downstream-stage evaluation standards.

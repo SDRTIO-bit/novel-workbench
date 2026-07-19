@@ -1,0 +1,131 @@
+{
+  "case_id": "CASE-003",
+  "planner_candidate_id": "ea5a7149-2c4e-4525-b83b-f8de428dcdee",
+  "planner_contract": {
+    "planner_contract_version": 2,
+    "scene_goal": "许遥基于对顾言电话的误判，做出一个会造成可见麻烦的具体选择，并承担即时后果",
+    "location": "大学宿舍走廊，傍晚",
+    "time": "傍晚，日落前",
+    "scene_state": {
+      "last_completed_action": "许遥在走廊听到顾言电话的后半句：'……明天一早就走，钥匙我会放在门卫。'",
+      "present_characters": [
+        "许遥"
+      ],
+      "visible_facts": [
+        "许遥只听到顾言电话的后半句",
+        "顾言已经挂断电话，走向宿舍楼内",
+        "走廊光线昏暗，有暮色"
+      ],
+      "available_objects": [
+        "手机",
+        "背包",
+        "宿舍钥匙"
+      ],
+      "unresolved_problem": "许遥不确定顾言是否真的要搬走，但无法立即追问",
+      "already_existing_constraints": [
+        "许遥不能直接质问顾言，因为那会暴露她偷听电话",
+        "顾言正在上楼，即将消失在视线中"
+      ]
+    },
+    "characters": [
+      {
+        "name": "许遥",
+        "goal": "确认顾言是否真的要搬走，并决定如何应对",
+        "known": [
+          "顾言明天一早就走",
+          "钥匙会放在门卫"
+        ],
+        "unknown": [
+          "顾言要去哪里",
+          "顾言为什么走",
+          "顾言是否真的搬走"
+        ],
+        "mistaken_beliefs": [
+          "顾言要搬走，可能不再回来"
+        ],
+        "constraints": [
+          "不能直接质问顾言，以免暴露偷听",
+          "时间紧迫，顾言即将离开视线"
+        ],
+        "observed_evidence": [
+          "顾言电话的后半句内容",
+          "顾言挂断电话后走向宿舍楼"
+        ],
+        "current_interpretation": "顾言明天要离开，且把钥匙放在门卫，意味着可能搬走",
+        "how_interpretation_drives_action": "许遥决定立刻去门卫处取走钥匙，以防止顾言离开后无法联系，并以此作为确认顾言去向的手段"
+      }
+    ],
+    "concrete_problem": "许遥是否应该立即去门卫处取走顾言留下的钥匙，以此确认顾言是否真的要搬走？",
+    "pressure": "时间紧迫，顾言即将上楼消失，许遥必须在短时间内做出决定；同时她担心直接追问会破坏友谊。",
+    "turning_point": "许遥选择放弃当面追问，转身跑向门卫处取钥匙，这个行动将导致她与顾言错过，并引发后续误解。",
+    "end_condition": "许遥从门卫处拿到钥匙，但返回时发现顾言已经离开宿舍楼，她握着钥匙站在走廊，意识到自己可能做出了错误判断。",
+    "forbidden": [
+      "不得揭示顾言真正要去哪里",
+      "不得让许遥与顾言直接对话澄清误会",
+      "不得让许遥在场景结束前得知顾言只是短暂外出而非搬走",
+      "不得出现其他角色介入澄清"
+    ],
+    "causal_transitions": [
+      {
+        "id": "CT01",
+        "kind": "evidence_to_action",
+        "visible_trigger": "顾言挂断电话后快步走向宿舍楼，背影即将消失在楼梯转角",
+        "character_interpretation": "许遥认为顾言要去收拾行李，明天一早离开，如果不立即行动就会失去联系",
+        "character_next_action": "许遥转身跑向门卫处，决定先取走钥匙再找顾言",
+        "rejected_alternative": "许遥可以追上去叫住顾言，直接询问电话内容",
+        "immediate_consequence": "许遥在门卫处拿到钥匙，但返回时顾言已经不在宿舍楼，且手机无人接听",
+        "counterfactual_without_action": "如果许遥没有去取钥匙，她可能追上顾言，直接了解真相",
+        "consequence_would_still_happen": false,
+        "state_delta": {
+          "before": "许遥站在走廊，不确定是否行动",
+          "after": "许遥手握钥匙，意识到自己与顾言错过"
+        },
+        "cost_or_commitment": "许遥放弃了直接沟通的机会，现在必须通过其他方式联系顾言",
+        "next_constraint": "许遥不能立即联系到顾言，因为顾言手机无人接听",
+        "reader_must_infer": "许遥的误判导致她采取了可能不必要的行动，而顾言可能只是短暂外出",
+        "narrator_must_not_state": [
+          "顾言是否真的搬走",
+          "顾言手机无人接听的原因"
+        ]
+      }
+    ],
+    "chapter_contract_check": {
+      "function_aligned": true,
+      "must_deliver_covered": true,
+      "must_not_deliver_respected": true,
+      "main_change_enabled": true,
+      "main_payoff_prepared": true,
+      "ending_hook_established": true,
+      "causal_transitions_grounded": true,
+      "reader_inference_not_pre_resolved": true,
+      "scene_state_reconstructed": true,
+      "information_sources_legal": true,
+      "character_choice_is_real": true,
+      "consequence_is_counterfactual": true,
+      "state_delta_is_nonempty": true,
+      "next_constraint_is_new": true,
+      "stop_state_is_visible": true,
+      "stop_state_changes_future_actions": true
+    },
+    "tempo_guardrails": {
+      "entry_pressure": "许遥刚刚听到电话后半句，顾言即将消失在楼梯口",
+      "dominant_pressure": {
+        "kind": "information_gap",
+        "description": "许遥缺乏完整信息，必须基于误判做决定，同时时间紧迫"
+      },
+      "allowed_viewpoint_misread": "许遥可能认为顾言故意不告而别，但实际上顾言可能只是计划短期离开",
+      "disclosure_cap": 0,
+      "must_remain_unclassified": [
+        "顾言电话前半句的内容",
+        "顾言真正的目的地"
+      ],
+      "stop_state": {
+        "type": "unresolved_problem",
+        "visible_fact": "许遥手握钥匙站在走廊，顾言已不见踪影",
+        "what_is_now_different": "许遥从犹豫不决变为采取了行动，但问题仍未解决，反而产生了新的障碍",
+        "must_not_append": "不得解释顾言去了哪里或为什么离开"
+      },
+      "final_line_must_include": ""
+    }
+  }
+}

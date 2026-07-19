@@ -1,0 +1,25 @@
+{
+  "batch": "WRITER_BRIEF_AB_TEST_V1",
+  "cases": [
+    {
+      "case_id": "CASE-001",
+      "status": "completed",
+      "scene_brief": "黄昏书屋：老陈以沉默给门口的小满留下进入空间。"
+    },
+    {
+      "case_id": "CASE-002",
+      "status": "completed",
+      "scene_brief": "班长在公开点名前发现同学校服扣错；不能当众说明，必须用具体动作让对方自己发现。"
+    },
+    {
+      "case_id": "CASE-003",
+      "status": "completed",
+      "scene_brief": "人物只听到半段电话，误以为朋友要离开，并作出带来具体麻烦的选择。"
+    },
+    {
+      "case_id": "CASE-004",
+      "status": "completed",
+      "scene_brief": "人物为逃避小责任隐瞒事实，另一个人已承担后果；结尾停在无法立刻撤回的可见事实。"
+    }
+  ]
+}

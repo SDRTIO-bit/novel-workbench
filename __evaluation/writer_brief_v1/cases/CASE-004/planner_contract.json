@@ -1,0 +1,160 @@
+{
+  "case_id": "CASE-004",
+  "planner_candidate_id": "8ca4df8f-2d8a-43bf-98f2-27a6c86a3484",
+  "planner_contract": {
+    "planner_contract_version": 2,
+    "scene_goal": "展现赵朔因害怕被老师留下而选择隐瞒登记表，导致陈可无辜承担后果，错误已造成但未解决。",
+    "location": "教室",
+    "time": "放学后，值日打扫接近尾声",
+    "scene_state": {
+      "last_completed_action": "赵朔发现登记表夹在自己书包里，但听到老师问陈可时选择了沉默",
+      "present_characters": [
+        "赵朔",
+        "陈可",
+        "老师"
+      ],
+      "visible_facts": [
+        "赵朔的书包拉链半开，露出登记表一角",
+        "老师站在讲台旁，正在询问登记表的下落",
+        "陈可正在整理课桌，动作有些慌乱"
+      ],
+      "available_objects": [
+        "实验室借用登记表",
+        "赵朔的书包",
+        "讲台上的班级日志"
+      ],
+      "unresolved_problem": "登记表在赵朔书包里，但老师认为可能被陈可弄丢了",
+      "already_existing_constraints": [
+        "赵朔不敢在老师面前承认是自己拿走的",
+        "陈可没有证据证明自己没拿"
+      ]
+    },
+    "characters": [
+      {
+        "name": "赵朔",
+        "goal": "避免被老师留下训话，尽快脱身回家",
+        "known": [
+          "登记表在自己书包里",
+          "老师正在找登记表",
+          "陈可被怀疑"
+        ],
+        "unknown": [
+          "陈可是否会因此受到处罚",
+          "老师是否会继续追查"
+        ],
+        "mistaken_beliefs": [
+          "只要现在不承认，事情就会过去",
+          "陈可能自己解释清楚"
+        ],
+        "constraints": [
+          "不能直接承认自己拿了登记表",
+          "不能在老师面前表现得太心虚"
+        ],
+        "observed_evidence": [
+          "老师看向陈可时表情严肃",
+          "陈可低头翻找自己的书包"
+        ],
+        "current_interpretation": "老师已经认定是陈可的责任，我现在承认只会让自己也被牵连",
+        "how_interpretation_drives_action": "他迅速拉上书包拉链，假装继续扫地，避免与老师目光接触"
+      },
+      {
+        "name": "陈可",
+        "goal": "证明自己没有拿登记表，避免被冤枉",
+        "known": [
+          "自己没拿登记表",
+          "登记表应该放在实验室",
+          "老师现在怀疑自己"
+        ],
+        "unknown": [
+          "登记表到底在哪",
+          "赵朔为什么看起来紧张"
+        ],
+        "mistaken_beliefs": [
+          "可能只是自己忘记放回原处了"
+        ],
+        "constraints": [
+          "不能顶撞老师",
+          "必须找到登记表或证明自己清白"
+        ],
+        "observed_evidence": [
+          "老师直接问她登记表在哪",
+          "赵朔突然加快扫地速度，不看这边"
+        ],
+        "current_interpretation": "老师认为是我弄丢了，但我确实没拿，可能是别人拿走了",
+        "how_interpretation_drives_action": "她继续翻找自己的书包，并小声回答老师说自己没拿"
+      }
+    ],
+    "concrete_problem": "赵朔是否应该在老师询问时承认登记表在自己书包里？",
+    "pressure": "老师正在追问，时间紧迫，赵朔必须在几秒内决定是否承认",
+    "turning_point": "赵朔选择拉上书包拉链并沉默，将责任推向陈可",
+    "end_condition": "老师认定是陈可的责任，并让她明天叫家长，赵朔没有被发现",
+    "forbidden": [
+      "赵朔主动承认",
+      "陈可发现真相",
+      "老师发现登记表在赵朔书包里",
+      "出现暖灯、猫或总结性安慰",
+      "场景以和解或问题解决收尾"
+    ],
+    "causal_transitions": [
+      {
+        "id": "CT01",
+        "kind": "evidence_to_action",
+        "visible_trigger": "赵朔看到登记表一角露在自己书包里，同时听到老师问陈可登记表在哪",
+        "character_interpretation": "赵朔认为老师已经怀疑陈可，自己如果现在承认会被留下训话，不如沉默让事情过去",
+        "character_next_action": "赵朔迅速拉上书包拉链，假装继续扫地，避开老师目光",
+        "rejected_alternative": "赵朔可以当场拿出登记表并承认是自己不小心夹带的",
+        "immediate_consequence": "老师没有看到赵朔的动作，继续追问陈可，陈可无法解释，被老师认定是责任方",
+        "counterfactual_without_action": "如果赵朔没有拉上拉链，老师可能会注意到书包里的登记表",
+        "consequence_would_still_happen": false,
+        "state_delta": {
+          "before": "登记表在赵朔书包里，老师尚未确定怀疑对象",
+          "after": "老师认定陈可弄丢了登记表，赵朔的沉默使得陈可成为替罪羊"
+        },
+        "cost_or_commitment": "赵朔背负了内疚，但暂时避免了被老师留下的后果",
+        "next_constraint": "赵朔现在不能主动交出登记表，否则会被发现之前撒谎",
+        "reader_must_infer": "赵朔的沉默不是偶然，而是故意选择牺牲陈可来保全自己",
+        "narrator_must_not_state": [
+          "赵朔故意陷害陈可",
+          "陈可完全无辜"
+        ]
+      }
+    ],
+    "chapter_contract_check": {
+      "function_aligned": true,
+      "must_deliver_covered": true,
+      "must_not_deliver_respected": true,
+      "main_change_enabled": true,
+      "main_payoff_prepared": true,
+      "ending_hook_established": true,
+      "causal_transitions_grounded": true,
+      "reader_inference_not_pre_resolved": true,
+      "scene_state_reconstructed": true,
+      "information_sources_legal": true,
+      "character_choice_is_real": true,
+      "consequence_is_counterfactual": true,
+      "state_delta_is_nonempty": true,
+      "next_constraint_is_new": true,
+      "stop_state_is_visible": true,
+      "stop_state_changes_future_actions": true
+    },
+    "tempo_guardrails": {
+      "entry_pressure": "老师走进教室，问陈可登记表在哪",
+      "dominant_pressure": {
+        "kind": "social_friction",
+        "description": "赵朔在自我保护和同伴责任之间的冲突，以及陈可被冤枉时的无助"
+      },
+      "allowed_viewpoint_misread": "陈可可能认为赵朔的沉默是因为他也害怕老师，而不是故意隐瞒",
+      "disclosure_cap": 0,
+      "must_remain_unclassified": [
+        "赵朔内心的真实愧疚感"
+      ],
+      "stop_state": {
+        "type": "unresolved_problem",
+        "visible_fact": "老师让陈可明天叫家长，赵朔背着书包离开教室",
+        "what_is_now_different": "错误已经造成，陈可将承担后果，而赵朔带着秘密离开",
+        "must_not_append": "不得解释陈可是否会真的叫家长，或赵朔之后是否会后悔"
+      },
+      "final_line_must_include": ""
+    }
+  }
+}

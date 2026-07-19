@@ -1,0 +1,13 @@
+{
+  "blind_mapping": {
+    "text_a": {
+      "source": "writer_brief_vnext",
+      "candidate_id": null
+    },
+    "text_b": {
+      "source": "writer",
+      "candidate_id": "ac5f95e7-aebc-442b-9c0c-3a3ab5e8f88c"
+    }
+  },
+  "vnext_writer_candidate_id": "59977758-c54a-4bb4-9f7b-be8043474f5b"
+}

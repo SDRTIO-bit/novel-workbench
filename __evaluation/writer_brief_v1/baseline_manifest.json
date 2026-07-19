@@ -1,11 +1,11 @@
 {
   "batch": "WRITER_BRIEF_AB_TEST_V1",
-  "git_commit": "551ff97d2c51bd68bea101c40ceba5a347f55d62",
+  "git_commit": "7b59c6809988d684a18610d369aa5871f652d8ff",
   "baseline_tag": "evaluation-baseline-v1",
   "baseline_commit": "c99fde116c0d01ff34596cbec3d5ae315caf80a8",
   "writer_brief_compiler": {
     "path": "apps/api/app/services/writer_brief.py",
-    "sha256": "fd0810605949a4f2e9555ff3d4f18f8f61ecdc3a11f6f4195740f2e2c87a0bfd"
+    "sha256": "2f8ddaab6dd5bd4ea554bdd1360eda4773ebf94a158ee520f6337cd6937676e7"
   },
   "generation_service": {
     "path": "apps/api/app/services/generation_service.py",
@@ -27,20 +27,40 @@
         "timeout_seconds": 300,
         "response_format": "text"
       },
-      "status": "stopped_preflight",
+      "status": "completed",
       "preflight": {
-        "passed": false,
-        "errors": [
-          "WRITER_BRIEF_FACT_CAP_UNDEFINED",
-          "WRITER_BRIEF_REQUIRED_FIELD_MISSING:unknown_information",
-          "WRITER_BRIEF_REQUIRED_FIELD_MISSING:current_assumption",
-          "WRITER_BRIEF_REQUIRED_FIELD_MISSING:assumption_basis"
-        ],
-        "brief_characters": 1848,
-        "brief_estimated_tokens": 462,
-        "prompt_characters": 2039,
-        "prompt_estimated_tokens": 510,
-        "active_project_facts_cap": null
+        "passed": true,
+        "errors": [],
+        "brief_characters": 1035,
+        "brief_estimated_tokens": 259,
+        "prompt_characters": 1226,
+        "prompt_estimated_tokens": 307,
+        "active_project_facts_count": 0,
+        "active_project_facts_cap": 5
+      },
+      "vnext_writer": {
+        "candidate_id": "37600094-3ae6-4443-aff3-290238446594",
+        "attempt_number": 3,
+        "planner_candidate_id": "d9d44c85-72dd-4766-a007-1f64adb867c3",
+        "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+        "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+        "model_id": "deepseek-chat",
+        "parameters": {
+          "temperature": 0.7,
+          "top_p": 1.0,
+          "max_output_tokens": 1800,
+          "timeout_seconds": 300,
+          "response_format": "text"
+        },
+        "raw_response": "门板刚靠上去，铜铃响过之后，女孩仍然站在原处不动。\n\n老陈的手还搭在门板上沿，指腹蹭过木纹里嵌着的旧漆。铜铃的余音在空气里慢慢化开，像一滴墨落进水里。他侧过身，余光扫见人行道上的影子——那个背着书包的小女孩没有走。\n\n她站在门槛外半步远的地方，鞋尖在水泥地上来回蹭着，像是要把什么看不见的脏东西蹭掉。书包带被她攥在手里，两根带子拧成了一股，指节泛白。\n\n阿橘从柜台边站起来，尾巴尖慢慢扫了一下，又蹲回去。\n\n老陈没有开口。他把门板往内侧让了让，门缝正好够一个孩子侧身通过。然后他转身往柜台走，步子不快不慢，拖鞋在旧木地板上发出轻微的啪嗒声。\n\n身后没有脚步声。\n\n他走到柜台边，拿起搪瓷缸，拧开盖子喝了口水。余光里，门缝的光线被什么东西挡了一下。\n\n铜铃又响了一声。\n\n很轻，像是被谁用手掌拢住了铃舌，只让那一丝金属的颤动从指缝间漏出来。\n\n老陈放下搪瓷缸，听见了布料蹭过门框的声音。\n\n他转过身。\n\n女孩已经站在了书店里，双脚踩在旧木地板上，书包带还攥在手里，但不再拧着了。她站在门边第一排书架和墙壁之间的阴影里，像一只刚钻进屋檐的猫，随时准备再退出去。\n\n阿橘从柜台边跳下来，四只脚掌无声落地，朝女孩的方向走了两步，又停下。\n\n女孩没有动。她看着那只橘色的猫，手指在书包带上松了松，又攥紧。\n\n老陈拿起搪瓷缸，又喝了一口水。他把缸子放回柜台，从抽屉里摸出一块干净的棉布，开始擦柜台面上并不存在的灰。\n\n阿橘又往前走了两步。\n\n它的尾巴竖着，尾尖微微弯曲，像一根被风吹动的芦苇。它走到女孩脚边，仰起头，鼻尖轻轻翕动。\n\n女孩低头看着它。\n\n她的手从书包带上松开，垂在身侧。过了几秒，那只手慢慢伸出去，手背朝前，指节微微弯曲。\n\n阿橘没有躲。\n\n它的鼻尖碰到了女孩的手背，凉凉的，湿湿的。\n\n女孩的手没有缩回去。",
+        "text_output": "门板刚靠上去，铜铃响过之后，女孩仍然站在原处不动。\n\n老陈的手还搭在门板上沿，指腹蹭过木纹里嵌着的旧漆。铜铃的余音在空气里慢慢化开，像一滴墨落进水里。他侧过身，余光扫见人行道上的影子——那个背着书包的小女孩没有走。\n\n她站在门槛外半步远的地方，鞋尖在水泥地上来回蹭着，像是要把什么看不见的脏东西蹭掉。书包带被她攥在手里，两根带子拧成了一股，指节泛白。\n\n阿橘从柜台边站起来，尾巴尖慢慢扫了一下，又蹲回去。\n\n老陈没有开口。他把门板往内侧让了让，门缝正好够一个孩子侧身通过。然后他转身往柜台走，步子不快不慢，拖鞋在旧木地板上发出轻微的啪嗒声。\n\n身后没有脚步声。\n\n他走到柜台边，拿起搪瓷缸，拧开盖子喝了口水。余光里，门缝的光线被什么东西挡了一下。\n\n铜铃又响了一声。\n\n很轻，像是被谁用手掌拢住了铃舌，只让那一丝金属的颤动从指缝间漏出来。\n\n老陈放下搪瓷缸，听见了布料蹭过门框的声音。\n\n他转过身。\n\n女孩已经站在了书店里，双脚踩在旧木地板上，书包带还攥在手里，但不再拧着了。她站在门边第一排书架和墙壁之间的阴影里，像一只刚钻进屋檐的猫，随时准备再退出去。\n\n阿橘从柜台边跳下来，四只脚掌无声落地，朝女孩的方向走了两步，又停下。\n\n女孩没有动。她看着那只橘色的猫，手指在书包带上松了松，又攥紧。\n\n老陈拿起搪瓷缸，又喝了一口水。他把缸子放回柜台，从抽屉里摸出一块干净的棉布，开始擦柜台面上并不存在的灰。\n\n阿橘又往前走了两步。\n\n它的尾巴竖着，尾尖微微弯曲，像一根被风吹动的芦苇。它走到女孩脚边，仰起头，鼻尖轻轻翕动。\n\n女孩低头看着它。\n\n她的手从书包带上松开，垂在身侧。过了几秒，那只手慢慢伸出去，手背朝前，指节微微弯曲。\n\n阿橘没有躲。\n\n它的鼻尖碰到了女孩的手背，凉凉的，湿湿的。\n\n女孩的手没有缩回去。",
+        "input_tokens": 1413,
+        "output_tokens": 520,
+        "finish_reason": "stop",
+        "latency_ms": 11839,
+        "error_code": null,
+        "error_message": null,
+        "is_selected": false
       }
     },
     {
@@ -57,20 +77,40 @@
         "timeout_seconds": 300,
         "response_format": "text"
       },
-      "status": "stopped_preflight",
+      "status": "completed",
       "preflight": {
-        "passed": false,
-        "errors": [
-          "WRITER_BRIEF_FACT_CAP_UNDEFINED",
-          "WRITER_BRIEF_REQUIRED_FIELD_MISSING:unknown_information",
-          "WRITER_BRIEF_REQUIRED_FIELD_MISSING:current_assumption",
-          "WRITER_BRIEF_REQUIRED_FIELD_MISSING:assumption_basis"
-        ],
-        "brief_characters": 1528,
-        "brief_estimated_tokens": 382,
-        "prompt_characters": 1730,
-        "prompt_estimated_tokens": 433,
-        "active_project_facts_cap": null
+        "passed": true,
+        "errors": [],
+        "brief_characters": 872,
+        "brief_estimated_tokens": 218,
+        "prompt_characters": 1074,
+        "prompt_estimated_tokens": 269,
+        "active_project_facts_count": 0,
+        "active_project_facts_cap": 5
+      },
+      "vnext_writer": {
+        "candidate_id": "59977758-c54a-4bb4-9f7b-be8043474f5b",
+        "attempt_number": 2,
+        "planner_candidate_id": "ab3461b9-d2d0-42a0-b594-237432670478",
+        "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+        "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+        "model_id": "deepseek-chat",
+        "parameters": {
+          "temperature": 0.7,
+          "top_p": 1.0,
+          "max_output_tokens": 4096,
+          "timeout_seconds": 300,
+          "response_format": "text"
+        },
+        "raw_response": "晨会的队伍刚站定，林澈就看见了。\n\n周宁从教学楼里跑出来，校服外套敞着，边跑边把胳膊往袖子里伸。他站进队伍时还在喘，随手把拉链拉到顶，然后整了整领口——但最上面那颗扣子扣进了第二个扣眼，整个领子歪向右边，露出一截里面的白衬衫领。\n\n周围已经有人在看了。前排的女生侧过头，又迅速转回去，肩膀微微抖了一下。后排的男生用胳膊肘碰了碰同伴，下巴朝周宁的方向抬了抬。\n\n周宁浑然不觉。他正低头检查自己的鞋带，然后直起身，准备往点名台的方向走——今天轮到他做晨会值日报告，要站在全校面前念五分钟的检查通报。\n\n林澈站在队伍第三排，离周宁隔了四个人。他不能喊，不能走过去拍他肩膀，不能做任何会引起更多人注意的事。点名台上有教导主任，台下有二十多个班，周宁一旦走上去，那个歪掉的领子会被所有人看见。\n\n林澈把手伸进口袋，摸到一枚备用扣子——上周自己校服掉扣子时随手放进去的。他捏着那枚扣子，又松开。\n\n来不及缝。\n\n周宁已经迈出一步。\n\n林澈迅速解开自己校服最上面的两颗扣子，又扣回去——故意把第一颗扣进了第二个扣眼。领子立刻歪向左边，和右边对称地扯出一个别扭的角度。\n\n然后他抬起头，看向周宁的方向，用手轻轻抚了抚自己的领口，像是整理，又像是示意什么。\n\n周宁的目光扫过来，停住了。\n\n他看见林澈的领子歪着，扣子错位，像是穿衣服时没注意。他下意识想笑——然后低头看了一眼自己的领口。\n\n手抬起来，摸到第一颗扣子，顺着往下——第二个扣眼里有一颗扣子，第三个扣眼里也有一颗。他的手指停在第二个扣眼处，顿了两秒。\n\n林澈已经低头，假装在看自己的鞋。他把自己的扣子重新扣好，动作很轻，没有抬头。\n\n周宁把拉链拉下来，解开最上面的扣子，重新对准扣眼，一颗一颗扣回去。拉链拉好，领子正了。\n\n他整了整袖口，继续走向点名台。\n\n林澈站在队伍里，目光平视前方。\n\n周宁的扣子已经整齐，他稳步走上点名台。",
+        "text_output": "晨会的队伍刚站定，林澈就看见了。\n\n周宁从教学楼里跑出来，校服外套敞着，边跑边把胳膊往袖子里伸。他站进队伍时还在喘，随手把拉链拉到顶，然后整了整领口——但最上面那颗扣子扣进了第二个扣眼，整个领子歪向右边，露出一截里面的白衬衫领。\n\n周围已经有人在看了。前排的女生侧过头，又迅速转回去，肩膀微微抖了一下。后排的男生用胳膊肘碰了碰同伴，下巴朝周宁的方向抬了抬。\n\n周宁浑然不觉。他正低头检查自己的鞋带，然后直起身，准备往点名台的方向走——今天轮到他做晨会值日报告，要站在全校面前念五分钟的检查通报。\n\n林澈站在队伍第三排，离周宁隔了四个人。他不能喊，不能走过去拍他肩膀，不能做任何会引起更多人注意的事。点名台上有教导主任，台下有二十多个班，周宁一旦走上去，那个歪掉的领子会被所有人看见。\n\n林澈把手伸进口袋，摸到一枚备用扣子——上周自己校服掉扣子时随手放进去的。他捏着那枚扣子，又松开。\n\n来不及缝。\n\n周宁已经迈出一步。\n\n林澈迅速解开自己校服最上面的两颗扣子，又扣回去——故意把第一颗扣进了第二个扣眼。领子立刻歪向左边，和右边对称地扯出一个别扭的角度。\n\n然后他抬起头，看向周宁的方向，用手轻轻抚了抚自己的领口，像是整理，又像是示意什么。\n\n周宁的目光扫过来，停住了。\n\n他看见林澈的领子歪着，扣子错位，像是穿衣服时没注意。他下意识想笑——然后低头看了一眼自己的领口。\n\n手抬起来，摸到第一颗扣子，顺着往下——第二个扣眼里有一颗扣子，第三个扣眼里也有一颗。他的手指停在第二个扣眼处，顿了两秒。\n\n林澈已经低头，假装在看自己的鞋。他把自己的扣子重新扣好，动作很轻，没有抬头。\n\n周宁把拉链拉下来，解开最上面的扣子，重新对准扣眼，一颗一颗扣回去。拉链拉好，领子正了。\n\n他整了整袖口，继续走向点名台。\n\n林澈站在队伍里，目光平视前方。\n\n周宁的扣子已经整齐，他稳步走上点名台。",
+        "input_tokens": 1270,
+        "output_tokens": 523,
+        "finish_reason": "stop",
+        "latency_ms": 13171,
+        "error_code": null,
+        "error_message": null,
+        "is_selected": false
       }
     },
     {
@@ -87,20 +127,40 @@
         "timeout_seconds": 300,
         "response_format": "text"
       },
-      "status": "stopped_preflight",
+      "status": "completed",
       "preflight": {
-        "passed": false,
-        "errors": [
-          "WRITER_BRIEF_FACT_CAP_UNDEFINED",
-          "WRITER_BRIEF_REQUIRED_FIELD_MISSING:unknown_information",
-          "WRITER_BRIEF_REQUIRED_FIELD_MISSING:current_assumption",
-          "WRITER_BRIEF_REQUIRED_FIELD_MISSING:assumption_basis"
-        ],
-        "brief_characters": 1411,
-        "brief_estimated_tokens": 353,
-        "prompt_characters": 1613,
-        "prompt_estimated_tokens": 404,
-        "active_project_facts_cap": null
+        "passed": true,
+        "errors": [],
+        "brief_characters": 812,
+        "brief_estimated_tokens": 203,
+        "prompt_characters": 1014,
+        "prompt_estimated_tokens": 254,
+        "active_project_facts_count": 0,
+        "active_project_facts_cap": 5
+      },
+      "vnext_writer": {
+        "candidate_id": "2b58454a-9865-4c10-8c27-e1c096726cce",
+        "attempt_number": 2,
+        "planner_candidate_id": "ea5a7149-2c4e-4525-b83b-f8de428dcdee",
+        "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+        "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+        "model_id": "deepseek-chat",
+        "parameters": {
+          "temperature": 0.7,
+          "top_p": 1.0,
+          "max_output_tokens": 4096,
+          "timeout_seconds": 300,
+          "response_format": "text"
+        },
+        "raw_response": "走廊尽头的暮色像一层薄灰，把顾言的轮廓剪成一道细长的影子。她挂断电话，手机屏幕的光在昏暗里闪了一下就灭了，然后她转身朝楼梯口走去，运动鞋踩在地砖上几乎没有声音。\n\n许遥站在转角处，手指还搭在墙面上没有松开。\n\n“……明天一早就走，钥匙我会放在门卫。”\n\n这句话像一根针，扎进她耳膜里就没拔出来。前半句她没听到——谁的电话，什么走，走去哪里——但后半句太清楚了。钥匙放在门卫，意味着不会再回来用这把钥匙。搬走。顾言要搬走。\n\n许遥想喊住她。嘴张开了，喉咙里却没发出声音。她看见顾言的背影已经拐过楼梯转角，灰蓝色的卫衣帽子在光影里晃了一下就消失了。\n\n追上去问清楚？来得及，楼梯不长，顾言走得并不快。\n\n可她没追。\n\n她转身朝另一个方向跑去——楼下，门卫室。\n\n走廊里的声控灯被她脚步震亮了一盏，又在她跑过之后灭了。许遥跑下楼梯的时候脑子里只有一个念头：先把钥匙拿到手。如果顾言真的要走，钥匙交出去了，那就没有回头路了。如果钥匙还在门卫那里，她还能拦住她，还能问清楚。\n\n门卫室亮着白炽灯，老张头正低头翻一本杂志。许遥推门进去的时候带起一阵风，桌上的报纸被掀了一下。\n\n“张叔，顾言有没有放钥匙在这儿？”\n\n老张头抬起头看了她一眼，又低头翻了翻桌面上一个塑料小筐。筐里有一把银色的钥匙，挂在印着超市logo的钥匙扣上。他拿起来递给她：“刚放的，就刚才。”\n\n许遥接过来。钥匙扣上的塑料片冰凉，硌在手心里。\n\n“她说什么了吗？”许遥问。\n\n“就说放这儿，明天有人来拿。”老张头又低下头翻杂志，显然不觉得这事有什么特别。\n\n许遥攥紧钥匙，转身往外跑。她跑回宿舍楼，跑上三楼，走廊里已经没有人了。顾言的宿舍门关着，门缝下面没有光。她抬手敲了两下，没人应。又敲了三下，还是没人。\n\n她掏出手机打顾言的电话。\n\n嘟——嘟——嘟——嘟——\n\n响了六声，无人接听。自动挂断。\n\n许遥站在走廊里，手里攥着那把钥匙，手机屏幕的光照着她的脸。走廊空荡荡的，声控灯在她停下来之后缓缓熄灭，只剩下手机屏幕那一小片白。\n\n她握着钥匙站在走廊里，顾言已经不见了。",
+        "text_output": "走廊尽头的暮色像一层薄灰，把顾言的轮廓剪成一道细长的影子。她挂断电话，手机屏幕的光在昏暗里闪了一下就灭了，然后她转身朝楼梯口走去，运动鞋踩在地砖上几乎没有声音。\n\n许遥站在转角处，手指还搭在墙面上没有松开。\n\n“……明天一早就走，钥匙我会放在门卫。”\n\n这句话像一根针，扎进她耳膜里就没拔出来。前半句她没听到——谁的电话，什么走，走去哪里——但后半句太清楚了。钥匙放在门卫，意味着不会再回来用这把钥匙。搬走。顾言要搬走。\n\n许遥想喊住她。嘴张开了，喉咙里却没发出声音。她看见顾言的背影已经拐过楼梯转角，灰蓝色的卫衣帽子在光影里晃了一下就消失了。\n\n追上去问清楚？来得及，楼梯不长，顾言走得并不快。\n\n可她没追。\n\n她转身朝另一个方向跑去——楼下，门卫室。\n\n走廊里的声控灯被她脚步震亮了一盏，又在她跑过之后灭了。许遥跑下楼梯的时候脑子里只有一个念头：先把钥匙拿到手。如果顾言真的要走，钥匙交出去了，那就没有回头路了。如果钥匙还在门卫那里，她还能拦住她，还能问清楚。\n\n门卫室亮着白炽灯，老张头正低头翻一本杂志。许遥推门进去的时候带起一阵风，桌上的报纸被掀了一下。\n\n“张叔，顾言有没有放钥匙在这儿？”\n\n老张头抬起头看了她一眼，又低头翻了翻桌面上一个塑料小筐。筐里有一把银色的钥匙，挂在印着超市logo的钥匙扣上。他拿起来递给她：“刚放的，就刚才。”\n\n许遥接过来。钥匙扣上的塑料片冰凉，硌在手心里。\n\n“她说什么了吗？”许遥问。\n\n“就说放这儿，明天有人来拿。”老张头又低下头翻杂志，显然不觉得这事有什么特别。\n\n许遥攥紧钥匙，转身往外跑。她跑回宿舍楼，跑上三楼，走廊里已经没有人了。顾言的宿舍门关着，门缝下面没有光。她抬手敲了两下，没人应。又敲了三下，还是没人。\n\n她掏出手机打顾言的电话。\n\n嘟——嘟——嘟——嘟——\n\n响了六声，无人接听。自动挂断。\n\n许遥站在走廊里，手里攥着那把钥匙，手机屏幕的光照着她的脸。走廊空荡荡的，声控灯在她停下来之后缓缓熄灭，只剩下手机屏幕那一小片白。\n\n她握着钥匙站在走廊里，顾言已经不见了。",
+        "input_tokens": 1209,
+        "output_tokens": 560,
+        "finish_reason": "stop",
+        "latency_ms": 11523,
+        "error_code": null,
+        "error_message": null,
+        "is_selected": false
       }
     },
     {
@@ -117,20 +177,40 @@
         "timeout_seconds": 300,
         "response_format": "text"
       },
-      "status": "stopped_preflight",
+      "status": "completed",
       "preflight": {
-        "passed": false,
-        "errors": [
-          "WRITER_BRIEF_FACT_CAP_UNDEFINED",
-          "WRITER_BRIEF_REQUIRED_FIELD_MISSING:unknown_information",
-          "WRITER_BRIEF_REQUIRED_FIELD_MISSING:current_assumption",
-          "WRITER_BRIEF_REQUIRED_FIELD_MISSING:assumption_basis"
-        ],
-        "brief_characters": 1432,
-        "brief_estimated_tokens": 358,
-        "prompt_characters": 1634,
-        "prompt_estimated_tokens": 409,
-        "active_project_facts_cap": null
+        "passed": true,
+        "errors": [],
+        "brief_characters": 831,
+        "brief_estimated_tokens": 208,
+        "prompt_characters": 1033,
+        "prompt_estimated_tokens": 259,
+        "active_project_facts_count": 0,
+        "active_project_facts_cap": 5
+      },
+      "vnext_writer": {
+        "candidate_id": "9ff06242-d78d-4836-b9ec-e8f2706a3a0e",
+        "attempt_number": 2,
+        "planner_candidate_id": "8ca4df8f-2d8a-43bf-98f2-27a6c86a3484",
+        "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+        "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+        "model_id": "deepseek-chat",
+        "parameters": {
+          "temperature": 0.7,
+          "top_p": 1.0,
+          "max_output_tokens": 4096,
+          "timeout_seconds": 300,
+          "response_format": "text"
+        },
+        "raw_response": "放学后的教室光线已经偏暗，只有靠窗那一排还留着些余晖。赵朔握着扫帚，假装在清理讲台边的碎纸屑，目光却一直落在讲台上。\n\n老师翻着桌上的文件堆，眉头皱起来：“陈可，今天你们组负责实验登记表，放哪儿了？”\n\n陈可从座位上站起来，把书包里里外外翻了一遍，声音有点紧：“我……我记得下午放在桌上了，可能谁收起来了？”\n\n“谁收起来？”老师把桌上的讲义叠了叠，“这表是教务处要的，明天一早得交。你们组就你一个值日生？”\n\n“还有赵朔。”陈可朝他的方向看了一眼。\n\n赵朔的动作顿了一瞬，然后继续把碎纸往簸箕里扫。他能感觉到书包侧袋里那张登记表的纸角硌着自己的后背，拉链没拉严，露出一小截白边。\n\n老师走到陈可桌前：“你再找找，是不是夹在书里了。”\n\n陈可把课本一本本抽出来翻，动作越来越急。她的手指翻书页的速度很快，书脊撞在桌面上发出闷响。赵朔看见她低头时后颈的碎发垂下来，她伸手拨了一下，指尖都在抖。\n\n他张了张嘴。\n\n“赵朔，你看见登记表没？”老师忽然转头问他。\n\n赵朔的扫帚停住了。他感觉到书包里那张纸的重量，只要走过去，拉开拉链，就能结束这件事。但他看见老师脸上的表情——那种已经认定是某个学生粗心的不耐烦。他想起上学期王浩弄丢班级日志，被叫家长时走廊里传出的训斥声。\n\n“没看见。”他说。\n\n声音比他自己预想的要平静。\n\n老师转回身，语气已经带上明显的不悦：“陈可，你们组就两个人，一个说没看见，那表总不能自己长腿跑了。你今天下午到底放哪儿了？”\n\n陈可停下翻书的动作，站在原地没动。她的书包还敞着口，课本歪歪扭扭摞在桌上。她没再解释，只是把手垂下来，指尖捏着校服裤缝。\n\n赵朔把簸箕里的碎纸倒进垃圾桶，然后弯腰去捡靠近门口的一张废纸。他顺手把书包拉链拉严实了——动作很轻，几乎没发出声音。\n\n“明天让你家长来一趟。”老师说，“这事得说清楚。”\n\n陈可没有回答。她把桌上的课本一本本收进书包，动作很慢，像是在确认每本书都放对了位置。赵朔背对着她，把扫帚放回墙角，然后拎起书包搭在肩上。\n\n教室里日光灯管嗡嗡响着。他走出门口时，余光扫见陈可还站在座位旁，书包带子从她肩上滑下来一半，她没去拉。\n\n赵朔没有回头。他攥紧书包带子，朝楼梯口走去。",
+        "text_output": "放学后的教室光线已经偏暗，只有靠窗那一排还留着些余晖。赵朔握着扫帚，假装在清理讲台边的碎纸屑，目光却一直落在讲台上。\n\n老师翻着桌上的文件堆，眉头皱起来：“陈可，今天你们组负责实验登记表，放哪儿了？”\n\n陈可从座位上站起来，把书包里里外外翻了一遍，声音有点紧：“我……我记得下午放在桌上了，可能谁收起来了？”\n\n“谁收起来？”老师把桌上的讲义叠了叠，“这表是教务处要的，明天一早得交。你们组就你一个值日生？”\n\n“还有赵朔。”陈可朝他的方向看了一眼。\n\n赵朔的动作顿了一瞬，然后继续把碎纸往簸箕里扫。他能感觉到书包侧袋里那张登记表的纸角硌着自己的后背，拉链没拉严，露出一小截白边。\n\n老师走到陈可桌前：“你再找找，是不是夹在书里了。”\n\n陈可把课本一本本抽出来翻，动作越来越急。她的手指翻书页的速度很快，书脊撞在桌面上发出闷响。赵朔看见她低头时后颈的碎发垂下来，她伸手拨了一下，指尖都在抖。\n\n他张了张嘴。\n\n“赵朔，你看见登记表没？”老师忽然转头问他。\n\n赵朔的扫帚停住了。他感觉到书包里那张纸的重量，只要走过去，拉开拉链，就能结束这件事。但他看见老师脸上的表情——那种已经认定是某个学生粗心的不耐烦。他想起上学期王浩弄丢班级日志，被叫家长时走廊里传出的训斥声。\n\n“没看见。”他说。\n\n声音比他自己预想的要平静。\n\n老师转回身，语气已经带上明显的不悦：“陈可，你们组就两个人，一个说没看见，那表总不能自己长腿跑了。你今天下午到底放哪儿了？”\n\n陈可停下翻书的动作，站在原地没动。她的书包还敞着口，课本歪歪扭扭摞在桌上。她没再解释，只是把手垂下来，指尖捏着校服裤缝。\n\n赵朔把簸箕里的碎纸倒进垃圾桶，然后弯腰去捡靠近门口的一张废纸。他顺手把书包拉链拉严实了——动作很轻，几乎没发出声音。\n\n“明天让你家长来一趟。”老师说，“这事得说清楚。”\n\n陈可没有回答。她把桌上的课本一本本收进书包，动作很慢，像是在确认每本书都放对了位置。赵朔背对着她，把扫帚放回墙角，然后拎起书包搭在肩上。\n\n教室里日光灯管嗡嗡响着。他走出门口时，余光扫见陈可还站在座位旁，书包带子从她肩上滑下来一半，她没去拉。\n\n赵朔没有回头。他攥紧书包带子，朝楼梯口走去。",
+        "input_tokens": 1209,
+        "output_tokens": 607,
+        "finish_reason": "stop",
+        "latency_ms": 14291,
+        "error_code": null,
+        "error_message": null,
+        "is_selected": false
       }
     }
   ],

@@ -1,0 +1,50 @@
+{
+  "case_id": "CASE-002",
+  "blind_pass": {
+    "preferred": "B",
+    "limited_information": "tie",
+    "concrete_problem": "tie",
+    "choice_and_consequence": "B",
+    "ending_restraint": "tie",
+    "prose_naturalness": "B",
+    "evidence": [
+      "A adds an unplanned ???????? and a ??????, while B stays closer to the immediate assembly problem.",
+      "Both end on ????????????????????? without explaining whether he understood the help."
+    ]
+  },
+  "contract_pass": {
+    "text_a": {
+      "visible_trigger": "present",
+      "rejected_alternative": "partial",
+      "character_choice": "present",
+      "cost_or_commitment": "present",
+      "immediate_consequence": "present",
+      "next_constraint": "partial",
+      "stop_state": "present",
+      "must_not_append": "present"
+    },
+    "text_b": {
+      "visible_trigger": "present",
+      "rejected_alternative": "partial",
+      "character_choice": "present",
+      "cost_or_commitment": "present",
+      "immediate_consequence": "present",
+      "next_constraint": "partial",
+      "stop_state": "present",
+      "must_not_append": "present"
+    }
+  },
+  "pipeline_pass": {
+    "critic_diagnosis_correct": false,
+    "reviser_fixed_confirmed_issues": false,
+    "reviser_added_new_facts": false,
+    "judge_local_choices_supported": false,
+    "final_regressed_from_writer": false,
+    "evidence": [
+      "Writer-only A/B: downstream pipeline stages were intentionally not run.",
+      "A adds a material Planner-external duty/report and spare-button detail; B adds no material Planner-external fact."
+    ]
+  },
+  "confidence": 0.82,
+  "notes": "Blind pass was completed before source mapping. A is WriterBrief vNext after mapping."
+}

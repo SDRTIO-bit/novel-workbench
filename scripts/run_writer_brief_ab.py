@@ -26,24 +26,18 @@ sys.path.insert(0, str(API_ROOT))
 from app.models.generation import GenerationCandidate
 from app.services.context_service import ContextService
 from app.services.generation_service import GenerationService
+from app.services.writer_brief import MAX_ACTIVE_PROJECT_FACTS, validate_writer_brief
 from scripts.run_generalization_batch import _json
 from tools.novel_eval_mcp.export import blind_mapping, build_blind_pair, write_json
 
 
 SEED = 20260719
 CASES = ("CASE-001", "CASE-002", "CASE-003", "CASE-004")
-REQUIRED_BRIEF_FIELDS = {
-    "opening_fact": ("causal_transitions", 0, "visible_trigger"),
-    "known_information": ("scene_state", "visible_facts"),
-    "unknown_information": ("unknown_information",),
-    "current_assumption": ("current_assumption",),
-    "assumption_basis": ("assumption_basis",),
-    "next_action": ("causal_transitions", 0, "character_next_action"),
-    "immediate_consequence": ("causal_transitions", 0, "immediate_consequence"),
-    "next_constraint": ("causal_transitions", 0, "next_constraint"),
-    "stop_fact": ("stop_state", "visible_fact"),
-    "must_not_append": ("stop_state", "must_not_append"),
-}
+REQUIRED_BRIEF_FIELDS = (
+    "opening_fact", "known_facts", "unknown_facts", "current_assumption",
+    "assumption_basis", "next_action", "immediate_consequence", "next_constraint",
+    "active_project_facts", "stop_fact", "must_not_append",
+)
 
 
 def _git_commit() -> str:
@@ -112,13 +106,15 @@ def _audit(brief: dict[str, Any], prompt: str, planner: dict[str, Any]) -> dict[
     }
     if _contains_key(brief, forbidden):
         errors.append("WRITER_BRIEF_FORBIDDEN_FIELD")
-    # The current compiler has no declared active-project-facts cap.  This is
-    # a failed audit rather than an invented cap for the experiment.
-    errors.append("WRITER_BRIEF_FACT_CAP_UNDEFINED")
-    for name, path in REQUIRED_BRIEF_FIELDS.items():
-        value = _get_path(brief, path)
-        if not value:
+    if "unknown_information" in brief:
+        errors.append("WRITER_BRIEF_NONCANONICAL_UNKNOWN_FIELD")
+    for name in REQUIRED_BRIEF_FIELDS:
+        if name not in brief:
             errors.append(f"WRITER_BRIEF_REQUIRED_FIELD_MISSING:{name}")
+    try:
+        validate_writer_brief(brief)
+    except ValueError as exc:
+        errors.append(f"WRITER_BRIEF_CONTRACT_INVALID:{exc}")
     brief_marker = "## Writer Brief（只含现场行动信息）"
     if not prompt.rstrip().endswith("并在 stop_state 成立处停止。") or brief_marker not in prompt:
         errors.append("WRITER_BRIEF_NOT_AT_PROMPT_END")
@@ -129,12 +125,20 @@ def _audit(brief: dict[str, Any], prompt: str, planner: dict[str, Any]) -> dict[
         "brief_estimated_tokens": _estimate_tokens(brief_text),
         "prompt_characters": len(prompt),
         "prompt_estimated_tokens": _estimate_tokens(prompt),
-        "active_project_facts_cap": None,
+        "active_project_facts_count": len(brief.get("active_project_facts", [])),
+        "active_project_facts_cap": MAX_ACTIVE_PROJECT_FACTS,
     }
 
 
 async def run(database: Path, root: Path) -> None:
     root.mkdir(parents=True, exist_ok=True)
+    existing_executions = [
+        root / "cases" / case_id / "execution.json" for case_id in CASES
+    ]
+    if any(path.is_file() for path in existing_executions):
+        raise RuntimeError(
+            "WRITER_BRIEF_AB_TEST_V1 evidence already exists; refusing to rerun a Writer stage"
+        )
     source_compiler = API_ROOT / "app" / "services" / "writer_brief.py"
     source_generation = API_ROOT / "app" / "services" / "generation_service.py"
     engine = create_async_engine(f"sqlite+aiosqlite:///{database}")
@@ -147,6 +151,12 @@ async def run(database: Path, root: Path) -> None:
             for case_id in CASES:
                 source = json.loads((REPO_ROOT / "__evaluation" / "cases" / case_id / "pipeline_evidence.json").read_text(encoding="utf-8"))
                 case_dir = root / "cases" / case_id
+                write_json(
+                    case_dir / "planner_contract.json",
+                    json.loads(
+                        (REPO_ROOT / "__evaluation" / "cases" / case_id / "planner_contract.json").read_text(encoding="utf-8")
+                    ),
+                )
                 writer_step = source["stages"]["writer"]
                 planner_step = source["stages"]["planner"]
                 baseline_writer = next(item for item in writer_step["candidates"] if item["candidate_id"] == writer_step["selected_candidate_id"])
@@ -230,6 +240,19 @@ async def run(database: Path, root: Path) -> None:
         "cases": manifest_cases,
         "rule": "No Planner/Critic/Reviser/Judge/TGbreak calls; at most one vNext Writer call per case; no candidate selection.",
     })
+    write_json(root / "cases_manifest.json", {
+        "batch": "WRITER_BRIEF_AB_TEST_V1",
+        "cases": [
+            {
+                "case_id": item["case_id"],
+                "status": item["status"],
+                "scene_brief": json.loads(
+                    (REPO_ROOT / "__evaluation" / "cases" / item["case_id"] / "blind_pair.json").read_text(encoding="utf-8")
+                )["scene_brief"],
+            }
+            for item in manifest_cases
+        ],
+    })
 
     stopped = [item["case_id"] for item in manifest_cases if item["status"] == "stopped_preflight"]
     case_rows = "\n".join(
@@ -253,7 +276,7 @@ async def run(database: Path, root: Path) -> None:
         "# WRITER_BRIEF_AB_TEST_V1 Evaluation Report\n\n"
         "## Execution\n\n"
         f"Cases stopped before model invocation: {', '.join(stopped) or 'none'}.\n\n"
-        "The frozen Compiler was audited without modification. It has no declared active-project-facts cap and does not emit explicit unknown_information, current_assumption, or assumption_basis fields. These violate the preflight contract for every case. No vNext Writer call, blind comparison, or contract comparison was performed; no Planner or later-stage call occurred.\n\n"
+        "The first precheck used non-canonical unknown_information and treated conditional assumption values as mandatory non-empty fields. This rerun uses the canonical WriterBrief validator shared with the compiler. No Planner, Critic, Reviser, Judge, or TGbreak call is permitted.\n\n"
         "| Case | Planner Candidate | Baseline Writer Candidate | vNext Writer Candidate | Brief characters | Writer tokens / latency | Anonymous mapping | Status |\n"
         "| --- | --- | --- | --- | ---: | --- | --- | --- |\n"
         f"{case_rows}\n\n"
