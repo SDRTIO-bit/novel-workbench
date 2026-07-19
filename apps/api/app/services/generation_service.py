@@ -55,6 +55,14 @@ CRITIC_V2_SCHEMA_NAME = "critic_v2"
 CRITIC_EVIDENCE_V1_SCHEMA_NAME = "critic_evidence_v1"
 EXPECTED_CRITIC_EVIDENCE_CONTRACT_VERSION = 1
 PLANNER_CONTRACT_VALIDATION_V1_SCHEMA_NAME = "planner_contract_validation_v1"
+NARRATIVE_BEHAVIOUR_V1 = (
+    "\n\n## 场景行动落地\n"
+    "把关键选择落实为人物对现场可见物件、位置或身体动作的处理；"
+    "让本可采用的另一条做法在行动中被放弃，不用解释性独白交代；"
+    "让承诺或代价体现为时间、空间、资源或关系状态的具体变化；"
+    "让关键行动引出他人可观察的反应或反制；"
+    "在一个新发生、可验证的事实处结束。不得推翻已给出的事实边界。"
+)
 
 
 def _expected_planner_contract_version(stage: str, prompt_meta: dict | None) -> int | None:
@@ -187,7 +195,12 @@ class GenerationService:
         ctx = await ctx_service.assemble(
             ctx_req, resolve_prompt=writer_prompt_mode != "tgbreak"
         )
-        self._append_writer_brief(stage, writer_prompt_mode, ctx)
+        self._append_writer_brief(
+            stage,
+            writer_prompt_mode,
+            ctx,
+            override.get("writer_behavior_mode") if stage == "writer" else None,
+        )
         await self._append_judge_selection_envelope(run_id, stage, ctx)
         step.input_snapshot_json = ctx["input_snapshot_hash"]
 
@@ -687,20 +700,28 @@ class GenerationService:
         return ctx_req
 
     @staticmethod
-    def _append_writer_brief(stage: str, writer_prompt_mode: str, ctx: dict):
+    def _append_writer_brief(
+        stage: str,
+        writer_prompt_mode: str,
+        ctx: dict,
+        writer_behavior_mode: str | None = None,
+    ):
         """Place the short action brief last, adjacent to the writing order."""
         if stage != "writer" or writer_prompt_mode != "builtin":
             return
         brief = ctx.get("variables", {}).get("writer_brief")
         if not brief:
             return
-        ctx["rendered_user_prompt"] += (
+        prompt_addition = (
             "\n\n## Writer Brief（只含现场行动信息）\n"
             f"{brief}\n\n"
             "只输出场景正文；用可见行动处理这个具体麻烦，并在 stop_state 成立处停止。"
         )
+        if writer_behavior_mode == "narrative_behaviour_v1":
+            prompt_addition += NARRATIVE_BEHAVIOUR_V1
+        ctx["rendered_user_prompt"] += prompt_addition
         ctx["input_snapshot_hash"] = sha256(
-            (ctx["input_snapshot_hash"] + brief).encode("utf-8")
+            (ctx["input_snapshot_hash"] + prompt_addition).encode("utf-8")
         ).hexdigest()
 
     async def select_critic_issues(

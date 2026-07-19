@@ -178,6 +178,33 @@ def test_builtin_writer_prompt_ends_with_short_brief_not_full_planner():
     assert "chapter_contract_check" not in rendered
 
 
+def test_narrative_behaviour_instruction_is_c_only_and_hashes_into_input():
+    from app.services.generation_service import GenerationService
+
+    def context():
+        return {
+            "variables": {"writer_brief": '{"next_action":"递出点名册"}'},
+            "rendered_user_prompt": "写作指令\n",
+            "input_snapshot_hash": "snapshot",
+        }
+
+    enhanced = context()
+    GenerationService._append_writer_brief(
+        "writer", "builtin", enhanced, "narrative_behaviour_v1"
+    )
+
+    baseline = context()
+    GenerationService._append_writer_brief("writer", "builtin", baseline)
+
+    instruction = "把关键选择落实为人物对现场可见物件、位置或身体动作的处理"
+    assert instruction in enhanced["rendered_user_prompt"]
+    assert instruction not in baseline["rendered_user_prompt"]
+    assert "AI" not in enhanced["rendered_user_prompt"]
+    assert "检测" not in enhanced["rendered_user_prompt"]
+    assert enhanced["input_snapshot_hash"] != "snapshot"
+    assert enhanced["input_snapshot_hash"] != baseline["input_snapshot_hash"]
+
+
 @pytest.mark.parametrize("case_id", ["CASE-001", "CASE-002", "CASE-003", "CASE-004"])
 def test_saved_planner_candidates_compile_to_canonical_brief(case_id):
     root = Path(__file__).resolve().parents[3]
