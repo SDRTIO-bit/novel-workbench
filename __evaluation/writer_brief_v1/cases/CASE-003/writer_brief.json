@@ -1,0 +1,69 @@
+{
+  "case_id": "CASE-003",
+  "planner_candidate_id": "ea5a7149-2c4e-4525-b83b-f8de428dcdee",
+  "writer_brief": {
+    "scene_goal": "许遥基于对顾言电话的误判，做出一个会造成可见麻烦的具体选择，并承担即时后果",
+    "location": "大学宿舍走廊，傍晚",
+    "time": "傍晚，日落前",
+    "concrete_problem": "许遥是否应该立即去门卫处取走顾言留下的钥匙，以此确认顾言是否真的要搬走？",
+    "pressure": "时间紧迫，顾言即将上楼消失，许遥必须在短时间内做出决定；同时她担心直接追问会破坏友谊。",
+    "scene_state": {
+      "present_characters": [
+        "许遥"
+      ],
+      "visible_facts": [
+        "许遥只听到顾言电话的后半句",
+        "顾言已经挂断电话，走向宿舍楼内",
+        "走廊光线昏暗，有暮色"
+      ],
+      "available_objects": [
+        "手机",
+        "背包",
+        "宿舍钥匙"
+      ],
+      "unresolved_problem": "许遥不确定顾言是否真的要搬走，但无法立即追问",
+      "already_existing_constraints": [
+        "许遥不能直接质问顾言，因为那会暴露她偷听电话",
+        "顾言正在上楼，即将消失在视线中"
+      ]
+    },
+    "causal_transitions": [
+      {
+        "id": "CT01",
+        "visible_trigger": "顾言挂断电话后快步走向宿舍楼，背影即将消失在楼梯转角",
+        "character_next_action": "许遥转身跑向门卫处，决定先取走钥匙再找顾言",
+        "rejected_alternative": "许遥可以追上去叫住顾言，直接询问电话内容",
+        "cost_or_commitment": "许遥放弃了直接沟通的机会，现在必须通过其他方式联系顾言",
+        "immediate_consequence": "许遥在门卫处拿到钥匙，但返回时顾言已经不在宿舍楼，且手机无人接听",
+        "next_constraint": "许遥不能立即联系到顾言，因为顾言手机无人接听"
+      }
+    ],
+    "entry_pressure": "许遥刚刚听到电话后半句，顾言即将消失在楼梯口",
+    "dominant_pressure": "许遥缺乏完整信息，必须基于误判做决定，同时时间紧迫",
+    "stop_state": {
+      "visible_fact": "许遥手握钥匙站在走廊，顾言已不见踪影",
+      "what_is_now_different": "许遥从犹豫不决变为采取了行动，但问题仍未解决，反而产生了新的障碍",
+      "must_not_append": "不得解释顾言去了哪里或为什么离开"
+    },
+    "forbidden": [
+      "不得揭示顾言真正要去哪里",
+      "不得让许遥与顾言直接对话澄清误会",
+      "不得让许遥在场景结束前得知顾言只是短暂外出而非搬走",
+      "不得出现其他角色介入澄清"
+    ]
+  },
+  "audit": {
+    "passed": false,
+    "errors": [
+      "WRITER_BRIEF_FACT_CAP_UNDEFINED",
+      "WRITER_BRIEF_REQUIRED_FIELD_MISSING:unknown_information",
+      "WRITER_BRIEF_REQUIRED_FIELD_MISSING:current_assumption",
+      "WRITER_BRIEF_REQUIRED_FIELD_MISSING:assumption_basis"
+    ],
+    "brief_characters": 1411,
+    "brief_estimated_tokens": 353,
+    "prompt_characters": 1613,
+    "prompt_estimated_tokens": 404,
+    "active_project_facts_cap": null
+  }
+}

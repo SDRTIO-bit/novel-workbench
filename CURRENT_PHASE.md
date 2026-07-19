@@ -2,7 +2,7 @@
 
 ## Status
 
-EVALUATION_BASELINE_V1_COMPLETED
+WRITER_BRIEF_AB_TEST_V1_PRECHECK_FAILED
 
 ## Evidence-based decision
 
@@ -38,14 +38,23 @@ draft automatically.
 The multi-stage pipeline has local diagnostic and fact-closure value, but has
 not demonstrated that it is more reliable than a single Writer draft.
 
+## WRITER_BRIEF_AB_TEST_V1
+
+All four reused cases stopped in the frozen preflight before any Writer call.
+The deterministic compiler omits the full Planner JSON and places the brief at
+the end of the Writer prompt, but it does not provide an explicit
+`unknown_information`, `current_assumption`, or `assumption_basis` field and
+has no declared active-project-facts cap.
+
+Therefore no blind pair, contract comparison, token comparison, or pass-rate
+claim exists for WriterBrief v1. This is an input-contract engineering failure,
+not evidence that either baseline Writer or WriterBrief Writer writes better
+prose.
+
 ## Next phase
 
-PIPELINE_VNEXT_WRITER_BRIEF
+WRITER_BRIEF_CONTRACT_DECISION_REQUIRED
 
-1. Repair Judge paragraph-label handling and retain failures as separate
-   evidence.
-2. Use a deterministic WriterBriefCompiler between Planner and Writer.
-3. Do not send the complete Planner backend output to Writer.
-4. Make Reviser patch-only; the server validates and applies patches.
-5. Re-evaluate the same four cases, comparing baseline Writer with vNext
-   Writer before treating Critic, Reviser, or Judge as primary win metrics.
+The frozen A/B protocol cannot continue until the WriterBrief input contract is
+explicitly decided. No Prompt, schema, stage, compiler, provider, or evaluation
+standard was changed during this failed precheck.

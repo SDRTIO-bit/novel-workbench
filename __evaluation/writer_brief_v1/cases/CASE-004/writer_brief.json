@@ -1,0 +1,72 @@
+{
+  "case_id": "CASE-004",
+  "planner_candidate_id": "8ca4df8f-2d8a-43bf-98f2-27a6c86a3484",
+  "writer_brief": {
+    "scene_goal": "展现赵朔因害怕被老师留下而选择隐瞒登记表，导致陈可无辜承担后果，错误已造成但未解决。",
+    "location": "教室",
+    "time": "放学后，值日打扫接近尾声",
+    "concrete_problem": "赵朔是否应该在老师询问时承认登记表在自己书包里？",
+    "pressure": "老师正在追问，时间紧迫，赵朔必须在几秒内决定是否承认",
+    "scene_state": {
+      "present_characters": [
+        "赵朔",
+        "陈可",
+        "老师"
+      ],
+      "visible_facts": [
+        "赵朔的书包拉链半开，露出登记表一角",
+        "老师站在讲台旁，正在询问登记表的下落",
+        "陈可正在整理课桌，动作有些慌乱"
+      ],
+      "available_objects": [
+        "实验室借用登记表",
+        "赵朔的书包",
+        "讲台上的班级日志"
+      ],
+      "unresolved_problem": "登记表在赵朔书包里，但老师认为可能被陈可弄丢了",
+      "already_existing_constraints": [
+        "赵朔不敢在老师面前承认是自己拿走的",
+        "陈可没有证据证明自己没拿"
+      ]
+    },
+    "causal_transitions": [
+      {
+        "id": "CT01",
+        "visible_trigger": "赵朔看到登记表一角露在自己书包里，同时听到老师问陈可登记表在哪",
+        "character_next_action": "赵朔迅速拉上书包拉链，假装继续扫地，避开老师目光",
+        "rejected_alternative": "赵朔可以当场拿出登记表并承认是自己不小心夹带的",
+        "cost_or_commitment": "赵朔背负了内疚，但暂时避免了被老师留下的后果",
+        "immediate_consequence": "老师没有看到赵朔的动作，继续追问陈可，陈可无法解释，被老师认定是责任方",
+        "next_constraint": "赵朔现在不能主动交出登记表，否则会被发现之前撒谎"
+      }
+    ],
+    "entry_pressure": "老师走进教室，问陈可登记表在哪",
+    "dominant_pressure": "赵朔在自我保护和同伴责任之间的冲突，以及陈可被冤枉时的无助",
+    "stop_state": {
+      "visible_fact": "老师让陈可明天叫家长，赵朔背着书包离开教室",
+      "what_is_now_different": "错误已经造成，陈可将承担后果，而赵朔带着秘密离开",
+      "must_not_append": "不得解释陈可是否会真的叫家长，或赵朔之后是否会后悔"
+    },
+    "forbidden": [
+      "赵朔主动承认",
+      "陈可发现真相",
+      "老师发现登记表在赵朔书包里",
+      "出现暖灯、猫或总结性安慰",
+      "场景以和解或问题解决收尾"
+    ]
+  },
+  "audit": {
+    "passed": false,
+    "errors": [
+      "WRITER_BRIEF_FACT_CAP_UNDEFINED",
+      "WRITER_BRIEF_REQUIRED_FIELD_MISSING:unknown_information",
+      "WRITER_BRIEF_REQUIRED_FIELD_MISSING:current_assumption",
+      "WRITER_BRIEF_REQUIRED_FIELD_MISSING:assumption_basis"
+    ],
+    "brief_characters": 1432,
+    "brief_estimated_tokens": 358,
+    "prompt_characters": 1634,
+    "prompt_estimated_tokens": 409,
+    "active_project_facts_cap": null
+  }
+}

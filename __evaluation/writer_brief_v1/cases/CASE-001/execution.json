@@ -1,0 +1,30 @@
+{
+  "case_id": "CASE-001",
+  "planner_candidate_id": "d9d44c85-72dd-4766-a007-1f64adb867c3",
+  "baseline_writer_candidate_id": "ee2c90be-a734-4a76-a119-92a5139f470e",
+  "baseline_writer_prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-chat",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 1800,
+    "timeout_seconds": 300,
+    "response_format": "text"
+  },
+  "status": "stopped_preflight",
+  "preflight": {
+    "passed": false,
+    "errors": [
+      "WRITER_BRIEF_FACT_CAP_UNDEFINED",
+      "WRITER_BRIEF_REQUIRED_FIELD_MISSING:unknown_information",
+      "WRITER_BRIEF_REQUIRED_FIELD_MISSING:current_assumption",
+      "WRITER_BRIEF_REQUIRED_FIELD_MISSING:assumption_basis"
+    ],
+    "brief_characters": 1848,
+    "brief_estimated_tokens": 462,
+    "prompt_characters": 2039,
+    "prompt_estimated_tokens": 510,
+    "active_project_facts_cap": null
+  }
+}

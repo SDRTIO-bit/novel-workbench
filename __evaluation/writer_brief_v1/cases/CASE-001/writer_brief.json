@@ -1,0 +1,75 @@
+{
+  "case_id": "CASE-001",
+  "planner_candidate_id": "d9d44c85-72dd-4766-a007-1f64adb867c3",
+  "writer_brief": {
+    "scene_goal": "在关店时分，通过安静、不施压的动作让迷路的小满主动进入书店，迈出信任的第一步。",
+    "location": "梧桐老街“时光书屋”门口及店内前部，木质书架之间，铜铃门铃下方。",
+    "time": "深秋黄昏，天色正在变暗，路灯尚未亮起。",
+    "concrete_problem": "老陈此刻必须决定：是把门关严然后隔着玻璃示意女孩离开，还是延迟关门、用动作给她留一个不必开口就能进来的空间。",
+    "pressure": "天光正在迅速变暗，老街两侧的梧桐影子叠在一起，再过一会儿路灯才会亮。女孩如果再往前走远，找回来的路会更难。",
+    "scene_state": {
+      "present_characters": [
+        "老陈",
+        "阿橘"
+      ],
+      "visible_facts": [
+        "店门口的铜铃还在轻轻晃动，听起来清脆。",
+        "一个背着书包的小女孩正站在门外人行道上，盯着门板。",
+        "阿橘蹲在柜台边，尾巴尖慢慢扫动。"
+      ],
+      "available_objects": [
+        "半合的木门板",
+        "门边的矮凳",
+        "柜台上的搪瓷茶杯",
+        "阿橘的猫碗",
+        "门廊下的一把旧藤椅",
+        "收在手边的铜锁"
+      ],
+      "unresolved_problem": "小女孩不肯开口说话，也不肯挪动，但天快黑了。",
+      "already_existing_constraints": [
+        "不能直接问“你迷路了吗”，那样可能吓到她。",
+        "不能长时间敞着门不管，老街天黑了不太安全。"
+      ]
+    },
+    "causal_transitions": [
+      {
+        "id": "CT01",
+        "visible_trigger": "小满看见门板没有合严，老陈转身背对着门，弯腰去碰最下层书架上的旧书。",
+        "character_next_action": "她一只手攥着书包带，另一只手扶住门框，慢慢从门缝侧身挤进书店，没有发出声音。",
+        "rejected_alternative": "她本可以继续站在门外等待，或者转身走向下一盏还没亮的路灯，但她放弃了这两件事。",
+        "cost_or_commitment": "老陈付出了延迟关店的时间，书店面临被外人闯入的微小风险。小满付出了向前踏进陌生空间的勇气。",
+        "immediate_consequence": "小满双脚踩在了书店的旧木地板上，书包蹭过门框，发出一声轻微的布料摩擦声。",
+        "next_constraint": "小满已经进入书店，现在老陈不能突然关门或做出让她感到被困的动作，必须继续保持安静、不急迫。"
+      }
+    ],
+    "entry_pressure": "门板刚靠上去，铜铃响过之后，女孩仍然站在原处不动。",
+    "dominant_pressure": "真正的压力不是时间流逝，而是两个人之间没有任何共同语言，必须靠动作本身来交换信号。任何一步做错，都可能让女孩跑掉。",
+    "stop_state": {
+      "visible_fact": "小满的手背轻轻碰到阿橘仰起的鼻尖，没有缩回。",
+      "what_is_now_different": "小满从戒备和随时准备离开，变成开始允许陌生环境里的接触，她在沉默中接纳了书店暂时作为落脚处。",
+      "must_not_append": "不得用任何方式解释她为什么最终愿意碰阿橘，或者这是否意味着她完全信任老陈。"
+    },
+    "forbidden": [
+      "直接描写小满或老陈的心理活动，包括“她觉得……”“他想起……”等句式。",
+      "让父母或其他熟人恰好出现，解决迷路问题。",
+      "通过对话解释小满为什么走散。",
+      "使用“信任”“安全感”等抽象词直接下结论。",
+      "让阿橘做出过度拟人化的行为，比如主动去拉小满的裤脚。",
+      "燃烧未来章节才允许使用的燃料：小满的家庭结构、走散的具体原因、老陈亡妻的故事线。"
+    ]
+  },
+  "audit": {
+    "passed": false,
+    "errors": [
+      "WRITER_BRIEF_FACT_CAP_UNDEFINED",
+      "WRITER_BRIEF_REQUIRED_FIELD_MISSING:unknown_information",
+      "WRITER_BRIEF_REQUIRED_FIELD_MISSING:current_assumption",
+      "WRITER_BRIEF_REQUIRED_FIELD_MISSING:assumption_basis"
+    ],
+    "brief_characters": 1848,
+    "brief_estimated_tokens": 462,
+    "prompt_characters": 2039,
+    "prompt_estimated_tokens": 510,
+    "active_project_facts_cap": null
+  }
+}
