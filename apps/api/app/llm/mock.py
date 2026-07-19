@@ -436,8 +436,26 @@ class MockClient(BaseLlmClient):
 
         # Reviser → targeted fixes
         if "文字修订师" in sp or "reviser" in sp:
+            # Exercise the server-side patch application with a real patch:
+            # rewrite P001 with a small appended clause, extracted from the
+            # numbered draft inside the prompt. Falls back to a no-op when
+            # the draft cannot be located.
+            first_paragraph = re.search(
+                r"\[P001\]\s*(.+?)(?=\n\n|\Z)",
+                request.user_prompt,
+                re.DOTALL,
+            )
+            if not first_paragraph:
+                return json.dumps({"patches": []}, ensure_ascii=False)
+            original = first_paragraph.group(1).strip()
             return json.dumps({
-                "patches": [],
+                "patches": [
+                    {
+                        "paragraph_id": "P001",
+                        "operation": "replace",
+                        "replacement": original + "他没有解释。",
+                    }
+                ],
             }, ensure_ascii=False)
 
         # Judge → final verdict

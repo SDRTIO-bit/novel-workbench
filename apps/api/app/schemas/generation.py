@@ -1,4 +1,6 @@
 from datetime import datetime
+from typing import Literal
+
 from pydantic import BaseModel, Field
 
 STAGES = ["planner", "writer", "critic", "reviser", "judge"]
@@ -134,7 +136,7 @@ class StageOverrideRequest(BaseModel):
 
 
 class AcceptFinalRequest(BaseModel):
-    accept_type: str = Field(
+    accept_type: Literal["original", "revision", "manual"] = Field(
         description="One of: original, revision, manual"
     )
     final_text: str | None = Field(

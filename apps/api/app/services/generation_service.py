@@ -404,7 +404,6 @@ class GenerationService:
                             step.status = "failed"
                             run.status = "completed"
                         else:
-                            text_output = raw_response
                             if stage == "reviser":
                                 applied = apply_reviser_patches(
                                     ctx_req.draft_text,
@@ -419,12 +418,15 @@ class GenerationService:
                                     }
                                 }, ensure_ascii=False)
                             elif stage == "judge":
+                                text_output = raw_response
                                 judge_decision = validated.get("decision", "")
                                 if not judge_decision:
                                     error_code = "JUDGE_OUTPUT_INVALID"
                                     error_message = f"Judge response missing 'decision' field. Got keys: {list(validated.keys())}"
                                     step.status = "failed"
                                     run.status = "completed"
+                            else:
+                                text_output = raw_response
                     else:
                         error_code = "STRUCTURED_OUTPUT_INVALID"
                         error_message = parsed.error or "无法解析结构化输出"
@@ -436,7 +438,17 @@ class GenerationService:
                 run.status = "completed"
 
             if not error_code and stage in ("writer", "reviser"):
-                validate_tempo_final_line(text_output, ctx_req.tempo_guardrails)
+                try:
+                    validate_tempo_final_line(text_output, ctx_req.tempo_guardrails)
+                except ValueError as tempo_error:
+                    error_message = str(tempo_error)
+                    error_code = (
+                        "TEMPO_FINAL_LINE_MISMATCH"
+                        if error_message.startswith("TEMPO_FINAL_LINE_MISMATCH")
+                        else "LLM_ERROR"
+                    )
+                    step.status = "failed"
+                    run.status = "completed"
 
         except Exception as e:
             error_code = getattr(e, "code", "LLM_ERROR")
@@ -624,7 +636,14 @@ class GenerationService:
                 if prev_candidate.parsed_output_json:
                     ctx_req.scene_plan = json.loads(prev_candidate.parsed_output_json)
                     if stage == "writer":
-                        ctx_req.writer_brief = compile_writer_brief(ctx_req.scene_plan)
+                        try:
+                            ctx_req.writer_brief = compile_writer_brief(ctx_req.scene_plan)
+                        except ValueError as brief_error:
+                            raise bad_request(
+                                "WRITER_BRIEF_INVALID",
+                                "所选 Planner 候选无法编译为 Writer Brief"
+                                f"（需要 planner v2 输出）: {brief_error}",
+                            ) from brief_error
                     guardrails = ctx_req.scene_plan.get("tempo_guardrails")
                     # An explicit per-run guardrail is an author decision. The
                     # planner may supply a fallback, but must not silently

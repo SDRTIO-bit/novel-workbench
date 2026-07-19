@@ -28,6 +28,14 @@ SUPPLEMENT_ID = "CASE-004-JUDGE-CONTRACT-FIX"
 
 
 async def run(database: Path, run_id: str, evaluation_root: Path) -> None:
+    case_dir = evaluation_root / "supplemental" / SUPPLEMENT_ID
+    if (case_dir / "manifest.json").exists():
+        raise SystemExit(
+            f"Refusing to re-run: {case_dir / 'manifest.json'} already exists. "
+            "The supplement is a single authorized Judge call; re-running would "
+            "mutate the run's selected candidate again. Delete the evidence "
+            "directory only if re-running is intentional."
+        )
     engine = create_async_engine(f"sqlite+aiosqlite:///{database}")
     factory = async_sessionmaker(engine, class_=AsyncSession, expire_on_commit=False)
     try:
@@ -55,7 +63,6 @@ async def run(database: Path, run_id: str, evaluation_root: Path) -> None:
             await session.commit()
 
             run = await _load_run(session, run_id)
-            case_dir = evaluation_root / "supplemental" / SUPPLEMENT_ID
             records = {
                 step.stage: {
                     "status": step.status,

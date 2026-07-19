@@ -7,7 +7,16 @@ from typing import Any
 
 
 class PatchApplicationError(ValueError):
-    pass
+    """Reviser patch rejected by deterministic server-side validation.
+
+    ``code`` carries the stable machine-readable error code so the pipeline
+    can surface it on the failed candidate instead of a generic ``LLM_ERROR``.
+    The string form stays ``"CODE: message"`` for backward-compatible matching.
+    """
+
+    def __init__(self, code: str, message: str):
+        self.code = code
+        super().__init__(f"{code}: {message}")
 
 
 @dataclass(frozen=True)
@@ -44,7 +53,7 @@ def apply_reviser_patches(
     """Validate and apply patches. The returned text is the sole revision truth."""
     paragraphs = _paragraphs(draft_text)
     if not paragraphs:
-        raise PatchApplicationError("REVISER_PATCH_INVALID: draft has no paragraphs")
+        raise PatchApplicationError("REVISER_PATCH_INVALID", "draft has no paragraphs")
 
     protected = _protected_ids(critic_report)
     seen: set[str] = set()
@@ -54,18 +63,18 @@ def apply_reviser_patches(
         operation = str(patch.get("operation", "")).strip()
         replacement = str(patch.get("replacement", "")).strip()
         if not paragraph_id.startswith("P") or not paragraph_id[1:].isdigit():
-            raise PatchApplicationError("REVISER_PATCH_INVALID: paragraph_id must be a legal P### label")
+            raise PatchApplicationError("REVISER_PATCH_INVALID", "paragraph_id must be a legal P### label")
         index = int(paragraph_id[1:]) - 1
         if index < 0 or index >= len(paragraphs):
-            raise PatchApplicationError(f"REVISER_PATCH_INVALID: {paragraph_id} is outside the draft")
+            raise PatchApplicationError("REVISER_PATCH_INVALID", f"{paragraph_id} is outside the draft")
         if paragraph_id in protected:
-            raise PatchApplicationError(f"REVISER_PATCH_PROTECTED: {paragraph_id} is protected")
+            raise PatchApplicationError("REVISER_PATCH_PROTECTED", f"{paragraph_id} is protected")
         if paragraph_id in seen:
-            raise PatchApplicationError(f"REVISER_PATCH_INVALID: duplicate target {paragraph_id}")
+            raise PatchApplicationError("REVISER_PATCH_INVALID", f"duplicate target {paragraph_id}")
         if operation not in {"replace", "delete", "insert_after"}:
-            raise PatchApplicationError(f"REVISER_PATCH_INVALID: unsupported operation {operation}")
+            raise PatchApplicationError("REVISER_PATCH_INVALID", f"unsupported operation {operation}")
         if operation != "delete" and not replacement:
-            raise PatchApplicationError("REVISER_PATCH_INVALID: replacement is required")
+            raise PatchApplicationError("REVISER_PATCH_INVALID", "replacement is required")
         seen.add(paragraph_id)
         validated.append((index, paragraph_id, operation, replacement))
 
@@ -86,8 +95,8 @@ def apply_reviser_patches(
     ratio = SequenceMatcher(None, draft_text.strip(), text).ratio()
     if ratio < minimum_unchanged_ratio:
         raise PatchApplicationError(
-            "REVISER_PATCH_UNCHANGED_RATIO: "
-            f"{ratio:.3f} is below required {minimum_unchanged_ratio:.3f}"
+            "REVISER_PATCH_UNCHANGED_RATIO",
+            f"{ratio:.3f} is below required {minimum_unchanged_ratio:.3f}",
         )
     return AppliedRevision(
         text=text,

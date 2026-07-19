@@ -1084,10 +1084,17 @@ class Patch(BaseModel):
     @field_validator("paragraph_id", mode="before")
     @classmethod
     def normalize_paragraph_id(cls, value):
-        labels = _paragraph_labels(value)
-        if len(labels) != 1 or not _is_paragraph_label(labels[0]):
+        if isinstance(value, int):
+            label = f"P{value:03d}"
+        elif isinstance(value, list):
+            if len(value) != 1 or not _is_paragraph_label(str(value[0]).strip().upper()):
+                raise ValueError("paragraph_id must be a legal paragraph ID")
+            return str(value[0]).strip().upper()
+        else:
+            label = str(value).strip().upper()
+        if not _is_paragraph_label(label):
             raise ValueError("paragraph_id must be a legal paragraph ID")
-        return labels[0]
+        return label
 
     @model_validator(mode="after")
     def require_replacement_when_needed(self):
@@ -1296,6 +1303,36 @@ class PlannerContractValidationOutput(BaseModel):
     def require_at_least_one_transition(self):
         if not self.transitions:
             raise ValueError("at least one transition validation is required")
+        return self
+
+    @model_validator(mode="after")
+    def require_issues_for_unmet_contract_fields(self):
+        """A verdict without actionable issues starves the Reviser stage.
+
+        Fields marked partial/missing/contradicted must surface as at least
+        one issue, otherwise the model can silently pass a chapter it just
+        flagged as undelivered.
+        """
+        unmet = (
+            PlannerContractFieldStatus.partial,
+            PlannerContractFieldStatus.missing,
+            PlannerContractFieldStatus.contradicted,
+        )
+        fields = [self.stop_state.visible_fact, self.stop_state.must_not_append]
+        for transition in self.transitions:
+            fields.extend([
+                transition.visible_trigger,
+                transition.rejected_alternative,
+                transition.character_next_action,
+                transition.cost_or_commitment,
+                transition.immediate_consequence,
+                transition.next_constraint,
+            ])
+        if any(field.status in unmet for field in fields) and not self.issues:
+            raise ValueError(
+                "issues must not be empty when any planner contract field "
+                "is partial, missing or contradicted"
+            )
         return self
 
 

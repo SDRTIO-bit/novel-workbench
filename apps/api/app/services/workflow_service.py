@@ -2,6 +2,7 @@ from sqlalchemy import select, update
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 from app.errors import not_found, conflict, bad_request
+from app.models.tgbreak import TgbreakProfile
 from app.models.workflow import WorkflowProfile, WorkflowStepConfig, STAGES
 
 
@@ -183,6 +184,17 @@ class WorkflowService:
                     "INVALID_WRITER_PROMPT_MODE",
                     "tgbreak_profile_id 只能配置在 writer 阶段",
                 )
+            if data["tgbreak_profile_id"]:
+                exists = await self.session.execute(
+                    select(TgbreakProfile.id).where(
+                        TgbreakProfile.id == data["tgbreak_profile_id"]
+                    )
+                )
+                if exists.scalar_one_or_none() is None:
+                    raise not_found(
+                        "TGBREAK_PROFILE_NOT_FOUND",
+                        f"TGbreak 配置不存在: {data['tgbreak_profile_id']}",
+                    )
             step.tgbreak_profile_id = (
                 data["tgbreak_profile_id"] if data["tgbreak_profile_id"] else None
             )

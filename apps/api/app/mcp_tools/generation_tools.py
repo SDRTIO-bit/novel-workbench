@@ -251,7 +251,6 @@ async def accept_final_text(run_id: str, accept_type: str = "revision", final_te
     accept_type must be one of:
     - 'original': keep the writer's first draft
     - 'revision': use the reviser's revised text
-    - 'judge': use the judge's merged final_text
     - 'manual': use the final_text parameter directly
 
     The Judge's recommendation is just a suggestion — YOU make the final decision.
