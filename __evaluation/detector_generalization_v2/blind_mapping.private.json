@@ -1,0 +1,287 @@
+{
+  "D95D066683": {
+    "case_id": "CAMPUS-01",
+    "group": "A",
+    "replica": "1"
+  },
+  "465EDC3A54": {
+    "case_id": "CAMPUS-02",
+    "group": "B",
+    "replica": "2"
+  },
+  "15E0964301": {
+    "case_id": "CAMPUS-02",
+    "group": "C",
+    "replica": "1"
+  },
+  "152E345C00": {
+    "case_id": "CAMPUS-02",
+    "group": "C",
+    "replica": "2"
+  },
+  "3DA50EB5F0": {
+    "case_id": "CAMPUS-03",
+    "group": "A",
+    "replica": "1"
+  },
+  "88870578E9": {
+    "case_id": "CAMPUS-03",
+    "group": "A",
+    "replica": "2"
+  },
+  "802832D461": {
+    "case_id": "CAMPUS-03",
+    "group": "B",
+    "replica": "1"
+  },
+  "1C8229862A": {
+    "case_id": "CAMPUS-03",
+    "group": "B",
+    "replica": "2"
+  },
+  "70F5BB17FB": {
+    "case_id": "CAMPUS-03",
+    "group": "C",
+    "replica": "1"
+  },
+  "D721AA67AD": {
+    "case_id": "CAMPUS-03",
+    "group": "C",
+    "replica": "2"
+  },
+  "B8B7FF028E": {
+    "case_id": "CAMPUS-04",
+    "group": "A",
+    "replica": "1"
+  },
+  "6A958902EC": {
+    "case_id": "CAMPUS-04",
+    "group": "A",
+    "replica": "2"
+  },
+  "5EBE07BC11": {
+    "case_id": "CAMPUS-04",
+    "group": "B",
+    "replica": "1"
+  },
+  "04159CD295": {
+    "case_id": "CAMPUS-04",
+    "group": "B",
+    "replica": "2"
+  },
+  "8DE191B751": {
+    "case_id": "CAMPUS-04",
+    "group": "C",
+    "replica": "1"
+  },
+  "1F424F1FF8": {
+    "case_id": "CAMPUS-04",
+    "group": "C",
+    "replica": "2"
+  },
+  "22BF0E93AA": {
+    "case_id": "ROMANCE-01",
+    "group": "A",
+    "replica": "1"
+  },
+  "ADC622545C": {
+    "case_id": "ROMANCE-01",
+    "group": "A",
+    "replica": "2"
+  },
+  "C5F6676974": {
+    "case_id": "ROMANCE-01",
+    "group": "B",
+    "replica": "1"
+  },
+  "E33DABCF33": {
+    "case_id": "ROMANCE-01",
+    "group": "B",
+    "replica": "2"
+  },
+  "872BCEA419": {
+    "case_id": "ROMANCE-01",
+    "group": "C",
+    "replica": "1"
+  },
+  "BC967899CB": {
+    "case_id": "ROMANCE-01",
+    "group": "C",
+    "replica": "2"
+  },
+  "DBBB6A5618": {
+    "case_id": "ROMANCE-02",
+    "group": "A",
+    "replica": "1"
+  },
+  "67E4F6398E": {
+    "case_id": "ROMANCE-02",
+    "group": "A",
+    "replica": "2"
+  },
+  "C7312B9D51": {
+    "case_id": "ROMANCE-02",
+    "group": "B",
+    "replica": "1"
+  },
+  "145F79A8B3": {
+    "case_id": "ROMANCE-02",
+    "group": "B",
+    "replica": "2"
+  },
+  "8955643FE9": {
+    "case_id": "ROMANCE-02",
+    "group": "C",
+    "replica": "1"
+  },
+  "EBE37B660F": {
+    "case_id": "ROMANCE-02",
+    "group": "C",
+    "replica": "2"
+  },
+  "94A2882C25": {
+    "case_id": "ROMANCE-03",
+    "group": "A",
+    "replica": "1"
+  },
+  "608C0E2DF3": {
+    "case_id": "ROMANCE-03",
+    "group": "C",
+    "replica": "2"
+  },
+  "1E843B2C13": {
+    "case_id": "ROMANCE-04",
+    "group": "A",
+    "replica": "1"
+  },
+  "94FA370047": {
+    "case_id": "ROMANCE-04",
+    "group": "A",
+    "replica": "2"
+  },
+  "5465AEB3D1": {
+    "case_id": "ROMANCE-04",
+    "group": "B",
+    "replica": "1"
+  },
+  "73F96AE403": {
+    "case_id": "ROMANCE-04",
+    "group": "B",
+    "replica": "2"
+  },
+  "13D9D662A8": {
+    "case_id": "ROMANCE-04",
+    "group": "C",
+    "replica": "1"
+  },
+  "EA1A725411": {
+    "case_id": "TASK-01",
+    "group": "A",
+    "replica": "1"
+  },
+  "BD049BFA8C": {
+    "case_id": "TASK-01",
+    "group": "A",
+    "replica": "2"
+  },
+  "5B01059F28": {
+    "case_id": "TASK-01",
+    "group": "B",
+    "replica": "1"
+  },
+  "3FFAC3EE2E": {
+    "case_id": "TASK-01",
+    "group": "B",
+    "replica": "2"
+  },
+  "EB40269DE6": {
+    "case_id": "TASK-01",
+    "group": "C",
+    "replica": "1"
+  },
+  "6727CF66E4": {
+    "case_id": "TASK-01",
+    "group": "C",
+    "replica": "2"
+  },
+  "85652FA8FE": {
+    "case_id": "TASK-02",
+    "group": "A",
+    "replica": "1"
+  },
+  "9440D49829": {
+    "case_id": "TASK-02",
+    "group": "A",
+    "replica": "2"
+  },
+  "4E115809BB": {
+    "case_id": "TASK-02",
+    "group": "B",
+    "replica": "1"
+  },
+  "68EF500DF8": {
+    "case_id": "TASK-02",
+    "group": "B",
+    "replica": "2"
+  },
+  "36876E2A73": {
+    "case_id": "TASK-02",
+    "group": "C",
+    "replica": "1"
+  },
+  "C0DB355D7A": {
+    "case_id": "TASK-02",
+    "group": "C",
+    "replica": "2"
+  },
+  "5B3C08116C": {
+    "case_id": "TASK-03",
+    "group": "A",
+    "replica": "1"
+  },
+  "386A4EDDB7": {
+    "case_id": "TASK-03",
+    "group": "A",
+    "replica": "2"
+  },
+  "4F6D90068D": {
+    "case_id": "TASK-03",
+    "group": "C",
+    "replica": "1"
+  },
+  "F33AEE1CF0": {
+    "case_id": "TASK-03",
+    "group": "C",
+    "replica": "2"
+  },
+  "AA0550A0DE": {
+    "case_id": "TASK-04",
+    "group": "A",
+    "replica": "1"
+  },
+  "8BC1A34B49": {
+    "case_id": "TASK-04",
+    "group": "A",
+    "replica": "2"
+  },
+  "B1872A59F2": {
+    "case_id": "TASK-04",
+    "group": "B",
+    "replica": "1"
+  },
+  "AB3E7779CE": {
+    "case_id": "TASK-04",
+    "group": "B",
+    "replica": "2"
+  },
+  "ED1295B61D": {
+    "case_id": "TASK-04",
+    "group": "C",
+    "replica": "1"
+  },
+  "870D898C8D": {
+    "case_id": "TASK-04",
+    "group": "C",
+    "replica": "2"
+  }
+}

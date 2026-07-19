@@ -1,0 +1,183 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "许岚发现陈述为她准备的生日蜡烛，通过处理这件尴尬物件，两人关系从隐蔽关怀走向微妙确认，为后续单独相处创造可能。",
+  "location": "餐厅包间（聚餐结束，桌上杯盘狼藉，只剩零星杂物）",
+  "time": "周日晚九点，朋友聚餐刚散场",
+  "scene_state": {
+    "last_completed_action": "朋友们陆续离开，陈述主动起身收拾桌上的餐盘和杂物",
+    "present_characters": [
+      "许岚",
+      "陈述"
+    ],
+    "visible_facts": [
+      "桌角有一小盒没点过的彩色生日蜡烛，包装未拆",
+      "今天不是许岚的生日",
+      "陈述正在收拾桌子，背对许岚",
+      "包间只剩他们两人"
+    ],
+    "available_objects": [
+      "生日蜡烛（小盒装）",
+      "桌上的餐盘、用过的杯子、纸巾",
+      "许岚的背包",
+      "陈述的外套搭在椅背上"
+    ],
+    "unresolved_problem": "许岚不确定这盒蜡烛是否为她准备，也无法直接询问，必须在不破坏现有关系氛围的前提下处理它。",
+    "already_existing_constraints": [
+      "许岚不能直接问“这是给我的吗”，因为可能猜错而尴尬",
+      "陈述从未明确表达过对许岚的特殊关心",
+      "两人只是普通朋友关系，任何越界举动都可能被误解"
+    ]
+  },
+  "characters": [
+    {
+      "name": "许岚",
+      "goal": "弄清蜡烛是否与自己有关，同时避免让陈述难堪或自己陷入尴尬",
+      "known": [
+        "上周随口说过自己真正的生日日期（不是今天）",
+        "陈述当时在场，可能听到了",
+        "今天聚餐没人过生日"
+      ],
+      "unknown": [
+        "蜡烛到底是陈述特意买的，还是别人落下的",
+        "陈述对自己真实的想法"
+      ],
+      "mistaken_beliefs": [
+        "也许陈述只是随手帮别人买的，自己自作多情"
+      ],
+      "constraints": [
+        "不能直接质问陈述",
+        "不能显得太在意，要保持朋友间的自然"
+      ],
+      "observed_evidence": [
+        "蜡烛盒崭新，放在自己座位附近的桌角",
+        "陈述收拾时避开了那个位置，似乎故意留下",
+        "陈述耳根微红，不敢看她"
+      ],
+      "current_interpretation": "陈述记得她的生日，并悄悄准备了蜡烛，但不敢直接送。",
+      "how_interpretation_drives_action": "她拿起蜡烛，用玩笑的方式提及自己真正的生日，给陈述一个不尴尬的承认机会。"
+    },
+    {
+      "name": "陈述",
+      "goal": "让许岚发现蜡烛，但不必当面承认是自己特意准备的，维持一种默契",
+      "known": [
+        "许岚真正的生日日期",
+        "今天不是她生日，但想提前给她一个小惊喜",
+        "直接送会显得太刻意"
+      ],
+      "unknown": [
+        "许岚是否会发现蜡烛并猜到是自己放的",
+        "许岚对此的反应是高兴还是困扰"
+      ],
+      "mistaken_beliefs": [
+        "如果承认是自己准备的，可能会给许岚压力"
+      ],
+      "constraints": [
+        "不能主动提及生日，必须等许岚先开口",
+        "不能表现出过度关心，保持朋友分寸"
+      ],
+      "observed_evidence": [
+        "许岚盯着蜡烛看了几秒",
+        "她拿起蜡烛盒，嘴角微动"
+      ],
+      "current_interpretation": "许岚已经发现了，正在犹豫如何反应。",
+      "how_interpretation_drives_action": "他继续收拾桌子，假装没注意，但放慢动作，留出空间让许岚开口。"
+    }
+  ],
+  "concrete_problem": "许岚如何在不直接质问的情况下，让陈述知道她发现了蜡烛，并试探出这是否是给她的？",
+  "pressure": "聚餐已结束，服务员即将进来清理，两人独处的时间窗口很短，必须在此刻处理这件尴尬的物件。",
+  "turning_point": "许岚举起蜡烛，用轻松的语气说：“有人记错我生日啦？我生日可是下周三。”陈述停下手，回头看她，沉默两秒后说：“没记错。”",
+  "end_condition": "陈述承认蜡烛是为许岚准备的，许岚收下蜡烛，两人约定下周单独吃饭。",
+  "forbidden": [
+    "直接解释蜡烛原本的用途（如“这是别人落下的”或“我随便买的”）",
+    "让第三人介入或打断",
+    "许岚直接问“这是给我的吗”",
+    "陈述主动说“生日快乐”或直接承认",
+    "使用内心独白揭示陈述的全部想法",
+    "让许岚的误会（mistaken_belief）持续到场景结束",
+    "燃烧后续章节的燃料：单独约会的具体细节、许岚生日当天的情节"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "许岚拿起蜡烛盒，发现包装完整、放在自己座位附近，而陈述收拾时故意绕过它。",
+      "character_interpretation": "这盒蜡烛是陈述特意留给她的，因为他记得她上周提过的生日，但不敢当面送。",
+      "character_next_action": "许岚用玩笑语气说：“有人记错我生日啦？我生日可是下周三。”同时观察陈述的反应。",
+      "rejected_alternative": "她本可以假装没看见，把蜡烛直接收进包里，不提及生日，但那样就无法确认陈述的心意。",
+      "immediate_consequence": "陈述停下手，转身看她，沉默两秒后说：“没记错。”这相当于承认蜡烛是为她准备的。",
+      "counterfactual_without_action": "如果许岚不开口，陈述会继续收拾，蜡烛可能被当作垃圾收走，或者许岚悄悄带走但永远不知道真相。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "许岚不确定蜡烛的归属，两人各自尴尬地回避",
+        "after": "陈述间接承认了意图，两人之间的秘密被揭开一角"
+      },
+      "cost_or_commitment": "许岚主动捅破窗户纸，承担了可能被否认或冷处理的风险。",
+      "next_constraint": "陈述承认后，两人必须面对这个新暴露的情感信号，不能再装作只是普通朋友。",
+      "reader_must_infer": "陈述为什么会记得许岚随口说的生日，并提前准备蜡烛。",
+      "narrator_must_not_state": [
+        "陈述此刻内心的全部真实想法",
+        "蜡烛的具体购买时间或过程"
+      ]
+    },
+    {
+      "id": "CT02",
+      "kind": "constraint_to_choice",
+      "visible_trigger": "陈述说出“没记错”后，耳根更红，但仍站在原地，没有进一步解释。",
+      "character_interpretation": "陈述在等她回应，如果她只是笑笑带过，这件事就会变成一次无果的试探。他需要她一个明确的接受信号。",
+      "character_next_action": "许岚把蜡烛放进包里，抬头说：“那下周三，我请你吃饭，就当谢谢你的蜡烛。”",
+      "rejected_alternative": "她本可以只说“谢谢”然后离开，但那会让陈述不确定自己是否越界，关系可能退回更谨慎的状态。",
+      "immediate_consequence": "陈述眼神亮了一下，点头说“好”，并约定具体时间。两人建立了下周三的单独约会。",
+      "counterfactual_without_action": "如果许岚不主动提出吃饭，陈述可能不会敢再进一步，蜡烛事件会成为一次悬而未决的暧昧记忆。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "陈述承认记得生日，但关系仍停留在暧昧试探阶段",
+        "after": "许岚主动将感激转化为具体的下次见面，关系从被动发现升级为主动约定"
+      },
+      "cost_or_commitment": "许岚承诺了下周三的时间，并主动承担了请客的角色，将一次偶然发现变成了双向奔赴的约定。",
+      "next_constraint": "下周三的见面已成约定，两人都必须为这次单独相处做准备，且关系期待值提高。",
+      "reader_must_infer": "许岚提出请客，不仅是为了感谢，更是想创造单独相处的机会，回应陈述的用心。",
+      "narrator_must_not_state": [
+        "许岚此刻是否已经喜欢上陈述",
+        "陈述对下周三的具体期待或计划"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "朋友们已离开，陈述在收拾桌子，许岚注意到桌角的蜡烛盒",
+    "dominant_pressure": {
+      "kind": "social_friction",
+      "description": "两人都意识到蜡烛蕴含的特殊含义，但谁都不愿先点破，必须在不破坏现有关系的前提下传递心意。"
+    },
+    "allowed_viewpoint_misread": "许岚可能把陈述的沉默理解为只是出于朋友间的关心，而非特殊好感",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "蜡烛的具体购买动机",
+      "陈述对许岚的真实感情深度"
+    ],
+    "stop_state": {
+      "type": "social_commitment",
+      "visible_fact": "许岚把蜡烛放进包里，陈述点头同意下周三一起吃饭",
+      "what_is_now_different": "两人从普通朋友聚餐的参与者，变成了有单独约定的、彼此心照不宣的准约会对象",
+      "must_not_append": "不得描写下周三见面前的任何准备或心理活动"
+    },
+    "final_line_must_include": "下周三见"
+  }
+}

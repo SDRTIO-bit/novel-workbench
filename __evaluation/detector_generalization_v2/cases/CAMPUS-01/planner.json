@@ -1,0 +1,161 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "陆祈发现沈晚的借书证夹在自己的习题册里，在门禁队伍前进的压力下，他必须用一个不揭穿沈晚早晨借过册子的方式，让她自己发现借书证，从而避免她向管理员解释的尴尬。",
+  "location": "学校图书馆入口门禁处",
+  "time": "午间，进图书馆的高峰期",
+  "scene_state": {
+    "last_completed_action": "陆祈在排队时翻看自己的习题册，发现里面夹着沈晚的借书证。",
+    "present_characters": [
+      "陆祈",
+      "沈晚",
+      "周围同学"
+    ],
+    "visible_facts": [
+      "陆祈手里拿着自己的习题册",
+      "习题册里夹着沈晚的借书证",
+      "沈晚正在翻找书包，神色焦急",
+      "门禁队伍正在向前移动",
+      "管理员站在门禁旁检查借书证"
+    ],
+    "available_objects": [
+      "陆祈的习题册",
+      "沈晚的借书证",
+      "沈晚的书包",
+      "门禁闸机"
+    ],
+    "unresolved_problem": "沈晚以为自己丢了借书证，准备向管理员解释，但陆祈知道证在他这里，他不能直接还给她以免暴露早晨借过册子的事。",
+    "already_existing_constraints": [
+      "陆祈不能当众说破沈晚早晨借过他的习题册",
+      "门禁队伍在前进，时间有限",
+      "沈晚已经准备向管理员解释，不能让她出丑"
+    ]
+  },
+  "characters": [
+    {
+      "name": "陆祈",
+      "goal": "让沈晚自己发现借书证，避免她向管理员解释，同时不暴露早晨的事。",
+      "known": [
+        "沈晚的借书证夹在自己的习题册里",
+        "沈晚早晨借过自己的习题册",
+        "沈晚现在以为证丢了",
+        "门禁处人多眼杂"
+      ],
+      "unknown": [
+        "沈晚发现自己借书证时的反应",
+        "沈晚是否会联想到早晨的事"
+      ],
+      "mistaken_beliefs": [
+        "也许沈晚会直接问自己有没有看到"
+      ],
+      "constraints": [
+        "不能直接告诉沈晚证在他这里",
+        "不能当众提及早晨的事",
+        "必须在门禁前解决"
+      ],
+      "observed_evidence": [
+        "沈晚翻书包的动作越来越急",
+        "沈晚抬头看向管理员方向",
+        "队伍前面只剩三个人"
+      ],
+      "current_interpretation": "沈晚马上要放弃寻找，准备向管理员开口了。",
+      "how_interpretation_drives_action": "陆祈决定假装不经意地让习题册掉在地上，借书证滑出，让沈晚看见。"
+    },
+    {
+      "name": "沈晚",
+      "goal": "找到借书证，顺利进图书馆。",
+      "known": [
+        "自己借书证不在书包里",
+        "进图书馆必须刷证",
+        "早晨借过陆祈的习题册"
+      ],
+      "unknown": [
+        "借书证夹在陆祈的习题册里"
+      ],
+      "mistaken_beliefs": [
+        "借书证可能落在教室或路上丢了"
+      ],
+      "constraints": [
+        "不想在众人面前显得丢三落四",
+        "不能硬闯门禁"
+      ],
+      "observed_evidence": [
+        "书包各层都翻遍了",
+        "陆祈站在自己前面，手里拿着习题册"
+      ],
+      "current_interpretation": "证真的丢了，只能向管理员解释，希望通融。",
+      "how_interpretation_drives_action": "她深吸一口气，准备走向管理员。"
+    }
+  ],
+  "concrete_problem": "陆祈如何在不让沈晚发现早晨借册子的情况下，让沈晚看到借书证就在他手里？",
+  "pressure": "门禁队伍不断前进，沈晚即将向管理员开口，陆祈只有几秒钟时间采取行动。",
+  "turning_point": "陆祈故意让习题册掉在地上，借书证滑出，沈晚弯腰捡起时发现是自己的证，陆祈假装惊讶，把册子递给她，说“原来夹在这里了”，沈晚接过，没有多问。",
+  "end_condition": "沈晚拿回借书证，顺利刷卡进馆，陆祈跟在她后面，两人没有交谈早晨的事。",
+  "forbidden": [
+    "陆祈直接告诉沈晚证在他那里",
+    "陆祈当众提及沈晚早晨借过习题册",
+    "沈晚追问陆祈为什么证在他那里",
+    "管理员介入",
+    "其他同学注意到借书证从陆祈册子里掉出"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "沈晚停止翻书包，抬头看向管理员，脚步往前迈了一步。",
+      "character_interpretation": "陆祈判断沈晚已经放弃寻找，准备向管理员解释。",
+      "character_next_action": "陆祈假装手滑，让习题册掉在地上，借书证从册页中滑出半截。",
+      "rejected_alternative": "陆祈本可以悄悄把证塞回沈晚书包侧袋，但那样可能被旁人看见且时间不够。",
+      "immediate_consequence": "习题册落地发出声响，沈晚低头看见自己的借书证。",
+      "counterfactual_without_action": "如果陆祈什么都不做，沈晚会走到管理员面前，尴尬地解释，管理员可能要求她登记或返回教室寻找。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "借书证藏在陆祈的习题册里，沈晚毫无察觉。",
+        "after": "借书证暴露在沈晚眼前，她意识到证在这里。"
+      },
+      "cost_or_commitment": "陆祈必须扮演一次笨手笨脚的角色，可能被沈晚认为粗心。",
+      "next_constraint": "沈晚捡起证后，陆祈不能解释为什么证在他册子里，只能含糊带过。",
+      "reader_must_infer": "陆祈是故意掉册子的，但沈晚可能只当作意外。",
+      "narrator_must_not_state": [
+        "陆祈内心说“我是故意掉的”",
+        "沈晚看穿陆祈的意图"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "队伍前面只剩三人，沈晚已停止翻找，准备走向管理员。",
+    "dominant_pressure": {
+      "kind": "information_gap",
+      "description": "沈晚不知道自己借书证的下落，陆祈知道但不能说，必须在有限时间内传递信息而不暴露来源。"
+    },
+    "allowed_viewpoint_misread": "沈晚可能以为陆祈只是不小心掉了册子，没联想到早晨的事。",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "陆祈为什么恰好把证夹在册子里没还"
+    ],
+    "stop_state": {
+      "type": "physical_change",
+      "visible_fact": "沈晚拿着自己的借书证，在闸机上刷卡通过。",
+      "what_is_now_different": "借书证从陆祈的习题册转移回沈晚手中，危机解除。",
+      "must_not_append": "不得描写沈晚刷卡后回头与陆祈对视或对话。"
+    },
+    "final_line_must_include": "沈晚把证贴向感应区，“嘀”的一声，闸门开了。"
+  }
+}

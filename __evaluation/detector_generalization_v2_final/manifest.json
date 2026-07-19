@@ -1,0 +1,14 @@
+{
+  "experiment": "DETECTOR_GENERALIZATION_V2",
+  "source_manifest": "../detector_generalization_v2/manifest.json",
+  "model_id": "deepseek-v4-pro",
+  "writer_max_output_tokens": 4000,
+  "thinking": "disabled",
+  "texts_included": 72,
+  "validation_status_counts": {
+    "no_validation_error": 57,
+    "TEMPO_FINAL_LINE_MISMATCH": 15
+  },
+  "combined_submission_has_no_group_or_blind_id_markers": true,
+  "separator": "five newline characters between texts"
+}

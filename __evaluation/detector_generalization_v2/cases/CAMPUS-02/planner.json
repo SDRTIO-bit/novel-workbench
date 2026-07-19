@@ -1,0 +1,158 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "许澄在广播站门口看见迟到名单上有自己的名字，误以为周弈忘了替她登记，在值班老师在场的情况下，放弃当面追问，选择用一件会带来具体麻烦的事来应对，为后续章节的误会升级埋下伏笔。",
+  "location": "校园广播站门口走廊",
+  "time": "下午放学后，广播站值班时间",
+  "scene_state": {
+    "last_completed_action": "周弈抱着器材从走廊另一头过来，值班老师在旁边",
+    "present_characters": [
+      "许澄",
+      "周弈",
+      "值班老师"
+    ],
+    "visible_facts": [
+      "广播站门口贴着迟到名单，上面有许澄的名字",
+      "周弈正抱着器材走过来",
+      "值班老师在旁边整理文件"
+    ],
+    "available_objects": [
+      "迟到名单",
+      "广播器材",
+      "值班记录本"
+    ],
+    "unresolved_problem": "许澄认为周弈忘了替她登记，但碍于值班老师在旁，无法直接质问",
+    "already_existing_constraints": [
+      "许澄与周弈是好友，平时互相帮忙登记",
+      "值班老师在场，不能公开争吵",
+      "迟到名单已公布，无法当场修改"
+    ]
+  },
+  "characters": [
+    {
+      "name": "许澄",
+      "goal": "确认周弈是否故意不帮她登记，并做出回应",
+      "known": [
+        "自己今天确实迟到了",
+        "之前拜托周弈帮忙在广播站登记",
+        "名单上有自己的名字"
+      ],
+      "unknown": [
+        "周弈是否真的忘了，还是另有原因",
+        "值班老师是否注意到了这个情况"
+      ],
+      "mistaken_beliefs": [
+        "周弈故意不帮她登记，可能是因为最近两人之间的小摩擦"
+      ],
+      "constraints": [
+        "不能当着值班老师的面质问周弈，否则可能让周弈难堪或引起老师注意",
+        "不能直接修改名单，那是违规的"
+      ],
+      "observed_evidence": [
+        "名单上自己的名字清晰可见",
+        "周弈抱着器材，没有主动解释",
+        "值班老师就在旁边"
+      ],
+      "current_interpretation": "周弈忘了或者故意不登记，而且现在不方便解释，自己必须做点什么来表达不满和解决问题。",
+      "how_interpretation_drives_action": "她决定不直接追问，而是采取一个会让周弈意识到问题且带来具体麻烦的行动，比如故意在值班记录本上留下错误信息，或者拿走一件周弈需要的器材。"
+    },
+    {
+      "name": "周弈",
+      "goal": "正常完成广播站值班任务，避免与许澄产生冲突",
+      "known": [
+        "许澄今天迟到了",
+        "自己确实替许澄登记了，但名单上仍有名字，可能是老师后来补充的",
+        "值班老师在旁边，不便多解释"
+      ],
+      "unknown": [
+        "许澄已经看到了名单并产生了误会",
+        "许澄会采取什么行动"
+      ],
+      "mistaken_beliefs": [
+        "许澄可能没注意到名单，或者注意到了但理解情况"
+      ],
+      "constraints": [
+        "不能当着老师的面主动提起登记的事，否则显得心虚",
+        "必须完成器材搬运和值班任务"
+      ],
+      "observed_evidence": [
+        "许澄站在名单前",
+        "许澄表情有些僵硬"
+      ],
+      "current_interpretation": "许澄可能已经看到名单，但应该能理解可能有其他原因，毕竟自己确实登记了。",
+      "how_interpretation_drives_action": "他打算先完成器材交接，等老师离开后再找机会解释。"
+    }
+  ],
+  "concrete_problem": "许澄必须在值班老师在场的情况下，决定如何回应周弈可能忘了替她登记这件事，既不能公开质问，又要让周弈意识到自己的不满。",
+  "pressure": "值班老师在旁边，时间有限，许澄必须立刻做出反应，否则错过时机可能让误会加深或显得自己不在乎。",
+  "turning_point": "许澄选择不追问，而是故意从器材箱里拿走一个关键零件，导致周弈稍后发现器材无法正常工作，从而引发后续的寻找和冲突。",
+  "end_condition": "许澄拿走零件后离开走廊，周弈和老师都没有当场发现，但周弈即将发现器材出问题。",
+  "forbidden": [
+    "许澄直接质问周弈",
+    "周弈当场解释真实原因",
+    "值班老师介入调解",
+    "许澄修改名单",
+    "两人和好或澄清误会"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "许澄看到名单上自己的名字，而周弈抱着器材走过来却没有解释的意思。",
+      "character_interpretation": "许澄认为周弈故意忽略她的请求，可能是因为最近两人关系有点紧张，所以用这种方式表达不满。",
+      "character_next_action": "许澄假装帮忙整理器材，趁周弈和老师不注意，从器材箱里拿走了一个小型连接器。",
+      "rejected_alternative": "许澄本可以等老师离开后私下问周弈，但她觉得那样太软弱，而且可能得不到真实答案。",
+      "immediate_consequence": "器材箱里少了一个关键零件，周弈稍后使用时发现设备无法连接。",
+      "counterfactual_without_action": "如果许澄什么都不做，周弈会正常完成值班，误会可能暂时被掩盖，但许澄内心的不满会积累。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "器材完整，许澄内心不满但未表达",
+        "after": "器材缺失零件，许澄用行动表达了不满，但造成了实际麻烦"
+      },
+      "cost_or_commitment": "许澄承担了被发现的潜在风险，以及可能损害友谊的代价。",
+      "next_constraint": "周弈发现器材故障后，必须查找原因，这可能导致他怀疑许澄或其他人。",
+      "reader_must_infer": "许澄拿走零件的具体动机——是单纯发泄，还是希望周弈因此来找她，从而打开对话。",
+      "narrator_must_not_state": [
+        "周弈其实已经替许澄登记了",
+        "许澄内心是否后悔"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "周弈正抱着器材走来，值班老师在旁边，许澄只有几秒钟决定如何反应。",
+    "dominant_pressure": {
+      "kind": "social_friction",
+      "description": "值班老师在场构成社交压力，使许澄无法直接沟通，只能采取间接行动。"
+    },
+    "allowed_viewpoint_misread": "读者可能误以为周弈真的忘了登记，从而完全站在许澄一边。",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "周弈是否真的忘了登记",
+      "值班老师是否注意到许澄的动作"
+    ],
+    "stop_state": {
+      "type": "physical_change",
+      "visible_fact": "器材箱里少了一个连接器，周弈尚未发现",
+      "what_is_now_different": "原本完整的器材出现缺损，为后续冲突埋下物理证据",
+      "must_not_append": "不得描述周弈发现缺失时的具体反应"
+    },
+    "final_line_must_include": "她把手插进口袋，指尖触到那个冰凉的金属小件，头也不回地走了。"
+  }
+}

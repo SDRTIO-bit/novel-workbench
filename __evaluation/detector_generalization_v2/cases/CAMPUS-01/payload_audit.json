@@ -1,0 +1,40 @@
+{
+  "A": {
+    "payload_kind": "complete_planner",
+    "payload_sha256": "dc6a869a24ec301c9541d521cb5b11509f5688cb55740a3064ad595d3fe8c788",
+    "field_count": 14
+  },
+  "B": {
+    "payload_kind": "writer_brief",
+    "payload_sha256": "9a9b0ea9fb0e4b562ae2ddfcf36ce263f4eee6defa9089ba48053e66941214a0",
+    "field_count": 15,
+    "fields": [
+      "opening_mode",
+      "opening_fact",
+      "viewpoint_character",
+      "known_facts",
+      "unknown_facts",
+      "current_assumption",
+      "assumption_basis",
+      "next_action",
+      "immediate_consequence",
+      "next_constraint",
+      "active_project_facts",
+      "remain_unclassified",
+      "stop_fact",
+      "must_not_append",
+      "final_line_must_include"
+    ]
+  },
+  "C": {
+    "payload_kind": "narrative_behaviour_brief",
+    "payload_sha256": "5374505af37443ae92752ccd011a285fe31a00f6981c50332b7363688089cddb",
+    "field_count": 19,
+    "added_fields": [
+      "available_causal_objects",
+      "cost_or_commitment",
+      "counteraction_or_disproof",
+      "rejected_alternative"
+    ]
+  }
+}

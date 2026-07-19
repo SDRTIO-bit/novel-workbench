@@ -1,0 +1,182 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "顾栖发现程野穿走自己的外套，外套里有必须交的社团钥匙，她必须在不能公开喊叫的情况下，用现场物件追回钥匙，并面对程野是否故意的疑问。",
+  "location": "教学楼走廊至操场入口",
+  "time": "放学后，大约下午5点",
+  "scene_state": {
+    "last_completed_action": "放学铃响，顾栖收拾书包时发现椅背上的深蓝外套不见了，同桌程野已跑出教室",
+    "present_characters": [
+      "顾栖",
+      "程野（在移动中）"
+    ],
+    "visible_facts": [
+      "顾栖的深蓝外套被程野穿走",
+      "程野正跑向操场",
+      "程野的外套还留在教室椅子上",
+      "外套口袋里有社团钥匙的轮廓"
+    ],
+    "available_objects": [
+      "程野留下的外套",
+      "顾栖的书包",
+      "走廊里的其他学生",
+      "操场入口的铁门"
+    ],
+    "unresolved_problem": "顾栖必须拿回外套里的社团钥匙，但程野正在跑远，且不能公开喊叫",
+    "already_existing_constraints": [
+      "顾栖不能大声喊程野的名字",
+      "程野的训练时间紧迫",
+      "社团老师可能在办公室等待钥匙"
+    ]
+  },
+  "characters": [
+    {
+      "name": "顾栖",
+      "goal": "拿回外套口袋里的社团钥匙，不引起围观",
+      "known": [
+        "外套被程野穿走，钥匙在外套口袋里",
+        "今天必须把钥匙交给社团指导老师",
+        "程野正在往操场跑"
+      ],
+      "unknown": [
+        "程野是否故意穿错外套",
+        "程野是否知道口袋里有钥匙",
+        "追上程野后如何开口"
+      ],
+      "mistaken_beliefs": [
+        "程野可能只是匆忙中拿错，不是故意的"
+      ],
+      "constraints": [
+        "不能大声喊程野的名字，避免走廊里引起注意",
+        "不能直接指责程野偷东西",
+        "必须尽快，因为社团老师可能在等"
+      ],
+      "observed_evidence": [
+        "椅背上自己的外套不见了，程野穿着深蓝外套的背影跑向操场",
+        "程野的外套还搭在旁边的椅子上，颜色相似但款式不同"
+      ],
+      "current_interpretation": "程野可能因为外套颜色相似而误穿，但需要立刻拿回钥匙",
+      "how_interpretation_drives_action": "她抓起程野的外套，决定追上去用外套交换的方式要回自己的外套，避免直接冲突"
+    },
+    {
+      "name": "程野",
+      "goal": "赶去操场参加临时加练，可能未察觉穿错外套",
+      "known": [
+        "自己有一件深蓝外套，但今天穿的是另一件",
+        "放学后有紧急训练"
+      ],
+      "unknown": [
+        "顾栖的外套口袋里有社团钥匙",
+        "顾栖已经发现他穿错外套并追上来",
+        "顾栖不能公开喊他"
+      ],
+      "mistaken_beliefs": [
+        "以为椅背上的外套是自己的，因为颜色相近"
+      ],
+      "constraints": [
+        "训练迟到会被罚跑圈，所以跑得很急",
+        "性格大大咧咧，不太注意细节"
+      ],
+      "observed_evidence": [
+        "走廊里有人追过来的脚步声",
+        "手里抓着的外套似乎口袋里有硬物"
+      ],
+      "current_interpretation": "可能有人也赶着去操场，没意识到自己穿错了外套",
+      "how_interpretation_drives_action": "继续跑向操场，直到被顾栖追上才可能停下来"
+    }
+  ],
+  "concrete_problem": "顾栖如何在不引起走廊其他人注意的情况下，追上程野并拿回自己的外套和钥匙？",
+  "pressure": "时间紧迫：程野正跑向操场，一旦进入训练场，拿回外套会更困难；同时社团老师可能已经在等钥匙",
+  "turning_point": "顾栖抓起程野的外套追上去，在操场入口前拦住程野，用交换外套的方式解决问题，但过程中发现钥匙不在口袋里，或者程野的反应出乎意料",
+  "end_condition": "顾栖在操场入口追上程野，两人交换外套，但钥匙去向出现新事实（例如钥匙掉在了走廊某处，或程野已经将钥匙交给了别人）",
+  "forbidden": [
+    "顾栖在走廊里大声喊叫程野的名字",
+    "直接揭示程野是否故意穿错外套",
+    "引入新的冲突源（如老师突然出现指责）",
+    "燃烧后续燃料：程野与顾栖的深层误会或关系变化",
+    "顾栖轻易拿到钥匙且无任何代价"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "顾栖看到程野穿着自己的深蓝外套跑向操场，而程野的外套还搭在椅子上",
+      "character_interpretation": "程野可能因为外套颜色相似而误穿，但自己必须立刻拿回钥匙",
+      "character_next_action": "顾栖抓起程野的外套，跑出教室追赶程野",
+      "rejected_alternative": "顾栖可以放弃追赶，直接去办公室向老师解释丢钥匙，但这样会显得不负责任",
+      "immediate_consequence": "顾栖拿着程野的外套在走廊里奔跑，引起个别同学侧目，但她没有停下",
+      "counterfactual_without_action": "如果顾栖不追赶，程野会穿着她的外套进入操场训练，钥匙可能被弄丢或被发现",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "顾栖站在教室自己的座位旁，外套不见，钥匙在外套里",
+        "after": "顾栖拿着程野的外套，跑出教室追赶程野"
+      },
+      "cost_or_commitment": "顾栖牺牲了直接去办公室交钥匙的时间，且可能被同学看到自己拿着男生的外套奔跑",
+      "next_constraint": "顾栖必须追上程野，否则拿着程野的外套也无济于事",
+      "reader_must_infer": "顾栖为什么选择交换外套而不是直接喊停程野？她担心公开喊叫会让自己和程野成为焦点，可能引发更多尴尬",
+      "narrator_must_not_state": [
+        "顾栖内心对程野的真实感受",
+        "程野是否已经注意到口袋里的钥匙"
+      ]
+    },
+    {
+      "id": "CT02",
+      "kind": "constraint_to_choice",
+      "visible_trigger": "顾栖在操场入口前追上程野，程野停下转身，脸上露出困惑",
+      "character_interpretation": "程野似乎没意识到穿错了外套，但自己必须尽快拿回钥匙，不能浪费时间解释",
+      "character_next_action": "顾栖举起程野的外套，直接说‘你穿错了，我们换回来’，同时伸手去拉自己外套的拉链",
+      "rejected_alternative": "顾栖可以委婉地询问程野是否拿错，但那样可能拖延时间，且程野可能否认",
+      "immediate_consequence": "程野愣了一下，低头看自己身上的外套，然后迅速脱下递给顾栖，顾栖也把程野的外套还给他",
+      "counterfactual_without_action": "如果顾栖不直接要求交换，程野可能会继续跑进操场，或者开始翻找口袋发现钥匙",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "顾栖和程野在操场入口面对面，程野穿着顾栖的外套，顾栖拿着程野的外套",
+        "after": "两人交换外套，但顾栖摸口袋时发现钥匙不在里面"
+      },
+      "cost_or_commitment": "顾栖暴露了自己急于拿回外套的意图，程野可能因此察觉到钥匙的存在",
+      "next_constraint": "钥匙不在外套口袋里，顾栖必须弄清楚钥匙的去向，可能掉在走廊或程野身上",
+      "reader_must_infer": "程野在交换外套时的短暂犹豫是否意味着他之前感觉到了口袋里的钥匙？",
+      "narrator_must_not_state": [
+        "钥匙究竟掉在哪里",
+        "程野是否故意拿错外套"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "放学铃响后，顾栖发现外套被程野穿走，而程野正跑向操场",
+    "dominant_pressure": {
+      "kind": "resource_constraint",
+      "description": "时间正在减少，顾栖必须在程野进入操场前追上他，同时社团老师可能在等待钥匙"
+    },
+    "allowed_viewpoint_misread": "顾栖可能把程野的困惑表情理解为故意装傻",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "程野是否故意穿错外套",
+      "钥匙最终是否被找回"
+    ],
+    "stop_state": {
+      "type": "information_conflict",
+      "visible_fact": "顾栖摸遍外套口袋，钥匙不在里面",
+      "what_is_now_different": "原本以为拿回外套就能解决钥匙问题，现在钥匙下落不明，出现新的事实：钥匙可能掉在了别处",
+      "must_not_append": "不得揭示钥匙究竟掉在哪里，也不得让顾栖立即找到钥匙"
+    },
+    "final_line_must_include": "钥匙不在口袋里"
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "演出散场后，陆青发现末班车已开走，在雨中与方予产生一次试探性的互动，通过具体行动揭示关系状态，并以新的事实结束场景。",
+  "location": "剧院外的公交站台，雨夜",
+  "time": "深夜，末班车刚离开后",
+  "scene_state": {
+    "last_completed_action": "陆青目送末班车驶离，方予站在他身边撑开了伞",
+    "present_characters": [
+      "陆青",
+      "方予"
+    ],
+    "visible_facts": [
+      "末班车尾灯消失在雨幕中",
+      "方予手里有一把伞",
+      "雨越下越大",
+      "站台没有其他人"
+    ],
+    "available_objects": [
+      "方予的伞",
+      "陆青的背包",
+      "站台长椅",
+      "路灯"
+    ],
+    "unresolved_problem": "两人因工作安排产生分歧后，尚未明确彼此的关系距离",
+    "already_existing_constraints": [
+      "不能使用旁白解释关系",
+      "陆青不知道方予的真实打算",
+      "两人刚发生过工作分歧"
+    ]
+  },
+  "characters": [
+    {
+      "name": "陆青",
+      "goal": "通过行动试探方予是否愿意和他一起走，同时维持自尊",
+      "known": [
+        "末班车已经开走",
+        "方予递了伞但没说话",
+        "两人之前因工作安排有过分歧"
+      ],
+      "unknown": [
+        "方予递伞的真实意图",
+        "方予是否希望两人关系更近一步"
+      ],
+      "mistaken_beliefs": [
+        "方予递伞可能只是出于同事间的客气"
+      ],
+      "constraints": [
+        "不能直接询问方予的想法",
+        "不能表现出过度依赖",
+        "必须用行动而非语言"
+      ],
+      "observed_evidence": [
+        "方予把伞递过来后没有立刻离开",
+        "方予的视线避开了他",
+        "伞柄朝向他"
+      ],
+      "current_interpretation": "方予在给他一个选择信号，但不愿主动挑明",
+      "how_interpretation_drives_action": "陆青接过伞，但向方予靠近一步，把伞举在两人中间，以此试探方予是否接受共享空间"
+    },
+    {
+      "name": "方予",
+      "goal": "观察陆青的反应，判断他是否愿意修复分歧并拉近距离",
+      "known": [
+        "末班车已走",
+        "自己递了伞",
+        "两人需要解决分歧"
+      ],
+      "unknown": [
+        "陆青是否还在为分歧生气",
+        "陆青是否愿意接受他的示好"
+      ],
+      "mistaken_beliefs": [
+        "陆青可能想独自离开，递伞会被拒绝"
+      ],
+      "constraints": [
+        "不能主动说出自己的感受",
+        "必须通过陆青的行动来判断"
+      ],
+      "observed_evidence": [
+        "陆青没有立刻接伞",
+        "陆青看着末班车方向发愣"
+      ],
+      "current_interpretation": "陆青可能在犹豫，或者不想和他同行",
+      "how_interpretation_drives_action": "方予保持沉默，等待陆青的下一步动作，以此测试陆青的真实态度"
+    }
+  ],
+  "concrete_problem": "陆青必须用一个具体行动试探方予是否愿意一起走，同时放弃直接询问或独自离开的选项，并承担可能被拒绝的风险。",
+  "pressure": "雨越下越大，两人站在空无一人的站台，时间流逝和恶劣天气迫使陆青必须立即做出决定。",
+  "turning_point": "陆青接过伞，但选择向方予靠近一步，将伞举在两人中间，这个动作迫使方予必须做出反应——是退开保持距离，还是接受共享空间。",
+  "end_condition": "方予没有退开，两人共撑一把伞站在雨中，新的末班车时刻表显示下一班要等一小时。",
+  "forbidden": [
+    "旁白解释关系",
+    "方予直接表达感受",
+    "陆青直接询问方予的意图",
+    "使用内心独白揭示方予的想法",
+    "引入新角色或外部事件"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "方予把伞递过来后，视线避开陆青，但人没有离开",
+      "character_interpretation": "陆青认为方予在发出一个模糊的邀请，但不愿承担被拒绝的风险",
+      "character_next_action": "陆青接过伞，并向方予靠近一步，将伞举在两人中间",
+      "rejected_alternative": "陆青可以接过伞独自离开，或把伞还给方予然后淋雨走",
+      "immediate_consequence": "方予没有退开，两人肩膀几乎相触，共享了同一把伞下的空间",
+      "counterfactual_without_action": "如果陆青接过伞就独自走开，方予会认为他仍在生气，两人关系可能僵化",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "两人之间隔着一臂距离，伞在方予手中",
+        "after": "两人共撑一把伞，距离缩短到肩膀相触"
+      },
+      "cost_or_commitment": "陆青放弃了自己独自行动的自由，暴露了愿意亲近的意图",
+      "next_constraint": "两人必须在近距离下继续互动，无法再回避分歧",
+      "reader_must_infer": "方予没有退开表明他接受陆青的试探，分歧可能有机会化解",
+      "narrator_must_not_state": [
+        "方予的真实想法",
+        "陆青的内心感受",
+        "两人关系的确切定义"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "末班车刚刚离开，雨势加大，陆青和方予站在站台边缘",
+    "dominant_pressure": {
+      "kind": "social_friction",
+      "description": "天气恶劣迫使行动，但真正的压力来自两人未解决的分歧和模糊的关系信号"
+    },
+    "allowed_viewpoint_misread": "陆青可能把方予递伞解读为单纯的同事帮忙，而忽略其中的示好意味",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "方予递伞的真实动机",
+      "两人分歧的具体内容"
+    ],
+    "stop_state": {
+      "type": "relationship_shift",
+      "visible_fact": "方予没有退开，两人共撑一把伞站在雨中",
+      "what_is_now_different": "从保持距离变为共享亲密空间，肢体距离突破社交常规",
+      "must_not_append": "不得解释方予为什么没有退开，或两人是否和好"
+    },
+    "final_line_must_include": "下一班车还要等一小时"
+  }
+}

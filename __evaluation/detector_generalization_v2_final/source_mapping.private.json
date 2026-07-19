@@ -1,0 +1,1442 @@
+{
+  "3946A65E65AD": {
+    "blind_id": "3946A65E65AD",
+    "case_id": "CAMPUS-03",
+    "category": "校园尴尬与误会",
+    "group": "B",
+    "replica": 2,
+    "source_text_path": "cases\\CAMPUS-03\\drafts\\B-2.txt",
+    "candidate_id": "c1f59c06-48e1-4ee9-a20e-97e9c2eb12cb",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "7B465EAA66CC": {
+    "blind_id": "7B465EAA66CC",
+    "case_id": "CAMPUS-02",
+    "category": "校园尴尬与误会",
+    "group": "C",
+    "replica": 1,
+    "source_text_path": "cases\\CAMPUS-02\\drafts\\C-1.txt",
+    "candidate_id": "103d298f-6557-47a8-9c7a-2c94b5ac37e5",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "61916EA0C108": {
+    "blind_id": "61916EA0C108",
+    "case_id": "CAMPUS-04",
+    "category": "校园尴尬与误会",
+    "group": "A",
+    "replica": 2,
+    "source_text_path": "cases\\CAMPUS-04\\drafts\\A-2.txt",
+    "candidate_id": "1e7561eb-9f79-46d0-9ce7-c9a689348c2c",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "CCAD2CF298B8": {
+    "blind_id": "CCAD2CF298B8",
+    "case_id": "CAMPUS-02",
+    "category": "校园尴尬与误会",
+    "group": "B",
+    "replica": 1,
+    "source_text_path": "cases\\CAMPUS-02\\drafts\\B-1.txt",
+    "candidate_id": "5aaa3fd9-04ec-49be-95aa-d5a5b9501607",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": "TEMPO_FINAL_LINE_MISMATCH",
+    "validation_error_message": "TEMPO_FINAL_LINE_MISMATCH: final paragraph must include the required marker '她把手插进口袋，指尖触到那个冰凉的金属小件，头也不回地走了。'"
+  },
+  "DCB90A5DC661": {
+    "blind_id": "DCB90A5DC661",
+    "case_id": "ROMANCE-04",
+    "category": "恋爱日常与关系试探",
+    "group": "B",
+    "replica": 2,
+    "source_text_path": "cases\\ROMANCE-04\\drafts\\B-2.txt",
+    "candidate_id": "d520a9c7-5ef4-476c-949d-413bb0edb8a6",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "CD76EE43C398": {
+    "blind_id": "CD76EE43C398",
+    "case_id": "CAMPUS-03",
+    "category": "校园尴尬与误会",
+    "group": "B",
+    "replica": 1,
+    "source_text_path": "cases\\CAMPUS-03\\drafts\\B-1.txt",
+    "candidate_id": "481ffcde-cd58-40f1-bf38-dffa351c9e9c",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "A4D965A785A0": {
+    "blind_id": "A4D965A785A0",
+    "case_id": "CAMPUS-03",
+    "category": "校园尴尬与误会",
+    "group": "A",
+    "replica": 2,
+    "source_text_path": "cases\\CAMPUS-03\\drafts\\A-2.txt",
+    "candidate_id": "842f9500-1c93-4b25-baa8-c24b8231be47",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "455B3E8717A4": {
+    "blind_id": "455B3E8717A4",
+    "case_id": "TASK-02",
+    "category": "危机或具体任务",
+    "group": "A",
+    "replica": 1,
+    "source_text_path": "cases\\TASK-02\\drafts\\A-1.txt",
+    "candidate_id": "1cb20cbf-29b9-4168-9f9f-399c0656643c",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "6A53002E3915": {
+    "blind_id": "6A53002E3915",
+    "case_id": "CAMPUS-02",
+    "category": "校园尴尬与误会",
+    "group": "A",
+    "replica": 1,
+    "source_text_path": "cases\\CAMPUS-02\\drafts\\A-1.txt",
+    "candidate_id": "ac6b9349-9d4d-4915-8687-7117a0f9df8a",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": "TEMPO_FINAL_LINE_MISMATCH",
+    "validation_error_message": "TEMPO_FINAL_LINE_MISMATCH: final paragraph must include the required marker '她把手插进口袋，指尖触到那个冰凉的金属小件，头也不回地走了。'"
+  },
+  "53D73A192426": {
+    "blind_id": "53D73A192426",
+    "case_id": "ROMANCE-01",
+    "category": "恋爱日常与关系试探",
+    "group": "B",
+    "replica": 1,
+    "source_text_path": "cases\\ROMANCE-01\\drafts\\B-1.txt",
+    "candidate_id": "d8b5f72a-7a92-49b3-b841-3c02f1bfe941",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "EDE5D2ADF202": {
+    "blind_id": "EDE5D2ADF202",
+    "case_id": "ROMANCE-03",
+    "category": "恋爱日常与关系试探",
+    "group": "B",
+    "replica": 2,
+    "source_text_path": "cases\\ROMANCE-03\\drafts\\B-2.txt",
+    "candidate_id": "94d87930-1cea-4c48-97e3-38c6e36ee1a4",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": "TEMPO_FINAL_LINE_MISMATCH",
+    "validation_error_message": "TEMPO_FINAL_LINE_MISMATCH: final paragraph must include the required marker '下一班车还要等一小时'"
+  },
+  "BEBFA096D3BE": {
+    "blind_id": "BEBFA096D3BE",
+    "case_id": "TASK-02",
+    "category": "危机或具体任务",
+    "group": "C",
+    "replica": 2,
+    "source_text_path": "cases\\TASK-02\\drafts\\C-2.txt",
+    "candidate_id": "f810ba0c-a0e4-4512-aef2-b33d39680298",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "5375A4AA357B": {
+    "blind_id": "5375A4AA357B",
+    "case_id": "CAMPUS-04",
+    "category": "校园尴尬与误会",
+    "group": "C",
+    "replica": 2,
+    "source_text_path": "cases\\CAMPUS-04\\drafts\\C-2.txt",
+    "candidate_id": "928dac52-0b46-45a9-9834-c4a1c976a9ac",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "45E4F0A85B60": {
+    "blind_id": "45E4F0A85B60",
+    "case_id": "ROMANCE-04",
+    "category": "恋爱日常与关系试探",
+    "group": "B",
+    "replica": 1,
+    "source_text_path": "cases\\ROMANCE-04\\drafts\\B-1.txt",
+    "candidate_id": "8a93ffdf-bce0-45c7-8d09-b4f8970a8a2f",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "507D30E0EB75": {
+    "blind_id": "507D30E0EB75",
+    "case_id": "ROMANCE-02",
+    "category": "恋爱日常与关系试探",
+    "group": "C",
+    "replica": 2,
+    "source_text_path": "cases\\ROMANCE-02\\drafts\\C-2.txt",
+    "candidate_id": "3b48b2e7-f4bb-454d-afa8-dc222084d057",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "8876034B27C6": {
+    "blind_id": "8876034B27C6",
+    "case_id": "TASK-03",
+    "category": "危机或具体任务",
+    "group": "C",
+    "replica": 1,
+    "source_text_path": "cases\\TASK-03\\drafts\\C-1.txt",
+    "candidate_id": "39a89cfb-84f5-4749-aee1-6e848ba93f97",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "A500EA77F3AD": {
+    "blind_id": "A500EA77F3AD",
+    "case_id": "TASK-03",
+    "category": "危机或具体任务",
+    "group": "A",
+    "replica": 2,
+    "source_text_path": "cases\\TASK-03\\drafts\\A-2.txt",
+    "candidate_id": "579d1eda-19ec-48f1-ad4e-2cd4c0732bee",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "91EA8A7A00B3": {
+    "blind_id": "91EA8A7A00B3",
+    "case_id": "TASK-04",
+    "category": "危机或具体任务",
+    "group": "C",
+    "replica": 2,
+    "source_text_path": "cases\\TASK-04\\drafts\\C-2.txt",
+    "candidate_id": "e92e85c3-cadb-442e-b554-e4ad7f9665d2",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "CDB8FD9BA4EA": {
+    "blind_id": "CDB8FD9BA4EA",
+    "case_id": "ROMANCE-04",
+    "category": "恋爱日常与关系试探",
+    "group": "A",
+    "replica": 2,
+    "source_text_path": "cases\\ROMANCE-04\\drafts\\A-2.txt",
+    "candidate_id": "1444c683-64d0-43e2-bf46-1b26180b0413",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "8B535EF6D4A9": {
+    "blind_id": "8B535EF6D4A9",
+    "case_id": "ROMANCE-01",
+    "category": "恋爱日常与关系试探",
+    "group": "A",
+    "replica": 1,
+    "source_text_path": "cases\\ROMANCE-01\\drafts\\A-1.txt",
+    "candidate_id": "1311af44-be10-4a32-8737-7719f3dd209c",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "0FE6E759817E": {
+    "blind_id": "0FE6E759817E",
+    "case_id": "TASK-01",
+    "category": "危机或具体任务",
+    "group": "B",
+    "replica": 2,
+    "source_text_path": "cases\\TASK-01\\drafts\\B-2.txt",
+    "candidate_id": "341563f3-55b0-4133-b215-7477a5bfd508",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "56B3972FAB94": {
+    "blind_id": "56B3972FAB94",
+    "case_id": "TASK-02",
+    "category": "危机或具体任务",
+    "group": "B",
+    "replica": 1,
+    "source_text_path": "cases\\TASK-02\\drafts\\B-1.txt",
+    "candidate_id": "17e57f38-8ad4-48c7-973d-cea192a411bc",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "11149BF1088C": {
+    "blind_id": "11149BF1088C",
+    "case_id": "CAMPUS-01",
+    "category": "校园尴尬与误会",
+    "group": "A",
+    "replica": 2,
+    "source_text_path": "cases\\CAMPUS-01\\drafts\\A-2.txt",
+    "candidate_id": "aae580f2-9114-46d3-b7c6-c6b8721c2cf0",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": "TEMPO_FINAL_LINE_MISMATCH",
+    "validation_error_message": "TEMPO_FINAL_LINE_MISMATCH: final paragraph must include the required marker '沈晚把证贴向感应区，“嘀”的一声，闸门开了。'"
+  },
+  "33B858EC4A48": {
+    "blind_id": "33B858EC4A48",
+    "case_id": "TASK-04",
+    "category": "危机或具体任务",
+    "group": "A",
+    "replica": 1,
+    "source_text_path": "cases\\TASK-04\\drafts\\A-1.txt",
+    "candidate_id": "b9634a71-e8bf-44c5-8812-21a639aee97f",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "0FC6998E8166": {
+    "blind_id": "0FC6998E8166",
+    "case_id": "ROMANCE-01",
+    "category": "恋爱日常与关系试探",
+    "group": "A",
+    "replica": 2,
+    "source_text_path": "cases\\ROMANCE-01\\drafts\\A-2.txt",
+    "candidate_id": "e82d6376-1fb3-4cdd-a02e-46b5255112b0",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "E5DA3AF15722": {
+    "blind_id": "E5DA3AF15722",
+    "case_id": "ROMANCE-03",
+    "category": "恋爱日常与关系试探",
+    "group": "C",
+    "replica": 2,
+    "source_text_path": "cases\\ROMANCE-03\\drafts\\C-2.txt",
+    "candidate_id": "7566d632-01b3-4f1d-8eaa-1fd564353145",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "076B1A30C116": {
+    "blind_id": "076B1A30C116",
+    "case_id": "CAMPUS-01",
+    "category": "校园尴尬与误会",
+    "group": "C",
+    "replica": 1,
+    "source_text_path": "cases\\CAMPUS-01\\drafts\\C-1.txt",
+    "candidate_id": "9334eadf-f10d-4ee6-b103-e796582d9ba3",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": "TEMPO_FINAL_LINE_MISMATCH",
+    "validation_error_message": "TEMPO_FINAL_LINE_MISMATCH: final paragraph must include the required marker '沈晚把证贴向感应区，“嘀”的一声，闸门开了。'"
+  },
+  "B382B16D3DC0": {
+    "blind_id": "B382B16D3DC0",
+    "case_id": "TASK-01",
+    "category": "危机或具体任务",
+    "group": "A",
+    "replica": 1,
+    "source_text_path": "cases\\TASK-01\\drafts\\A-1.txt",
+    "candidate_id": "14a04edd-b250-47b8-b280-6efe2fa80a14",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "5A9731350C2A": {
+    "blind_id": "5A9731350C2A",
+    "case_id": "TASK-02",
+    "category": "危机或具体任务",
+    "group": "B",
+    "replica": 2,
+    "source_text_path": "cases\\TASK-02\\drafts\\B-2.txt",
+    "candidate_id": "db68dac4-e0a2-4ecf-8b97-f21a6b66c124",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "63C359A42E1F": {
+    "blind_id": "63C359A42E1F",
+    "case_id": "TASK-04",
+    "category": "危机或具体任务",
+    "group": "B",
+    "replica": 1,
+    "source_text_path": "cases\\TASK-04\\drafts\\B-1.txt",
+    "candidate_id": "c7e8cd98-4e0d-4a5f-bfcd-1516c72f2c7a",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "4662DD0114E3": {
+    "blind_id": "4662DD0114E3",
+    "case_id": "ROMANCE-02",
+    "category": "恋爱日常与关系试探",
+    "group": "B",
+    "replica": 2,
+    "source_text_path": "cases\\ROMANCE-02\\drafts\\B-2.txt",
+    "candidate_id": "1f7bb910-ac6a-4923-bee0-aa5d16935e0d",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "9F079868F3C8": {
+    "blind_id": "9F079868F3C8",
+    "case_id": "CAMPUS-01",
+    "category": "校园尴尬与误会",
+    "group": "B",
+    "replica": 2,
+    "source_text_path": "cases\\CAMPUS-01\\drafts\\B-2.txt",
+    "candidate_id": "0790f2dd-07de-4696-aa3b-e2fe09a8bd99",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": "TEMPO_FINAL_LINE_MISMATCH",
+    "validation_error_message": "TEMPO_FINAL_LINE_MISMATCH: final paragraph must include the required marker '沈晚把证贴向感应区，“嘀”的一声，闸门开了。'"
+  },
+  "7C4E762CFE93": {
+    "blind_id": "7C4E762CFE93",
+    "case_id": "ROMANCE-03",
+    "category": "恋爱日常与关系试探",
+    "group": "A",
+    "replica": 2,
+    "source_text_path": "cases\\ROMANCE-03\\drafts\\A-2.txt",
+    "candidate_id": "b336e613-6620-4669-ab0c-6454f9b28674",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": "TEMPO_FINAL_LINE_MISMATCH",
+    "validation_error_message": "TEMPO_FINAL_LINE_MISMATCH: final paragraph must include the required marker '下一班车还要等一小时'"
+  },
+  "D2B4737C9BBE": {
+    "blind_id": "D2B4737C9BBE",
+    "case_id": "TASK-04",
+    "category": "危机或具体任务",
+    "group": "B",
+    "replica": 2,
+    "source_text_path": "cases\\TASK-04\\drafts\\B-2.txt",
+    "candidate_id": "c8bfc15b-d07a-4eec-9b63-03385f9e9407",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "088103832206": {
+    "blind_id": "088103832206",
+    "case_id": "TASK-02",
+    "category": "危机或具体任务",
+    "group": "C",
+    "replica": 1,
+    "source_text_path": "cases\\TASK-02\\drafts\\C-1.txt",
+    "candidate_id": "089d7f6a-f66b-47fe-8c56-0673f1633572",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "C624B2DB58F6": {
+    "blind_id": "C624B2DB58F6",
+    "case_id": "ROMANCE-01",
+    "category": "恋爱日常与关系试探",
+    "group": "C",
+    "replica": 1,
+    "source_text_path": "cases\\ROMANCE-01\\drafts\\C-1.txt",
+    "candidate_id": "04ef88e1-48d2-4dbc-994d-4f4b45b16876",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "56CE44387763": {
+    "blind_id": "56CE44387763",
+    "case_id": "CAMPUS-01",
+    "category": "校园尴尬与误会",
+    "group": "A",
+    "replica": 1,
+    "source_text_path": "cases\\CAMPUS-01\\drafts\\A-1.txt",
+    "candidate_id": "3cdf5eec-81c6-4a26-9433-b2e80065dd39",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "1BD2F200F517": {
+    "blind_id": "1BD2F200F517",
+    "case_id": "ROMANCE-02",
+    "category": "恋爱日常与关系试探",
+    "group": "B",
+    "replica": 1,
+    "source_text_path": "cases\\ROMANCE-02\\drafts\\B-1.txt",
+    "candidate_id": "bc36b4ca-287d-4a57-898b-97e25c84dc9a",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "7B782F65FB9D": {
+    "blind_id": "7B782F65FB9D",
+    "case_id": "TASK-04",
+    "category": "危机或具体任务",
+    "group": "A",
+    "replica": 2,
+    "source_text_path": "cases\\TASK-04\\drafts\\A-2.txt",
+    "candidate_id": "0d7f0f7a-d33d-4d08-8ca7-f6838a424fd7",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "A056CC2AB5E5": {
+    "blind_id": "A056CC2AB5E5",
+    "case_id": "CAMPUS-02",
+    "category": "校园尴尬与误会",
+    "group": "A",
+    "replica": 2,
+    "source_text_path": "cases\\CAMPUS-02\\drafts\\A-2.txt",
+    "candidate_id": "2bc0048d-abe9-498e-9d67-860cec79826e",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": "TEMPO_FINAL_LINE_MISMATCH",
+    "validation_error_message": "TEMPO_FINAL_LINE_MISMATCH: final paragraph must include the required marker '她把手插进口袋，指尖触到那个冰凉的金属小件，头也不回地走了。'"
+  },
+  "4B4BF42B1627": {
+    "blind_id": "4B4BF42B1627",
+    "case_id": "ROMANCE-02",
+    "category": "恋爱日常与关系试探",
+    "group": "C",
+    "replica": 1,
+    "source_text_path": "cases\\ROMANCE-02\\drafts\\C-1.txt",
+    "candidate_id": "82b5d5ce-f040-4b44-8b39-0b9c5d5d916e",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "1367562C6419": {
+    "blind_id": "1367562C6419",
+    "case_id": "ROMANCE-01",
+    "category": "恋爱日常与关系试探",
+    "group": "B",
+    "replica": 2,
+    "source_text_path": "cases\\ROMANCE-01\\drafts\\B-2.txt",
+    "candidate_id": "9c63b009-d195-4875-bcd7-322e45934c0f",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "83B57C63C1BE": {
+    "blind_id": "83B57C63C1BE",
+    "case_id": "TASK-01",
+    "category": "危机或具体任务",
+    "group": "C",
+    "replica": 1,
+    "source_text_path": "cases\\TASK-01\\drafts\\C-1.txt",
+    "candidate_id": "9bfd7654-3ed3-43bb-8504-1d4a60a83bb7",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "28C6FF4C5AC4": {
+    "blind_id": "28C6FF4C5AC4",
+    "case_id": "ROMANCE-02",
+    "category": "恋爱日常与关系试探",
+    "group": "A",
+    "replica": 1,
+    "source_text_path": "cases\\ROMANCE-02\\drafts\\A-1.txt",
+    "candidate_id": "930bdbfa-698d-4c60-9f6c-a2ef69ee28fd",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "5F09B23F28B9": {
+    "blind_id": "5F09B23F28B9",
+    "case_id": "ROMANCE-04",
+    "category": "恋爱日常与关系试探",
+    "group": "C",
+    "replica": 2,
+    "source_text_path": "cases\\ROMANCE-04\\drafts\\C-2.txt",
+    "candidate_id": "263db755-7c3f-4ddc-bf47-0c62968caf6a",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": "TEMPO_FINAL_LINE_MISMATCH",
+    "validation_error_message": "TEMPO_FINAL_LINE_MISMATCH: final paragraph must include the required marker '下周三见'"
+  },
+  "EC9FDB29FF47": {
+    "blind_id": "EC9FDB29FF47",
+    "case_id": "CAMPUS-01",
+    "category": "校园尴尬与误会",
+    "group": "C",
+    "replica": 2,
+    "source_text_path": "cases\\CAMPUS-01\\drafts\\C-2.txt",
+    "candidate_id": "727687f9-fb32-47ea-8ffb-dfc3b9b3d235",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": "TEMPO_FINAL_LINE_MISMATCH",
+    "validation_error_message": "TEMPO_FINAL_LINE_MISMATCH: final paragraph must include the required marker '沈晚把证贴向感应区，“嘀”的一声，闸门开了。'"
+  },
+  "F8854BDB67CF": {
+    "blind_id": "F8854BDB67CF",
+    "case_id": "CAMPUS-03",
+    "category": "校园尴尬与误会",
+    "group": "C",
+    "replica": 1,
+    "source_text_path": "cases\\CAMPUS-03\\drafts\\C-1.txt",
+    "candidate_id": "5c2d3cb4-2c4b-4e84-a250-beaa3ed8c792",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "F816C82FFAF2": {
+    "blind_id": "F816C82FFAF2",
+    "case_id": "TASK-02",
+    "category": "危机或具体任务",
+    "group": "A",
+    "replica": 2,
+    "source_text_path": "cases\\TASK-02\\drafts\\A-2.txt",
+    "candidate_id": "e680d000-4a1c-4218-aaa8-aa5ca797aadd",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "70986B97FE3D": {
+    "blind_id": "70986B97FE3D",
+    "case_id": "TASK-03",
+    "category": "危机或具体任务",
+    "group": "C",
+    "replica": 2,
+    "source_text_path": "cases\\TASK-03\\drafts\\C-2.txt",
+    "candidate_id": "a67ab1e0-254c-47e8-a15d-efd8c3b75729",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "ED00D4E9323E": {
+    "blind_id": "ED00D4E9323E",
+    "case_id": "TASK-01",
+    "category": "危机或具体任务",
+    "group": "B",
+    "replica": 1,
+    "source_text_path": "cases\\TASK-01\\drafts\\B-1.txt",
+    "candidate_id": "2c2dd19f-5030-4523-bef8-3d8f75b7526f",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "6AE06FE84C71": {
+    "blind_id": "6AE06FE84C71",
+    "case_id": "CAMPUS-01",
+    "category": "校园尴尬与误会",
+    "group": "B",
+    "replica": 1,
+    "source_text_path": "cases\\CAMPUS-01\\drafts\\B-1.txt",
+    "candidate_id": "f60ca014-2ae4-431b-902d-4f0ef135df7d",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": "TEMPO_FINAL_LINE_MISMATCH",
+    "validation_error_message": "TEMPO_FINAL_LINE_MISMATCH: final paragraph must include the required marker '沈晚把证贴向感应区，“嘀”的一声，闸门开了。'"
+  },
+  "91DAB81CE6EE": {
+    "blind_id": "91DAB81CE6EE",
+    "case_id": "ROMANCE-04",
+    "category": "恋爱日常与关系试探",
+    "group": "A",
+    "replica": 1,
+    "source_text_path": "cases\\ROMANCE-04\\drafts\\A-1.txt",
+    "candidate_id": "cadfdc4d-c502-4220-925b-2f8ebd30ae69",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "DF4033945A7D": {
+    "blind_id": "DF4033945A7D",
+    "case_id": "CAMPUS-02",
+    "category": "校园尴尬与误会",
+    "group": "C",
+    "replica": 2,
+    "source_text_path": "cases\\CAMPUS-02\\drafts\\C-2.txt",
+    "candidate_id": "a00d0036-6236-44a5-8ba0-3b058bc6d31e",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "46B931491FC1": {
+    "blind_id": "46B931491FC1",
+    "case_id": "ROMANCE-01",
+    "category": "恋爱日常与关系试探",
+    "group": "C",
+    "replica": 2,
+    "source_text_path": "cases\\ROMANCE-01\\drafts\\C-2.txt",
+    "candidate_id": "660893d0-e3c8-4029-9544-f86a5f76f32b",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "4DDA39C5A023": {
+    "blind_id": "4DDA39C5A023",
+    "case_id": "CAMPUS-03",
+    "category": "校园尴尬与误会",
+    "group": "A",
+    "replica": 1,
+    "source_text_path": "cases\\CAMPUS-03\\drafts\\A-1.txt",
+    "candidate_id": "b2bedeee-0e0c-4e10-a6f2-62f6c6ef0713",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "92E97B91A720": {
+    "blind_id": "92E97B91A720",
+    "case_id": "CAMPUS-04",
+    "category": "校园尴尬与误会",
+    "group": "C",
+    "replica": 1,
+    "source_text_path": "cases\\CAMPUS-04\\drafts\\C-1.txt",
+    "candidate_id": "78f51684-1c5a-4d5d-b1b4-31bd03b01888",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "27B89E7447F6": {
+    "blind_id": "27B89E7447F6",
+    "case_id": "TASK-03",
+    "category": "危机或具体任务",
+    "group": "B",
+    "replica": 2,
+    "source_text_path": "cases\\TASK-03\\drafts\\B-2.txt",
+    "candidate_id": "f680556f-c1dc-4ba4-a0c4-00d22d3dceb6",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": "TEMPO_FINAL_LINE_MISMATCH",
+    "validation_error_message": "TEMPO_FINAL_LINE_MISMATCH: final paragraph must include the required marker '备用麦克风线握在手中，但窗户的锁扣已无法复原。'"
+  },
+  "D7608E563657": {
+    "blind_id": "D7608E563657",
+    "case_id": "ROMANCE-02",
+    "category": "恋爱日常与关系试探",
+    "group": "A",
+    "replica": 2,
+    "source_text_path": "cases\\ROMANCE-02\\drafts\\A-2.txt",
+    "candidate_id": "bb1998ef-704a-46c8-b672-0e1a5a5db008",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "E8EF45DE3953": {
+    "blind_id": "E8EF45DE3953",
+    "case_id": "CAMPUS-04",
+    "category": "校园尴尬与误会",
+    "group": "A",
+    "replica": 1,
+    "source_text_path": "cases\\CAMPUS-04\\drafts\\A-1.txt",
+    "candidate_id": "0cc0c942-8c93-4962-8739-497fe0d7e73e",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "6A6CFFDB1ECF": {
+    "blind_id": "6A6CFFDB1ECF",
+    "case_id": "ROMANCE-03",
+    "category": "恋爱日常与关系试探",
+    "group": "A",
+    "replica": 1,
+    "source_text_path": "cases\\ROMANCE-03\\drafts\\A-1.txt",
+    "candidate_id": "f9cc3451-1177-4ee6-9137-ad40239c0175",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "E295F03E7D97": {
+    "blind_id": "E295F03E7D97",
+    "case_id": "CAMPUS-02",
+    "category": "校园尴尬与误会",
+    "group": "B",
+    "replica": 2,
+    "source_text_path": "cases\\CAMPUS-02\\drafts\\B-2.txt",
+    "candidate_id": "f7e2d1e2-d94c-4396-ad6d-e02067f579d8",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "399E27ABF334": {
+    "blind_id": "399E27ABF334",
+    "case_id": "CAMPUS-04",
+    "category": "校园尴尬与误会",
+    "group": "B",
+    "replica": 1,
+    "source_text_path": "cases\\CAMPUS-04\\drafts\\B-1.txt",
+    "candidate_id": "0ff4910e-386a-4f61-92ef-7c1f945e645d",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "26EB73359076": {
+    "blind_id": "26EB73359076",
+    "case_id": "TASK-03",
+    "category": "危机或具体任务",
+    "group": "B",
+    "replica": 1,
+    "source_text_path": "cases\\TASK-03\\drafts\\B-1.txt",
+    "candidate_id": "de57ed45-d288-4483-b3f0-126e84568533",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": "TEMPO_FINAL_LINE_MISMATCH",
+    "validation_error_message": "TEMPO_FINAL_LINE_MISMATCH: final paragraph must include the required marker '备用麦克风线握在手中，但窗户的锁扣已无法复原。'"
+  },
+  "BA8622CA7C80": {
+    "blind_id": "BA8622CA7C80",
+    "case_id": "TASK-03",
+    "category": "危机或具体任务",
+    "group": "A",
+    "replica": 1,
+    "source_text_path": "cases\\TASK-03\\drafts\\A-1.txt",
+    "candidate_id": "983b965a-ff21-4b1c-9b87-da1524a0b8b4",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "5E8BE7B10E1D": {
+    "blind_id": "5E8BE7B10E1D",
+    "case_id": "TASK-01",
+    "category": "危机或具体任务",
+    "group": "C",
+    "replica": 2,
+    "source_text_path": "cases\\TASK-01\\drafts\\C-2.txt",
+    "candidate_id": "e822f422-4ff3-4baa-9e83-188cbe8c7c1f",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "E7FF221D324D": {
+    "blind_id": "E7FF221D324D",
+    "case_id": "CAMPUS-03",
+    "category": "校园尴尬与误会",
+    "group": "C",
+    "replica": 2,
+    "source_text_path": "cases\\CAMPUS-03\\drafts\\C-2.txt",
+    "candidate_id": "275fdb8a-29ee-4d5c-a0b3-dc7957c5f017",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "4E819C9ADF87": {
+    "blind_id": "4E819C9ADF87",
+    "case_id": "ROMANCE-04",
+    "category": "恋爱日常与关系试探",
+    "group": "C",
+    "replica": 1,
+    "source_text_path": "cases\\ROMANCE-04\\drafts\\C-1.txt",
+    "candidate_id": "3982c832-d7a7-4086-aaef-efc5be9ea558",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "351C1D4DED12": {
+    "blind_id": "351C1D4DED12",
+    "case_id": "TASK-01",
+    "category": "危机或具体任务",
+    "group": "A",
+    "replica": 2,
+    "source_text_path": "cases\\TASK-01\\drafts\\A-2.txt",
+    "candidate_id": "c70d4fb0-10dd-43a3-8549-d1c589ce207a",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "36F68308DF06": {
+    "blind_id": "36F68308DF06",
+    "case_id": "CAMPUS-04",
+    "category": "校园尴尬与误会",
+    "group": "B",
+    "replica": 2,
+    "source_text_path": "cases\\CAMPUS-04\\drafts\\B-2.txt",
+    "candidate_id": "a18c6564-a020-40ff-85cb-fdf17c527e28",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "E0B0A6429853": {
+    "blind_id": "E0B0A6429853",
+    "case_id": "ROMANCE-03",
+    "category": "恋爱日常与关系试探",
+    "group": "C",
+    "replica": 1,
+    "source_text_path": "cases\\ROMANCE-03\\drafts\\C-1.txt",
+    "candidate_id": "e606b6cc-63b5-4fca-9393-38e358a90bcf",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": "TEMPO_FINAL_LINE_MISMATCH",
+    "validation_error_message": "TEMPO_FINAL_LINE_MISMATCH: final paragraph must include the required marker '下一班车还要等一小时'"
+  },
+  "D1DB69538954": {
+    "blind_id": "D1DB69538954",
+    "case_id": "TASK-04",
+    "category": "危机或具体任务",
+    "group": "C",
+    "replica": 1,
+    "source_text_path": "cases\\TASK-04\\drafts\\C-1.txt",
+    "candidate_id": "c41c7ec9-7ce7-4ce3-b874-660f0d620dec",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": null,
+    "validation_error_message": null
+  },
+  "54793C8B252A": {
+    "blind_id": "54793C8B252A",
+    "case_id": "ROMANCE-03",
+    "category": "恋爱日常与关系试探",
+    "group": "B",
+    "replica": 1,
+    "source_text_path": "cases\\ROMANCE-03\\drafts\\B-1.txt",
+    "candidate_id": "5f932eaf-1fc8-4c25-a7db-631d87e3e258",
+    "model_id": "deepseek-v4-pro",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4000,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "text"
+    },
+    "validation_error_code": "TEMPO_FINAL_LINE_MISMATCH",
+    "validation_error_message": "TEMPO_FINAL_LINE_MISMATCH: final paragraph must include the required marker '下一班车还要等一小时'"
+  }
+}

@@ -1,0 +1,172 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "陶然在商场服务台处理一起儿童走失事件，她必须在不违反安全规定的前提下，利用有限线索定位家长，并承担行动带来的时间与信任代价。",
+  "location": "商场一楼服务台及周边区域",
+  "time": "周日下午，人流高峰时段",
+  "scene_state": {
+    "last_completed_action": "保安将走失男孩带到服务台，随后被另一桩纠纷叫走。",
+    "present_characters": [
+      "陶然",
+      "走失男孩（约5岁）",
+      "服务台同事（背景）",
+      "周围顾客（背景）"
+    ],
+    "visible_facts": [
+      "男孩攥着一张被雨打湿的电影票",
+      "票面显示电影开场时间为14:30",
+      "男孩指着电梯方向",
+      "服务台有广播系统",
+      "商场一楼电梯口人流密集"
+    ],
+    "available_objects": [
+      "服务台电话",
+      "商场广播系统",
+      "电影票",
+      "商场楼层指南"
+    ],
+    "unresolved_problem": "男孩无法说出家长在哪层，陶然不能离开服务台或带孩子离开，必须在不违反规定的情况下定位家长。",
+    "already_existing_constraints": [
+      "陶然不能带孩子离开服务台区域",
+      "陶然不能替孩子编造父母信息",
+      "保安暂时无法提供帮助",
+      "商场广播只能覆盖公共区域"
+    ]
+  },
+  "characters": [
+    {
+      "name": "陶然",
+      "goal": "安全、快速地帮男孩找到家长，同时遵守志愿者规定。",
+      "known": [
+        "男孩走失，有电影票",
+        "票面时间14:30",
+        "男孩指向电梯",
+        "服务台有广播系统",
+        "不能带孩子离开或编造信息"
+      ],
+      "unknown": [
+        "家长具体位置",
+        "男孩是否能理解并回应问题",
+        "广播后家长是否会出现",
+        "如果广播无效下一步怎么办"
+      ],
+      "mistaken_beliefs": [
+        "也许家长正在电影院附近焦急寻找"
+      ],
+      "constraints": [
+        "不能离开服务台",
+        "不能带孩子移动",
+        "必须依据可见证据行动",
+        "不能做出无法兑现的承诺"
+      ],
+      "observed_evidence": [
+        "电影票被雨打湿，但时间清晰",
+        "男孩指向电梯，电梯可通往影院楼层",
+        "男孩不说话，但神情紧张"
+      ],
+      "current_interpretation": "家长很可能在电影院所在楼层，且电影可能已开场，家长发现孩子走失后可能会返回服务台或电影院。",
+      "how_interpretation_drives_action": "她通过广播描述孩子特征和发现地点，并明确告知家长到服务台认领，同时留意电梯口动态。"
+    },
+    {
+      "name": "走失男孩",
+      "goal": "找到家长，但无法主动表达。",
+      "known": [
+        "自己与家长走散",
+        "手里有电影票",
+        "记得电梯方向"
+      ],
+      "unknown": [
+        "家长在哪",
+        "如何求助",
+        "陶然是否能帮忙"
+      ],
+      "mistaken_beliefs": [
+        "也许家长还在电影院里面"
+      ],
+      "constraints": [
+        "语言表达能力有限",
+        "情绪紧张，可能无法配合",
+        "不能独自行动"
+      ],
+      "observed_evidence": [
+        "陶然穿着志愿者马甲",
+        "服务台是安全场所"
+      ],
+      "current_interpretation": "这个阿姨可以帮忙，但需要等待。",
+      "how_interpretation_drives_action": "他紧紧攥着电影票，不时望向电梯，没有哭闹。"
+    }
+  ],
+  "concrete_problem": "如何在不离开服务台、不编造信息的前提下，利用电影票和男孩的指向，让家长尽快得知孩子位置并前来认领？",
+  "pressure": "电影开场已过半小时，家长可能越来越焦急；同时服务台其他事务可能干扰，陶然必须快速决策。",
+  "turning_point": "陶然决定使用商场广播，但她必须精确描述孩子特征和发现地点，同时避免泄露过多信息；广播后，她选择相信家长会听到并赶来，而不是尝试其他更冒险的方法。",
+  "end_condition": "广播播出后，陶然观察到电梯口有一个匆忙的身影出现，她准备进行身份核实。",
+  "forbidden": [
+    "陶然带孩子离开服务台",
+    "陶然编造家长信息或承诺",
+    "保安提前回来解决问题",
+    "家长立刻出现并完美解决",
+    "陶然使用手机或外部资源",
+    "男孩突然说出关键信息"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "男孩手中的电影票显示时间14:30，且他指向电梯。",
+      "character_interpretation": "家长可能带孩子在电影院所在楼层，电影已开场，家长发现孩子走失后可能会返回或寻找。",
+      "character_next_action": "陶然使用服务台广播，描述男孩年龄、衣着和发现地点，并请家长到一楼服务台。",
+      "rejected_alternative": "陶然本可以只广播孩子特征而不提地点，或询问男孩更多问题，但她认为时间紧迫，直接提供明确地点更高效。",
+      "immediate_consequence": "广播在商场内循环播放，电梯口部分顾客开始留意周围是否有慌张的家长。",
+      "counterfactual_without_action": "如果陶然不广播，她只能被动等待家长自行找来，时间拖延可能导致家长报警或孩子情绪崩溃。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "只有服务台附近的人知道男孩走失，信息未扩散。",
+        "after": "商场公共区域都收到寻人广播，信息覆盖面扩大。"
+      },
+      "cost_or_commitment": "陶然必须留在服务台等待，并准备应对可能出现的冒领者；她放弃了亲自去电影院查看的机会。",
+      "next_constraint": "广播后，陶然不能离开服务台，必须等待家长前来，且需要核实身份。",
+      "reader_must_infer": "陶然选择广播是基于对商场流程和家长行为的预判，她内心也在担心如果广播无效该怎么办。",
+      "narrator_must_not_state": [
+        "陶然内心对广播效果的确定性",
+        "家长是否真的在电影院"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "男孩攥着湿电影票站在服务台前，保安刚离开，电梯口人流不断。",
+    "dominant_pressure": {
+      "kind": "information_gap",
+      "description": "陶然缺少家长位置的关键信息，只能依靠有限线索推断，时间拖延可能加剧孩子和家长的焦虑。"
+    },
+    "allowed_viewpoint_misread": "陶然可能误以为家长会立刻听到广播并赶来，但家长可能正在慌乱中没注意广播。",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "家长走失的具体原因",
+      "男孩为何无法说话"
+    ],
+    "stop_state": {
+      "type": "physical_change",
+      "visible_fact": "电梯口出现一个神色慌张、四处张望的成年人，其外貌与陶然广播描述的可能家长特征相符。",
+      "what_is_now_different": "从无明确线索到出现一个可能的家长人选，局面进入核实阶段。",
+      "must_not_append": "不得直接确认此人就是家长，或让陶然立刻放松警惕。"
+    },
+    "final_line_must_include": ""
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "在演出前二十分钟，安梨发现排练室钥匙被反锁在内，必须利用现场条件获取备用麦克风线，同时做出明确选择并承受代价。",
+  "location": "学校演出厅后台走廊",
+  "time": "演出前20分钟",
+  "scene_state": {
+    "last_completed_action": "安梨发现排练室门反锁，透过玻璃看到钥匙和备用麦克风线都在里面。",
+    "present_characters": [
+      "安梨",
+      "负责人（台上点名中，不在走廊）"
+    ],
+    "visible_facts": [
+      "排练室门反锁",
+      "钥匙在室内桌上",
+      "备用麦克风线在室内",
+      "走廊尽头有消防箱",
+      "走廊尽头有保洁推车",
+      "走廊尽头有一扇半开的窗"
+    ],
+    "available_objects": [
+      "消防箱（含灭火器、消防栓）",
+      "保洁推车（含清洁工具）",
+      "半开的窗"
+    ],
+    "unresolved_problem": "备用麦克风线被锁在排练室内，无法直接取出。",
+    "already_existing_constraints": [
+      "不能砸门或擅自破坏设备",
+      "时间紧迫（演出前20分钟）",
+      "负责人正在台上点名，无法立即求助"
+    ]
+  },
+  "characters": [
+    {
+      "name": "安梨",
+      "goal": "在演出前拿到备用麦克风线，确保演出顺利进行",
+      "known": [
+        "排练室被反锁，钥匙和线都在里面",
+        "走廊尽头有消防箱、保洁推车和半开的窗",
+        "不能砸门或破坏设备"
+      ],
+      "unknown": [
+        "消防箱内是否有可用的长钩子",
+        "保洁推车上是否有可用的细长工具",
+        "半开的窗是否通向排练室或相邻房间"
+      ],
+      "mistaken_beliefs": [
+        "也许保洁推车上的扫帚柄足够长，可以够到钥匙"
+      ],
+      "constraints": [
+        "不能砸门或擅自破坏设备",
+        "时间紧迫，只有20分钟",
+        "负责人无法立即协助"
+      ],
+      "observed_evidence": [
+        "消防箱锁扣似乎可打开",
+        "保洁推车上有一把长柄扫帚和簸箕",
+        "半开的窗离地不高，外面可能是相邻房间的窗台"
+      ],
+      "current_interpretation": "有三条可能的路线：消防箱里的工具、保洁推车上的扫帚、或从窗户爬进去。但时间只够尝试一条。",
+      "how_interpretation_drives_action": "她必须快速评估每条路线的可行性和风险，选择一条并立即行动。"
+    }
+  ],
+  "concrete_problem": "安梨必须在三条可能的路线中选择一条来获取备用麦克风线，并承担该选择的代价。",
+  "pressure": "演出前20分钟，负责人正在点名，备用麦克风线缺失将导致演出事故。",
+  "turning_point": "安梨选择从保洁推车上拿起扫帚，试图从门缝或窗户够钥匙，但扫帚柄不够长，她意识到必须放弃这条路线，转而选择更冒险的窗户路线，从而暴露了自己擅离职守的风险。",
+  "end_condition": "安梨最终通过窗户进入排练室拿到备用麦克风线，但留下了窗户被撬开的痕迹，且错过了负责人点名的时刻。",
+  "forbidden": [
+    "不能砸门或擅自破坏设备",
+    "不能引入外部帮助（如其他学生突然出现）",
+    "不能使用消防斧等破坏性工具",
+    "不能临时找到备用钥匙",
+    "不能使用手机求助（设定中未提及）"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "保洁推车上的扫帚柄看起来很长，似乎能穿过门缝或窗户够到钥匙。",
+      "character_interpretation": "安梨认为这是最安全、最不具破坏性的方法，值得一试。",
+      "character_next_action": "她拿起扫帚，尝试从门缝伸进去拨弄钥匙。",
+      "rejected_alternative": "她本可以直接尝试爬窗户，但觉得那样更危险且可能被误解。",
+      "immediate_consequence": "扫帚柄不够长，无法触碰到桌上的钥匙。",
+      "counterfactual_without_action": "如果她不试扫帚，可能会直接爬窗，但那样会留下更多痕迹。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "扫帚在推车上，钥匙仍在桌上。",
+        "after": "扫帚被使用过，钥匙位置未变，安梨浪费了3分钟。"
+      },
+      "cost_or_commitment": "浪费了宝贵的时间，且扫帚上留下了安梨的指纹。",
+      "next_constraint": "时间进一步减少，只剩下约15分钟，且扫帚路线被证明无效。",
+      "reader_must_infer": "安梨为什么没有先检查扫帚长度再行动？",
+      "narrator_must_not_state": [
+        "安梨此刻的焦虑程度",
+        "扫帚实际长度与门缝距离的精确数值"
+      ]
+    },
+    {
+      "id": "CT02",
+      "kind": "constraint_to_choice",
+      "visible_trigger": "时间紧迫，扫帚路线失败，而窗户似乎是唯一的快速入口。",
+      "character_interpretation": "安梨认为爬窗是唯一剩下的选择，即使有风险也必须做。",
+      "character_next_action": "她推开半开的窗，翻越窗台，进入相邻房间，再通过连通门进入排练室。",
+      "rejected_alternative": "她可以放弃并去找负责人，但那样会耽误更多时间，可能导致演出中断。",
+      "immediate_consequence": "她成功进入排练室拿到备用麦克风线，但窗户的锁扣被损坏，留下了闯入痕迹。",
+      "counterfactual_without_action": "如果她不爬窗，演出将因缺少麦克风线而出问题，她会被问责。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "窗户半开，排练室仍然锁着。",
+        "after": "窗户被完全打开，锁扣变形，安梨在排练室内拿到线。"
+      },
+      "cost_or_commitment": "损坏了窗户锁扣，留下了可能被追责的证据，且错过了点名。",
+      "next_constraint": "她必须在演出结束后解释窗户损坏的原因，且负责人可能已经注意到她的缺席。",
+      "reader_must_infer": "安梨是否担心被误解为破坏公物？",
+      "narrator_must_not_state": [
+        "安梨翻窗时的具体动作细节",
+        "相邻房间的布局"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "安梨站在排练室门外，透过玻璃看到钥匙和备用麦克风线，时间只剩20分钟。",
+    "dominant_pressure": {
+      "kind": "resource_constraint",
+      "description": "时间正在快速流逝，但真正限制行动的是可用工具和路线的限制。"
+    },
+    "allowed_viewpoint_misread": "读者可能以为安梨会先检查工具长度，但她因焦虑而直接行动。",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "消防箱内具体有哪些工具",
+      "保洁推车上除了扫帚还有什么"
+    ],
+    "stop_state": {
+      "type": "physical_change",
+      "visible_fact": "窗户锁扣变形，安梨拿着备用麦克风线站在排练室内。",
+      "what_is_now_different": "备用麦克风线到手，但窗户被损坏，安梨错过了点名。",
+      "must_not_append": "不得描述安梨如何返回走廊或是否被负责人发现。"
+    },
+    "final_line_must_include": "备用麦克风线握在手中，但窗户的锁扣已无法复原。"
+  }
+}
