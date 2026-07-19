@@ -53,6 +53,12 @@ class ContextService:
 
         if req.scene_plan is not None:
             variables["scene_plan"] = json.dumps(req.scene_plan, ensure_ascii=False, indent=2)
+        if req.writer_brief is not None:
+            variables["writer_brief"] = json.dumps(req.writer_brief, ensure_ascii=False, indent=2)
+            if req.stage == "writer":
+                # Legacy Writer templates still contain {{scene_plan}}. Never
+                # let that placeholder leak the full Planner JSON in vNext.
+                variables["scene_plan"] = ""
 
         variables["draft_text"] = req.draft_text
         variables["numbered_draft"] = self._numbered_text(req.draft_text) if req.draft_text else ""
@@ -66,6 +72,7 @@ class ContextService:
             variables["selected_issues"] = ""
 
         variables["revised_text"] = req.revised_text
+        variables["numbered_revised_text"] = self._numbered_text(req.revised_text) if req.revised_text else ""
         variables["tempo_guardrails"] = (
             json.dumps(req.tempo_guardrails, ensure_ascii=False, indent=2)
             if req.tempo_guardrails is not None else ""
@@ -103,7 +110,7 @@ class ContextService:
             variables["current_chapter_text"] = ""
 
         untouchable = {"scene_instruction", "run_override", "draft_text", "numbered_draft",
-                       "revised_text", "scene_plan", "critic_report", "selected_issues",
+                       "revised_text", "numbered_revised_text", "scene_plan", "writer_brief", "critic_report", "selected_issues",
                        "continuation_anchor", "current_chapter_text", "tempo_guardrails"}
 
         truncated = False

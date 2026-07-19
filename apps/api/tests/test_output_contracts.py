@@ -505,25 +505,20 @@ def test_critic_causal_check_accepts_numbered_paragraph_labels():
     assert result.causal_transition_check[0].forbidden_explanation_found
 
 
-def test_reviser_patch_accepts_integer_paragraph_ids():
+def test_reviser_patch_accepts_one_legal_paragraph_id():
     data = {
         "patches": [
             {
-                "issue_id": "I01",
                 "operation": "replace",
-                "target_paragraph_ids": [71, 72],
+                "paragraph_id": 71,
                 "replacement": "\u4fee\u6539\u540e\u7684\u6bb5\u843d\u3002",
             }
         ],
-        "revised_text": "\u4fee\u6539\u540e\u7684\u5b8c\u6574\u6b63\u6587\u3002",
-        "unchanged_ratio": 0.9,
-        "introduced_facts": [],
-        "contract_verification": {},
     }
 
     result = validate_reviser_output(data)
 
-    assert result.patches[0].target_paragraph_ids == ["P071", "P072"]
+    assert result.patches[0].paragraph_id == "P071"
 
 
 @pytest.mark.parametrize("issue_type, operation", [
@@ -546,7 +541,7 @@ def test_critic_accepts_tempo_issue_types(issue_type, operation):
     assert result.issues[0].issue_type.value == issue_type
 
 
-def test_judge_rejects_unselected_issue_results_and_numbered_merged_text():
+def test_judge_rejects_unselected_issue_results_but_normalizes_numbered_merged_text():
     data = {
         "decision": "accept_merged",
         "issue_results": [
@@ -563,8 +558,25 @@ def test_judge_rejects_unselected_issue_results_and_numbered_merged_text():
         "state_patch": {},
     }
 
-    with pytest.raises(ValueError, match="JUDGE_OUTPUT_CONTRACT_INVALID"):
+    with pytest.raises(ValueError, match="unexpected issue_results"):
         validate_judge_output_for_selected_issues(data, ["I01"])
+
+    data["issue_results"] = [data["issue_results"][0]]
+    result = validate_judge_output_for_selected_issues(data, ["I01"])
+    assert result.final_text == "面板亮了。"
+
+
+def test_judge_keeps_comparison_and_marks_illegal_paragraph_label():
+    data = {
+        "decision": "accept_merged",
+        "issue_results": [{"issue_id": "I01", "status": "resolved", "action": "keep_revision"}],
+        "new_problems": [], "chapter_contract_completed": True,
+        "main_payoff_preserved": True, "final_text": "[P1] 面板亮了。",
+        "quality_score": 80, "state_patch": {},
+    }
+    result = validate_judge_output_for_selected_issues(data, ["I01"])
+    assert result.final_text == "[P1] 面板亮了。"
+    assert result.format_warnings == ["JUDGE_OUTPUT_REFERENCE_INVALID: illegal paragraph labels [P1]"]
 
 
 def test_judge_accepts_exact_selected_issue_results_and_clean_merged_text():

@@ -42,4 +42,14 @@ No stage was retried and no frozen Prompt, schema, stage, candidate contract, or
 
 ## What the evidence supports
 
-The frozen pipeline can improve local prose restraint and exact stop-state delivery: it did so in CASE-001 to CASE-003. The current evidence does not support enabling it as a reliable default: it fails the Planner-contract-improvement threshold and CASE-004 shows a concrete final-text regression with no successful Judge safety net. This report records the failure without proposing a Prompt change from one case.
+The frozen pipeline can improve local prose restraint and exact stop-state delivery: it did so in CASE-001 to CASE-003. The current evidence does not support enabling it as a reliable default: it fails the Planner-contract-improvement threshold and CASE-004 shows a concrete final-text regression. This report records the failure without proposing a Prompt change from one case.
+
+## CASE-004 Judge contract supplement
+
+`CASE-004-JUDGE-CONTRACT-FIX` ran exactly one additional Judge call against the
+original CASE-004 Planner, Writer, Critic, and Reviser candidates. The original
+frozen evidence remains unchanged. The repaired service accepted the comparison,
+removed legal paragraph labels from the suggested merged text, and recorded the
+result separately under `supplemental/CASE-004-JUDGE-CONTRACT-FIX/`. It restores
+Judge-as-advice availability; it does not change the baseline conclusion or make
+Judge an automatic final-text selector.

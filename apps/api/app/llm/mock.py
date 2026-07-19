@@ -437,23 +437,7 @@ class MockClient(BaseLlmClient):
         # Reviser → targeted fixes
         if "文字修订师" in sp or "reviser" in sp:
             return json.dumps({
-                "patches": [
-                    {"issue_id": "I01", "operation": "replace", "target_paragraph_ids": ["P003"], "replacement": "老陈把书翻到夹着书签的那一页，却没有继续读。他想起妻子以前总说，一本书读得越慢，里面的世界就越长。窗台上的阿橘还在敲尾巴。他摘下老花镜，用袖口擦了擦镜片。"},
-                    {"issue_id": "I02", "operation": "insert_after", "target_paragraph_ids": ["P005"], "replacement": "他摘下老花镜搁在书页上，顺手把桌上那杯已经凉透的茶往旁边挪了挪。"},
-                    {"issue_id": "I03", "operation": "insert_after", "target_paragraph_ids": ["P009"], "replacement": "阿橘凑近女孩的球鞋闻了闻，然后抬起头，发出一声很轻的'喵'——像是在打招呼，又像是在替老陈说那句他没有说出口的话。"},
-                ],
-                "revised_text": "黄昏的光从梧桐叶的缝隙里漏进来...(修订后的完整文本)...",
-                "unchanged_ratio": 0.88,
-                "introduced_facts": [],
-                "contract_verification": {
-                    "chapter_function_preserved": True,
-                    "must_deliver_preserved": True,
-                    "must_not_deliver_respected": True,
-                    "main_change_preserved": True,
-                    "main_payoff_preserved": True,
-                    "ending_hook_preserved": True,
-                    "fuel_remains_reserved": True,
-                },
+                "patches": [],
             }, ensure_ascii=False)
 
         # Judge → final verdict
@@ -506,4 +490,17 @@ class MockClient(BaseLlmClient):
                 ],
             }, ensure_ascii=False)
 
-        return "这是模拟的章节正文内容。故事从这里开始展开..."
+        # Writer → enough ordinary prose for integration tests.  The built-in
+        # Writer identifies itself in Chinese, so do not fall through to the
+        # intentionally short generic fallback.
+        if "小说写作者" in sp or "叙事正文" in sp:
+            return (
+                "他把手里的纸页按住，先看见门口那个人停了一下。"
+                "走廊里的脚步声已经近了，他没有解释，只把椅子往旁边挪开。"
+                "对方低头看见空出来的位置，伸手把散开的东西收进怀里。"
+            )
+
+        return (
+            "这是模拟的章节正文内容。故事从这里开始展开，人物先停下手里的动作，"
+            "看见眼前的麻烦后作出选择。这个选择立刻改变了场面，也留下了下一步无法回避的限制。"
+        )

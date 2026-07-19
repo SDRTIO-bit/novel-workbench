@@ -1075,15 +1075,25 @@ def validate_critic_evidence(data: dict) -> CriticEvidenceOutput:
 # ── Reviser ───────────────────────────────────────────────────────────
 
 class Patch(BaseModel):
-    issue_id: str = ""
-    operation: str = "replace"
-    target_paragraph_ids: list[str] = Field(default_factory=list)
+    model_config = ConfigDict(extra="forbid")
+
+    paragraph_id: str
+    operation: Literal["replace", "delete", "insert_after"] = "replace"
     replacement: str = ""
 
-    @field_validator("target_paragraph_ids", mode="before")
+    @field_validator("paragraph_id", mode="before")
     @classmethod
-    def normalize_target_paragraph_ids(cls, value):
-        return _paragraph_labels(value)
+    def normalize_paragraph_id(cls, value):
+        labels = _paragraph_labels(value)
+        if len(labels) != 1 or not _is_paragraph_label(labels[0]):
+            raise ValueError("paragraph_id must be a legal paragraph ID")
+        return labels[0]
+
+    @model_validator(mode="after")
+    def require_replacement_when_needed(self):
+        if self.operation != "delete" and not self.replacement.strip():
+            raise ValueError("replacement is required unless operation is delete")
+        return self
 
 
 class ContractVerification(BaseModel):
@@ -1097,11 +1107,9 @@ class ContractVerification(BaseModel):
 
 
 class ReviserOutput(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
     patches: list[Patch] = Field(default_factory=list)
-    revised_text: str = Field(min_length=1)
-    unchanged_ratio: float = Field(ge=0.0, le=1.0)
-    introduced_facts: list[str] = Field(default_factory=list)
-    contract_verification: ContractVerification = Field(default_factory=ContractVerification)
 
 
 def validate_reviser_output(data: dict) -> ReviserOutput:
@@ -1155,6 +1163,7 @@ class JudgeOutput(BaseModel):
     narrator_management_reduced: bool = True
     necessary_information_lost: bool = False
     causal_transition_results: list[CausalTransitionResult] = Field(default_factory=list)
+    format_warnings: list[str] = Field(default_factory=list)
 
     @model_validator(mode="after")
     def check_information_lost_blocks_accept(self):
@@ -1210,10 +1219,19 @@ def validate_judge_output_for_selected_issues(
                 "chapter_contract_completed and main_payoff_preserved"
             )
 
-    if output.decision == JudgeDecision.accept_merged and re.search(r"(?m)^\s*\[P\d{3}\]", output.final_text):
-        raise ValueError(
-            "JUDGE_OUTPUT_CONTRACT_INVALID: merged final_text must not contain paragraph labels"
-        )
+    # Paragraph labels are a presentation artifact, not a reason to discard a
+    # usable comparison.  The service removes legal labels before any text is
+    # exposed as a suggestion; malformed labels remain visible to the author
+    # in the Judge evidence instead of invalidating the entire candidate.
+    if output.decision == JudgeDecision.accept_merged:
+        malformed = re.findall(r"(?m)^\s*\[([^\]]+)\]", output.final_text)
+        illegal = [label for label in malformed if not _is_paragraph_label(label.strip().upper())]
+        if illegal:
+            output.format_warnings.append(
+                "JUDGE_OUTPUT_REFERENCE_INVALID: illegal paragraph labels "
+                + ", ".join(f"[{label}]" for label in illegal)
+            )
+        output.final_text = re.sub(r"(?m)^\s*\[P\d{3,}\]\s*", "", output.final_text)
     return output
 
 

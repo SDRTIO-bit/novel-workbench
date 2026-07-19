@@ -28,6 +28,8 @@ from app.services.tgbreak_service import (
 from app.services.tgbreak_writer_adapter import (
     build_tgbreak_project_data_from_writer_context,
 )
+from app.services.writer_brief import compile_writer_brief
+from app.services.reviser_patches import PatchApplicationError, apply_reviser_patches
 from app.tgbreak.models import TgbreakOutput
 from app.tgbreak.output import TgbreakOutputError, parse_tgbreak_response
 from app.tgbreak.renderer import render_tgbreak
@@ -185,6 +187,7 @@ class GenerationService:
         ctx = await ctx_service.assemble(
             ctx_req, resolve_prompt=writer_prompt_mode != "tgbreak"
         )
+        self._append_writer_brief(stage, writer_prompt_mode, ctx)
         await self._append_judge_selection_envelope(run_id, stage, ctx)
         step.input_snapshot_json = ctx["input_snapshot_hash"]
 
@@ -403,14 +406,18 @@ class GenerationService:
                         else:
                             text_output = raw_response
                             if stage == "reviser":
-                                revised_text = validated.get("revised_text", "")
-                                if revised_text and revised_text.strip():
-                                    text_output = revised_text
-                                else:
-                                    error_code = "REVISER_OUTPUT_INVALID"
-                                    error_message = "Reviser returned valid JSON but missing or empty 'revised_text'. The candidate cannot be used."
-                                    step.status = "failed"
-                                    run.status = "completed"
+                                applied = apply_reviser_patches(
+                                    ctx_req.draft_text,
+                                    validated.get("patches", []),
+                                    ctx_req.critic_report,
+                                )
+                                text_output = applied.text
+                                compiler_trace_json = json.dumps({
+                                    "patch_application": {
+                                        "changed_paragraph_ids": applied.changed_paragraph_ids,
+                                        "unchanged_ratio": applied.unchanged_ratio,
+                                    }
+                                }, ensure_ascii=False)
                             elif stage == "judge":
                                 judge_decision = validated.get("decision", "")
                                 if not judge_decision:
@@ -552,8 +559,20 @@ class GenerationService:
             ensure_ascii=False,
         )
         ctx["rendered_user_prompt"] += f"\n<!-- SELECTED_ISSUES_JSON={selected_payload} -->"
+        ctx["rendered_user_prompt"] += (
+            "\n\n## 固定段落编号（仅供定位；不要抄入 final_text）\n"
+            "原稿：\n"
+            f"{ctx['variables'].get('numbered_draft', '')}\n\n"
+            "修订稿：\n"
+            f"{ctx['variables'].get('numbered_revised_text', '')}"
+        )
         ctx["input_snapshot_hash"] = sha256(
-            (ctx["input_snapshot_hash"] + selected_payload).encode("utf-8")
+            (
+                ctx["input_snapshot_hash"]
+                + selected_payload
+                + ctx["variables"].get("numbered_draft", "")
+                + ctx["variables"].get("numbered_revised_text", "")
+            ).encode("utf-8")
         ).hexdigest()
 
     async def _build_context_request(self, run, stage: str, override: dict):
@@ -569,6 +588,7 @@ class GenerationService:
             scene_instruction=run.scene_instruction,
             run_override=run_override,
             scene_plan=override.get("scene_plan"),
+            writer_brief=override.get("writer_brief"),
             draft_text=override.get("draft_text", ""),
             critic_report=override.get("critic_report"),
             selected_issues=override.get("selected_issues", []),
@@ -603,6 +623,8 @@ class GenerationService:
             if prev_stage == "planner":
                 if prev_candidate.parsed_output_json:
                     ctx_req.scene_plan = json.loads(prev_candidate.parsed_output_json)
+                    if stage == "writer":
+                        ctx_req.writer_brief = compile_writer_brief(ctx_req.scene_plan)
                     guardrails = ctx_req.scene_plan.get("tempo_guardrails")
                     # An explicit per-run guardrail is an author decision. The
                     # planner may supply a fallback, but must not silently
@@ -639,6 +661,23 @@ class GenerationService:
                 ctx_req.revised_text = prev_candidate.text_output or prev_candidate.raw_response
 
         return ctx_req
+
+    @staticmethod
+    def _append_writer_brief(stage: str, writer_prompt_mode: str, ctx: dict):
+        """Place the short action brief last, adjacent to the writing order."""
+        if stage != "writer" or writer_prompt_mode != "builtin":
+            return
+        brief = ctx.get("variables", {}).get("writer_brief")
+        if not brief:
+            return
+        ctx["rendered_user_prompt"] += (
+            "\n\n## Writer Brief（只含现场行动信息）\n"
+            f"{brief}\n\n"
+            "只输出场景正文；用可见行动处理这个具体麻烦，并在 stop_state 成立处停止。"
+        )
+        ctx["input_snapshot_hash"] = sha256(
+            (ctx["input_snapshot_hash"] + brief).encode("utf-8")
+        ).hexdigest()
 
     async def select_critic_issues(
         self,
@@ -718,7 +757,7 @@ class GenerationService:
                 " Start a new run to submit a different version.",
             )
 
-        valid_types = {"original", "revision", "judge", "manual"}
+        valid_types = {"original", "revision", "manual"}
         if accept_type not in valid_types:
             raise bad_request(
                 "INVALID_ACCEPT_TYPE",
@@ -729,11 +768,9 @@ class GenerationService:
 
         writer_step = await self.repo.get_step(run_id, "writer")
         reviser_step = await self.repo.get_step(run_id, "reviser")
-        judge_step = await self.repo.get_step(run_id, "judge")
 
         writer_text = ""
         reviser_text = ""
-        judge_final_text = ""
 
         if writer_step and writer_step.selected_candidate_id:
             candidate = next(
@@ -749,14 +786,6 @@ class GenerationService:
             if candidate and candidate.text_output:
                 reviser_text = candidate.text_output
 
-        if judge_step and judge_step.selected_candidate_id:
-            judge_candidate = next(
-                (c for c in judge_step.candidates if c.id == judge_step.selected_candidate_id), None
-            )
-            if judge_candidate and judge_candidate.parsed_output_json:
-                judge_data = _json.loads(judge_candidate.parsed_output_json)
-                judge_final_text = judge_data.get("final_text", "")
-
         if accept_type == "original":
             if not writer_text:
                 raise bad_request("NO_ORIGINAL", "初稿不存在，无法选择保留初稿")
@@ -765,10 +794,6 @@ class GenerationService:
             if not reviser_text:
                 raise bad_request("NO_REVISION", "修订稿不存在，无法选择采用修订稿")
             final_text = reviser_text
-        elif accept_type == "judge":
-            final_text = judge_final_text or reviser_text or writer_text
-            if not final_text:
-                raise bad_request("NO_JUDGE_TEXT", "没有可用的审稿合并文本")
         elif accept_type == "manual":
             final_text = manual_text
         else:
@@ -796,8 +821,6 @@ class GenerationService:
             candidate_ref = writer_step.selected_candidate_id if writer_step else None
         elif accept_type == "revision":
             candidate_ref = reviser_step.selected_candidate_id if reviser_step else None
-        elif accept_type == "judge":
-            candidate_ref = judge_step.selected_candidate_id if judge_step else None
 
         version = ChapterVersion(
             chapter_id=chapter.id,

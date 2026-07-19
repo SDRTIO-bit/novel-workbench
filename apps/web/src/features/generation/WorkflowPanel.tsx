@@ -156,10 +156,6 @@ function AcceptChoices({
   const getDefaultText = () => {
     const reviser = run.steps.find((s) => s.stage === 'reviser')
     const writer = run.steps.find((s) => s.stage === 'writer')
-    if (reviser) {
-      const rev = reviser.candidates.find((c) => c.is_selected)
-      if (rev?.text_output) return rev.text_output
-    }
     if (writer) {
       const wr = writer.candidates.find((c) => c.is_selected)
       if (wr?.text_output) return wr.text_output
@@ -219,14 +215,11 @@ function AcceptChoices({
     if (hasReviser) {
       buttons.push({ type: 'revision', label: '采用修订稿' })
     }
-    if (decision === 'accept_merged') {
-      buttons.push({ type: 'judge', label: '采纳合并稿' })
-    }
     buttons.push({ type: 'manual', label: '手动编辑...' })
 
     return (
       <div className="p-3 border-t border-gray-200 bg-white shrink-0">
-        <p className="text-xs font-medium text-gray-500 mb-2">选择最终版本:</p>
+        <p className="text-xs font-medium text-gray-500 mb-2">默认保留 Writer 初稿；修订和 Judge 仅供人工对照:</p>
         <div className="grid grid-cols-2 gap-2">
           {buttons.map((b) => (
             <button

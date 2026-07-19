@@ -72,7 +72,7 @@ class TestMockClient:
         import json
         data = json.loads(response.text)
         assert "patches" in data
-        assert "revised_text" in data
+        assert "revised_text" not in data
 
     async def test_judge_response_format(self):
         client = MockClient(mode=MOCK_MODE_NORMAL, delay_ms=0)

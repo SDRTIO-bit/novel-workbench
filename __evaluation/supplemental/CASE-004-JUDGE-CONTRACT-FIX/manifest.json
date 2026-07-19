@@ -1,0 +1,13 @@
+{
+  "supplement_id": "CASE-004-JUDGE-CONTRACT-FIX",
+  "original_case_id": "CASE-004",
+  "stage_calls": {
+    "judge": 1
+  },
+  "baseline_judge_candidate_id": "e53c1fba-7a91-43ea-a48b-1167529e8e3b",
+  "supplement_judge_candidate_id": "98508353-ede0-44cb-a254-4dc5c8ec35f3",
+  "prompt_version_id": "9f5fa364-15ee-436e-80ef-ed5087e840e3",
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-chat",
+  "result": "completed"
+}

@@ -19,6 +19,7 @@ class ContextPreviewRequest(BaseModel):
     scene_instruction: str = ""
     run_override: str = ""
     scene_plan: dict | None = None
+    writer_brief: dict | None = None
     draft_text: str = ""
     critic_report: dict | None = None
     selected_issues: list[dict] = []

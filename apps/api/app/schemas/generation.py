@@ -135,7 +135,7 @@ class StageOverrideRequest(BaseModel):
 
 class AcceptFinalRequest(BaseModel):
     accept_type: str = Field(
-        description="One of: original, revision, judge, manual"
+        description="One of: original, revision, manual"
     )
     final_text: str | None = Field(
         default=None, description="Required when accept_type is 'manual'"
