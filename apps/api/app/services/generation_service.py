@@ -29,6 +29,7 @@ from app.services.tgbreak_writer_adapter import (
     build_tgbreak_project_data_from_writer_context,
 )
 from app.services.writer_brief import compile_writer_input
+from app.services.narrative_brief_compiler import compile_narrative_route_input
 from app.services.reviser_patches import PatchApplicationError, apply_reviser_patches
 from app.tgbreak.models import TgbreakOutput
 from app.tgbreak.output import TgbreakOutputError, parse_tgbreak_response
@@ -200,7 +201,15 @@ class GenerationService:
             writer_prompt_mode,
             ctx,
             override.get("writer_behavior_mode") if stage == "writer" else None,
+            instruction_block=override.pop("_instruction_block", ""),
         )
+        # Transfer narrative route metadata from override → params for audit persistence
+        if "_route_decision" in override:
+            params["route_decision"] = override.pop("_route_decision")
+        if "_compiled_brief_hash" in override:
+            params["compiled_brief_hash"] = override.pop("_compiled_brief_hash")
+        if "_instruction_hash" in override:
+            params["instruction_hash"] = override.pop("_instruction_hash")
         await self._append_judge_selection_envelope(run_id, stage, ctx)
         step.input_snapshot_json = ctx["input_snapshot_hash"]
 
@@ -651,17 +660,39 @@ class GenerationService:
                 if prev_candidate.parsed_output_json:
                     ctx_req.scene_plan = json.loads(prev_candidate.parsed_output_json)
                     if stage == "writer":
-                        try:
-                            ctx_req.writer_brief = compile_writer_input(
-                                ctx_req.scene_plan,
-                                override.get("writer_input_mode", "writer_brief"),
-                            )
-                        except ValueError as brief_error:
-                            raise bad_request(
-                                "WRITER_BRIEF_INVALID",
-                                "所选 Planner 候选无法编译为 Writer 输入"
-                                f"（需要有效的实验输入模式与 planner v2 输出）: {brief_error}",
-                            ) from brief_error
+                        writer_input_mode = override.get("writer_input_mode", "writer_brief")
+                        if writer_input_mode == "narrative_route":
+                            try:
+                                route_input = compile_narrative_route_input(
+                                    ctx_req.scene_plan,
+                                    {},
+                                    override.get("route_policy_version", "narrative-route-v1"),
+                                    planner_candidate_id=prev_candidate.id,
+                                )
+                                ctx_req.writer_brief = route_input.compiled_brief
+                                # Stash route metadata for later use by
+                                # _append_writer_brief and candidate params.
+                                override["_route_decision"] = route_input.decision.model_dump()
+                                override["_instruction_block"] = route_input.instruction_block
+                                override["_instruction_hash"] = route_input.instruction_hash
+                                override["_compiled_brief_hash"] = route_input.compiled_brief_hash
+                            except ValueError as brief_error:
+                                raise bad_request(
+                                    "WRITER_BRIEF_INVALID",
+                                    "所选 Planner 候选无法编译为 Narrative Route 输入"
+                                    f"（需要有效的 planner v2 输出）: {brief_error}",
+                                ) from brief_error
+                        else:
+                            try:
+                                ctx_req.writer_brief = compile_writer_input(
+                                    ctx_req.scene_plan, writer_input_mode
+                                )
+                            except ValueError as brief_error:
+                                raise bad_request(
+                                    "WRITER_BRIEF_INVALID",
+                                    "所选 Planner 候选无法编译为 Writer 输入"
+                                    f"（需要有效的实验输入模式与 planner v2 输出）: {brief_error}",
+                                ) from brief_error
                     guardrails = ctx_req.scene_plan.get("tempo_guardrails")
                     # An explicit per-run guardrail is an author decision. The
                     # planner may supply a fallback, but must not silently
@@ -705,6 +736,8 @@ class GenerationService:
         writer_prompt_mode: str,
         ctx: dict,
         writer_behavior_mode: str | None = None,
+        *,
+        instruction_block: str = "",
     ):
         """Place the short action brief last, adjacent to the writing order."""
         if stage != "writer" or writer_prompt_mode != "builtin":
@@ -719,6 +752,8 @@ class GenerationService:
         )
         if writer_behavior_mode == "narrative_behaviour_v1":
             prompt_addition += NARRATIVE_BEHAVIOUR_V1
+        if instruction_block:
+            prompt_addition += instruction_block
         ctx["rendered_user_prompt"] += prompt_addition
         ctx["input_snapshot_hash"] = sha256(
             (ctx["input_snapshot_hash"] + prompt_addition).encode("utf-8")
