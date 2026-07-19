@@ -148,9 +148,38 @@ def make_blind_queue(root: Path, exported: list[dict[str, Any]]) -> None:
     write_json(root / "blind_mapping.private.json", private)
 
 
-async def run(root: Path, database: Path, dry_run: bool, case_start: int = 0) -> None:
+def writer_override_for_group(
+    group: str,
+    input_mode: str,
+    writer_behavior_mode: str | None = None,
+) -> dict[str, Any]:
+    """Build the Writer request without leaking C-only guidance into A or B."""
+    override = {
+        "provider_id": FROZEN["provider_id"],
+        "model_id": FROZEN["model_id"],
+        "prompt_version_id": FROZEN["writer_prompt_version_id"],
+        "temperature": FROZEN["temperature"],
+        "top_p": FROZEN["top_p"],
+        "max_output_tokens": FROZEN["max_output_tokens"],
+        "timeout_seconds": FROZEN["timeout_seconds"],
+        "writer_input_mode": input_mode,
+    }
+    if group == "C" and writer_behavior_mode:
+        override["writer_behavior_mode"] = writer_behavior_mode
+    return override
+
+
+async def run(
+    root: Path,
+    database: Path,
+    dry_run: bool,
+    case_start: int = 0,
+    *,
+    experiment: str = EXPERIMENT,
+    writer_behavior_mode: str | None = None,
+) -> None:
     if (root / "manifest.json").exists():
-        raise RuntimeError(f"{EXPERIMENT} evidence already exists; refusing to rerun")
+        raise RuntimeError(f"{experiment} evidence already exists; refusing to rerun")
     if database.exists():
         raise RuntimeError(f"isolated database already exists: {database}")
     selected_cases = CASE_SPECS[case_start:]
@@ -160,7 +189,7 @@ async def run(root: Path, database: Path, dry_run: bool, case_start: int = 0) ->
     if not dry_run:
         shutil.copy2(REPO_ROOT / "data" / "novel_workbench.db", database)
     manifest = {
-        "experiment": EXPERIMENT,
+        "experiment": experiment,
         "git_commit": git_commit(),
         "seed": SEED,
         "groups": GROUPS,
@@ -170,7 +199,7 @@ async def run(root: Path, database: Path, dry_run: bool, case_start: int = 0) ->
         "writer_drafts_expected": len(selected_cases) * len(GROUPS) * REPLICAS,
         "frozen_writer": {key: value for key, value in FROZEN.items() if not key.startswith("planner_")},
         "frozen_planner": {"provider_id": FROZEN["provider_id"], "model_id": FROZEN["model_id"], "prompt_version_id": FROZEN["planner_prompt_version_id"], "temperature": FROZEN["temperature"], "top_p": FROZEN["top_p"], "max_output_tokens": FROZEN["planner_max_output_tokens"], "timeout_seconds": FROZEN["timeout_seconds"]},
-        "rules": ["One Planner call per scenario.", "Two Writer calls per group per scenario.", "No Critic, Reviser, Judge, TGbreak, retry, or candidate selection.", "Detector feedback is observational and never enters a Writer prompt."],
+        "rules": ["One Planner call per scenario.", "Two Writer calls per group per scenario.", "No Critic, Reviser, Judge, TGbreak, retry, or candidate selection.", "Detector feedback is observational and never enters a Writer prompt.", f"C-only writer behaviour mode: {writer_behavior_mode or 'none'}."],
         "detector_status": "pending_external_measurement",
     }
     write_json(root / "manifest.json", manifest)
@@ -188,7 +217,7 @@ async def run(root: Path, database: Path, dry_run: bool, case_start: int = 0) ->
             generation = GenerationService(session)
             for case_id, category, title, instruction in selected_cases:
                 case_dir = root / "cases" / case_id
-                project = await projects.create_project(ProjectCreate(name=f"{EXPERIMENT} {case_id}", genre=category))
+                project = await projects.create_project(ProjectCreate(name=f"{experiment} {case_id}", genre=category))
                 chapter = await chapters.create_chapter(project.id, ChapterCreate(title=title, sort_order=1))
                 run_obj = await generation.create_run(project.id, chapter.id, None, instruction)
                 await session.commit()
@@ -213,13 +242,9 @@ async def run(root: Path, database: Path, dry_run: bool, case_start: int = 0) ->
                 write_json(case_dir / "payload_audit.json", payload_audit)
                 for group, input_mode in GROUPS.items():
                     for replica in range(1, REPLICAS + 1):
-                        writer_override = {
-                            "provider_id": FROZEN["provider_id"], "model_id": FROZEN["model_id"],
-                            "prompt_version_id": FROZEN["writer_prompt_version_id"],
-                            "temperature": FROZEN["temperature"], "top_p": FROZEN["top_p"],
-                            "max_output_tokens": FROZEN["max_output_tokens"], "timeout_seconds": FROZEN["timeout_seconds"],
-                            "writer_input_mode": input_mode,
-                        }
+                        writer_override = writer_override_for_group(
+                            group, input_mode, writer_behavior_mode
+                        )
                         candidate = await generation.execute_stage(run_obj.id, "writer", writer_override)
                         await session.commit()
                         candidate_record = {"group": group, "replica": replica, **record(candidate)}
@@ -235,8 +260,8 @@ async def run(root: Path, database: Path, dry_run: bool, case_start: int = 0) ->
         await engine.dispose()
     make_blind_queue(root, exported)
     completed = [d for case in exported for d in case["drafts"] if not d["error_code"]]
-    write_json(root / "execution_summary.json", {"experiment": EXPERIMENT, "writer_drafts_completed": len(completed), "writer_drafts_expected": len(selected_cases) * 6, "planner_failures": [case["case_id"] for case in exported if case["planner"].get("error_code")]})
-    (root / "DETECTOR_RESULTS_TEMPLATE.md").write_text("""# DETECTOR_GENERALIZATION_V1 results\n\nFor every blind ID in `blind_review_queue.json`, record the external detector's three character ratios, each orange span (start/end paragraph or character offset), and the largest continuous orange length. Do not alter draft text or group mappings.\n\nDecision gates: B or C median human ratio ≥ 60%; at least 8 of 12 scenarios better than A; blind human review not below A; and no increase in Planner-external facts.\n""", encoding="utf-8")
+    write_json(root / "execution_summary.json", {"experiment": experiment, "writer_drafts_completed": len(completed), "writer_drafts_expected": len(selected_cases) * 6, "planner_failures": [case["case_id"] for case in exported if case["planner"].get("error_code")]})
+    (root / "DETECTOR_RESULTS_TEMPLATE.md").write_text(f"""# {experiment} results\n\nFor every blind ID in `blind_review_queue.json`, record the external detector's three character ratios, each orange span (start/end paragraph or character offset), and the largest continuous orange length. Do not alter draft text or group mappings. External segmentation can cross draft boundaries, so preserve the source mapping before assigning any per-draft values.\n\nDecision gates: B or C median human ratio ≥ 60%; at least 8 of 12 scenarios better than A; blind human review not below A; and no increase in Planner-external facts.\n""", encoding="utf-8")
 
 
 def main() -> None:
