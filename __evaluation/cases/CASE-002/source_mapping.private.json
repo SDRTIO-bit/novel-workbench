@@ -1,0 +1,19 @@
+{
+  "blind_mapping": {
+    "text_a": {
+      "source": "writer",
+      "candidate_id": null
+    },
+    "text_b": {
+      "source": "writer",
+      "candidate_id": null
+    }
+  },
+  "source_mapping": {
+    "final_composition_source": "writer",
+    "writer_candidate_id": null,
+    "reviser_candidate_id": null,
+    "judge_candidate_id": null,
+    "judge_decision": null
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "blind_mapping": {
+    "text_a": {
+      "source": "writer",
+      "candidate_id": "ee2c90be-a734-4a76-a119-92a5139f470e"
+    },
+    "text_b": {
+      "source": "final_composition",
+      "candidate_id": null
+    }
+  },
+  "source_mapping": {
+    "final_composition_file": "__final/final_composition.txt",
+    "source_writer_candidate_id": "ee2c90be-a734-4a76-a119-92a5139f470e",
+    "source_reviser_candidate_id": "f0bc2da6-0d8d-463b-8e2d-279819da7692",
+    "source_judge_candidate_id": "84badbbf-042e-450a-b2c0-c44dec0e7af1",
+    "merge_policy": {
+      "default": "reviser",
+      "overrides": {
+        "I03": "writer"
+      }
+    },
+    "section_sources": [
+      {
+        "section_index": 1,
+        "content_lead": "门板靠上门框时，铜铃又晃了一下",
+        "source": "reviser",
+        "identical_in_writer": true,
+        "judge_issue": null
+      },
+      {
+        "section_index": 2,
+        "content_lead": "老陈的手停在那把铜锁上",
+        "source": "reviser",
+        "identical_in_writer": true,
+        "judge_issue": null
+      },
+      {
+        "section_index": 3,
+        "content_lead": "他没有回头。他弯腰从门槛边的矮凳上",
+        "source": "reviser",
+        "identical_in_writer": false,
+        "diff_summary": "Reviser 追加：'门外的天色又暗了一层。'（I04 时间代价可见事实）",
+        "judge_issue": "I04"
+      },
+      {
+        "section_index": 4,
+        "content_lead": "阿橘从柜台边跳下来",
+        "source": "reviser",
+        "identical_in_writer": true,
+        "judge_issue": null
+      },
+      {
+        "section_index": 5,
+        "content_lead": "门外没有脚步声离开。",
+        "source": "reviser",
+        "identical_in_writer": true,
+        "judge_issue": null
+      },
+      {
+        "section_index": 6,
+        "content_lead": "老陈把一本旧书翻过来",
+        "source": "writer",
+        "identical_in_writer": true,
+        "diff_summary": "采用 Writer D 原句：保留 '动作比平时更慢一些，像在等什么慢慢落定'，作为 I03 替代路线/代价/承诺的可见表现。Reviser 整段删除此句被 Judge 判为 I03 unresolved。",
+        "judge_issue": "I03"
+      },
+      {
+        "section_index": 7,
+        "content_lead": "门缝里传来一声极轻的布料摩擦声",
+        "source": "reviser",
+        "identical_in_writer": false,
+        "diff_summary": "Reviser 将 Writer D 中两段合并为一段，删除中间的空白行；语义不变。",
+        "judge_issue": null
+      },
+      {
+        "section_index": 8,
+        "content_lead": "老陈没有停下手里的动作",
+        "source": "reviser",
+        "identical_in_writer": true,
+        "judge_issue": null
+      },
+      {
+        "section_index": 9,
+        "content_lead": "他侧了侧头，余光里看见一双白色的小运动鞋",
+        "source": "reviser",
+        "identical_in_writer": true,
+        "judge_issue": null
+      },
+      {
+        "section_index": 10,
+        "content_lead": "阿橘从门缝边站起来",
+        "source": "reviser",
+        "identical_in_writer": true,
+        "judge_issue": null
+      },
+      {
+        "section_index": 11,
+        "content_lead": "小满的手还攥着书包带",
+        "source": "reviser",
+        "identical_in_writer": false,
+        "diff_summary": "Reviser 将 '几乎要碰到她的指背' 改为 '轻轻碰到她的手背'（I01/I05 实际接触 stop_state 修复）",
+        "judge_issue": "I05"
+      }
+    ],
+    "writer_contribution": {
+      "section_index": 6,
+      "exact_text_segment": "动作比平时更慢一些，像在等什么慢慢落定。",
+      "rationale": "I03 (替代路线/代价/承诺) 在 Reviser 中未新增可见表现；该句提供动作减慢与等待落定的可见信号，呼应 Planner 对 cost/commitment 的要求。"
+    },
+    "issue_status_summary": {
+      "I01_stop_state": "resolved (reviser)",
+      "I02_narrator_inference": "resolved (reviser) — but merged text re-introduces partial signal via I03 restore",
+      "I03_choice_cost": "unresolved in reviser → resolved by writer restore (this merge)",
+      "I04_time_cost_visible_fact": "resolved (reviser)",
+      "I05_precise_contact": "resolved (reviser)"
+    },
+    "regression_note": "Merged text re-adds the phrase '像在等什么慢慢落定' (Judge I02 comment flagged this as narrator inference) as a side-effect of the I03 restore_original. Net trade: I02 partial regression in exchange for I03 resolution. Acceptable because I03 is the larger contract gap (choice_cost/承诺) while I02 only affected one inferential adverbial."
+  }
+}

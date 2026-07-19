@@ -1,0 +1,41 @@
+{
+  "batch": "GENERALIZATION_BATCH_V1",
+  "cases": [
+    {
+      "case_id": "CASE-001",
+      "status": "completed",
+      "run_id": "2acc9efb-b49b-4ffb-ac44-f0050875e5f2",
+      "error": null
+    },
+    {
+      "case_id": "CASE-002",
+      "status": "failed",
+      "run_id": "0abf92f6-be51-46ff-b213-d9cbf45ae377",
+      "error": {
+        "stage": "planner",
+        "code": "LLM_ERROR",
+        "message": ""
+      }
+    },
+    {
+      "case_id": "CASE-003",
+      "status": "failed",
+      "run_id": "1c69a766-5af9-46e6-bba9-674dd24ec731",
+      "error": {
+        "stage": "planner",
+        "code": "LLM_ERROR",
+        "message": ""
+      }
+    },
+    {
+      "case_id": "CASE-004",
+      "status": "failed",
+      "run_id": "615bfb17-4ffa-48be-bbe5-5d186045d716",
+      "error": {
+        "stage": "planner",
+        "code": "LLM_ERROR",
+        "message": ""
+      }
+    }
+  ]
+}

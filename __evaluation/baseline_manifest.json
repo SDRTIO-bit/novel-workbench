@@ -1,0 +1,105 @@
+{
+  "batch": "GENERALIZATION_BATCH_V1",
+  "random_seed": 20260719,
+  "git_commit": "605aef27e05ebfe36aa84d00dcc2002b9c8b7ac7",
+  "alembic_revision": "h2i3j4k5l6m7",
+  "workflow": {
+    "workflow_id": "d63c9534-6779-44f0-8cf5-8d83a00043e0",
+    "workflow_name": "本地演示",
+    "steps": {
+      "critic": {
+        "prompt_version_id": "2f3993c9-811c-4e53-a144-14421704d88d",
+        "prompt_version_number": 3,
+        "output_schema_name": "critic",
+        "provider": {
+          "id": "34c14b6b-7231-432a-96b2-8272329b828d",
+          "name": "DeepSeek",
+          "type": "openai_compatible",
+          "base_url": "https://api.deepseek.com"
+        },
+        "model_id": "deepseek-chat",
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4096,
+        "timeout_seconds": 300,
+        "writer_prompt_mode": "builtin"
+      },
+      "judge": {
+        "prompt_version_id": "9f5fa364-15ee-436e-80ef-ed5087e840e3",
+        "prompt_version_number": 3,
+        "output_schema_name": "judge",
+        "provider": {
+          "id": "34c14b6b-7231-432a-96b2-8272329b828d",
+          "name": "DeepSeek",
+          "type": "openai_compatible",
+          "base_url": "https://api.deepseek.com"
+        },
+        "model_id": "deepseek-chat",
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4096,
+        "timeout_seconds": 120,
+        "writer_prompt_mode": "builtin"
+      },
+      "planner": {
+        "prompt_version_id": "f9052f8a-dc4e-5408-b14e-fc1badaf57f8",
+        "prompt_version_number": 6,
+        "output_schema_name": "planner_v2",
+        "provider": {
+          "id": "34c14b6b-7231-432a-96b2-8272329b828d",
+          "name": "DeepSeek",
+          "type": "openai_compatible",
+          "base_url": "https://api.deepseek.com"
+        },
+        "model_id": "deepseek-chat",
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4096,
+        "timeout_seconds": 300,
+        "writer_prompt_mode": "builtin"
+      },
+      "reviser": {
+        "prompt_version_id": "e9ef6215-16c7-459a-b769-477a8e62a5f0",
+        "prompt_version_number": 3,
+        "output_schema_name": "reviser",
+        "provider": {
+          "id": "34c14b6b-7231-432a-96b2-8272329b828d",
+          "name": "DeepSeek",
+          "type": "openai_compatible",
+          "base_url": "https://api.deepseek.com"
+        },
+        "model_id": "deepseek-chat",
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4096,
+        "timeout_seconds": 300,
+        "writer_prompt_mode": "builtin"
+      },
+      "writer": {
+        "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+        "prompt_version_number": 6,
+        "output_schema_name": null,
+        "provider": {
+          "id": "34c14b6b-7231-432a-96b2-8272329b828d",
+          "name": "DeepSeek",
+          "type": "openai_compatible",
+          "base_url": "https://api.deepseek.com"
+        },
+        "model_id": "deepseek-chat",
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4096,
+        "timeout_seconds": 300,
+        "writer_prompt_mode": "builtin"
+      }
+    }
+  },
+  "frozen_stages": [
+    "planner",
+    "writer",
+    "critic",
+    "reviser",
+    "judge"
+  ],
+  "rule": "PromptVersion, provider/model, and workflow settings are read-only for this batch."
+}

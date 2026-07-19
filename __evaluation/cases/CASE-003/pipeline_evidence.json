@@ -1,0 +1,76 @@
+{
+  "case_id": "CASE-003",
+  "run_id": "1c69a766-5af9-46e6-bba9-674dd24ec731",
+  "run_status": "completed",
+  "stages": {
+    "critic": {
+      "status": "pending",
+      "selected_candidate_id": null,
+      "selected_issue_ids": null,
+      "candidates": []
+    },
+    "judge": {
+      "status": "pending",
+      "selected_candidate_id": null,
+      "selected_issue_ids": null,
+      "candidates": []
+    },
+    "planner": {
+      "status": "failed",
+      "selected_candidate_id": null,
+      "selected_issue_ids": null,
+      "candidates": [
+        {
+          "candidate_id": "3283e24a-e6f0-4084-a1ed-7bbae14ea9d4",
+          "attempt_number": 1,
+          "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+          "model_id": "deepseek-chat",
+          "prompt_version_id": "f9052f8a-dc4e-5408-b14e-fc1badaf57f8",
+          "parameters": {
+            "temperature": 0.7,
+            "top_p": 1.0,
+            "max_output_tokens": 4096,
+            "timeout_seconds": 300
+          },
+          "raw_response": "",
+          "model_parsed_output": null,
+          "parsed_output": null,
+          "text_output": "",
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "reasoning_tokens": null,
+          "latency_ms": 1,
+          "finish_reason": null,
+          "error_code": "LLM_ERROR",
+          "error_message": "",
+          "is_selected": false
+        }
+      ]
+    },
+    "reviser": {
+      "status": "pending",
+      "selected_candidate_id": null,
+      "selected_issue_ids": null,
+      "candidates": []
+    },
+    "writer": {
+      "status": "pending",
+      "selected_candidate_id": null,
+      "selected_issue_ids": null,
+      "candidates": []
+    }
+  },
+  "final_composition": "",
+  "source_mapping": {
+    "final_composition_source": "writer",
+    "writer_candidate_id": null,
+    "reviser_candidate_id": null,
+    "judge_candidate_id": null,
+    "judge_decision": null
+  },
+  "error": {
+    "stage": "planner",
+    "code": "LLM_ERROR",
+    "message": ""
+  }
+}

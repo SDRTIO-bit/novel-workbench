@@ -1,0 +1,161 @@
+{
+  "case_id": "CASE-001",
+  "planner_candidate_id": "d9d44c85-72dd-4766-a007-1f64adb867c3",
+  "planner_contract": {
+    "planner_contract_version": 2,
+    "scene_goal": "在关店时分，通过安静、不施压的动作让迷路的小满主动进入书店，迈出信任的第一步。",
+    "location": "梧桐老街“时光书屋”门口及店内前部，木质书架之间，铜铃门铃下方。",
+    "time": "深秋黄昏，天色正在变暗，路灯尚未亮起。",
+    "scene_state": {
+      "last_completed_action": "老陈把门板靠到门框上，准备锁门。",
+      "present_characters": [
+        "老陈",
+        "阿橘"
+      ],
+      "visible_facts": [
+        "店门口的铜铃还在轻轻晃动，听起来清脆。",
+        "一个背着书包的小女孩正站在门外人行道上，盯着门板。",
+        "阿橘蹲在柜台边，尾巴尖慢慢扫动。"
+      ],
+      "available_objects": [
+        "半合的木门板",
+        "门边的矮凳",
+        "柜台上的搪瓷茶杯",
+        "阿橘的猫碗",
+        "门廊下的一把旧藤椅",
+        "收在手边的铜锁"
+      ],
+      "unresolved_problem": "小女孩不肯开口说话，也不肯挪动，但天快黑了。",
+      "already_existing_constraints": [
+        "不能直接问“你迷路了吗”，那样可能吓到她。",
+        "不能长时间敞着门不管，老街天黑了不太安全。"
+      ]
+    },
+    "characters": [
+      {
+        "name": "老陈",
+        "goal": "让小姑娘感到安全，弄清她是否需要帮忙，同时不让她更紧张。",
+        "known": [
+          "女孩已经在门外站了一阵子，不像是来买书的。",
+          "她的校服染着别处的灰，鞋头在门槛外反复蹭地面。"
+        ],
+        "unknown": [
+          "她家在哪里，为什么一个人走到这条街。",
+          "她此刻脑子里在想什么，为什么不肯进来。"
+        ],
+        "mistaken_beliefs": [
+          "她可能是在等下班迟到的家长，很快就会走。"
+        ],
+        "constraints": [
+          "不能用语言追回，不能用成年人的急迫感压迫她。",
+          "不能丢下书店不管，但也不能当着她的面锁门把她关在门外。"
+        ],
+        "observed_evidence": [
+          "女孩的鞋尖在门槛外反复蹭灰，书包带被她攥得发白。",
+          "铜铃响过之后她往后退了半步，但没有离开，仍站在原处。"
+        ],
+        "current_interpretation": "她想进来，或者至少不想被关在门外，但害怕先开口。她在等一个不用说话就能留下的信号。",
+        "how_interpretation_drives_action": "他决定不把门关严，而是把门板斜靠在门框上，留出一道宽缝，然后退回柜台边整理旧书，不看门的方向。"
+      },
+      {
+        "name": "小满",
+        "goal": "找一个可以暂时停下来的地方，但不想被大人追问。",
+        "known": [
+          "她刚才走丢了，现在已经完全认不出这条街。",
+          "这个老爷爷刚才在关门，看见了她。"
+        ],
+        "unknown": [
+          "老爷爷会不会赶她走，会不会问她很多问题。",
+          "书店里是什么样子，里面有没有能让自己觉得安全的东西。"
+        ],
+        "mistaken_beliefs": [
+          "大人看见小孩一个人都会马上大声问话，这个老爷爷一定也一样。"
+        ],
+        "constraints": [
+          "不能像和妈妈那样说话，因为这些大人不是妈妈。",
+          "不能走得太远，怕找不到刚才走过的那盏路灯。"
+        ],
+        "observed_evidence": [
+          "门板没有完全合上，老爷爷没有推上铜锁。",
+          "柜台方向传来轻轻的书页声，没有脚步声逼近。"
+        ],
+        "current_interpretation": "这个爷爷没有打算马上赶人，门缝像是故意留下的。进去也许不用说话。",
+        "how_interpretation_drives_action": "她贴着门缝慢慢蹭进书店，停在阿橘旁边，没有走向柜台。"
+      }
+    ],
+    "concrete_problem": "老陈此刻必须决定：是把门关严然后隔着玻璃示意女孩离开，还是延迟关门、用动作给她留一个不必开口就能进来的空间。",
+    "pressure": "天光正在迅速变暗，老街两侧的梧桐影子叠在一起，再过一会儿路灯才会亮。女孩如果再往前走远，找回来的路会更难。",
+    "turning_point": "老陈没有重新插上铜锁，而是把门板斜靠在门框上，转身去整理最里面那排书架，故意背对门口。他这个动作直接改变了小满的判断，让她从“会被赶走”变成“可以试着进去”。",
+    "end_condition": "小满的身体完全进入书店，书包蹭过门框内侧的木棱，阿橘竖着尾巴走到她脚边。",
+    "forbidden": [
+      "直接描写小满或老陈的心理活动，包括“她觉得……”“他想起……”等句式。",
+      "让父母或其他熟人恰好出现，解决迷路问题。",
+      "通过对话解释小满为什么走散。",
+      "使用“信任”“安全感”等抽象词直接下结论。",
+      "让阿橘做出过度拟人化的行为，比如主动去拉小满的裤脚。",
+      "燃烧未来章节才允许使用的燃料：小满的家庭结构、走散的具体原因、老陈亡妻的故事线。"
+    ],
+    "causal_transitions": [
+      {
+        "id": "CT01",
+        "kind": "evidence_to_action",
+        "visible_trigger": "小满看见门板没有合严，老陈转身背对着门，弯腰去碰最下层书架上的旧书。",
+        "character_interpretation": "小满把这个动作理解为：这个爷爷没有在盯着她，也没有打算把门反锁。门缝不是忘了关，而是特意留的。",
+        "character_next_action": "她一只手攥着书包带，另一只手扶住门框，慢慢从门缝侧身挤进书店，没有发出声音。",
+        "rejected_alternative": "她本可以继续站在门外等待，或者转身走向下一盏还没亮的路灯，但她放弃了这两件事。",
+        "immediate_consequence": "小满双脚踩在了书店的旧木地板上，书包蹭过门框，发出一声轻微的布料摩擦声。",
+        "counterfactual_without_action": "如果老陈刚才把门关严并锁上，小满会直接离开，沿着梧桐老街往前走，可能在灯光更暗的地方彻底走失。",
+        "consequence_would_still_happen": false,
+        "state_delta": {
+          "before": "小满站在门外，身体重心落在后脚跟上，随时准备走。",
+          "after": "小满完全进入书店，重心前移，身体被书架阴影遮住一半。"
+        },
+        "cost_or_commitment": "老陈付出了延迟关店的时间，书店面临被外人闯入的微小风险。小满付出了向前踏进陌生空间的勇气。",
+        "next_constraint": "小满已经进入书店，现在老陈不能突然关门或做出让她感到被困的动作，必须继续保持安静、不急迫。",
+        "reader_must_infer": "小满刚才一直在等一个不需要开口就能留下的信号，那扇没有关严的门就是她等到的信号。",
+        "narrator_must_not_state": [
+          "小满此刻的心情是放松还是紧张。",
+          "老陈转身弯腰是故意设计的，还是正好顺手。"
+        ]
+      }
+    ],
+    "chapter_contract_check": {
+      "function_aligned": true,
+      "must_deliver_covered": true,
+      "must_not_deliver_respected": true,
+      "main_change_enabled": true,
+      "main_payoff_prepared": true,
+      "ending_hook_established": true,
+      "causal_transitions_grounded": true,
+      "reader_inference_not_pre_resolved": true,
+      "scene_state_reconstructed": true,
+      "information_sources_legal": true,
+      "character_choice_is_real": true,
+      "consequence_is_counterfactual": true,
+      "state_delta_is_nonempty": true,
+      "next_constraint_is_new": true,
+      "stop_state_is_visible": true,
+      "stop_state_changes_future_actions": true
+    },
+    "tempo_guardrails": {
+      "entry_pressure": "门板刚靠上去，铜铃响过之后，女孩仍然站在原处不动。",
+      "dominant_pressure": {
+        "kind": "social_friction",
+        "description": "真正的压力不是时间流逝，而是两个人之间没有任何共同语言，必须靠动作本身来交换信号。任何一步做错，都可能让女孩跑掉。"
+      },
+      "allowed_viewpoint_misread": "小满可能把老陈转身的动作误解为不耐烦，以为他不想管她了，但其实那恰恰是一种尊重。",
+      "disclosure_cap": 1,
+      "must_remain_unclassified": [
+        "小满究竟在哪条街和大人走散。",
+        "老陈看见小女孩时心里是否有某种模糊的熟悉感。"
+      ],
+      "stop_state": {
+        "type": "relationship_shift",
+        "visible_fact": "小满的手背轻轻碰到阿橘仰起的鼻尖，没有缩回。",
+        "what_is_now_different": "小满从戒备和随时准备离开，变成开始允许陌生环境里的接触，她在沉默中接纳了书店暂时作为落脚处。",
+        "must_not_append": "不得用任何方式解释她为什么最终愿意碰阿橘，或者这是否意味着她完全信任老陈。"
+      },
+      "final_line_must_include": ""
+    }
+  }
+}
