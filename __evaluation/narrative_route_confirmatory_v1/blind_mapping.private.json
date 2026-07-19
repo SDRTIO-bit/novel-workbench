@@ -1,0 +1,362 @@
+{
+  "06A051FA4E14": {
+    "case_id": "AL-01",
+    "group": "ROUTE-ALITE_VS_A",
+    "replica": "1",
+    "error_code": null
+  },
+  "8D2E5200E793": {
+    "case_id": "AL-01",
+    "group": "BASELINE-ALITE_VS_A",
+    "replica": "1",
+    "error_code": null
+  },
+  "BD0DA0202C73": {
+    "case_id": "AL-01",
+    "group": "ROUTE-ALITE_VS_A",
+    "replica": "2",
+    "error_code": null
+  },
+  "D95FAB412539": {
+    "case_id": "AL-01",
+    "group": "BASELINE-ALITE_VS_A",
+    "replica": "2",
+    "error_code": null
+  },
+  "A5F045A43125": {
+    "case_id": "AL-01",
+    "group": "ROUTE-ALITE_VS_A",
+    "replica": "3",
+    "error_code": null
+  },
+  "A89425BF0F11": {
+    "case_id": "AL-01",
+    "group": "BASELINE-ALITE_VS_A",
+    "replica": "3",
+    "error_code": null
+  },
+  "0F68564A92AD": {
+    "case_id": "AL-02",
+    "group": "ROUTE-ALITE_VS_A",
+    "replica": "1",
+    "error_code": null
+  },
+  "511149AECBB1": {
+    "case_id": "AL-02",
+    "group": "BASELINE-ALITE_VS_A",
+    "replica": "1",
+    "error_code": null
+  },
+  "5011C051C0CD": {
+    "case_id": "AL-02",
+    "group": "ROUTE-ALITE_VS_A",
+    "replica": "2",
+    "error_code": "TEMPO_FINAL_LINE_MISMATCH"
+  },
+  "252CAECA0EBD": {
+    "case_id": "AL-02",
+    "group": "BASELINE-ALITE_VS_A",
+    "replica": "2",
+    "error_code": null
+  },
+  "0EA55B2C29F1": {
+    "case_id": "AL-02",
+    "group": "ROUTE-ALITE_VS_A",
+    "replica": "3",
+    "error_code": null
+  },
+  "75446F535490": {
+    "case_id": "AL-02",
+    "group": "BASELINE-ALITE_VS_A",
+    "replica": "3",
+    "error_code": null
+  },
+  "A28B3F5CBB50": {
+    "case_id": "AL-03",
+    "group": "ROUTE-ALITE_VS_A",
+    "replica": "1",
+    "error_code": null
+  },
+  "EE288F9B7167": {
+    "case_id": "AL-03",
+    "group": "BASELINE-ALITE_VS_A",
+    "replica": "1",
+    "error_code": null
+  },
+  "F1FF623FB522": {
+    "case_id": "AL-03",
+    "group": "ROUTE-ALITE_VS_A",
+    "replica": "2",
+    "error_code": null
+  },
+  "6A5A98E50C3C": {
+    "case_id": "AL-03",
+    "group": "BASELINE-ALITE_VS_A",
+    "replica": "2",
+    "error_code": null
+  },
+  "179B2B71D5AB": {
+    "case_id": "AL-03",
+    "group": "ROUTE-ALITE_VS_A",
+    "replica": "3",
+    "error_code": null
+  },
+  "06BE5E682DEE": {
+    "case_id": "AL-03",
+    "group": "BASELINE-ALITE_VS_A",
+    "replica": "3",
+    "error_code": null
+  },
+  "2AA450B30A70": {
+    "case_id": "AL-04",
+    "group": "ROUTE-ALITE_VS_A",
+    "replica": "1",
+    "error_code": null
+  },
+  "06D6A00ADA99": {
+    "case_id": "AL-04",
+    "group": "BASELINE-ALITE_VS_A",
+    "replica": "1",
+    "error_code": null
+  },
+  "8AFDA1863134": {
+    "case_id": "AL-04",
+    "group": "ROUTE-ALITE_VS_A",
+    "replica": "2",
+    "error_code": null
+  },
+  "DB85DC512C4F": {
+    "case_id": "AL-04",
+    "group": "BASELINE-ALITE_VS_A",
+    "replica": "2",
+    "error_code": null
+  },
+  "C7AF813A950F": {
+    "case_id": "AL-04",
+    "group": "ROUTE-ALITE_VS_A",
+    "replica": "3",
+    "error_code": null
+  },
+  "97D357AD4FCF": {
+    "case_id": "AL-04",
+    "group": "BASELINE-ALITE_VS_A",
+    "replica": "3",
+    "error_code": null
+  },
+  "5FD9C63BAD4C": {
+    "case_id": "AL-05",
+    "group": "ROUTE-ALITE_VS_A",
+    "replica": "1",
+    "error_code": null
+  },
+  "13BC7A4DBC83": {
+    "case_id": "AL-05",
+    "group": "BASELINE-ALITE_VS_A",
+    "replica": "1",
+    "error_code": null
+  },
+  "923F80526ED2": {
+    "case_id": "AL-05",
+    "group": "ROUTE-ALITE_VS_A",
+    "replica": "2",
+    "error_code": null
+  },
+  "7B53E2344B64": {
+    "case_id": "AL-05",
+    "group": "BASELINE-ALITE_VS_A",
+    "replica": "2",
+    "error_code": null
+  },
+  "C34FA01DFB4C": {
+    "case_id": "AL-05",
+    "group": "ROUTE-ALITE_VS_A",
+    "replica": "3",
+    "error_code": null
+  },
+  "FDA1B82BFF99": {
+    "case_id": "AL-05",
+    "group": "BASELINE-ALITE_VS_A",
+    "replica": "3",
+    "error_code": null
+  },
+  "5DACF29100BD": {
+    "case_id": "CO-01",
+    "group": "ROUTE-COBJECT_VS_A",
+    "replica": "1",
+    "error_code": "TEMPO_FINAL_LINE_MISMATCH"
+  },
+  "E42ACDA5B3B8": {
+    "case_id": "CO-01",
+    "group": "BASELINE-COBJECT_VS_A",
+    "replica": "1",
+    "error_code": "TEMPO_FINAL_LINE_MISMATCH"
+  },
+  "BDA8B7F43C39": {
+    "case_id": "CO-01",
+    "group": "ROUTE-COBJECT_VS_A",
+    "replica": "2",
+    "error_code": null
+  },
+  "89976F752DD5": {
+    "case_id": "CO-01",
+    "group": "BASELINE-COBJECT_VS_A",
+    "replica": "2",
+    "error_code": "TEMPO_FINAL_LINE_MISMATCH"
+  },
+  "974AEFF760E8": {
+    "case_id": "CO-01",
+    "group": "ROUTE-COBJECT_VS_A",
+    "replica": "3",
+    "error_code": "TEMPO_FINAL_LINE_MISMATCH"
+  },
+  "2767408CB01E": {
+    "case_id": "CO-01",
+    "group": "BASELINE-COBJECT_VS_A",
+    "replica": "3",
+    "error_code": null
+  },
+  "F66ED352E656": {
+    "case_id": "CO-02",
+    "group": "ROUTE-COBJECT_VS_A",
+    "replica": "1",
+    "error_code": null
+  },
+  "22ADA5208785": {
+    "case_id": "CO-02",
+    "group": "BASELINE-COBJECT_VS_A",
+    "replica": "1",
+    "error_code": null
+  },
+  "ADB5FC025129": {
+    "case_id": "CO-02",
+    "group": "ROUTE-COBJECT_VS_A",
+    "replica": "2",
+    "error_code": null
+  },
+  "2687E65DBC3D": {
+    "case_id": "CO-02",
+    "group": "BASELINE-COBJECT_VS_A",
+    "replica": "2",
+    "error_code": null
+  },
+  "A28C5DE9C4B4": {
+    "case_id": "CO-02",
+    "group": "ROUTE-COBJECT_VS_A",
+    "replica": "3",
+    "error_code": null
+  },
+  "5A80E0A8C97B": {
+    "case_id": "CO-02",
+    "group": "BASELINE-COBJECT_VS_A",
+    "replica": "3",
+    "error_code": null
+  },
+  "A9900B2CEF21": {
+    "case_id": "CO-03",
+    "group": "ROUTE-COBJECT_VS_A",
+    "replica": "1",
+    "error_code": null
+  },
+  "287647B2BD73": {
+    "case_id": "CO-03",
+    "group": "BASELINE-COBJECT_VS_A",
+    "replica": "1",
+    "error_code": null
+  },
+  "427CBAF6D94C": {
+    "case_id": "CO-03",
+    "group": "ROUTE-COBJECT_VS_A",
+    "replica": "2",
+    "error_code": null
+  },
+  "4E91C0DA5562": {
+    "case_id": "CO-03",
+    "group": "BASELINE-COBJECT_VS_A",
+    "replica": "2",
+    "error_code": null
+  },
+  "50E98D44E6E8": {
+    "case_id": "CO-03",
+    "group": "ROUTE-COBJECT_VS_A",
+    "replica": "3",
+    "error_code": null
+  },
+  "59DC0D04C1D8": {
+    "case_id": "CO-03",
+    "group": "BASELINE-COBJECT_VS_A",
+    "replica": "3",
+    "error_code": null
+  },
+  "B6A3C03AA02E": {
+    "case_id": "CO-04",
+    "group": "ROUTE-COBJECT_VS_A",
+    "replica": "1",
+    "error_code": null
+  },
+  "7004F32114F9": {
+    "case_id": "CO-04",
+    "group": "BASELINE-COBJECT_VS_A",
+    "replica": "1",
+    "error_code": null
+  },
+  "7C805A87A09D": {
+    "case_id": "CO-04",
+    "group": "ROUTE-COBJECT_VS_A",
+    "replica": "2",
+    "error_code": null
+  },
+  "96B2E9621C8B": {
+    "case_id": "CO-04",
+    "group": "BASELINE-COBJECT_VS_A",
+    "replica": "2",
+    "error_code": null
+  },
+  "FA89C09449CA": {
+    "case_id": "CO-04",
+    "group": "ROUTE-COBJECT_VS_A",
+    "replica": "3",
+    "error_code": null
+  },
+  "6C83CD4F947F": {
+    "case_id": "CO-04",
+    "group": "BASELINE-COBJECT_VS_A",
+    "replica": "3",
+    "error_code": null
+  },
+  "EA6110D90842": {
+    "case_id": "CO-05",
+    "group": "ROUTE-COBJECT_VS_A",
+    "replica": "1",
+    "error_code": null
+  },
+  "C38DAEA5C5FF": {
+    "case_id": "CO-05",
+    "group": "BASELINE-COBJECT_VS_A",
+    "replica": "1",
+    "error_code": "TEMPO_FINAL_LINE_MISMATCH"
+  },
+  "ED2789A113AC": {
+    "case_id": "CO-05",
+    "group": "ROUTE-COBJECT_VS_A",
+    "replica": "2",
+    "error_code": "TEMPO_FINAL_LINE_MISMATCH"
+  },
+  "852B78339431": {
+    "case_id": "CO-05",
+    "group": "BASELINE-COBJECT_VS_A",
+    "replica": "2",
+    "error_code": "TEMPO_FINAL_LINE_MISMATCH"
+  },
+  "0C85B10FED7B": {
+    "case_id": "CO-05",
+    "group": "ROUTE-COBJECT_VS_A",
+    "replica": "3",
+    "error_code": null
+  },
+  "CCB8A464C81D": {
+    "case_id": "CO-05",
+    "group": "BASELINE-COBJECT_VS_A",
+    "replica": "3",
+    "error_code": "TEMPO_FINAL_LINE_MISMATCH"
+  }
+}

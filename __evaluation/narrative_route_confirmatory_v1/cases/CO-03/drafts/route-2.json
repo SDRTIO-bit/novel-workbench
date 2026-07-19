@@ -1,0 +1,43 @@
+{
+  "group": "ROUTE-COBJECT_VS_A",
+  "replica": 2,
+  "mode": "narrative_route",
+  "candidate_id": "fc5ccbef-8b1a-449a-8c92-d3fd13e3295e",
+  "attempt_number": 1,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "route_decision": {
+      "route_name": "C_OBJECT_CAUSAL",
+      "classifier_version": "narrative-route-v1",
+      "decision_reasons": [
+        "scene_state.available_objects is non-empty",
+        "causal_transitions contains counterfactual_without_action or rejected_alternative",
+        "character_next_action involves physical object manipulation"
+      ],
+      "matched_rules": [
+        "RULE_C_OBJECT_CAUSAL"
+      ],
+      "rejected_routes": []
+    },
+    "compiled_brief_hash": "33c7b6a414351767848a437865cfd8aad05ab043db1381cb2153cf4cdfa87eee",
+    "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "方可把糖包放在柜台上。\n\n那个女生已经走到门口，右手握着马克杯的杯柄，左手正要去推玻璃门。杯沿上有一小块纸巾擦过的痕迹——方可记得自己擦过那个位置。\n\n柜台上，咖啡师刚放下一杯外带杯。杯身标签上印着“林悦”两个字。\n\n方可拿起那杯外带杯，三步走到女生身后。\n\n“你好。”方可把外带杯递过去。\n\n女生转过身，先看方可的脸，然后看递过来的杯子。她低头看自己手里的马克杯，杯沿那块擦拭痕迹对着她的拇指。\n\n她把马克杯举到眼前，转了半圈。杯壁没有标签。\n\n方可没说话，手还伸着。\n\n女生接过外带杯，把马克杯递还给方可。",
+  "raw_response": "方可把糖包放在柜台上。\n\n那个女生已经走到门口，右手握着马克杯的杯柄，左手正要去推玻璃门。杯沿上有一小块纸巾擦过的痕迹——方可记得自己擦过那个位置。\n\n柜台上，咖啡师刚放下一杯外带杯。杯身标签上印着“林悦”两个字。\n\n方可拿起那杯外带杯，三步走到女生身后。\n\n“你好。”方可把外带杯递过去。\n\n女生转过身，先看方可的脸，然后看递过来的杯子。她低头看自己手里的马克杯，杯沿那块擦拭痕迹对着她的拇指。\n\n她把马克杯举到眼前，转了半圈。杯壁没有标签。\n\n方可没说话，手还伸着。\n\n女生接过外带杯，把马克杯递还给方可。",
+  "input_tokens": 1467,
+  "output_tokens": 165,
+  "latency_ms": 7385,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "2a3e9b923f9457ba336cb7563f1dfdcc5b0ff9781d87d6987970e7132732b276",
+  "text_path": "cases\\CO-03\\drafts\\route-2.txt"
+}

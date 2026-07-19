@@ -1,0 +1,45 @@
+{
+  "group": "ROUTE-ALITE_VS_A",
+  "replica": 3,
+  "mode": "narrative_route",
+  "candidate_id": "d13d36f9-77f3-4b29-afe3-8e42e5a7651c",
+  "attempt_number": 1,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "route_decision": {
+      "route_name": "B_SHORT_RELATION",
+      "classifier_version": "narrative-route-v1",
+      "decision_reasons": [
+        "scene is relationship-oriented with no physical urgency",
+        "character action involves relational move (message, gesture, proximity)"
+      ],
+      "matched_rules": [
+        "RULE_B_SHORT_RELATION"
+      ],
+      "rejected_routes": [
+        "C_OBJECT_CAUSAL",
+        "A_LITE_INFORMATION_GAP"
+      ]
+    },
+    "compiled_brief_hash": "7b2393bdc354b9bb5de565bde49be2c6449ef608d7b710a2dc861ad378130b48",
+    "instruction_hash": "d7a76822408396dc71c4599a7f40f33368b90199f0d9c0712383961213437555",
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "晚自习铃还没响，走廊上已经没什么人了。\n\n齐放站在教室门口，手机屏幕亮着。年级群的提示还挂在通知栏里——“齐放 被@”。点进去，消息已经撤回，只剩一行灰色小字。发消息的头像是隔壁班的，他不认识。群里二十多个人在线，没人说话。\n\n他把手机揣回兜里，往隔壁班门口走。\n\n隔壁班门口站着个男生，正低头看手机。齐放走过去的时候，那人抬起头，眼神在他脸上一碰，又迅速挪开。\n\n“你们班今天作业多吗？”齐放问。\n\n“啊？”那男生愣了一下，手机屏幕往胸口扣，“还、还行吧，数学两张卷子。”\n\n旁边两个正在说话的同学突然停了。其中一个看了齐放一眼，又去看那个答话的男生，嘴唇动了动，没出声。\n\n齐放没追问。他站在那儿，看着那个男生把手机从胸口拿下来，塞进裤兜里，手指在里面搅了两下，又抽出来，摸了摸后颈。\n\n“行，谢了。”齐放说。\n\n他转身往回走。身后没人立刻接话，直到他走出三步远，才听见有人压低声音说了句什么，另一个回了一声“别说了”。\n\n齐放没回头。\n\n他走进自己教室，绕过讲台，坐到座位上。前排的同学正在翻书，后排的趴着补觉。他把手机掏出来，年级群的提示还在，消息内容永远看不到了。\n\n但那个男生扣手机的动作，旁边人停下来的样子，身后压低的说话声——这些他看得很清楚。\n\n他决定在晚自习后找机会问个清楚。",
+  "raw_response": "晚自习铃还没响，走廊上已经没什么人了。\n\n齐放站在教室门口，手机屏幕亮着。年级群的提示还挂在通知栏里——“齐放 被@”。点进去，消息已经撤回，只剩一行灰色小字。发消息的头像是隔壁班的，他不认识。群里二十多个人在线，没人说话。\n\n他把手机揣回兜里，往隔壁班门口走。\n\n隔壁班门口站着个男生，正低头看手机。齐放走过去的时候，那人抬起头，眼神在他脸上一碰，又迅速挪开。\n\n“你们班今天作业多吗？”齐放问。\n\n“啊？”那男生愣了一下，手机屏幕往胸口扣，“还、还行吧，数学两张卷子。”\n\n旁边两个正在说话的同学突然停了。其中一个看了齐放一眼，又去看那个答话的男生，嘴唇动了动，没出声。\n\n齐放没追问。他站在那儿，看着那个男生把手机从胸口拿下来，塞进裤兜里，手指在里面搅了两下，又抽出来，摸了摸后颈。\n\n“行，谢了。”齐放说。\n\n他转身往回走。身后没人立刻接话，直到他走出三步远，才听见有人压低声音说了句什么，另一个回了一声“别说了”。\n\n齐放没回头。\n\n他走进自己教室，绕过讲台，坐到座位上。前排的同学正在翻书，后排的趴着补觉。他把手机掏出来，年级群的提示还在，消息内容永远看不到了。\n\n但那个男生扣手机的动作，旁边人停下来的样子，身后压低的说话声——这些他看得很清楚。\n\n他决定在晚自习后找机会问个清楚。",
+  "input_tokens": 1347,
+  "output_tokens": 343,
+  "latency_ms": 10897,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "ab973d8f6c75d0ed125141880fbfeea5eb98337f591c51604bdffad54b4934e4",
+  "text_path": "cases\\AL-05\\drafts\\route-3.txt"
+}

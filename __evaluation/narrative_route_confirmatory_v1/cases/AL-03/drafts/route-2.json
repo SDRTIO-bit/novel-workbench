@@ -1,0 +1,43 @@
+{
+  "group": "ROUTE-ALITE_VS_A",
+  "replica": 2,
+  "mode": "narrative_route",
+  "candidate_id": "224d9c2c-1262-4d2d-abc2-c70db00406cb",
+  "attempt_number": 1,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "route_decision": {
+      "route_name": "C_OBJECT_CAUSAL",
+      "classifier_version": "narrative-route-v1",
+      "decision_reasons": [
+        "scene_state.available_objects is non-empty",
+        "causal_transitions contains counterfactual_without_action or rejected_alternative",
+        "character_next_action involves physical object manipulation"
+      ],
+      "matched_rules": [
+        "RULE_C_OBJECT_CAUSAL"
+      ],
+      "rejected_routes": []
+    },
+    "compiled_brief_hash": "4e7dba1c690c337d7558c422998e5dc54a6c73e4a3eacd1dbec7869f62095c83",
+    "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "沈珂抱着作业本走到办公室门口时，门是虚掩着的。\n\n数学老师的声音从门缝里传出来，不高不低，刚好能听见。沈珂下意识放慢了脚步，不是故意要偷听，只是听见了自己的名字。\n\n“沈珂那个孩子其实——”\n\n关门声。\n\n里面有人把门推上了，后半句话被严丝合缝地截断在门板后面。\n\n沈珂站在原地，手指在作业本边缘上按了按。怀里的本子摞得整整齐齐，数学作业在最上面，按学号排的，她的那本应该在中间偏后的位置。她低头看了一眼，确认没拿错。\n\n门突然从里面推开了。\n\n数学老师拿着一个牛皮纸档案袋和一沓试卷走出来，看见门口的沈珂，脚步顿了一下。沈珂看见最上面那张试卷的卷头露出半截，姓名栏里写着她的名字，分数被档案袋挡住了。\n\n“老师，”沈珂把作业本往前递了递，“这是今天的作业。”\n\n数学老师伸手接过，同时把试卷翻了个面，背面朝上压在档案袋下面。动作不大，但很快。\n\n“放那就行。”\n\n老师朝办公室里的桌子偏了偏下巴，已经侧过身准备走。\n\n沈珂的视线从试卷背面收回来。那张卷子被压得不太平整，边角翘起来一点，她看见背面最后一道大题的答题区域，红色笔迹从密封线一直延伸到卷子边缘，写得很满。\n\n“好。”\n\n沈珂走进办公室，把作业本放在桌上。年级主任坐在靠窗的位置，正在翻一份文件，抬头看了她一眼，没说话。\n\n数学老师已经走出去了，脚步声在走廊里越来越远。\n\n沈珂从办公室出来，顺手把门带上。走廊里空荡荡的，下午第二节课刚下课，大部分学生还在教室里换课本。她往教室方向走，走了几步，步子慢下来。\n\n试卷背面朝上。\n\n老师说的是“放那就行”，不是“放这吧”，也不是“辛苦了”。\n\n她低头看了一眼自己空掉的手，拇指上沾了点作业本封皮的纸屑，搓了搓，没搓掉。",
+  "raw_response": "沈珂抱着作业本走到办公室门口时，门是虚掩着的。\n\n数学老师的声音从门缝里传出来，不高不低，刚好能听见。沈珂下意识放慢了脚步，不是故意要偷听，只是听见了自己的名字。\n\n“沈珂那个孩子其实——”\n\n关门声。\n\n里面有人把门推上了，后半句话被严丝合缝地截断在门板后面。\n\n沈珂站在原地，手指在作业本边缘上按了按。怀里的本子摞得整整齐齐，数学作业在最上面，按学号排的，她的那本应该在中间偏后的位置。她低头看了一眼，确认没拿错。\n\n门突然从里面推开了。\n\n数学老师拿着一个牛皮纸档案袋和一沓试卷走出来，看见门口的沈珂，脚步顿了一下。沈珂看见最上面那张试卷的卷头露出半截，姓名栏里写着她的名字，分数被档案袋挡住了。\n\n“老师，”沈珂把作业本往前递了递，“这是今天的作业。”\n\n数学老师伸手接过，同时把试卷翻了个面，背面朝上压在档案袋下面。动作不大，但很快。\n\n“放那就行。”\n\n老师朝办公室里的桌子偏了偏下巴，已经侧过身准备走。\n\n沈珂的视线从试卷背面收回来。那张卷子被压得不太平整，边角翘起来一点，她看见背面最后一道大题的答题区域，红色笔迹从密封线一直延伸到卷子边缘，写得很满。\n\n“好。”\n\n沈珂走进办公室，把作业本放在桌上。年级主任坐在靠窗的位置，正在翻一份文件，抬头看了她一眼，没说话。\n\n数学老师已经走出去了，脚步声在走廊里越来越远。\n\n沈珂从办公室出来，顺手把门带上。走廊里空荡荡的，下午第二节课刚下课，大部分学生还在教室里换课本。她往教室方向走，走了几步，步子慢下来。\n\n试卷背面朝上。\n\n老师说的是“放那就行”，不是“放这吧”，也不是“辛苦了”。\n\n她低头看了一眼自己空掉的手，拇指上沾了点作业本封皮的纸屑，搓了搓，没搓掉。",
+  "input_tokens": 1429,
+  "output_tokens": 449,
+  "latency_ms": 13031,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "ca0b292fb6cecb1bb24ea62f3a32d56bc8228f0e75626447f38eae298088b94f",
+  "text_path": "cases\\AL-03\\drafts\\route-2.txt"
+}

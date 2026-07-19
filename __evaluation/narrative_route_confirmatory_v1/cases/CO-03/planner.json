@@ -1,0 +1,160 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "方可发现自己的杯子被错拿，必须在不直接追讨或忍气吞声的情况下，用柜台上的物件发出信号，纠正杯子归属。",
+  "location": "咖啡店柜台及门口区域",
+  "time": "工作日下午，店内人流适中",
+  "scene_state": {
+    "last_completed_action": "方可刚用纸巾擦过马克杯杯沿，转身去拿糖包，回来发现杯子被邻座女生端走，女生正走向门口。",
+    "present_characters": [
+      "方可",
+      "邻座女生",
+      "咖啡师",
+      "其他顾客"
+    ],
+    "visible_facts": [
+      "方可的马克杯被邻座女生拿在手中，杯沿有纸巾擦拭痕迹",
+      "柜台上有咖啡师刚放下的另一杯外带杯，杯身标签写有女生名字",
+      "女生正走向门口，尚未出门",
+      "方可手中还拿着糖包"
+    ],
+    "available_objects": [
+      "方可的马克杯（在女生手中）",
+      "柜台上的外带杯（标签有女生名字）",
+      "糖包",
+      "纸巾",
+      "柜台上的叫号牌",
+      "柜台上的笔"
+    ],
+    "unresolved_problem": "方可的杯子归属权尚未被纠正，女生即将离开咖啡店。",
+    "already_existing_constraints": [
+      "方可不能追上去直接说'那是我的杯'，因为会显得过于计较或引发尴尬",
+      "方可不能忍了重新买，因为必须纠正错误",
+      "必须在女生出门前行动"
+    ]
+  },
+  "characters": [
+    {
+      "name": "方可",
+      "goal": "让邻座女生意识到拿错杯子并归还，同时避免直接冲突或尴尬",
+      "known": [
+        "自己的杯子有纸巾擦拭痕迹",
+        "邻座女生拿了自己的杯子",
+        "柜台上有女生的外带杯"
+      ],
+      "unknown": [
+        "女生拿错杯子的原因（是否无意）",
+        "女生是否会注意到信号并归还"
+      ],
+      "mistaken_beliefs": [
+        "女生可能故意拿错或粗心大意"
+      ],
+      "constraints": [
+        "不能追上去直接说'那是我的杯'",
+        "不能忍了重新买",
+        "必须用柜台上的物件发出信号"
+      ],
+      "observed_evidence": [
+        "女生手中的杯子杯沿有自己擦过的痕迹",
+        "柜台上的外带杯标签写着女生的名字",
+        "女生正走向门口，步伐不快"
+      ],
+      "current_interpretation": "女生拿错了杯子，但她可能没注意到标签或杯沿痕迹，用她的杯子作为信号能让她意识到错误。",
+      "how_interpretation_drives_action": "方可拿起柜台上的外带杯，快步走向女生，以递杯子的自然动作阻止她离开，同时用杯身标签暗示她的错误。"
+    },
+    {
+      "name": "邻座女生",
+      "goal": "离开咖啡店",
+      "known": [
+        "自己点了一杯外带咖啡",
+        "以为手中的杯子是自己的"
+      ],
+      "unknown": [
+        "手中杯子的真正主人",
+        "方可的意图"
+      ],
+      "mistaken_beliefs": [
+        "手中的杯子就是自己的外带杯"
+      ],
+      "constraints": [
+        "不能表现出故意拿错",
+        "在公共场合需保持礼貌"
+      ],
+      "observed_evidence": [
+        "方可快步走近并递来一个杯子"
+      ],
+      "current_interpretation": "方可可能是在给她送落下的东西，或者有别的意图。",
+      "how_interpretation_drives_action": "女生停下脚步，接过杯子查看，对比手中杯子，从而发现拿错。"
+    }
+  ],
+  "concrete_problem": "方可如何在不直接追讨的情况下，用柜台上的物件（女生的外带杯）发出信号，让女生意识到拿错杯子并归还？",
+  "pressure": "女生即将走出店门，时间紧迫，方可必须立即行动。",
+  "turning_point": "方可拿起柜台上的外带杯，快步走向女生，将杯子递给她并说'你的杯子'，女生对比后意识到错误，归还方可的杯子。",
+  "end_condition": "女生归还了方可的马克杯，方可拿回自己的杯子，女生拿着自己的外带杯离开或留下。",
+  "forbidden": [
+    "方可追上去直接说'那是我的杯'",
+    "方可忍气吞声重新买一杯",
+    "使用柜台物件以外的信号方式（如喊叫、肢体接触）"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "方可看到柜台上的外带杯标签写着女生的名字，同时女生手中的杯子有自己擦过的痕迹。",
+      "character_interpretation": "方可推断那个外带杯是女生的，用女生的杯子作为信号能让她意识到拿错。",
+      "character_next_action": "方可拿起柜台上的外带杯，快步走向女生，将杯子递给她。",
+      "rejected_alternative": "方可本可以大声喊住女生，但那样会引发周围注意，违反约束。",
+      "immediate_consequence": "女生停下脚步，接过外带杯，对比后发现手中的杯子不是自己的，将方可的杯子归还。",
+      "counterfactual_without_action": "如果方可不行动，女生会带着方可的杯子离开咖啡店，方可的杯子归属无法纠正。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "女生拿着方可的杯子走向门口，方可的杯子归属错误。",
+        "after": "女生归还杯子，方可拿回自己的杯子，女生拿到自己的外带杯。"
+      },
+      "cost_or_commitment": "方可主动接近女生，承担了可能被拒绝或引发短暂尴尬的风险。",
+      "next_constraint": "方可必须在递杯子时保持自然语气，避免指责意味。",
+      "reader_must_infer": "方可如何通过杯身标签的暗示让女生明白拿错，而无需直接说明。",
+      "narrator_must_not_state": [
+        "方可内心对女生的真实评价",
+        "女生是否故意拿错"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "女生正拿着方可的杯子走向门口，即将离开。",
+    "dominant_pressure": {
+      "kind": "resource_constraint",
+      "description": "时间紧迫，女生即将出门，方可必须在有限时间内用柜台物件发出信号。"
+    },
+    "allowed_viewpoint_misread": "女生可能将方可递杯子的动作误解为殷勤或推销，而非纠正错误。",
+    "disclosure_cap": 0,
+    "must_remain_unclassified": [
+      "女生拿错杯子的真实心理状态",
+      "方可对女生的主观感受"
+    ],
+    "stop_state": {
+      "type": "physical_change",
+      "visible_fact": "女生手中的杯子换成了自己的外带杯，方可的马克杯回到了方可手中。",
+      "what_is_now_different": "杯子归属被纠正，方可拿回了自己的杯子，女生拿到了自己的杯子。",
+      "must_not_append": "不得描述女生道歉或方可释怀的心理活动，只呈现事实。"
+    },
+    "final_line_must_include": ""
+  }
+}

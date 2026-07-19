@@ -1,0 +1,45 @@
+{
+  "group": "ROUTE-COBJECT_VS_A",
+  "replica": 2,
+  "mode": "narrative_route",
+  "candidate_id": "d6d0c261-1d99-4142-8919-fb3d892580e5",
+  "attempt_number": 1,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "route_decision": {
+      "route_name": "A_LITE_INFORMATION_GAP",
+      "classifier_version": "narrative-route-v1",
+      "decision_reasons": [
+        "multiple characters with distinct information",
+        "viewpoint character has unknown facts and an interpretation",
+        "secondary character carries independent knowledge"
+      ],
+      "matched_rules": [
+        "RULE_A_LITE_INFORMATION_GAP"
+      ],
+      "rejected_routes": [
+        "C_OBJECT_CAUSAL"
+      ]
+    },
+    "compiled_brief_hash": "4100327e095742a2d53ef966fdfda3fa6f3e2238107a801cfe27044434e497ec",
+    "instruction_hash": "d368cbfa0846d1cb9adf452db083cbb58ba69154f281b3d6c895cb34da157cec",
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "路远蹲下身，手指摸上鞋带。\n\n鞋带其实没松。他低着头，余光锁着那个男生的背影——蓝色水壶在对方右手，随着步伐轻轻晃动。男生已经快走到篮球场边线了，再往前几步，就会混进球场里跑动的人群。\n\n路远的视线扫过长凳。备用篮球就在凳子脚边，橙色表皮磨得发白，搁在水泥地上。\n\n他把鞋带解开，重新系。左手在系鞋带的动作掩护下，手背碰了一下篮球。\n\n球晃了晃，往前滚。\n\n路远继续系鞋带，手指绕着鞋绳，一圈，两圈。篮球沿着水泥地面缓慢滚动，速度不快，方向偏右，正好切向男生前进的路径。\n\n球滚过男生脚边时，碰到了他的鞋侧。\n\n男生低头。\n\n他看见了篮球，弯下腰，左手去捞。右手还握着水壶，壶口朝下倾斜了一点，几滴水从壶嘴里滴出来，落在水泥地上，洇成几个深色圆点。\n\n男生把篮球捞起来，直起身。他单手托着球，手腕转了转，像是在找球的纹路。然后他的视线从球上移开，扫过自己右手里的水壶。\n\n他停住了。\n\n男生的目光落在水壶侧面。那里贴着一张卡通贴纸，一只绿色的卡通动物，胳膊举过头顶。他盯着贴纸看了两秒，眉头动了一下。\n\n他翻转水壶，看了看壶底。又翻回来，再看一眼贴纸。\n\n男生抬起头，朝操场这边扫了一圈。他的视线掠过路远，没有停留。然后他转身，走回长凳方向。\n\n路远把鞋带系好了。他站起来，拍了拍膝盖上的灰。\n\n男生走到长凳前，弯腰把水壶放在凳面上。壶底碰到木质凳面，发出轻轻一声闷响。放的位置就在凳子左端，和之前路远搁水壶的地方差不了几厘米。\n\n男生直起身，手里的篮球随手往地上一拍，运着球跑向篮球场。\n\n路远站在原地，看着长凳。\n\n蓝色水壶静静地立在长凳上，阳光在贴纸上晃了一下。",
+  "raw_response": "路远蹲下身，手指摸上鞋带。\n\n鞋带其实没松。他低着头，余光锁着那个男生的背影——蓝色水壶在对方右手，随着步伐轻轻晃动。男生已经快走到篮球场边线了，再往前几步，就会混进球场里跑动的人群。\n\n路远的视线扫过长凳。备用篮球就在凳子脚边，橙色表皮磨得发白，搁在水泥地上。\n\n他把鞋带解开，重新系。左手在系鞋带的动作掩护下，手背碰了一下篮球。\n\n球晃了晃，往前滚。\n\n路远继续系鞋带，手指绕着鞋绳，一圈，两圈。篮球沿着水泥地面缓慢滚动，速度不快，方向偏右，正好切向男生前进的路径。\n\n球滚过男生脚边时，碰到了他的鞋侧。\n\n男生低头。\n\n他看见了篮球，弯下腰，左手去捞。右手还握着水壶，壶口朝下倾斜了一点，几滴水从壶嘴里滴出来，落在水泥地上，洇成几个深色圆点。\n\n男生把篮球捞起来，直起身。他单手托着球，手腕转了转，像是在找球的纹路。然后他的视线从球上移开，扫过自己右手里的水壶。\n\n他停住了。\n\n男生的目光落在水壶侧面。那里贴着一张卡通贴纸，一只绿色的卡通动物，胳膊举过头顶。他盯着贴纸看了两秒，眉头动了一下。\n\n他翻转水壶，看了看壶底。又翻回来，再看一眼贴纸。\n\n男生抬起头，朝操场这边扫了一圈。他的视线掠过路远，没有停留。然后他转身，走回长凳方向。\n\n路远把鞋带系好了。他站起来，拍了拍膝盖上的灰。\n\n男生走到长凳前，弯腰把水壶放在凳面上。壶底碰到木质凳面，发出轻轻一声闷响。放的位置就在凳子左端，和之前路远搁水壶的地方差不了几厘米。\n\n男生直起身，手里的篮球随手往地上一拍，运着球跑向篮球场。\n\n路远站在原地，看着长凳。\n\n蓝色水壶静静地立在长凳上，阳光在贴纸上晃了一下。",
+  "input_tokens": 1590,
+  "output_tokens": 457,
+  "latency_ms": 14495,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "bc0aa1bf4b931ed41e61bac9808947bc5a0096dcd0baccb2b832fc08fc65df13",
+  "text_path": "cases\\CO-04\\drafts\\route-2.txt"
+}

@@ -1,0 +1,268 @@
+{
+  "case_id": "AL-05",
+  "category": "校园误会",
+  "title": "群聊里的@撤回",
+  "group": "ALITE_VS_A",
+  "run_id": "3aa47ed4-d950-4fcc-a316-6b9929108874",
+  "planner": {
+    "candidate_id": "09fe695c-5cdf-4185-a762-f09b7205ae41",
+    "attempt_number": 1,
+    "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+    "model_id": "deepseek-v4-pro",
+    "prompt_version_id": "f9052f8a-dc4e-5408-b14e-fc1badaf57f8",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 12288,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "json_object"
+    },
+    "text_output": "{\n  \"planner_contract_version\": 2,\n  \"scene_goal\": \"齐放发现年级群里有人@他后撤回，他必须在无法直接追问的限制下，根据撤回信号做出一个行动，从而推动误会升级或关系变化。\",\n  \"location\": \"教室或走廊（晚自习前）\",\n  \"time\": \"晚自习开始前十分钟\",\n  \"scene_state\": {\n    \"last_completed_action\": \"齐放看到年级群提示‘齐放 被@’但消息已撤回，群里还有二十多人在线。\",\n    \"present_characters\": [\"齐放\"],\n    \"visible_facts\": [\n      \"群提示显示‘齐放 被@’\",\n      \"消息已撤回\",\n      \"发消息的账号属于隔壁班\",\n      \"群内还有二十多人在线\"\n    ],\n    \"available_objects\": [\"手机\", \"年级群聊天界面\"],\n    \"unresolved_problem\": \"齐放不知道被@的内容，也无法直接询问，但撤回信号暗示可能存在针对他的信息。\",\n    \"already_existing_constraints\": [\n      \"齐放不能私聊追问发消息的人\",\n      \"齐放不能在群里发问号或公开询问\"\n    ]\n  },\n  \"characters\": [\n    {\n      \"name\": \"齐放\",\n      \"goal\": \"弄清楚隔壁班同学@他的意图，同时避免在公开场合显得过于在意或引发尴尬。\",\n      \"known\": [\n        \"年级群提示他被人@了\",\n        \"消息已撤回\",\n        \"发消息的账号是隔壁班的\",\n        \"群内还有二十多人在线\"\n      ],\n      \"unknown\": [\n        \"被@的具体内容\",\n        \"对方撤回的原因\",\n        \"是否是恶作剧或针对他的流言\"\n      ],\n      \"mistaken_beliefs\": [\n        \"可能认为对方不小心发错了消息，或者是在讨论与自己无关的事\"\n      ],\n      \"constraints\": [\n        \"不能私聊追问发消息的人\",\n        \"不能在群里公开询问\"\n      ],\n      \"observed_evidence\": [\n        \"群提示‘齐放 被@’\",\n        \"消息已撤回，无法查看内容\",\n        \"发消息的账号是隔壁班的\"\n      ],\n      \"current_interpretation\": \"隔壁班有人想对我说什么，但又后悔了，或者是不小心发错了。这很可能与我有关，但我不确定是好事还是坏事。\",\n      \"how_interpretation_drives_action\": \"齐放决定假装没注意到群提示，但私下观察隔壁班同学的动向，或者通过共同朋友间接打听。\"\n    }\n  ],\n  \"concrete_problem\": \"齐放必须决定如何应对这个无法直接追问的@撤回信号，是主动试探、被动观察还是通过第三方获取信息。\",\n  \"pressure\": \"晚自习即将开始，群内其他人可能已经看到了消息，齐放感到一种被蒙在鼓里的焦虑，但行动又受限于不能主动询问的规则。\",\n  \"turning_point\": \"齐放选择了一个看似不经意的行动——在隔壁班门口逗留，与认识的同学搭话，试图从对方的反应中捕捉线索。这个选择暴露了他的在意，从而可能引发新的误会或信息泄露。\",\n  \"end_condition\": \"齐放从隔壁班同学的反应中察觉到一个模糊的信号（如回避的眼神或窃窃私语），但具体内容仍不清楚。他决定在晚自习后采取更明确的行动。\",\n  \"forbidden\": [\n    \"齐放直接私聊发消息的人\",\n    \"齐放在群里公开询问\",\n    \"揭示撤回消息的真实内容\",\n    \"让齐放完全不在意这个信号\"\n  ],\n  \"causal_transitions\": [\n    {\n      \"id\": \"CT01\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"齐放在隔壁班门口看到几个同学聚在一起看手机，其中有人抬头看了他一眼后迅速移开目光。\",\n      \"character_interpretation\": \"他们可能正在讨论与我有关的事，而且内容不太想让我知道。\",\n      \"character_next_action\": \"齐放主动走向那个抬头看他的同学，若无其事地问‘你们班作业多吗’，同时留意对方的反应。\",\n      \"rejected_alternative\": \"齐放可以假装没看见，直接回自己教室，但他选择了试探。\",\n      \"immediate_consequence\": \"那个同学支支吾吾地回答，眼神躲闪，旁边的同学也停止了交谈，气氛变得尴尬。\",\n      \"counterfactual_without_action\": \"如果齐放不主动搭话，他可能无法获得任何新信息，只能继续猜测。\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"齐放仅在群内看到撤回提示，对情况一无所知。\",\n        \"after\": \"齐放确认隔壁班同学对他有异常反应，但具体内容仍未知，且他的主动搭话可能被解读为‘他在意’或‘他知道了什么’。\"\n      },\n      \"cost_or_commitment\": \"齐放暴露了自己的关注，并可能让隔壁班同学意识到他注意到了异常，从而更加谨慎。\",\n      \"next_constraint\": \"齐放不能再以‘完全不知情’的姿态出现，他的试探行为可能被传开。\",\n      \"reader_must_infer\": \"隔壁班同学的反应并非偶然，撤回的消息确实与齐放有关，且可能涉及负面内容。\",\n      \"narrator_must_not_state\": [\n        \"撤回消息的具体内容\",\n        \"隔壁班同学内心的真实想法\"\n      ]\n    }\n  ],\n  \"tempo_guardrails\": {\n    \"entry_pressure\": \"晚自习铃即将响起，齐放站在走廊上，手机屏幕上的群提示还未消失。\",\n    \"dominant_pressure\": {\n      \"kind\": \"information_gap\",\n      \"description\": \"齐放缺少关键信息，而他的行动又受到规则限制，这种信息差推动他必须采取迂回策略。\"\n    },\n    \"allowed_viewpoint_misread\": \"齐放可能把同学的躲闪眼神误读为恶意嘲笑，而实际上可能只是尴尬或不知所措。\",\n    \"disclosure_cap\": 1,\n    \"must_remain_unclassified\": [\n      \"撤回消息的完整内容\",\n      \"发消息者的具体动机\"\n    ],\n    \"stop_state\": {\n      \"type\": \"unresolved_problem\",\n      \"visible_fact\": \"齐放回到自己座位，但隔壁班同学的异常反应让他确信事情不简单。\",\n      \"what_is_now_different\": \"齐放从被动接收信号转为主动怀疑，并计划晚自习后进一步调查。\",\n      \"must_not_append\": \"不得直接说明齐放下一步的具体计划，只暗示他有了行动方向。\"\n    },\n    \"final_line_must_include\": \"他决定在晚自习后找机会问个清楚。\"\n  },\n  \"chapter_contract_check\": {\n    \"function_aligned\": true,\n    \"must_deliver_covered\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_enabled\": true,\n    \"main_payoff_prepared\": true,\n    \"ending_hook_established\": true,\n    \"causal_transitions_grounded\": true,\n    \"reader_inference_not_pre_resolved\": true,\n    \"scene_state_reconstructed\": true,\n    \"information_sources_legal\": true,\n    \"character_choice_is_real\": true,\n    \"consequence_is_counterfactual\": true,\n    \"state_delta_is_nonempty\": true,\n    \"next_constraint_is_new\": true,\n    \"stop_state_is_visible\": true,\n    \"stop_state_changes_future_actions\": true\n  }\n}",
+    "raw_response": "{\n  \"planner_contract_version\": 2,\n  \"scene_goal\": \"齐放发现年级群里有人@他后撤回，他必须在无法直接追问的限制下，根据撤回信号做出一个行动，从而推动误会升级或关系变化。\",\n  \"location\": \"教室或走廊（晚自习前）\",\n  \"time\": \"晚自习开始前十分钟\",\n  \"scene_state\": {\n    \"last_completed_action\": \"齐放看到年级群提示‘齐放 被@’但消息已撤回，群里还有二十多人在线。\",\n    \"present_characters\": [\"齐放\"],\n    \"visible_facts\": [\n      \"群提示显示‘齐放 被@’\",\n      \"消息已撤回\",\n      \"发消息的账号属于隔壁班\",\n      \"群内还有二十多人在线\"\n    ],\n    \"available_objects\": [\"手机\", \"年级群聊天界面\"],\n    \"unresolved_problem\": \"齐放不知道被@的内容，也无法直接询问，但撤回信号暗示可能存在针对他的信息。\",\n    \"already_existing_constraints\": [\n      \"齐放不能私聊追问发消息的人\",\n      \"齐放不能在群里发问号或公开询问\"\n    ]\n  },\n  \"characters\": [\n    {\n      \"name\": \"齐放\",\n      \"goal\": \"弄清楚隔壁班同学@他的意图，同时避免在公开场合显得过于在意或引发尴尬。\",\n      \"known\": [\n        \"年级群提示他被人@了\",\n        \"消息已撤回\",\n        \"发消息的账号是隔壁班的\",\n        \"群内还有二十多人在线\"\n      ],\n      \"unknown\": [\n        \"被@的具体内容\",\n        \"对方撤回的原因\",\n        \"是否是恶作剧或针对他的流言\"\n      ],\n      \"mistaken_beliefs\": [\n        \"可能认为对方不小心发错了消息，或者是在讨论与自己无关的事\"\n      ],\n      \"constraints\": [\n        \"不能私聊追问发消息的人\",\n        \"不能在群里公开询问\"\n      ],\n      \"observed_evidence\": [\n        \"群提示‘齐放 被@’\",\n        \"消息已撤回，无法查看内容\",\n        \"发消息的账号是隔壁班的\"\n      ],\n      \"current_interpretation\": \"隔壁班有人想对我说什么，但又后悔了，或者是不小心发错了。这很可能与我有关，但我不确定是好事还是坏事。\",\n      \"how_interpretation_drives_action\": \"齐放决定假装没注意到群提示，但私下观察隔壁班同学的动向，或者通过共同朋友间接打听。\"\n    }\n  ],\n  \"concrete_problem\": \"齐放必须决定如何应对这个无法直接追问的@撤回信号，是主动试探、被动观察还是通过第三方获取信息。\",\n  \"pressure\": \"晚自习即将开始，群内其他人可能已经看到了消息，齐放感到一种被蒙在鼓里的焦虑，但行动又受限于不能主动询问的规则。\",\n  \"turning_point\": \"齐放选择了一个看似不经意的行动——在隔壁班门口逗留，与认识的同学搭话，试图从对方的反应中捕捉线索。这个选择暴露了他的在意，从而可能引发新的误会或信息泄露。\",\n  \"end_condition\": \"齐放从隔壁班同学的反应中察觉到一个模糊的信号（如回避的眼神或窃窃私语），但具体内容仍不清楚。他决定在晚自习后采取更明确的行动。\",\n  \"forbidden\": [\n    \"齐放直接私聊发消息的人\",\n    \"齐放在群里公开询问\",\n    \"揭示撤回消息的真实内容\",\n    \"让齐放完全不在意这个信号\"\n  ],\n  \"causal_transitions\": [\n    {\n      \"id\": \"CT01\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"齐放在隔壁班门口看到几个同学聚在一起看手机，其中有人抬头看了他一眼后迅速移开目光。\",\n      \"character_interpretation\": \"他们可能正在讨论与我有关的事，而且内容不太想让我知道。\",\n      \"character_next_action\": \"齐放主动走向那个抬头看他的同学，若无其事地问‘你们班作业多吗’，同时留意对方的反应。\",\n      \"rejected_alternative\": \"齐放可以假装没看见，直接回自己教室，但他选择了试探。\",\n      \"immediate_consequence\": \"那个同学支支吾吾地回答，眼神躲闪，旁边的同学也停止了交谈，气氛变得尴尬。\",\n      \"counterfactual_without_action\": \"如果齐放不主动搭话，他可能无法获得任何新信息，只能继续猜测。\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"齐放仅在群内看到撤回提示，对情况一无所知。\",\n        \"after\": \"齐放确认隔壁班同学对他有异常反应，但具体内容仍未知，且他的主动搭话可能被解读为‘他在意’或‘他知道了什么’。\"\n      },\n      \"cost_or_commitment\": \"齐放暴露了自己的关注，并可能让隔壁班同学意识到他注意到了异常，从而更加谨慎。\",\n      \"next_constraint\": \"齐放不能再以‘完全不知情’的姿态出现，他的试探行为可能被传开。\",\n      \"reader_must_infer\": \"隔壁班同学的反应并非偶然，撤回的消息确实与齐放有关，且可能涉及负面内容。\",\n      \"narrator_must_not_state\": [\n        \"撤回消息的具体内容\",\n        \"隔壁班同学内心的真实想法\"\n      ]\n    }\n  ],\n  \"tempo_guardrails\": {\n    \"entry_pressure\": \"晚自习铃即将响起，齐放站在走廊上，手机屏幕上的群提示还未消失。\",\n    \"dominant_pressure\": {\n      \"kind\": \"information_gap\",\n      \"description\": \"齐放缺少关键信息，而他的行动又受到规则限制，这种信息差推动他必须采取迂回策略。\"\n    },\n    \"allowed_viewpoint_misread\": \"齐放可能把同学的躲闪眼神误读为恶意嘲笑，而实际上可能只是尴尬或不知所措。\",\n    \"disclosure_cap\": 1,\n    \"must_remain_unclassified\": [\n      \"撤回消息的完整内容\",\n      \"发消息者的具体动机\"\n    ],\n    \"stop_state\": {\n      \"type\": \"unresolved_problem\",\n      \"visible_fact\": \"齐放回到自己座位，但隔壁班同学的异常反应让他确信事情不简单。\",\n      \"what_is_now_different\": \"齐放从被动接收信号转为主动怀疑，并计划晚自习后进一步调查。\",\n      \"must_not_append\": \"不得直接说明齐放下一步的具体计划，只暗示他有了行动方向。\"\n    },\n    \"final_line_must_include\": \"他决定在晚自习后找机会问个清楚。\"\n  },\n  \"chapter_contract_check\": {\n    \"function_aligned\": true,\n    \"must_deliver_covered\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_enabled\": true,\n    \"main_payoff_prepared\": true,\n    \"ending_hook_established\": true,\n    \"causal_transitions_grounded\": true,\n    \"reader_inference_not_pre_resolved\": true,\n    \"scene_state_reconstructed\": true,\n    \"information_sources_legal\": true,\n    \"character_choice_is_real\": true,\n    \"consequence_is_counterfactual\": true,\n    \"state_delta_is_nonempty\": true,\n    \"next_constraint_is_new\": true,\n    \"stop_state_is_visible\": true,\n    \"stop_state_changes_future_actions\": true\n  }\n}",
+    "input_tokens": 3319,
+    "output_tokens": 1644,
+    "latency_ms": 29328,
+    "finish_reason": "stop",
+    "error_code": null,
+    "error_message": null,
+    "rendered_user_prompt_sha256": "6f7df24018e99865828a8f030e6643a7a71585b13d403a389050467288395357"
+  },
+  "drafts": [
+    {
+      "group": "ROUTE-ALITE_VS_A",
+      "replica": 1,
+      "mode": "narrative_route",
+      "candidate_id": "4e9097e9-295c-4f55-82ea-35887b3b5eaf",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "B_SHORT_RELATION",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "scene is relationship-oriented with no physical urgency",
+            "character action involves relational move (message, gesture, proximity)"
+          ],
+          "matched_rules": [
+            "RULE_B_SHORT_RELATION"
+          ],
+          "rejected_routes": [
+            "C_OBJECT_CAUSAL",
+            "A_LITE_INFORMATION_GAP"
+          ]
+        },
+        "compiled_brief_hash": "7b2393bdc354b9bb5de565bde49be2c6449ef608d7b710a2dc861ad378130b48",
+        "instruction_hash": "d7a76822408396dc71c4599a7f40f33368b90199f0d9c0712383961213437555",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "晚自习铃还没响，走廊上的人已经不多了。\n\n齐放靠在走廊栏杆上，手机屏幕还亮着。群聊界面最底下那行灰色小字没消失——“齐放 被@”。往上翻，什么也没有。撤回得很快。发消息的头像是隔壁班的，他认识，一个平时话不多的男生，叫周彦。群里还有二十多个人在线，但没人接话，没人追问，没人发问号。安静得像所有人同时决定假装没看见。\n\n齐放把手机锁屏，抬起头。\n\n走廊尽头，周彦正从厕所方向走过来，手里拎着个水杯。两人视线碰了一下，周彦的脚步明显顿了一拍，然后低下头，加快速度往自己教室走。\n\n齐放没叫他。他迈开步子，从侧面包过去，在周彦推开教室门之前走到了他旁边。\n\n“你们班今天作业多吗？”齐放问，语气很平。\n\n周彦的手指在门把上僵了一下。他偏过头看齐放，嘴唇动了动，没立刻出声。教室里靠窗的几个同学原本在聊天，看见门口这一幕，声音忽然就收了。\n\n“还、还行吧。”周彦说，眼睛没看齐放，盯着门把手。\n\n齐放没追问，也没笑。他就站在那儿，等了一秒。\n\n周彦推开门进去了，动作有点急，水杯磕在门框上，发出一声闷响。里面的同学没再继续刚才的话题。\n\n齐放转身往回走。\n\n他经过隔壁班窗户的时候，余光扫到周彦已经坐下了，旁边的同桌凑过去低声问了句什么，周彦摇了摇头，没说话。\n\n齐放走进自己教室，在自己的座位坐下。他把手机翻过来扣在桌上，手指在桌沿上轻轻敲了两下。\n\n周彦的反应不是发错消息。那帮家伙突然收声也不是巧合。\n\n他决定在晚自习后找机会问个清楚。",
+      "raw_response": "晚自习铃还没响，走廊上的人已经不多了。\n\n齐放靠在走廊栏杆上，手机屏幕还亮着。群聊界面最底下那行灰色小字没消失——“齐放 被@”。往上翻，什么也没有。撤回得很快。发消息的头像是隔壁班的，他认识，一个平时话不多的男生，叫周彦。群里还有二十多个人在线，但没人接话，没人追问，没人发问号。安静得像所有人同时决定假装没看见。\n\n齐放把手机锁屏，抬起头。\n\n走廊尽头，周彦正从厕所方向走过来，手里拎着个水杯。两人视线碰了一下，周彦的脚步明显顿了一拍，然后低下头，加快速度往自己教室走。\n\n齐放没叫他。他迈开步子，从侧面包过去，在周彦推开教室门之前走到了他旁边。\n\n“你们班今天作业多吗？”齐放问，语气很平。\n\n周彦的手指在门把上僵了一下。他偏过头看齐放，嘴唇动了动，没立刻出声。教室里靠窗的几个同学原本在聊天，看见门口这一幕，声音忽然就收了。\n\n“还、还行吧。”周彦说，眼睛没看齐放，盯着门把手。\n\n齐放没追问，也没笑。他就站在那儿，等了一秒。\n\n周彦推开门进去了，动作有点急，水杯磕在门框上，发出一声闷响。里面的同学没再继续刚才的话题。\n\n齐放转身往回走。\n\n他经过隔壁班窗户的时候，余光扫到周彦已经坐下了，旁边的同桌凑过去低声问了句什么，周彦摇了摇头，没说话。\n\n齐放走进自己教室，在自己的座位坐下。他把手机翻过来扣在桌上，手指在桌沿上轻轻敲了两下。\n\n周彦的反应不是发错消息。那帮家伙突然收声也不是巧合。\n\n他决定在晚自习后找机会问个清楚。",
+      "input_tokens": 1347,
+      "output_tokens": 400,
+      "latency_ms": 11849,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "ab973d8f6c75d0ed125141880fbfeea5eb98337f591c51604bdffad54b4934e4",
+      "text_path": "cases\\AL-05\\drafts\\route-1.txt"
+    },
+    {
+      "group": "BASELINE-ALITE_VS_A",
+      "replica": 1,
+      "mode": "complete_planner",
+      "candidate_id": "eb2a1d36-e421-4e5f-8997-a7f301d78526",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "齐放盯着手机屏幕，年级群那条系统提示还没消——“齐放 被@”——后面跟着灰色的“消息已撤回”。\n\n发消息的是隔壁班的号。群里二十多个人在线，没人说话。\n\n他把手机翻过来扣在桌面上，又翻回来。不能私聊问，不能在群里发问号。这两条限制是实打实的，不存在绕过去的办法。\n\n走廊里陆续有人往教室走。晚自习还有十分钟开始。\n\n齐放站起来，把手机揣进裤兜，走出教室。他经过走廊拐角的时候放慢了脚步，隔壁班的前门开着，里面七八个人还没坐到座位上。\n\n其中三个人围在后排靠窗的位置，两个女生一个男生，头凑在一起看一部手机。齐放认不出具体是谁，但那个方向是隔壁班倒数第三排的位置。\n\n他继续往前走。经过门口的时候，那个拿手机的女生抬了下头。\n\n她看了齐放一眼，然后迅速把目光移回屏幕，手指在屏幕上划了一下。旁边的两个人也跟着抬起头，然后又低下去。\n\n齐放停住脚步，转身靠在隔壁班门口的墙上，掏出手机假装看时间。他用余光扫进教室，那个女生把手机收进了抽屉里，三个人散开了。\n\n走廊里有人喊：“齐放？”\n\n是隔壁班的李桐，拿着水杯从开水间回来。齐放认识他，初中同校，不算熟，但说得上话。\n\n“你们班作业多吗？”齐放问。\n\n李桐拧开水杯盖子，愣了一下。“还行吧，数学两张卷子。”\n\n“哦。”\n\n齐放没走。李桐喝了口水，视线越过齐放的肩膀往教室里看了一眼，然后又看回来。\n\n“你找谁？”\n\n“没找谁，路过。”\n\n教室里有椅子拖动的声音。齐放看见刚才那个女生坐到了自己座位上，低着头翻书，翻得很快，不像在找什么。\n\n李桐又喝了口水，没接话。\n\n“那我先回去了。”齐放说。\n\n“行。”\n\n李桐走进教室的时候，和那个女生对视了一下。很短的视线交换，然后各自移开。\n\n齐放转身往自己教室走。裤兜里的手机沉甸甸地贴着大腿。他走过三个教室门口，拐进自己班，坐到座位上。\n\n前排的赵文博回头看了他一眼，问：“你去哪儿了？”\n\n“上厕所。”\n\n晚自习铃响了。\n\n齐放把课本摊开，笔握在手里，没写字。隔壁班那个女生的眼神还在他脑子里——不是好奇，不是意外，是看见他之后立刻把手机收起来的那种反应。\n\n他翻了一页书，没看进去。\n\n他决定在晚自习后找机会问个清楚。",
+      "raw_response": "齐放盯着手机屏幕，年级群那条系统提示还没消——“齐放 被@”——后面跟着灰色的“消息已撤回”。\n\n发消息的是隔壁班的号。群里二十多个人在线，没人说话。\n\n他把手机翻过来扣在桌面上，又翻回来。不能私聊问，不能在群里发问号。这两条限制是实打实的，不存在绕过去的办法。\n\n走廊里陆续有人往教室走。晚自习还有十分钟开始。\n\n齐放站起来，把手机揣进裤兜，走出教室。他经过走廊拐角的时候放慢了脚步，隔壁班的前门开着，里面七八个人还没坐到座位上。\n\n其中三个人围在后排靠窗的位置，两个女生一个男生，头凑在一起看一部手机。齐放认不出具体是谁，但那个方向是隔壁班倒数第三排的位置。\n\n他继续往前走。经过门口的时候，那个拿手机的女生抬了下头。\n\n她看了齐放一眼，然后迅速把目光移回屏幕，手指在屏幕上划了一下。旁边的两个人也跟着抬起头，然后又低下去。\n\n齐放停住脚步，转身靠在隔壁班门口的墙上，掏出手机假装看时间。他用余光扫进教室，那个女生把手机收进了抽屉里，三个人散开了。\n\n走廊里有人喊：“齐放？”\n\n是隔壁班的李桐，拿着水杯从开水间回来。齐放认识他，初中同校，不算熟，但说得上话。\n\n“你们班作业多吗？”齐放问。\n\n李桐拧开水杯盖子，愣了一下。“还行吧，数学两张卷子。”\n\n“哦。”\n\n齐放没走。李桐喝了口水，视线越过齐放的肩膀往教室里看了一眼，然后又看回来。\n\n“你找谁？”\n\n“没找谁，路过。”\n\n教室里有椅子拖动的声音。齐放看见刚才那个女生坐到了自己座位上，低着头翻书，翻得很快，不像在找什么。\n\n李桐又喝了口水，没接话。\n\n“那我先回去了。”齐放说。\n\n“行。”\n\n李桐走进教室的时候，和那个女生对视了一下。很短的视线交换，然后各自移开。\n\n齐放转身往自己教室走。裤兜里的手机沉甸甸地贴着大腿。他走过三个教室门口，拐进自己班，坐到座位上。\n\n前排的赵文博回头看了他一眼，问：“你去哪儿了？”\n\n“上厕所。”\n\n晚自习铃响了。\n\n齐放把课本摊开，笔握在手里，没写字。隔壁班那个女生的眼神还在他脑子里——不是好奇，不是意外，是看见他之后立刻把手机收起来的那种反应。\n\n他翻了一页书，没看进去。\n\n他决定在晚自习后找机会问个清楚。",
+      "input_tokens": 2445,
+      "output_tokens": 554,
+      "latency_ms": 15481,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "ef59f141ea4c9ca2e1a20970fea2183ebe7e34cfd4773830220db46279bd9c9b",
+      "text_path": "cases\\AL-05\\drafts\\baseline-1.txt"
+    },
+    {
+      "group": "ROUTE-ALITE_VS_A",
+      "replica": 2,
+      "mode": "narrative_route",
+      "candidate_id": "ce555b9b-21eb-4846-ade7-dc736344950a",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "B_SHORT_RELATION",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "scene is relationship-oriented with no physical urgency",
+            "character action involves relational move (message, gesture, proximity)"
+          ],
+          "matched_rules": [
+            "RULE_B_SHORT_RELATION"
+          ],
+          "rejected_routes": [
+            "C_OBJECT_CAUSAL",
+            "A_LITE_INFORMATION_GAP"
+          ]
+        },
+        "compiled_brief_hash": "7b2393bdc354b9bb5de565bde49be2c6449ef608d7b710a2dc861ad378130b48",
+        "instruction_hash": "d7a76822408396dc71c4599a7f40f33368b90199f0d9c0712383961213437555",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "走廊的风带着食堂晚饭残存的热气，齐放低头盯着手机屏幕，那条群提示还挂在年级群的通知栏里——“齐放 被@”——发消息的账号是隔壁班的，但消息本身已经消失了。\n\n群里还有二十多个人在线。\n\n晚自习铃还有两分钟。\n\n齐放把手机揣进裤兜，转过身。走廊尽头，隔壁班门口站着三个人，其中一个正抬头往他这边看，视线对上后立刻低下去，假装在刷手机。\n\n齐放走过去。\n\n那个抬头的男生叫周远，隔壁班的物理课代表，上周年级篮球赛时两人打过一次配合。齐放走到他跟前，脚步没停，语气跟路过打招呼一样：“你们班作业多吗？”\n\n周远的手指顿在屏幕上方，眼睛没抬起来。“还行，”他说，声音比平时高了半拍，“就、就那样。”\n\n旁边两个同学停止了交谈。其中一个看了齐放一眼，又去看周远，嘴唇动了动没出声。\n\n齐放没走。他站在周远面前，手插在口袋里，盯着对方的脸。\n\n周远终于抬起头，视线却在齐放的肩膀后面飘。“怎么了？”他问，笑了一下，嘴角只扯到一半就收回去。\n\n“没什么，”齐放说，“随便问问。”\n\n他转身走开。\n\n身后那三个人没有立刻恢复交谈。齐放走到自己班门口时听见后面传来一声压低的“你刚才——”，然后被另一个人打断。\n\n他推门进教室。\n\n班里已经坐了大半，前排有人抬头看他，又低下头去。齐放走到自己的座位坐下，把手机翻过来扣在桌面上。\n\n周远的反应不是发错消息。\n\n是发了不该发的东西，然后后悔了。\n\n齐放把课本翻开，盯着第一行字看了五秒，一个字也没读进去。\n\n他决定在晚自习后找机会问个清楚。",
+      "raw_response": "走廊的风带着食堂晚饭残存的热气，齐放低头盯着手机屏幕，那条群提示还挂在年级群的通知栏里——“齐放 被@”——发消息的账号是隔壁班的，但消息本身已经消失了。\n\n群里还有二十多个人在线。\n\n晚自习铃还有两分钟。\n\n齐放把手机揣进裤兜，转过身。走廊尽头，隔壁班门口站着三个人，其中一个正抬头往他这边看，视线对上后立刻低下去，假装在刷手机。\n\n齐放走过去。\n\n那个抬头的男生叫周远，隔壁班的物理课代表，上周年级篮球赛时两人打过一次配合。齐放走到他跟前，脚步没停，语气跟路过打招呼一样：“你们班作业多吗？”\n\n周远的手指顿在屏幕上方，眼睛没抬起来。“还行，”他说，声音比平时高了半拍，“就、就那样。”\n\n旁边两个同学停止了交谈。其中一个看了齐放一眼，又去看周远，嘴唇动了动没出声。\n\n齐放没走。他站在周远面前，手插在口袋里，盯着对方的脸。\n\n周远终于抬起头，视线却在齐放的肩膀后面飘。“怎么了？”他问，笑了一下，嘴角只扯到一半就收回去。\n\n“没什么，”齐放说，“随便问问。”\n\n他转身走开。\n\n身后那三个人没有立刻恢复交谈。齐放走到自己班门口时听见后面传来一声压低的“你刚才——”，然后被另一个人打断。\n\n他推门进教室。\n\n班里已经坐了大半，前排有人抬头看他，又低下头去。齐放走到自己的座位坐下，把手机翻过来扣在桌面上。\n\n周远的反应不是发错消息。\n\n是发了不该发的东西，然后后悔了。\n\n齐放把课本翻开，盯着第一行字看了五秒，一个字也没读进去。\n\n他决定在晚自习后找机会问个清楚。",
+      "input_tokens": 1347,
+      "output_tokens": 387,
+      "latency_ms": 11864,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "ab973d8f6c75d0ed125141880fbfeea5eb98337f591c51604bdffad54b4934e4",
+      "text_path": "cases\\AL-05\\drafts\\route-2.txt"
+    },
+    {
+      "group": "BASELINE-ALITE_VS_A",
+      "replica": 2,
+      "mode": "complete_planner",
+      "candidate_id": "449645c2-e949-4f2a-8ea6-022e2d79169b",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "晚自习铃还有十分钟才响，走廊上人不多。\n\n齐放低头看着手机屏幕，年级群的聊天界面还亮着。系统提示那行灰色小字钉在最上面——“齐放 被@”。后面什么都没有。消息已经撤回，发消息的人头像是隔壁班的默认头像，昵称是一个他没什么印象的名字。\n\n群里还有二十多个人在线。没人说话。\n\n他把手机翻了个面，屏幕扣在桌面上。前排两个同学在赶作业，后排有人在吃面包，没人注意他。齐放站起来，把椅子往后推了推，走出教室。\n\n走廊尽头，隔壁班的后门开着。他往那边走，步子不快，像是要去打水。经过门口时，余光扫进去——靠窗那排，三个人凑在一起看一部手机。其中一个抬起头，视线撞上他的。\n\n那个男生愣了一下，然后很快低下头，把手机往旁边的人手里塞了塞。\n\n齐放没停，继续往前走。饮水机在走廊另一头，他走过去，按下热水键，水没流出来。机器发出嗡嗡的声音，灯是红的。没水了。\n\n他转身往回走。\n\n这次经过隔壁班门口时，他放慢了脚步。刚才那个男生还站在窗边，旁边两个人也还在。齐放走到门口，手搭在门框上，往里探了半个身子。\n\n“你们班今天作业多吗？”\n\n他的声音不大，但够清楚。那个男生明显僵了一下，眼睛没看他，盯着自己桌上的课本。\n\n“还行。”男生说，声音有点干。\n\n旁边两个人不说话了。刚才凑在一起看手机的那个女生把手机翻了个面，屏幕朝下扣在窗台上。\n\n齐放点点头，没再问。他收回手，从门口退开，往自己教室走。\n\n身后那间教室里安静了两秒，然后有人小声说了句什么。声音压得很低，听不清内容，但语气里带着一种收束的急促，像是正在讨论的事被人撞见，需要紧急换个话题。\n\n齐放走回自己座位，把手机翻过来。屏幕还亮着，群聊界面还在。那条灰色的系统提示还在最上面。\n\n他盯着那行字看了两秒，然后把手机锁屏，塞进抽屉里。\n\n隔壁班那几个人的反应不像是在讨论什么好事。\n\n他决定在晚自习后找机会问个清楚。",
+      "raw_response": "晚自习铃还有十分钟才响，走廊上人不多。\n\n齐放低头看着手机屏幕，年级群的聊天界面还亮着。系统提示那行灰色小字钉在最上面——“齐放 被@”。后面什么都没有。消息已经撤回，发消息的人头像是隔壁班的默认头像，昵称是一个他没什么印象的名字。\n\n群里还有二十多个人在线。没人说话。\n\n他把手机翻了个面，屏幕扣在桌面上。前排两个同学在赶作业，后排有人在吃面包，没人注意他。齐放站起来，把椅子往后推了推，走出教室。\n\n走廊尽头，隔壁班的后门开着。他往那边走，步子不快，像是要去打水。经过门口时，余光扫进去——靠窗那排，三个人凑在一起看一部手机。其中一个抬起头，视线撞上他的。\n\n那个男生愣了一下，然后很快低下头，把手机往旁边的人手里塞了塞。\n\n齐放没停，继续往前走。饮水机在走廊另一头，他走过去，按下热水键，水没流出来。机器发出嗡嗡的声音，灯是红的。没水了。\n\n他转身往回走。\n\n这次经过隔壁班门口时，他放慢了脚步。刚才那个男生还站在窗边，旁边两个人也还在。齐放走到门口，手搭在门框上，往里探了半个身子。\n\n“你们班今天作业多吗？”\n\n他的声音不大，但够清楚。那个男生明显僵了一下，眼睛没看他，盯着自己桌上的课本。\n\n“还行。”男生说，声音有点干。\n\n旁边两个人不说话了。刚才凑在一起看手机的那个女生把手机翻了个面，屏幕朝下扣在窗台上。\n\n齐放点点头，没再问。他收回手，从门口退开，往自己教室走。\n\n身后那间教室里安静了两秒，然后有人小声说了句什么。声音压得很低，听不清内容，但语气里带着一种收束的急促，像是正在讨论的事被人撞见，需要紧急换个话题。\n\n齐放走回自己座位，把手机翻过来。屏幕还亮着，群聊界面还在。那条灰色的系统提示还在最上面。\n\n他盯着那行字看了两秒，然后把手机锁屏，塞进抽屉里。\n\n隔壁班那几个人的反应不像是在讨论什么好事。\n\n他决定在晚自习后找机会问个清楚。",
+      "input_tokens": 2445,
+      "output_tokens": 486,
+      "latency_ms": 14222,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "ef59f141ea4c9ca2e1a20970fea2183ebe7e34cfd4773830220db46279bd9c9b",
+      "text_path": "cases\\AL-05\\drafts\\baseline-2.txt"
+    },
+    {
+      "group": "ROUTE-ALITE_VS_A",
+      "replica": 3,
+      "mode": "narrative_route",
+      "candidate_id": "d13d36f9-77f3-4b29-afe3-8e42e5a7651c",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "B_SHORT_RELATION",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "scene is relationship-oriented with no physical urgency",
+            "character action involves relational move (message, gesture, proximity)"
+          ],
+          "matched_rules": [
+            "RULE_B_SHORT_RELATION"
+          ],
+          "rejected_routes": [
+            "C_OBJECT_CAUSAL",
+            "A_LITE_INFORMATION_GAP"
+          ]
+        },
+        "compiled_brief_hash": "7b2393bdc354b9bb5de565bde49be2c6449ef608d7b710a2dc861ad378130b48",
+        "instruction_hash": "d7a76822408396dc71c4599a7f40f33368b90199f0d9c0712383961213437555",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "晚自习铃还没响，走廊上已经没什么人了。\n\n齐放站在教室门口，手机屏幕亮着。年级群的提示还挂在通知栏里——“齐放 被@”。点进去，消息已经撤回，只剩一行灰色小字。发消息的头像是隔壁班的，他不认识。群里二十多个人在线，没人说话。\n\n他把手机揣回兜里，往隔壁班门口走。\n\n隔壁班门口站着个男生，正低头看手机。齐放走过去的时候，那人抬起头，眼神在他脸上一碰，又迅速挪开。\n\n“你们班今天作业多吗？”齐放问。\n\n“啊？”那男生愣了一下，手机屏幕往胸口扣，“还、还行吧，数学两张卷子。”\n\n旁边两个正在说话的同学突然停了。其中一个看了齐放一眼，又去看那个答话的男生，嘴唇动了动，没出声。\n\n齐放没追问。他站在那儿，看着那个男生把手机从胸口拿下来，塞进裤兜里，手指在里面搅了两下，又抽出来，摸了摸后颈。\n\n“行，谢了。”齐放说。\n\n他转身往回走。身后没人立刻接话，直到他走出三步远，才听见有人压低声音说了句什么，另一个回了一声“别说了”。\n\n齐放没回头。\n\n他走进自己教室，绕过讲台，坐到座位上。前排的同学正在翻书，后排的趴着补觉。他把手机掏出来，年级群的提示还在，消息内容永远看不到了。\n\n但那个男生扣手机的动作，旁边人停下来的样子，身后压低的说话声——这些他看得很清楚。\n\n他决定在晚自习后找机会问个清楚。",
+      "raw_response": "晚自习铃还没响，走廊上已经没什么人了。\n\n齐放站在教室门口，手机屏幕亮着。年级群的提示还挂在通知栏里——“齐放 被@”。点进去，消息已经撤回，只剩一行灰色小字。发消息的头像是隔壁班的，他不认识。群里二十多个人在线，没人说话。\n\n他把手机揣回兜里，往隔壁班门口走。\n\n隔壁班门口站着个男生，正低头看手机。齐放走过去的时候，那人抬起头，眼神在他脸上一碰，又迅速挪开。\n\n“你们班今天作业多吗？”齐放问。\n\n“啊？”那男生愣了一下，手机屏幕往胸口扣，“还、还行吧，数学两张卷子。”\n\n旁边两个正在说话的同学突然停了。其中一个看了齐放一眼，又去看那个答话的男生，嘴唇动了动，没出声。\n\n齐放没追问。他站在那儿，看着那个男生把手机从胸口拿下来，塞进裤兜里，手指在里面搅了两下，又抽出来，摸了摸后颈。\n\n“行，谢了。”齐放说。\n\n他转身往回走。身后没人立刻接话，直到他走出三步远，才听见有人压低声音说了句什么，另一个回了一声“别说了”。\n\n齐放没回头。\n\n他走进自己教室，绕过讲台，坐到座位上。前排的同学正在翻书，后排的趴着补觉。他把手机掏出来，年级群的提示还在，消息内容永远看不到了。\n\n但那个男生扣手机的动作，旁边人停下来的样子，身后压低的说话声——这些他看得很清楚。\n\n他决定在晚自习后找机会问个清楚。",
+      "input_tokens": 1347,
+      "output_tokens": 343,
+      "latency_ms": 10897,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "ab973d8f6c75d0ed125141880fbfeea5eb98337f591c51604bdffad54b4934e4",
+      "text_path": "cases\\AL-05\\drafts\\route-3.txt"
+    },
+    {
+      "group": "BASELINE-ALITE_VS_A",
+      "replica": 3,
+      "mode": "complete_planner",
+      "candidate_id": "80bce7c2-fcf6-4ea1-a101-fc783aa207c4",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "齐放把手机屏幕按灭，又按亮。\n\n群提示还在那里——“齐放 被@”——后面跟着系统自动生成的小字“消息已撤回”。发消息的头像是隔壁班的，一个他叫不上名字但认得脸的男生。\n\n群里在线人数从二十一跳到了十九。\n\n齐放没有在群里打字。他把手机揣进校服口袋，拎起桌上的水杯，走出教室。\n\n走廊里晚自习前的嘈杂还没散尽。有人趴在窗台上背单词，有人追着扔校服外套。齐放走过三间教室，在隔壁班后门口放慢了脚步。他没有往门里看，而是侧身靠在走廊窗台边上，拧开水杯喝了一口。\n\n后门口有两个男生靠着门框聊天。其中一个看见齐放，话说到一半停了。另一个顺着他的目光转过头，也看见了齐放，然后迅速把视线收回去，低头划手机。\n\n齐放认识那个低头的。就是年级群里的头像。\n\n他把水杯拧上，朝他们走过去。两个男生的肩膀同时僵了一下。\n\n“你们班今天作业多吗？”齐放问。\n\n低头的那个抬起脸，嘴唇动了动，像是要说什么，最后只挤出一个“还行”。他的眼睛没看齐放，而是越过齐放的肩膀，盯着走廊尽头那面墙。\n\n旁边那个男生用胳膊肘碰了他一下，动作很轻，但齐放看见了。被碰的那个立刻把手机翻了个面扣在腿上，屏幕朝下。\n\n走廊里的声音好像突然变远了。\n\n“怎么了？”齐放说。\n\n“没怎么。”对方回答得太快，声音比刚才高了半度，“就还行，作业还行。”\n\n他站起来，椅子腿刮过地砖发出一声尖响。他拍了拍旁边男生的肩，两个人一前一后拐进了教室里面，消失在后排的课桌之间。\n\n齐放站在后门口，手里握着水杯。杯壁上的水珠沿着指缝滑下来，滴在走廊地面上。\n\n晚自习铃响了。\n\n齐放转过身，走回自己教室。他在座位上坐下，把水杯放在桌角。前排的同学回头看了他一眼，又转回去了。\n\n手机在口袋里震动了一下。齐放掏出来看——年级群又有新消息，是别班的人在发作业答案。\n\n他往上划了一下。那条撤回的提示还在，后面没有新的@。\n\n齐放把手机塞进抽屉，翻开桌上的练习册。笔握在手里，一个字没写。\n\n隔壁班那两个男生的表情还在他眼前——那个没说完的话，那个被胳膊肘打断的动作，那部被翻面扣下的手机。\n\n他决定在晚自习后找机会问个清楚。",
+      "raw_response": "齐放把手机屏幕按灭，又按亮。\n\n群提示还在那里——“齐放 被@”——后面跟着系统自动生成的小字“消息已撤回”。发消息的头像是隔壁班的，一个他叫不上名字但认得脸的男生。\n\n群里在线人数从二十一跳到了十九。\n\n齐放没有在群里打字。他把手机揣进校服口袋，拎起桌上的水杯，走出教室。\n\n走廊里晚自习前的嘈杂还没散尽。有人趴在窗台上背单词，有人追着扔校服外套。齐放走过三间教室，在隔壁班后门口放慢了脚步。他没有往门里看，而是侧身靠在走廊窗台边上，拧开水杯喝了一口。\n\n后门口有两个男生靠着门框聊天。其中一个看见齐放，话说到一半停了。另一个顺着他的目光转过头，也看见了齐放，然后迅速把视线收回去，低头划手机。\n\n齐放认识那个低头的。就是年级群里的头像。\n\n他把水杯拧上，朝他们走过去。两个男生的肩膀同时僵了一下。\n\n“你们班今天作业多吗？”齐放问。\n\n低头的那个抬起脸，嘴唇动了动，像是要说什么，最后只挤出一个“还行”。他的眼睛没看齐放，而是越过齐放的肩膀，盯着走廊尽头那面墙。\n\n旁边那个男生用胳膊肘碰了他一下，动作很轻，但齐放看见了。被碰的那个立刻把手机翻了个面扣在腿上，屏幕朝下。\n\n走廊里的声音好像突然变远了。\n\n“怎么了？”齐放说。\n\n“没怎么。”对方回答得太快，声音比刚才高了半度，“就还行，作业还行。”\n\n他站起来，椅子腿刮过地砖发出一声尖响。他拍了拍旁边男生的肩，两个人一前一后拐进了教室里面，消失在后排的课桌之间。\n\n齐放站在后门口，手里握着水杯。杯壁上的水珠沿着指缝滑下来，滴在走廊地面上。\n\n晚自习铃响了。\n\n齐放转过身，走回自己教室。他在座位上坐下，把水杯放在桌角。前排的同学回头看了他一眼，又转回去了。\n\n手机在口袋里震动了一下。齐放掏出来看——年级群又有新消息，是别班的人在发作业答案。\n\n他往上划了一下。那条撤回的提示还在，后面没有新的@。\n\n齐放把手机塞进抽屉，翻开桌上的练习册。笔握在手里，一个字没写。\n\n隔壁班那两个男生的表情还在他眼前——那个没说完的话，那个被胳膊肘打断的动作，那部被翻面扣下的手机。\n\n他决定在晚自习后找机会问个清楚。",
+      "input_tokens": 2445,
+      "output_tokens": 552,
+      "latency_ms": 15130,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "ef59f141ea4c9ca2e1a20970fea2183ebe7e34cfd4773830220db46279bd9c9b",
+      "text_path": "cases\\AL-05\\drafts\\baseline-3.txt"
+    }
+  ],
+  "actual_route": "B_SHORT_RELATION",
+  "route_decision": {
+    "route_name": "B_SHORT_RELATION",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "scene is relationship-oriented with no physical urgency",
+      "character action involves relational move (message, gesture, proximity)"
+    ],
+    "matched_rules": [
+      "RULE_B_SHORT_RELATION"
+    ],
+    "rejected_routes": [
+      "C_OBJECT_CAUSAL",
+      "A_LITE_INFORMATION_GAP"
+    ]
+  }
+}

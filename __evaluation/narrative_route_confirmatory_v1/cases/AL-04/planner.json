@@ -1,0 +1,134 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "秦蔓在茶水间发现自己的部分简历后，必须做出一个可见动作，从而在不动声色中应对信息暴露风险，同时维持与林远之间的微妙平衡。",
+  "location": "公司茶水间",
+  "time": "工作日午休时间",
+  "scene_state": {
+    "last_completed_action": "秦蔓走到复印机前，发现托盘上有一份只印了她名字和第一行工作经历的简历，旁边放着一杯热咖啡。",
+    "present_characters": [
+      "秦蔓"
+    ],
+    "visible_facts": [
+      "复印机托盘上有一份打印到一半的简历，名字是秦蔓的，只印了名字和第一行工作经历",
+      "简历旁边有一杯还热着的咖啡",
+      "同事林远刚刚离开茶水间"
+    ],
+    "available_objects": [
+      "复印机",
+      "半份简历",
+      "热咖啡",
+      "茶水间其他常规物品"
+    ],
+    "unresolved_problem": "谁打印了这份简历？为什么只印了一部分？是否有人正在调查秦蔓的背景？",
+    "already_existing_constraints": [
+      "秦蔓不能把简历拿走",
+      "秦蔓不能直接问林远是否打印了简历",
+      "秦蔓必须做一个可见动作"
+    ]
+  },
+  "characters": [
+    {
+      "name": "秦蔓",
+      "goal": "在不引起怀疑的情况下，了解简历为何被打印，并保护自己的隐私",
+      "known": [
+        "简历上只有自己的名字和第一行工作经历",
+        "林远刚刚离开茶水间",
+        "咖啡还是热的，说明打印者离开不久"
+      ],
+      "unknown": [
+        "谁打印了简历",
+        "为什么只打印了一部分",
+        "打印者是否看到了更多信息",
+        "林远是否就是打印者"
+      ],
+      "mistaken_beliefs": [
+        "可能只是有人误操作了打印机"
+      ],
+      "constraints": [
+        "不能拿走简历",
+        "不能直接询问林远",
+        "必须做一个可见动作"
+      ],
+      "observed_evidence": [
+        "简历只印了名字和第一行工作经历",
+        "咖啡是热的",
+        "林远刚离开"
+      ],
+      "current_interpretation": "有人试图打印我的简历，但中途停止了。林远可能是打印者，因为咖啡还热着且他刚离开，但也有可能是其他人留下的咖啡。",
+      "how_interpretation_drives_action": "她决定通过一个不引人注目的动作，比如翻看其他文件或整理托盘，来暗示自己注意到了简历，同时观察后续反应。"
+    }
+  ],
+  "concrete_problem": "秦蔓如何在不能拿走简历也不能直接询问的情况下，应对这份暴露的简历，并采取一个可见动作来测试或影响局面？",
+  "pressure": "午休时间有限，随时可能有其他同事进入茶水间，发现这份简历并引发不必要的猜测。",
+  "turning_point": "秦蔓选择将简历翻面朝下放置，并用咖啡杯压住一角，既表明自己看到了，又不销毁证据，同时留下一个需要解释的现场。",
+  "end_condition": "秦蔓做完动作后离开茶水间，简历以被处理过的状态留在原处，等待下一个人发现。",
+  "forbidden": [
+    "秦蔓拿走简历",
+    "秦蔓直接询问林远",
+    "揭示打印者的明确身份",
+    "秦蔓与林远发生正面冲突",
+    "简历被彻底销毁"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "复印机托盘上的半份简历和热咖啡",
+      "character_interpretation": "有人打印了我的简历但中途停止，可能意识到不妥或被打断。咖啡还热着，说明此人刚离开，很可能是林远。",
+      "character_next_action": "秦蔓将简历翻过来，让空白面朝上，然后端起咖啡杯压住简历一角，使简历不会被风吹走但内容不可见。",
+      "rejected_alternative": "她本可以假装没看见直接离开，但那样简历可能被其他人看到；或者她可以撕掉简历，但那会显得心虚。",
+      "immediate_consequence": "简历内容被隐藏，但现场留下明显的人为干预痕迹，任何返回的人都会意识到有人动过简历。",
+      "counterfactual_without_action": "如果秦蔓不采取行动，简历会继续留在托盘上，任何进入茶水间的人都能看到她的名字和工作经历，可能引发流言。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "简历内容朝上，完全暴露，旁边有热咖啡",
+        "after": "简历被翻面，内容隐藏，咖啡杯压住一角，现场显示有人干预"
+      },
+      "cost_or_commitment": "秦蔓暴露了自己已经知道简历被打印的事实，如果林远返回，他会明白秦蔓看到了。",
+      "next_constraint": "林远或其他同事发现简历被翻面后，可能会怀疑秦蔓，秦蔓需要准备应对可能的试探。",
+      "reader_must_infer": "秦蔓的这个动作是否在向打印者传递信号？打印者会如何解读？",
+      "narrator_must_not_state": [
+        "秦蔓此刻内心的全部想法",
+        "林远是否就是打印者"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "秦蔓发现简历时，咖啡还热着，林远刚离开",
+    "dominant_pressure": {
+      "kind": "information_gap",
+      "description": "秦蔓不知道谁打印了简历、为什么打印，这种信息缺失迫使她必须采取行动来保护自己，但又不能直接询问。"
+    },
+    "allowed_viewpoint_misread": "读者可能误以为秦蔓翻简历是为了销毁证据，但实际上她只是隐藏信息并留下标记。",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "打印简历的真正目的",
+      "林远是否就是打印者"
+    ],
+    "stop_state": {
+      "type": "physical_change",
+      "visible_fact": "简历被翻面，咖啡杯压住一角，秦蔓离开茶水间",
+      "what_is_now_different": "简历不再暴露内容，但现场留下人为痕迹，局面从被动发现变为主动干预，等待下一个人反应。",
+      "must_not_append": "不得描述秦蔓离开后的心理活动或后续发展"
+    },
+    "final_line_must_include": ""
+  }
+}

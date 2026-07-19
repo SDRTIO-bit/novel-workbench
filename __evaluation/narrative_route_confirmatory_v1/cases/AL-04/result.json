@@ -1,0 +1,260 @@
+{
+  "case_id": "AL-04",
+  "category": "职场日常",
+  "title": "茶水间的简历",
+  "group": "ALITE_VS_A",
+  "run_id": "ddffe027-9659-4608-a37f-d45f5a395206",
+  "planner": {
+    "candidate_id": "368ba2bf-3e87-4a4c-bd66-33885233d1d6",
+    "attempt_number": 1,
+    "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+    "model_id": "deepseek-v4-pro",
+    "prompt_version_id": "f9052f8a-dc4e-5408-b14e-fc1badaf57f8",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 12288,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "json_object"
+    },
+    "text_output": "{\n  \"planner_contract_version\": 2,\n  \"scene_goal\": \"秦蔓在茶水间发现自己的部分简历后，必须做出一个可见动作，从而在不动声色中应对信息暴露风险，同时维持与林远之间的微妙平衡。\",\n  \"location\": \"公司茶水间\",\n  \"time\": \"工作日午休时间\",\n  \"scene_state\": {\n    \"last_completed_action\": \"秦蔓走到复印机前，发现托盘上有一份只印了她名字和第一行工作经历的简历，旁边放着一杯热咖啡。\",\n    \"present_characters\": [\"秦蔓\"],\n    \"visible_facts\": [\n      \"复印机托盘上有一份打印到一半的简历，名字是秦蔓的，只印了名字和第一行工作经历\",\n      \"简历旁边有一杯还热着的咖啡\",\n      \"同事林远刚刚离开茶水间\"\n    ],\n    \"available_objects\": [\"复印机\", \"半份简历\", \"热咖啡\", \"茶水间其他常规物品\"],\n    \"unresolved_problem\": \"谁打印了这份简历？为什么只印了一部分？是否有人正在调查秦蔓的背景？\",\n    \"already_existing_constraints\": [\n      \"秦蔓不能把简历拿走\",\n      \"秦蔓不能直接问林远是否打印了简历\",\n      \"秦蔓必须做一个可见动作\"\n    ]\n  },\n  \"characters\": [\n    {\n      \"name\": \"秦蔓\",\n      \"goal\": \"在不引起怀疑的情况下，了解简历为何被打印，并保护自己的隐私\",\n      \"known\": [\n        \"简历上只有自己的名字和第一行工作经历\",\n        \"林远刚刚离开茶水间\",\n        \"咖啡还是热的，说明打印者离开不久\"\n      ],\n      \"unknown\": [\n        \"谁打印了简历\",\n        \"为什么只打印了一部分\",\n        \"打印者是否看到了更多信息\",\n        \"林远是否就是打印者\"\n      ],\n      \"mistaken_beliefs\": [\n        \"可能只是有人误操作了打印机\"\n      ],\n      \"constraints\": [\n        \"不能拿走简历\",\n        \"不能直接询问林远\",\n        \"必须做一个可见动作\"\n      ],\n      \"observed_evidence\": [\n        \"简历只印了名字和第一行工作经历\",\n        \"咖啡是热的\",\n        \"林远刚离开\"\n      ],\n      \"current_interpretation\": \"有人试图打印我的简历，但中途停止了。林远可能是打印者，因为咖啡还热着且他刚离开，但也有可能是其他人留下的咖啡。\",\n      \"how_interpretation_drives_action\": \"她决定通过一个不引人注目的动作，比如翻看其他文件或整理托盘，来暗示自己注意到了简历，同时观察后续反应。\"\n    }\n  ],\n  \"concrete_problem\": \"秦蔓如何在不能拿走简历也不能直接询问的情况下，应对这份暴露的简历，并采取一个可见动作来测试或影响局面？\",\n  \"pressure\": \"午休时间有限，随时可能有其他同事进入茶水间，发现这份简历并引发不必要的猜测。\",\n  \"turning_point\": \"秦蔓选择将简历翻面朝下放置，并用咖啡杯压住一角，既表明自己看到了，又不销毁证据，同时留下一个需要解释的现场。\",\n  \"end_condition\": \"秦蔓做完动作后离开茶水间，简历以被处理过的状态留在原处，等待下一个人发现。\",\n  \"forbidden\": [\n    \"秦蔓拿走简历\",\n    \"秦蔓直接询问林远\",\n    \"揭示打印者的明确身份\",\n    \"秦蔓与林远发生正面冲突\",\n    \"简历被彻底销毁\"\n  ],\n  \"causal_transitions\": [\n    {\n      \"id\": \"CT01\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"复印机托盘上的半份简历和热咖啡\",\n      \"character_interpretation\": \"有人打印了我的简历但中途停止，可能意识到不妥或被打断。咖啡还热着，说明此人刚离开，很可能是林远。\",\n      \"character_next_action\": \"秦蔓将简历翻过来，让空白面朝上，然后端起咖啡杯压住简历一角，使简历不会被风吹走但内容不可见。\",\n      \"rejected_alternative\": \"她本可以假装没看见直接离开，但那样简历可能被其他人看到；或者她可以撕掉简历，但那会显得心虚。\",\n      \"immediate_consequence\": \"简历内容被隐藏，但现场留下明显的人为干预痕迹，任何返回的人都会意识到有人动过简历。\",\n      \"counterfactual_without_action\": \"如果秦蔓不采取行动，简历会继续留在托盘上，任何进入茶水间的人都能看到她的名字和工作经历，可能引发流言。\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"简历内容朝上，完全暴露，旁边有热咖啡\",\n        \"after\": \"简历被翻面，内容隐藏，咖啡杯压住一角，现场显示有人干预\"\n      },\n      \"cost_or_commitment\": \"秦蔓暴露了自己已经知道简历被打印的事实，如果林远返回，他会明白秦蔓看到了。\",\n      \"next_constraint\": \"林远或其他同事发现简历被翻面后，可能会怀疑秦蔓，秦蔓需要准备应对可能的试探。\",\n      \"reader_must_infer\": \"秦蔓的这个动作是否在向打印者传递信号？打印者会如何解读？\",\n      \"narrator_must_not_state\": [\n        \"秦蔓此刻内心的全部想法\",\n        \"林远是否就是打印者\"\n      ]\n    }\n  ],\n  \"tempo_guardrails\": {\n    \"entry_pressure\": \"秦蔓发现简历时，咖啡还热着，林远刚离开\",\n    \"dominant_pressure\": {\n      \"kind\": \"information_gap\",\n      \"description\": \"秦蔓不知道谁打印了简历、为什么打印，这种信息缺失迫使她必须采取行动来保护自己，但又不能直接询问。\"\n    },\n    \"allowed_viewpoint_misread\": \"读者可能误以为秦蔓翻简历是为了销毁证据，但实际上她只是隐藏信息并留下标记。\",\n    \"disclosure_cap\": 1,\n    \"must_remain_unclassified\": [\n      \"打印简历的真正目的\",\n      \"林远是否就是打印者\"\n    ],\n    \"stop_state\": {\n      \"type\": \"physical_change\",\n      \"visible_fact\": \"简历被翻面，咖啡杯压住一角，秦蔓离开茶水间\",\n      \"what_is_now_different\": \"简历不再暴露内容，但现场留下人为痕迹，局面从被动发现变为主动干预，等待下一个人反应。\",\n      \"must_not_append\": \"不得描述秦蔓离开后的心理活动或后续发展\"\n    }\n  },\n  \"chapter_contract_check\": {\n    \"function_aligned\": true,\n    \"must_deliver_covered\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_enabled\": true,\n    \"main_payoff_prepared\": true,\n    \"ending_hook_established\": true,\n    \"causal_transitions_grounded\": true,\n    \"reader_inference_not_pre_resolved\": true,\n    \"scene_state_reconstructed\": true,\n    \"information_sources_legal\": true,\n    \"character_choice_is_real\": true,\n    \"consequence_is_counterfactual\": true,\n    \"state_delta_is_nonempty\": true,\n    \"next_constraint_is_new\": true,\n    \"stop_state_is_visible\": true,\n    \"stop_state_changes_future_actions\": true\n  }\n}",
+    "raw_response": "{\n  \"planner_contract_version\": 2,\n  \"scene_goal\": \"秦蔓在茶水间发现自己的部分简历后，必须做出一个可见动作，从而在不动声色中应对信息暴露风险，同时维持与林远之间的微妙平衡。\",\n  \"location\": \"公司茶水间\",\n  \"time\": \"工作日午休时间\",\n  \"scene_state\": {\n    \"last_completed_action\": \"秦蔓走到复印机前，发现托盘上有一份只印了她名字和第一行工作经历的简历，旁边放着一杯热咖啡。\",\n    \"present_characters\": [\"秦蔓\"],\n    \"visible_facts\": [\n      \"复印机托盘上有一份打印到一半的简历，名字是秦蔓的，只印了名字和第一行工作经历\",\n      \"简历旁边有一杯还热着的咖啡\",\n      \"同事林远刚刚离开茶水间\"\n    ],\n    \"available_objects\": [\"复印机\", \"半份简历\", \"热咖啡\", \"茶水间其他常规物品\"],\n    \"unresolved_problem\": \"谁打印了这份简历？为什么只印了一部分？是否有人正在调查秦蔓的背景？\",\n    \"already_existing_constraints\": [\n      \"秦蔓不能把简历拿走\",\n      \"秦蔓不能直接问林远是否打印了简历\",\n      \"秦蔓必须做一个可见动作\"\n    ]\n  },\n  \"characters\": [\n    {\n      \"name\": \"秦蔓\",\n      \"goal\": \"在不引起怀疑的情况下，了解简历为何被打印，并保护自己的隐私\",\n      \"known\": [\n        \"简历上只有自己的名字和第一行工作经历\",\n        \"林远刚刚离开茶水间\",\n        \"咖啡还是热的，说明打印者离开不久\"\n      ],\n      \"unknown\": [\n        \"谁打印了简历\",\n        \"为什么只打印了一部分\",\n        \"打印者是否看到了更多信息\",\n        \"林远是否就是打印者\"\n      ],\n      \"mistaken_beliefs\": [\n        \"可能只是有人误操作了打印机\"\n      ],\n      \"constraints\": [\n        \"不能拿走简历\",\n        \"不能直接询问林远\",\n        \"必须做一个可见动作\"\n      ],\n      \"observed_evidence\": [\n        \"简历只印了名字和第一行工作经历\",\n        \"咖啡是热的\",\n        \"林远刚离开\"\n      ],\n      \"current_interpretation\": \"有人试图打印我的简历，但中途停止了。林远可能是打印者，因为咖啡还热着且他刚离开，但也有可能是其他人留下的咖啡。\",\n      \"how_interpretation_drives_action\": \"她决定通过一个不引人注目的动作，比如翻看其他文件或整理托盘，来暗示自己注意到了简历，同时观察后续反应。\"\n    }\n  ],\n  \"concrete_problem\": \"秦蔓如何在不能拿走简历也不能直接询问的情况下，应对这份暴露的简历，并采取一个可见动作来测试或影响局面？\",\n  \"pressure\": \"午休时间有限，随时可能有其他同事进入茶水间，发现这份简历并引发不必要的猜测。\",\n  \"turning_point\": \"秦蔓选择将简历翻面朝下放置，并用咖啡杯压住一角，既表明自己看到了，又不销毁证据，同时留下一个需要解释的现场。\",\n  \"end_condition\": \"秦蔓做完动作后离开茶水间，简历以被处理过的状态留在原处，等待下一个人发现。\",\n  \"forbidden\": [\n    \"秦蔓拿走简历\",\n    \"秦蔓直接询问林远\",\n    \"揭示打印者的明确身份\",\n    \"秦蔓与林远发生正面冲突\",\n    \"简历被彻底销毁\"\n  ],\n  \"causal_transitions\": [\n    {\n      \"id\": \"CT01\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"复印机托盘上的半份简历和热咖啡\",\n      \"character_interpretation\": \"有人打印了我的简历但中途停止，可能意识到不妥或被打断。咖啡还热着，说明此人刚离开，很可能是林远。\",\n      \"character_next_action\": \"秦蔓将简历翻过来，让空白面朝上，然后端起咖啡杯压住简历一角，使简历不会被风吹走但内容不可见。\",\n      \"rejected_alternative\": \"她本可以假装没看见直接离开，但那样简历可能被其他人看到；或者她可以撕掉简历，但那会显得心虚。\",\n      \"immediate_consequence\": \"简历内容被隐藏，但现场留下明显的人为干预痕迹，任何返回的人都会意识到有人动过简历。\",\n      \"counterfactual_without_action\": \"如果秦蔓不采取行动，简历会继续留在托盘上，任何进入茶水间的人都能看到她的名字和工作经历，可能引发流言。\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"简历内容朝上，完全暴露，旁边有热咖啡\",\n        \"after\": \"简历被翻面，内容隐藏，咖啡杯压住一角，现场显示有人干预\"\n      },\n      \"cost_or_commitment\": \"秦蔓暴露了自己已经知道简历被打印的事实，如果林远返回，他会明白秦蔓看到了。\",\n      \"next_constraint\": \"林远或其他同事发现简历被翻面后，可能会怀疑秦蔓，秦蔓需要准备应对可能的试探。\",\n      \"reader_must_infer\": \"秦蔓的这个动作是否在向打印者传递信号？打印者会如何解读？\",\n      \"narrator_must_not_state\": [\n        \"秦蔓此刻内心的全部想法\",\n        \"林远是否就是打印者\"\n      ]\n    }\n  ],\n  \"tempo_guardrails\": {\n    \"entry_pressure\": \"秦蔓发现简历时，咖啡还热着，林远刚离开\",\n    \"dominant_pressure\": {\n      \"kind\": \"information_gap\",\n      \"description\": \"秦蔓不知道谁打印了简历、为什么打印，这种信息缺失迫使她必须采取行动来保护自己，但又不能直接询问。\"\n    },\n    \"allowed_viewpoint_misread\": \"读者可能误以为秦蔓翻简历是为了销毁证据，但实际上她只是隐藏信息并留下标记。\",\n    \"disclosure_cap\": 1,\n    \"must_remain_unclassified\": [\n      \"打印简历的真正目的\",\n      \"林远是否就是打印者\"\n    ],\n    \"stop_state\": {\n      \"type\": \"physical_change\",\n      \"visible_fact\": \"简历被翻面，咖啡杯压住一角，秦蔓离开茶水间\",\n      \"what_is_now_different\": \"简历不再暴露内容，但现场留下人为痕迹，局面从被动发现变为主动干预，等待下一个人反应。\",\n      \"must_not_append\": \"不得描述秦蔓离开后的心理活动或后续发展\"\n    }\n  },\n  \"chapter_contract_check\": {\n    \"function_aligned\": true,\n    \"must_deliver_covered\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_enabled\": true,\n    \"main_payoff_prepared\": true,\n    \"ending_hook_established\": true,\n    \"causal_transitions_grounded\": true,\n    \"reader_inference_not_pre_resolved\": true,\n    \"scene_state_reconstructed\": true,\n    \"information_sources_legal\": true,\n    \"character_choice_is_real\": true,\n    \"consequence_is_counterfactual\": true,\n    \"state_delta_is_nonempty\": true,\n    \"next_constraint_is_new\": true,\n    \"stop_state_is_visible\": true,\n    \"stop_state_changes_future_actions\": true\n  }\n}",
+    "input_tokens": 3326,
+    "output_tokens": 1630,
+    "latency_ms": 28165,
+    "finish_reason": "stop",
+    "error_code": null,
+    "error_message": null,
+    "rendered_user_prompt_sha256": "6190b2c99f9594c9f0bb05935bc4a0ae7dce09bccc9c56dd2c7b9b9af57c41f9"
+  },
+  "drafts": [
+    {
+      "group": "ROUTE-ALITE_VS_A",
+      "replica": 1,
+      "mode": "narrative_route",
+      "candidate_id": "a57c4b0a-86fb-4cdd-9ce2-4160e1497b14",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "C_OBJECT_CAUSAL",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "scene_state.available_objects is non-empty",
+            "causal_transitions contains counterfactual_without_action or rejected_alternative",
+            "character_next_action involves physical object manipulation"
+          ],
+          "matched_rules": [
+            "RULE_C_OBJECT_CAUSAL"
+          ],
+          "rejected_routes": []
+        },
+        "compiled_brief_hash": "5bd014dec11a81e74b376cf7499f60ac28368fc0c14d6151123d5920ff50c9e6",
+        "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "秦蔓推开茶水间的玻璃门时，复印机还在嗡嗡作响，正在吐出最后一张纸。\n\n她本意是倒水。杯子已经拿在手里，杯沿还沾着上午的茶渍。但复印机托盘上那半页纸让她停住了——纸张歪斜着躺在出纸口，只印了上半部分，下半截还是空白的。\n\n名字是她的。秦蔓。\n\n第一行工作经历：2019年3月至2021年7月，盛恒集团行政部。\n\n就这些。连第二行都没印出来，打印任务就中断了。\n\n咖啡杯放在托盘旁边，白瓷杯身，杯口还冒着热气。秦蔓认得那个杯子——杯柄上有一道细小的裂纹，林远上周还抱怨过后勤不换新杯具。她抬头看向茶水间门口，玻璃门还在轻微晃动，走廊里传来渐远的脚步声，皮鞋后跟敲在水磨石地面上，节奏不急不缓。\n\n复印机停止运转，指示灯从绿色跳回待机的橙色。\n\n秦蔓没有碰那张简历。她的手指停在半空，离纸面大约两指的距离。纸张很薄，背面能透出复印机托盘的深灰色。名字朝上。她的名字。\n\n咖啡的热气还在上升。林远的脚步声已经听不见了。\n\n她收回手，用指尖捏住简历的右下角——只碰了最边缘的空白处——将整张纸翻了过来。动作很快，纸张在空中发出一声脆响。\n\n空白面朝上。名字和那行工作经历被压在下面，看不见了。\n\n秦蔓端起那杯咖啡。杯身烫得她指尖一缩，但她没有松手。她把杯底对准简历的左上角，压了下去。瓷杯和纸张接触时发出一声轻微的磕响，咖啡液面晃了晃，差点溅出来。\n\n简历被压住了。空白面朝上，瓷杯镇住一角。任何走进茶水间的人都会看到一个被翻过来的纸片和一杯还热着的咖啡，杯柄的裂纹朝向门口。\n\n秦蔓松开手，手指在杯身上留下了一小片模糊的指纹。她没有擦掉。\n\n她端起自己的水杯，推开玻璃门，走了出去。",
+      "raw_response": "秦蔓推开茶水间的玻璃门时，复印机还在嗡嗡作响，正在吐出最后一张纸。\n\n她本意是倒水。杯子已经拿在手里，杯沿还沾着上午的茶渍。但复印机托盘上那半页纸让她停住了——纸张歪斜着躺在出纸口，只印了上半部分，下半截还是空白的。\n\n名字是她的。秦蔓。\n\n第一行工作经历：2019年3月至2021年7月，盛恒集团行政部。\n\n就这些。连第二行都没印出来，打印任务就中断了。\n\n咖啡杯放在托盘旁边，白瓷杯身，杯口还冒着热气。秦蔓认得那个杯子——杯柄上有一道细小的裂纹，林远上周还抱怨过后勤不换新杯具。她抬头看向茶水间门口，玻璃门还在轻微晃动，走廊里传来渐远的脚步声，皮鞋后跟敲在水磨石地面上，节奏不急不缓。\n\n复印机停止运转，指示灯从绿色跳回待机的橙色。\n\n秦蔓没有碰那张简历。她的手指停在半空，离纸面大约两指的距离。纸张很薄，背面能透出复印机托盘的深灰色。名字朝上。她的名字。\n\n咖啡的热气还在上升。林远的脚步声已经听不见了。\n\n她收回手，用指尖捏住简历的右下角——只碰了最边缘的空白处——将整张纸翻了过来。动作很快，纸张在空中发出一声脆响。\n\n空白面朝上。名字和那行工作经历被压在下面，看不见了。\n\n秦蔓端起那杯咖啡。杯身烫得她指尖一缩，但她没有松手。她把杯底对准简历的左上角，压了下去。瓷杯和纸张接触时发出一声轻微的磕响，咖啡液面晃了晃，差点溅出来。\n\n简历被压住了。空白面朝上，瓷杯镇住一角。任何走进茶水间的人都会看到一个被翻过来的纸片和一杯还热着的咖啡，杯柄的裂纹朝向门口。\n\n秦蔓松开手，手指在杯身上留下了一小片模糊的指纹。她没有擦掉。\n\n她端起自己的水杯，推开玻璃门，走了出去。",
+      "input_tokens": 1507,
+      "output_tokens": 461,
+      "latency_ms": 14665,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "e4442f3be69f7685b21a15409292ef4af766fa89ee444b1e2a3d16d1abc941cc",
+      "text_path": "cases\\AL-04\\drafts\\route-1.txt"
+    },
+    {
+      "group": "BASELINE-ALITE_VS_A",
+      "replica": 1,
+      "mode": "complete_planner",
+      "candidate_id": "50abfee7-73a1-4538-82f5-6e72a0513d02",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "秦蔓的手指停在半空中。\n\n复印机托盘上那张纸，她的名字——秦蔓——方正宋体，墨迹已经干透。名字下面只有一行字：盛恒集团，行政专员，2019年3月至2021年6月。后面应该还有内容，但纸张从中间截断，第二份工作经历只印出一个模糊的“项”字，打印机就停了。\n\n她盯着那个“项”字看了三秒。\n\n咖啡杯在旁边，白色杯壁外侧还挂着水珠，热气从杯口往上飘。林远惯用的杯子，杯沿有一圈浅浅的茶渍——他上午泡的是乌龙。\n\n秦蔓没有回头。茶水间门口没有人影，走廊里只有空调出风口的低频嗡鸣。\n\n她伸手碰到那张纸的边缘，指腹摩挲了一下纸张的厚度。普通A4，七十克，公司统一采购的那种。她把纸从托盘上拿起来，动作不快，但也没有犹豫。\n\n翻面。\n\n空白的那一面朝上，印过字的那一面贴在复印机托盘的灰色塑料上。纸张四角微微翘起，她用手掌压平，然后端起那杯咖啡，把杯底压在纸的左上角。\n\n陶瓷杯底和托盘接触时发出一声轻响。\n\n咖啡液面晃了晃，没有溢出来。\n\n秦蔓松开手，退后一步。茶水间的日光灯照在白色杯身上，杯沿那圈茶渍正对着门口方向。桌上那张纸被杯子压住一角，空白面朝上，什么内容都看不见，但任何走进来的人都会注意到——有人动过这里的东西。\n\n她转身走出茶水间。",
+      "raw_response": "秦蔓的手指停在半空中。\n\n复印机托盘上那张纸，她的名字——秦蔓——方正宋体，墨迹已经干透。名字下面只有一行字：盛恒集团，行政专员，2019年3月至2021年6月。后面应该还有内容，但纸张从中间截断，第二份工作经历只印出一个模糊的“项”字，打印机就停了。\n\n她盯着那个“项”字看了三秒。\n\n咖啡杯在旁边，白色杯壁外侧还挂着水珠，热气从杯口往上飘。林远惯用的杯子，杯沿有一圈浅浅的茶渍——他上午泡的是乌龙。\n\n秦蔓没有回头。茶水间门口没有人影，走廊里只有空调出风口的低频嗡鸣。\n\n她伸手碰到那张纸的边缘，指腹摩挲了一下纸张的厚度。普通A4，七十克，公司统一采购的那种。她把纸从托盘上拿起来，动作不快，但也没有犹豫。\n\n翻面。\n\n空白的那一面朝上，印过字的那一面贴在复印机托盘的灰色塑料上。纸张四角微微翘起，她用手掌压平，然后端起那杯咖啡，把杯底压在纸的左上角。\n\n陶瓷杯底和托盘接触时发出一声轻响。\n\n咖啡液面晃了晃，没有溢出来。\n\n秦蔓松开手，退后一步。茶水间的日光灯照在白色杯身上，杯沿那圈茶渍正对着门口方向。桌上那张纸被杯子压住一角，空白面朝上，什么内容都看不见，但任何走进来的人都会注意到——有人动过这里的东西。\n\n她转身走出茶水间。",
+      "input_tokens": 2452,
+      "output_tokens": 345,
+      "latency_ms": 12813,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "ca42d02fae3fa02cb8e1ea7e1858b7b814d7a5a7bc75d42bdacf069544877dc0",
+      "text_path": "cases\\AL-04\\drafts\\baseline-1.txt"
+    },
+    {
+      "group": "ROUTE-ALITE_VS_A",
+      "replica": 2,
+      "mode": "narrative_route",
+      "candidate_id": "c4accb62-3508-45c0-a9fa-e8cf336a4eed",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "C_OBJECT_CAUSAL",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "scene_state.available_objects is non-empty",
+            "causal_transitions contains counterfactual_without_action or rejected_alternative",
+            "character_next_action involves physical object manipulation"
+          ],
+          "matched_rules": [
+            "RULE_C_OBJECT_CAUSAL"
+          ],
+          "rejected_routes": []
+        },
+        "compiled_brief_hash": "5bd014dec11a81e74b376cf7499f60ac28368fc0c14d6151123d5920ff50c9e6",
+        "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "秦蔓推开茶水间的玻璃门时，复印机还在低鸣。\n\n她走到饮水机前，按下热水键，水流声盖过了机器运转的尾音。等杯子快满时她才转身，视线扫过复印机托盘——一张纸躺在那里，边缘微微卷起，像是被仓促抽走时带皱的。\n\n纸上印着她的名字。\n\n秦蔓。\n\n她放下杯子，走近一步。简历只印了三分之一，名字下面是第一行工作经历：“2021年至今，盛恒集团行政部——”后面是空白。墨粉的气味还没散尽。托盘边缘沾着几粒碳粉，在日光灯下泛着微光。\n\n旁边放着一杯咖啡。\n\n白色瓷杯，公司标配的那种。热气从杯口升起来，细而直，在复印机外壳上映出一道扭曲的影。她伸出手，指尖停在杯壁外两厘米处——热的，刚倒的，也许不超过三分钟。\n\n茶水间里只有她一个人。\n\n但刚才不是。\n\n她记得从走廊拐过来时，林远正从茶水间出来。他端着杯子，朝她点了点头，脚步没停。她当时没多想，现在想起来，他手里那杯咖啡也是白的，也是公司配的那种。\n\n复印机屏幕还亮着，状态栏显示“打印中断——用户取消”。取消时间：两分钟前。\n\n秦蔓看着那张简历。名字对着天花板，任何一个走进来倒水的人都能看见。行政部的小周每天这个点都会来洗饭盒，财务的刘姐习惯午休后泡第二杯茶。她甚至可以想象小周看到后的表情，那种压低了声音说“你知道吗”的表情。\n\n她伸出手，捏住简历的一角。\n\n纸很薄，背面是空白的，透过纸张能看见自己名字的反字。她把简历翻过来，字朝下，白面朝上。纸张落在托盘上时发出一声轻响，像信封封口。\n\n然后她端起那杯咖啡。\n\n杯子比想象中烫，她换了个手势，用虎口卡住杯沿。咖啡液面晃动了一下，深褐色的，没加奶。她把杯子挪到简历上，杯底压住纸张的右上角。热气继续升，但简历不动了。\n\n她松开手。\n\n杯底在纸上留下了一个湿印，圆圆的一圈，像某种标记。她看着那个湿印扩大了一毫米，然后停住。\n\n复印机进入待机状态，屏幕暗下去。\n\n秦蔓端起自己的水杯，转身走出茶水间。",
+      "raw_response": "秦蔓推开茶水间的玻璃门时，复印机还在低鸣。\n\n她走到饮水机前，按下热水键，水流声盖过了机器运转的尾音。等杯子快满时她才转身，视线扫过复印机托盘——一张纸躺在那里，边缘微微卷起，像是被仓促抽走时带皱的。\n\n纸上印着她的名字。\n\n秦蔓。\n\n她放下杯子，走近一步。简历只印了三分之一，名字下面是第一行工作经历：“2021年至今，盛恒集团行政部——”后面是空白。墨粉的气味还没散尽。托盘边缘沾着几粒碳粉，在日光灯下泛着微光。\n\n旁边放着一杯咖啡。\n\n白色瓷杯，公司标配的那种。热气从杯口升起来，细而直，在复印机外壳上映出一道扭曲的影。她伸出手，指尖停在杯壁外两厘米处——热的，刚倒的，也许不超过三分钟。\n\n茶水间里只有她一个人。\n\n但刚才不是。\n\n她记得从走廊拐过来时，林远正从茶水间出来。他端着杯子，朝她点了点头，脚步没停。她当时没多想，现在想起来，他手里那杯咖啡也是白的，也是公司配的那种。\n\n复印机屏幕还亮着，状态栏显示“打印中断——用户取消”。取消时间：两分钟前。\n\n秦蔓看着那张简历。名字对着天花板，任何一个走进来倒水的人都能看见。行政部的小周每天这个点都会来洗饭盒，财务的刘姐习惯午休后泡第二杯茶。她甚至可以想象小周看到后的表情，那种压低了声音说“你知道吗”的表情。\n\n她伸出手，捏住简历的一角。\n\n纸很薄，背面是空白的，透过纸张能看见自己名字的反字。她把简历翻过来，字朝下，白面朝上。纸张落在托盘上时发出一声轻响，像信封封口。\n\n然后她端起那杯咖啡。\n\n杯子比想象中烫，她换了个手势，用虎口卡住杯沿。咖啡液面晃动了一下，深褐色的，没加奶。她把杯子挪到简历上，杯底压住纸张的右上角。热气继续升，但简历不动了。\n\n她松开手。\n\n杯底在纸上留下了一个湿印，圆圆的一圈，像某种标记。她看着那个湿印扩大了一毫米，然后停住。\n\n复印机进入待机状态，屏幕暗下去。\n\n秦蔓端起自己的水杯，转身走出茶水间。",
+      "input_tokens": 1507,
+      "output_tokens": 524,
+      "latency_ms": 15979,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "e4442f3be69f7685b21a15409292ef4af766fa89ee444b1e2a3d16d1abc941cc",
+      "text_path": "cases\\AL-04\\drafts\\route-2.txt"
+    },
+    {
+      "group": "BASELINE-ALITE_VS_A",
+      "replica": 2,
+      "mode": "complete_planner",
+      "candidate_id": "5d2e138e-20be-4492-b9a2-fff2a83db562",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "秦蔓的手指停在半空。\n\n复印机托盘上，那张纸只印了一半。她的名字，第一行工作经历，然后戛然而止。纸张边缘微微卷起，还带着打印余温。旁边的咖啡杯外壁凝着细密的水珠，热气从杯口缓慢上升。\n\n她没碰那张纸。\n\n茶水间很安静，只有饮水机低沉的待机声。走廊那头传来模糊的说话声，隔着两堵墙，听不清内容。午休还剩二十分钟，随时会有人进来泡茶、洗杯子、找零食。\n\n秦蔓伸手，指尖捏住简历的右下角。纸张翻过来时发出轻微的窸窣声，空白面朝上，名字和工作经历被压在下面。她端起咖啡杯——杯壁烫手，指尖条件反射地缩了一下，然后重新握稳——把杯子放在简历左上角。\n\n杯底压住纸角，纸张不再翘起。\n\n她松开手，直起身。咖啡的热气继续上升，杯子微微倾斜，但稳当。托盘上现在是一张空白纸，被一只还热着的咖啡杯压着，看不出纸上印过什么。\n\n秦蔓转身，推开茶水间的玻璃门，走了出去。",
+      "raw_response": "秦蔓的手指停在半空。\n\n复印机托盘上，那张纸只印了一半。她的名字，第一行工作经历，然后戛然而止。纸张边缘微微卷起，还带着打印余温。旁边的咖啡杯外壁凝着细密的水珠，热气从杯口缓慢上升。\n\n她没碰那张纸。\n\n茶水间很安静，只有饮水机低沉的待机声。走廊那头传来模糊的说话声，隔着两堵墙，听不清内容。午休还剩二十分钟，随时会有人进来泡茶、洗杯子、找零食。\n\n秦蔓伸手，指尖捏住简历的右下角。纸张翻过来时发出轻微的窸窣声，空白面朝上，名字和工作经历被压在下面。她端起咖啡杯——杯壁烫手，指尖条件反射地缩了一下，然后重新握稳——把杯子放在简历左上角。\n\n杯底压住纸角，纸张不再翘起。\n\n她松开手，直起身。咖啡的热气继续上升，杯子微微倾斜，但稳当。托盘上现在是一张空白纸，被一只还热着的咖啡杯压着，看不出纸上印过什么。\n\n秦蔓转身，推开茶水间的玻璃门，走了出去。",
+      "input_tokens": 2452,
+      "output_tokens": 253,
+      "latency_ms": 9811,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "ca42d02fae3fa02cb8e1ea7e1858b7b814d7a5a7bc75d42bdacf069544877dc0",
+      "text_path": "cases\\AL-04\\drafts\\baseline-2.txt"
+    },
+    {
+      "group": "ROUTE-ALITE_VS_A",
+      "replica": 3,
+      "mode": "narrative_route",
+      "candidate_id": "468a4412-b744-44ea-8b88-5a248b88ac37",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "C_OBJECT_CAUSAL",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "scene_state.available_objects is non-empty",
+            "causal_transitions contains counterfactual_without_action or rejected_alternative",
+            "character_next_action involves physical object manipulation"
+          ],
+          "matched_rules": [
+            "RULE_C_OBJECT_CAUSAL"
+          ],
+          "rejected_routes": []
+        },
+        "compiled_brief_hash": "5bd014dec11a81e74b376cf7499f60ac28368fc0c14d6151123d5920ff50c9e6",
+        "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "秦蔓推开茶水间的玻璃门时，复印机还在嗡嗡作响，正在吐出一张纸。\n\n她本来只是来倒杯水。杯子已经伸到饮水机出水口下面了，余光扫到复印机托盘上摊着的纸——那个字体间距她很熟悉，是自己简历上的格式。\n\n水没接。她走过去。\n\n纸上只印了一半。最上面是她的名字：秦蔓。下面一行是工作经历的第一条，写到“负责部门季度报表的汇”就断了，最后一个字只印出半边。纸张边缘还微微发烫，刚从机器里出来不超过两分钟。\n\n托盘旁边放着一杯咖啡。纸杯外壁凝着水珠，她用手指碰了碰杯身——热的，烫手的那种热。\n\n茶水间里只有她一个人。\n\n但刚才不是。她进来前三十秒，林远端着杯子从这扇门出去，在走廊里跟她打了个照面，还点了点头。他手里当时没拿任何纸张。\n\n秦蔓盯着那半份简历。名字端端正正摆在最上方，谁进来倒水都能看见。下一分钟可能是张姐，可能是小周，可能是任何嘴上没把门的人。\n\n她伸手拿起那张纸。\n\n手指捏住纸张上缘，提起来，翻了个面，让空白的那一面朝上。纸落回托盘时发出轻微的啪嗒声，盖住了复印机待机的电流音。\n\n然后她端起那杯咖啡。\n\n纸杯的热度透过杯壁传到掌心。她把杯子放下去，压在简历的左下角，刚好压住一个角，不让纸张被空调风吹起来。杯底在空白纸面上印出一个小小的圆形水渍。\n\n她松开手。\n\n复印机停止了嗡嗡声，屏幕跳回待机界面。托盘上只剩一张空白朝上的纸，一杯还冒着热气的咖啡压住它的一角。\n\n秦蔓没拿自己的水杯。她转身推开玻璃门，走了出去。",
+      "raw_response": "秦蔓推开茶水间的玻璃门时，复印机还在嗡嗡作响，正在吐出一张纸。\n\n她本来只是来倒杯水。杯子已经伸到饮水机出水口下面了，余光扫到复印机托盘上摊着的纸——那个字体间距她很熟悉，是自己简历上的格式。\n\n水没接。她走过去。\n\n纸上只印了一半。最上面是她的名字：秦蔓。下面一行是工作经历的第一条，写到“负责部门季度报表的汇”就断了，最后一个字只印出半边。纸张边缘还微微发烫，刚从机器里出来不超过两分钟。\n\n托盘旁边放着一杯咖啡。纸杯外壁凝着水珠，她用手指碰了碰杯身——热的，烫手的那种热。\n\n茶水间里只有她一个人。\n\n但刚才不是。她进来前三十秒，林远端着杯子从这扇门出去，在走廊里跟她打了个照面，还点了点头。他手里当时没拿任何纸张。\n\n秦蔓盯着那半份简历。名字端端正正摆在最上方，谁进来倒水都能看见。下一分钟可能是张姐，可能是小周，可能是任何嘴上没把门的人。\n\n她伸手拿起那张纸。\n\n手指捏住纸张上缘，提起来，翻了个面，让空白的那一面朝上。纸落回托盘时发出轻微的啪嗒声，盖住了复印机待机的电流音。\n\n然后她端起那杯咖啡。\n\n纸杯的热度透过杯壁传到掌心。她把杯子放下去，压在简历的左下角，刚好压住一个角，不让纸张被空调风吹起来。杯底在空白纸面上印出一个小小的圆形水渍。\n\n她松开手。\n\n复印机停止了嗡嗡声，屏幕跳回待机界面。托盘上只剩一张空白朝上的纸，一杯还冒着热气的咖啡压住它的一角。\n\n秦蔓没拿自己的水杯。她转身推开玻璃门，走了出去。",
+      "input_tokens": 1507,
+      "output_tokens": 399,
+      "latency_ms": 14182,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "e4442f3be69f7685b21a15409292ef4af766fa89ee444b1e2a3d16d1abc941cc",
+      "text_path": "cases\\AL-04\\drafts\\route-3.txt"
+    },
+    {
+      "group": "BASELINE-ALITE_VS_A",
+      "replica": 3,
+      "mode": "complete_planner",
+      "candidate_id": "86079897-7207-4d6f-b6fa-31c3aa9ead1b",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "秦蔓的手指在复印机托盘上方停了两秒。\n\n简历只印了开头——她的名字，第一行工作经历，后面全是空白。墨粉的气味还新鲜着。旁边的咖啡杯冒着热气，杯壁上凝着细密的水珠。\n\n茶水间里只有她一个人。\n\n她侧过头，透过玻璃隔断看了一眼走廊方向。林远的背影刚拐过转角，深蓝色衬衫的衣角一闪就不见了。\n\n秦蔓收回视线，伸出手，捏住简历的右上角。纸张还有余温。她把简历翻过来，空白面朝上，轻轻放回托盘。纸角微微翘起，她端起那杯咖啡，将杯底压在翘起的纸角上。\n\n瓷杯碰到托盘，发出一声轻响。\n\n她松开手，转身走向门口。",
+      "raw_response": "秦蔓的手指在复印机托盘上方停了两秒。\n\n简历只印了开头——她的名字，第一行工作经历，后面全是空白。墨粉的气味还新鲜着。旁边的咖啡杯冒着热气，杯壁上凝着细密的水珠。\n\n茶水间里只有她一个人。\n\n她侧过头，透过玻璃隔断看了一眼走廊方向。林远的背影刚拐过转角，深蓝色衬衫的衣角一闪就不见了。\n\n秦蔓收回视线，伸出手，捏住简历的右上角。纸张还有余温。她把简历翻过来，空白面朝上，轻轻放回托盘。纸角微微翘起，她端起那杯咖啡，将杯底压在翘起的纸角上。\n\n瓷杯碰到托盘，发出一声轻响。\n\n她松开手，转身走向门口。",
+      "input_tokens": 2452,
+      "output_tokens": 164,
+      "latency_ms": 7742,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "ca42d02fae3fa02cb8e1ea7e1858b7b814d7a5a7bc75d42bdacf069544877dc0",
+      "text_path": "cases\\AL-04\\drafts\\baseline-3.txt"
+    }
+  ],
+  "actual_route": "C_OBJECT_CAUSAL",
+  "route_decision": {
+    "route_name": "C_OBJECT_CAUSAL",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "scene_state.available_objects is non-empty",
+      "causal_transitions contains counterfactual_without_action or rejected_alternative",
+      "character_next_action involves physical object manipulation"
+    ],
+    "matched_rules": [
+      "RULE_C_OBJECT_CAUSAL"
+    ],
+    "rejected_routes": []
+  }
+}

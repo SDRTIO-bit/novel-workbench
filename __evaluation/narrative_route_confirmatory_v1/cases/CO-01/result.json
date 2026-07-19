@@ -1,0 +1,260 @@
+{
+  "case_id": "CO-01",
+  "category": "校园误会",
+  "title": "错拿的U盘",
+  "group": "COBJECT_VS_A",
+  "run_id": "bee8a858-d74d-4e4c-8e4a-80bdabec037a",
+  "planner": {
+    "candidate_id": "85fa7acf-2762-4f03-811d-4d70955489f6",
+    "attempt_number": 1,
+    "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+    "model_id": "deepseek-v4-pro",
+    "prompt_version_id": "f9052f8a-dc4e-5408-b14e-fc1badaf57f8",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 12288,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "json_object"
+    },
+    "text_output": "{\n  \"planner_contract_version\": 2,\n  \"scene_goal\": \"机房下课后，沈逸发现自己的银色U盘被插在隔壁电脑上，而隔壁座位的赵屿正把那台电脑关机离开。沈逸不能追上去喊人，也不能假定赵屿是故意的。他必须用一个现场可用物件让对方自己发现。\",\n  \"location\": \"学校机房\",\n  \"time\": \"下午最后一节课刚下课\",\n  \"scene_state\": {\n    \"last_completed_action\": \"赵屿关机起身，准备离开机房\",\n    \"present_characters\": [\"沈逸\", \"赵屿\", \"其他陆续离开的学生\"],\n    \"visible_facts\": [\n      \"沈逸的银色U盘插在隔壁电脑上\",\n      \"隔壁电脑正在关机\",\n      \"赵屿正在收拾东西准备离开\",\n      \"机房内还有其他学生走动\"\n    ],\n    \"available_objects\": [\n      \"沈逸自己的书包\",\n      \"桌上的草稿纸\",\n      \"笔\",\n      \"隔壁电脑的鼠标\",\n      \"机房的公共设施\"\n    ],\n    \"unresolved_problem\": \"沈逸需要取回U盘，但不能直接指责赵屿，也不能让U盘丢失\",\n    \"already_existing_constraints\": [\n      \"不能追上去喊人\",\n      \"不能假定赵屿是故意的\",\n      \"不能引起冲突\",\n      \"U盘里有明天展示用的PPT\"\n    ]\n  },\n  \"characters\": [\n    {\n      \"name\": \"沈逸\",\n      \"goal\": \"取回U盘，同时避免直接冲突或误会\",\n      \"known\": [\n        \"U盘被插在隔壁电脑上\",\n        \"隔壁电脑是赵屿使用的\",\n        \"U盘里有重要PPT\",\n        \"不能追上去或质问\"\n      ],\n      \"unknown\": [\n        \"赵屿是否故意拿走U盘\",\n        \"赵屿是否注意到U盘\"\n      ],\n      \"mistaken_beliefs\": [\n        \"赵屿可能只是误插了U盘\"\n      ],\n      \"constraints\": [\n        \"不能追上去喊人\",\n        \"不能假定赵屿是故意的\",\n        \"必须用现场物件让对方自己发现\"\n      ],\n      \"observed_evidence\": [\n        \"银色U盘插在隔壁电脑上\",\n        \"赵屿正在关机离开\",\n        \"赵屿没有看向自己\"\n      ],\n      \"current_interpretation\": \"赵屿可能没有注意到U盘，如果直接提醒可能会尴尬或引发误会\",\n      \"how_interpretation_drives_action\": \"沈逸决定不直接喊住赵屿，而是用某种方式让赵屿自己发现U盘\"\n    },\n    {\n      \"name\": \"赵屿\",\n      \"goal\": \"收拾东西离开机房\",\n      \"known\": [\n        \"自己刚用完电脑\",\n        \"准备离开\"\n      ],\n      \"unknown\": [\n        \"沈逸的U盘插在自己用过的电脑上\",\n        \"沈逸正在关注自己\"\n      ],\n      \"mistaken_beliefs\": [\n        \"自己已经收拾好所有东西\"\n      ],\n      \"constraints\": [\n        \"没有意识到U盘的存在\"\n      ],\n      \"observed_evidence\": [\n        \"电脑正在关机\",\n        \"周围同学在离开\"\n      ],\n      \"current_interpretation\": \"一切正常，可以离开\",\n      \"how_interpretation_drives_action\": \"赵屿拿起书包，准备转身离开\"\n    }\n  ],\n  \"concrete_problem\": \"沈逸如何在不直接接触赵屿的情况下，让赵屿自己发现并归还U盘？\",\n  \"pressure\": \"赵屿即将离开机房，U盘面临丢失风险，但直接喊人可能引发误会\",\n  \"turning_point\": \"沈逸选择将一张写着“U盘忘拔了”的纸条放在赵屿的鼠标垫下，然后回到自己座位假装整理书包\",\n  \"end_condition\": \"赵屿发现纸条和U盘，回头看向沈逸，沈逸没有解释，但U盘被归还\",\n  \"forbidden\": [\n    \"沈逸直接喊住赵屿\",\n    \"沈逸直接质问赵屿\",\n    \"沈逸假定赵屿是故意的\",\n    \"引入第三方直接干预\",\n    \"U盘真的丢失\",\n    \"燃烧后续章节的燃料\"\n  ],\n  \"causal_transitions\": [\n    {\n      \"id\": \"CT01\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"赵屿拿起书包准备离开，U盘仍插在电脑上\",\n      \"character_interpretation\": \"如果现在不行动，U盘可能会被带走或丢失\",\n      \"character_next_action\": \"沈逸迅速在草稿纸上写下“U盘忘拔了”，起身走到赵屿座位旁，将纸条放在鼠标垫下\",\n      \"rejected_alternative\": \"直接喊住赵屿，或者上前拍肩膀提醒\",\n      \"immediate_consequence\": \"纸条被放置在赵屿必然会看到的鼠标垫下，沈逸退回自己座位\",\n      \"counterfactual_without_action\": \"赵屿离开机房，U盘被留在电脑上或被他无意带走\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"赵屿没有意识到U盘的存在，即将离开\",\n        \"after\": \"赵屿的鼠标垫下多了一张提醒纸条，沈逸退回座位等待\"\n      },\n      \"cost_or_commitment\": \"沈逸承担了被赵屿误解为多管闲事的风险，但避免了直接冲突\",\n      \"next_constraint\": \"沈逸必须等待赵屿自己发现纸条，不能催促\",\n      \"reader_must_infer\": \"沈逸选择纸条而不是口头提醒，是因为他考虑到了赵屿的面子和两人之间可能的微妙关系\",\n      \"narrator_must_not_state\": [\n        \"沈逸内心对赵屿的真实看法\",\n        \"赵屿是否故意拿走U盘\"\n      ]\n    }\n  ],\n  \"tempo_guardrails\": {\n    \"entry_pressure\": \"赵屿已经关机，拿起书包，转身准备离开\",\n    \"dominant_pressure\": {\n      \"kind\": \"social_friction\",\n      \"description\": \"时间紧迫，但直接提醒可能引发社交尴尬或误会\"\n    },\n    \"allowed_viewpoint_misread\": \"赵屿可能把纸条理解为沈逸的指责或嘲讽\",\n    \"disclosure_cap\": 1,\n    \"must_remain_unclassified\": [\n      \"赵屿是否故意\",\n      \"沈逸对赵屿的真实情感\"\n    ],\n    \"stop_state\": {\n      \"type\": \"relationship_shift\",\n      \"visible_fact\": \"赵屿看到纸条和U盘后，回头看向沈逸，然后拔下U盘放在桌上\",\n      \"what_is_now_different\": \"赵屿意识到沈逸的提醒方式避免了直接冲突，两人之间产生了一种无声的默契或新的张力\",\n      \"must_not_append\": \"不得解释赵屿的心理活动或两人之后的关系走向\"\n    },\n    \"final_line_must_include\": \"U盘被轻轻放在桌上\"\n  },\n  \"chapter_contract_check\": {\n    \"function_aligned\": true,\n    \"must_deliver_covered\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_enabled\": true,\n    \"main_payoff_prepared\": true,\n    \"ending_hook_established\": true,\n    \"causal_transitions_grounded\": true,\n    \"reader_inference_not_pre_resolved\": true,\n    \"scene_state_reconstructed\": true,\n    \"information_sources_legal\": true,\n    \"character_choice_is_real\": true,\n    \"consequence_is_counterfactual\": true,\n    \"state_delta_is_nonempty\": true,\n    \"next_constraint_is_new\": true,\n    \"stop_state_is_visible\": true,\n    \"stop_state_changes_future_actions\": true\n  }\n}",
+    "raw_response": "{\n  \"planner_contract_version\": 2,\n  \"scene_goal\": \"机房下课后，沈逸发现自己的银色U盘被插在隔壁电脑上，而隔壁座位的赵屿正把那台电脑关机离开。沈逸不能追上去喊人，也不能假定赵屿是故意的。他必须用一个现场可用物件让对方自己发现。\",\n  \"location\": \"学校机房\",\n  \"time\": \"下午最后一节课刚下课\",\n  \"scene_state\": {\n    \"last_completed_action\": \"赵屿关机起身，准备离开机房\",\n    \"present_characters\": [\"沈逸\", \"赵屿\", \"其他陆续离开的学生\"],\n    \"visible_facts\": [\n      \"沈逸的银色U盘插在隔壁电脑上\",\n      \"隔壁电脑正在关机\",\n      \"赵屿正在收拾东西准备离开\",\n      \"机房内还有其他学生走动\"\n    ],\n    \"available_objects\": [\n      \"沈逸自己的书包\",\n      \"桌上的草稿纸\",\n      \"笔\",\n      \"隔壁电脑的鼠标\",\n      \"机房的公共设施\"\n    ],\n    \"unresolved_problem\": \"沈逸需要取回U盘，但不能直接指责赵屿，也不能让U盘丢失\",\n    \"already_existing_constraints\": [\n      \"不能追上去喊人\",\n      \"不能假定赵屿是故意的\",\n      \"不能引起冲突\",\n      \"U盘里有明天展示用的PPT\"\n    ]\n  },\n  \"characters\": [\n    {\n      \"name\": \"沈逸\",\n      \"goal\": \"取回U盘，同时避免直接冲突或误会\",\n      \"known\": [\n        \"U盘被插在隔壁电脑上\",\n        \"隔壁电脑是赵屿使用的\",\n        \"U盘里有重要PPT\",\n        \"不能追上去或质问\"\n      ],\n      \"unknown\": [\n        \"赵屿是否故意拿走U盘\",\n        \"赵屿是否注意到U盘\"\n      ],\n      \"mistaken_beliefs\": [\n        \"赵屿可能只是误插了U盘\"\n      ],\n      \"constraints\": [\n        \"不能追上去喊人\",\n        \"不能假定赵屿是故意的\",\n        \"必须用现场物件让对方自己发现\"\n      ],\n      \"observed_evidence\": [\n        \"银色U盘插在隔壁电脑上\",\n        \"赵屿正在关机离开\",\n        \"赵屿没有看向自己\"\n      ],\n      \"current_interpretation\": \"赵屿可能没有注意到U盘，如果直接提醒可能会尴尬或引发误会\",\n      \"how_interpretation_drives_action\": \"沈逸决定不直接喊住赵屿，而是用某种方式让赵屿自己发现U盘\"\n    },\n    {\n      \"name\": \"赵屿\",\n      \"goal\": \"收拾东西离开机房\",\n      \"known\": [\n        \"自己刚用完电脑\",\n        \"准备离开\"\n      ],\n      \"unknown\": [\n        \"沈逸的U盘插在自己用过的电脑上\",\n        \"沈逸正在关注自己\"\n      ],\n      \"mistaken_beliefs\": [\n        \"自己已经收拾好所有东西\"\n      ],\n      \"constraints\": [\n        \"没有意识到U盘的存在\"\n      ],\n      \"observed_evidence\": [\n        \"电脑正在关机\",\n        \"周围同学在离开\"\n      ],\n      \"current_interpretation\": \"一切正常，可以离开\",\n      \"how_interpretation_drives_action\": \"赵屿拿起书包，准备转身离开\"\n    }\n  ],\n  \"concrete_problem\": \"沈逸如何在不直接接触赵屿的情况下，让赵屿自己发现并归还U盘？\",\n  \"pressure\": \"赵屿即将离开机房，U盘面临丢失风险，但直接喊人可能引发误会\",\n  \"turning_point\": \"沈逸选择将一张写着“U盘忘拔了”的纸条放在赵屿的鼠标垫下，然后回到自己座位假装整理书包\",\n  \"end_condition\": \"赵屿发现纸条和U盘，回头看向沈逸，沈逸没有解释，但U盘被归还\",\n  \"forbidden\": [\n    \"沈逸直接喊住赵屿\",\n    \"沈逸直接质问赵屿\",\n    \"沈逸假定赵屿是故意的\",\n    \"引入第三方直接干预\",\n    \"U盘真的丢失\",\n    \"燃烧后续章节的燃料\"\n  ],\n  \"causal_transitions\": [\n    {\n      \"id\": \"CT01\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"赵屿拿起书包准备离开，U盘仍插在电脑上\",\n      \"character_interpretation\": \"如果现在不行动，U盘可能会被带走或丢失\",\n      \"character_next_action\": \"沈逸迅速在草稿纸上写下“U盘忘拔了”，起身走到赵屿座位旁，将纸条放在鼠标垫下\",\n      \"rejected_alternative\": \"直接喊住赵屿，或者上前拍肩膀提醒\",\n      \"immediate_consequence\": \"纸条被放置在赵屿必然会看到的鼠标垫下，沈逸退回自己座位\",\n      \"counterfactual_without_action\": \"赵屿离开机房，U盘被留在电脑上或被他无意带走\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"赵屿没有意识到U盘的存在，即将离开\",\n        \"after\": \"赵屿的鼠标垫下多了一张提醒纸条，沈逸退回座位等待\"\n      },\n      \"cost_or_commitment\": \"沈逸承担了被赵屿误解为多管闲事的风险，但避免了直接冲突\",\n      \"next_constraint\": \"沈逸必须等待赵屿自己发现纸条，不能催促\",\n      \"reader_must_infer\": \"沈逸选择纸条而不是口头提醒，是因为他考虑到了赵屿的面子和两人之间可能的微妙关系\",\n      \"narrator_must_not_state\": [\n        \"沈逸内心对赵屿的真实看法\",\n        \"赵屿是否故意拿走U盘\"\n      ]\n    }\n  ],\n  \"tempo_guardrails\": {\n    \"entry_pressure\": \"赵屿已经关机，拿起书包，转身准备离开\",\n    \"dominant_pressure\": {\n      \"kind\": \"social_friction\",\n      \"description\": \"时间紧迫，但直接提醒可能引发社交尴尬或误会\"\n    },\n    \"allowed_viewpoint_misread\": \"赵屿可能把纸条理解为沈逸的指责或嘲讽\",\n    \"disclosure_cap\": 1,\n    \"must_remain_unclassified\": [\n      \"赵屿是否故意\",\n      \"沈逸对赵屿的真实情感\"\n    ],\n    \"stop_state\": {\n      \"type\": \"relationship_shift\",\n      \"visible_fact\": \"赵屿看到纸条和U盘后，回头看向沈逸，然后拔下U盘放在桌上\",\n      \"what_is_now_different\": \"赵屿意识到沈逸的提醒方式避免了直接冲突，两人之间产生了一种无声的默契或新的张力\",\n      \"must_not_append\": \"不得解释赵屿的心理活动或两人之后的关系走向\"\n    },\n    \"final_line_must_include\": \"U盘被轻轻放在桌上\"\n  },\n  \"chapter_contract_check\": {\n    \"function_aligned\": true,\n    \"must_deliver_covered\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_enabled\": true,\n    \"main_payoff_prepared\": true,\n    \"ending_hook_established\": true,\n    \"causal_transitions_grounded\": true,\n    \"reader_inference_not_pre_resolved\": true,\n    \"scene_state_reconstructed\": true,\n    \"information_sources_legal\": true,\n    \"character_choice_is_real\": true,\n    \"consequence_is_counterfactual\": true,\n    \"state_delta_is_nonempty\": true,\n    \"next_constraint_is_new\": true,\n    \"stop_state_is_visible\": true,\n    \"stop_state_changes_future_actions\": true\n  }\n}",
+    "input_tokens": 3314,
+    "output_tokens": 1686,
+    "latency_ms": 24980,
+    "finish_reason": "stop",
+    "error_code": null,
+    "error_message": null,
+    "rendered_user_prompt_sha256": "811a224820e3e73ace2351f8cbb3602d11773c769a2d5b0e059dca353fdbbf1a"
+  },
+  "drafts": [
+    {
+      "group": "ROUTE-COBJECT_VS_A",
+      "replica": 1,
+      "mode": "narrative_route",
+      "candidate_id": "30081755-91ee-4d3b-9927-59c3d81cbcda",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "C_OBJECT_CAUSAL",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "scene_state.available_objects is non-empty",
+            "causal_transitions contains counterfactual_without_action or rejected_alternative",
+            "character_next_action involves physical object manipulation"
+          ],
+          "matched_rules": [
+            "RULE_C_OBJECT_CAUSAL"
+          ],
+          "rejected_routes": []
+        },
+        "compiled_brief_hash": "382e7eeef4de9637df20c7d403e2ac7c7f4742eaa5ea4d387c2dfa62617b07c7",
+        "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "沈逸的手指还停在键盘上，屏幕里PPT的最后一页正在自动保存。他伸手去摸主机上的U盘，指尖碰到的是空荡荡的USB接口。\n\n银色U盘不在。\n\n他低头看了一眼自己的电脑主机，两个接口都空着。书包侧袋里没有，桌面上没有，键盘底下也没有。\n\n然后他看见了。\n\n隔壁那台电脑的主机上，银色的金属外壳在机房的日光灯下反着光。他的U盘正插在那里，插在赵屿的电脑上。\n\n赵屿已经按了关机键。\n\n屏幕从边缘开始向内收缩成一条白线，然后黑掉。主机上的指示灯从绿色跳成琥珀色，风扇声渐渐弱下去。赵屿弯腰拔掉自己的耳机线，卷了两圈塞进书包侧袋，拉上拉链。他直起身，把椅子推进桌下，书包甩上肩膀，转身——\n\n沈逸的嘴张了一下。\n\n机房里还有七八个人在收拾东西，拉椅子声、拉书包拉链声、键盘敲击声混在一起。赵屿离他只有两米，正朝门口走。只要喊一声“赵屿”，或者快走两步拍一下他的肩膀，这件事就解决了。\n\n沈逸的手按在桌沿上，指节发白。\n\n他没站起来。\n\n赵屿没有看向他。赵屿从自己座位走到机房门口，经过两排电脑，始终看着前方。沈逸盯着那个背影，脑子里飞快地转过几种可能——如果赵屿是故意的，喊住他只会让场面更难堪；如果他不是故意的，突然被人叫住说“你拿了我U盘”，更像是指责。\n\n他低下头，看见桌面上摊开的草稿纸。\n\n沈逸抓起笔。\n\n他在纸的右下角撕下一小条，笔尖用力压下去，字写得很快——“U盘忘拔了”。写完他把纸条对折了一下，起身。\n\n赵屿已经走到机房门口了。\n\n沈逸没有追。他走到赵屿的座位旁，弯腰。鼠标垫是深蓝色的，边缘有点卷。他把纸条塞进鼠标垫下面，露出一个白色的角。然后他直起身，退回自己的座位，坐下。\n\n屁股刚挨到椅子，机房门被推开了。\n\n赵屿又走了进来。\n\n沈逸的手指僵在键盘上。他盯着自己的屏幕，余光里赵屿走到座位旁，把书包放在桌上，拉开拉链，在里面翻找什么。赵屿的手在书包里掏了几下，拿出一个充电宝，塞进外套口袋。他拉上拉链，重新甩上书包，转身——\n\n然后停住了。\n\n赵屿的视线落在那张纸条露出的白角上。他伸手，从鼠标垫下抽出纸条，翻开。他看了两秒。\n\n然后他低头，看见了主机上插着的银色U盘。\n\n沈逸盯着自己的屏幕，PPT的最后一页还在上面，标题栏的光标一闪一闪。他没有转头。他能听见赵屿拔U盘的声音，那个轻微的、塑料从金属接口里脱离的声响。\n\n然后脚步声。\n\n赵屿走到他桌边，把U盘放在桌上。\n\n轻轻的，银色的外壳碰到桌面，发出一声细小的磕碰。",
+      "raw_response": "沈逸的手指还停在键盘上，屏幕里PPT的最后一页正在自动保存。他伸手去摸主机上的U盘，指尖碰到的是空荡荡的USB接口。\n\n银色U盘不在。\n\n他低头看了一眼自己的电脑主机，两个接口都空着。书包侧袋里没有，桌面上没有，键盘底下也没有。\n\n然后他看见了。\n\n隔壁那台电脑的主机上，银色的金属外壳在机房的日光灯下反着光。他的U盘正插在那里，插在赵屿的电脑上。\n\n赵屿已经按了关机键。\n\n屏幕从边缘开始向内收缩成一条白线，然后黑掉。主机上的指示灯从绿色跳成琥珀色，风扇声渐渐弱下去。赵屿弯腰拔掉自己的耳机线，卷了两圈塞进书包侧袋，拉上拉链。他直起身，把椅子推进桌下，书包甩上肩膀，转身——\n\n沈逸的嘴张了一下。\n\n机房里还有七八个人在收拾东西，拉椅子声、拉书包拉链声、键盘敲击声混在一起。赵屿离他只有两米，正朝门口走。只要喊一声“赵屿”，或者快走两步拍一下他的肩膀，这件事就解决了。\n\n沈逸的手按在桌沿上，指节发白。\n\n他没站起来。\n\n赵屿没有看向他。赵屿从自己座位走到机房门口，经过两排电脑，始终看着前方。沈逸盯着那个背影，脑子里飞快地转过几种可能——如果赵屿是故意的，喊住他只会让场面更难堪；如果他不是故意的，突然被人叫住说“你拿了我U盘”，更像是指责。\n\n他低下头，看见桌面上摊开的草稿纸。\n\n沈逸抓起笔。\n\n他在纸的右下角撕下一小条，笔尖用力压下去，字写得很快——“U盘忘拔了”。写完他把纸条对折了一下，起身。\n\n赵屿已经走到机房门口了。\n\n沈逸没有追。他走到赵屿的座位旁，弯腰。鼠标垫是深蓝色的，边缘有点卷。他把纸条塞进鼠标垫下面，露出一个白色的角。然后他直起身，退回自己的座位，坐下。\n\n屁股刚挨到椅子，机房门被推开了。\n\n赵屿又走了进来。\n\n沈逸的手指僵在键盘上。他盯着自己的屏幕，余光里赵屿走到座位旁，把书包放在桌上，拉开拉链，在里面翻找什么。赵屿的手在书包里掏了几下，拿出一个充电宝，塞进外套口袋。他拉上拉链，重新甩上书包，转身——\n\n然后停住了。\n\n赵屿的视线落在那张纸条露出的白角上。他伸手，从鼠标垫下抽出纸条，翻开。他看了两秒。\n\n然后他低头，看见了主机上插着的银色U盘。\n\n沈逸盯着自己的屏幕，PPT的最后一页还在上面，标题栏的光标一闪一闪。他没有转头。他能听见赵屿拔U盘的声音，那个轻微的、塑料从金属接口里脱离的声响。\n\n然后脚步声。\n\n赵屿走到他桌边，把U盘放在桌上。\n\n轻轻的，银色的外壳碰到桌面，发出一声细小的磕碰。",
+      "input_tokens": 1405,
+      "output_tokens": 658,
+      "latency_ms": 18048,
+      "finish_reason": "stop",
+      "error_code": "TEMPO_FINAL_LINE_MISMATCH",
+      "error_message": "TEMPO_FINAL_LINE_MISMATCH: final paragraph must include the required marker 'U盘被轻轻放在桌上'",
+      "rendered_user_prompt_sha256": "7cf95e748391c5ffe35cf2fdf39d85f26f84c2bd98bcda32564394d98bc89d77",
+      "text_path": "cases\\CO-01\\drafts\\route-1.txt"
+    },
+    {
+      "group": "BASELINE-COBJECT_VS_A",
+      "replica": 1,
+      "mode": "complete_planner",
+      "candidate_id": "5936535e-f2c4-40dc-9461-2523006a5b2d",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "沈逸把课本塞进书包时，手指顿了顿。\n\n银色U盘不在笔袋里。\n\n他抬头，视线越过显示器——隔壁那台电脑的USB接口上，正插着他的U盘。银色的金属外壳在机房顶灯下反着光。那台电脑的屏幕已经黑了，关机进度条刚好走完。\n\n赵屿正弯着腰拔电源线。他把线绕了两圈，搁在主机旁边，然后直起身，从椅背上拿起自己的书包。\n\n沈逸看着他把书包甩到肩上。\n\n周围还有几个同学在收拾东西，椅子腿刮过地砖的声音此起彼伏。有人喊了一声“晚上吃什么”，有人从门口走出去，书包带子甩在门框上。\n\n沈逸没有开口。\n\n他低下头，视线落在自己桌上那张草稿纸上。纸边被撕得不太齐，上面还留着上节课算到一半的公式。他把纸翻过来，拿起笔。\n\n笔尖在纸上顿了一瞬，然后很快地写下四个字。\n\n他把草稿纸对折，起身。\n\n赵屿正背对着他，在整理书包侧袋的拉链。沈逸从他身后走过，脚步没停，弯腰把那半张草稿纸塞进赵屿桌上的鼠标垫下面。纸的一角露在外面，白色的，很显眼。\n\n他转身走回自己座位，坐下，拉开书包拉链，开始往里面放课本。\n\n动作不快。一本，两本。\n\n身后传来鼠标垫被掀起的细小声响。\n\n然后是短暂的安静。\n\n沈逸没有回头。他把笔袋放进书包，拉上拉链。金属拉链齿咬合的声音在机房里很轻，但足够让他听不见身后那个人此刻的表情。\n\n椅子腿刮过地砖。\n\n脚步声走到他身侧，停下。\n\n一只手从旁边伸过来，手指间捏着那个银色U盘。指甲剪得很短，指节在顶灯下显出干净的轮廓。\n\n沈逸抬起手，掌心朝上。\n\nU盘落进他手里。金属外壳还带着隔壁电脑机箱的温度。\n\n他握住U盘，抬头。\n\n赵屿已经转身走了。书包带子搭在一边肩膀上，鞋底踩过机房门口那道铝合金门槛，发出很轻的一声。\n\n沈逸低下头，把U盘放进笔袋。",
+      "raw_response": "沈逸把课本塞进书包时，手指顿了顿。\n\n银色U盘不在笔袋里。\n\n他抬头，视线越过显示器——隔壁那台电脑的USB接口上，正插着他的U盘。银色的金属外壳在机房顶灯下反着光。那台电脑的屏幕已经黑了，关机进度条刚好走完。\n\n赵屿正弯着腰拔电源线。他把线绕了两圈，搁在主机旁边，然后直起身，从椅背上拿起自己的书包。\n\n沈逸看着他把书包甩到肩上。\n\n周围还有几个同学在收拾东西，椅子腿刮过地砖的声音此起彼伏。有人喊了一声“晚上吃什么”，有人从门口走出去，书包带子甩在门框上。\n\n沈逸没有开口。\n\n他低下头，视线落在自己桌上那张草稿纸上。纸边被撕得不太齐，上面还留着上节课算到一半的公式。他把纸翻过来，拿起笔。\n\n笔尖在纸上顿了一瞬，然后很快地写下四个字。\n\n他把草稿纸对折，起身。\n\n赵屿正背对着他，在整理书包侧袋的拉链。沈逸从他身后走过，脚步没停，弯腰把那半张草稿纸塞进赵屿桌上的鼠标垫下面。纸的一角露在外面，白色的，很显眼。\n\n他转身走回自己座位，坐下，拉开书包拉链，开始往里面放课本。\n\n动作不快。一本，两本。\n\n身后传来鼠标垫被掀起的细小声响。\n\n然后是短暂的安静。\n\n沈逸没有回头。他把笔袋放进书包，拉上拉链。金属拉链齿咬合的声音在机房里很轻，但足够让他听不见身后那个人此刻的表情。\n\n椅子腿刮过地砖。\n\n脚步声走到他身侧，停下。\n\n一只手从旁边伸过来，手指间捏着那个银色U盘。指甲剪得很短，指节在顶灯下显出干净的轮廓。\n\n沈逸抬起手，掌心朝上。\n\nU盘落进他手里。金属外壳还带着隔壁电脑机箱的温度。\n\n他握住U盘，抬头。\n\n赵屿已经转身走了。书包带子搭在一边肩膀上，鞋底踩过机房门口那道铝合金门槛，发出很轻的一声。\n\n沈逸低下头，把U盘放进笔袋。",
+      "input_tokens": 2479,
+      "output_tokens": 474,
+      "latency_ms": 14060,
+      "finish_reason": "stop",
+      "error_code": "TEMPO_FINAL_LINE_MISMATCH",
+      "error_message": "TEMPO_FINAL_LINE_MISMATCH: final paragraph must include the required marker 'U盘被轻轻放在桌上'",
+      "rendered_user_prompt_sha256": "9c8bada251d0cc8839abc6857367f20561e72e0a87af2847f0aa3ef33eff3166",
+      "text_path": "cases\\CO-01\\drafts\\baseline-1.txt"
+    },
+    {
+      "group": "ROUTE-COBJECT_VS_A",
+      "replica": 2,
+      "mode": "narrative_route",
+      "candidate_id": "8671e8e3-1d78-4305-825d-f89e42f1fe2f",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "C_OBJECT_CAUSAL",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "scene_state.available_objects is non-empty",
+            "causal_transitions contains counterfactual_without_action or rejected_alternative",
+            "character_next_action involves physical object manipulation"
+          ],
+          "matched_rules": [
+            "RULE_C_OBJECT_CAUSAL"
+          ],
+          "rejected_routes": []
+        },
+        "compiled_brief_hash": "382e7eeef4de9637df20c7d403e2ac7c7f4742eaa5ea4d387c2dfa62617b07c7",
+        "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "机房后排的日光灯管发出细微的电流声。\n\n沈逸盯着自己的电脑屏幕右下角，PPT还开着，修改到第七页的动画效果还没保存。他伸手去摸主机上的U盘接口，指尖碰到的是空的。\n\n银色U盘不在自己电脑上。\n\n他偏过头。\n\n隔壁那台电脑屏幕正显示出关机进度条，蓝色小方块一格一格地跳。赵屿站在座位前，书包已经甩上右肩，左手正在拔电源线。那台电脑的主机前面板上，一个银色的U盘端端正正地插在USB接口里，尾部的金属环反射着天花板的灯光。\n\n沈逸张了张嘴。\n\n赵屿没有看他。赵屿正把电源线卷起来塞进书包侧袋，动作很快，拉链拉上的声音在机房里很脆。周围有其他学生在收拾东西，椅子拖动的声音，键盘敲击声，有人在大声问谁拿了数据线。\n\n沈逸的手已经抬起来，手指张开，差一点就要碰到赵屿的书包带子。\n\n他停住了。\n\n手指收回来，按在自己桌上那张草稿纸上。纸是从机房打印机旁边拿的，背面印着上学期C语言考试的废弃题目。他抓起桌上的笔，笔帽咬得有点旧，笔尖在纸上顿了一下。\n\n他写：U盘忘拔了。\n\n字迹很潦草，U那个字母的尾巴拖得有点长。\n\n沈逸站起来，椅子腿在地面上蹭出短促的一声。赵屿正弯腰去拿桌上的水杯，没有回头。沈逸从赵屿身后走过去，经过那台正在关机的电脑，把纸条快速塞进鼠标垫下面。鼠标垫是机房统一配的蓝色布垫，边缘有点卷，纸条露出一截白边。\n\n他转身回到自己座位，坐下来。\n\n赵屿直起腰，把水杯放进书包，然后低头看了一眼鼠标垫。\n\n沈逸盯着自己的电脑屏幕，PPT第七页的动画还在转圈加载。他没有转头，但余光里能感觉到赵屿的动作停下了。鼠标垫被掀起一角，纸条被抽出来，纸面发出轻微的摩擦声。\n\n然后是沉默。\n\n沈逸的手指放在键盘上，没有敲任何键。\n\n赵屿的视线。沈逸能感觉到那道视线从纸条上移开，先落在自己那台电脑的主机上——空的USB接口，再移到隔壁电脑上——银色U盘还插在那里，关机进度条已经走完，屏幕黑了。\n\n然后那道视线转过来，落在沈逸的侧脸上。\n\n沈逸转过头。\n\n赵屿正看着他，左手拿着那张纸条，右手伸过去，手指捏住U盘的尾部，往外一拔。银色U盘从接口里脱出来，赵屿把它放在桌上，贴着键盘边缘。\n\nU盘被轻轻放在桌上。",
+      "raw_response": "机房后排的日光灯管发出细微的电流声。\n\n沈逸盯着自己的电脑屏幕右下角，PPT还开着，修改到第七页的动画效果还没保存。他伸手去摸主机上的U盘接口，指尖碰到的是空的。\n\n银色U盘不在自己电脑上。\n\n他偏过头。\n\n隔壁那台电脑屏幕正显示出关机进度条，蓝色小方块一格一格地跳。赵屿站在座位前，书包已经甩上右肩，左手正在拔电源线。那台电脑的主机前面板上，一个银色的U盘端端正正地插在USB接口里，尾部的金属环反射着天花板的灯光。\n\n沈逸张了张嘴。\n\n赵屿没有看他。赵屿正把电源线卷起来塞进书包侧袋，动作很快，拉链拉上的声音在机房里很脆。周围有其他学生在收拾东西，椅子拖动的声音，键盘敲击声，有人在大声问谁拿了数据线。\n\n沈逸的手已经抬起来，手指张开，差一点就要碰到赵屿的书包带子。\n\n他停住了。\n\n手指收回来，按在自己桌上那张草稿纸上。纸是从机房打印机旁边拿的，背面印着上学期C语言考试的废弃题目。他抓起桌上的笔，笔帽咬得有点旧，笔尖在纸上顿了一下。\n\n他写：U盘忘拔了。\n\n字迹很潦草，U那个字母的尾巴拖得有点长。\n\n沈逸站起来，椅子腿在地面上蹭出短促的一声。赵屿正弯腰去拿桌上的水杯，没有回头。沈逸从赵屿身后走过去，经过那台正在关机的电脑，把纸条快速塞进鼠标垫下面。鼠标垫是机房统一配的蓝色布垫，边缘有点卷，纸条露出一截白边。\n\n他转身回到自己座位，坐下来。\n\n赵屿直起腰，把水杯放进书包，然后低头看了一眼鼠标垫。\n\n沈逸盯着自己的电脑屏幕，PPT第七页的动画还在转圈加载。他没有转头，但余光里能感觉到赵屿的动作停下了。鼠标垫被掀起一角，纸条被抽出来，纸面发出轻微的摩擦声。\n\n然后是沉默。\n\n沈逸的手指放在键盘上，没有敲任何键。\n\n赵屿的视线。沈逸能感觉到那道视线从纸条上移开，先落在自己那台电脑的主机上——空的USB接口，再移到隔壁电脑上——银色U盘还插在那里，关机进度条已经走完，屏幕黑了。\n\n然后那道视线转过来，落在沈逸的侧脸上。\n\n沈逸转过头。\n\n赵屿正看着他，左手拿着那张纸条，右手伸过去，手指捏住U盘的尾部，往外一拔。银色U盘从接口里脱出来，赵屿把它放在桌上，贴着键盘边缘。\n\nU盘被轻轻放在桌上。",
+      "input_tokens": 1405,
+      "output_tokens": 579,
+      "latency_ms": 15917,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "7cf95e748391c5ffe35cf2fdf39d85f26f84c2bd98bcda32564394d98bc89d77",
+      "text_path": "cases\\CO-01\\drafts\\route-2.txt"
+    },
+    {
+      "group": "BASELINE-COBJECT_VS_A",
+      "replica": 2,
+      "mode": "complete_planner",
+      "candidate_id": "7aaef21b-06a1-4dc5-8e61-94d0e6370af0",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "沈逸合上笔记本电脑的时候，余光扫到了隔壁桌上那个银色的东西。\n\n他的U盘。\n\n插在赵屿用过的那台电脑上。\n\n屏幕已经黑了，主机的电源灯正从绿色跳成黄色，风扇声渐渐弱下去。赵屿站在座位前，一只手拎着书包的肩带，另一只手正把耳机线绕成圈塞进侧袋里。\n\n沈逸的手指停在键盘上。\n\nU盘里是明天的课堂展示PPT，他昨晚做到凌晨两点。现在它插在一台正在关机的电脑上，而使用这台电脑的人正要离开。\n\n赵屿拉上了书包拉链。\n\n机房里还有七八个同学在收拾东西，椅子腿刮过地板的声响此起彼伏。有人在后排喊谁一起去食堂。赵屿把书包甩上肩膀，身体已经转向了过道方向。\n\n沈逸没有站起来。\n\n他低下头，从面前的草稿本上撕下一角。纸边撕得不太整齐，他用拇指按平了翘起的角，然后拿起笔。\n\n笔尖在纸上停了不到一秒。\n\n他写：U盘忘拔了。\n\n字写得很快，笔画有点硬。写完他把纸片对折，起身。\n\n赵屿正背对着他，在跟后排的一个男生说什么。沈逸从他身后走过去，没有碰到他，也没有说话。赵屿的鼠标垫是机房里统一配的那种深蓝色布垫，边角有点卷。沈逸把折好的纸片塞进鼠标垫的右下角，露出半截白色的纸边。\n\n他转身回到自己的座位。\n\n坐下的时候椅子发出轻微的吱嘎声。沈逸拉开书包拉链，把草稿本塞进去，又拿出手机看了一眼。屏幕上是锁屏界面，他划了一下，没有解锁。\n\n身后有人走动。\n\n然后停了。\n\n沈逸没有回头。他把手机翻了个面扣在桌上，手指搭在书包的拉链头上。机房里的日光灯管发出细微的电流声。\n\n停了大概三秒钟。\n\n然后是脚步转向的声音。\n\n沈逸抬起眼。\n\n赵屿站在他桌边，手里捏着那张纸片。他的另一只手上，银色的U盘被两根手指夹着。\n\n赵屿没有说话。他把U盘放在沈逸的键盘旁边，金属外壳碰到桌面，发出轻轻的一声。",
+      "raw_response": "沈逸合上笔记本电脑的时候，余光扫到了隔壁桌上那个银色的东西。\n\n他的U盘。\n\n插在赵屿用过的那台电脑上。\n\n屏幕已经黑了，主机的电源灯正从绿色跳成黄色，风扇声渐渐弱下去。赵屿站在座位前，一只手拎着书包的肩带，另一只手正把耳机线绕成圈塞进侧袋里。\n\n沈逸的手指停在键盘上。\n\nU盘里是明天的课堂展示PPT，他昨晚做到凌晨两点。现在它插在一台正在关机的电脑上，而使用这台电脑的人正要离开。\n\n赵屿拉上了书包拉链。\n\n机房里还有七八个同学在收拾东西，椅子腿刮过地板的声响此起彼伏。有人在后排喊谁一起去食堂。赵屿把书包甩上肩膀，身体已经转向了过道方向。\n\n沈逸没有站起来。\n\n他低下头，从面前的草稿本上撕下一角。纸边撕得不太整齐，他用拇指按平了翘起的角，然后拿起笔。\n\n笔尖在纸上停了不到一秒。\n\n他写：U盘忘拔了。\n\n字写得很快，笔画有点硬。写完他把纸片对折，起身。\n\n赵屿正背对着他，在跟后排的一个男生说什么。沈逸从他身后走过去，没有碰到他，也没有说话。赵屿的鼠标垫是机房里统一配的那种深蓝色布垫，边角有点卷。沈逸把折好的纸片塞进鼠标垫的右下角，露出半截白色的纸边。\n\n他转身回到自己的座位。\n\n坐下的时候椅子发出轻微的吱嘎声。沈逸拉开书包拉链，把草稿本塞进去，又拿出手机看了一眼。屏幕上是锁屏界面，他划了一下，没有解锁。\n\n身后有人走动。\n\n然后停了。\n\n沈逸没有回头。他把手机翻了个面扣在桌上，手指搭在书包的拉链头上。机房里的日光灯管发出细微的电流声。\n\n停了大概三秒钟。\n\n然后是脚步转向的声音。\n\n沈逸抬起眼。\n\n赵屿站在他桌边，手里捏着那张纸片。他的另一只手上，银色的U盘被两根手指夹着。\n\n赵屿没有说话。他把U盘放在沈逸的键盘旁边，金属外壳碰到桌面，发出轻轻的一声。",
+      "input_tokens": 2479,
+      "output_tokens": 473,
+      "latency_ms": 13768,
+      "finish_reason": "stop",
+      "error_code": "TEMPO_FINAL_LINE_MISMATCH",
+      "error_message": "TEMPO_FINAL_LINE_MISMATCH: final paragraph must include the required marker 'U盘被轻轻放在桌上'",
+      "rendered_user_prompt_sha256": "9c8bada251d0cc8839abc6857367f20561e72e0a87af2847f0aa3ef33eff3166",
+      "text_path": "cases\\CO-01\\drafts\\baseline-2.txt"
+    },
+    {
+      "group": "ROUTE-COBJECT_VS_A",
+      "replica": 3,
+      "mode": "narrative_route",
+      "candidate_id": "d06abde7-4a82-4b5a-894e-0305c69bda84",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "C_OBJECT_CAUSAL",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "scene_state.available_objects is non-empty",
+            "causal_transitions contains counterfactual_without_action or rejected_alternative",
+            "character_next_action involves physical object manipulation"
+          ],
+          "matched_rules": [
+            "RULE_C_OBJECT_CAUSAL"
+          ],
+          "rejected_routes": []
+        },
+        "compiled_brief_hash": "382e7eeef4de9637df20c7d403e2ac7c7f4742eaa5ea4d387c2dfa62617b07c7",
+        "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "机房后排的日光灯管嗡嗡响了两声，像是电流在里头打了个趔趄。\n\n沈逸把键盘推进桌沿，右手习惯性地去摸主机上的银色U盘。指尖碰到的是空荡荡的USB口，塑料挡片还翘着，像张了一半的嘴。他低头看了一眼，确认不是自己摸错了位置——没有。U盘不在。\n\n心脏猛地缩了一下。\n\n那个U盘里装着明天早上的创业计划展示PPT，从市场分析到财务模型做了整整三周，连备份都没来得及拷进云盘。沈逸的视线从自己黑掉的屏幕移向左侧，越过隔板，落在隔壁那台电脑的主机上。银色的金属外壳在机箱正面反出一点白光，U盘稳稳插在USB接口里，指示灯已经不亮了。\n\n屏幕上正弹出关机进度条，Windows的蓝色圆圈转了最后一圈，画面一黑。\n\n赵屿从座位上站起来，把电源线绕了两圈塞进书包侧袋。他动作不快，甚至称得上慢条斯理——先收鼠标，再卷耳机线，最后把水杯拧紧盖子放进侧兜。全程没有往沈逸这边看一眼。\n\n沈逸张了张嘴。机房里还有五六个学生在收拾东西，键盘声和拉链声混成一片。赵屿的同班同学就在门口等他，书包已经甩上肩膀，正低头看手机。如果这时候喊住赵屿，声音得大到半个机房都听见——“你拔一下我的U盘”——然后所有人都会看过来，赵屿会愣住，会低头看那台已经关机的电脑，会说“什么U盘”，会皱眉头，会露出那种“你什么意思”的表情。\n\n沈逸不确定自己能不能接住那个表情。\n\n他重新坐下来，视线扫过自己桌上散落的草稿纸。A4大小，边角卷着，上面还留着刚才练手画的流程图草稿。他撕下最干净的一张，从笔袋里抽出黑色水笔，写了四个字。\n\n笔尖在“忘”字的最后一捺上停了一瞬，墨迹洇出极小的毛边。\n\n他站起来，绕过自己那排座位，走到赵屿桌前。赵屿正背对着他往书包里塞课本，肩膀离他不到两米。沈逸没说话，把纸条压在鼠标垫左下角——那个位置，只要赵屿回头拿鼠标，不可能看不见。\n\n然后他退回来，坐下，把草稿纸剩下的部分翻到背面，假装在看。\n\n心脏还在跳，但节奏不一样了。刚才那一下是踩空楼梯，现在是在等别人踩上去。\n\n赵屿拉上书包拉链，转身，视线扫过桌面。沈逸用余光看见他的手顿了一下——不是大幅度的停顿，是那种手指刚要离开桌面又收回来的幅度。赵屿低头，抽出鼠标垫下的纸条。他看了，然后视线从纸条移向那台已经关机的电脑主机。\n\n银色U盘还插在USB口上。\n\n赵屿伸手把U盘拔下来，动作很轻，金属外壳和接口分离时几乎没有声音。他转过身，看向沈逸。\n\n沈逸抬起眼睛，正好对上赵屿的视线。赵屿手里捏着U盘和那张纸条，表情不是生气，也不是尴尬，更像是在辨认什么——好像沈逸脸上写着某道他没见过的题。\n\n两秒钟。赵屿没说话，沈逸也没说。\n\n然后赵屿把U盘放在沈逸桌面上，贴着鼠标垫的右边缘，不轻不重，金属底部磕在桌面上发出一声短促的轻响。",
+      "raw_response": "机房后排的日光灯管嗡嗡响了两声，像是电流在里头打了个趔趄。\n\n沈逸把键盘推进桌沿，右手习惯性地去摸主机上的银色U盘。指尖碰到的是空荡荡的USB口，塑料挡片还翘着，像张了一半的嘴。他低头看了一眼，确认不是自己摸错了位置——没有。U盘不在。\n\n心脏猛地缩了一下。\n\n那个U盘里装着明天早上的创业计划展示PPT，从市场分析到财务模型做了整整三周，连备份都没来得及拷进云盘。沈逸的视线从自己黑掉的屏幕移向左侧，越过隔板，落在隔壁那台电脑的主机上。银色的金属外壳在机箱正面反出一点白光，U盘稳稳插在USB接口里，指示灯已经不亮了。\n\n屏幕上正弹出关机进度条，Windows的蓝色圆圈转了最后一圈，画面一黑。\n\n赵屿从座位上站起来，把电源线绕了两圈塞进书包侧袋。他动作不快，甚至称得上慢条斯理——先收鼠标，再卷耳机线，最后把水杯拧紧盖子放进侧兜。全程没有往沈逸这边看一眼。\n\n沈逸张了张嘴。机房里还有五六个学生在收拾东西，键盘声和拉链声混成一片。赵屿的同班同学就在门口等他，书包已经甩上肩膀，正低头看手机。如果这时候喊住赵屿，声音得大到半个机房都听见——“你拔一下我的U盘”——然后所有人都会看过来，赵屿会愣住，会低头看那台已经关机的电脑，会说“什么U盘”，会皱眉头，会露出那种“你什么意思”的表情。\n\n沈逸不确定自己能不能接住那个表情。\n\n他重新坐下来，视线扫过自己桌上散落的草稿纸。A4大小，边角卷着，上面还留着刚才练手画的流程图草稿。他撕下最干净的一张，从笔袋里抽出黑色水笔，写了四个字。\n\n笔尖在“忘”字的最后一捺上停了一瞬，墨迹洇出极小的毛边。\n\n他站起来，绕过自己那排座位，走到赵屿桌前。赵屿正背对着他往书包里塞课本，肩膀离他不到两米。沈逸没说话，把纸条压在鼠标垫左下角——那个位置，只要赵屿回头拿鼠标，不可能看不见。\n\n然后他退回来，坐下，把草稿纸剩下的部分翻到背面，假装在看。\n\n心脏还在跳，但节奏不一样了。刚才那一下是踩空楼梯，现在是在等别人踩上去。\n\n赵屿拉上书包拉链，转身，视线扫过桌面。沈逸用余光看见他的手顿了一下——不是大幅度的停顿，是那种手指刚要离开桌面又收回来的幅度。赵屿低头，抽出鼠标垫下的纸条。他看了，然后视线从纸条移向那台已经关机的电脑主机。\n\n银色U盘还插在USB口上。\n\n赵屿伸手把U盘拔下来，动作很轻，金属外壳和接口分离时几乎没有声音。他转过身，看向沈逸。\n\n沈逸抬起眼睛，正好对上赵屿的视线。赵屿手里捏着U盘和那张纸条，表情不是生气，也不是尴尬，更像是在辨认什么——好像沈逸脸上写着某道他没见过的题。\n\n两秒钟。赵屿没说话，沈逸也没说。\n\n然后赵屿把U盘放在沈逸桌面上，贴着鼠标垫的右边缘，不轻不重，金属底部磕在桌面上发出一声短促的轻响。",
+      "input_tokens": 1405,
+      "output_tokens": 748,
+      "latency_ms": 19963,
+      "finish_reason": "stop",
+      "error_code": "TEMPO_FINAL_LINE_MISMATCH",
+      "error_message": "TEMPO_FINAL_LINE_MISMATCH: final paragraph must include the required marker 'U盘被轻轻放在桌上'",
+      "rendered_user_prompt_sha256": "7cf95e748391c5ffe35cf2fdf39d85f26f84c2bd98bcda32564394d98bc89d77",
+      "text_path": "cases\\CO-01\\drafts\\route-3.txt"
+    },
+    {
+      "group": "BASELINE-COBJECT_VS_A",
+      "replica": 3,
+      "mode": "complete_planner",
+      "candidate_id": "0c593764-0cd7-4494-8b05-9b8943470211",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "沈逸把键盘推进托架的时候，余光扫到隔壁桌上那抹银色。\n\n是他的U盘。\n\n插在赵屿那台电脑的主机箱前面，指示灯还亮着，屏幕已经黑了，关机程序的圆圈转完最后一圈。赵屿正把电源线绕好放进书包侧袋，拉链声干脆利落，椅子往后一推，准备起身。\n\n沈逸的手在键盘边缘停了一瞬。\n\n机房里还有七八个人在收拾东西，键盘碰撞的声音稀稀拉拉。前门开着，走廊里已经有跑动的脚步声。赵屿把书包甩上肩膀，转过身，视线从沈逸这边扫过去，没有停留。\n\n那台电脑的屏幕彻底暗了。\n\n沈逸没有开口。他低头看了一眼自己桌上摊开的草稿纸，拿起笔，在最上面那行的空白处写了四个字——U盘忘拔了——然后撕下来，起身。\n\n赵屿正弯腰去拿椅背上挂着的外套，背对着这边。\n\n沈逸从他身后走过去，脚步没停，把纸条对折了一下，放在赵屿那台电脑的鼠标垫左下角。鼠标垫是机房统一配的那种深蓝色薄垫，白色纸条贴在上面很显眼。他没看赵屿，绕回自己座位，拉开书包拉链，把课本一本一本往里放。\n\n外套被抖开的声音从身后传来，然后是书包被拎起来的动静。\n\n停了。\n\n沈逸继续把笔袋塞进书包，拉链拉到一半。身后那个人没有走。鼠标垫被掀起又落下的轻微摩擦声，接着是更长的停顿。\n\n椅子被转了一下。\n\n沈逸把书包带子拎起来搭在肩上，转过身准备离开。赵屿正站在那台电脑前，手里捏着那张纸条，另一只手还拎着书包。他低头看了看主机箱前面插着的银色U盘，然后抬起头。\n\n两个人的视线撞在一起。\n\n赵屿没说话。他把纸条放在桌上，伸手拔下U盘，动作不快，金属外壳从接口里退出来的时候发出很轻的咔嗒声。\n\n然后他把它放在桌上，贴着键盘右侧，和纸条并排。\n\n沈逸走过去，把U盘拿起来，放进自己书包侧袋。赵屿已经转身走了，书包挂在一边肩膀上，外套搭在胳膊上，步子不快，从后门出去的。\n\nU盘被轻轻放在桌上。",
+      "raw_response": "沈逸把键盘推进托架的时候，余光扫到隔壁桌上那抹银色。\n\n是他的U盘。\n\n插在赵屿那台电脑的主机箱前面，指示灯还亮着，屏幕已经黑了，关机程序的圆圈转完最后一圈。赵屿正把电源线绕好放进书包侧袋，拉链声干脆利落，椅子往后一推，准备起身。\n\n沈逸的手在键盘边缘停了一瞬。\n\n机房里还有七八个人在收拾东西，键盘碰撞的声音稀稀拉拉。前门开着，走廊里已经有跑动的脚步声。赵屿把书包甩上肩膀，转过身，视线从沈逸这边扫过去，没有停留。\n\n那台电脑的屏幕彻底暗了。\n\n沈逸没有开口。他低头看了一眼自己桌上摊开的草稿纸，拿起笔，在最上面那行的空白处写了四个字——U盘忘拔了——然后撕下来，起身。\n\n赵屿正弯腰去拿椅背上挂着的外套，背对着这边。\n\n沈逸从他身后走过去，脚步没停，把纸条对折了一下，放在赵屿那台电脑的鼠标垫左下角。鼠标垫是机房统一配的那种深蓝色薄垫，白色纸条贴在上面很显眼。他没看赵屿，绕回自己座位，拉开书包拉链，把课本一本一本往里放。\n\n外套被抖开的声音从身后传来，然后是书包被拎起来的动静。\n\n停了。\n\n沈逸继续把笔袋塞进书包，拉链拉到一半。身后那个人没有走。鼠标垫被掀起又落下的轻微摩擦声，接着是更长的停顿。\n\n椅子被转了一下。\n\n沈逸把书包带子拎起来搭在肩上，转过身准备离开。赵屿正站在那台电脑前，手里捏着那张纸条，另一只手还拎着书包。他低头看了看主机箱前面插着的银色U盘，然后抬起头。\n\n两个人的视线撞在一起。\n\n赵屿没说话。他把纸条放在桌上，伸手拔下U盘，动作不快，金属外壳从接口里退出来的时候发出很轻的咔嗒声。\n\n然后他把它放在桌上，贴着键盘右侧，和纸条并排。\n\n沈逸走过去，把U盘拿起来，放进自己书包侧袋。赵屿已经转身走了，书包挂在一边肩膀上，外套搭在胳膊上，步子不快，从后门出去的。\n\nU盘被轻轻放在桌上。",
+      "input_tokens": 2479,
+      "output_tokens": 489,
+      "latency_ms": 14732,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "9c8bada251d0cc8839abc6857367f20561e72e0a87af2847f0aa3ef33eff3166",
+      "text_path": "cases\\CO-01\\drafts\\baseline-3.txt"
+    }
+  ],
+  "actual_route": "C_OBJECT_CAUSAL",
+  "route_decision": {
+    "route_name": "C_OBJECT_CAUSAL",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "scene_state.available_objects is non-empty",
+      "causal_transitions contains counterfactual_without_action or rejected_alternative",
+      "character_next_action involves physical object manipulation"
+    ],
+    "matched_rules": [
+      "RULE_C_OBJECT_CAUSAL"
+    ],
+    "rejected_routes": []
+  }
+}

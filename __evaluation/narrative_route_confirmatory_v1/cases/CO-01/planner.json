@@ -1,0 +1,163 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "机房下课后，沈逸发现自己的银色U盘被插在隔壁电脑上，而隔壁座位的赵屿正把那台电脑关机离开。沈逸不能追上去喊人，也不能假定赵屿是故意的。他必须用一个现场可用物件让对方自己发现。",
+  "location": "学校机房",
+  "time": "下午最后一节课刚下课",
+  "scene_state": {
+    "last_completed_action": "赵屿关机起身，准备离开机房",
+    "present_characters": [
+      "沈逸",
+      "赵屿",
+      "其他陆续离开的学生"
+    ],
+    "visible_facts": [
+      "沈逸的银色U盘插在隔壁电脑上",
+      "隔壁电脑正在关机",
+      "赵屿正在收拾东西准备离开",
+      "机房内还有其他学生走动"
+    ],
+    "available_objects": [
+      "沈逸自己的书包",
+      "桌上的草稿纸",
+      "笔",
+      "隔壁电脑的鼠标",
+      "机房的公共设施"
+    ],
+    "unresolved_problem": "沈逸需要取回U盘，但不能直接指责赵屿，也不能让U盘丢失",
+    "already_existing_constraints": [
+      "不能追上去喊人",
+      "不能假定赵屿是故意的",
+      "不能引起冲突",
+      "U盘里有明天展示用的PPT"
+    ]
+  },
+  "characters": [
+    {
+      "name": "沈逸",
+      "goal": "取回U盘，同时避免直接冲突或误会",
+      "known": [
+        "U盘被插在隔壁电脑上",
+        "隔壁电脑是赵屿使用的",
+        "U盘里有重要PPT",
+        "不能追上去或质问"
+      ],
+      "unknown": [
+        "赵屿是否故意拿走U盘",
+        "赵屿是否注意到U盘"
+      ],
+      "mistaken_beliefs": [
+        "赵屿可能只是误插了U盘"
+      ],
+      "constraints": [
+        "不能追上去喊人",
+        "不能假定赵屿是故意的",
+        "必须用现场物件让对方自己发现"
+      ],
+      "observed_evidence": [
+        "银色U盘插在隔壁电脑上",
+        "赵屿正在关机离开",
+        "赵屿没有看向自己"
+      ],
+      "current_interpretation": "赵屿可能没有注意到U盘，如果直接提醒可能会尴尬或引发误会",
+      "how_interpretation_drives_action": "沈逸决定不直接喊住赵屿，而是用某种方式让赵屿自己发现U盘"
+    },
+    {
+      "name": "赵屿",
+      "goal": "收拾东西离开机房",
+      "known": [
+        "自己刚用完电脑",
+        "准备离开"
+      ],
+      "unknown": [
+        "沈逸的U盘插在自己用过的电脑上",
+        "沈逸正在关注自己"
+      ],
+      "mistaken_beliefs": [
+        "自己已经收拾好所有东西"
+      ],
+      "constraints": [
+        "没有意识到U盘的存在"
+      ],
+      "observed_evidence": [
+        "电脑正在关机",
+        "周围同学在离开"
+      ],
+      "current_interpretation": "一切正常，可以离开",
+      "how_interpretation_drives_action": "赵屿拿起书包，准备转身离开"
+    }
+  ],
+  "concrete_problem": "沈逸如何在不直接接触赵屿的情况下，让赵屿自己发现并归还U盘？",
+  "pressure": "赵屿即将离开机房，U盘面临丢失风险，但直接喊人可能引发误会",
+  "turning_point": "沈逸选择将一张写着“U盘忘拔了”的纸条放在赵屿的鼠标垫下，然后回到自己座位假装整理书包",
+  "end_condition": "赵屿发现纸条和U盘，回头看向沈逸，沈逸没有解释，但U盘被归还",
+  "forbidden": [
+    "沈逸直接喊住赵屿",
+    "沈逸直接质问赵屿",
+    "沈逸假定赵屿是故意的",
+    "引入第三方直接干预",
+    "U盘真的丢失",
+    "燃烧后续章节的燃料"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "赵屿拿起书包准备离开，U盘仍插在电脑上",
+      "character_interpretation": "如果现在不行动，U盘可能会被带走或丢失",
+      "character_next_action": "沈逸迅速在草稿纸上写下“U盘忘拔了”，起身走到赵屿座位旁，将纸条放在鼠标垫下",
+      "rejected_alternative": "直接喊住赵屿，或者上前拍肩膀提醒",
+      "immediate_consequence": "纸条被放置在赵屿必然会看到的鼠标垫下，沈逸退回自己座位",
+      "counterfactual_without_action": "赵屿离开机房，U盘被留在电脑上或被他无意带走",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "赵屿没有意识到U盘的存在，即将离开",
+        "after": "赵屿的鼠标垫下多了一张提醒纸条，沈逸退回座位等待"
+      },
+      "cost_or_commitment": "沈逸承担了被赵屿误解为多管闲事的风险，但避免了直接冲突",
+      "next_constraint": "沈逸必须等待赵屿自己发现纸条，不能催促",
+      "reader_must_infer": "沈逸选择纸条而不是口头提醒，是因为他考虑到了赵屿的面子和两人之间可能的微妙关系",
+      "narrator_must_not_state": [
+        "沈逸内心对赵屿的真实看法",
+        "赵屿是否故意拿走U盘"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "赵屿已经关机，拿起书包，转身准备离开",
+    "dominant_pressure": {
+      "kind": "social_friction",
+      "description": "时间紧迫，但直接提醒可能引发社交尴尬或误会"
+    },
+    "allowed_viewpoint_misread": "赵屿可能把纸条理解为沈逸的指责或嘲讽",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "赵屿是否故意",
+      "沈逸对赵屿的真实情感"
+    ],
+    "stop_state": {
+      "type": "relationship_shift",
+      "visible_fact": "赵屿看到纸条和U盘后，回头看向沈逸，然后拔下U盘放在桌上",
+      "what_is_now_different": "赵屿意识到沈逸的提醒方式避免了直接冲突，两人之间产生了一种无声的默契或新的张力",
+      "must_not_append": "不得解释赵屿的心理活动或两人之后的关系走向"
+    },
+    "final_line_must_include": "U盘被轻轻放在桌上"
+  }
+}

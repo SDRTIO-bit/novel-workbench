@@ -1,0 +1,151 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "乔雨发现班主任撤回的评语预览，在同桌逼近的压力下，必须决定如何处理这条不确定的信息，从而为后续与班主任的互动埋下伏笔。",
+  "location": "教室，课间",
+  "time": "上午第二节课后",
+  "scene_state": {
+    "last_completed_action": "乔雨在课间查看手机，发现班主任在企业微信上发来一条评语又撤回，预览显示“你这次的……”",
+    "present_characters": [
+      "乔雨",
+      "同桌（正拿着手机走来）"
+    ],
+    "visible_facts": [
+      "乔雨手机屏幕上企业微信的撤回提示",
+      "同桌正朝乔雨走来，手里拿着手机"
+    ],
+    "available_objects": [
+      "乔雨的手机",
+      "同桌的手机"
+    ],
+    "unresolved_problem": "班主任为何撤回评语？评语是正面还是负面？同桌是否看到了相关消息？",
+    "already_existing_constraints": [
+      "不能直接询问班主任",
+      "不能假装没看见撤回提示",
+      "同桌正在逼近，必须立刻反应"
+    ]
+  },
+  "characters": [
+    {
+      "name": "乔雨",
+      "goal": "在不让同桌察觉异常的情况下，决定如何应对撤回的评语",
+      "known": [
+        "班主任撤回了消息",
+        "预览显示“你这次的……”",
+        "同桌正拿着手机走过来"
+      ],
+      "unknown": [
+        "撤回的评语完整内容",
+        "班主任为何撤回",
+        "同桌是否也收到了类似消息"
+      ],
+      "mistaken_beliefs": [
+        "班主任可能正在评价她近期的表现，且可能是负面评价"
+      ],
+      "constraints": [
+        "不能直接询问班主任",
+        "不能引起同桌怀疑",
+        "必须维持表面平静"
+      ],
+      "observed_evidence": [
+        "撤回提示的预览文本“你这次的……”",
+        "同桌的靠近"
+      ],
+      "current_interpretation": "这条撤回的消息可能很重要，但内容不明，同桌的到来可能与此有关，也可能无关",
+      "how_interpretation_drives_action": "她决定先收起手机，观察同桌的反应，再决定是否试探"
+    },
+    {
+      "name": "同桌",
+      "goal": "与乔雨分享手机上的内容（可能是无关的趣事，也可能是班主任的消息）",
+      "known": [
+        "自己手机上的内容"
+      ],
+      "unknown": [
+        "乔雨收到了班主任的撤回消息"
+      ],
+      "mistaken_beliefs": [
+        "乔雨可能只是在发呆或看手机"
+      ],
+      "constraints": [
+        "只是课间闲聊，没有特定任务"
+      ],
+      "observed_evidence": [
+        "乔雨盯着手机屏幕，表情有些困惑"
+      ],
+      "current_interpretation": "乔雨在看什么有趣的东西，或者遇到了麻烦",
+      "how_interpretation_drives_action": "她加快脚步，准备把手机递给乔雨看，同时问“你在看什么？”"
+    }
+  ],
+  "concrete_problem": "乔雨必须在同桌走到面前之前，决定是收起手机假装无事发生，还是主动提起撤回消息试探同桌是否知情。",
+  "pressure": "同桌正在逼近，时间紧迫，乔雨必须立刻做出反应，否则同桌可能看到撤回提示并追问。",
+  "turning_point": "乔雨选择收起手机，但同桌已经注意到她的异常，并直接询问，迫使乔雨给出一个含糊的回答，从而种下后续误会的种子。",
+  "end_condition": "乔雨对同桌的问题给出了一个回避性的回答，同桌半信半疑，但上课铃响起，对话中断。",
+  "forbidden": [
+    "直接揭示班主任撤回评语的完整内容",
+    "让同桌明确知道乔雨收到了撤回消息",
+    "乔雨主动联系班主任询问",
+    "消耗班主任与乔雨之间的核心误会",
+    "让同桌完全相信乔雨的回答"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "同桌拿着手机快步走近，并问“你在看什么？”",
+      "character_interpretation": "乔雨认为同桌可能看到了她的手机屏幕，或者察觉到了她的异常，如果直接回答在看撤回消息，同桌可能会追问或传播。",
+      "character_next_action": "乔雨迅速将手机屏幕转向自己，并说“没什么，就是条垃圾信息。”",
+      "rejected_alternative": "她本可以反问同桌“你找我什么事？”来转移话题，但那样可能显得更可疑。",
+      "immediate_consequence": "同桌虽然没看到撤回提示，但注意到了乔雨快速藏手机的动作，心生一丝怀疑。",
+      "counterfactual_without_action": "如果乔雨不藏手机，同桌可能会看到撤回提示，直接问“班主任撤回了什么？”，导致乔雨无法回避。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "乔雨手机屏幕朝上，撤回提示可见；同桌未起疑。",
+        "after": "乔雨手机屏幕朝下，撤回提示被隐藏；同桌开始怀疑乔雨在隐瞒什么。"
+      },
+      "cost_or_commitment": "乔雨牺牲了坦诚的机会，并让自己显得更加可疑。",
+      "next_constraint": "同桌对乔雨的回答不完全相信，未来可能会更留意乔雨与班主任的互动。",
+      "reader_must_infer": "同桌的怀疑可能在未来某个时刻被触发，导致对乔雨的误解加深。",
+      "narrator_must_not_state": [
+        "同桌已经猜到班主任撤回消息的事",
+        "乔雨的回答完美地打消了同桌的疑虑"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "同桌正拿着手机朝乔雨走来，距离缩短至两排座位",
+    "dominant_pressure": {
+      "kind": "social_friction",
+      "description": "同桌的逼近迫使乔雨必须在社交伪装和坦诚之间做出选择，而任何选择都可能引发后续的误解。"
+    },
+    "allowed_viewpoint_misread": "同桌可能把乔雨藏手机的动作理解为她在隐瞒一个秘密，而不是单纯的隐私保护。",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "班主任撤回评语的完整内容",
+      "同桌手机上的具体内容"
+    ],
+    "stop_state": {
+      "type": "social_commitment",
+      "visible_fact": "乔雨说“就是条垃圾信息”，同桌回应“哦，好吧”，但眼神仍停留在乔雨的手机上。",
+      "what_is_now_different": "同桌对乔雨的回答并不完全相信，两人之间产生了一丝未言明的猜疑。",
+      "must_not_append": "不得描述同桌内心确信乔雨在撒谎。"
+    },
+    "final_line_must_include": ""
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "路远在操场上发现自己的蓝色运动水壶被一个不认识的男生错拿并喝了一口，他必须在不引起冲突的情况下，利用现场物件让对方意识到错误并归还水壶，同时保持自己的低调形象。",
+  "location": "学校操场，自由活动时间，靠近篮球场边的长凳区域",
+  "time": "下午第二节课后，体育课自由活动时间",
+  "scene_state": {
+    "last_completed_action": "体育老师宣布自由活动，同学们分散到操场各处，路远走向长凳准备喝水时发现水壶不见了。",
+    "present_characters": [
+      "路远",
+      "不认识的男生（错拿水壶者）",
+      "其他自由活动的同学"
+    ],
+    "visible_facts": [
+      "路远的蓝色运动水壶被一个不认识的男生拿在手里，男生刚喝了一口",
+      "男生正往篮球场方向走，水壶还在他手中",
+      "操场上有散落的体育器材，包括一个备用篮球在长凳附近"
+    ],
+    "available_objects": [
+      "路远的蓝色运动水壶（在男生手中）",
+      "备用篮球（在长凳旁）",
+      "其他同学的物品"
+    ],
+    "unresolved_problem": "水壶被错拿且被使用，路远需要在不直接冲突的情况下让男生归还水壶。",
+    "already_existing_constraints": [
+      "路远不能跑过去抢回水壶，会显得突兀",
+      "路远不能在操场上大声喊叫，会吸引注意",
+      "路远必须保持自己平时低调、不惹事的形象",
+      "男生不认识路远，可能只是拿错了水壶"
+    ]
+  },
+  "characters": [
+    {
+      "name": "路远",
+      "goal": "拿回自己的水壶，但不引起冲突或过多关注",
+      "known": [
+        "自己的水壶是蓝色的，上面有特定的贴纸",
+        "那个男生刚喝了一口水壶里的水",
+        "男生正往篮球场走，可能要去打篮球"
+      ],
+      "unknown": [
+        "男生是否故意拿错，还是真的以为是自己的水壶",
+        "男生的性格和反应"
+      ],
+      "mistaken_beliefs": [
+        "如果直接上去要，可能会被当成小气或小题大做"
+      ],
+      "constraints": [
+        "不能直接跑过去抢",
+        "不能大声喊叫",
+        "不能引起周围同学的围观",
+        "必须用不直接冲突的方式解决"
+      ],
+      "observed_evidence": [
+        "男生拿着水壶走向篮球场，水壶与自己的完全相同",
+        "男生刚喝了一口，没有意识到水壶有问题",
+        "长凳旁有一个备用篮球"
+      ],
+      "current_interpretation": "男生很可能只是拿错了水壶，不是故意的。如果我用篮球作为媒介，让他注意到水壶的异常，他可能会自己发现错误。",
+      "how_interpretation_drives_action": "路远决定用备用篮球制造一个自然的互动机会，让男生在接触篮球时看到水壶上的贴纸细节，从而意识到拿错了。"
+    },
+    {
+      "name": "不认识的男生",
+      "goal": "去打篮球，可能渴了所以喝了水壶里的水",
+      "known": [
+        "自己有一个蓝色水壶（可能类似）",
+        "篮球场在那边"
+      ],
+      "unknown": [
+        "这个水壶不是自己的，属于路远",
+        "水壶上有特定的贴纸细节"
+      ],
+      "mistaken_beliefs": [
+        "手里的水壶就是自己的"
+      ],
+      "constraints": [
+        "正在走向篮球场，注意力在打球上",
+        "如果突然被陌生人指责，可能会尴尬或防御"
+      ],
+      "observed_evidence": [],
+      "current_interpretation": "（无，因为不是视角角色）",
+      "how_interpretation_drives_action": "（无）"
+    }
+  ],
+  "concrete_problem": "如何让一个正在走向篮球场的陌生男生，在不停下脚步的情况下，自己发现拿错了水壶并主动归还？",
+  "pressure": "男生正在走远，如果再不行动，水壶会被带到篮球场，那时更难拿回，且水壶已经被喝过一口，路远感到时间紧迫。",
+  "turning_point": "路远将备用篮球轻轻滚向男生的路径，男生弯腰捡球时，视线自然落到水壶上，注意到贴纸细节与自己的不同，从而停下脚步，露出疑惑的表情。",
+  "end_condition": "男生将水壶放回长凳上，路远没有直接交流，但水壶回到了正确位置。",
+  "forbidden": [
+    "路远不能直接跑过去抢回水壶",
+    "路远不能在操场上大声喊叫",
+    "路远不能直接对男生说“那是我的水壶”",
+    "不能有任何肢体冲突",
+    "不能引入新角色帮忙",
+    "不能使用手机或其他通讯工具",
+    "水壶不能被损坏",
+    "男生不能是认识的人",
+    "不能使用超自然或巧合（如老师恰好路过）"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "男生拿着水壶走向篮球场，水壶在手中晃动，路远看到长凳旁有一个备用篮球。",
+      "character_interpretation": "路远认为如果让男生自然地接触到篮球，他可能会在捡球时看到水壶上的贴纸，从而意识到拿错了。",
+      "character_next_action": "路远假装整理鞋带，顺势将备用篮球轻轻推向男生行走的路径方向，球缓慢滚到男生脚边。",
+      "rejected_alternative": "路远也可以选择直接追上去拍拍男生肩膀，但那样会显得突兀，可能引起对方不悦。",
+      "immediate_consequence": "男生看到篮球滚来，弯腰捡起球，同时视线扫过自己手中的水壶，注意到了水壶上贴纸的图案（与自己水壶不同）。",
+      "counterfactual_without_action": "如果路远不行动，男生会直接走到篮球场开始打球，水壶被放在场边，之后可能被更多人错拿或遗忘，路远更难取回。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "男生毫无察觉地拿着水壶走向篮球场，路远坐在长凳上看着。",
+        "after": "男生弯腰捡起篮球，视线停留在水壶上，动作停顿，表情从随意变为疑惑。"
+      },
+      "cost_or_commitment": "路远牺牲了直接要回水壶的机会，选择了更迂回的方式，承担了男生可能仍然没有注意到的风险。",
+      "next_constraint": "男生必须在没有路远直接提示的情况下，自己比较水壶与记忆中的差异。",
+      "reader_must_infer": "路远平时观察细致，知道自己的水壶贴纸是独特的，也推测男生的水壶可能类似但细节不同。",
+      "narrator_must_not_state": [
+        "路远内心希望男生能发现的焦虑",
+        "男生水壶的具体样子"
+      ]
+    },
+    {
+      "id": "CT02",
+      "kind": "constraint_to_choice",
+      "visible_trigger": "男生拿着水壶和篮球，站在原地看了看水壶，又回头看了看长凳方向，表情犹豫。",
+      "character_interpretation": "路远判断男生已经意识到水壶可能不是自己的，但不确定该怎么做，如果此时路远有反应，男生可能会尴尬。",
+      "character_next_action": "路远假装没注意，低头继续整理鞋带，给男生留出空间自己决定。",
+      "rejected_alternative": "路远可以此时走上前说“没关系，拿错了吧”，但这会打破自己不想直接交流的初衷，也可能让男生更尴尬。",
+      "immediate_consequence": "男生犹豫了几秒，最终走回长凳，将水壶轻轻放回原处，然后拿着篮球离开了。",
+      "counterfactual_without_action": "如果路远此时抬头或做出期待的表情，男生可能因为不好意思而将错就错带走水壶，或者硬着头皮来问，导致直接交流。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "男生拿着水壶和篮球，站在操场中间犹豫不决。",
+        "after": "男生走回长凳放下水壶，然后带着篮球离开，水壶回到正确位置。"
+      },
+      "cost_or_commitment": "路远放弃了任何口头确认的机会，完全依赖对方的自觉，承担了对方可能不归还的风险。",
+      "next_constraint": "水壶已经归还，但路远不能表现出任何情绪，必须像什么都没发生一样继续自由活动。",
+      "reader_must_infer": "男生可能因为路远的“没注意”而松了口气，觉得悄悄放回去是最好的解决方式。",
+      "narrator_must_not_state": [
+        "男生内心的尴尬程度",
+        "路远看到水壶归还后的内心波动"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "男生已经喝了一口水壶里的水，正拿着水壶走向篮球场，距离路远越来越远。",
+    "dominant_pressure": {
+      "kind": "resource_constraint",
+      "description": "时间紧迫，男生正在走远，水壶可能被带离视线范围，但真正阻碍行动的是路远不能直接冲突的自我约束。"
+    },
+    "allowed_viewpoint_misread": "男生可能把路远滚篮球的动作当成无意的，或者认为路远只是个在玩球的普通同学。",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "男生是否真的有一个类似的水壶",
+      "男生放回水壶后是否意识到路远是水壶主人"
+    ],
+    "stop_state": {
+      "type": "physical_change",
+      "visible_fact": "蓝色水壶被放回长凳上，位置与之前路远放下的地方一致。",
+      "what_is_now_different": "水壶从男生手中回到了路远的长凳上，路远可以正常使用，且整个过程没有直接交流。",
+      "must_not_append": "不得描写路远拿回水壶后的心理活动或后续动作，场景在水壶归位时结束。"
+    },
+    "final_line_must_include": "水壶静静地立在长凳上，阳光在贴纸上晃了一下。"
+  }
+}

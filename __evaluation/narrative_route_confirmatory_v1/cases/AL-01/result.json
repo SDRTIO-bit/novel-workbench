@@ -1,0 +1,268 @@
+{
+  "case_id": "AL-01",
+  "category": "校园误会",
+  "title": "撤回的作业评语",
+  "group": "ALITE_VS_A",
+  "run_id": "acdbbc1d-ff59-4be7-84c1-b68270cff12f",
+  "planner": {
+    "candidate_id": "4747ffce-6444-42b6-834d-66254b7225fb",
+    "attempt_number": 1,
+    "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+    "model_id": "deepseek-v4-pro",
+    "prompt_version_id": "f9052f8a-dc4e-5408-b14e-fc1badaf57f8",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 12288,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "json_object"
+    },
+    "text_output": "{\n  \"planner_contract_version\": 2,\n  \"scene_goal\": \"乔雨发现班主任撤回的评语预览，在同桌逼近的压力下，必须决定如何处理这条不确定的信息，从而为后续与班主任的互动埋下伏笔。\",\n  \"location\": \"教室，课间\",\n  \"time\": \"上午第二节课后\",\n  \"scene_state\": {\n    \"last_completed_action\": \"乔雨在课间查看手机，发现班主任在企业微信上发来一条评语又撤回，预览显示“你这次的……”\",\n    \"present_characters\": [\"乔雨\", \"同桌（正拿着手机走来）\"],\n    \"visible_facts\": [\"乔雨手机屏幕上企业微信的撤回提示\", \"同桌正朝乔雨走来，手里拿着手机\"],\n    \"available_objects\": [\"乔雨的手机\", \"同桌的手机\"],\n    \"unresolved_problem\": \"班主任为何撤回评语？评语是正面还是负面？同桌是否看到了相关消息？\",\n    \"already_existing_constraints\": [\"不能直接询问班主任\", \"不能假装没看见撤回提示\", \"同桌正在逼近，必须立刻反应\"]\n  },\n  \"characters\": [\n    {\n      \"name\": \"乔雨\",\n      \"goal\": \"在不让同桌察觉异常的情况下，决定如何应对撤回的评语\",\n      \"known\": [\"班主任撤回了消息\", \"预览显示“你这次的……”\", \"同桌正拿着手机走过来\"],\n      \"unknown\": [\"撤回的评语完整内容\", \"班主任为何撤回\", \"同桌是否也收到了类似消息\"],\n      \"mistaken_beliefs\": [\"班主任可能正在评价她近期的表现，且可能是负面评价\"],\n      \"constraints\": [\"不能直接询问班主任\", \"不能引起同桌怀疑\", \"必须维持表面平静\"],\n      \"observed_evidence\": [\"撤回提示的预览文本“你这次的……”\", \"同桌的靠近\"],\n      \"current_interpretation\": \"这条撤回的消息可能很重要，但内容不明，同桌的到来可能与此有关，也可能无关\",\n      \"how_interpretation_drives_action\": \"她决定先收起手机，观察同桌的反应，再决定是否试探\"\n    },\n    {\n      \"name\": \"同桌\",\n      \"goal\": \"与乔雨分享手机上的内容（可能是无关的趣事，也可能是班主任的消息）\",\n      \"known\": [\"自己手机上的内容\"],\n      \"unknown\": [\"乔雨收到了班主任的撤回消息\"],\n      \"mistaken_beliefs\": [\"乔雨可能只是在发呆或看手机\"],\n      \"constraints\": [\"只是课间闲聊，没有特定任务\"],\n      \"observed_evidence\": [\"乔雨盯着手机屏幕，表情有些困惑\"],\n      \"current_interpretation\": \"乔雨在看什么有趣的东西，或者遇到了麻烦\",\n      \"how_interpretation_drives_action\": \"她加快脚步，准备把手机递给乔雨看，同时问“你在看什么？”\"\n    }\n  ],\n  \"concrete_problem\": \"乔雨必须在同桌走到面前之前，决定是收起手机假装无事发生，还是主动提起撤回消息试探同桌是否知情。\",\n  \"pressure\": \"同桌正在逼近，时间紧迫，乔雨必须立刻做出反应，否则同桌可能看到撤回提示并追问。\",\n  \"turning_point\": \"乔雨选择收起手机，但同桌已经注意到她的异常，并直接询问，迫使乔雨给出一个含糊的回答，从而种下后续误会的种子。\",\n  \"end_condition\": \"乔雨对同桌的问题给出了一个回避性的回答，同桌半信半疑，但上课铃响起，对话中断。\",\n  \"forbidden\": [\n    \"直接揭示班主任撤回评语的完整内容\",\n    \"让同桌明确知道乔雨收到了撤回消息\",\n    \"乔雨主动联系班主任询问\",\n    \"消耗班主任与乔雨之间的核心误会\",\n    \"让同桌完全相信乔雨的回答\"\n  ],\n  \"causal_transitions\": [\n    {\n      \"id\": \"CT01\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"同桌拿着手机快步走近，并问“你在看什么？”\",\n      \"character_interpretation\": \"乔雨认为同桌可能看到了她的手机屏幕，或者察觉到了她的异常，如果直接回答在看撤回消息，同桌可能会追问或传播。\",\n      \"character_next_action\": \"乔雨迅速将手机屏幕转向自己，并说“没什么，就是条垃圾信息。”\",\n      \"rejected_alternative\": \"她本可以反问同桌“你找我什么事？”来转移话题，但那样可能显得更可疑。\",\n      \"immediate_consequence\": \"同桌虽然没看到撤回提示，但注意到了乔雨快速藏手机的动作，心生一丝怀疑。\",\n      \"counterfactual_without_action\": \"如果乔雨不藏手机，同桌可能会看到撤回提示，直接问“班主任撤回了什么？”，导致乔雨无法回避。\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"乔雨手机屏幕朝上，撤回提示可见；同桌未起疑。\",\n        \"after\": \"乔雨手机屏幕朝下，撤回提示被隐藏；同桌开始怀疑乔雨在隐瞒什么。\"\n      },\n      \"cost_or_commitment\": \"乔雨牺牲了坦诚的机会，并让自己显得更加可疑。\",\n      \"next_constraint\": \"同桌对乔雨的回答不完全相信，未来可能会更留意乔雨与班主任的互动。\",\n      \"reader_must_infer\": \"同桌的怀疑可能在未来某个时刻被触发，导致对乔雨的误解加深。\",\n      \"narrator_must_not_state\": [\n        \"同桌已经猜到班主任撤回消息的事\",\n        \"乔雨的回答完美地打消了同桌的疑虑\"\n      ]\n    }\n  ],\n  \"tempo_guardrails\": {\n    \"entry_pressure\": \"同桌正拿着手机朝乔雨走来，距离缩短至两排座位\",\n    \"dominant_pressure\": {\n      \"kind\": \"social_friction\",\n      \"description\": \"同桌的逼近迫使乔雨必须在社交伪装和坦诚之间做出选择，而任何选择都可能引发后续的误解。\"\n    },\n    \"allowed_viewpoint_misread\": \"同桌可能把乔雨藏手机的动作理解为她在隐瞒一个秘密，而不是单纯的隐私保护。\",\n    \"disclosure_cap\": 1,\n    \"must_remain_unclassified\": [\n      \"班主任撤回评语的完整内容\",\n      \"同桌手机上的具体内容\"\n    ],\n    \"stop_state\": {\n      \"type\": \"social_commitment\",\n      \"visible_fact\": \"乔雨说“就是条垃圾信息”，同桌回应“哦，好吧”，但眼神仍停留在乔雨的手机上。\",\n      \"what_is_now_different\": \"同桌对乔雨的回答并不完全相信，两人之间产生了一丝未言明的猜疑。\",\n      \"must_not_append\": \"不得描述同桌内心确信乔雨在撒谎。\"\n    },\n    \"final_line_must_include\": \"\"\n  },\n  \"chapter_contract_check\": {\n    \"function_aligned\": true,\n    \"must_deliver_covered\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_enabled\": true,\n    \"main_payoff_prepared\": true,\n    \"ending_hook_established\": true,\n    \"causal_transitions_grounded\": true,\n    \"reader_inference_not_pre_resolved\": true,\n    \"scene_state_reconstructed\": true,\n    \"information_sources_legal\": true,\n    \"character_choice_is_real\": true,\n    \"consequence_is_counterfactual\": true,\n    \"state_delta_is_nonempty\": true,\n    \"next_constraint_is_new\": true,\n    \"stop_state_is_visible\": true,\n    \"stop_state_changes_future_actions\": true\n  }\n}",
+    "raw_response": "{\n  \"planner_contract_version\": 2,\n  \"scene_goal\": \"乔雨发现班主任撤回的评语预览，在同桌逼近的压力下，必须决定如何处理这条不确定的信息，从而为后续与班主任的互动埋下伏笔。\",\n  \"location\": \"教室，课间\",\n  \"time\": \"上午第二节课后\",\n  \"scene_state\": {\n    \"last_completed_action\": \"乔雨在课间查看手机，发现班主任在企业微信上发来一条评语又撤回，预览显示“你这次的……”\",\n    \"present_characters\": [\"乔雨\", \"同桌（正拿着手机走来）\"],\n    \"visible_facts\": [\"乔雨手机屏幕上企业微信的撤回提示\", \"同桌正朝乔雨走来，手里拿着手机\"],\n    \"available_objects\": [\"乔雨的手机\", \"同桌的手机\"],\n    \"unresolved_problem\": \"班主任为何撤回评语？评语是正面还是负面？同桌是否看到了相关消息？\",\n    \"already_existing_constraints\": [\"不能直接询问班主任\", \"不能假装没看见撤回提示\", \"同桌正在逼近，必须立刻反应\"]\n  },\n  \"characters\": [\n    {\n      \"name\": \"乔雨\",\n      \"goal\": \"在不让同桌察觉异常的情况下，决定如何应对撤回的评语\",\n      \"known\": [\"班主任撤回了消息\", \"预览显示“你这次的……”\", \"同桌正拿着手机走过来\"],\n      \"unknown\": [\"撤回的评语完整内容\", \"班主任为何撤回\", \"同桌是否也收到了类似消息\"],\n      \"mistaken_beliefs\": [\"班主任可能正在评价她近期的表现，且可能是负面评价\"],\n      \"constraints\": [\"不能直接询问班主任\", \"不能引起同桌怀疑\", \"必须维持表面平静\"],\n      \"observed_evidence\": [\"撤回提示的预览文本“你这次的……”\", \"同桌的靠近\"],\n      \"current_interpretation\": \"这条撤回的消息可能很重要，但内容不明，同桌的到来可能与此有关，也可能无关\",\n      \"how_interpretation_drives_action\": \"她决定先收起手机，观察同桌的反应，再决定是否试探\"\n    },\n    {\n      \"name\": \"同桌\",\n      \"goal\": \"与乔雨分享手机上的内容（可能是无关的趣事，也可能是班主任的消息）\",\n      \"known\": [\"自己手机上的内容\"],\n      \"unknown\": [\"乔雨收到了班主任的撤回消息\"],\n      \"mistaken_beliefs\": [\"乔雨可能只是在发呆或看手机\"],\n      \"constraints\": [\"只是课间闲聊，没有特定任务\"],\n      \"observed_evidence\": [\"乔雨盯着手机屏幕，表情有些困惑\"],\n      \"current_interpretation\": \"乔雨在看什么有趣的东西，或者遇到了麻烦\",\n      \"how_interpretation_drives_action\": \"她加快脚步，准备把手机递给乔雨看，同时问“你在看什么？”\"\n    }\n  ],\n  \"concrete_problem\": \"乔雨必须在同桌走到面前之前，决定是收起手机假装无事发生，还是主动提起撤回消息试探同桌是否知情。\",\n  \"pressure\": \"同桌正在逼近，时间紧迫，乔雨必须立刻做出反应，否则同桌可能看到撤回提示并追问。\",\n  \"turning_point\": \"乔雨选择收起手机，但同桌已经注意到她的异常，并直接询问，迫使乔雨给出一个含糊的回答，从而种下后续误会的种子。\",\n  \"end_condition\": \"乔雨对同桌的问题给出了一个回避性的回答，同桌半信半疑，但上课铃响起，对话中断。\",\n  \"forbidden\": [\n    \"直接揭示班主任撤回评语的完整内容\",\n    \"让同桌明确知道乔雨收到了撤回消息\",\n    \"乔雨主动联系班主任询问\",\n    \"消耗班主任与乔雨之间的核心误会\",\n    \"让同桌完全相信乔雨的回答\"\n  ],\n  \"causal_transitions\": [\n    {\n      \"id\": \"CT01\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"同桌拿着手机快步走近，并问“你在看什么？”\",\n      \"character_interpretation\": \"乔雨认为同桌可能看到了她的手机屏幕，或者察觉到了她的异常，如果直接回答在看撤回消息，同桌可能会追问或传播。\",\n      \"character_next_action\": \"乔雨迅速将手机屏幕转向自己，并说“没什么，就是条垃圾信息。”\",\n      \"rejected_alternative\": \"她本可以反问同桌“你找我什么事？”来转移话题，但那样可能显得更可疑。\",\n      \"immediate_consequence\": \"同桌虽然没看到撤回提示，但注意到了乔雨快速藏手机的动作，心生一丝怀疑。\",\n      \"counterfactual_without_action\": \"如果乔雨不藏手机，同桌可能会看到撤回提示，直接问“班主任撤回了什么？”，导致乔雨无法回避。\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"乔雨手机屏幕朝上，撤回提示可见；同桌未起疑。\",\n        \"after\": \"乔雨手机屏幕朝下，撤回提示被隐藏；同桌开始怀疑乔雨在隐瞒什么。\"\n      },\n      \"cost_or_commitment\": \"乔雨牺牲了坦诚的机会，并让自己显得更加可疑。\",\n      \"next_constraint\": \"同桌对乔雨的回答不完全相信，未来可能会更留意乔雨与班主任的互动。\",\n      \"reader_must_infer\": \"同桌的怀疑可能在未来某个时刻被触发，导致对乔雨的误解加深。\",\n      \"narrator_must_not_state\": [\n        \"同桌已经猜到班主任撤回消息的事\",\n        \"乔雨的回答完美地打消了同桌的疑虑\"\n      ]\n    }\n  ],\n  \"tempo_guardrails\": {\n    \"entry_pressure\": \"同桌正拿着手机朝乔雨走来，距离缩短至两排座位\",\n    \"dominant_pressure\": {\n      \"kind\": \"social_friction\",\n      \"description\": \"同桌的逼近迫使乔雨必须在社交伪装和坦诚之间做出选择，而任何选择都可能引发后续的误解。\"\n    },\n    \"allowed_viewpoint_misread\": \"同桌可能把乔雨藏手机的动作理解为她在隐瞒一个秘密，而不是单纯的隐私保护。\",\n    \"disclosure_cap\": 1,\n    \"must_remain_unclassified\": [\n      \"班主任撤回评语的完整内容\",\n      \"同桌手机上的具体内容\"\n    ],\n    \"stop_state\": {\n      \"type\": \"social_commitment\",\n      \"visible_fact\": \"乔雨说“就是条垃圾信息”，同桌回应“哦，好吧”，但眼神仍停留在乔雨的手机上。\",\n      \"what_is_now_different\": \"同桌对乔雨的回答并不完全相信，两人之间产生了一丝未言明的猜疑。\",\n      \"must_not_append\": \"不得描述同桌内心确信乔雨在撒谎。\"\n    },\n    \"final_line_must_include\": \"\"\n  },\n  \"chapter_contract_check\": {\n    \"function_aligned\": true,\n    \"must_deliver_covered\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_enabled\": true,\n    \"main_payoff_prepared\": true,\n    \"ending_hook_established\": true,\n    \"causal_transitions_grounded\": true,\n    \"reader_inference_not_pre_resolved\": true,\n    \"scene_state_reconstructed\": true,\n    \"information_sources_legal\": true,\n    \"character_choice_is_real\": true,\n    \"consequence_is_counterfactual\": true,\n    \"state_delta_is_nonempty\": true,\n    \"next_constraint_is_new\": true,\n    \"stop_state_is_visible\": true,\n    \"stop_state_changes_future_actions\": true\n  }\n}",
+    "input_tokens": 3310,
+    "output_tokens": 1653,
+    "latency_ms": 23395,
+    "finish_reason": "stop",
+    "error_code": null,
+    "error_message": null,
+    "rendered_user_prompt_sha256": "9ffef1c3ed2422b403f0fd2ebde80afc2f4429277071a9a40b522a13aebca609"
+  },
+  "drafts": [
+    {
+      "group": "ROUTE-ALITE_VS_A",
+      "replica": 1,
+      "mode": "narrative_route",
+      "candidate_id": "5a1a8529-c3a4-498e-a963-75cc22a135c3",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "B_SHORT_RELATION",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "scene is relationship-oriented with no physical urgency",
+            "character action involves relational move (message, gesture, proximity)"
+          ],
+          "matched_rules": [
+            "RULE_B_SHORT_RELATION"
+          ],
+          "rejected_routes": [
+            "C_OBJECT_CAUSAL",
+            "A_LITE_INFORMATION_GAP"
+          ]
+        },
+        "compiled_brief_hash": "eb73e83b6a81fcfe334674ad719988328e35dffe48aa20e7bae3e86d2568bd83",
+        "instruction_hash": "d7a76822408396dc71c4599a7f40f33368b90199f0d9c0712383961213437555",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "乔雨低头盯着手机屏幕，那条灰色的撤回提示还挂在对话框里——“班主任”撤回了一条消息。\n\n预览栏里只残留四个字：你这次的……\n\n她的拇指悬在屏幕上方，还没想好要不要往上滑。\n\n脚步声近了。\n\n乔雨抬头，同桌正从教室后门方向走过来，手里拿着手机，屏幕亮着，脚步不快不慢。两排座位，一排，然后是她的桌沿。\n\n乔雨手腕一翻，把手机屏幕扣向自己胸口。动作不大，但快。\n\n同桌在她旁边站住，下巴朝她手机方向抬了抬：“怎么了？”\n\n“没什么，”乔雨把手机翻了个面，屏幕朝下搁在桌面上，“就是条垃圾信息。”\n\n同桌没坐下，手指还在自己手机侧边敲了一下。她的视线从乔雨的脸移到桌面上那部扣着的手机，停了一秒。\n\n“哦，”她说，“好吧。”\n\n但她没走。眼神还落在乔雨的手机上。",
+      "raw_response": "乔雨低头盯着手机屏幕，那条灰色的撤回提示还挂在对话框里——“班主任”撤回了一条消息。\n\n预览栏里只残留四个字：你这次的……\n\n她的拇指悬在屏幕上方，还没想好要不要往上滑。\n\n脚步声近了。\n\n乔雨抬头，同桌正从教室后门方向走过来，手里拿着手机，屏幕亮着，脚步不快不慢。两排座位，一排，然后是她的桌沿。\n\n乔雨手腕一翻，把手机屏幕扣向自己胸口。动作不大，但快。\n\n同桌在她旁边站住，下巴朝她手机方向抬了抬：“怎么了？”\n\n“没什么，”乔雨把手机翻了个面，屏幕朝下搁在桌面上，“就是条垃圾信息。”\n\n同桌没坐下，手指还在自己手机侧边敲了一下。她的视线从乔雨的脸移到桌面上那部扣着的手机，停了一秒。\n\n“哦，”她说，“好吧。”\n\n但她没走。眼神还落在乔雨的手机上。",
+      "input_tokens": 1272,
+      "output_tokens": 199,
+      "latency_ms": 7222,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "9b6ed6a4644f0fae38da9f885dbc2e538d13d8eeba7e04322c7cb528a7d4e194",
+      "text_path": "cases\\AL-01\\drafts\\route-1.txt"
+    },
+    {
+      "group": "BASELINE-ALITE_VS_A",
+      "replica": 1,
+      "mode": "complete_planner",
+      "candidate_id": "77f05a32-0158-47a9-a9da-c8c777e7f9f0",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "乔雨盯着手机屏幕，企业微信的撤回提示还挂在对话框里，预览那一栏只有四个字：“你这次的……”\n\n后面就没了。\n\n她拇指悬在屏幕上方，没动。班主任的头像是学校统一要求的那种半身证件照，蓝底白衬衫，表情永远介于严肃和疲惫之间。乔雨试着回想自己最近做了什么值得班主任课间发消息的事——作业交了，课上没说话，昨天的值日也做了。她甚至把手机往眼前凑了凑，好像凑近一点就能从撤回提示的灰色小字里看出什么来。\n\n“哎——”\n\n乔雨抬头。\n\n同桌正从教室前门的方向走过来，绕过两排课桌，手里举着手机，屏幕亮着，脸上带着那种“你绝对要看一下这个”的表情。她走得很快，帆布鞋踩在水磨石地面上发出细碎的摩擦声，距离乔雨的课桌只剩下三四步。\n\n乔雨的手指比脑子先动了。\n\n她右手拇指按下锁屏键，屏幕一黑。手机在她掌心里翻了个面，屏幕朝下扣在课桌上，边沿轻轻磕在笔袋上，发出一声极小的闷响。\n\n同桌已经走到跟前，一屁股坐进自己的椅子，身体侧过来，把手机往乔雨这边递。她的视线扫过乔雨扣在桌上的手机，又在乔雨脸上停了一秒。\n\n“你在看什么？”\n\n乔雨把手从手机上拿开，搁在桌沿，指尖碰着冰凉的金属桌边。她让自己的声音听起来像是这件事不值一提。\n\n“没什么，就是条垃圾信息。”\n\n同桌没有立刻把手机递过来。她的眼睛还停在乔雨的手机上，那个屏幕朝下的姿势本身就说明了一些东西——正常人课间看手机不会突然扣过来，除非看到了什么不想让别人看的东西。\n\n乔雨注意到了她的视线。她没有把手机翻过来，也没有解释为什么一条“垃圾信息”需要被扣在桌上。\n\n同桌的嘴角动了一下，像是要说什么，但最后只是把目光收回来，把自己的手机往乔雨面前推了推：“你看这个，物理课代表在群里发的。”\n\n乔雨低头看同桌的手机屏幕，上面是班级群聊的界面，物理课代表发了一张图，下面跟着几串“哈哈哈哈哈”。她笑了一下，但那声笑慢了半拍。\n\n同桌说：“哦，好吧。”\n\n声音不大，尾音往下掉了一点。她把手肘支在课桌上，下巴搁在掌心里，眼睛看着自己的手机屏幕，但余光还挂在乔雨扣着的那部手机上。\n\n乔雨没有去动自己的手机。她的指尖在桌沿上轻轻摁了一下，指腹压出一道浅浅的白印。",
+      "raw_response": "乔雨盯着手机屏幕，企业微信的撤回提示还挂在对话框里，预览那一栏只有四个字：“你这次的……”\n\n后面就没了。\n\n她拇指悬在屏幕上方，没动。班主任的头像是学校统一要求的那种半身证件照，蓝底白衬衫，表情永远介于严肃和疲惫之间。乔雨试着回想自己最近做了什么值得班主任课间发消息的事——作业交了，课上没说话，昨天的值日也做了。她甚至把手机往眼前凑了凑，好像凑近一点就能从撤回提示的灰色小字里看出什么来。\n\n“哎——”\n\n乔雨抬头。\n\n同桌正从教室前门的方向走过来，绕过两排课桌，手里举着手机，屏幕亮着，脸上带着那种“你绝对要看一下这个”的表情。她走得很快，帆布鞋踩在水磨石地面上发出细碎的摩擦声，距离乔雨的课桌只剩下三四步。\n\n乔雨的手指比脑子先动了。\n\n她右手拇指按下锁屏键，屏幕一黑。手机在她掌心里翻了个面，屏幕朝下扣在课桌上，边沿轻轻磕在笔袋上，发出一声极小的闷响。\n\n同桌已经走到跟前，一屁股坐进自己的椅子，身体侧过来，把手机往乔雨这边递。她的视线扫过乔雨扣在桌上的手机，又在乔雨脸上停了一秒。\n\n“你在看什么？”\n\n乔雨把手从手机上拿开，搁在桌沿，指尖碰着冰凉的金属桌边。她让自己的声音听起来像是这件事不值一提。\n\n“没什么，就是条垃圾信息。”\n\n同桌没有立刻把手机递过来。她的眼睛还停在乔雨的手机上，那个屏幕朝下的姿势本身就说明了一些东西——正常人课间看手机不会突然扣过来，除非看到了什么不想让别人看的东西。\n\n乔雨注意到了她的视线。她没有把手机翻过来，也没有解释为什么一条“垃圾信息”需要被扣在桌上。\n\n同桌的嘴角动了一下，像是要说什么，但最后只是把目光收回来，把自己的手机往乔雨面前推了推：“你看这个，物理课代表在群里发的。”\n\n乔雨低头看同桌的手机屏幕，上面是班级群聊的界面，物理课代表发了一张图，下面跟着几串“哈哈哈哈哈”。她笑了一下，但那声笑慢了半拍。\n\n同桌说：“哦，好吧。”\n\n声音不大，尾音往下掉了一点。她把手肘支在课桌上，下巴搁在掌心里，眼睛看着自己的手机屏幕，但余光还挂在乔雨扣着的那部手机上。\n\n乔雨没有去动自己的手机。她的指尖在桌沿上轻轻摁了一下，指腹压出一道浅浅的白印。",
+      "input_tokens": 2504,
+      "output_tokens": 554,
+      "latency_ms": 14706,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "0d2a5b48de719ce6d5b356c5ea9624ffdb8a3b456bede033c092a5f7327ade4d",
+      "text_path": "cases\\AL-01\\drafts\\baseline-1.txt"
+    },
+    {
+      "group": "ROUTE-ALITE_VS_A",
+      "replica": 2,
+      "mode": "narrative_route",
+      "candidate_id": "20066e97-6e1d-4df0-932b-ac2edfd13242",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "B_SHORT_RELATION",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "scene is relationship-oriented with no physical urgency",
+            "character action involves relational move (message, gesture, proximity)"
+          ],
+          "matched_rules": [
+            "RULE_B_SHORT_RELATION"
+          ],
+          "rejected_routes": [
+            "C_OBJECT_CAUSAL",
+            "A_LITE_INFORMATION_GAP"
+          ]
+        },
+        "compiled_brief_hash": "eb73e83b6a81fcfe334674ad719988328e35dffe48aa20e7bae3e86d2568bd83",
+        "instruction_hash": "d7a76822408396dc71c4599a7f40f33368b90199f0d9c0712383961213437555",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "乔雨盯着手机屏幕，企业微信那条灰色的撤回提示还挂在对话框里。\n\n“你这次的……”\n\n后面就没了。\n\n班主任的头像安静地待在左上角，没有再发任何东西。乔雨的拇指悬在屏幕上方，犹豫着要不要问一句“老师您刚才发了什么”——但撤回本身就是个信号，班主任不想让她看见。\n\n她正盯着那四个字发呆，余光里有个影子从左边压过来。\n\n同桌。\n\n乔雨抬起头，同桌正从两排座位之外朝她走来，手里攥着手机，屏幕亮着，界面是企业微信的聊天列表。乔雨的目光在那屏幕上扫了一眼——班主任的对话框排在最上面，最后一条消息的状态也是“已撤回”。\n\n同桌走到她桌边，把手机往前一递：“哎，班主任刚才给我发了条——”\n\n乔雨的拇指已经按在了电源键上。\n\n屏幕黑了。\n\n她顺势把手机翻了个面扣在桌上，动作快得像只是随手放了个东西。她抬起头，表情是那种被推销电话打断的轻微不耐烦：“没什么，就是条垃圾信息。”\n\n同桌的嘴还张着，话被堵在半截。\n\n她看着乔雨扣在桌上的手机，又看了看乔雨的脸。乔雨的右手还压在手机背面，指节微微发白。\n\n“哦，”同桌说，“好吧。”\n\n但她的眼神没走，还停在乔雨的手机上。",
+      "raw_response": "乔雨盯着手机屏幕，企业微信那条灰色的撤回提示还挂在对话框里。\n\n“你这次的……”\n\n后面就没了。\n\n班主任的头像安静地待在左上角，没有再发任何东西。乔雨的拇指悬在屏幕上方，犹豫着要不要问一句“老师您刚才发了什么”——但撤回本身就是个信号，班主任不想让她看见。\n\n她正盯着那四个字发呆，余光里有个影子从左边压过来。\n\n同桌。\n\n乔雨抬起头，同桌正从两排座位之外朝她走来，手里攥着手机，屏幕亮着，界面是企业微信的聊天列表。乔雨的目光在那屏幕上扫了一眼——班主任的对话框排在最上面，最后一条消息的状态也是“已撤回”。\n\n同桌走到她桌边，把手机往前一递：“哎，班主任刚才给我发了条——”\n\n乔雨的拇指已经按在了电源键上。\n\n屏幕黑了。\n\n她顺势把手机翻了个面扣在桌上，动作快得像只是随手放了个东西。她抬起头，表情是那种被推销电话打断的轻微不耐烦：“没什么，就是条垃圾信息。”\n\n同桌的嘴还张着，话被堵在半截。\n\n她看着乔雨扣在桌上的手机，又看了看乔雨的脸。乔雨的右手还压在手机背面，指节微微发白。\n\n“哦，”同桌说，“好吧。”\n\n但她的眼神没走，还停在乔雨的手机上。",
+      "input_tokens": 1272,
+      "output_tokens": 281,
+      "latency_ms": 9663,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "9b6ed6a4644f0fae38da9f885dbc2e538d13d8eeba7e04322c7cb528a7d4e194",
+      "text_path": "cases\\AL-01\\drafts\\route-2.txt"
+    },
+    {
+      "group": "BASELINE-ALITE_VS_A",
+      "replica": 2,
+      "mode": "complete_planner",
+      "candidate_id": "551e2105-caee-4eb8-bde5-22469f19d43e",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "乔雨盯着手机屏幕，企业微信的撤回提示还挂在对话框里。预览栏里四个字——“你这次的”——后面就是一片空白。\n\n她拇指悬在屏幕上方，没动。\n\n班主任从来不在课间发消息。\n\n乔雨余光扫到左边。同桌正从两排座位外走过来，手里举着手机，屏幕亮着，步子比平时快。\n\n乔雨把手机翻了个面，屏幕朝下扣在桌面上。\n\n同桌已经走到跟前，一屁股坐进自己座位，手机直接伸过来：“你看这个，笑死我了——”\n\n她话说到一半，眼睛落在乔雨扣着的手机上，又看了看乔雨的脸。\n\n“你在看什么？”\n\n乔雨把手机往课本下面推了推。“没什么。”\n\n同桌的视线跟着那只手机移动，眉头微微动了一下。\n\n“就是条垃圾信息。”乔雨说。\n\n“哦。”同桌把手收回去，手机搁在自己桌面上，屏幕还亮着，但她没再递过来。\n\n“好吧。”她说。\n\n乔雨把手从手机上移开，翻开桌上的课本。同桌解锁了自己的手机，拇指划了两下屏幕，但眼睛又瞥了一眼乔雨桌上那部扣着的手机。\n\n上课铃响了。",
+      "raw_response": "乔雨盯着手机屏幕，企业微信的撤回提示还挂在对话框里。预览栏里四个字——“你这次的”——后面就是一片空白。\n\n她拇指悬在屏幕上方，没动。\n\n班主任从来不在课间发消息。\n\n乔雨余光扫到左边。同桌正从两排座位外走过来，手里举着手机，屏幕亮着，步子比平时快。\n\n乔雨把手机翻了个面，屏幕朝下扣在桌面上。\n\n同桌已经走到跟前，一屁股坐进自己座位，手机直接伸过来：“你看这个，笑死我了——”\n\n她话说到一半，眼睛落在乔雨扣着的手机上，又看了看乔雨的脸。\n\n“你在看什么？”\n\n乔雨把手机往课本下面推了推。“没什么。”\n\n同桌的视线跟着那只手机移动，眉头微微动了一下。\n\n“就是条垃圾信息。”乔雨说。\n\n“哦。”同桌把手收回去，手机搁在自己桌面上，屏幕还亮着，但她没再递过来。\n\n“好吧。”她说。\n\n乔雨把手从手机上移开，翻开桌上的课本。同桌解锁了自己的手机，拇指划了两下屏幕，但眼睛又瞥了一眼乔雨桌上那部扣着的手机。\n\n上课铃响了。",
+      "input_tokens": 2504,
+      "output_tokens": 249,
+      "latency_ms": 8785,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "0d2a5b48de719ce6d5b356c5ea9624ffdb8a3b456bede033c092a5f7327ade4d",
+      "text_path": "cases\\AL-01\\drafts\\baseline-2.txt"
+    },
+    {
+      "group": "ROUTE-ALITE_VS_A",
+      "replica": 3,
+      "mode": "narrative_route",
+      "candidate_id": "2b4b5691-386a-4af6-8f39-d59b447b6682",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "B_SHORT_RELATION",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "scene is relationship-oriented with no physical urgency",
+            "character action involves relational move (message, gesture, proximity)"
+          ],
+          "matched_rules": [
+            "RULE_B_SHORT_RELATION"
+          ],
+          "rejected_routes": [
+            "C_OBJECT_CAUSAL",
+            "A_LITE_INFORMATION_GAP"
+          ]
+        },
+        "compiled_brief_hash": "eb73e83b6a81fcfe334674ad719988328e35dffe48aa20e7bae3e86d2568bd83",
+        "instruction_hash": "d7a76822408396dc71c4599a7f40f33368b90199f0d9c0712383961213437555",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "乔雨盯着手机屏幕上的“对方撤回了一条消息”，手指僵在课桌边缘。\n\n预览那一栏只剩四个字——“你这次的……”\n\n她下意识把屏幕往胸口方向按了按。\n\n余光里，同桌林知意正从教室后门走过来，手里攥着手机，步子不快，但方向明确。两排、一排半——乔雨能看见她运动鞋鞋带没系好，拖在瓷砖地面上。\n\n“哎，乔雨——”\n\n林知意的声音传过来的时候，乔雨已经用拇指把屏幕按灭，手机翻了个面，屏幕朝下贴在桌面上。\n\n“怎么了？”乔雨抬起头。\n\n林知意在她旁边坐下，把手机搁在两人中间的那摞课本旁边，屏幕亮着，上面是班级群聊界面。\n\n“你刚才看什么呢？表情跟见了鬼似的。”\n\n乔雨把手机往自己这边挪了半寸，笑了一下：“没什么，就是条垃圾信息。”\n\n她说这话的时候，手指还压在手机背面，指节因为用力有点发白。\n\n林知意的视线从乔雨脸上移到那只手上，停了一秒。\n\n“哦。”她说，“好吧。”\n\n但她没把手机收起来，也没转回去。她的眼睛还落在乔雨压着手机的那只手上面，像在等什么东西自己翻过来。",
+      "raw_response": "乔雨盯着手机屏幕上的“对方撤回了一条消息”，手指僵在课桌边缘。\n\n预览那一栏只剩四个字——“你这次的……”\n\n她下意识把屏幕往胸口方向按了按。\n\n余光里，同桌林知意正从教室后门走过来，手里攥着手机，步子不快，但方向明确。两排、一排半——乔雨能看见她运动鞋鞋带没系好，拖在瓷砖地面上。\n\n“哎，乔雨——”\n\n林知意的声音传过来的时候，乔雨已经用拇指把屏幕按灭，手机翻了个面，屏幕朝下贴在桌面上。\n\n“怎么了？”乔雨抬起头。\n\n林知意在她旁边坐下，把手机搁在两人中间的那摞课本旁边，屏幕亮着，上面是班级群聊界面。\n\n“你刚才看什么呢？表情跟见了鬼似的。”\n\n乔雨把手机往自己这边挪了半寸，笑了一下：“没什么，就是条垃圾信息。”\n\n她说这话的时候，手指还压在手机背面，指节因为用力有点发白。\n\n林知意的视线从乔雨脸上移到那只手上，停了一秒。\n\n“哦。”她说，“好吧。”\n\n但她没把手机收起来，也没转回去。她的眼睛还落在乔雨压着手机的那只手上面，像在等什么东西自己翻过来。",
+      "input_tokens": 1272,
+      "output_tokens": 270,
+      "latency_ms": 9054,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "9b6ed6a4644f0fae38da9f885dbc2e538d13d8eeba7e04322c7cb528a7d4e194",
+      "text_path": "cases\\AL-01\\drafts\\route-3.txt"
+    },
+    {
+      "group": "BASELINE-ALITE_VS_A",
+      "replica": 3,
+      "mode": "complete_planner",
+      "candidate_id": "be394bda-d595-4850-b616-a6e72e502f35",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "乔雨盯着手机屏幕，企业微信对话框里那条灰色的“对方撤回了一条消息”刺眼得很，上面紧挨着预览小字——“你这次的……”\n\n就这四个字。\n\n她拇指悬在屏幕上方，脑子里飞快地转。班主任几乎不在企业微信上单独找她，更别说发了又撤。是发错了？还是措辞不妥？还是——她这次月考的成绩出了什么问题？\n\n走廊那边传来脚步声，踩在瓷砖上，轻快又熟悉。\n\n乔雨抬眼，同桌正从教室后门绕过来，手里举着手机，屏幕亮着，嘴角挂着那种“你肯定想看这个”的笑。两人之间隔着两排空桌子，同桌的视线扫过来，正好落在乔雨脸上，然后往下移，朝她手里的屏幕瞟了一眼。\n\n“你在看什么？”同桌脚步没停，声音不大不小，刚好够乔雨听清。\n\n乔雨的手指比脑子先动。右手拇指按住电源键，屏幕一黑，手机顺势翻了个面扣在桌面上，塑料壳磕在木桌面上发出一声轻响。她抬起头，嘴角扯出一个弧度，说：“没什么，就是条垃圾信息。”\n\n话出口的同时她意识到自己动作太快了。\n\n同桌已经走到桌边，手里的手机还举着，但眼神没跟上。她的目光停在乔雨扣过来的手机上，停了一秒，然后才抬起来看乔雨的脸。\n\n“垃圾信息？”同桌的语气往上扬了一点，像在重复，又像在确认。\n\n“嗯，”乔雨点头，左手自然地搭在手机背面，指尖按住冰凉的壳子边缘，“推销的，说什么我中了奖。”\n\n同桌“哦”了一声，在旁边的椅子上坐下来，胳膊肘撑在桌面上，把自己手机往乔雨这边推了推。“你看这个，三班那个王雨辰，刚才在走廊上——”她话说了一半，眼睛又瞟了乔雨的手一眼。\n\n乔雨没动手机。她侧过身看同桌的屏幕，是一个短视频，有人在走廊上滑了一跤。她配合地笑了一声，说：“摔得够实在的。”\n\n同桌也笑，但笑声短了半拍。她收回手机，拇指在屏幕上划了一下，换了个视频，嘴里说：“还有个更搞笑的。”\n\n上课铃响了。\n\n同桌的动作停住，看了一眼门口，又看了一眼乔雨扣着的手机，嘴唇动了动，最后只是站起来说：“下节课再给你看。”\n\n“行。”乔雨把手机翻过来，快速塞进桌斗里，屏幕朝下，从头到尾没再亮过。",
+      "raw_response": "乔雨盯着手机屏幕，企业微信对话框里那条灰色的“对方撤回了一条消息”刺眼得很，上面紧挨着预览小字——“你这次的……”\n\n就这四个字。\n\n她拇指悬在屏幕上方，脑子里飞快地转。班主任几乎不在企业微信上单独找她，更别说发了又撤。是发错了？还是措辞不妥？还是——她这次月考的成绩出了什么问题？\n\n走廊那边传来脚步声，踩在瓷砖上，轻快又熟悉。\n\n乔雨抬眼，同桌正从教室后门绕过来，手里举着手机，屏幕亮着，嘴角挂着那种“你肯定想看这个”的笑。两人之间隔着两排空桌子，同桌的视线扫过来，正好落在乔雨脸上，然后往下移，朝她手里的屏幕瞟了一眼。\n\n“你在看什么？”同桌脚步没停，声音不大不小，刚好够乔雨听清。\n\n乔雨的手指比脑子先动。右手拇指按住电源键，屏幕一黑，手机顺势翻了个面扣在桌面上，塑料壳磕在木桌面上发出一声轻响。她抬起头，嘴角扯出一个弧度，说：“没什么，就是条垃圾信息。”\n\n话出口的同时她意识到自己动作太快了。\n\n同桌已经走到桌边，手里的手机还举着，但眼神没跟上。她的目光停在乔雨扣过来的手机上，停了一秒，然后才抬起来看乔雨的脸。\n\n“垃圾信息？”同桌的语气往上扬了一点，像在重复，又像在确认。\n\n“嗯，”乔雨点头，左手自然地搭在手机背面，指尖按住冰凉的壳子边缘，“推销的，说什么我中了奖。”\n\n同桌“哦”了一声，在旁边的椅子上坐下来，胳膊肘撑在桌面上，把自己手机往乔雨这边推了推。“你看这个，三班那个王雨辰，刚才在走廊上——”她话说了一半，眼睛又瞟了乔雨的手一眼。\n\n乔雨没动手机。她侧过身看同桌的屏幕，是一个短视频，有人在走廊上滑了一跤。她配合地笑了一声，说：“摔得够实在的。”\n\n同桌也笑，但笑声短了半拍。她收回手机，拇指在屏幕上划了一下，换了个视频，嘴里说：“还有个更搞笑的。”\n\n上课铃响了。\n\n同桌的动作停住，看了一眼门口，又看了一眼乔雨扣着的手机，嘴唇动了动，最后只是站起来说：“下节课再给你看。”\n\n“行。”乔雨把手机翻过来，快速塞进桌斗里，屏幕朝下，从头到尾没再亮过。",
+      "input_tokens": 2504,
+      "output_tokens": 529,
+      "latency_ms": 15379,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "0d2a5b48de719ce6d5b356c5ea9624ffdb8a3b456bede033c092a5f7327ade4d",
+      "text_path": "cases\\AL-01\\drafts\\baseline-3.txt"
+    }
+  ],
+  "actual_route": "B_SHORT_RELATION",
+  "route_decision": {
+    "route_name": "B_SHORT_RELATION",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "scene is relationship-oriented with no physical urgency",
+      "character action involves relational move (message, gesture, proximity)"
+    ],
+    "matched_rules": [
+      "RULE_B_SHORT_RELATION"
+    ],
+    "rejected_routes": [
+      "C_OBJECT_CAUSAL",
+      "A_LITE_INFORMATION_GAP"
+    ]
+  }
+}

@@ -1,0 +1,260 @@
+{
+  "case_id": "CO-03",
+  "category": "城市日常",
+  "title": "咖啡店错拿的杯子",
+  "group": "COBJECT_VS_A",
+  "run_id": "8e82d56e-c9eb-4d5e-a35d-9c5db5fa104b",
+  "planner": {
+    "candidate_id": "b86e7860-8730-4346-b801-0249d1835d55",
+    "attempt_number": 1,
+    "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+    "model_id": "deepseek-v4-pro",
+    "prompt_version_id": "f9052f8a-dc4e-5408-b14e-fc1badaf57f8",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 12288,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "json_object"
+    },
+    "text_output": "{\n  \"planner_contract_version\": 2,\n  \"scene_goal\": \"方可发现自己的杯子被错拿，必须在不直接追讨或忍气吞声的情况下，用柜台上的物件发出信号，纠正杯子归属。\",\n  \"location\": \"咖啡店柜台及门口区域\",\n  \"time\": \"工作日下午，店内人流适中\",\n  \"scene_state\": {\n    \"last_completed_action\": \"方可刚用纸巾擦过马克杯杯沿，转身去拿糖包，回来发现杯子被邻座女生端走，女生正走向门口。\",\n    \"present_characters\": [\"方可\", \"邻座女生\", \"咖啡师\", \"其他顾客\"],\n    \"visible_facts\": [\n      \"方可的马克杯被邻座女生拿在手中，杯沿有纸巾擦拭痕迹\",\n      \"柜台上有咖啡师刚放下的另一杯外带杯，杯身标签写有女生名字\",\n      \"女生正走向门口，尚未出门\",\n      \"方可手中还拿着糖包\"\n    ],\n    \"available_objects\": [\"方可的马克杯（在女生手中）\", \"柜台上的外带杯（标签有女生名字）\", \"糖包\", \"纸巾\", \"柜台上的叫号牌\", \"柜台上的笔\"],\n    \"unresolved_problem\": \"方可的杯子归属权尚未被纠正，女生即将离开咖啡店。\",\n    \"already_existing_constraints\": [\n      \"方可不能追上去直接说'那是我的杯'，因为会显得过于计较或引发尴尬\",\n      \"方可不能忍了重新买，因为必须纠正错误\",\n      \"必须在女生出门前行动\"\n    ]\n  },\n  \"characters\": [\n    {\n      \"name\": \"方可\",\n      \"goal\": \"让邻座女生意识到拿错杯子并归还，同时避免直接冲突或尴尬\",\n      \"known\": [\n        \"自己的杯子有纸巾擦拭痕迹\",\n        \"邻座女生拿了自己的杯子\",\n        \"柜台上有女生的外带杯\"\n      ],\n      \"unknown\": [\n        \"女生拿错杯子的原因（是否无意）\",\n        \"女生是否会注意到信号并归还\"\n      ],\n      \"mistaken_beliefs\": [\n        \"女生可能故意拿错或粗心大意\"\n      ],\n      \"constraints\": [\n        \"不能追上去直接说'那是我的杯'\",\n        \"不能忍了重新买\",\n        \"必须用柜台上的物件发出信号\"\n      ],\n      \"observed_evidence\": [\n        \"女生手中的杯子杯沿有自己擦过的痕迹\",\n        \"柜台上的外带杯标签写着女生的名字\",\n        \"女生正走向门口，步伐不快\"\n      ],\n      \"current_interpretation\": \"女生拿错了杯子，但她可能没注意到标签或杯沿痕迹，用她的杯子作为信号能让她意识到错误。\",\n      \"how_interpretation_drives_action\": \"方可拿起柜台上的外带杯，快步走向女生，以递杯子的自然动作阻止她离开，同时用杯身标签暗示她的错误。\"\n    },\n    {\n      \"name\": \"邻座女生\",\n      \"goal\": \"离开咖啡店\",\n      \"known\": [\n        \"自己点了一杯外带咖啡\",\n        \"以为手中的杯子是自己的\"\n      ],\n      \"unknown\": [\n        \"手中杯子的真正主人\",\n        \"方可的意图\"\n      ],\n      \"mistaken_beliefs\": [\n        \"手中的杯子就是自己的外带杯\"\n      ],\n      \"constraints\": [\n        \"不能表现出故意拿错\",\n        \"在公共场合需保持礼貌\"\n      ],\n      \"observed_evidence\": [\n        \"方可快步走近并递来一个杯子\"\n      ],\n      \"current_interpretation\": \"方可可能是在给她送落下的东西，或者有别的意图。\",\n      \"how_interpretation_drives_action\": \"女生停下脚步，接过杯子查看，对比手中杯子，从而发现拿错。\"\n    }\n  ],\n  \"concrete_problem\": \"方可如何在不直接追讨的情况下，用柜台上的物件（女生的外带杯）发出信号，让女生意识到拿错杯子并归还？\",\n  \"pressure\": \"女生即将走出店门，时间紧迫，方可必须立即行动。\",\n  \"turning_point\": \"方可拿起柜台上的外带杯，快步走向女生，将杯子递给她并说'你的杯子'，女生对比后意识到错误，归还方可的杯子。\",\n  \"end_condition\": \"女生归还了方可的马克杯，方可拿回自己的杯子，女生拿着自己的外带杯离开或留下。\",\n  \"forbidden\": [\n    \"方可追上去直接说'那是我的杯'\",\n    \"方可忍气吞声重新买一杯\",\n    \"使用柜台物件以外的信号方式（如喊叫、肢体接触）\"\n  ],\n  \"causal_transitions\": [\n    {\n      \"id\": \"CT01\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"方可看到柜台上的外带杯标签写着女生的名字，同时女生手中的杯子有自己擦过的痕迹。\",\n      \"character_interpretation\": \"方可推断那个外带杯是女生的，用女生的杯子作为信号能让她意识到拿错。\",\n      \"character_next_action\": \"方可拿起柜台上的外带杯，快步走向女生，将杯子递给她。\",\n      \"rejected_alternative\": \"方可本可以大声喊住女生，但那样会引发周围注意，违反约束。\",\n      \"immediate_consequence\": \"女生停下脚步，接过外带杯，对比后发现手中的杯子不是自己的，将方可的杯子归还。\",\n      \"counterfactual_without_action\": \"如果方可不行动，女生会带着方可的杯子离开咖啡店，方可的杯子归属无法纠正。\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"女生拿着方可的杯子走向门口，方可的杯子归属错误。\",\n        \"after\": \"女生归还杯子，方可拿回自己的杯子，女生拿到自己的外带杯。\"\n      },\n      \"cost_or_commitment\": \"方可主动接近女生，承担了可能被拒绝或引发短暂尴尬的风险。\",\n      \"next_constraint\": \"方可必须在递杯子时保持自然语气，避免指责意味。\",\n      \"reader_must_infer\": \"方可如何通过杯身标签的暗示让女生明白拿错，而无需直接说明。\",\n      \"narrator_must_not_state\": [\n        \"方可内心对女生的真实评价\",\n        \"女生是否故意拿错\"\n      ]\n    }\n  ],\n  \"tempo_guardrails\": {\n    \"entry_pressure\": \"女生正拿着方可的杯子走向门口，即将离开。\",\n    \"dominant_pressure\": {\n      \"kind\": \"resource_constraint\",\n      \"description\": \"时间紧迫，女生即将出门，方可必须在有限时间内用柜台物件发出信号。\"\n    },\n    \"allowed_viewpoint_misread\": \"女生可能将方可递杯子的动作误解为殷勤或推销，而非纠正错误。\",\n    \"disclosure_cap\": 0,\n    \"must_remain_unclassified\": [\n      \"女生拿错杯子的真实心理状态\",\n      \"方可对女生的主观感受\"\n    ],\n    \"stop_state\": {\n      \"type\": \"physical_change\",\n      \"visible_fact\": \"女生手中的杯子换成了自己的外带杯，方可的马克杯回到了方可手中。\",\n      \"what_is_now_different\": \"杯子归属被纠正，方可拿回了自己的杯子，女生拿到了自己的杯子。\",\n      \"must_not_append\": \"不得描述女生道歉或方可释怀的心理活动，只呈现事实。\"\n    },\n    \"final_line_must_include\": \"\"\n  },\n  \"chapter_contract_check\": {\n    \"function_aligned\": true,\n    \"must_deliver_covered\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_enabled\": true,\n    \"main_payoff_prepared\": true,\n    \"ending_hook_established\": true,\n    \"causal_transitions_grounded\": true,\n    \"reader_inference_not_pre_resolved\": true,\n    \"scene_state_reconstructed\": true,\n    \"information_sources_legal\": true,\n    \"character_choice_is_real\": true,\n    \"consequence_is_counterfactual\": true,\n    \"state_delta_is_nonempty\": true,\n    \"next_constraint_is_new\": true,\n    \"stop_state_is_visible\": true,\n    \"stop_state_changes_future_actions\": true\n  }\n}",
+    "raw_response": "{\n  \"planner_contract_version\": 2,\n  \"scene_goal\": \"方可发现自己的杯子被错拿，必须在不直接追讨或忍气吞声的情况下，用柜台上的物件发出信号，纠正杯子归属。\",\n  \"location\": \"咖啡店柜台及门口区域\",\n  \"time\": \"工作日下午，店内人流适中\",\n  \"scene_state\": {\n    \"last_completed_action\": \"方可刚用纸巾擦过马克杯杯沿，转身去拿糖包，回来发现杯子被邻座女生端走，女生正走向门口。\",\n    \"present_characters\": [\"方可\", \"邻座女生\", \"咖啡师\", \"其他顾客\"],\n    \"visible_facts\": [\n      \"方可的马克杯被邻座女生拿在手中，杯沿有纸巾擦拭痕迹\",\n      \"柜台上有咖啡师刚放下的另一杯外带杯，杯身标签写有女生名字\",\n      \"女生正走向门口，尚未出门\",\n      \"方可手中还拿着糖包\"\n    ],\n    \"available_objects\": [\"方可的马克杯（在女生手中）\", \"柜台上的外带杯（标签有女生名字）\", \"糖包\", \"纸巾\", \"柜台上的叫号牌\", \"柜台上的笔\"],\n    \"unresolved_problem\": \"方可的杯子归属权尚未被纠正，女生即将离开咖啡店。\",\n    \"already_existing_constraints\": [\n      \"方可不能追上去直接说'那是我的杯'，因为会显得过于计较或引发尴尬\",\n      \"方可不能忍了重新买，因为必须纠正错误\",\n      \"必须在女生出门前行动\"\n    ]\n  },\n  \"characters\": [\n    {\n      \"name\": \"方可\",\n      \"goal\": \"让邻座女生意识到拿错杯子并归还，同时避免直接冲突或尴尬\",\n      \"known\": [\n        \"自己的杯子有纸巾擦拭痕迹\",\n        \"邻座女生拿了自己的杯子\",\n        \"柜台上有女生的外带杯\"\n      ],\n      \"unknown\": [\n        \"女生拿错杯子的原因（是否无意）\",\n        \"女生是否会注意到信号并归还\"\n      ],\n      \"mistaken_beliefs\": [\n        \"女生可能故意拿错或粗心大意\"\n      ],\n      \"constraints\": [\n        \"不能追上去直接说'那是我的杯'\",\n        \"不能忍了重新买\",\n        \"必须用柜台上的物件发出信号\"\n      ],\n      \"observed_evidence\": [\n        \"女生手中的杯子杯沿有自己擦过的痕迹\",\n        \"柜台上的外带杯标签写着女生的名字\",\n        \"女生正走向门口，步伐不快\"\n      ],\n      \"current_interpretation\": \"女生拿错了杯子，但她可能没注意到标签或杯沿痕迹，用她的杯子作为信号能让她意识到错误。\",\n      \"how_interpretation_drives_action\": \"方可拿起柜台上的外带杯，快步走向女生，以递杯子的自然动作阻止她离开，同时用杯身标签暗示她的错误。\"\n    },\n    {\n      \"name\": \"邻座女生\",\n      \"goal\": \"离开咖啡店\",\n      \"known\": [\n        \"自己点了一杯外带咖啡\",\n        \"以为手中的杯子是自己的\"\n      ],\n      \"unknown\": [\n        \"手中杯子的真正主人\",\n        \"方可的意图\"\n      ],\n      \"mistaken_beliefs\": [\n        \"手中的杯子就是自己的外带杯\"\n      ],\n      \"constraints\": [\n        \"不能表现出故意拿错\",\n        \"在公共场合需保持礼貌\"\n      ],\n      \"observed_evidence\": [\n        \"方可快步走近并递来一个杯子\"\n      ],\n      \"current_interpretation\": \"方可可能是在给她送落下的东西，或者有别的意图。\",\n      \"how_interpretation_drives_action\": \"女生停下脚步，接过杯子查看，对比手中杯子，从而发现拿错。\"\n    }\n  ],\n  \"concrete_problem\": \"方可如何在不直接追讨的情况下，用柜台上的物件（女生的外带杯）发出信号，让女生意识到拿错杯子并归还？\",\n  \"pressure\": \"女生即将走出店门，时间紧迫，方可必须立即行动。\",\n  \"turning_point\": \"方可拿起柜台上的外带杯，快步走向女生，将杯子递给她并说'你的杯子'，女生对比后意识到错误，归还方可的杯子。\",\n  \"end_condition\": \"女生归还了方可的马克杯，方可拿回自己的杯子，女生拿着自己的外带杯离开或留下。\",\n  \"forbidden\": [\n    \"方可追上去直接说'那是我的杯'\",\n    \"方可忍气吞声重新买一杯\",\n    \"使用柜台物件以外的信号方式（如喊叫、肢体接触）\"\n  ],\n  \"causal_transitions\": [\n    {\n      \"id\": \"CT01\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"方可看到柜台上的外带杯标签写着女生的名字，同时女生手中的杯子有自己擦过的痕迹。\",\n      \"character_interpretation\": \"方可推断那个外带杯是女生的，用女生的杯子作为信号能让她意识到拿错。\",\n      \"character_next_action\": \"方可拿起柜台上的外带杯，快步走向女生，将杯子递给她。\",\n      \"rejected_alternative\": \"方可本可以大声喊住女生，但那样会引发周围注意，违反约束。\",\n      \"immediate_consequence\": \"女生停下脚步，接过外带杯，对比后发现手中的杯子不是自己的，将方可的杯子归还。\",\n      \"counterfactual_without_action\": \"如果方可不行动，女生会带着方可的杯子离开咖啡店，方可的杯子归属无法纠正。\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"女生拿着方可的杯子走向门口，方可的杯子归属错误。\",\n        \"after\": \"女生归还杯子，方可拿回自己的杯子，女生拿到自己的外带杯。\"\n      },\n      \"cost_or_commitment\": \"方可主动接近女生，承担了可能被拒绝或引发短暂尴尬的风险。\",\n      \"next_constraint\": \"方可必须在递杯子时保持自然语气，避免指责意味。\",\n      \"reader_must_infer\": \"方可如何通过杯身标签的暗示让女生明白拿错，而无需直接说明。\",\n      \"narrator_must_not_state\": [\n        \"方可内心对女生的真实评价\",\n        \"女生是否故意拿错\"\n      ]\n    }\n  ],\n  \"tempo_guardrails\": {\n    \"entry_pressure\": \"女生正拿着方可的杯子走向门口，即将离开。\",\n    \"dominant_pressure\": {\n      \"kind\": \"resource_constraint\",\n      \"description\": \"时间紧迫，女生即将出门，方可必须在有限时间内用柜台物件发出信号。\"\n    },\n    \"allowed_viewpoint_misread\": \"女生可能将方可递杯子的动作误解为殷勤或推销，而非纠正错误。\",\n    \"disclosure_cap\": 0,\n    \"must_remain_unclassified\": [\n      \"女生拿错杯子的真实心理状态\",\n      \"方可对女生的主观感受\"\n    ],\n    \"stop_state\": {\n      \"type\": \"physical_change\",\n      \"visible_fact\": \"女生手中的杯子换成了自己的外带杯，方可的马克杯回到了方可手中。\",\n      \"what_is_now_different\": \"杯子归属被纠正，方可拿回了自己的杯子，女生拿到了自己的杯子。\",\n      \"must_not_append\": \"不得描述女生道歉或方可释怀的心理活动，只呈现事实。\"\n    },\n    \"final_line_must_include\": \"\"\n  },\n  \"chapter_contract_check\": {\n    \"function_aligned\": true,\n    \"must_deliver_covered\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_enabled\": true,\n    \"main_payoff_prepared\": true,\n    \"ending_hook_established\": true,\n    \"causal_transitions_grounded\": true,\n    \"reader_inference_not_pre_resolved\": true,\n    \"scene_state_reconstructed\": true,\n    \"information_sources_legal\": true,\n    \"character_choice_is_real\": true,\n    \"consequence_is_counterfactual\": true,\n    \"state_delta_is_nonempty\": true,\n    \"next_constraint_is_new\": true,\n    \"stop_state_is_visible\": true,\n    \"stop_state_changes_future_actions\": true\n  }\n}",
+    "input_tokens": 3314,
+    "output_tokens": 1815,
+    "latency_ms": 29095,
+    "finish_reason": "stop",
+    "error_code": null,
+    "error_message": null,
+    "rendered_user_prompt_sha256": "66ef8f5ce90343110537ccecd59d6827b876cf545d1f62c02ecd78049b93e00c"
+  },
+  "drafts": [
+    {
+      "group": "ROUTE-COBJECT_VS_A",
+      "replica": 1,
+      "mode": "narrative_route",
+      "candidate_id": "6ff21cb6-aac9-4454-983b-c6ceda097b96",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "C_OBJECT_CAUSAL",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "scene_state.available_objects is non-empty",
+            "causal_transitions contains counterfactual_without_action or rejected_alternative",
+            "character_next_action involves physical object manipulation"
+          ],
+          "matched_rules": [
+            "RULE_C_OBJECT_CAUSAL"
+          ],
+          "rejected_routes": []
+        },
+        "compiled_brief_hash": "33c7b6a414351767848a437865cfd8aad05ab043db1381cb2153cf4cdfa87eee",
+        "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "方可拆开糖包，糖粒落进空杯底，细碎的声音还没停，她余光就扫到邻座那只手伸过来。\n\n那只手拿走了她的马克杯。\n\n杯沿上还有她刚才用纸巾擦过的痕迹——一圈浅淡的水渍被抹断，留下半截干痕。方可抬头时，女生已经把杯子端到身前，另一只手拎起包，转身往门口走。\n\n方可手里还捏着撕开的糖包。\n\n她没有站起来。视线越过柜台，咖啡师刚把一杯外带杯放在台面上，杯身标签朝外，打印着两个字：陈念。女生正朝门口走，步伐不快，帆布鞋踩在木地板上发出闷响，离门口还有五六步。\n\n方可把糖包搁在桌上。\n\n她起身，两步走到柜台前，拿起那杯外带杯。纸杯温热，杯盖扣得紧实。她转身，朝女生的方向走过去，脚步不快不慢，鞋底落在地板上没有多余的声音。\n\n女生在门口停下，正用肩膀顶开玻璃门。\n\n“等一下。”方可把外带杯递过去，杯身标签朝向女生，“这是你的。”\n\n女生回头，视线先落在方可脸上，然后移到杯子上。她低头看了看自己手里那杯——马克杯，杯沿有半截纸巾擦过的干痕，杯身没有任何标签。\n\n她顿了一下。\n\n方可没有收回手，外带杯悬在两人之间。女生空着的那只手接过去，指尖碰到杯身标签，她低头看了一眼自己的名字，又看了一眼手里那杯。\n\n她把马克杯递回来。\n\n方可接过，杯壁还温热，杯沿那圈擦痕还是她刚才留下的。女生手里的外带杯标签上，“陈念”两个字被拇指压住了半边。\n\n玻璃门弹回来，合上。",
+      "raw_response": "方可拆开糖包，糖粒落进空杯底，细碎的声音还没停，她余光就扫到邻座那只手伸过来。\n\n那只手拿走了她的马克杯。\n\n杯沿上还有她刚才用纸巾擦过的痕迹——一圈浅淡的水渍被抹断，留下半截干痕。方可抬头时，女生已经把杯子端到身前，另一只手拎起包，转身往门口走。\n\n方可手里还捏着撕开的糖包。\n\n她没有站起来。视线越过柜台，咖啡师刚把一杯外带杯放在台面上，杯身标签朝外，打印着两个字：陈念。女生正朝门口走，步伐不快，帆布鞋踩在木地板上发出闷响，离门口还有五六步。\n\n方可把糖包搁在桌上。\n\n她起身，两步走到柜台前，拿起那杯外带杯。纸杯温热，杯盖扣得紧实。她转身，朝女生的方向走过去，脚步不快不慢，鞋底落在地板上没有多余的声音。\n\n女生在门口停下，正用肩膀顶开玻璃门。\n\n“等一下。”方可把外带杯递过去，杯身标签朝向女生，“这是你的。”\n\n女生回头，视线先落在方可脸上，然后移到杯子上。她低头看了看自己手里那杯——马克杯，杯沿有半截纸巾擦过的干痕，杯身没有任何标签。\n\n她顿了一下。\n\n方可没有收回手，外带杯悬在两人之间。女生空着的那只手接过去，指尖碰到杯身标签，她低头看了一眼自己的名字，又看了一眼手里那杯。\n\n她把马克杯递回来。\n\n方可接过，杯壁还温热，杯沿那圈擦痕还是她刚才留下的。女生手里的外带杯标签上，“陈念”两个字被拇指压住了半边。\n\n玻璃门弹回来，合上。",
+      "input_tokens": 1467,
+      "output_tokens": 383,
+      "latency_ms": 11405,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "2a3e9b923f9457ba336cb7563f1dfdcc5b0ff9781d87d6987970e7132732b276",
+      "text_path": "cases\\CO-03\\drafts\\route-1.txt"
+    },
+    {
+      "group": "BASELINE-COBJECT_VS_A",
+      "replica": 1,
+      "mode": "complete_planner",
+      "candidate_id": "e3511fd8-d321-4f90-9019-fdc0ffeafaa3",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "方可把糖包放进托盘，转身时，邻座空了。\n\n她的马克杯不在桌上。杯沿那道纸巾擦过的痕迹——她刚才擦掉的咖啡渍——正握在那个女生手里。女生斜挎着帆布包，步子不快，已经走到门口，再过三秒就会推门出去。\n\n方可没喊。\n\n她视线扫过柜台。咖啡师刚放下一杯外带杯，杯身标签朝外，打印着“林小姐”。女生点单时她听见了，姓林。\n\n方可走过去，拿起那杯外带杯。杯壁还是烫的。\n\n她迈开步子，鞋底在地砖上发出短促的摩擦声，三步追上女生，身体自然地侧移半步，挡在女生和门之间。她把外带杯递过去，杯身标签朝向女生，声音不高，刚好够对方听见：\n\n“你的杯子。”\n\n女生愣了一下，低头看方可递来的杯子，又看自己手里那杯。她翻过杯身，没有标签。杯沿有一圈纸巾擦过的痕迹。\n\n女生抬头看方可。方可没说话，只是把外带杯又往前递了两厘米。\n\n女生把马克杯递回来，杯柄朝外。她接过自己的外带杯，手指在杯身上收紧。\n\n方可拿回自己的马克杯，转身走回座位。",
+      "raw_response": "方可把糖包放进托盘，转身时，邻座空了。\n\n她的马克杯不在桌上。杯沿那道纸巾擦过的痕迹——她刚才擦掉的咖啡渍——正握在那个女生手里。女生斜挎着帆布包，步子不快，已经走到门口，再过三秒就会推门出去。\n\n方可没喊。\n\n她视线扫过柜台。咖啡师刚放下一杯外带杯，杯身标签朝外，打印着“林小姐”。女生点单时她听见了，姓林。\n\n方可走过去，拿起那杯外带杯。杯壁还是烫的。\n\n她迈开步子，鞋底在地砖上发出短促的摩擦声，三步追上女生，身体自然地侧移半步，挡在女生和门之间。她把外带杯递过去，杯身标签朝向女生，声音不高，刚好够对方听见：\n\n“你的杯子。”\n\n女生愣了一下，低头看方可递来的杯子，又看自己手里那杯。她翻过杯身，没有标签。杯沿有一圈纸巾擦过的痕迹。\n\n女生抬头看方可。方可没说话，只是把外带杯又往前递了两厘米。\n\n女生把马克杯递回来，杯柄朝外。她接过自己的外带杯，手指在杯身上收紧。\n\n方可拿回自己的马克杯，转身走回座位。",
+      "input_tokens": 2617,
+      "output_tokens": 275,
+      "latency_ms": 10182,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "e40e73fd6b9bb3eff683fe119b2a8e85afb690663ddf27b817c482d00205a72f",
+      "text_path": "cases\\CO-03\\drafts\\baseline-1.txt"
+    },
+    {
+      "group": "ROUTE-COBJECT_VS_A",
+      "replica": 2,
+      "mode": "narrative_route",
+      "candidate_id": "fc5ccbef-8b1a-449a-8c92-d3fd13e3295e",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "C_OBJECT_CAUSAL",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "scene_state.available_objects is non-empty",
+            "causal_transitions contains counterfactual_without_action or rejected_alternative",
+            "character_next_action involves physical object manipulation"
+          ],
+          "matched_rules": [
+            "RULE_C_OBJECT_CAUSAL"
+          ],
+          "rejected_routes": []
+        },
+        "compiled_brief_hash": "33c7b6a414351767848a437865cfd8aad05ab043db1381cb2153cf4cdfa87eee",
+        "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "方可把糖包放在柜台上。\n\n那个女生已经走到门口，右手握着马克杯的杯柄，左手正要去推玻璃门。杯沿上有一小块纸巾擦过的痕迹——方可记得自己擦过那个位置。\n\n柜台上，咖啡师刚放下一杯外带杯。杯身标签上印着“林悦”两个字。\n\n方可拿起那杯外带杯，三步走到女生身后。\n\n“你好。”方可把外带杯递过去。\n\n女生转过身，先看方可的脸，然后看递过来的杯子。她低头看自己手里的马克杯，杯沿那块擦拭痕迹对着她的拇指。\n\n她把马克杯举到眼前，转了半圈。杯壁没有标签。\n\n方可没说话，手还伸着。\n\n女生接过外带杯，把马克杯递还给方可。",
+      "raw_response": "方可把糖包放在柜台上。\n\n那个女生已经走到门口，右手握着马克杯的杯柄，左手正要去推玻璃门。杯沿上有一小块纸巾擦过的痕迹——方可记得自己擦过那个位置。\n\n柜台上，咖啡师刚放下一杯外带杯。杯身标签上印着“林悦”两个字。\n\n方可拿起那杯外带杯，三步走到女生身后。\n\n“你好。”方可把外带杯递过去。\n\n女生转过身，先看方可的脸，然后看递过来的杯子。她低头看自己手里的马克杯，杯沿那块擦拭痕迹对着她的拇指。\n\n她把马克杯举到眼前，转了半圈。杯壁没有标签。\n\n方可没说话，手还伸着。\n\n女生接过外带杯，把马克杯递还给方可。",
+      "input_tokens": 1467,
+      "output_tokens": 165,
+      "latency_ms": 7385,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "2a3e9b923f9457ba336cb7563f1dfdcc5b0ff9781d87d6987970e7132732b276",
+      "text_path": "cases\\CO-03\\drafts\\route-2.txt"
+    },
+    {
+      "group": "BASELINE-COBJECT_VS_A",
+      "replica": 2,
+      "mode": "complete_planner",
+      "candidate_id": "7068ba13-bb49-4d98-9b4d-af90b1cd4c50",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "方可转身，柜台上的糖包还捏在指间。\n\n那个马克杯正被人端在手里往门口走。杯沿有一圈她用纸巾擦过的痕迹，刚才擦的时候纸屑还沾了一点在虎口上。邻座女生握着杯柄，另一只手推开了玻璃门，外面的风灌进来，把柜台上的收银小票吹得翻了个面。\n\n方可的视线扫过柜台。台面上搁着一杯外带杯，杯身贴了标签，打印的黑色字迹——“林小姐/热拿铁/半糖”。杯盖扣得严实，杯托还压在柜台边缘，像是刚被咖啡师推出来等人取。\n\n她没喊。也没追上去说“那是我的杯”。\n\n她伸手把那个外带杯拿起来，杯子还烫手，指尖按在杯托底部的硬纸板上。糖包搁回柜台，她迈开步子，鞋底在瓷砖地上发出两下短促的摩擦声，三秒后她已经走到女生身后半步的位置。\n\n女生正侧身避让进门的人，方可顺势把外带杯往前一递，杯身标签朝上，正好对着女生低头的视线。\n\n“你的杯子。”\n\n女生愣了一下，先看杯子，再看方可。方可没笑，也没解释，只是把杯子又往前递了两公分，杯托边缘快要碰到女生的手背。\n\n女生低头看自己手里的杯子——马克杯，杯沿有擦拭过的痕迹，杯身没贴标签。再看方可递过来的外带杯，标签上印着她的姓。\n\n女生的手指在马克杯杯柄上紧了紧，然后松开。她把马克杯递回来，动作不快，但方向很确定，杯柄朝着方可的手。\n\n方可接过自己的杯子。女生拿走了外带杯，杯托在交接时歪了一下，她用拇指按住。",
+      "raw_response": "方可转身，柜台上的糖包还捏在指间。\n\n那个马克杯正被人端在手里往门口走。杯沿有一圈她用纸巾擦过的痕迹，刚才擦的时候纸屑还沾了一点在虎口上。邻座女生握着杯柄，另一只手推开了玻璃门，外面的风灌进来，把柜台上的收银小票吹得翻了个面。\n\n方可的视线扫过柜台。台面上搁着一杯外带杯，杯身贴了标签，打印的黑色字迹——“林小姐/热拿铁/半糖”。杯盖扣得严实，杯托还压在柜台边缘，像是刚被咖啡师推出来等人取。\n\n她没喊。也没追上去说“那是我的杯”。\n\n她伸手把那个外带杯拿起来，杯子还烫手，指尖按在杯托底部的硬纸板上。糖包搁回柜台，她迈开步子，鞋底在瓷砖地上发出两下短促的摩擦声，三秒后她已经走到女生身后半步的位置。\n\n女生正侧身避让进门的人，方可顺势把外带杯往前一递，杯身标签朝上，正好对着女生低头的视线。\n\n“你的杯子。”\n\n女生愣了一下，先看杯子，再看方可。方可没笑，也没解释，只是把杯子又往前递了两公分，杯托边缘快要碰到女生的手背。\n\n女生低头看自己手里的杯子——马克杯，杯沿有擦拭过的痕迹，杯身没贴标签。再看方可递过来的外带杯，标签上印着她的姓。\n\n女生的手指在马克杯杯柄上紧了紧，然后松开。她把马克杯递回来，动作不快，但方向很确定，杯柄朝着方可的手。\n\n方可接过自己的杯子。女生拿走了外带杯，杯托在交接时歪了一下，她用拇指按住。",
+      "input_tokens": 2617,
+      "output_tokens": 384,
+      "latency_ms": 12128,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "e40e73fd6b9bb3eff683fe119b2a8e85afb690663ddf27b817c482d00205a72f",
+      "text_path": "cases\\CO-03\\drafts\\baseline-2.txt"
+    },
+    {
+      "group": "ROUTE-COBJECT_VS_A",
+      "replica": 3,
+      "mode": "narrative_route",
+      "candidate_id": "16ce4db6-9cd3-4100-adc0-2f089f056203",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "C_OBJECT_CAUSAL",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "scene_state.available_objects is non-empty",
+            "causal_transitions contains counterfactual_without_action or rejected_alternative",
+            "character_next_action involves physical object manipulation"
+          ],
+          "matched_rules": [
+            "RULE_C_OBJECT_CAUSAL"
+          ],
+          "rejected_routes": []
+        },
+        "compiled_brief_hash": "33c7b6a414351767848a437865cfd8aad05ab043db1381cb2153cf4cdfa87eee",
+        "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "方可把糖包放在柜台上。\n\n那个女生已经走到门口，右手端着马克杯，左手推开了玻璃门。杯沿上有一小块被纸巾擦过的痕迹，泛白的边缘在室内灯光下很清楚。\n\n方可看了眼柜台。咖啡师刚放下一杯外带杯，杯身上贴着的标签写着“林悦”两个字。她伸手拿起来，杯子是烫的。\n\n门口的风灌进来。女生已经迈出去一只脚。\n\n方可快步走过去，在女生完全出门前赶到她身侧，把外带杯递到她面前。“你的。”\n\n女生停下，低头看了看方可手里的杯子，又看了看自己手里的。她接过外带杯，翻过杯身看了一眼标签，然后把马克杯递还给方可。\n\n方可接过来，杯沿上那块擦拭痕迹还在。\n\n女生拿着自己的外带杯推门出去了。",
+      "raw_response": "方可把糖包放在柜台上。\n\n那个女生已经走到门口，右手端着马克杯，左手推开了玻璃门。杯沿上有一小块被纸巾擦过的痕迹，泛白的边缘在室内灯光下很清楚。\n\n方可看了眼柜台。咖啡师刚放下一杯外带杯，杯身上贴着的标签写着“林悦”两个字。她伸手拿起来，杯子是烫的。\n\n门口的风灌进来。女生已经迈出去一只脚。\n\n方可快步走过去，在女生完全出门前赶到她身侧，把外带杯递到她面前。“你的。”\n\n女生停下，低头看了看方可手里的杯子，又看了看自己手里的。她接过外带杯，翻过杯身看了一眼标签，然后把马克杯递还给方可。\n\n方可接过来，杯沿上那块擦拭痕迹还在。\n\n女生拿着自己的外带杯推门出去了。",
+      "input_tokens": 1467,
+      "output_tokens": 173,
+      "latency_ms": 9125,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "2a3e9b923f9457ba336cb7563f1dfdcc5b0ff9781d87d6987970e7132732b276",
+      "text_path": "cases\\CO-03\\drafts\\route-3.txt"
+    },
+    {
+      "group": "BASELINE-COBJECT_VS_A",
+      "replica": 3,
+      "mode": "complete_planner",
+      "candidate_id": "a9ec37da-31bd-48a6-b35b-e258e5f142a0",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "方可拆开糖包的手指停在半空。\n\n她的马克杯不见了。刚才还放在台面上，杯沿有她用纸巾擦过的痕迹——现在那个杯子正被邻座女生握在手里，女生另一只手推开了玻璃门。\n\n方可的视线钉在杯沿上。纸巾擦过的位置留了一圈浅色水渍，她认得那个弧度。女生背对着她，脚步不快，但再有几步就出门了。\n\n方可没喊。她扫向柜台——咖啡师刚放下一杯外带杯，杯身标签朝外，印着两个字。她认出那个名字，刚才邻座女生点单时她听见了。\n\n她放下糖包，伸手拿过那个外带杯。杯壁还是烫的。\n\n门推开一半，女生的肩膀已经探出去。方可快走几步，在女生完全出门前把外带杯递到她手边。\n\n“你的杯子。”方可说。\n\n女生转过头，先看见递过来的杯子，又低头看自己手里那个。她的视线在两个杯子之间跳了一下——外带杯的标签，马克杯沿的水渍。\n\n女生松开握着马克杯的手指。方可接住自己的杯子，杯壁已经没那么烫了。",
+      "raw_response": "方可拆开糖包的手指停在半空。\n\n她的马克杯不见了。刚才还放在台面上，杯沿有她用纸巾擦过的痕迹——现在那个杯子正被邻座女生握在手里，女生另一只手推开了玻璃门。\n\n方可的视线钉在杯沿上。纸巾擦过的位置留了一圈浅色水渍，她认得那个弧度。女生背对着她，脚步不快，但再有几步就出门了。\n\n方可没喊。她扫向柜台——咖啡师刚放下一杯外带杯，杯身标签朝外，印着两个字。她认出那个名字，刚才邻座女生点单时她听见了。\n\n她放下糖包，伸手拿过那个外带杯。杯壁还是烫的。\n\n门推开一半，女生的肩膀已经探出去。方可快走几步，在女生完全出门前把外带杯递到她手边。\n\n“你的杯子。”方可说。\n\n女生转过头，先看见递过来的杯子，又低头看自己手里那个。她的视线在两个杯子之间跳了一下——外带杯的标签，马克杯沿的水渍。\n\n女生松开握着马克杯的手指。方可接住自己的杯子，杯壁已经没那么烫了。",
+      "input_tokens": 2617,
+      "output_tokens": 247,
+      "latency_ms": 9915,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "e40e73fd6b9bb3eff683fe119b2a8e85afb690663ddf27b817c482d00205a72f",
+      "text_path": "cases\\CO-03\\drafts\\baseline-3.txt"
+    }
+  ],
+  "actual_route": "C_OBJECT_CAUSAL",
+  "route_decision": {
+    "route_name": "C_OBJECT_CAUSAL",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "scene_state.available_objects is non-empty",
+      "causal_transitions contains counterfactual_without_action or rejected_alternative",
+      "character_next_action involves physical object manipulation"
+    ],
+    "matched_rules": [
+      "RULE_C_OBJECT_CAUSAL"
+    ],
+    "rejected_routes": []
+  }
+}

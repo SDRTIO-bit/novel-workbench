@@ -1,0 +1,45 @@
+{
+  "group": "ROUTE-ALITE_VS_A",
+  "replica": 1,
+  "mode": "narrative_route",
+  "candidate_id": "5a1a8529-c3a4-498e-a963-75cc22a135c3",
+  "attempt_number": 1,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "route_decision": {
+      "route_name": "B_SHORT_RELATION",
+      "classifier_version": "narrative-route-v1",
+      "decision_reasons": [
+        "scene is relationship-oriented with no physical urgency",
+        "character action involves relational move (message, gesture, proximity)"
+      ],
+      "matched_rules": [
+        "RULE_B_SHORT_RELATION"
+      ],
+      "rejected_routes": [
+        "C_OBJECT_CAUSAL",
+        "A_LITE_INFORMATION_GAP"
+      ]
+    },
+    "compiled_brief_hash": "eb73e83b6a81fcfe334674ad719988328e35dffe48aa20e7bae3e86d2568bd83",
+    "instruction_hash": "d7a76822408396dc71c4599a7f40f33368b90199f0d9c0712383961213437555",
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "乔雨低头盯着手机屏幕，那条灰色的撤回提示还挂在对话框里——“班主任”撤回了一条消息。\n\n预览栏里只残留四个字：你这次的……\n\n她的拇指悬在屏幕上方，还没想好要不要往上滑。\n\n脚步声近了。\n\n乔雨抬头，同桌正从教室后门方向走过来，手里拿着手机，屏幕亮着，脚步不快不慢。两排座位，一排，然后是她的桌沿。\n\n乔雨手腕一翻，把手机屏幕扣向自己胸口。动作不大，但快。\n\n同桌在她旁边站住，下巴朝她手机方向抬了抬：“怎么了？”\n\n“没什么，”乔雨把手机翻了个面，屏幕朝下搁在桌面上，“就是条垃圾信息。”\n\n同桌没坐下，手指还在自己手机侧边敲了一下。她的视线从乔雨的脸移到桌面上那部扣着的手机，停了一秒。\n\n“哦，”她说，“好吧。”\n\n但她没走。眼神还落在乔雨的手机上。",
+  "raw_response": "乔雨低头盯着手机屏幕，那条灰色的撤回提示还挂在对话框里——“班主任”撤回了一条消息。\n\n预览栏里只残留四个字：你这次的……\n\n她的拇指悬在屏幕上方，还没想好要不要往上滑。\n\n脚步声近了。\n\n乔雨抬头，同桌正从教室后门方向走过来，手里拿着手机，屏幕亮着，脚步不快不慢。两排座位，一排，然后是她的桌沿。\n\n乔雨手腕一翻，把手机屏幕扣向自己胸口。动作不大，但快。\n\n同桌在她旁边站住，下巴朝她手机方向抬了抬：“怎么了？”\n\n“没什么，”乔雨把手机翻了个面，屏幕朝下搁在桌面上，“就是条垃圾信息。”\n\n同桌没坐下，手指还在自己手机侧边敲了一下。她的视线从乔雨的脸移到桌面上那部扣着的手机，停了一秒。\n\n“哦，”她说，“好吧。”\n\n但她没走。眼神还落在乔雨的手机上。",
+  "input_tokens": 1272,
+  "output_tokens": 199,
+  "latency_ms": 7222,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "9b6ed6a4644f0fae38da9f885dbc2e538d13d8eeba7e04322c7cb528a7d4e194",
+  "text_path": "cases\\AL-01\\drafts\\route-1.txt"
+}

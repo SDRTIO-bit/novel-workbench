@@ -1,0 +1,45 @@
+{
+  "group": "ROUTE-ALITE_VS_A",
+  "replica": 3,
+  "mode": "narrative_route",
+  "candidate_id": "2b4b5691-386a-4af6-8f39-d59b447b6682",
+  "attempt_number": 1,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "route_decision": {
+      "route_name": "B_SHORT_RELATION",
+      "classifier_version": "narrative-route-v1",
+      "decision_reasons": [
+        "scene is relationship-oriented with no physical urgency",
+        "character action involves relational move (message, gesture, proximity)"
+      ],
+      "matched_rules": [
+        "RULE_B_SHORT_RELATION"
+      ],
+      "rejected_routes": [
+        "C_OBJECT_CAUSAL",
+        "A_LITE_INFORMATION_GAP"
+      ]
+    },
+    "compiled_brief_hash": "eb73e83b6a81fcfe334674ad719988328e35dffe48aa20e7bae3e86d2568bd83",
+    "instruction_hash": "d7a76822408396dc71c4599a7f40f33368b90199f0d9c0712383961213437555",
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "乔雨盯着手机屏幕上的“对方撤回了一条消息”，手指僵在课桌边缘。\n\n预览那一栏只剩四个字——“你这次的……”\n\n她下意识把屏幕往胸口方向按了按。\n\n余光里，同桌林知意正从教室后门走过来，手里攥着手机，步子不快，但方向明确。两排、一排半——乔雨能看见她运动鞋鞋带没系好，拖在瓷砖地面上。\n\n“哎，乔雨——”\n\n林知意的声音传过来的时候，乔雨已经用拇指把屏幕按灭，手机翻了个面，屏幕朝下贴在桌面上。\n\n“怎么了？”乔雨抬起头。\n\n林知意在她旁边坐下，把手机搁在两人中间的那摞课本旁边，屏幕亮着，上面是班级群聊界面。\n\n“你刚才看什么呢？表情跟见了鬼似的。”\n\n乔雨把手机往自己这边挪了半寸，笑了一下：“没什么，就是条垃圾信息。”\n\n她说这话的时候，手指还压在手机背面，指节因为用力有点发白。\n\n林知意的视线从乔雨脸上移到那只手上，停了一秒。\n\n“哦。”她说，“好吧。”\n\n但她没把手机收起来，也没转回去。她的眼睛还落在乔雨压着手机的那只手上面，像在等什么东西自己翻过来。",
+  "raw_response": "乔雨盯着手机屏幕上的“对方撤回了一条消息”，手指僵在课桌边缘。\n\n预览那一栏只剩四个字——“你这次的……”\n\n她下意识把屏幕往胸口方向按了按。\n\n余光里，同桌林知意正从教室后门走过来，手里攥着手机，步子不快，但方向明确。两排、一排半——乔雨能看见她运动鞋鞋带没系好，拖在瓷砖地面上。\n\n“哎，乔雨——”\n\n林知意的声音传过来的时候，乔雨已经用拇指把屏幕按灭，手机翻了个面，屏幕朝下贴在桌面上。\n\n“怎么了？”乔雨抬起头。\n\n林知意在她旁边坐下，把手机搁在两人中间的那摞课本旁边，屏幕亮着，上面是班级群聊界面。\n\n“你刚才看什么呢？表情跟见了鬼似的。”\n\n乔雨把手机往自己这边挪了半寸，笑了一下：“没什么，就是条垃圾信息。”\n\n她说这话的时候，手指还压在手机背面，指节因为用力有点发白。\n\n林知意的视线从乔雨脸上移到那只手上，停了一秒。\n\n“哦。”她说，“好吧。”\n\n但她没把手机收起来，也没转回去。她的眼睛还落在乔雨压着手机的那只手上面，像在等什么东西自己翻过来。",
+  "input_tokens": 1272,
+  "output_tokens": 270,
+  "latency_ms": 9054,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "9b6ed6a4644f0fae38da9f885dbc2e538d13d8eeba7e04322c7cb528a7d4e194",
+  "text_path": "cases\\AL-01\\drafts\\route-3.txt"
+}

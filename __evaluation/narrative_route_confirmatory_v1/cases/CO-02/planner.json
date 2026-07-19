@@ -1,0 +1,179 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "何映在游泳课后发现一部与自己同型号但非自己的手机，必须在不能拿走或大声询问的限制下，使用现场物件让手机回到失主手中，同时避免误会。",
+  "location": "学校游泳馆女更衣室",
+  "time": "游泳课刚结束，更衣室里只剩两个人",
+  "scene_state": {
+    "last_completed_action": "游泳课结束，何映走进更衣室",
+    "present_characters": [
+      "何映",
+      "林晚"
+    ],
+    "visible_facts": [
+      "长凳上有一部手机，型号与何映的相同",
+      "锁屏壁纸不是何映的",
+      "更衣室里还有另一个女生林晚",
+      "泳池边传来找手机的声音"
+    ],
+    "available_objects": [
+      "长凳上的手机",
+      "何映自己的手机",
+      "更衣室储物柜",
+      "何映的背包",
+      "毛巾"
+    ],
+    "unresolved_problem": "手机的主人正在泳池边寻找，但何映不能直接拿走或大声询问，需要设法让手机回到失主手中。",
+    "already_existing_constraints": [
+      "不能把手机拿走",
+      "不能大声问是谁的手机"
+    ]
+  },
+  "characters": [
+    {
+      "name": "何映",
+      "goal": "让手机回到失主手中，同时避免误会自己偷拿手机",
+      "known": [
+        "手机型号与自己相同但非自己的",
+        "失主正在泳池边找手机",
+        "更衣室里另一个女生是林晚"
+      ],
+      "unknown": [
+        "林晚是否就是失主",
+        "林晚是否注意到手机"
+      ],
+      "mistaken_beliefs": [
+        "林晚可能误会她偷看别人手机"
+      ],
+      "constraints": [
+        "不能直接把手机拿走",
+        "不能大声喊叫询问",
+        "必须用现场物件处理"
+      ],
+      "observed_evidence": [
+        "长凳上的手机锁屏壁纸陌生",
+        "泳池方向传来询问手机的声音",
+        "林晚在更衣室另一侧整理物品"
+      ],
+      "current_interpretation": "手机可能是林晚的，或者林晚认识失主，但直接询问可能引起误会。",
+      "how_interpretation_drives_action": "何映决定用毛巾盖住手机，然后以找自己手机为由引起林晚注意，间接让手机被发现。"
+    },
+    {
+      "name": "林晚",
+      "goal": "整理好自己的物品，准备离开更衣室",
+      "known": [
+        "自己手机在包里",
+        "听到泳池边找手机的声音"
+      ],
+      "unknown": [
+        "长凳上的手机是谁的",
+        "何映的意图"
+      ],
+      "mistaken_beliefs": [
+        "何映可能不小心把手机落在长凳上"
+      ],
+      "constraints": [
+        "没有义务主动处理他人手机"
+      ],
+      "observed_evidence": [
+        "何映在长凳附近徘徊",
+        "长凳上有一部手机被毛巾盖住"
+      ],
+      "current_interpretation": "何映可能找不到自己手机了，或者毛巾下是何映的手机。",
+      "how_interpretation_drives_action": "林晚可能会提醒何映毛巾下有手机，或者帮忙寻找。"
+    }
+  ],
+  "concrete_problem": "何映如何在不触碰手机且不直接询问的情况下，让林晚注意到长凳上的手机并确认其归属，从而将手机交还失主？",
+  "pressure": "泳池边的寻找声越来越近，更衣室里的时间窗口正在缩小，何映必须在失主进来前解决，否则可能被误会。",
+  "turning_point": "何映故意将毛巾盖在手机上，然后假装找不到自己的手机，向林晚求助，林晚掀开毛巾发现手机并认出是朋友的，主动拿去归还。",
+  "end_condition": "林晚拿起手机，确认是朋友的，走出更衣室去归还。",
+  "forbidden": [
+    "何映直接拿走手机",
+    "何映大声询问",
+    "外部巧合自动解决",
+    "林晚主动发现手机而不需何映引导",
+    "何映直接告诉林晚手机不是自己的"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "长凳上手机屏幕亮起，显示陌生壁纸",
+      "character_interpretation": "何映意识到这不是自己手机，且失主可能就在附近",
+      "character_next_action": "何映用毛巾盖住手机，然后假装翻找背包",
+      "rejected_alternative": "何映可以直接拿起手机去泳池边问，但那样违反约束且可能被误会",
+      "immediate_consequence": "手机被毛巾遮盖，林晚注意到何映在找东西",
+      "counterfactual_without_action": "何映不盖手机，林晚可能不会注意到，或者失主进来时直接看到何映站在手机旁",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "手机暴露在长凳上，何映不知所措",
+        "after": "手机被毛巾遮盖，何映开始假装找手机"
+      },
+      "cost_or_commitment": "何映放弃直接解决问题的机会，选择更迂回的方式",
+      "next_constraint": "何映必须让林晚主动发现毛巾下的手机",
+      "reader_must_infer": "何映盖手机是为了避免直接触碰，同时制造一个让林晚介入的契机",
+      "narrator_must_not_state": [
+        "何映的真实目的是让林晚发现手机",
+        "何映已经猜到林晚可能认识失主"
+      ]
+    },
+    {
+      "id": "CT02",
+      "kind": "constraint_to_choice",
+      "visible_trigger": "何映对林晚说：'你有没有看到我手机？我记得放在长凳上的。'",
+      "character_interpretation": "林晚认为何映真的丢了手机，并想起长凳上毛巾下可能有手机",
+      "character_next_action": "林晚掀开毛巾，拿起手机查看",
+      "rejected_alternative": "林晚可以简单回答没看到，继续整理自己的东西",
+      "immediate_consequence": "林晚发现手机壁纸是何映的，但更认出这是朋友小敏的手机",
+      "counterfactual_without_action": "如果林晚不掀开毛巾，手机将继续留在长凳上，失主可能冲进来寻找",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "手机被毛巾遮盖，归属不明",
+        "after": "林晚认出手机是朋友的，决定拿去归还"
+      },
+      "cost_or_commitment": "何映暴露了自己‘找不到手机’的假象，未来可能需解释",
+      "next_constraint": "林晚拿走手机，何映不能阻止，必须接受这个结果",
+      "reader_must_infer": "何映故意引导林晚发现手机，但林晚并未察觉",
+      "narrator_must_not_state": [
+        "何映的提问是故意的",
+        "林晚完全相信了何映的借口"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "泳池边传来‘谁看到我手机了’的喊声，何映刚发现长凳上的陌生手机",
+    "dominant_pressure": {
+      "kind": "social_friction",
+      "description": "何映必须在避免误会的前提下处理手机，时间紧迫，且不能直接沟通"
+    },
+    "allowed_viewpoint_misread": "林晚可能把何映的犹豫理解为她真的找不到手机",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "何映是否早就怀疑林晚认识失主"
+    ],
+    "stop_state": {
+      "type": "physical_change",
+      "visible_fact": "林晚拿着手机走出更衣室",
+      "what_is_now_different": "手机从长凳上消失，进入归还流程",
+      "must_not_append": "不得描写何映后续如何解释自己的行为"
+    },
+    "final_line_must_include": ""
+  }
+}

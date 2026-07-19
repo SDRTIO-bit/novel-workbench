@@ -1,0 +1,43 @@
+{
+  "group": "ROUTE-COBJECT_VS_A",
+  "replica": 3,
+  "mode": "narrative_route",
+  "candidate_id": "16ce4db6-9cd3-4100-adc0-2f089f056203",
+  "attempt_number": 1,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "route_decision": {
+      "route_name": "C_OBJECT_CAUSAL",
+      "classifier_version": "narrative-route-v1",
+      "decision_reasons": [
+        "scene_state.available_objects is non-empty",
+        "causal_transitions contains counterfactual_without_action or rejected_alternative",
+        "character_next_action involves physical object manipulation"
+      ],
+      "matched_rules": [
+        "RULE_C_OBJECT_CAUSAL"
+      ],
+      "rejected_routes": []
+    },
+    "compiled_brief_hash": "33c7b6a414351767848a437865cfd8aad05ab043db1381cb2153cf4cdfa87eee",
+    "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "方可把糖包放在柜台上。\n\n那个女生已经走到门口，右手端着马克杯，左手推开了玻璃门。杯沿上有一小块被纸巾擦过的痕迹，泛白的边缘在室内灯光下很清楚。\n\n方可看了眼柜台。咖啡师刚放下一杯外带杯，杯身上贴着的标签写着“林悦”两个字。她伸手拿起来，杯子是烫的。\n\n门口的风灌进来。女生已经迈出去一只脚。\n\n方可快步走过去，在女生完全出门前赶到她身侧，把外带杯递到她面前。“你的。”\n\n女生停下，低头看了看方可手里的杯子，又看了看自己手里的。她接过外带杯，翻过杯身看了一眼标签，然后把马克杯递还给方可。\n\n方可接过来，杯沿上那块擦拭痕迹还在。\n\n女生拿着自己的外带杯推门出去了。",
+  "raw_response": "方可把糖包放在柜台上。\n\n那个女生已经走到门口，右手端着马克杯，左手推开了玻璃门。杯沿上有一小块被纸巾擦过的痕迹，泛白的边缘在室内灯光下很清楚。\n\n方可看了眼柜台。咖啡师刚放下一杯外带杯，杯身上贴着的标签写着“林悦”两个字。她伸手拿起来，杯子是烫的。\n\n门口的风灌进来。女生已经迈出去一只脚。\n\n方可快步走过去，在女生完全出门前赶到她身侧，把外带杯递到她面前。“你的。”\n\n女生停下，低头看了看方可手里的杯子，又看了看自己手里的。她接过外带杯，翻过杯身看了一眼标签，然后把马克杯递还给方可。\n\n方可接过来，杯沿上那块擦拭痕迹还在。\n\n女生拿着自己的外带杯推门出去了。",
+  "input_tokens": 1467,
+  "output_tokens": 173,
+  "latency_ms": 9125,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "2a3e9b923f9457ba336cb7563f1dfdcc5b0ff9781d87d6987970e7132732b276",
+  "text_path": "cases\\CO-03\\drafts\\route-3.txt"
+}

@@ -1,0 +1,8 @@
+{
+  "experiment_id": "NARRATIVE_ROUTE_CONFIRMATORY_V1",
+  "source_commit": "7ce78985ca889617de29d028150925309e495fc7",
+  "total_articles": 60,
+  "total_content_characters": 46489,
+  "separator": "five newline characters",
+  "submission_sha256": "e248bf4f9964e55c9fbd8fe6060d09bdfc7b8c5ba238045ebb6b4f71f1cacb45"
+}

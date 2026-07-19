@@ -1,0 +1,260 @@
+{
+  "case_id": "CO-02",
+  "category": "校园误会",
+  "title": "更衣室里的手机",
+  "group": "COBJECT_VS_A",
+  "run_id": "1ed07c13-ae64-40af-a4b9-a055e8fbd378",
+  "planner": {
+    "candidate_id": "216e43f8-91aa-4c3b-8117-9716d5216a33",
+    "attempt_number": 1,
+    "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+    "model_id": "deepseek-v4-pro",
+    "prompt_version_id": "f9052f8a-dc4e-5408-b14e-fc1badaf57f8",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 12288,
+      "timeout_seconds": 300,
+      "thinking": "disabled",
+      "response_format": "json_object"
+    },
+    "text_output": "{\n  \"planner_contract_version\": 2,\n  \"scene_goal\": \"何映在游泳课后发现一部与自己同型号但非自己的手机，必须在不能拿走或大声询问的限制下，使用现场物件让手机回到失主手中，同时避免误会。\",\n  \"location\": \"学校游泳馆女更衣室\",\n  \"time\": \"游泳课刚结束，更衣室里只剩两个人\",\n  \"scene_state\": {\n    \"last_completed_action\": \"游泳课结束，何映走进更衣室\",\n    \"present_characters\": [\"何映\", \"林晚\"],\n    \"visible_facts\": [\n      \"长凳上有一部手机，型号与何映的相同\",\n      \"锁屏壁纸不是何映的\",\n      \"更衣室里还有另一个女生林晚\",\n      \"泳池边传来找手机的声音\"\n    ],\n    \"available_objects\": [\n      \"长凳上的手机\",\n      \"何映自己的手机\",\n      \"更衣室储物柜\",\n      \"何映的背包\",\n      \"毛巾\"\n    ],\n    \"unresolved_problem\": \"手机的主人正在泳池边寻找，但何映不能直接拿走或大声询问，需要设法让手机回到失主手中。\",\n    \"already_existing_constraints\": [\n      \"不能把手机拿走\",\n      \"不能大声问是谁的手机\"\n    ]\n  },\n  \"characters\": [\n    {\n      \"name\": \"何映\",\n      \"goal\": \"让手机回到失主手中，同时避免误会自己偷拿手机\",\n      \"known\": [\n        \"手机型号与自己相同但非自己的\",\n        \"失主正在泳池边找手机\",\n        \"更衣室里另一个女生是林晚\"\n      ],\n      \"unknown\": [\n        \"林晚是否就是失主\",\n        \"林晚是否注意到手机\"\n      ],\n      \"mistaken_beliefs\": [\n        \"林晚可能误会她偷看别人手机\"\n      ],\n      \"constraints\": [\n        \"不能直接把手机拿走\",\n        \"不能大声喊叫询问\",\n        \"必须用现场物件处理\"\n      ],\n      \"observed_evidence\": [\n        \"长凳上的手机锁屏壁纸陌生\",\n        \"泳池方向传来询问手机的声音\",\n        \"林晚在更衣室另一侧整理物品\"\n      ],\n      \"current_interpretation\": \"手机可能是林晚的，或者林晚认识失主，但直接询问可能引起误会。\",\n      \"how_interpretation_drives_action\": \"何映决定用毛巾盖住手机，然后以找自己手机为由引起林晚注意，间接让手机被发现。\"\n    },\n    {\n      \"name\": \"林晚\",\n      \"goal\": \"整理好自己的物品，准备离开更衣室\",\n      \"known\": [\n        \"自己手机在包里\",\n        \"听到泳池边找手机的声音\"\n      ],\n      \"unknown\": [\n        \"长凳上的手机是谁的\",\n        \"何映的意图\"\n      ],\n      \"mistaken_beliefs\": [\n        \"何映可能不小心把手机落在长凳上\"\n      ],\n      \"constraints\": [\n        \"没有义务主动处理他人手机\"\n      ],\n      \"observed_evidence\": [\n        \"何映在长凳附近徘徊\",\n        \"长凳上有一部手机被毛巾盖住\"\n      ],\n      \"current_interpretation\": \"何映可能找不到自己手机了，或者毛巾下是何映的手机。\",\n      \"how_interpretation_drives_action\": \"林晚可能会提醒何映毛巾下有手机，或者帮忙寻找。\"\n    }\n  ],\n  \"concrete_problem\": \"何映如何在不触碰手机且不直接询问的情况下，让林晚注意到长凳上的手机并确认其归属，从而将手机交还失主？\",\n  \"pressure\": \"泳池边的寻找声越来越近，更衣室里的时间窗口正在缩小，何映必须在失主进来前解决，否则可能被误会。\",\n  \"turning_point\": \"何映故意将毛巾盖在手机上，然后假装找不到自己的手机，向林晚求助，林晚掀开毛巾发现手机并认出是朋友的，主动拿去归还。\",\n  \"end_condition\": \"林晚拿起手机，确认是朋友的，走出更衣室去归还。\",\n  \"forbidden\": [\n    \"何映直接拿走手机\",\n    \"何映大声询问\",\n    \"外部巧合自动解决\",\n    \"林晚主动发现手机而不需何映引导\",\n    \"何映直接告诉林晚手机不是自己的\"\n  ],\n  \"causal_transitions\": [\n    {\n      \"id\": \"CT01\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"长凳上手机屏幕亮起，显示陌生壁纸\",\n      \"character_interpretation\": \"何映意识到这不是自己手机，且失主可能就在附近\",\n      \"character_next_action\": \"何映用毛巾盖住手机，然后假装翻找背包\",\n      \"rejected_alternative\": \"何映可以直接拿起手机去泳池边问，但那样违反约束且可能被误会\",\n      \"immediate_consequence\": \"手机被毛巾遮盖，林晚注意到何映在找东西\",\n      \"counterfactual_without_action\": \"何映不盖手机，林晚可能不会注意到，或者失主进来时直接看到何映站在手机旁\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"手机暴露在长凳上，何映不知所措\",\n        \"after\": \"手机被毛巾遮盖，何映开始假装找手机\"\n      },\n      \"cost_or_commitment\": \"何映放弃直接解决问题的机会，选择更迂回的方式\",\n      \"next_constraint\": \"何映必须让林晚主动发现毛巾下的手机\",\n      \"reader_must_infer\": \"何映盖手机是为了避免直接触碰，同时制造一个让林晚介入的契机\",\n      \"narrator_must_not_state\": [\n        \"何映的真实目的是让林晚发现手机\",\n        \"何映已经猜到林晚可能认识失主\"\n      ]\n    },\n    {\n      \"id\": \"CT02\",\n      \"kind\": \"constraint_to_choice\",\n      \"visible_trigger\": \"何映对林晚说：'你有没有看到我手机？我记得放在长凳上的。'\",\n      \"character_interpretation\": \"林晚认为何映真的丢了手机，并想起长凳上毛巾下可能有手机\",\n      \"character_next_action\": \"林晚掀开毛巾，拿起手机查看\",\n      \"rejected_alternative\": \"林晚可以简单回答没看到，继续整理自己的东西\",\n      \"immediate_consequence\": \"林晚发现手机壁纸是何映的，但更认出这是朋友小敏的手机\",\n      \"counterfactual_without_action\": \"如果林晚不掀开毛巾，手机将继续留在长凳上，失主可能冲进来寻找\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"手机被毛巾遮盖，归属不明\",\n        \"after\": \"林晚认出手机是朋友的，决定拿去归还\"\n      },\n      \"cost_or_commitment\": \"何映暴露了自己‘找不到手机’的假象，未来可能需解释\",\n      \"next_constraint\": \"林晚拿走手机，何映不能阻止，必须接受这个结果\",\n      \"reader_must_infer\": \"何映故意引导林晚发现手机，但林晚并未察觉\",\n      \"narrator_must_not_state\": [\n        \"何映的提问是故意的\",\n        \"林晚完全相信了何映的借口\"\n      ]\n    }\n  ],\n  \"tempo_guardrails\": {\n    \"entry_pressure\": \"泳池边传来‘谁看到我手机了’的喊声，何映刚发现长凳上的陌生手机\",\n    \"dominant_pressure\": {\n      \"kind\": \"social_friction\",\n      \"description\": \"何映必须在避免误会的前提下处理手机，时间紧迫，且不能直接沟通\"\n    },\n    \"allowed_viewpoint_misread\": \"林晚可能把何映的犹豫理解为她真的找不到手机\",\n    \"disclosure_cap\": 1,\n    \"must_remain_unclassified\": [\n      \"何映是否早就怀疑林晚认识失主\"\n    ],\n    \"stop_state\": {\n      \"type\": \"physical_change\",\n      \"visible_fact\": \"林晚拿着手机走出更衣室\",\n      \"what_is_now_different\": \"手机从长凳上消失，进入归还流程\",\n      \"must_not_append\": \"不得描写何映后续如何解释自己的行为\"\n    }\n  },\n  \"chapter_contract_check\": {\n    \"function_aligned\": true,\n    \"must_deliver_covered\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_enabled\": true,\n    \"main_payoff_prepared\": true,\n    \"ending_hook_established\": true,\n    \"causal_transitions_grounded\": true,\n    \"reader_inference_not_pre_resolved\": true,\n    \"scene_state_reconstructed\": true,\n    \"information_sources_legal\": true,\n    \"character_choice_is_real\": true,\n    \"consequence_is_counterfactual\": true,\n    \"state_delta_is_nonempty\": true,\n    \"next_constraint_is_new\": true,\n    \"stop_state_is_visible\": true,\n    \"stop_state_changes_future_actions\": true\n  }\n}",
+    "raw_response": "{\n  \"planner_contract_version\": 2,\n  \"scene_goal\": \"何映在游泳课后发现一部与自己同型号但非自己的手机，必须在不能拿走或大声询问的限制下，使用现场物件让手机回到失主手中，同时避免误会。\",\n  \"location\": \"学校游泳馆女更衣室\",\n  \"time\": \"游泳课刚结束，更衣室里只剩两个人\",\n  \"scene_state\": {\n    \"last_completed_action\": \"游泳课结束，何映走进更衣室\",\n    \"present_characters\": [\"何映\", \"林晚\"],\n    \"visible_facts\": [\n      \"长凳上有一部手机，型号与何映的相同\",\n      \"锁屏壁纸不是何映的\",\n      \"更衣室里还有另一个女生林晚\",\n      \"泳池边传来找手机的声音\"\n    ],\n    \"available_objects\": [\n      \"长凳上的手机\",\n      \"何映自己的手机\",\n      \"更衣室储物柜\",\n      \"何映的背包\",\n      \"毛巾\"\n    ],\n    \"unresolved_problem\": \"手机的主人正在泳池边寻找，但何映不能直接拿走或大声询问，需要设法让手机回到失主手中。\",\n    \"already_existing_constraints\": [\n      \"不能把手机拿走\",\n      \"不能大声问是谁的手机\"\n    ]\n  },\n  \"characters\": [\n    {\n      \"name\": \"何映\",\n      \"goal\": \"让手机回到失主手中，同时避免误会自己偷拿手机\",\n      \"known\": [\n        \"手机型号与自己相同但非自己的\",\n        \"失主正在泳池边找手机\",\n        \"更衣室里另一个女生是林晚\"\n      ],\n      \"unknown\": [\n        \"林晚是否就是失主\",\n        \"林晚是否注意到手机\"\n      ],\n      \"mistaken_beliefs\": [\n        \"林晚可能误会她偷看别人手机\"\n      ],\n      \"constraints\": [\n        \"不能直接把手机拿走\",\n        \"不能大声喊叫询问\",\n        \"必须用现场物件处理\"\n      ],\n      \"observed_evidence\": [\n        \"长凳上的手机锁屏壁纸陌生\",\n        \"泳池方向传来询问手机的声音\",\n        \"林晚在更衣室另一侧整理物品\"\n      ],\n      \"current_interpretation\": \"手机可能是林晚的，或者林晚认识失主，但直接询问可能引起误会。\",\n      \"how_interpretation_drives_action\": \"何映决定用毛巾盖住手机，然后以找自己手机为由引起林晚注意，间接让手机被发现。\"\n    },\n    {\n      \"name\": \"林晚\",\n      \"goal\": \"整理好自己的物品，准备离开更衣室\",\n      \"known\": [\n        \"自己手机在包里\",\n        \"听到泳池边找手机的声音\"\n      ],\n      \"unknown\": [\n        \"长凳上的手机是谁的\",\n        \"何映的意图\"\n      ],\n      \"mistaken_beliefs\": [\n        \"何映可能不小心把手机落在长凳上\"\n      ],\n      \"constraints\": [\n        \"没有义务主动处理他人手机\"\n      ],\n      \"observed_evidence\": [\n        \"何映在长凳附近徘徊\",\n        \"长凳上有一部手机被毛巾盖住\"\n      ],\n      \"current_interpretation\": \"何映可能找不到自己手机了，或者毛巾下是何映的手机。\",\n      \"how_interpretation_drives_action\": \"林晚可能会提醒何映毛巾下有手机，或者帮忙寻找。\"\n    }\n  ],\n  \"concrete_problem\": \"何映如何在不触碰手机且不直接询问的情况下，让林晚注意到长凳上的手机并确认其归属，从而将手机交还失主？\",\n  \"pressure\": \"泳池边的寻找声越来越近，更衣室里的时间窗口正在缩小，何映必须在失主进来前解决，否则可能被误会。\",\n  \"turning_point\": \"何映故意将毛巾盖在手机上，然后假装找不到自己的手机，向林晚求助，林晚掀开毛巾发现手机并认出是朋友的，主动拿去归还。\",\n  \"end_condition\": \"林晚拿起手机，确认是朋友的，走出更衣室去归还。\",\n  \"forbidden\": [\n    \"何映直接拿走手机\",\n    \"何映大声询问\",\n    \"外部巧合自动解决\",\n    \"林晚主动发现手机而不需何映引导\",\n    \"何映直接告诉林晚手机不是自己的\"\n  ],\n  \"causal_transitions\": [\n    {\n      \"id\": \"CT01\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"长凳上手机屏幕亮起，显示陌生壁纸\",\n      \"character_interpretation\": \"何映意识到这不是自己手机，且失主可能就在附近\",\n      \"character_next_action\": \"何映用毛巾盖住手机，然后假装翻找背包\",\n      \"rejected_alternative\": \"何映可以直接拿起手机去泳池边问，但那样违反约束且可能被误会\",\n      \"immediate_consequence\": \"手机被毛巾遮盖，林晚注意到何映在找东西\",\n      \"counterfactual_without_action\": \"何映不盖手机，林晚可能不会注意到，或者失主进来时直接看到何映站在手机旁\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"手机暴露在长凳上，何映不知所措\",\n        \"after\": \"手机被毛巾遮盖，何映开始假装找手机\"\n      },\n      \"cost_or_commitment\": \"何映放弃直接解决问题的机会，选择更迂回的方式\",\n      \"next_constraint\": \"何映必须让林晚主动发现毛巾下的手机\",\n      \"reader_must_infer\": \"何映盖手机是为了避免直接触碰，同时制造一个让林晚介入的契机\",\n      \"narrator_must_not_state\": [\n        \"何映的真实目的是让林晚发现手机\",\n        \"何映已经猜到林晚可能认识失主\"\n      ]\n    },\n    {\n      \"id\": \"CT02\",\n      \"kind\": \"constraint_to_choice\",\n      \"visible_trigger\": \"何映对林晚说：'你有没有看到我手机？我记得放在长凳上的。'\",\n      \"character_interpretation\": \"林晚认为何映真的丢了手机，并想起长凳上毛巾下可能有手机\",\n      \"character_next_action\": \"林晚掀开毛巾，拿起手机查看\",\n      \"rejected_alternative\": \"林晚可以简单回答没看到，继续整理自己的东西\",\n      \"immediate_consequence\": \"林晚发现手机壁纸是何映的，但更认出这是朋友小敏的手机\",\n      \"counterfactual_without_action\": \"如果林晚不掀开毛巾，手机将继续留在长凳上，失主可能冲进来寻找\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"手机被毛巾遮盖，归属不明\",\n        \"after\": \"林晚认出手机是朋友的，决定拿去归还\"\n      },\n      \"cost_or_commitment\": \"何映暴露了自己‘找不到手机’的假象，未来可能需解释\",\n      \"next_constraint\": \"林晚拿走手机，何映不能阻止，必须接受这个结果\",\n      \"reader_must_infer\": \"何映故意引导林晚发现手机，但林晚并未察觉\",\n      \"narrator_must_not_state\": [\n        \"何映的提问是故意的\",\n        \"林晚完全相信了何映的借口\"\n      ]\n    }\n  ],\n  \"tempo_guardrails\": {\n    \"entry_pressure\": \"泳池边传来‘谁看到我手机了’的喊声，何映刚发现长凳上的陌生手机\",\n    \"dominant_pressure\": {\n      \"kind\": \"social_friction\",\n      \"description\": \"何映必须在避免误会的前提下处理手机，时间紧迫，且不能直接沟通\"\n    },\n    \"allowed_viewpoint_misread\": \"林晚可能把何映的犹豫理解为她真的找不到手机\",\n    \"disclosure_cap\": 1,\n    \"must_remain_unclassified\": [\n      \"何映是否早就怀疑林晚认识失主\"\n    ],\n    \"stop_state\": {\n      \"type\": \"physical_change\",\n      \"visible_fact\": \"林晚拿着手机走出更衣室\",\n      \"what_is_now_different\": \"手机从长凳上消失，进入归还流程\",\n      \"must_not_append\": \"不得描写何映后续如何解释自己的行为\"\n    }\n  },\n  \"chapter_contract_check\": {\n    \"function_aligned\": true,\n    \"must_deliver_covered\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_enabled\": true,\n    \"main_payoff_prepared\": true,\n    \"ending_hook_established\": true,\n    \"causal_transitions_grounded\": true,\n    \"reader_inference_not_pre_resolved\": true,\n    \"scene_state_reconstructed\": true,\n    \"information_sources_legal\": true,\n    \"character_choice_is_real\": true,\n    \"consequence_is_counterfactual\": true,\n    \"state_delta_is_nonempty\": true,\n    \"next_constraint_is_new\": true,\n    \"stop_state_is_visible\": true,\n    \"stop_state_changes_future_actions\": true\n  }\n}",
+    "input_tokens": 3314,
+    "output_tokens": 2025,
+    "latency_ms": 33534,
+    "finish_reason": "stop",
+    "error_code": null,
+    "error_message": null,
+    "rendered_user_prompt_sha256": "f598e656bc033463bda28b30f5270641d2773d5ee014080559a376d2241e4314"
+  },
+  "drafts": [
+    {
+      "group": "ROUTE-COBJECT_VS_A",
+      "replica": 1,
+      "mode": "narrative_route",
+      "candidate_id": "8cd6706f-5d91-49bd-a173-c07993ef96b5",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "C_OBJECT_CAUSAL",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "scene_state.available_objects is non-empty",
+            "causal_transitions contains counterfactual_without_action or rejected_alternative",
+            "character_next_action involves physical object manipulation"
+          ],
+          "matched_rules": [
+            "RULE_C_OBJECT_CAUSAL"
+          ],
+          "rejected_routes": []
+        },
+        "compiled_brief_hash": "54a8fe00c94ad3cbf6b7869adc53d0ad221eb4720a38db04f8aab5a28b0e70e5",
+        "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "更衣室里的水汽还没散尽，瓷砖墙上凝着细密的水珠。\n\n何映把湿泳衣塞进防水袋，手指刚碰到长凳上的背包，余光就扫到了旁边那部手机。黑色机身，透明软壳，屏幕朝上——和她自己的那部一模一样。\n\n她下意识摸了一下背包侧袋。自己的手机还在。\n\n长凳上的那部，锁屏亮着。壁纸是一只橘猫趴在窗台上，阳光打在猫背上。不是她的。\n\n泳池方向隔着两道门传来一个女生的声音：“谁看到我手机了？黑色的——”\n\n何映的手指顿在半空。\n\n更衣室里只剩两个人。她站在长凳这边，林晚在对面那排储物柜前，正把吹风机往包里塞，拉链声响得很有节奏。\n\n何映没有拿起那部手机。\n\n她抽出一条白毛巾，抖开，往长凳上一铺。毛巾盖住了手机，鼓出一个小小的方形轮廓。她转身拉开背包拉链，把手伸进去翻，动作很慢，低着头，像在找什么东西。\n\n林晚的拉链声停了。\n\n何映继续翻。背包里其实没什么好翻的，她的手在隔层之间来回拨，发出布料摩擦的声响。\n\n林晚的脚步声移过来了。\n\n“你在找什么？”林晚的声音从她身后传来。\n\n何映侧了侧身，让出长凳上一半的视线范围。“没什么，就是——”她把手从背包里抽出来，空的，“总感觉少了点东西。”\n\n林晚的目光落到那条白毛巾上。\n\n毛巾铺得不算平整，边角翘着，中间那个方形凸起在白色绒布下面藏不住形状。林晚看了两秒，伸手把毛巾掀开。\n\n橘猫壁纸亮着。\n\n林晚拿起手机，屏幕自动解锁。她低头看了一眼界面，然后抬头望向泳池方向。\n\n“外面在喊。”她说。\n\n何映把背包拉链拉上。“嗯。”\n\n林晚没再问什么，拿着手机走向更衣室门口。她推开那扇弹簧门，门板晃了两下，停住。\n\n何映看着那扇门合上。",
+      "raw_response": "更衣室里的水汽还没散尽，瓷砖墙上凝着细密的水珠。\n\n何映把湿泳衣塞进防水袋，手指刚碰到长凳上的背包，余光就扫到了旁边那部手机。黑色机身，透明软壳，屏幕朝上——和她自己的那部一模一样。\n\n她下意识摸了一下背包侧袋。自己的手机还在。\n\n长凳上的那部，锁屏亮着。壁纸是一只橘猫趴在窗台上，阳光打在猫背上。不是她的。\n\n泳池方向隔着两道门传来一个女生的声音：“谁看到我手机了？黑色的——”\n\n何映的手指顿在半空。\n\n更衣室里只剩两个人。她站在长凳这边，林晚在对面那排储物柜前，正把吹风机往包里塞，拉链声响得很有节奏。\n\n何映没有拿起那部手机。\n\n她抽出一条白毛巾，抖开，往长凳上一铺。毛巾盖住了手机，鼓出一个小小的方形轮廓。她转身拉开背包拉链，把手伸进去翻，动作很慢，低着头，像在找什么东西。\n\n林晚的拉链声停了。\n\n何映继续翻。背包里其实没什么好翻的，她的手在隔层之间来回拨，发出布料摩擦的声响。\n\n林晚的脚步声移过来了。\n\n“你在找什么？”林晚的声音从她身后传来。\n\n何映侧了侧身，让出长凳上一半的视线范围。“没什么，就是——”她把手从背包里抽出来，空的，“总感觉少了点东西。”\n\n林晚的目光落到那条白毛巾上。\n\n毛巾铺得不算平整，边角翘着，中间那个方形凸起在白色绒布下面藏不住形状。林晚看了两秒，伸手把毛巾掀开。\n\n橘猫壁纸亮着。\n\n林晚拿起手机，屏幕自动解锁。她低头看了一眼界面，然后抬头望向泳池方向。\n\n“外面在喊。”她说。\n\n何映把背包拉链拉上。“嗯。”\n\n林晚没再问什么，拿着手机走向更衣室门口。她推开那扇弹簧门，门板晃了两下，停住。\n\n何映看着那扇门合上。",
+      "input_tokens": 1410,
+      "output_tokens": 449,
+      "latency_ms": 13733,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "dc8e662014ef38306ca4cc4ba88d69b74ff27fb6851ea0048b81e6520374ebc2",
+      "text_path": "cases\\CO-02\\drafts\\route-1.txt"
+    },
+    {
+      "group": "BASELINE-COBJECT_VS_A",
+      "replica": 1,
+      "mode": "complete_planner",
+      "candidate_id": "9b4c9f0e-b7b7-40fc-86eb-a8a41cb6237c",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "何映把背包放在长凳上，拉开拉链。\n\n泳池方向传来一个女生的声音：“谁看到我手机了？银色的，跟何映那个同款——”\n\n何映的手停在背包口。\n\n长凳另一端，一部手机屏幕朝上搁在木条间隙。银色机身，透明软壳，边缘有一圈淡蓝色的边框。她认得这个型号。她自己那部此刻正塞在背包侧袋里。\n\n她没碰那部手机。\n\n屏幕亮了一下。锁屏壁纸是一只橘猫趴在窗台上，背景是陌生的碎花窗帘。不是她的壁纸。\n\n更衣室里水汽还没散尽，瓷砖地上有几滩湿脚印。何映抬起头。林晚在对面那排储物柜前，正把泳镜塞进手提袋，头发还滴着水，肩上搭一条白色毛巾。\n\n泳池边的声音又近了：“有没有人看见啊？我刚游完出来就不见了——”\n\n何映的视线落回长凳。\n\n她不能把手机拿走。拿走就说不清。\n\n她也不能大声问林晚“这是不是你的”。更衣室只有她们两个人，声音会直接穿过那扇半开的门传到泳池边，到时候不管怎么解释，听起来都像她拿着别人的手机在盘问。\n\n何映从背包里抽出自己的毛巾。\n\n她抖开毛巾，往长凳上一铺。毛巾的一角盖住了那部手机，银色的边缘消失在白色绒布下面。\n\n然后她蹲下来，把手伸进背包，翻了两下，站起来，又拍了拍外套口袋。\n\n林晚拉上手提袋拉链，抬头看了她一眼。\n\n何映把背包整个拎起来，往长凳底下看了看，然后转向林晚，眉头皱起来：“你有没有看到我手机？我记得放在长凳上的。”\n\n林晚的手在手提袋上停了一下。\n\n“没注意。”林晚说，目光扫过长凳，落在毛巾上。毛巾中间微微隆起一块长方形的轮廓。\n\n何映顺着她的视线看过去，没动。\n\n林晚走过去，掀开毛巾。\n\n她拿起手机，按亮屏幕。橘猫和碎花窗帘亮起来。\n\n林晚的眉毛动了一下。\n\n“这不是你的。”她说，不是疑问句。\n\n何映站在长凳另一侧，手里还拎着背包。她没接话。\n\n林晚把手机翻过来，看了看透明软壳背面夹着的一张拍立得照片——两个女生在泳池边的合照，其中一个笑得露出牙套。林晚认识那个女生。\n\n“小敏的。”林晚说。\n\n泳池边那个声音又喊了一遍：“林晚——你还在里面吗？帮我看看更衣室有没有——”\n\n林晚已经朝门口走了两步，手里攥着那部手机。\n\n“在这儿！”她推开更衣室的门，声音越过泳池的水面，“长凳上找到的。”\n\n何映把毛巾叠起来，放进背包。",
+      "raw_response": "何映把背包放在长凳上，拉开拉链。\n\n泳池方向传来一个女生的声音：“谁看到我手机了？银色的，跟何映那个同款——”\n\n何映的手停在背包口。\n\n长凳另一端，一部手机屏幕朝上搁在木条间隙。银色机身，透明软壳，边缘有一圈淡蓝色的边框。她认得这个型号。她自己那部此刻正塞在背包侧袋里。\n\n她没碰那部手机。\n\n屏幕亮了一下。锁屏壁纸是一只橘猫趴在窗台上，背景是陌生的碎花窗帘。不是她的壁纸。\n\n更衣室里水汽还没散尽，瓷砖地上有几滩湿脚印。何映抬起头。林晚在对面那排储物柜前，正把泳镜塞进手提袋，头发还滴着水，肩上搭一条白色毛巾。\n\n泳池边的声音又近了：“有没有人看见啊？我刚游完出来就不见了——”\n\n何映的视线落回长凳。\n\n她不能把手机拿走。拿走就说不清。\n\n她也不能大声问林晚“这是不是你的”。更衣室只有她们两个人，声音会直接穿过那扇半开的门传到泳池边，到时候不管怎么解释，听起来都像她拿着别人的手机在盘问。\n\n何映从背包里抽出自己的毛巾。\n\n她抖开毛巾，往长凳上一铺。毛巾的一角盖住了那部手机，银色的边缘消失在白色绒布下面。\n\n然后她蹲下来，把手伸进背包，翻了两下，站起来，又拍了拍外套口袋。\n\n林晚拉上手提袋拉链，抬头看了她一眼。\n\n何映把背包整个拎起来，往长凳底下看了看，然后转向林晚，眉头皱起来：“你有没有看到我手机？我记得放在长凳上的。”\n\n林晚的手在手提袋上停了一下。\n\n“没注意。”林晚说，目光扫过长凳，落在毛巾上。毛巾中间微微隆起一块长方形的轮廓。\n\n何映顺着她的视线看过去，没动。\n\n林晚走过去，掀开毛巾。\n\n她拿起手机，按亮屏幕。橘猫和碎花窗帘亮起来。\n\n林晚的眉毛动了一下。\n\n“这不是你的。”她说，不是疑问句。\n\n何映站在长凳另一侧，手里还拎着背包。她没接话。\n\n林晚把手机翻过来，看了看透明软壳背面夹着的一张拍立得照片——两个女生在泳池边的合照，其中一个笑得露出牙套。林晚认识那个女生。\n\n“小敏的。”林晚说。\n\n泳池边那个声音又喊了一遍：“林晚——你还在里面吗？帮我看看更衣室有没有——”\n\n林晚已经朝门口走了两步，手里攥着那部手机。\n\n“在这儿！”她推开更衣室的门，声音越过泳池的水面，“长凳上找到的。”\n\n何映把毛巾叠起来，放进背包。",
+      "input_tokens": 2827,
+      "output_tokens": 599,
+      "latency_ms": 17306,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "84f0fbdf3de5abc18edbdf7873c4102466a23932f42298b5bc082bd5e45289d3",
+      "text_path": "cases\\CO-02\\drafts\\baseline-1.txt"
+    },
+    {
+      "group": "ROUTE-COBJECT_VS_A",
+      "replica": 2,
+      "mode": "narrative_route",
+      "candidate_id": "3911f77e-3057-4162-b220-7cfcdc071256",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "C_OBJECT_CAUSAL",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "scene_state.available_objects is non-empty",
+            "causal_transitions contains counterfactual_without_action or rejected_alternative",
+            "character_next_action involves physical object manipulation"
+          ],
+          "matched_rules": [
+            "RULE_C_OBJECT_CAUSAL"
+          ],
+          "rejected_routes": []
+        },
+        "compiled_brief_hash": "54a8fe00c94ad3cbf6b7869adc53d0ad221eb4720a38db04f8aab5a28b0e70e5",
+        "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "何映的手指刚碰到长凳上的手机，泳池方向就传来一声喊。\n\n“谁看到我手机了？银色的，屏幕朝下放着——”\n\n声音透过更衣室半开的门传进来，带着泳池特有的回响。何映的手停住了。\n\n锁屏壁纸是一只橘猫，窝在灰色沙发上。不是她的。她的锁屏是上周在食堂拍的抹茶千层。\n\n她自己的手机还在防水袋里，沉甸甸地贴在腰侧。\n\n更衣室另一侧，林晚正把泳镜塞进背包侧袋，拉链声清脆地响了一下。何映抬眼扫过去——林晚背对着她，湿发还在滴水，落在瓷砖地上啪嗒啪嗒。\n\n长凳上这部手机离何映的右手不到十厘米。银色，同款壳，连侧边那条细小的划痕位置都差不多。\n\n泳池边又传来一声：“有人看到吗？”\n\n何映把毛巾从肩上扯下来，抖开，往长凳上一铺。毛巾的边角刚好盖住手机。\n\n她蹲下身，拉开自己背包的拉链，翻出润肤露的瓶子，又塞回去。手指在包里拨弄出发出的声响。\n\n“你在找什么？”林晚的声音从背后传来。\n\n何映没回头，继续翻包。“润肤露。刚才明明放进去的。”\n\n她听见林晚的脚步声往这边移了两步。\n\n“长凳上那个——”林晚顿了一下，“你毛巾下面鼓鼓的是什么？”\n\n何映侧过脸，看见林晚已经转过身来，视线落在长凳上。\n\n毛巾是白色的，手机的长方形轮廓顶出一个明显的凸起。\n\n何映拉上背包拉链。“什么？”\n\n她顺着林晚的目光看过去，伸手掀开毛巾一角——橘猫的锁屏亮着，时间显示15:47。\n\n“这不是我的。”何映把毛巾完全拉开。\n\n林晚走近一步，低头看了看屏幕。“橘猫？”\n\n“嗯。”\n\n泳池那边的喊声停了。更衣室里只剩下排风扇的低鸣。\n\n林晚伸手拿起手机，翻过来看背面。壳的右下角贴着一张透明的防水贴纸，印着一个小小的帆船图案。\n\n“是周念的。”林晚说，“她刚才在深水区练转身，手机从浴巾里滑出来了吧。”\n\n林晚把手机握在手里，转身往门口走。湿脚印一串串印在瓷砖上，延伸到更衣室门口。\n\n她推开门，泳池的氯气味道涌进来。\n\n门在她身后合上。",
+      "raw_response": "何映的手指刚碰到长凳上的手机，泳池方向就传来一声喊。\n\n“谁看到我手机了？银色的，屏幕朝下放着——”\n\n声音透过更衣室半开的门传进来，带着泳池特有的回响。何映的手停住了。\n\n锁屏壁纸是一只橘猫，窝在灰色沙发上。不是她的。她的锁屏是上周在食堂拍的抹茶千层。\n\n她自己的手机还在防水袋里，沉甸甸地贴在腰侧。\n\n更衣室另一侧，林晚正把泳镜塞进背包侧袋，拉链声清脆地响了一下。何映抬眼扫过去——林晚背对着她，湿发还在滴水，落在瓷砖地上啪嗒啪嗒。\n\n长凳上这部手机离何映的右手不到十厘米。银色，同款壳，连侧边那条细小的划痕位置都差不多。\n\n泳池边又传来一声：“有人看到吗？”\n\n何映把毛巾从肩上扯下来，抖开，往长凳上一铺。毛巾的边角刚好盖住手机。\n\n她蹲下身，拉开自己背包的拉链，翻出润肤露的瓶子，又塞回去。手指在包里拨弄出发出的声响。\n\n“你在找什么？”林晚的声音从背后传来。\n\n何映没回头，继续翻包。“润肤露。刚才明明放进去的。”\n\n她听见林晚的脚步声往这边移了两步。\n\n“长凳上那个——”林晚顿了一下，“你毛巾下面鼓鼓的是什么？”\n\n何映侧过脸，看见林晚已经转过身来，视线落在长凳上。\n\n毛巾是白色的，手机的长方形轮廓顶出一个明显的凸起。\n\n何映拉上背包拉链。“什么？”\n\n她顺着林晚的目光看过去，伸手掀开毛巾一角——橘猫的锁屏亮着，时间显示15:47。\n\n“这不是我的。”何映把毛巾完全拉开。\n\n林晚走近一步，低头看了看屏幕。“橘猫？”\n\n“嗯。”\n\n泳池那边的喊声停了。更衣室里只剩下排风扇的低鸣。\n\n林晚伸手拿起手机，翻过来看背面。壳的右下角贴着一张透明的防水贴纸，印着一个小小的帆船图案。\n\n“是周念的。”林晚说，“她刚才在深水区练转身，手机从浴巾里滑出来了吧。”\n\n林晚把手机握在手里，转身往门口走。湿脚印一串串印在瓷砖上，延伸到更衣室门口。\n\n她推开门，泳池的氯气味道涌进来。\n\n门在她身后合上。",
+      "input_tokens": 1410,
+      "output_tokens": 533,
+      "latency_ms": 14960,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "dc8e662014ef38306ca4cc4ba88d69b74ff27fb6851ea0048b81e6520374ebc2",
+      "text_path": "cases\\CO-02\\drafts\\route-2.txt"
+    },
+    {
+      "group": "BASELINE-COBJECT_VS_A",
+      "replica": 2,
+      "mode": "complete_planner",
+      "candidate_id": "d3f399e3-b02f-47f4-99ee-49f09e58f8eb",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "何映拉开更衣室储物柜的铁门，把背包塞进去，湿漉漉的泳衣还在身上滴水。她拽过毛巾，刚擦了两把头发，余光扫到长凳上有什么东西。\n\n一部手机。\n\n和她的一模一样，白色外壳，左上角那道划痕的位置都差不多。何映下意识摸了一下自己背包侧袋——她的手机还在，屏幕朝里贴着袋壁。\n\n长凳上的手机屏幕突然亮了。\n\n锁屏壁纸是一只橘猫趴在键盘上，眼睛半闭。不是她的。她的壁纸是纯黑底色，什么图案都没有。\n\n“谁看到我手机了——”\n\n泳池方向传来喊声，隔着两道门，声音闷闷的，但足够清楚。何映手指顿在毛巾边缘，没有去碰那部手机。\n\n更衣室里还有一个人。\n\n林晚在对面那排储物柜前，运动包已经拉好拉链，正弯腰系鞋带。她没往这边看。\n\n何映把毛巾展开。\n\n她抖了抖毛巾，像要叠起来，手一扬，毛巾落下去，刚好盖住长凳上的手机。白色外壳消失在蓝色毛巾下面，鼓出一个小小的矩形轮廓。\n\n何映转身对着储物柜，把背包拉链拉开又拉上，翻了两下，动作幅度比实际需要的大。她把泳镜盒拿出来看了一眼，放回去，又抽出一条干发帽，再塞回去。\n\n“那个……”\n\n何映转过头。林晚已经直起身，单肩挂着运动包，正看着她。\n\n“你找东西？”林晚问。\n\n“我手机，”何映说，手还在背包侧袋里摸了两下，“我记得放长凳上了，现在怎么找不着了。”\n\n林晚的视线移向长凳。\n\n蓝色毛巾鼓着一块。\n\n“那是不是你手机？”林晚走过去，掀开毛巾。\n\n手机屏幕又亮了，橘猫还在打盹。林晚拿起来，拇指划过屏幕，锁屏界面弹出来。她看了两秒，眉头动了一下。\n\n“这不是你的吧？”\n\n何映摇头。\n\n“这是小敏的，”林晚说，已经按了侧键让屏幕暗下去，“她刚才一直在泳池边找。这只猫是她上周刚领养的。”\n\n泳池方向又传来喊声，更近了。\n\n林晚把毛巾搁回长凳上，手机攥在手里，朝更衣室门口走了两步。运动包在她肩上晃了一下，她推开那扇弹簧门。\n\n何映站在原地，手还搁在背包侧袋上。\n\n门弹回来，合上。",
+      "raw_response": "何映拉开更衣室储物柜的铁门，把背包塞进去，湿漉漉的泳衣还在身上滴水。她拽过毛巾，刚擦了两把头发，余光扫到长凳上有什么东西。\n\n一部手机。\n\n和她的一模一样，白色外壳，左上角那道划痕的位置都差不多。何映下意识摸了一下自己背包侧袋——她的手机还在，屏幕朝里贴着袋壁。\n\n长凳上的手机屏幕突然亮了。\n\n锁屏壁纸是一只橘猫趴在键盘上，眼睛半闭。不是她的。她的壁纸是纯黑底色，什么图案都没有。\n\n“谁看到我手机了——”\n\n泳池方向传来喊声，隔着两道门，声音闷闷的，但足够清楚。何映手指顿在毛巾边缘，没有去碰那部手机。\n\n更衣室里还有一个人。\n\n林晚在对面那排储物柜前，运动包已经拉好拉链，正弯腰系鞋带。她没往这边看。\n\n何映把毛巾展开。\n\n她抖了抖毛巾，像要叠起来，手一扬，毛巾落下去，刚好盖住长凳上的手机。白色外壳消失在蓝色毛巾下面，鼓出一个小小的矩形轮廓。\n\n何映转身对着储物柜，把背包拉链拉开又拉上，翻了两下，动作幅度比实际需要的大。她把泳镜盒拿出来看了一眼，放回去，又抽出一条干发帽，再塞回去。\n\n“那个……”\n\n何映转过头。林晚已经直起身，单肩挂着运动包，正看着她。\n\n“你找东西？”林晚问。\n\n“我手机，”何映说，手还在背包侧袋里摸了两下，“我记得放长凳上了，现在怎么找不着了。”\n\n林晚的视线移向长凳。\n\n蓝色毛巾鼓着一块。\n\n“那是不是你手机？”林晚走过去，掀开毛巾。\n\n手机屏幕又亮了，橘猫还在打盹。林晚拿起来，拇指划过屏幕，锁屏界面弹出来。她看了两秒，眉头动了一下。\n\n“这不是你的吧？”\n\n何映摇头。\n\n“这是小敏的，”林晚说，已经按了侧键让屏幕暗下去，“她刚才一直在泳池边找。这只猫是她上周刚领养的。”\n\n泳池方向又传来喊声，更近了。\n\n林晚把毛巾搁回长凳上，手机攥在手里，朝更衣室门口走了两步。运动包在她肩上晃了一下，她推开那扇弹簧门。\n\n何映站在原地，手还搁在背包侧袋上。\n\n门弹回来，合上。",
+      "input_tokens": 2827,
+      "output_tokens": 536,
+      "latency_ms": 14766,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "84f0fbdf3de5abc18edbdf7873c4102466a23932f42298b5bc082bd5e45289d3",
+      "text_path": "cases\\CO-02\\drafts\\baseline-2.txt"
+    },
+    {
+      "group": "ROUTE-COBJECT_VS_A",
+      "replica": 3,
+      "mode": "narrative_route",
+      "candidate_id": "68afa05d-c817-4f4a-9402-0794ea6d45c3",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "route_decision": {
+          "route_name": "C_OBJECT_CAUSAL",
+          "classifier_version": "narrative-route-v1",
+          "decision_reasons": [
+            "scene_state.available_objects is non-empty",
+            "causal_transitions contains counterfactual_without_action or rejected_alternative",
+            "character_next_action involves physical object manipulation"
+          ],
+          "matched_rules": [
+            "RULE_C_OBJECT_CAUSAL"
+          ],
+          "rejected_routes": []
+        },
+        "compiled_brief_hash": "54a8fe00c94ad3cbf6b7869adc53d0ad221eb4720a38db04f8aab5a28b0e70e5",
+        "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "何映的手指刚碰到长凳上的手机，泳池方向就传来一声喊。\n\n“谁看到我手机了？”\n\n声音隔着半堵墙，带着水汽和回音。何映的动作停在半空。她低头看长凳——那部手机屏幕朝上，锁屏是一张橘猫趴在窗台的图片，阳光打在猫肚子上。\n\n不是她的。\n\n她自己的手机在储物柜里，锁屏是纯黑底色。\n\n喊声又响了一次，是个女声，听起来正往更衣室入口走。何映扫了一眼更衣室——林晚在对面那排储物柜前，背对着她，正把泳镜往防水袋里塞。湿头发的滴水声打在瓷砖地上，啪嗒啪嗒。\n\n长凳上只有那部手机。更衣室里只有三个人。何映不能拿起来——她站在陌生手机旁边，手里握着毛巾，如果林晚这时候回头，或者失主推门进来，看见她拿着手机，她得解释。解释成什么样，取决于对方先看见什么。\n\n她松开手指。\n\n毛巾从她手腕上滑下来，落在长凳上，盖住了手机。浅蓝色毛巾鼓出一个长方形轮廓。\n\n何映转身打开自己的储物柜，把背包拖出来，拉链拉开，开始翻。她翻了泳帽、翻了防水袋、翻了一个空矿泉水瓶，动作不快，但一直翻。柜门挡在她和长凳之间，她侧着头，余光可以看见林晚那边。\n\n林晚拉上防水袋的拉链，转过身来。\n\n她看了一眼何映——何映正低着头翻背包，手在底层摸来摸去。林晚的视线从何映身上移开，落在长凳上。那条毛巾鼓着。她看了两秒，走过去。\n\n何映继续翻背包。手指摸到一个护手霜盖子，拧开又拧上。\n\n林晚拿起毛巾。\n\n“诶？”她的声音不大，但何映听见了。林晚把毛巾放到一边，拿起那部手机，按了一下侧键。橘猫亮起来。林晚看了一眼锁屏，又看了一眼更衣室门口的方向。\n\n泳池那边传来第三次喊声，更近了，像有人站在更衣室门外的过道上。“手机——有人看到吗？”\n\n林晚拿着手机往门口走。她的拖鞋踩在瓷砖上，声音清脆，一步一步。\n\n何映把护手霜放回背包，拉上拉链。她听见更衣室门被推开，外面那个声音说“啊我的手机”，林晚说“长凳上捡的”，门又关上了。\n\n更衣室里只剩何映一个人。",
+      "raw_response": "何映的手指刚碰到长凳上的手机，泳池方向就传来一声喊。\n\n“谁看到我手机了？”\n\n声音隔着半堵墙，带着水汽和回音。何映的动作停在半空。她低头看长凳——那部手机屏幕朝上，锁屏是一张橘猫趴在窗台的图片，阳光打在猫肚子上。\n\n不是她的。\n\n她自己的手机在储物柜里，锁屏是纯黑底色。\n\n喊声又响了一次，是个女声，听起来正往更衣室入口走。何映扫了一眼更衣室——林晚在对面那排储物柜前，背对着她，正把泳镜往防水袋里塞。湿头发的滴水声打在瓷砖地上，啪嗒啪嗒。\n\n长凳上只有那部手机。更衣室里只有三个人。何映不能拿起来——她站在陌生手机旁边，手里握着毛巾，如果林晚这时候回头，或者失主推门进来，看见她拿着手机，她得解释。解释成什么样，取决于对方先看见什么。\n\n她松开手指。\n\n毛巾从她手腕上滑下来，落在长凳上，盖住了手机。浅蓝色毛巾鼓出一个长方形轮廓。\n\n何映转身打开自己的储物柜，把背包拖出来，拉链拉开，开始翻。她翻了泳帽、翻了防水袋、翻了一个空矿泉水瓶，动作不快，但一直翻。柜门挡在她和长凳之间，她侧着头，余光可以看见林晚那边。\n\n林晚拉上防水袋的拉链，转过身来。\n\n她看了一眼何映——何映正低着头翻背包，手在底层摸来摸去。林晚的视线从何映身上移开，落在长凳上。那条毛巾鼓着。她看了两秒，走过去。\n\n何映继续翻背包。手指摸到一个护手霜盖子，拧开又拧上。\n\n林晚拿起毛巾。\n\n“诶？”她的声音不大，但何映听见了。林晚把毛巾放到一边，拿起那部手机，按了一下侧键。橘猫亮起来。林晚看了一眼锁屏，又看了一眼更衣室门口的方向。\n\n泳池那边传来第三次喊声，更近了，像有人站在更衣室门外的过道上。“手机——有人看到吗？”\n\n林晚拿着手机往门口走。她的拖鞋踩在瓷砖上，声音清脆，一步一步。\n\n何映把护手霜放回背包，拉上拉链。她听见更衣室门被推开，外面那个声音说“啊我的手机”，林晚说“长凳上捡的”，门又关上了。\n\n更衣室里只剩何映一个人。",
+      "input_tokens": 1410,
+      "output_tokens": 550,
+      "latency_ms": 16234,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "dc8e662014ef38306ca4cc4ba88d69b74ff27fb6851ea0048b81e6520374ebc2",
+      "text_path": "cases\\CO-02\\drafts\\route-3.txt"
+    },
+    {
+      "group": "BASELINE-COBJECT_VS_A",
+      "replica": 3,
+      "mode": "complete_planner",
+      "candidate_id": "d4799d7d-84e2-4d1e-b947-22ba92aeca2e",
+      "attempt_number": 1,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "何映把背包放在长凳上，毛巾搭在肩头，正要去储物柜拿洗发水。\n\n长凳那头躺着一部手机。\n\n黑色壳，圆角边框，屏幕朝上。和她自己的那部一模一样。\n\n她弯腰看了一眼。锁屏壁纸是两只猫挤在一个纸箱里，耳朵叠耳朵。不是她的壁纸。她的是系统默认的那张蓝色星球。\n\n泳池方向传来一个女生的声音：“谁看到我手机了？放在长凳上的——”\n\n何映抬头。更衣室里只剩两个人。林晚在靠墙那排柜子前，正把湿泳衣往塑料袋里塞，头发还在滴水。\n\n那声音又近了：“有没有人看到啊？黑色壳的！”\n\n何映的手停在背包拉链上。她不能拿起这部手机。拿起来，被人看见，解释不清。也不能喊回去——更衣室里就两个人，她一张嘴，林晚就会看过来。\n\n林晚把塑料袋打了个结，塞进包里，拉上拉链。她转过身，朝长凳这边瞥了一眼。\n\n何映抽出肩上的毛巾，抖开，随手一甩。毛巾落下去，盖住了那部手机。\n\n她蹲下来，拉开背包最外层的拉链，把手伸进去翻。翻了两下，又拉开第二层，动作越来越快。\n\n林晚拎起包，准备走。\n\n何映把背包翻了个面，里面的东西哗啦响。她抬起头，看着林晚：“你有没有看到我手机？”\n\n林晚停下。\n\n“我记得放长凳上的，”何映说，手还在背包里摸，“刚才还在。”\n\n林晚看了看长凳。凳面上只有何映的背包和那条毛巾，毛巾鼓起一块。\n\n“你手机什么样的？”林晚问。\n\n“黑的，”何映说，“跟你那个差不多大。”\n\n林晚把包放下，走到长凳边。她伸手掀开毛巾。\n\n手机屏幕亮着，两只猫挤在纸箱里。\n\n林晚拿起来，看了看锁屏，又翻过来看手机壳。壳角贴着一张很小的贴纸，是个粉色的桃子。\n\n“这不是你的吧，”林晚说。她把屏幕转向何映。\n\n何映看着那张壁纸，摇头。\n\n林晚按亮屏幕，又看了一遍锁屏。“这是小敏的，”她说，“她刚还在泳池那边找。”\n\n泳池方向又传来喊声，这次更急了：“我手机呢——你们谁看见没有？”\n\n林晚拿着手机朝门口走了两步，回头看了何映一眼。\n\n何映还在背包里翻。\n\n林晚推开门，朝泳池方向喊：“小敏！在这儿！”\n\n她走出去。更衣室的门在她身后慢慢合上，弹簧把门板拉回来，咔哒一声扣进框里。",
+      "raw_response": "何映把背包放在长凳上，毛巾搭在肩头，正要去储物柜拿洗发水。\n\n长凳那头躺着一部手机。\n\n黑色壳，圆角边框，屏幕朝上。和她自己的那部一模一样。\n\n她弯腰看了一眼。锁屏壁纸是两只猫挤在一个纸箱里，耳朵叠耳朵。不是她的壁纸。她的是系统默认的那张蓝色星球。\n\n泳池方向传来一个女生的声音：“谁看到我手机了？放在长凳上的——”\n\n何映抬头。更衣室里只剩两个人。林晚在靠墙那排柜子前，正把湿泳衣往塑料袋里塞，头发还在滴水。\n\n那声音又近了：“有没有人看到啊？黑色壳的！”\n\n何映的手停在背包拉链上。她不能拿起这部手机。拿起来，被人看见，解释不清。也不能喊回去——更衣室里就两个人，她一张嘴，林晚就会看过来。\n\n林晚把塑料袋打了个结，塞进包里，拉上拉链。她转过身，朝长凳这边瞥了一眼。\n\n何映抽出肩上的毛巾，抖开，随手一甩。毛巾落下去，盖住了那部手机。\n\n她蹲下来，拉开背包最外层的拉链，把手伸进去翻。翻了两下，又拉开第二层，动作越来越快。\n\n林晚拎起包，准备走。\n\n何映把背包翻了个面，里面的东西哗啦响。她抬起头，看着林晚：“你有没有看到我手机？”\n\n林晚停下。\n\n“我记得放长凳上的，”何映说，手还在背包里摸，“刚才还在。”\n\n林晚看了看长凳。凳面上只有何映的背包和那条毛巾，毛巾鼓起一块。\n\n“你手机什么样的？”林晚问。\n\n“黑的，”何映说，“跟你那个差不多大。”\n\n林晚把包放下，走到长凳边。她伸手掀开毛巾。\n\n手机屏幕亮着，两只猫挤在纸箱里。\n\n林晚拿起来，看了看锁屏，又翻过来看手机壳。壳角贴着一张很小的贴纸，是个粉色的桃子。\n\n“这不是你的吧，”林晚说。她把屏幕转向何映。\n\n何映看着那张壁纸，摇头。\n\n林晚按亮屏幕，又看了一遍锁屏。“这是小敏的，”她说，“她刚还在泳池那边找。”\n\n泳池方向又传来喊声，这次更急了：“我手机呢——你们谁看见没有？”\n\n林晚拿着手机朝门口走了两步，回头看了何映一眼。\n\n何映还在背包里翻。\n\n林晚推开门，朝泳池方向喊：“小敏！在这儿！”\n\n她走出去。更衣室的门在她身后慢慢合上，弹簧把门板拉回来，咔哒一声扣进框里。",
+      "input_tokens": 2827,
+      "output_tokens": 574,
+      "latency_ms": 15675,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "84f0fbdf3de5abc18edbdf7873c4102466a23932f42298b5bc082bd5e45289d3",
+      "text_path": "cases\\CO-02\\drafts\\baseline-3.txt"
+    }
+  ],
+  "actual_route": "C_OBJECT_CAUSAL",
+  "route_decision": {
+    "route_name": "C_OBJECT_CAUSAL",
+    "classifier_version": "narrative-route-v1",
+    "decision_reasons": [
+      "scene_state.available_objects is non-empty",
+      "causal_transitions contains counterfactual_without_action or rejected_alternative",
+      "character_next_action involves physical object manipulation"
+    ],
+    "matched_rules": [
+      "RULE_C_OBJECT_CAUSAL"
+    ],
+    "rejected_routes": []
+  }
+}

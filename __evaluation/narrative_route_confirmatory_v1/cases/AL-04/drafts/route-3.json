@@ -1,0 +1,43 @@
+{
+  "group": "ROUTE-ALITE_VS_A",
+  "replica": 3,
+  "mode": "narrative_route",
+  "candidate_id": "468a4412-b744-44ea-8b88-5a248b88ac37",
+  "attempt_number": 1,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "route_decision": {
+      "route_name": "C_OBJECT_CAUSAL",
+      "classifier_version": "narrative-route-v1",
+      "decision_reasons": [
+        "scene_state.available_objects is non-empty",
+        "causal_transitions contains counterfactual_without_action or rejected_alternative",
+        "character_next_action involves physical object manipulation"
+      ],
+      "matched_rules": [
+        "RULE_C_OBJECT_CAUSAL"
+      ],
+      "rejected_routes": []
+    },
+    "compiled_brief_hash": "5bd014dec11a81e74b376cf7499f60ac28368fc0c14d6151123d5920ff50c9e6",
+    "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "秦蔓推开茶水间的玻璃门时，复印机还在嗡嗡作响，正在吐出一张纸。\n\n她本来只是来倒杯水。杯子已经伸到饮水机出水口下面了，余光扫到复印机托盘上摊着的纸——那个字体间距她很熟悉，是自己简历上的格式。\n\n水没接。她走过去。\n\n纸上只印了一半。最上面是她的名字：秦蔓。下面一行是工作经历的第一条，写到“负责部门季度报表的汇”就断了，最后一个字只印出半边。纸张边缘还微微发烫，刚从机器里出来不超过两分钟。\n\n托盘旁边放着一杯咖啡。纸杯外壁凝着水珠，她用手指碰了碰杯身——热的，烫手的那种热。\n\n茶水间里只有她一个人。\n\n但刚才不是。她进来前三十秒，林远端着杯子从这扇门出去，在走廊里跟她打了个照面，还点了点头。他手里当时没拿任何纸张。\n\n秦蔓盯着那半份简历。名字端端正正摆在最上方，谁进来倒水都能看见。下一分钟可能是张姐，可能是小周，可能是任何嘴上没把门的人。\n\n她伸手拿起那张纸。\n\n手指捏住纸张上缘，提起来，翻了个面，让空白的那一面朝上。纸落回托盘时发出轻微的啪嗒声，盖住了复印机待机的电流音。\n\n然后她端起那杯咖啡。\n\n纸杯的热度透过杯壁传到掌心。她把杯子放下去，压在简历的左下角，刚好压住一个角，不让纸张被空调风吹起来。杯底在空白纸面上印出一个小小的圆形水渍。\n\n她松开手。\n\n复印机停止了嗡嗡声，屏幕跳回待机界面。托盘上只剩一张空白朝上的纸，一杯还冒着热气的咖啡压住它的一角。\n\n秦蔓没拿自己的水杯。她转身推开玻璃门，走了出去。",
+  "raw_response": "秦蔓推开茶水间的玻璃门时，复印机还在嗡嗡作响，正在吐出一张纸。\n\n她本来只是来倒杯水。杯子已经伸到饮水机出水口下面了，余光扫到复印机托盘上摊着的纸——那个字体间距她很熟悉，是自己简历上的格式。\n\n水没接。她走过去。\n\n纸上只印了一半。最上面是她的名字：秦蔓。下面一行是工作经历的第一条，写到“负责部门季度报表的汇”就断了，最后一个字只印出半边。纸张边缘还微微发烫，刚从机器里出来不超过两分钟。\n\n托盘旁边放着一杯咖啡。纸杯外壁凝着水珠，她用手指碰了碰杯身——热的，烫手的那种热。\n\n茶水间里只有她一个人。\n\n但刚才不是。她进来前三十秒，林远端着杯子从这扇门出去，在走廊里跟她打了个照面，还点了点头。他手里当时没拿任何纸张。\n\n秦蔓盯着那半份简历。名字端端正正摆在最上方，谁进来倒水都能看见。下一分钟可能是张姐，可能是小周，可能是任何嘴上没把门的人。\n\n她伸手拿起那张纸。\n\n手指捏住纸张上缘，提起来，翻了个面，让空白的那一面朝上。纸落回托盘时发出轻微的啪嗒声，盖住了复印机待机的电流音。\n\n然后她端起那杯咖啡。\n\n纸杯的热度透过杯壁传到掌心。她把杯子放下去，压在简历的左下角，刚好压住一个角，不让纸张被空调风吹起来。杯底在空白纸面上印出一个小小的圆形水渍。\n\n她松开手。\n\n复印机停止了嗡嗡声，屏幕跳回待机界面。托盘上只剩一张空白朝上的纸，一杯还冒着热气的咖啡压住它的一角。\n\n秦蔓没拿自己的水杯。她转身推开玻璃门，走了出去。",
+  "input_tokens": 1507,
+  "output_tokens": 399,
+  "latency_ms": 14182,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "e4442f3be69f7685b21a15409292ef4af766fa89ee444b1e2a3d16d1abc941cc",
+  "text_path": "cases\\AL-04\\drafts\\route-3.txt"
+}

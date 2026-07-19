@@ -1,0 +1,45 @@
+{
+  "group": "ROUTE-ALITE_VS_A",
+  "replica": 2,
+  "mode": "narrative_route",
+  "candidate_id": "20066e97-6e1d-4df0-932b-ac2edfd13242",
+  "attempt_number": 1,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "route_decision": {
+      "route_name": "B_SHORT_RELATION",
+      "classifier_version": "narrative-route-v1",
+      "decision_reasons": [
+        "scene is relationship-oriented with no physical urgency",
+        "character action involves relational move (message, gesture, proximity)"
+      ],
+      "matched_rules": [
+        "RULE_B_SHORT_RELATION"
+      ],
+      "rejected_routes": [
+        "C_OBJECT_CAUSAL",
+        "A_LITE_INFORMATION_GAP"
+      ]
+    },
+    "compiled_brief_hash": "eb73e83b6a81fcfe334674ad719988328e35dffe48aa20e7bae3e86d2568bd83",
+    "instruction_hash": "d7a76822408396dc71c4599a7f40f33368b90199f0d9c0712383961213437555",
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "乔雨盯着手机屏幕，企业微信那条灰色的撤回提示还挂在对话框里。\n\n“你这次的……”\n\n后面就没了。\n\n班主任的头像安静地待在左上角，没有再发任何东西。乔雨的拇指悬在屏幕上方，犹豫着要不要问一句“老师您刚才发了什么”——但撤回本身就是个信号，班主任不想让她看见。\n\n她正盯着那四个字发呆，余光里有个影子从左边压过来。\n\n同桌。\n\n乔雨抬起头，同桌正从两排座位之外朝她走来，手里攥着手机，屏幕亮着，界面是企业微信的聊天列表。乔雨的目光在那屏幕上扫了一眼——班主任的对话框排在最上面，最后一条消息的状态也是“已撤回”。\n\n同桌走到她桌边，把手机往前一递：“哎，班主任刚才给我发了条——”\n\n乔雨的拇指已经按在了电源键上。\n\n屏幕黑了。\n\n她顺势把手机翻了个面扣在桌上，动作快得像只是随手放了个东西。她抬起头，表情是那种被推销电话打断的轻微不耐烦：“没什么，就是条垃圾信息。”\n\n同桌的嘴还张着，话被堵在半截。\n\n她看着乔雨扣在桌上的手机，又看了看乔雨的脸。乔雨的右手还压在手机背面，指节微微发白。\n\n“哦，”同桌说，“好吧。”\n\n但她的眼神没走，还停在乔雨的手机上。",
+  "raw_response": "乔雨盯着手机屏幕，企业微信那条灰色的撤回提示还挂在对话框里。\n\n“你这次的……”\n\n后面就没了。\n\n班主任的头像安静地待在左上角，没有再发任何东西。乔雨的拇指悬在屏幕上方，犹豫着要不要问一句“老师您刚才发了什么”——但撤回本身就是个信号，班主任不想让她看见。\n\n她正盯着那四个字发呆，余光里有个影子从左边压过来。\n\n同桌。\n\n乔雨抬起头，同桌正从两排座位之外朝她走来，手里攥着手机，屏幕亮着，界面是企业微信的聊天列表。乔雨的目光在那屏幕上扫了一眼——班主任的对话框排在最上面，最后一条消息的状态也是“已撤回”。\n\n同桌走到她桌边，把手机往前一递：“哎，班主任刚才给我发了条——”\n\n乔雨的拇指已经按在了电源键上。\n\n屏幕黑了。\n\n她顺势把手机翻了个面扣在桌上，动作快得像只是随手放了个东西。她抬起头，表情是那种被推销电话打断的轻微不耐烦：“没什么，就是条垃圾信息。”\n\n同桌的嘴还张着，话被堵在半截。\n\n她看着乔雨扣在桌上的手机，又看了看乔雨的脸。乔雨的右手还压在手机背面，指节微微发白。\n\n“哦，”同桌说，“好吧。”\n\n但她的眼神没走，还停在乔雨的手机上。",
+  "input_tokens": 1272,
+  "output_tokens": 281,
+  "latency_ms": 9663,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "9b6ed6a4644f0fae38da9f885dbc2e538d13d8eeba7e04322c7cb528a7d4e194",
+  "text_path": "cases\\AL-01\\drafts\\route-2.txt"
+}

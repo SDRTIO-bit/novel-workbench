@@ -1,0 +1,141 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "向暖在快递架上发现同名包裹，但地址不对，她必须在不动包裹内容、不拿错东西的前提下，用现场物件标记或通知真正的收件人，为后续相遇埋下线索。",
+  "location": "小区快递架",
+  "time": "傍晚，取件高峰期前",
+  "scene_state": {
+    "last_completed_action": "向暖下班回家，路过快递架，习惯性扫了一眼，发现一个写着自己名字的包裹。",
+    "present_characters": [
+      "向暖"
+    ],
+    "visible_facts": [
+      "快递架上有一个写着‘向暖’的包裹",
+      "收件地址不是向暖居住的楼栋",
+      "架子上还有其他未取快递",
+      "周围暂时没有其他人"
+    ],
+    "available_objects": [
+      "同名包裹（不能拆）",
+      "其他快递包裹",
+      "快递架本身",
+      "向暖的手机",
+      "随身携带的便签纸和笔",
+      "快递点旁边的公共取件台"
+    ],
+    "unresolved_problem": "如何在不拆包裹、不拿走错误包裹的情况下，通知真正的收件人或标记这个异常。",
+    "already_existing_constraints": [
+      "向暖不能拆开包裹验证内容",
+      "向暖不能把不属于自己的包裹带回家",
+      "小区快递架是公共区域，行为可能被监控或他人看到",
+      "向暖不知道真正收件人的联系方式"
+    ]
+  },
+  "characters": [
+    {
+      "name": "向暖",
+      "goal": "标记或通知同名包裹的真正收件人，同时不违反任何规则",
+      "known": [
+        "包裹上写着自己的名字，但地址不对",
+        "自己住在3栋，包裹地址是5栋",
+        "快递架是开放式，任何人都可能取走"
+      ],
+      "unknown": [
+        "真正收件人的具体身份和联系方式",
+        "包裹内容是什么",
+        "这个错误是快递员失误还是同名巧合"
+      ],
+      "mistaken_beliefs": [
+        "可能只是快递员贴错了地址标签，实际还是自己的包裹"
+      ],
+      "constraints": [
+        "不能拆包裹",
+        "不能拿走不属于自己的东西",
+        "不能长时间逗留引起误会"
+      ],
+      "observed_evidence": [
+        "包裹上的收件人姓名与自己的名字完全相同",
+        "收件地址是5栋，而自己住在3栋",
+        "快递架上有监控摄像头",
+        "旁边有一张公共取件台，上面有笔和废纸"
+      ],
+      "current_interpretation": "这个包裹很可能不是自己的，但名字相同，如果直接拿走可能会造成麻烦；如果不管，真正的收件人可能找不到包裹。",
+      "how_interpretation_drives_action": "她决定用现场能找到的便签纸写一张提示，贴在包裹上，提醒取件人核对地址，同时拍下包裹照片发到小区业主群询问。"
+    }
+  ],
+  "concrete_problem": "向暖必须在不拆包裹、不拿走包裹的前提下，用现场物件通知真正的收件人，并留下自己发现异常的证据。",
+  "pressure": "取件高峰期即将到来，包裹可能被他人误取或偷走，向暖必须尽快行动。",
+  "turning_point": "向暖选择在包裹上贴便签提示，并拍照发到业主群，而不是直接拿走或置之不理，这个选择引出了后续真正的收件人联系她。",
+  "end_condition": "向暖贴好便签并发出群消息后离开，包裹留在原位，但已经附带了她的标记和通知。",
+  "forbidden": [
+    "向暖拆开包裹",
+    "向暖把包裹带回家",
+    "向暖直接联系快递公司（没有联系方式）",
+    "真正的收件人立即出现（保留给后续章节）",
+    "包裹内容被揭示",
+    "向暖使用其他角色的已知信息（如物业系统查询）"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "包裹上的地址是5栋，而向暖住在3栋，且姓名完全相同。",
+      "character_interpretation": "这很可能是快递员贴错标签，或者小区有另一个同名的人。如果自己拿走，可能会让真正的收件人找不到包裹；如果不做任何标记，包裹可能被误取。",
+      "character_next_action": "从取件台找到一张废纸和笔，写上‘收件人请核对地址，5栋向暖？如有误请联系XXX’，贴在包裹上，并拍照发到小区业主群。",
+      "rejected_alternative": "直接拿走包裹，赌它是自己的；或者置之不理，让真正的收件人自己发现。",
+      "immediate_consequence": "包裹上有了明显的提醒标签，照片在业主群内被部分人看到，但尚未有人回复。",
+      "counterfactual_without_action": "如果向暖不贴标签，包裹可能被其他人误取，或者真正的收件人取件时没有注意到地址问题，导致包裹丢失。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "包裹无任何标记，只有快递单上的信息。",
+        "after": "包裹上贴有手写便签，提醒核对地址，同时业主群内有一条询问消息。"
+      },
+      "cost_or_commitment": "向暖公开了自己的手机号（或微信号）在便签和群消息中，暴露了部分隐私，并承担了可能被误解为多管闲事的风险。",
+      "next_constraint": "向暖必须等待群内回复或电话，不能主动采取下一步行动；包裹仍留在快递架上，她不能再次干预。",
+      "reader_must_infer": "真正的收件人看到便签或群消息后，会意识到地址错误，并可能联系向暖；向暖的举动可能引起小区内同名人的注意。",
+      "narrator_must_not_state": [
+        "真正的收件人是否已经看到消息",
+        "包裹最终会不会被正确领取",
+        "向暖是否担心自己多此一举"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "向暖站在快递架前，手里拿着那个写着自己名字的包裹，地址却是5栋。",
+    "dominant_pressure": {
+      "kind": "information_gap",
+      "description": "向暖缺少判断包裹归属的关键信息：不知道真正的收件人是谁，也不知道包裹内容。时间压力（取件高峰）加剧了她的紧迫感。"
+    },
+    "allowed_viewpoint_misread": "向暖可能误以为这只是快递员的偶然失误，而没意识到这可能是一个同名人的包裹，从而低估了后续相遇的可能性。",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "真正收件人的身份",
+      "包裹内的物品",
+      "向暖的便签是否会被风吹走或被撕掉"
+    ],
+    "stop_state": {
+      "type": "social_commitment",
+      "visible_fact": "向暖将便签贴在包裹上，并按下发送键将消息发到业主群。",
+      "what_is_now_different": "向暖从一个偶然发现者变成了主动标记和通知的介入者，她的行动已经公开，无法撤回。",
+      "must_not_append": "不得描述群内是否有人立即回复，或真正的收件人是否看到。"
+    },
+    "final_line_must_include": "她转身离开，快递架又恢复了安静。"
+  }
+}

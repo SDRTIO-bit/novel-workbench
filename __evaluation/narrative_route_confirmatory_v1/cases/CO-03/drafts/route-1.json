@@ -1,0 +1,43 @@
+{
+  "group": "ROUTE-COBJECT_VS_A",
+  "replica": 1,
+  "mode": "narrative_route",
+  "candidate_id": "6ff21cb6-aac9-4454-983b-c6ceda097b96",
+  "attempt_number": 1,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "route_decision": {
+      "route_name": "C_OBJECT_CAUSAL",
+      "classifier_version": "narrative-route-v1",
+      "decision_reasons": [
+        "scene_state.available_objects is non-empty",
+        "causal_transitions contains counterfactual_without_action or rejected_alternative",
+        "character_next_action involves physical object manipulation"
+      ],
+      "matched_rules": [
+        "RULE_C_OBJECT_CAUSAL"
+      ],
+      "rejected_routes": []
+    },
+    "compiled_brief_hash": "33c7b6a414351767848a437865cfd8aad05ab043db1381cb2153cf4cdfa87eee",
+    "instruction_hash": "cbff5d2f36b3bd6e0f9c3e5aa5e90a5a4186457c505b09d53c5e4ad3b1e733b3",
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "方可拆开糖包，糖粒落进空杯底，细碎的声音还没停，她余光就扫到邻座那只手伸过来。\n\n那只手拿走了她的马克杯。\n\n杯沿上还有她刚才用纸巾擦过的痕迹——一圈浅淡的水渍被抹断，留下半截干痕。方可抬头时，女生已经把杯子端到身前，另一只手拎起包，转身往门口走。\n\n方可手里还捏着撕开的糖包。\n\n她没有站起来。视线越过柜台，咖啡师刚把一杯外带杯放在台面上，杯身标签朝外，打印着两个字：陈念。女生正朝门口走，步伐不快，帆布鞋踩在木地板上发出闷响，离门口还有五六步。\n\n方可把糖包搁在桌上。\n\n她起身，两步走到柜台前，拿起那杯外带杯。纸杯温热，杯盖扣得紧实。她转身，朝女生的方向走过去，脚步不快不慢，鞋底落在地板上没有多余的声音。\n\n女生在门口停下，正用肩膀顶开玻璃门。\n\n“等一下。”方可把外带杯递过去，杯身标签朝向女生，“这是你的。”\n\n女生回头，视线先落在方可脸上，然后移到杯子上。她低头看了看自己手里那杯——马克杯，杯沿有半截纸巾擦过的干痕，杯身没有任何标签。\n\n她顿了一下。\n\n方可没有收回手，外带杯悬在两人之间。女生空着的那只手接过去，指尖碰到杯身标签，她低头看了一眼自己的名字，又看了一眼手里那杯。\n\n她把马克杯递回来。\n\n方可接过，杯壁还温热，杯沿那圈擦痕还是她刚才留下的。女生手里的外带杯标签上，“陈念”两个字被拇指压住了半边。\n\n玻璃门弹回来，合上。",
+  "raw_response": "方可拆开糖包，糖粒落进空杯底，细碎的声音还没停，她余光就扫到邻座那只手伸过来。\n\n那只手拿走了她的马克杯。\n\n杯沿上还有她刚才用纸巾擦过的痕迹——一圈浅淡的水渍被抹断，留下半截干痕。方可抬头时，女生已经把杯子端到身前，另一只手拎起包，转身往门口走。\n\n方可手里还捏着撕开的糖包。\n\n她没有站起来。视线越过柜台，咖啡师刚把一杯外带杯放在台面上，杯身标签朝外，打印着两个字：陈念。女生正朝门口走，步伐不快，帆布鞋踩在木地板上发出闷响，离门口还有五六步。\n\n方可把糖包搁在桌上。\n\n她起身，两步走到柜台前，拿起那杯外带杯。纸杯温热，杯盖扣得紧实。她转身，朝女生的方向走过去，脚步不快不慢，鞋底落在地板上没有多余的声音。\n\n女生在门口停下，正用肩膀顶开玻璃门。\n\n“等一下。”方可把外带杯递过去，杯身标签朝向女生，“这是你的。”\n\n女生回头，视线先落在方可脸上，然后移到杯子上。她低头看了看自己手里那杯——马克杯，杯沿有半截纸巾擦过的干痕，杯身没有任何标签。\n\n她顿了一下。\n\n方可没有收回手，外带杯悬在两人之间。女生空着的那只手接过去，指尖碰到杯身标签，她低头看了一眼自己的名字，又看了一眼手里那杯。\n\n她把马克杯递回来。\n\n方可接过，杯壁还温热，杯沿那圈擦痕还是她刚才留下的。女生手里的外带杯标签上，“陈念”两个字被拇指压住了半边。\n\n玻璃门弹回来，合上。",
+  "input_tokens": 1467,
+  "output_tokens": 383,
+  "latency_ms": 11405,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "2a3e9b923f9457ba336cb7563f1dfdcc5b0ff9781d87d6987970e7132732b276",
+  "text_path": "cases\\CO-03\\drafts\\route-1.txt"
+}

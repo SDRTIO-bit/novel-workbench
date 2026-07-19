@@ -1,0 +1,130 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "齐放发现年级群里有人@他后撤回，他必须在无法直接追问的限制下，根据撤回信号做出一个行动，从而推动误会升级或关系变化。",
+  "location": "教室或走廊（晚自习前）",
+  "time": "晚自习开始前十分钟",
+  "scene_state": {
+    "last_completed_action": "齐放看到年级群提示‘齐放 被@’但消息已撤回，群里还有二十多人在线。",
+    "present_characters": [
+      "齐放"
+    ],
+    "visible_facts": [
+      "群提示显示‘齐放 被@’",
+      "消息已撤回",
+      "发消息的账号属于隔壁班",
+      "群内还有二十多人在线"
+    ],
+    "available_objects": [
+      "手机",
+      "年级群聊天界面"
+    ],
+    "unresolved_problem": "齐放不知道被@的内容，也无法直接询问，但撤回信号暗示可能存在针对他的信息。",
+    "already_existing_constraints": [
+      "齐放不能私聊追问发消息的人",
+      "齐放不能在群里发问号或公开询问"
+    ]
+  },
+  "characters": [
+    {
+      "name": "齐放",
+      "goal": "弄清楚隔壁班同学@他的意图，同时避免在公开场合显得过于在意或引发尴尬。",
+      "known": [
+        "年级群提示他被人@了",
+        "消息已撤回",
+        "发消息的账号是隔壁班的",
+        "群内还有二十多人在线"
+      ],
+      "unknown": [
+        "被@的具体内容",
+        "对方撤回的原因",
+        "是否是恶作剧或针对他的流言"
+      ],
+      "mistaken_beliefs": [
+        "可能认为对方不小心发错了消息，或者是在讨论与自己无关的事"
+      ],
+      "constraints": [
+        "不能私聊追问发消息的人",
+        "不能在群里公开询问"
+      ],
+      "observed_evidence": [
+        "群提示‘齐放 被@’",
+        "消息已撤回，无法查看内容",
+        "发消息的账号是隔壁班的"
+      ],
+      "current_interpretation": "隔壁班有人想对我说什么，但又后悔了，或者是不小心发错了。这很可能与我有关，但我不确定是好事还是坏事。",
+      "how_interpretation_drives_action": "齐放决定假装没注意到群提示，但私下观察隔壁班同学的动向，或者通过共同朋友间接打听。"
+    }
+  ],
+  "concrete_problem": "齐放必须决定如何应对这个无法直接追问的@撤回信号，是主动试探、被动观察还是通过第三方获取信息。",
+  "pressure": "晚自习即将开始，群内其他人可能已经看到了消息，齐放感到一种被蒙在鼓里的焦虑，但行动又受限于不能主动询问的规则。",
+  "turning_point": "齐放选择了一个看似不经意的行动——在隔壁班门口逗留，与认识的同学搭话，试图从对方的反应中捕捉线索。这个选择暴露了他的在意，从而可能引发新的误会或信息泄露。",
+  "end_condition": "齐放从隔壁班同学的反应中察觉到一个模糊的信号（如回避的眼神或窃窃私语），但具体内容仍不清楚。他决定在晚自习后采取更明确的行动。",
+  "forbidden": [
+    "齐放直接私聊发消息的人",
+    "齐放在群里公开询问",
+    "揭示撤回消息的真实内容",
+    "让齐放完全不在意这个信号"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "齐放在隔壁班门口看到几个同学聚在一起看手机，其中有人抬头看了他一眼后迅速移开目光。",
+      "character_interpretation": "他们可能正在讨论与我有关的事，而且内容不太想让我知道。",
+      "character_next_action": "齐放主动走向那个抬头看他的同学，若无其事地问‘你们班作业多吗’，同时留意对方的反应。",
+      "rejected_alternative": "齐放可以假装没看见，直接回自己教室，但他选择了试探。",
+      "immediate_consequence": "那个同学支支吾吾地回答，眼神躲闪，旁边的同学也停止了交谈，气氛变得尴尬。",
+      "counterfactual_without_action": "如果齐放不主动搭话，他可能无法获得任何新信息，只能继续猜测。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "齐放仅在群内看到撤回提示，对情况一无所知。",
+        "after": "齐放确认隔壁班同学对他有异常反应，但具体内容仍未知，且他的主动搭话可能被解读为‘他在意’或‘他知道了什么’。"
+      },
+      "cost_or_commitment": "齐放暴露了自己的关注，并可能让隔壁班同学意识到他注意到了异常，从而更加谨慎。",
+      "next_constraint": "齐放不能再以‘完全不知情’的姿态出现，他的试探行为可能被传开。",
+      "reader_must_infer": "隔壁班同学的反应并非偶然，撤回的消息确实与齐放有关，且可能涉及负面内容。",
+      "narrator_must_not_state": [
+        "撤回消息的具体内容",
+        "隔壁班同学内心的真实想法"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "晚自习铃即将响起，齐放站在走廊上，手机屏幕上的群提示还未消失。",
+    "dominant_pressure": {
+      "kind": "information_gap",
+      "description": "齐放缺少关键信息，而他的行动又受到规则限制，这种信息差推动他必须采取迂回策略。"
+    },
+    "allowed_viewpoint_misread": "齐放可能把同学的躲闪眼神误读为恶意嘲笑，而实际上可能只是尴尬或不知所措。",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "撤回消息的完整内容",
+      "发消息者的具体动机"
+    ],
+    "stop_state": {
+      "type": "unresolved_problem",
+      "visible_fact": "齐放回到自己座位，但隔壁班同学的异常反应让他确信事情不简单。",
+      "what_is_now_different": "齐放从被动接收信号转为主动怀疑，并计划晚自习后进一步调查。",
+      "must_not_append": "不得直接说明齐放下一步的具体计划，只暗示他有了行动方向。"
+    },
+    "final_line_must_include": "他决定在晚自习后找机会问个清楚。"
+  }
+}

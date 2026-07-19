@@ -1,0 +1,23 @@
+{
+  "experiment": "NARRATIVE_ROUTE_CONFIRMATORY_V1",
+  "git_commit": "7ce78985ca889617de29d028150925309e495fc7",
+  "seed": 20260720,
+  "replicas_per_group": 3,
+  "case_start": 8,
+  "case_ids": [
+    "CO-04",
+    "CO-05"
+  ],
+  "groups": {
+    "ALITE_VS_A": "A-lite brief vs complete_planner (CAMPUS-02 mechanism)",
+    "COBJECT_VS_A": "C Object brief vs complete_planner (CAMPUS-04 mechanism)"
+  },
+  "route_baseline": "complete_planner",
+  "writer_input_mode": "narrative_route",
+  "route_policy_version": "narrative-route-v1",
+  "rules": [
+    "One Planner per scene.",
+    "3 route-brief + 3 baseline-brief Writers per scene.",
+    "No Critic/Reviser/Judge. All failures preserved. No filtering."
+  ]
+}

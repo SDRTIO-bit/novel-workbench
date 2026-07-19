@@ -1,0 +1,45 @@
+{
+  "group": "ROUTE-ALITE_VS_A",
+  "replica": 1,
+  "mode": "narrative_route",
+  "candidate_id": "4e9097e9-295c-4f55-82ea-35887b3b5eaf",
+  "attempt_number": 1,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "route_decision": {
+      "route_name": "B_SHORT_RELATION",
+      "classifier_version": "narrative-route-v1",
+      "decision_reasons": [
+        "scene is relationship-oriented with no physical urgency",
+        "character action involves relational move (message, gesture, proximity)"
+      ],
+      "matched_rules": [
+        "RULE_B_SHORT_RELATION"
+      ],
+      "rejected_routes": [
+        "C_OBJECT_CAUSAL",
+        "A_LITE_INFORMATION_GAP"
+      ]
+    },
+    "compiled_brief_hash": "7b2393bdc354b9bb5de565bde49be2c6449ef608d7b710a2dc861ad378130b48",
+    "instruction_hash": "d7a76822408396dc71c4599a7f40f33368b90199f0d9c0712383961213437555",
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "晚自习铃还没响，走廊上的人已经不多了。\n\n齐放靠在走廊栏杆上，手机屏幕还亮着。群聊界面最底下那行灰色小字没消失——“齐放 被@”。往上翻，什么也没有。撤回得很快。发消息的头像是隔壁班的，他认识，一个平时话不多的男生，叫周彦。群里还有二十多个人在线，但没人接话，没人追问，没人发问号。安静得像所有人同时决定假装没看见。\n\n齐放把手机锁屏，抬起头。\n\n走廊尽头，周彦正从厕所方向走过来，手里拎着个水杯。两人视线碰了一下，周彦的脚步明显顿了一拍，然后低下头，加快速度往自己教室走。\n\n齐放没叫他。他迈开步子，从侧面包过去，在周彦推开教室门之前走到了他旁边。\n\n“你们班今天作业多吗？”齐放问，语气很平。\n\n周彦的手指在门把上僵了一下。他偏过头看齐放，嘴唇动了动，没立刻出声。教室里靠窗的几个同学原本在聊天，看见门口这一幕，声音忽然就收了。\n\n“还、还行吧。”周彦说，眼睛没看齐放，盯着门把手。\n\n齐放没追问，也没笑。他就站在那儿，等了一秒。\n\n周彦推开门进去了，动作有点急，水杯磕在门框上，发出一声闷响。里面的同学没再继续刚才的话题。\n\n齐放转身往回走。\n\n他经过隔壁班窗户的时候，余光扫到周彦已经坐下了，旁边的同桌凑过去低声问了句什么，周彦摇了摇头，没说话。\n\n齐放走进自己教室，在自己的座位坐下。他把手机翻过来扣在桌上，手指在桌沿上轻轻敲了两下。\n\n周彦的反应不是发错消息。那帮家伙突然收声也不是巧合。\n\n他决定在晚自习后找机会问个清楚。",
+  "raw_response": "晚自习铃还没响，走廊上的人已经不多了。\n\n齐放靠在走廊栏杆上，手机屏幕还亮着。群聊界面最底下那行灰色小字没消失——“齐放 被@”。往上翻，什么也没有。撤回得很快。发消息的头像是隔壁班的，他认识，一个平时话不多的男生，叫周彦。群里还有二十多个人在线，但没人接话，没人追问，没人发问号。安静得像所有人同时决定假装没看见。\n\n齐放把手机锁屏，抬起头。\n\n走廊尽头，周彦正从厕所方向走过来，手里拎着个水杯。两人视线碰了一下，周彦的脚步明显顿了一拍，然后低下头，加快速度往自己教室走。\n\n齐放没叫他。他迈开步子，从侧面包过去，在周彦推开教室门之前走到了他旁边。\n\n“你们班今天作业多吗？”齐放问，语气很平。\n\n周彦的手指在门把上僵了一下。他偏过头看齐放，嘴唇动了动，没立刻出声。教室里靠窗的几个同学原本在聊天，看见门口这一幕，声音忽然就收了。\n\n“还、还行吧。”周彦说，眼睛没看齐放，盯着门把手。\n\n齐放没追问，也没笑。他就站在那儿，等了一秒。\n\n周彦推开门进去了，动作有点急，水杯磕在门框上，发出一声闷响。里面的同学没再继续刚才的话题。\n\n齐放转身往回走。\n\n他经过隔壁班窗户的时候，余光扫到周彦已经坐下了，旁边的同桌凑过去低声问了句什么，周彦摇了摇头，没说话。\n\n齐放走进自己教室，在自己的座位坐下。他把手机翻过来扣在桌上，手指在桌沿上轻轻敲了两下。\n\n周彦的反应不是发错消息。那帮家伙突然收声也不是巧合。\n\n他决定在晚自习后找机会问个清楚。",
+  "input_tokens": 1347,
+  "output_tokens": 400,
+  "latency_ms": 11849,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "ab973d8f6c75d0ed125141880fbfeea5eb98337f591c51604bdffad54b4934e4",
+  "text_path": "cases\\AL-05\\drafts\\route-1.txt"
+}

@@ -1,0 +1,162 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "程悦发现自己的名字被涂掉，而李沐正好拿着马克笔站在旁边。她不能直接质问，也不能擦掉涂痕，必须采取一个具体行动来应对，场景结束时名字是否恢复成为事实。",
+  "location": "学校公告栏前",
+  "time": "社团招新名单刚贴出不久，课间",
+  "scene_state": {
+    "last_completed_action": "程悦在招新名单上看到自己名字被马克笔涂掉，涂痕很新，李沐站在旁边拿着黑色马克笔正与别人交谈。",
+    "present_characters": [
+      "程悦",
+      "李沐",
+      "几个围观的同学"
+    ],
+    "visible_facts": [
+      "社团招新名单贴在公告栏上",
+      "程悦的名字被黑色马克笔涂掉，涂痕很新",
+      "李沐手里拿着一支黑色马克笔",
+      "李沐正在和旁边的人说话"
+    ],
+    "available_objects": [
+      "公告栏",
+      "招新名单",
+      "黑色马克笔（李沐手中）",
+      "周围同学的文具"
+    ],
+    "unresolved_problem": "程悦无法确定是不是李沐涂掉了她的名字，也不能直接质问或修复涂痕。",
+    "already_existing_constraints": [
+      "程悦不能直接质问李沐是否涂掉了她的名字",
+      "程悦不能擦掉或覆盖涂痕",
+      "名单是公开的，周围有同学在场"
+    ]
+  },
+  "characters": [
+    {
+      "name": "程悦",
+      "goal": "弄清名字被涂掉的真相，同时维护自己的尊严，不引起公开冲突。",
+      "known": [
+        "自己的名字被涂掉了",
+        "涂痕很新",
+        "李沐拿着马克笔站在旁边"
+      ],
+      "unknown": [
+        "是不是李沐涂掉了她的名字",
+        "李沐为什么拿着马克笔",
+        "涂掉名字的动机是什么"
+      ],
+      "mistaken_beliefs": [
+        "李沐可能因为之前的小摩擦而故意针对她"
+      ],
+      "constraints": [
+        "不能直接质问李沐",
+        "不能擦掉或覆盖涂痕",
+        "周围有同学，必须保持体面"
+      ],
+      "observed_evidence": [
+        "名单上自己名字被涂掉，涂痕很新",
+        "李沐手里拿着黑色马克笔",
+        "李沐在和人说话，没有注意到她"
+      ],
+      "current_interpretation": "李沐很可能就是涂掉她名字的人，因为笔在他手上，而且涂痕很新。",
+      "how_interpretation_drives_action": "她决定走到李沐面前，故意看着名单说‘这涂得还挺整齐的’，以此观察李沐的反应，并让周围人注意到这件事。"
+    },
+    {
+      "name": "李沐",
+      "goal": "完成自己的事情（可能只是帮别人涂改名单），不想被误会。",
+      "known": [
+        "自己手里有马克笔",
+        "名单上有涂改",
+        "程悦的名字被涂掉了"
+      ],
+      "unknown": [
+        "程悦已经注意到涂痕并怀疑他",
+        "程悦会采取什么行动"
+      ],
+      "mistaken_beliefs": [
+        "程悦可能不会注意到，或者注意到了也不会当众说出来"
+      ],
+      "constraints": [
+        "不能主动解释自己为什么拿着笔",
+        "如果被质问，必须回应"
+      ],
+      "observed_evidence": [
+        "程悦走近公告栏",
+        "程悦盯着名单看"
+      ],
+      "current_interpretation": "程悦可能发现了名字被涂掉，但不知道她会怎么做。",
+      "how_interpretation_drives_action": "他停下说话，看向程悦，准备应对可能的质问。"
+    }
+  ],
+  "concrete_problem": "程悦必须在不直接质问的情况下，让李沐和周围人知道她发现了名字被涂掉，并观察反应，但名字是否恢复取决于李沐的后续行动。",
+  "pressure": "课间时间有限，周围同学越来越多，程悦必须在引起更大关注前采取行动，否则机会稍纵即逝。",
+  "turning_point": "程悦选择用一句看似轻松的评论‘这涂得还挺整齐的’来试探李沐，这个选择将决定李沐是否承认或解释，从而改变两人之间的关系。",
+  "end_condition": "程悦说完话后，李沐的反应被捕捉，名字是否恢复成为事实（例如李沐主动擦掉涂痕或解释，或者无动于衷）。",
+  "forbidden": [
+    "程悦直接质问李沐‘是不是你涂的’",
+    "程悦自己擦掉或覆盖涂痕",
+    "李沐主动解释自己为什么涂名字（除非被程悦的行动触发）",
+    "引入其他无关冲突",
+    "揭示涂名的真实动机（留待后续）"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "名单上程悦的名字被黑色马克笔涂掉，涂痕很新，李沐手里拿着同色马克笔。",
+      "character_interpretation": "程悦认为李沐是涂掉名字的人，因为笔在他手上，而且涂痕很新，没有其他人有工具。",
+      "character_next_action": "程悦走到公告栏前，指着被涂掉的名字，用不大不小的声音说：‘这涂得还挺整齐的。’然后看向李沐。",
+      "rejected_alternative": "程悦本可以假装没看见，默默离开，但她选择面对，因为她想知道真相。",
+      "immediate_consequence": "李沐停止说话，看向程悦和名单，周围几个同学也注意到程悦的话，气氛变得微妙。",
+      "counterfactual_without_action": "如果程悦什么也不说，李沐可能继续聊天，不会意识到程悦已经发现，名字被涂掉的事情可能就这样过去了。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "程悦独自看着名单，内心猜疑；李沐在旁若无其事地聊天。",
+        "after": "程悦的评论引起李沐和周围同学的注意，李沐被迫面对涂名事件。"
+      },
+      "cost_or_commitment": "程悦将自己置于可能被公开反驳或尴尬的境地，但她坚持了自己的尊严。",
+      "next_constraint": "李沐必须对程悦的话做出反应，不能再装作没事。",
+      "reader_must_infer": "李沐是否真的是涂掉名字的人，以及他此刻的心理活动。",
+      "narrator_must_not_state": [
+        "李沐涂掉名字的真实动机",
+        "程悦内心的全部愤怒"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "程悦发现名字被涂掉，李沐拿着笔站在旁边，课间时间正在流逝。",
+    "dominant_pressure": {
+      "kind": "social_friction",
+      "description": "程悦必须在众目睽睽下处理潜在的冲突，既要维护面子，又要试探真相，社交压力紧迫。"
+    },
+    "allowed_viewpoint_misread": "程悦可能把李沐的惊讶理解为心虚，而实际上李沐可能只是意外。",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "李沐涂掉名字的真正原因",
+      "程悦是否真的相信李沐的解释"
+    ],
+    "stop_state": {
+      "type": "social_commitment",
+      "visible_fact": "李沐拿起笔，在程悦的名字旁写下‘抱歉，涂错了’或类似字样，或者他收起笔转身离开，名字依旧被涂。",
+      "what_is_now_different": "名字是否恢复成为公开事实，程悦和李沐的关系因此进入新阶段。",
+      "must_not_append": "不得解释李沐为什么那么做，也不得描述程悦之后的心理活动。"
+    },
+    "final_line_must_include": "名字"
+  }
+}

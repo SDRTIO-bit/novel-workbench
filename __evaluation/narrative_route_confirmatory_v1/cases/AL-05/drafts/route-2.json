@@ -1,0 +1,45 @@
+{
+  "group": "ROUTE-ALITE_VS_A",
+  "replica": 2,
+  "mode": "narrative_route",
+  "candidate_id": "ce555b9b-21eb-4846-ade7-dc736344950a",
+  "attempt_number": 1,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "route_decision": {
+      "route_name": "B_SHORT_RELATION",
+      "classifier_version": "narrative-route-v1",
+      "decision_reasons": [
+        "scene is relationship-oriented with no physical urgency",
+        "character action involves relational move (message, gesture, proximity)"
+      ],
+      "matched_rules": [
+        "RULE_B_SHORT_RELATION"
+      ],
+      "rejected_routes": [
+        "C_OBJECT_CAUSAL",
+        "A_LITE_INFORMATION_GAP"
+      ]
+    },
+    "compiled_brief_hash": "7b2393bdc354b9bb5de565bde49be2c6449ef608d7b710a2dc861ad378130b48",
+    "instruction_hash": "d7a76822408396dc71c4599a7f40f33368b90199f0d9c0712383961213437555",
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "走廊的风带着食堂晚饭残存的热气，齐放低头盯着手机屏幕，那条群提示还挂在年级群的通知栏里——“齐放 被@”——发消息的账号是隔壁班的，但消息本身已经消失了。\n\n群里还有二十多个人在线。\n\n晚自习铃还有两分钟。\n\n齐放把手机揣进裤兜，转过身。走廊尽头，隔壁班门口站着三个人，其中一个正抬头往他这边看，视线对上后立刻低下去，假装在刷手机。\n\n齐放走过去。\n\n那个抬头的男生叫周远，隔壁班的物理课代表，上周年级篮球赛时两人打过一次配合。齐放走到他跟前，脚步没停，语气跟路过打招呼一样：“你们班作业多吗？”\n\n周远的手指顿在屏幕上方，眼睛没抬起来。“还行，”他说，声音比平时高了半拍，“就、就那样。”\n\n旁边两个同学停止了交谈。其中一个看了齐放一眼，又去看周远，嘴唇动了动没出声。\n\n齐放没走。他站在周远面前，手插在口袋里，盯着对方的脸。\n\n周远终于抬起头，视线却在齐放的肩膀后面飘。“怎么了？”他问，笑了一下，嘴角只扯到一半就收回去。\n\n“没什么，”齐放说，“随便问问。”\n\n他转身走开。\n\n身后那三个人没有立刻恢复交谈。齐放走到自己班门口时听见后面传来一声压低的“你刚才——”，然后被另一个人打断。\n\n他推门进教室。\n\n班里已经坐了大半，前排有人抬头看他，又低下头去。齐放走到自己的座位坐下，把手机翻过来扣在桌面上。\n\n周远的反应不是发错消息。\n\n是发了不该发的东西，然后后悔了。\n\n齐放把课本翻开，盯着第一行字看了五秒，一个字也没读进去。\n\n他决定在晚自习后找机会问个清楚。",
+  "raw_response": "走廊的风带着食堂晚饭残存的热气，齐放低头盯着手机屏幕，那条群提示还挂在年级群的通知栏里——“齐放 被@”——发消息的账号是隔壁班的，但消息本身已经消失了。\n\n群里还有二十多个人在线。\n\n晚自习铃还有两分钟。\n\n齐放把手机揣进裤兜，转过身。走廊尽头，隔壁班门口站着三个人，其中一个正抬头往他这边看，视线对上后立刻低下去，假装在刷手机。\n\n齐放走过去。\n\n那个抬头的男生叫周远，隔壁班的物理课代表，上周年级篮球赛时两人打过一次配合。齐放走到他跟前，脚步没停，语气跟路过打招呼一样：“你们班作业多吗？”\n\n周远的手指顿在屏幕上方，眼睛没抬起来。“还行，”他说，声音比平时高了半拍，“就、就那样。”\n\n旁边两个同学停止了交谈。其中一个看了齐放一眼，又去看周远，嘴唇动了动没出声。\n\n齐放没走。他站在周远面前，手插在口袋里，盯着对方的脸。\n\n周远终于抬起头，视线却在齐放的肩膀后面飘。“怎么了？”他问，笑了一下，嘴角只扯到一半就收回去。\n\n“没什么，”齐放说，“随便问问。”\n\n他转身走开。\n\n身后那三个人没有立刻恢复交谈。齐放走到自己班门口时听见后面传来一声压低的“你刚才——”，然后被另一个人打断。\n\n他推门进教室。\n\n班里已经坐了大半，前排有人抬头看他，又低下头去。齐放走到自己的座位坐下，把手机翻过来扣在桌面上。\n\n周远的反应不是发错消息。\n\n是发了不该发的东西，然后后悔了。\n\n齐放把课本翻开，盯着第一行字看了五秒，一个字也没读进去。\n\n他决定在晚自习后找机会问个清楚。",
+  "input_tokens": 1347,
+  "output_tokens": 387,
+  "latency_ms": 11864,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "ab973d8f6c75d0ed125141880fbfeea5eb98337f591c51604bdffad54b4934e4",
+  "text_path": "cases\\AL-05\\drafts\\route-2.txt"
+}

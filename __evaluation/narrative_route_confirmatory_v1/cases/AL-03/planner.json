@@ -1,0 +1,132 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "沈珂在办公室门口听到半句话后，基于自己的理解做出一个选择，并因此产生新的行动限制，为后续章节搭建合理入口。",
+  "location": "教学楼走廊，数学老师办公室门口",
+  "time": "下午自习课期间",
+  "scene_state": {
+    "last_completed_action": "沈珂走到办公室门口，听见数学老师对年级主任说'沈珂那个孩子其实……'，后半句被关门声截断。",
+    "present_characters": [
+      "沈珂",
+      "数学老师（办公室内）",
+      "年级主任（办公室内）"
+    ],
+    "visible_facts": [
+      "办公室门关着",
+      "沈珂手里抱着作业本",
+      "数学老师很快推门出来，手里拿着沈珂的试卷"
+    ],
+    "available_objects": [
+      "作业本",
+      "试卷",
+      "办公室门"
+    ],
+    "unresolved_problem": "沈珂不知道数学老师对她的真实评价是什么。",
+    "already_existing_constraints": [
+      "沈珂不能直接追问老师",
+      "沈珂不能偷看试卷"
+    ]
+  },
+  "characters": [
+    {
+      "name": "沈珂",
+      "goal": "弄清老师对自己的看法，同时维护自尊",
+      "known": [
+        "自己是来送作业的",
+        "老师提到了她的名字",
+        "老师手里拿着她的试卷"
+      ],
+      "unknown": [
+        "'其实'后面的话是什么",
+        "老师对她的真实评价",
+        "试卷上的分数或评语"
+      ],
+      "mistaken_beliefs": [
+        "老师可能要说她的缺点或坏话"
+      ],
+      "constraints": [
+        "不能追问老师",
+        "不能偷看试卷",
+        "不能表现出异常"
+      ],
+      "observed_evidence": [
+        "老师说到'沈珂那个孩子其实……'后被关门声打断",
+        "数学老师很快推门出来，手里拿着她的试卷"
+      ],
+      "current_interpretation": "老师被关门声打断前，可能正要说出对她的负面评价，否则不会在提到她时犹豫或压低声音。",
+      "how_interpretation_drives_action": "沈珂决定假装没听到，但暗中观察老师的表情和试卷，试图推断那半句话的意思。"
+    }
+  ],
+  "concrete_problem": "沈珂在不能追问、不能偷看的情况下，如何判断老师对自己的真实看法？",
+  "pressure": "老师即将走出办公室，沈珂必须在几秒内决定如何应对，否则将失去所有线索。",
+  "turning_point": "沈珂选择主动上前，用送作业作为掩护，试图通过观察老师的反应和试卷的摆放来推断那半句话。",
+  "end_condition": "沈珂从老师的表情或试卷的某个细节中，形成了一个（可能错误的）结论，并因此决定后续行动。",
+  "forbidden": [
+    "沈珂直接听到后半句话",
+    "老师主动解释那半句话",
+    "沈珂偷看试卷内容",
+    "其他角色告知真相"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "数学老师推门而出，手里拿着沈珂的试卷，表情略显严肃。",
+      "character_interpretation": "沈珂认为老师的严肃表情印证了自己的猜测——那半句话很可能是批评，试卷可能考得不好。",
+      "character_next_action": "沈珂主动迎上前，递上作业本，同时快速扫了一眼试卷的朝向和老师的眼神。",
+      "rejected_alternative": "沈珂可以假装没听见，像往常一样送完作业就走，不观察任何细节。",
+      "immediate_consequence": "老师接过作业本，下意识将试卷背面朝上放在一旁，并简短地说了句'放那就行'。",
+      "counterfactual_without_action": "如果沈珂不主动上前，她可能会错过观察机会，只能带着完全未知的焦虑离开。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "沈珂站在门口犹豫，不知如何应对；老师尚未与她互动。",
+        "after": "沈珂与老师发生了互动，并观察到了试卷被背面朝上放置、老师语气简短等细节。"
+      },
+      "cost_or_commitment": "沈珂暴露了自己在办公室门口的事实，失去了假装路过的退路。",
+      "next_constraint": "沈珂必须基于观察到的有限细节（试卷背面朝上、老师语气简短）来推断那半句话，不能再次试探。",
+      "reader_must_infer": "试卷背面朝上可能只是老师的习惯动作，不一定代表分数低；老师的简短语气也可能只是赶时间。",
+      "narrator_must_not_state": [
+        "试卷上的真实分数或评语",
+        "数学老师那半句话的真实内容",
+        "老师的真实情绪"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "数学老师即将走出办公室，沈珂必须在被发现前做出反应。",
+    "dominant_pressure": {
+      "kind": "information_gap",
+      "description": "沈珂急需知道老师对她的评价，但获取信息的途径被严格限制。"
+    },
+    "allowed_viewpoint_misread": "沈珂可能将老师的严肃表情和简短语气误解为对自己的不满，而实际上老师可能只是因为其他事情心烦。",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "数学老师那半句话的真实内容",
+      "试卷上的真实分数和评语"
+    ],
+    "stop_state": {
+      "type": "unresolved_problem",
+      "visible_fact": "沈珂离开办公室门口，表情若有所思，脚步比来时更慢。",
+      "what_is_now_different": "沈珂从单纯的疑惑变成了带着一个具体（但可能错误）的推断离开，这个推断将影响她接下来的行为。",
+      "must_not_append": "不得揭示沈珂的推断是否正确。"
+    },
+    "final_line_must_include": ""
+  }
+}
