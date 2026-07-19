@@ -1,0 +1,48 @@
+{
+  "case_id": "CASE-002",
+  "blind_pass": {
+    "preferred": "A",
+    "limited_information": "A",
+    "concrete_problem": "tie",
+    "choice_and_consequence": "A",
+    "ending_restraint": "tie",
+    "prose_naturalness": "A",
+    "evidence": [
+      "A replaces direct inner prohibition with observed gaze and finger movement."
+    ]
+  },
+  "contract_pass": {
+    "text_a": {
+      "visible_trigger": "present",
+      "rejected_alternative": "partial",
+      "character_choice": "present",
+      "cost_or_commitment": "partial",
+      "immediate_consequence": "present",
+      "next_constraint": "partial",
+      "stop_state": "present",
+      "must_not_append": "present"
+    },
+    "text_b": {
+      "visible_trigger": "present",
+      "rejected_alternative": "partial",
+      "character_choice": "present",
+      "cost_or_commitment": "partial",
+      "immediate_consequence": "present",
+      "next_constraint": "partial",
+      "stop_state": "present",
+      "must_not_append": "present"
+    }
+  },
+  "pipeline_pass": {
+    "critic_diagnosis_correct": true,
+    "reviser_added_new_facts": false,
+    "reviser_fixed_confirmed_issues": true,
+    "judge_local_choices_supported": true,
+    "final_regressed_from_writer": false,
+    "evidence": [
+      "Critic targets explanatory narration; Reviser removes it; Judge supports each local choice."
+    ]
+  },
+  "confidence": 0.88,
+  "notes": "Final wins; contract-field score is tied."
+}

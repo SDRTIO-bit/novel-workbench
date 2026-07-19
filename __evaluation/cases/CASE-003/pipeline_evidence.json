@@ -1,27 +1,289 @@
 {
   "case_id": "CASE-003",
-  "run_id": "1c69a766-5af9-46e6-bba9-674dd24ec731",
+  "run_id": "373e7947-741d-421e-b649-98b2185255f9",
   "run_status": "completed",
   "stages": {
     "critic": {
-      "status": "pending",
-      "selected_candidate_id": null,
-      "selected_issue_ids": null,
-      "candidates": []
+      "status": "completed",
+      "selected_candidate_id": "de1d6710-3525-4fe1-bb17-6f091b5368b2",
+      "selected_issue_ids": [
+        "I01",
+        "I02",
+        "I03",
+        "I04",
+        "I05"
+      ],
+      "candidates": [
+        {
+          "candidate_id": "de1d6710-3525-4fe1-bb17-6f091b5368b2",
+          "attempt_number": 1,
+          "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+          "model_id": "deepseek-chat",
+          "prompt_version_id": "2f3993c9-811c-4e53-a144-14421704d88d",
+          "parameters": {
+            "temperature": 0.7,
+            "top_p": 1.0,
+            "max_output_tokens": 4096,
+            "timeout_seconds": 300,
+            "response_format": "json_object"
+          },
+          "raw_response": "{\n  \"overall_assessment\": \"初稿完成了误判驱动的行动选择，但结尾过早引入了对顾言去向的推测，削弱了读者推理空间；整体符合契约，但需局部调整。\",\n  \"decision\": \"local_revision\",\n  \"strengths\": [\n    \"许遥的内心挣扎和行动决策过程真实可信\",\n    \"取钥匙的细节描写（门卫对话、钥匙挂件）生动具体\",\n    \"结尾的自我反问自然，符合人物性格\"\n  ],\n  \"issues\": [\n    {\n      \"issue_id\": \"I01\",\n      \"severity\": \"high\",\n      \"issue_type\": \"inference_overexplained\",\n      \"paragraph_ids\": [18],\n      \"problem\": \"第18段直接陈述了'如果顾言不是要搬走，只是出去几天'这一推论，代替读者完成了推理，违反了'读者必须推断'的要求。\",\n      \"revision_goal\": \"删除或改写为纯粹的行动或感官描述，让读者自行推断许遥的怀疑。\",\n      \"recommended_operation\": \"withhold_inference\"\n    },\n    {\n      \"issue_id\": \"I02\",\n      \"severity\": \"medium\",\n      \"issue_type\": \"pacing_drag\",\n      \"paragraph_ids\": [8, 9, 10, 11],\n      \"problem\": \"门卫对话部分略显拖沓，许遥撒谎的动机可以更简洁地暗示，而非详细展开。\",\n      \"revision_goal\": \"压缩门卫对话，保留关键信息（钥匙已放、许遥取走），减少解释性台词。\",\n      \"recommended_operation\": \"tighten\"\n    },\n    {\n      \"issue_id\": \"I03\",\n      \"severity\": \"low\",\n      \"issue_type\": \"show_vs_tell\",\n      \"paragraph_ids\": [6],\n      \"problem\": \"第6段直接说明了许遥的内心推理（'如果顾言真的搬走……等于承认自己偷听'），可以更多通过动作或感官暗示。\",\n      \"revision_goal\": \"将部分内心独白转化为动作或环境反应，减少直接陈述。\",\n      \"recommended_operation\": \"naturalize\"\n    },\n    {\n      \"issue_id\": \"I04\",\n      \"severity\": \"low\",\n      \"issue_type\": \"exposition_clumsy\",\n      \"paragraph_ids\": [12],\n      \"problem\": \"第12段'五楼，她们的窗户还暗着'略显刻意，可以更自然地融入环境。\",\n      \"revision_goal\": \"将窗户暗着的信息与许遥的视线移动结合，减少说明感。\",\n      \"recommended_operation\": \"naturalize\"\n    },\n    {\n      \"issue_id\": \"I05\",\n      \"severity\": \"low\",\n      \"issue_type\": \"description_overload\",\n      \"paragraph_ids\": [1],\n      \"problem\": \"第1段暮色描写稍显冗长，可以精简以更快进入冲突。\",\n      \"revision_goal\": \"压缩环境描写，保留核心意象（暮色、影子），减少修饰。\",\n      \"recommended_operation\": \"tighten\"\n    }\n  ],\n  \"protected_strengths\": [\n    {\n      \"paragraph_ids\": [2, 3, 4, 5, 7],\n      \"reason\": \"这些段落有效建立了误判情境、时间压力和行动决策，是核心叙事支柱，不应修改。\",\n      \"strength_type\": \"scene_specific_detail\"\n    },\n    {\n      \"paragraph_ids\": [13, 14, 15, 16],\n      \"reason\": \"拨打电话无人接听的细节有效传达了后果，且未解释原因，保留了读者推理空间。\",\n      \"strength_type\": \"reader_inference_gap\"\n    },\n    {\n      \"paragraph_ids\": [17],\n      \"reason\": \"结尾的自我反问（最后一句）自然引发悬念，但第18段过度解释；应保留第17段但删除第18段。\",\n      \"strength_type\": \"reader_inference_gap\"\n    }\n  ],\n  \"chapter_contract_check\": {\n    \"chapter_function_delivered\": true,\n    \"must_deliver_satisfied\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_advanced\": true,\n    \"main_payoff_delivered\": true,\n    \"ending_hook_set\": true,\n    \"fuel_reserved\": true,\n    \"target_length_met\": true\n  },\n  \"causal_transition_check\": [\n    {\n      \"transition_id\": \"CT01\",\n      \"trigger_visible\": true,\n      \"next_action_changed\": true,\n      \"reader_inference_withheld\": false,\n      \"forbidden_explanation_found\": false,\n      \"consequence_visible\": true,\n      \"next_constraint_preserved\": true,\n      \"paragraph_ids\": [2, 3, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17],\n      \"result\": \"fail\",\n      \"comment\": \"读者推理未被保留，第18段直接给出了'如果顾言不是要搬走'的推论，违反了'reader_inference_withheld'要求。\"\n    }\n  ]\n}",
+          "model_parsed_output": null,
+          "parsed_output": {
+            "overall_assessment": "初稿完成了误判驱动的行动选择，但结尾过早引入了对顾言去向的推测，削弱了读者推理空间；整体符合契约，但需局部调整。",
+            "decision": "local_revision",
+            "strengths": [
+              "许遥的内心挣扎和行动决策过程真实可信",
+              "取钥匙的细节描写（门卫对话、钥匙挂件）生动具体",
+              "结尾的自我反问自然，符合人物性格"
+            ],
+            "issues": [
+              {
+                "issue_id": "I01",
+                "severity": "high",
+                "issue_type": "inference_overexplained",
+                "paragraph_ids": [
+                  "P018"
+                ],
+                "problem": "第18段直接陈述了'如果顾言不是要搬走，只是出去几天'这一推论，代替读者完成了推理，违反了'读者必须推断'的要求。",
+                "revision_goal": "删除或改写为纯粹的行动或感官描述，让读者自行推断许遥的怀疑。",
+                "recommended_operation": "withhold_inference"
+              },
+              {
+                "issue_id": "I02",
+                "severity": "medium",
+                "issue_type": "pacing_drag",
+                "paragraph_ids": [
+                  "P008",
+                  "P009",
+                  "P010",
+                  "P011"
+                ],
+                "problem": "门卫对话部分略显拖沓，许遥撒谎的动机可以更简洁地暗示，而非详细展开。",
+                "revision_goal": "压缩门卫对话，保留关键信息（钥匙已放、许遥取走），减少解释性台词。",
+                "recommended_operation": "tighten"
+              },
+              {
+                "issue_id": "I03",
+                "severity": "low",
+                "issue_type": "show_vs_tell",
+                "paragraph_ids": [
+                  "P006"
+                ],
+                "problem": "第6段直接说明了许遥的内心推理（'如果顾言真的搬走……等于承认自己偷听'），可以更多通过动作或感官暗示。",
+                "revision_goal": "将部分内心独白转化为动作或环境反应，减少直接陈述。",
+                "recommended_operation": "naturalize"
+              },
+              {
+                "issue_id": "I04",
+                "severity": "low",
+                "issue_type": "exposition_clumsy",
+                "paragraph_ids": [
+                  "P012"
+                ],
+                "problem": "第12段'五楼，她们的窗户还暗着'略显刻意，可以更自然地融入环境。",
+                "revision_goal": "将窗户暗着的信息与许遥的视线移动结合，减少说明感。",
+                "recommended_operation": "naturalize"
+              },
+              {
+                "issue_id": "I05",
+                "severity": "low",
+                "issue_type": "description_overload",
+                "paragraph_ids": [
+                  "P001"
+                ],
+                "problem": "第1段暮色描写稍显冗长，可以精简以更快进入冲突。",
+                "revision_goal": "压缩环境描写，保留核心意象（暮色、影子），减少修饰。",
+                "recommended_operation": "tighten"
+              }
+            ],
+            "protected_strengths": [
+              {
+                "paragraph_ids": [
+                  "P002",
+                  "P003",
+                  "P004",
+                  "P005",
+                  "P007"
+                ],
+                "reason": "这些段落有效建立了误判情境、时间压力和行动决策，是核心叙事支柱，不应修改。",
+                "strength_type": "scene_specific_detail"
+              },
+              {
+                "paragraph_ids": [
+                  "P013",
+                  "P014",
+                  "P015",
+                  "P016"
+                ],
+                "reason": "拨打电话无人接听的细节有效传达了后果，且未解释原因，保留了读者推理空间。",
+                "strength_type": "reader_inference_gap"
+              },
+              {
+                "paragraph_ids": [
+                  "P017"
+                ],
+                "reason": "结尾的自我反问（最后一句）自然引发悬念，但第18段过度解释；应保留第17段但删除第18段。",
+                "strength_type": "reader_inference_gap"
+              }
+            ],
+            "chapter_contract_check": {
+              "chapter_function_delivered": true,
+              "must_deliver_satisfied": true,
+              "must_not_deliver_respected": true,
+              "main_change_advanced": true,
+              "main_payoff_delivered": true,
+              "ending_hook_set": true,
+              "fuel_reserved": true,
+              "target_length_met": true
+            },
+            "causal_transition_check": [
+              {
+                "transition_id": "CT01",
+                "trigger_visible": true,
+                "next_action_changed": true,
+                "reader_inference_withheld": false,
+                "forbidden_explanation_found": [],
+                "consequence_visible": true,
+                "next_constraint_preserved": true,
+                "paragraph_ids": [
+                  "P002",
+                  "P003",
+                  "P007",
+                  "P008",
+                  "P009",
+                  "P010",
+                  "P011",
+                  "P012",
+                  "P013",
+                  "P014",
+                  "P015",
+                  "P016",
+                  "P017"
+                ],
+                "result": "fail",
+                "comment": "读者推理未被保留，第18段直接给出了'如果顾言不是要搬走'的推论，违反了'reader_inference_withheld'要求。"
+              }
+            ],
+            "tempo_profile_check": null
+          },
+          "text_output": "{\n  \"overall_assessment\": \"初稿完成了误判驱动的行动选择，但结尾过早引入了对顾言去向的推测，削弱了读者推理空间；整体符合契约，但需局部调整。\",\n  \"decision\": \"local_revision\",\n  \"strengths\": [\n    \"许遥的内心挣扎和行动决策过程真实可信\",\n    \"取钥匙的细节描写（门卫对话、钥匙挂件）生动具体\",\n    \"结尾的自我反问自然，符合人物性格\"\n  ],\n  \"issues\": [\n    {\n      \"issue_id\": \"I01\",\n      \"severity\": \"high\",\n      \"issue_type\": \"inference_overexplained\",\n      \"paragraph_ids\": [18],\n      \"problem\": \"第18段直接陈述了'如果顾言不是要搬走，只是出去几天'这一推论，代替读者完成了推理，违反了'读者必须推断'的要求。\",\n      \"revision_goal\": \"删除或改写为纯粹的行动或感官描述，让读者自行推断许遥的怀疑。\",\n      \"recommended_operation\": \"withhold_inference\"\n    },\n    {\n      \"issue_id\": \"I02\",\n      \"severity\": \"medium\",\n      \"issue_type\": \"pacing_drag\",\n      \"paragraph_ids\": [8, 9, 10, 11],\n      \"problem\": \"门卫对话部分略显拖沓，许遥撒谎的动机可以更简洁地暗示，而非详细展开。\",\n      \"revision_goal\": \"压缩门卫对话，保留关键信息（钥匙已放、许遥取走），减少解释性台词。\",\n      \"recommended_operation\": \"tighten\"\n    },\n    {\n      \"issue_id\": \"I03\",\n      \"severity\": \"low\",\n      \"issue_type\": \"show_vs_tell\",\n      \"paragraph_ids\": [6],\n      \"problem\": \"第6段直接说明了许遥的内心推理（'如果顾言真的搬走……等于承认自己偷听'），可以更多通过动作或感官暗示。\",\n      \"revision_goal\": \"将部分内心独白转化为动作或环境反应，减少直接陈述。\",\n      \"recommended_operation\": \"naturalize\"\n    },\n    {\n      \"issue_id\": \"I04\",\n      \"severity\": \"low\",\n      \"issue_type\": \"exposition_clumsy\",\n      \"paragraph_ids\": [12],\n      \"problem\": \"第12段'五楼，她们的窗户还暗着'略显刻意，可以更自然地融入环境。\",\n      \"revision_goal\": \"将窗户暗着的信息与许遥的视线移动结合，减少说明感。\",\n      \"recommended_operation\": \"naturalize\"\n    },\n    {\n      \"issue_id\": \"I05\",\n      \"severity\": \"low\",\n      \"issue_type\": \"description_overload\",\n      \"paragraph_ids\": [1],\n      \"problem\": \"第1段暮色描写稍显冗长，可以精简以更快进入冲突。\",\n      \"revision_goal\": \"压缩环境描写，保留核心意象（暮色、影子），减少修饰。\",\n      \"recommended_operation\": \"tighten\"\n    }\n  ],\n  \"protected_strengths\": [\n    {\n      \"paragraph_ids\": [2, 3, 4, 5, 7],\n      \"reason\": \"这些段落有效建立了误判情境、时间压力和行动决策，是核心叙事支柱，不应修改。\",\n      \"strength_type\": \"scene_specific_detail\"\n    },\n    {\n      \"paragraph_ids\": [13, 14, 15, 16],\n      \"reason\": \"拨打电话无人接听的细节有效传达了后果，且未解释原因，保留了读者推理空间。\",\n      \"strength_type\": \"reader_inference_gap\"\n    },\n    {\n      \"paragraph_ids\": [17],\n      \"reason\": \"结尾的自我反问（最后一句）自然引发悬念，但第18段过度解释；应保留第17段但删除第18段。\",\n      \"strength_type\": \"reader_inference_gap\"\n    }\n  ],\n  \"chapter_contract_check\": {\n    \"chapter_function_delivered\": true,\n    \"must_deliver_satisfied\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_advanced\": true,\n    \"main_payoff_delivered\": true,\n    \"ending_hook_set\": true,\n    \"fuel_reserved\": true,\n    \"target_length_met\": true\n  },\n  \"causal_transition_check\": [\n    {\n      \"transition_id\": \"CT01\",\n      \"trigger_visible\": true,\n      \"next_action_changed\": true,\n      \"reader_inference_withheld\": false,\n      \"forbidden_explanation_found\": false,\n      \"consequence_visible\": true,\n      \"next_constraint_preserved\": true,\n      \"paragraph_ids\": [2, 3, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17],\n      \"result\": \"fail\",\n      \"comment\": \"读者推理未被保留，第18段直接给出了'如果顾言不是要搬走'的推论，违反了'reader_inference_withheld'要求。\"\n    }\n  ]\n}",
+          "input_tokens": 3528,
+          "output_tokens": 1139,
+          "reasoning_tokens": null,
+          "latency_ms": 11685,
+          "finish_reason": "stop",
+          "error_code": null,
+          "error_message": null,
+          "is_selected": true
+        }
+      ]
     },
     "judge": {
-      "status": "pending",
-      "selected_candidate_id": null,
-      "selected_issue_ids": null,
-      "candidates": []
-    },
-    "planner": {
-      "status": "failed",
-      "selected_candidate_id": null,
+      "status": "completed",
+      "selected_candidate_id": "f6688465-0a27-45b6-9f30-ac52c37797f9",
       "selected_issue_ids": null,
       "candidates": [
         {
-          "candidate_id": "3283e24a-e6f0-4084-a1ed-7bbae14ea9d4",
+          "candidate_id": "f6688465-0a27-45b6-9f30-ac52c37797f9",
+          "attempt_number": 1,
+          "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+          "model_id": "deepseek-chat",
+          "prompt_version_id": "9f5fa364-15ee-436e-80ef-ed5087e840e3",
+          "parameters": {
+            "temperature": 0.7,
+            "top_p": 1.0,
+            "max_output_tokens": 4096,
+            "timeout_seconds": 120,
+            "response_format": "json_object"
+          },
+          "raw_response": "{\n  \"decision\": \"accept_merged\",\n  \"issue_results\": [\n    {\n      \"issue_id\": \"I01\",\n      \"status\": \"resolved\",\n      \"action\": \"keep_revision\",\n      \"comment\": \"删除了过度解释的推论，符合读者推理保留要求。\"\n    },\n    {\n      \"issue_id\": \"I02\",\n      \"status\": \"resolved\",\n      \"action\": \"keep_revision\",\n      \"comment\": \"门卫对话压缩后更紧凑，关键信息保留。\"\n    },\n    {\n      \"issue_id\": \"I03\",\n      \"status\": \"unresolved\",\n      \"action\": \"manual_review\",\n      \"comment\": \"第6段内心独白仍直接，但简化后节奏改善，可接受。\"\n    },\n    {\n      \"issue_id\": \"I04\",\n      \"status\": \"resolved\",\n      \"action\": \"keep_revision\",\n      \"comment\": \"窗户描述自然融入视线移动，说明感减弱。\"\n    },\n    {\n      \"issue_id\": \"I05\",\n      \"status\": \"resolved\",\n      \"action\": \"keep_revision\",\n      \"comment\": \"暮色描写精简，冲突进入更快。\"\n    }\n  ],\n  \"new_problems\": [],\n  \"revision_became_cleaner_but_flatter\": false,\n  \"author_intent_preserved\": true,\n  \"chapter_contract_completed\": true,\n  \"main_payoff_preserved\": true,\n  \"final_text\": \"暮色从走廊尽头的窗户斜斜铺进来，把许遥的影子拉成一道细长的暗痕贴在墙面上。她握着手机，屏幕上还亮着通话记录——刚才顾言的声音从走廊拐角传来。\\n\\n“……明天一早就走，钥匙我会放在门卫。”\\n\\n许遥的手指在屏幕上悬了一秒。她刚想开口叫住顾言，却听见脚步声已经往楼梯方向去了。等她绕过转角，只看见顾言的背影正快步上楼，深蓝色背包带在肩头一晃一晃，很快就消失在楼梯拐角的阴影里。\\n\\n走廊安静下来。宿舍门关着，灯还没亮。许遥站在原地，听见自己的心跳声在空旷的走廊里显得格外清晰。\\n\\n明天一早就走。钥匙放在门卫。\\n\\n她咬了咬下唇。现在追上去，推开宿舍门，直接问“你要搬去哪”，等于承认自己偷听了电话。她做不到。但如果不做点什么，明天一早顾言走了，钥匙交到门卫，她连联系的方式都断了。\\n\\n许遥深吸一口气，转身朝宿舍楼大门走去。\\n\\n她走得很快，几乎是小跑。楼梯间里传来其他人的说笑声，她侧身让过，脚步没有停顿。门卫室在宿舍楼入口左侧，玻璃窗里亮着暖黄色的灯光。她推开门，门卫大爷正戴着老花镜看报纸，抬头看见她：“怎么了？”\\n\\n“顾言说……她明天要走，钥匙放您这儿。”许遥尽量让自己的声音听起来平稳，“她让我先拿一下。”\\n\\n门卫大爷愣了一下，低头看了看桌上一个透明塑料袋里装着的钥匙——一把银色、一把铜色，系着一枚小小的蓝色塑料挂件。他拿起袋子递给许遥：“那姑娘刚才下来放的，说这两天不在。你是她室友？”\\n\\n“嗯。”许遥接过钥匙，指尖触到金属的凉意。\\n\\n她转身走出门卫室，脚步比来时慢了很多。钥匙在手里沉甸甸的，蓝色挂件随着她的动作轻轻晃动。她站在宿舍楼下抬头看了一眼——五楼的窗户还暗着。\\n\\n她拿出手机，拨了顾言的号码。\\n\\n嘟——嘟——嘟——\\n\\n没人接。\\n\\n她又拨了一次。还是没人接。\\n\\n许遥握着钥匙，站在暮色渐浓的走廊里。晚风从门缝里灌进来，带着傍晚特有的凉意。她看着手里那把系着蓝色挂件的钥匙，又抬头看了看五楼那扇漆黑的窗户，突然意识到一个问题——\\n\\n她攥紧了钥匙，金属的边缘硌得掌心生疼。\",\n  \"quality_score\": 87,\n  \"state_patch\": {\n    \"facts_added\": [\n      \"许遥从门卫处取走了顾言的钥匙\",\n      \"顾言电话无人接听\"\n    ],\n    \"relationships_changed\": null,\n    \"threads_carry_forward\": [\n      \"许遥误判顾言要搬走并取走钥匙，导致两人错过\",\n      \"顾言去向未明，手机无人接听\"\n    ]\n  },\n  \"reader_inference_preserved\": true,\n  \"decision_consequence_preserved\": true,\n  \"narrator_management_reduced\": true,\n  \"necessary_information_lost\": false,\n  \"causal_transition_results\": [\n    {\n      \"transition_id\": \"CT01\",\n      \"original_status\": \"fail\",\n      \"revision_status\": \"pass\",\n      \"preferred_version\": \"revision\",\n      \"comment\": \"修订删除了过度解释，读者推理空间保留。\"\n    }\n  ]\n}",
+          "model_parsed_output": null,
+          "parsed_output": {
+            "decision": "accept_merged",
+            "issue_results": [
+              {
+                "issue_id": "I01",
+                "status": "resolved",
+                "action": "keep_revision",
+                "comment": "删除了过度解释的推论，符合读者推理保留要求。"
+              },
+              {
+                "issue_id": "I02",
+                "status": "resolved",
+                "action": "keep_revision",
+                "comment": "门卫对话压缩后更紧凑，关键信息保留。"
+              },
+              {
+                "issue_id": "I03",
+                "status": "unresolved",
+                "action": "manual_review",
+                "comment": "第6段内心独白仍直接，但简化后节奏改善，可接受。"
+              },
+              {
+                "issue_id": "I04",
+                "status": "resolved",
+                "action": "keep_revision",
+                "comment": "窗户描述自然融入视线移动，说明感减弱。"
+              },
+              {
+                "issue_id": "I05",
+                "status": "resolved",
+                "action": "keep_revision",
+                "comment": "暮色描写精简，冲突进入更快。"
+              }
+            ],
+            "new_problems": [],
+            "revision_became_cleaner_but_flatter": false,
+            "author_intent_preserved": true,
+            "chapter_contract_completed": true,
+            "main_payoff_preserved": true,
+            "final_text": "暮色从走廊尽头的窗户斜斜铺进来，把许遥的影子拉成一道细长的暗痕贴在墙面上。她握着手机，屏幕上还亮着通话记录——刚才顾言的声音从走廊拐角传来。\n\n“……明天一早就走，钥匙我会放在门卫。”\n\n许遥的手指在屏幕上悬了一秒。她刚想开口叫住顾言，却听见脚步声已经往楼梯方向去了。等她绕过转角，只看见顾言的背影正快步上楼，深蓝色背包带在肩头一晃一晃，很快就消失在楼梯拐角的阴影里。\n\n走廊安静下来。宿舍门关着，灯还没亮。许遥站在原地，听见自己的心跳声在空旷的走廊里显得格外清晰。\n\n明天一早就走。钥匙放在门卫。\n\n她咬了咬下唇。现在追上去，推开宿舍门，直接问“你要搬去哪”，等于承认自己偷听了电话。她做不到。但如果不做点什么，明天一早顾言走了，钥匙交到门卫，她连联系的方式都断了。\n\n许遥深吸一口气，转身朝宿舍楼大门走去。\n\n她走得很快，几乎是小跑。楼梯间里传来其他人的说笑声，她侧身让过，脚步没有停顿。门卫室在宿舍楼入口左侧，玻璃窗里亮着暖黄色的灯光。她推开门，门卫大爷正戴着老花镜看报纸，抬头看见她：“怎么了？”\n\n“顾言说……她明天要走，钥匙放您这儿。”许遥尽量让自己的声音听起来平稳，“她让我先拿一下。”\n\n门卫大爷愣了一下，低头看了看桌上一个透明塑料袋里装着的钥匙——一把银色、一把铜色，系着一枚小小的蓝色塑料挂件。他拿起袋子递给许遥：“那姑娘刚才下来放的，说这两天不在。你是她室友？”\n\n“嗯。”许遥接过钥匙，指尖触到金属的凉意。\n\n她转身走出门卫室，脚步比来时慢了很多。钥匙在手里沉甸甸的，蓝色挂件随着她的动作轻轻晃动。她站在宿舍楼下抬头看了一眼——五楼的窗户还暗着。\n\n她拿出手机，拨了顾言的号码。\n\n嘟——嘟——嘟——\n\n没人接。\n\n她又拨了一次。还是没人接。\n\n许遥握着钥匙，站在暮色渐浓的走廊里。晚风从门缝里灌进来，带着傍晚特有的凉意。她看着手里那把系着蓝色挂件的钥匙，又抬头看了看五楼那扇漆黑的窗户，突然意识到一个问题——\n\n她攥紧了钥匙，金属的边缘硌得掌心生疼。",
+            "quality_score": 87,
+            "state_patch": {
+              "facts_added": [
+                "许遥从门卫处取走了顾言的钥匙",
+                "顾言电话无人接听"
+              ],
+              "relationships_changed": null,
+              "threads_carry_forward": [
+                "许遥误判顾言要搬走并取走钥匙，导致两人错过",
+                "顾言去向未明，手机无人接听"
+              ]
+            },
+            "reader_inference_preserved": true,
+            "decision_consequence_preserved": true,
+            "narrator_management_reduced": true,
+            "necessary_information_lost": false,
+            "causal_transition_results": [
+              {
+                "transition_id": "CT01",
+                "original_status": "fail",
+                "revision_status": "pass",
+                "preferred_version": "revision",
+                "comment": "修订删除了过度解释，读者推理空间保留。"
+              }
+            ]
+          },
+          "text_output": "{\n  \"decision\": \"accept_merged\",\n  \"issue_results\": [\n    {\n      \"issue_id\": \"I01\",\n      \"status\": \"resolved\",\n      \"action\": \"keep_revision\",\n      \"comment\": \"删除了过度解释的推论，符合读者推理保留要求。\"\n    },\n    {\n      \"issue_id\": \"I02\",\n      \"status\": \"resolved\",\n      \"action\": \"keep_revision\",\n      \"comment\": \"门卫对话压缩后更紧凑，关键信息保留。\"\n    },\n    {\n      \"issue_id\": \"I03\",\n      \"status\": \"unresolved\",\n      \"action\": \"manual_review\",\n      \"comment\": \"第6段内心独白仍直接，但简化后节奏改善，可接受。\"\n    },\n    {\n      \"issue_id\": \"I04\",\n      \"status\": \"resolved\",\n      \"action\": \"keep_revision\",\n      \"comment\": \"窗户描述自然融入视线移动，说明感减弱。\"\n    },\n    {\n      \"issue_id\": \"I05\",\n      \"status\": \"resolved\",\n      \"action\": \"keep_revision\",\n      \"comment\": \"暮色描写精简，冲突进入更快。\"\n    }\n  ],\n  \"new_problems\": [],\n  \"revision_became_cleaner_but_flatter\": false,\n  \"author_intent_preserved\": true,\n  \"chapter_contract_completed\": true,\n  \"main_payoff_preserved\": true,\n  \"final_text\": \"暮色从走廊尽头的窗户斜斜铺进来，把许遥的影子拉成一道细长的暗痕贴在墙面上。她握着手机，屏幕上还亮着通话记录——刚才顾言的声音从走廊拐角传来。\\n\\n“……明天一早就走，钥匙我会放在门卫。”\\n\\n许遥的手指在屏幕上悬了一秒。她刚想开口叫住顾言，却听见脚步声已经往楼梯方向去了。等她绕过转角，只看见顾言的背影正快步上楼，深蓝色背包带在肩头一晃一晃，很快就消失在楼梯拐角的阴影里。\\n\\n走廊安静下来。宿舍门关着，灯还没亮。许遥站在原地，听见自己的心跳声在空旷的走廊里显得格外清晰。\\n\\n明天一早就走。钥匙放在门卫。\\n\\n她咬了咬下唇。现在追上去，推开宿舍门，直接问“你要搬去哪”，等于承认自己偷听了电话。她做不到。但如果不做点什么，明天一早顾言走了，钥匙交到门卫，她连联系的方式都断了。\\n\\n许遥深吸一口气，转身朝宿舍楼大门走去。\\n\\n她走得很快，几乎是小跑。楼梯间里传来其他人的说笑声，她侧身让过，脚步没有停顿。门卫室在宿舍楼入口左侧，玻璃窗里亮着暖黄色的灯光。她推开门，门卫大爷正戴着老花镜看报纸，抬头看见她：“怎么了？”\\n\\n“顾言说……她明天要走，钥匙放您这儿。”许遥尽量让自己的声音听起来平稳，“她让我先拿一下。”\\n\\n门卫大爷愣了一下，低头看了看桌上一个透明塑料袋里装着的钥匙——一把银色、一把铜色，系着一枚小小的蓝色塑料挂件。他拿起袋子递给许遥：“那姑娘刚才下来放的，说这两天不在。你是她室友？”\\n\\n“嗯。”许遥接过钥匙，指尖触到金属的凉意。\\n\\n她转身走出门卫室，脚步比来时慢了很多。钥匙在手里沉甸甸的，蓝色挂件随着她的动作轻轻晃动。她站在宿舍楼下抬头看了一眼——五楼的窗户还暗着。\\n\\n她拿出手机，拨了顾言的号码。\\n\\n嘟——嘟——嘟——\\n\\n没人接。\\n\\n她又拨了一次。还是没人接。\\n\\n许遥握着钥匙，站在暮色渐浓的走廊里。晚风从门缝里灌进来，带着傍晚特有的凉意。她看着手里那把系着蓝色挂件的钥匙，又抬头看了看五楼那扇漆黑的窗户，突然意识到一个问题——\\n\\n她攥紧了钥匙，金属的边缘硌得掌心生疼。\",\n  \"quality_score\": 87,\n  \"state_patch\": {\n    \"facts_added\": [\n      \"许遥从门卫处取走了顾言的钥匙\",\n      \"顾言电话无人接听\"\n    ],\n    \"relationships_changed\": null,\n    \"threads_carry_forward\": [\n      \"许遥误判顾言要搬走并取走钥匙，导致两人错过\",\n      \"顾言去向未明，手机无人接听\"\n    ]\n  },\n  \"reader_inference_preserved\": true,\n  \"decision_consequence_preserved\": true,\n  \"narrator_management_reduced\": true,\n  \"necessary_information_lost\": false,\n  \"causal_transition_results\": [\n    {\n      \"transition_id\": \"CT01\",\n      \"original_status\": \"fail\",\n      \"revision_status\": \"pass\",\n      \"preferred_version\": \"revision\",\n      \"comment\": \"修订删除了过度解释，读者推理空间保留。\"\n    }\n  ]\n}",
+          "input_tokens": 5078,
+          "output_tokens": 1118,
+          "reasoning_tokens": null,
+          "latency_ms": 10703,
+          "finish_reason": "stop",
+          "error_code": null,
+          "error_message": null,
+          "is_selected": true
+        }
+      ]
+    },
+    "planner": {
+      "status": "completed",
+      "selected_candidate_id": "ea5a7149-2c4e-4525-b83b-f8de428dcdee",
+      "selected_issue_ids": null,
+      "candidates": [
+        {
+          "candidate_id": "ea5a7149-2c4e-4525-b83b-f8de428dcdee",
           "attempt_number": 1,
           "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
           "model_id": "deepseek-chat",
@@ -30,47 +292,282 @@
             "temperature": 0.7,
             "top_p": 1.0,
             "max_output_tokens": 4096,
-            "timeout_seconds": 300
+            "timeout_seconds": 300,
+            "response_format": "json_object"
           },
-          "raw_response": "",
+          "raw_response": "{\n  \"planner_contract_version\": 2,\n  \"scene_goal\": \"许遥基于对顾言电话的误判，做出一个会造成可见麻烦的具体选择，并承担即时后果\",\n  \"location\": \"大学宿舍走廊，傍晚\",\n  \"time\": \"傍晚，日落前\",\n  \"scene_state\": {\n    \"last_completed_action\": \"许遥在走廊听到顾言电话的后半句：'……明天一早就走，钥匙我会放在门卫。'\",\n    \"present_characters\": [\"许遥\"],\n    \"visible_facts\": [\"许遥只听到顾言电话的后半句\", \"顾言已经挂断电话，走向宿舍楼内\", \"走廊光线昏暗，有暮色\"],\n    \"available_objects\": [\"手机\", \"背包\", \"宿舍钥匙\"],\n    \"unresolved_problem\": \"许遥不确定顾言是否真的要搬走，但无法立即追问\",\n    \"already_existing_constraints\": [\"许遥不能直接质问顾言，因为那会暴露她偷听电话\", \"顾言正在上楼，即将消失在视线中\"]\n  },\n  \"characters\": [\n    {\n      \"name\": \"许遥\",\n      \"goal\": \"确认顾言是否真的要搬走，并决定如何应对\",\n      \"known\": [\"顾言明天一早就走\", \"钥匙会放在门卫\"],\n      \"unknown\": [\"顾言要去哪里\", \"顾言为什么走\", \"顾言是否真的搬走\"],\n      \"mistaken_beliefs\": [\"顾言要搬走，可能不再回来\"],\n      \"constraints\": [\"不能直接质问顾言，以免暴露偷听\", \"时间紧迫，顾言即将离开视线\"],\n      \"observed_evidence\": [\"顾言电话的后半句内容\", \"顾言挂断电话后走向宿舍楼\"],\n      \"current_interpretation\": \"顾言明天要离开，且把钥匙放在门卫，意味着可能搬走\",\n      \"how_interpretation_drives_action\": \"许遥决定立刻去门卫处取走钥匙，以防止顾言离开后无法联系，并以此作为确认顾言去向的手段\"\n    }\n  ],\n  \"concrete_problem\": \"许遥是否应该立即去门卫处取走顾言留下的钥匙，以此确认顾言是否真的要搬走？\",\n  \"pressure\": \"时间紧迫，顾言即将上楼消失，许遥必须在短时间内做出决定；同时她担心直接追问会破坏友谊。\",\n  \"turning_point\": \"许遥选择放弃当面追问，转身跑向门卫处取钥匙，这个行动将导致她与顾言错过，并引发后续误解。\",\n  \"end_condition\": \"许遥从门卫处拿到钥匙，但返回时发现顾言已经离开宿舍楼，她握着钥匙站在走廊，意识到自己可能做出了错误判断。\",\n  \"forbidden\": [\"不得揭示顾言真正要去哪里\", \"不得让许遥与顾言直接对话澄清误会\", \"不得让许遥在场景结束前得知顾言只是短暂外出而非搬走\", \"不得出现其他角色介入澄清\"],\n  \"causal_transitions\": [\n    {\n      \"id\": \"CT01\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"顾言挂断电话后快步走向宿舍楼，背影即将消失在楼梯转角\",\n      \"character_interpretation\": \"许遥认为顾言要去收拾行李，明天一早离开，如果不立即行动就会失去联系\",\n      \"character_next_action\": \"许遥转身跑向门卫处，决定先取走钥匙再找顾言\",\n      \"rejected_alternative\": \"许遥可以追上去叫住顾言，直接询问电话内容\",\n      \"immediate_consequence\": \"许遥在门卫处拿到钥匙，但返回时顾言已经不在宿舍楼，且手机无人接听\",\n      \"counterfactual_without_action\": \"如果许遥没有去取钥匙，她可能追上顾言，直接了解真相\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\"before\": \"许遥站在走廊，不确定是否行动\", \"after\": \"许遥手握钥匙，意识到自己与顾言错过\"},\n      \"cost_or_commitment\": \"许遥放弃了直接沟通的机会，现在必须通过其他方式联系顾言\",\n      \"next_constraint\": \"许遥不能立即联系到顾言，因为顾言手机无人接听\",\n      \"reader_must_infer\": \"许遥的误判导致她采取了可能不必要的行动，而顾言可能只是短暂外出\",\n      \"narrator_must_not_state\": [\"顾言是否真的搬走\", \"顾言手机无人接听的原因\"]\n    }\n  ],\n  \"tempo_guardrails\": {\n    \"entry_pressure\": \"许遥刚刚听到电话后半句，顾言即将消失在楼梯口\",\n    \"dominant_pressure\": {\n      \"kind\": \"information_gap\",\n      \"description\": \"许遥缺乏完整信息，必须基于误判做决定，同时时间紧迫\"\n    },\n    \"allowed_viewpoint_misread\": \"许遥可能认为顾言故意不告而别，但实际上顾言可能只是计划短期离开\",\n    \"disclosure_cap\": 0,\n    \"must_remain_unclassified\": [\"顾言电话前半句的内容\", \"顾言真正的目的地\"],\n    \"stop_state\": {\n      \"type\": \"unresolved_problem\",\n      \"visible_fact\": \"许遥手握钥匙站在走廊，顾言已不见踪影\",\n      \"what_is_now_different\": \"许遥从犹豫不决变为采取了行动，但问题仍未解决，反而产生了新的障碍\",\n      \"must_not_append\": \"不得解释顾言去了哪里或为什么离开\"\n    }\n  },\n  \"chapter_contract_check\": {\n    \"function_aligned\": true,\n    \"must_deliver_covered\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_enabled\": true,\n    \"main_payoff_prepared\": true,\n    \"ending_hook_established\": true,\n    \"causal_transitions_grounded\": true,\n    \"reader_inference_not_pre_resolved\": true,\n    \"scene_state_reconstructed\": true,\n    \"information_sources_legal\": true,\n    \"character_choice_is_real\": true,\n    \"consequence_is_counterfactual\": true,\n    \"state_delta_is_nonempty\": true,\n    \"next_constraint_is_new\": true,\n    \"stop_state_is_visible\": true,\n    \"stop_state_changes_future_actions\": true\n  }\n}",
           "model_parsed_output": null,
-          "parsed_output": null,
-          "text_output": "",
-          "input_tokens": 0,
-          "output_tokens": 0,
+          "parsed_output": {
+            "planner_contract_version": 2,
+            "scene_goal": "许遥基于对顾言电话的误判，做出一个会造成可见麻烦的具体选择，并承担即时后果",
+            "location": "大学宿舍走廊，傍晚",
+            "time": "傍晚，日落前",
+            "scene_state": {
+              "last_completed_action": "许遥在走廊听到顾言电话的后半句：'……明天一早就走，钥匙我会放在门卫。'",
+              "present_characters": [
+                "许遥"
+              ],
+              "visible_facts": [
+                "许遥只听到顾言电话的后半句",
+                "顾言已经挂断电话，走向宿舍楼内",
+                "走廊光线昏暗，有暮色"
+              ],
+              "available_objects": [
+                "手机",
+                "背包",
+                "宿舍钥匙"
+              ],
+              "unresolved_problem": "许遥不确定顾言是否真的要搬走，但无法立即追问",
+              "already_existing_constraints": [
+                "许遥不能直接质问顾言，因为那会暴露她偷听电话",
+                "顾言正在上楼，即将消失在视线中"
+              ]
+            },
+            "characters": [
+              {
+                "name": "许遥",
+                "goal": "确认顾言是否真的要搬走，并决定如何应对",
+                "known": [
+                  "顾言明天一早就走",
+                  "钥匙会放在门卫"
+                ],
+                "unknown": [
+                  "顾言要去哪里",
+                  "顾言为什么走",
+                  "顾言是否真的搬走"
+                ],
+                "mistaken_beliefs": [
+                  "顾言要搬走，可能不再回来"
+                ],
+                "constraints": [
+                  "不能直接质问顾言，以免暴露偷听",
+                  "时间紧迫，顾言即将离开视线"
+                ],
+                "observed_evidence": [
+                  "顾言电话的后半句内容",
+                  "顾言挂断电话后走向宿舍楼"
+                ],
+                "current_interpretation": "顾言明天要离开，且把钥匙放在门卫，意味着可能搬走",
+                "how_interpretation_drives_action": "许遥决定立刻去门卫处取走钥匙，以防止顾言离开后无法联系，并以此作为确认顾言去向的手段"
+              }
+            ],
+            "concrete_problem": "许遥是否应该立即去门卫处取走顾言留下的钥匙，以此确认顾言是否真的要搬走？",
+            "pressure": "时间紧迫，顾言即将上楼消失，许遥必须在短时间内做出决定；同时她担心直接追问会破坏友谊。",
+            "turning_point": "许遥选择放弃当面追问，转身跑向门卫处取钥匙，这个行动将导致她与顾言错过，并引发后续误解。",
+            "end_condition": "许遥从门卫处拿到钥匙，但返回时发现顾言已经离开宿舍楼，她握着钥匙站在走廊，意识到自己可能做出了错误判断。",
+            "forbidden": [
+              "不得揭示顾言真正要去哪里",
+              "不得让许遥与顾言直接对话澄清误会",
+              "不得让许遥在场景结束前得知顾言只是短暂外出而非搬走",
+              "不得出现其他角色介入澄清"
+            ],
+            "causal_transitions": [
+              {
+                "id": "CT01",
+                "kind": "evidence_to_action",
+                "visible_trigger": "顾言挂断电话后快步走向宿舍楼，背影即将消失在楼梯转角",
+                "character_interpretation": "许遥认为顾言要去收拾行李，明天一早离开，如果不立即行动就会失去联系",
+                "character_next_action": "许遥转身跑向门卫处，决定先取走钥匙再找顾言",
+                "rejected_alternative": "许遥可以追上去叫住顾言，直接询问电话内容",
+                "immediate_consequence": "许遥在门卫处拿到钥匙，但返回时顾言已经不在宿舍楼，且手机无人接听",
+                "counterfactual_without_action": "如果许遥没有去取钥匙，她可能追上顾言，直接了解真相",
+                "consequence_would_still_happen": false,
+                "state_delta": {
+                  "before": "许遥站在走廊，不确定是否行动",
+                  "after": "许遥手握钥匙，意识到自己与顾言错过"
+                },
+                "cost_or_commitment": "许遥放弃了直接沟通的机会，现在必须通过其他方式联系顾言",
+                "next_constraint": "许遥不能立即联系到顾言，因为顾言手机无人接听",
+                "reader_must_infer": "许遥的误判导致她采取了可能不必要的行动，而顾言可能只是短暂外出",
+                "narrator_must_not_state": [
+                  "顾言是否真的搬走",
+                  "顾言手机无人接听的原因"
+                ]
+              }
+            ],
+            "chapter_contract_check": {
+              "function_aligned": true,
+              "must_deliver_covered": true,
+              "must_not_deliver_respected": true,
+              "main_change_enabled": true,
+              "main_payoff_prepared": true,
+              "ending_hook_established": true,
+              "causal_transitions_grounded": true,
+              "reader_inference_not_pre_resolved": true,
+              "scene_state_reconstructed": true,
+              "information_sources_legal": true,
+              "character_choice_is_real": true,
+              "consequence_is_counterfactual": true,
+              "state_delta_is_nonempty": true,
+              "next_constraint_is_new": true,
+              "stop_state_is_visible": true,
+              "stop_state_changes_future_actions": true
+            },
+            "tempo_guardrails": {
+              "entry_pressure": "许遥刚刚听到电话后半句，顾言即将消失在楼梯口",
+              "dominant_pressure": {
+                "kind": "information_gap",
+                "description": "许遥缺乏完整信息，必须基于误判做决定，同时时间紧迫"
+              },
+              "allowed_viewpoint_misread": "许遥可能认为顾言故意不告而别，但实际上顾言可能只是计划短期离开",
+              "disclosure_cap": 0,
+              "must_remain_unclassified": [
+                "顾言电话前半句的内容",
+                "顾言真正的目的地"
+              ],
+              "stop_state": {
+                "type": "unresolved_problem",
+                "visible_fact": "许遥手握钥匙站在走廊，顾言已不见踪影",
+                "what_is_now_different": "许遥从犹豫不决变为采取了行动，但问题仍未解决，反而产生了新的障碍",
+                "must_not_append": "不得解释顾言去了哪里或为什么离开"
+              },
+              "final_line_must_include": ""
+            }
+          },
+          "text_output": "{\n  \"planner_contract_version\": 2,\n  \"scene_goal\": \"许遥基于对顾言电话的误判，做出一个会造成可见麻烦的具体选择，并承担即时后果\",\n  \"location\": \"大学宿舍走廊，傍晚\",\n  \"time\": \"傍晚，日落前\",\n  \"scene_state\": {\n    \"last_completed_action\": \"许遥在走廊听到顾言电话的后半句：'……明天一早就走，钥匙我会放在门卫。'\",\n    \"present_characters\": [\"许遥\"],\n    \"visible_facts\": [\"许遥只听到顾言电话的后半句\", \"顾言已经挂断电话，走向宿舍楼内\", \"走廊光线昏暗，有暮色\"],\n    \"available_objects\": [\"手机\", \"背包\", \"宿舍钥匙\"],\n    \"unresolved_problem\": \"许遥不确定顾言是否真的要搬走，但无法立即追问\",\n    \"already_existing_constraints\": [\"许遥不能直接质问顾言，因为那会暴露她偷听电话\", \"顾言正在上楼，即将消失在视线中\"]\n  },\n  \"characters\": [\n    {\n      \"name\": \"许遥\",\n      \"goal\": \"确认顾言是否真的要搬走，并决定如何应对\",\n      \"known\": [\"顾言明天一早就走\", \"钥匙会放在门卫\"],\n      \"unknown\": [\"顾言要去哪里\", \"顾言为什么走\", \"顾言是否真的搬走\"],\n      \"mistaken_beliefs\": [\"顾言要搬走，可能不再回来\"],\n      \"constraints\": [\"不能直接质问顾言，以免暴露偷听\", \"时间紧迫，顾言即将离开视线\"],\n      \"observed_evidence\": [\"顾言电话的后半句内容\", \"顾言挂断电话后走向宿舍楼\"],\n      \"current_interpretation\": \"顾言明天要离开，且把钥匙放在门卫，意味着可能搬走\",\n      \"how_interpretation_drives_action\": \"许遥决定立刻去门卫处取走钥匙，以防止顾言离开后无法联系，并以此作为确认顾言去向的手段\"\n    }\n  ],\n  \"concrete_problem\": \"许遥是否应该立即去门卫处取走顾言留下的钥匙，以此确认顾言是否真的要搬走？\",\n  \"pressure\": \"时间紧迫，顾言即将上楼消失，许遥必须在短时间内做出决定；同时她担心直接追问会破坏友谊。\",\n  \"turning_point\": \"许遥选择放弃当面追问，转身跑向门卫处取钥匙，这个行动将导致她与顾言错过，并引发后续误解。\",\n  \"end_condition\": \"许遥从门卫处拿到钥匙，但返回时发现顾言已经离开宿舍楼，她握着钥匙站在走廊，意识到自己可能做出了错误判断。\",\n  \"forbidden\": [\"不得揭示顾言真正要去哪里\", \"不得让许遥与顾言直接对话澄清误会\", \"不得让许遥在场景结束前得知顾言只是短暂外出而非搬走\", \"不得出现其他角色介入澄清\"],\n  \"causal_transitions\": [\n    {\n      \"id\": \"CT01\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"顾言挂断电话后快步走向宿舍楼，背影即将消失在楼梯转角\",\n      \"character_interpretation\": \"许遥认为顾言要去收拾行李，明天一早离开，如果不立即行动就会失去联系\",\n      \"character_next_action\": \"许遥转身跑向门卫处，决定先取走钥匙再找顾言\",\n      \"rejected_alternative\": \"许遥可以追上去叫住顾言，直接询问电话内容\",\n      \"immediate_consequence\": \"许遥在门卫处拿到钥匙，但返回时顾言已经不在宿舍楼，且手机无人接听\",\n      \"counterfactual_without_action\": \"如果许遥没有去取钥匙，她可能追上顾言，直接了解真相\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\"before\": \"许遥站在走廊，不确定是否行动\", \"after\": \"许遥手握钥匙，意识到自己与顾言错过\"},\n      \"cost_or_commitment\": \"许遥放弃了直接沟通的机会，现在必须通过其他方式联系顾言\",\n      \"next_constraint\": \"许遥不能立即联系到顾言，因为顾言手机无人接听\",\n      \"reader_must_infer\": \"许遥的误判导致她采取了可能不必要的行动，而顾言可能只是短暂外出\",\n      \"narrator_must_not_state\": [\"顾言是否真的搬走\", \"顾言手机无人接听的原因\"]\n    }\n  ],\n  \"tempo_guardrails\": {\n    \"entry_pressure\": \"许遥刚刚听到电话后半句，顾言即将消失在楼梯口\",\n    \"dominant_pressure\": {\n      \"kind\": \"information_gap\",\n      \"description\": \"许遥缺乏完整信息，必须基于误判做决定，同时时间紧迫\"\n    },\n    \"allowed_viewpoint_misread\": \"许遥可能认为顾言故意不告而别，但实际上顾言可能只是计划短期离开\",\n    \"disclosure_cap\": 0,\n    \"must_remain_unclassified\": [\"顾言电话前半句的内容\", \"顾言真正的目的地\"],\n    \"stop_state\": {\n      \"type\": \"unresolved_problem\",\n      \"visible_fact\": \"许遥手握钥匙站在走廊，顾言已不见踪影\",\n      \"what_is_now_different\": \"许遥从犹豫不决变为采取了行动，但问题仍未解决，反而产生了新的障碍\",\n      \"must_not_append\": \"不得解释顾言去了哪里或为什么离开\"\n    }\n  },\n  \"chapter_contract_check\": {\n    \"function_aligned\": true,\n    \"must_deliver_covered\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_enabled\": true,\n    \"main_payoff_prepared\": true,\n    \"ending_hook_established\": true,\n    \"causal_transitions_grounded\": true,\n    \"reader_inference_not_pre_resolved\": true,\n    \"scene_state_reconstructed\": true,\n    \"information_sources_legal\": true,\n    \"character_choice_is_real\": true,\n    \"consequence_is_counterfactual\": true,\n    \"state_delta_is_nonempty\": true,\n    \"next_constraint_is_new\": true,\n    \"stop_state_is_visible\": true,\n    \"stop_state_changes_future_actions\": true\n  }\n}",
+          "input_tokens": 3410,
+          "output_tokens": 1403,
           "reasoning_tokens": null,
-          "latency_ms": 1,
-          "finish_reason": null,
-          "error_code": "LLM_ERROR",
-          "error_message": "",
-          "is_selected": false
+          "latency_ms": 14127,
+          "finish_reason": "stop",
+          "error_code": null,
+          "error_message": null,
+          "is_selected": true
         }
       ]
     },
     "reviser": {
-      "status": "pending",
-      "selected_candidate_id": null,
+      "status": "completed",
+      "selected_candidate_id": "07a28be9-3bbe-48fa-9840-1ad15faad516",
       "selected_issue_ids": null,
-      "candidates": []
+      "candidates": [
+        {
+          "candidate_id": "07a28be9-3bbe-48fa-9840-1ad15faad516",
+          "attempt_number": 1,
+          "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+          "model_id": "deepseek-chat",
+          "prompt_version_id": "e9ef6215-16c7-459a-b769-477a8e62a5f0",
+          "parameters": {
+            "temperature": 0.7,
+            "top_p": 1.0,
+            "max_output_tokens": 4096,
+            "timeout_seconds": 300,
+            "response_format": "json_object"
+          },
+          "raw_response": "{\n  \"patches\": [\n    {\n      \"issue_id\": \"I01\",\n      \"operation\": \"replace\",\n      \"target_paragraph_ids\": [18],\n      \"replacement\": \"她攥紧了钥匙，金属的边缘硌得掌心生疼。\"\n    },\n    {\n      \"issue_id\": \"I02\",\n      \"operation\": \"replace\",\n      \"target_paragraph_ids\": [8, 9, 10, 11],\n      \"replacement\": \"她走得很快，几乎是小跑。楼梯间里传来其他人的说笑声，她侧身让过，脚步没有停顿。门卫室在宿舍楼入口左侧，玻璃窗里亮着暖黄色的灯光。她推开门，门卫大爷正戴着老花镜看报纸，抬头看见她：“怎么了？”\\n\\n“顾言说……她明天要走，钥匙放您这儿。”许遥尽量让自己的声音听起来平稳，“她让我先拿一下。”\\n\\n门卫大爷愣了一下，低头看了看桌上一个透明塑料袋里装着的钥匙——一把银色、一把铜色，系着一枚小小的蓝色塑料挂件。他拿起袋子递给许遥：“那姑娘刚才下来放的，说这两天不在。你是她室友？”\\n\\n“嗯。”许遥接过钥匙，指尖触到金属的凉意。\"\n    },\n    {\n      \"issue_id\": \"I03\",\n      \"operation\": \"replace\",\n      \"target_paragraph_ids\": [6],\n      \"replacement\": \"明天一早就走。钥匙放在门卫。\\n\\n她咬了咬下唇。现在追上去，推开宿舍门，直接问“你要搬去哪”，等于承认自己偷听了电话。她做不到。但如果不做点什么，明天一早顾言走了，钥匙交到门卫，她连联系的方式都断了。\"\n    },\n    {\n      \"issue_id\": \"I04\",\n      \"operation\": \"replace\",\n      \"target_paragraph_ids\": [12],\n      \"replacement\": \"她转身走出门卫室，脚步比来时慢了很多。钥匙在手里沉甸甸的，蓝色挂件随着她的动作轻轻晃动。她站在宿舍楼下抬头看了一眼——五楼的窗户还暗着。\"\n    },\n    {\n      \"issue_id\": \"I05\",\n      \"operation\": \"replace\",\n      \"target_paragraph_ids\": [1],\n      \"replacement\": \"暮色从走廊尽头的窗户斜斜铺进来，把许遥的影子拉成一道细长的暗痕贴在墙面上。她握着手机，屏幕上还亮着通话记录——刚才顾言的声音从走廊拐角传来。\"\n    }\n  ],\n  \"revised_text\": \"[P001] 暮色从走廊尽头的窗户斜斜铺进来，把许遥的影子拉成一道细长的暗痕贴在墙面上。她握着手机，屏幕上还亮着通话记录——刚才顾言的声音从走廊拐角传来。\\n\\n[P002] “……明天一早就走，钥匙我会放在门卫。”\\n\\n[P003] 许遥的手指在屏幕上悬了一秒。她刚想开口叫住顾言，却听见脚步声已经往楼梯方向去了。等她绕过转角，只看见顾言的背影正快步上楼，深蓝色背包带在肩头一晃一晃，很快就消失在楼梯拐角的阴影里。\\n\\n[P004] 走廊安静下来。宿舍门关着，灯还没亮。许遥站在原地，听见自己的心跳声在空旷的走廊里显得格外清晰。\\n\\n[P005] 明天一早就走。钥匙放在门卫。\\n\\n[P006] 她咬了咬下唇。现在追上去，推开宿舍门，直接问“你要搬去哪”，等于承认自己偷听了电话。她做不到。但如果不做点什么，明天一早顾言走了，钥匙交到门卫，她连联系的方式都断了。\\n\\n[P007] 许遥深吸一口气，转身朝宿舍楼大门走去。\\n\\n[P008] 她走得很快，几乎是小跑。楼梯间里传来其他人的说笑声，她侧身让过，脚步没有停顿。门卫室在宿舍楼入口左侧，玻璃窗里亮着暖黄色的灯光。她推开门，门卫大爷正戴着老花镜看报纸，抬头看见她：“怎么了？”\\n\\n[P009] “顾言说……她明天要走，钥匙放您这儿。”许遥尽量让自己的声音听起来平稳，“她让我先拿一下。”\\n\\n[P010] 门卫大爷愣了一下，低头看了看桌上一个透明塑料袋里装着的钥匙——一把银色、一把铜色，系着一枚小小的蓝色塑料挂件。他拿起袋子递给许遥：“那姑娘刚才下来放的，说这两天不在。你是她室友？”\\n\\n[P011] “嗯。”许遥接过钥匙，指尖触到金属的凉意。\\n\\n[P012] 她转身走出门卫室，脚步比来时慢了很多。钥匙在手里沉甸甸的，蓝色挂件随着她的动作轻轻晃动。她站在宿舍楼下抬头看了一眼——五楼的窗户还暗着。\\n\\n[P013] 她拿出手机，拨了顾言的号码。\\n\\n[P014] 嘟——嘟——嘟——\\n\\n[P015] 没人接。\\n\\n[P016] 她又拨了一次。还是没人接。\\n\\n[P017] 许遥握着钥匙，站在暮色渐浓的走廊里。晚风从门缝里灌进来，带着傍晚特有的凉意。她看着手里那把系着蓝色挂件的钥匙，又抬头看了看五楼那扇漆黑的窗户，突然意识到一个问题——\\n\\n[P018] 她攥紧了钥匙，金属的边缘硌得掌心生疼。\",\n  \"unchanged_ratio\": 0.85,\n  \"introduced_facts\": [],\n  \"contract_verification\": {\n    \"chapter_function_preserved\": true,\n    \"must_deliver_preserved\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_preserved\": true,\n    \"main_payoff_preserved\": true,\n    \"ending_hook_preserved\": true,\n    \"fuel_remains_reserved\": true\n  }\n}",
+          "model_parsed_output": null,
+          "parsed_output": {
+            "patches": [
+              {
+                "issue_id": "I01",
+                "operation": "replace",
+                "target_paragraph_ids": [
+                  "P018"
+                ],
+                "replacement": "她攥紧了钥匙，金属的边缘硌得掌心生疼。"
+              },
+              {
+                "issue_id": "I02",
+                "operation": "replace",
+                "target_paragraph_ids": [
+                  "P008",
+                  "P009",
+                  "P010",
+                  "P011"
+                ],
+                "replacement": "她走得很快，几乎是小跑。楼梯间里传来其他人的说笑声，她侧身让过，脚步没有停顿。门卫室在宿舍楼入口左侧，玻璃窗里亮着暖黄色的灯光。她推开门，门卫大爷正戴着老花镜看报纸，抬头看见她：“怎么了？”\n\n“顾言说……她明天要走，钥匙放您这儿。”许遥尽量让自己的声音听起来平稳，“她让我先拿一下。”\n\n门卫大爷愣了一下，低头看了看桌上一个透明塑料袋里装着的钥匙——一把银色、一把铜色，系着一枚小小的蓝色塑料挂件。他拿起袋子递给许遥：“那姑娘刚才下来放的，说这两天不在。你是她室友？”\n\n“嗯。”许遥接过钥匙，指尖触到金属的凉意。"
+              },
+              {
+                "issue_id": "I03",
+                "operation": "replace",
+                "target_paragraph_ids": [
+                  "P006"
+                ],
+                "replacement": "明天一早就走。钥匙放在门卫。\n\n她咬了咬下唇。现在追上去，推开宿舍门，直接问“你要搬去哪”，等于承认自己偷听了电话。她做不到。但如果不做点什么，明天一早顾言走了，钥匙交到门卫，她连联系的方式都断了。"
+              },
+              {
+                "issue_id": "I04",
+                "operation": "replace",
+                "target_paragraph_ids": [
+                  "P012"
+                ],
+                "replacement": "她转身走出门卫室，脚步比来时慢了很多。钥匙在手里沉甸甸的，蓝色挂件随着她的动作轻轻晃动。她站在宿舍楼下抬头看了一眼——五楼的窗户还暗着。"
+              },
+              {
+                "issue_id": "I05",
+                "operation": "replace",
+                "target_paragraph_ids": [
+                  "P001"
+                ],
+                "replacement": "暮色从走廊尽头的窗户斜斜铺进来，把许遥的影子拉成一道细长的暗痕贴在墙面上。她握着手机，屏幕上还亮着通话记录——刚才顾言的声音从走廊拐角传来。"
+              }
+            ],
+            "revised_text": "[P001] 暮色从走廊尽头的窗户斜斜铺进来，把许遥的影子拉成一道细长的暗痕贴在墙面上。她握着手机，屏幕上还亮着通话记录——刚才顾言的声音从走廊拐角传来。\n\n[P002] “……明天一早就走，钥匙我会放在门卫。”\n\n[P003] 许遥的手指在屏幕上悬了一秒。她刚想开口叫住顾言，却听见脚步声已经往楼梯方向去了。等她绕过转角，只看见顾言的背影正快步上楼，深蓝色背包带在肩头一晃一晃，很快就消失在楼梯拐角的阴影里。\n\n[P004] 走廊安静下来。宿舍门关着，灯还没亮。许遥站在原地，听见自己的心跳声在空旷的走廊里显得格外清晰。\n\n[P005] 明天一早就走。钥匙放在门卫。\n\n[P006] 她咬了咬下唇。现在追上去，推开宿舍门，直接问“你要搬去哪”，等于承认自己偷听了电话。她做不到。但如果不做点什么，明天一早顾言走了，钥匙交到门卫，她连联系的方式都断了。\n\n[P007] 许遥深吸一口气，转身朝宿舍楼大门走去。\n\n[P008] 她走得很快，几乎是小跑。楼梯间里传来其他人的说笑声，她侧身让过，脚步没有停顿。门卫室在宿舍楼入口左侧，玻璃窗里亮着暖黄色的灯光。她推开门，门卫大爷正戴着老花镜看报纸，抬头看见她：“怎么了？”\n\n[P009] “顾言说……她明天要走，钥匙放您这儿。”许遥尽量让自己的声音听起来平稳，“她让我先拿一下。”\n\n[P010] 门卫大爷愣了一下，低头看了看桌上一个透明塑料袋里装着的钥匙——一把银色、一把铜色，系着一枚小小的蓝色塑料挂件。他拿起袋子递给许遥：“那姑娘刚才下来放的，说这两天不在。你是她室友？”\n\n[P011] “嗯。”许遥接过钥匙，指尖触到金属的凉意。\n\n[P012] 她转身走出门卫室，脚步比来时慢了很多。钥匙在手里沉甸甸的，蓝色挂件随着她的动作轻轻晃动。她站在宿舍楼下抬头看了一眼——五楼的窗户还暗着。\n\n[P013] 她拿出手机，拨了顾言的号码。\n\n[P014] 嘟——嘟——嘟——\n\n[P015] 没人接。\n\n[P016] 她又拨了一次。还是没人接。\n\n[P017] 许遥握着钥匙，站在暮色渐浓的走廊里。晚风从门缝里灌进来，带着傍晚特有的凉意。她看着手里那把系着蓝色挂件的钥匙，又抬头看了看五楼那扇漆黑的窗户，突然意识到一个问题——\n\n[P018] 她攥紧了钥匙，金属的边缘硌得掌心生疼。",
+            "unchanged_ratio": 0.85,
+            "introduced_facts": [],
+            "contract_verification": {
+              "chapter_function_preserved": true,
+              "must_deliver_preserved": true,
+              "must_not_deliver_respected": true,
+              "main_change_preserved": true,
+              "main_payoff_preserved": true,
+              "ending_hook_preserved": true,
+              "fuel_remains_reserved": true
+            }
+          },
+          "text_output": "[P001] 暮色从走廊尽头的窗户斜斜铺进来，把许遥的影子拉成一道细长的暗痕贴在墙面上。她握着手机，屏幕上还亮着通话记录——刚才顾言的声音从走廊拐角传来。\n\n[P002] “……明天一早就走，钥匙我会放在门卫。”\n\n[P003] 许遥的手指在屏幕上悬了一秒。她刚想开口叫住顾言，却听见脚步声已经往楼梯方向去了。等她绕过转角，只看见顾言的背影正快步上楼，深蓝色背包带在肩头一晃一晃，很快就消失在楼梯拐角的阴影里。\n\n[P004] 走廊安静下来。宿舍门关着，灯还没亮。许遥站在原地，听见自己的心跳声在空旷的走廊里显得格外清晰。\n\n[P005] 明天一早就走。钥匙放在门卫。\n\n[P006] 她咬了咬下唇。现在追上去，推开宿舍门，直接问“你要搬去哪”，等于承认自己偷听了电话。她做不到。但如果不做点什么，明天一早顾言走了，钥匙交到门卫，她连联系的方式都断了。\n\n[P007] 许遥深吸一口气，转身朝宿舍楼大门走去。\n\n[P008] 她走得很快，几乎是小跑。楼梯间里传来其他人的说笑声，她侧身让过，脚步没有停顿。门卫室在宿舍楼入口左侧，玻璃窗里亮着暖黄色的灯光。她推开门，门卫大爷正戴着老花镜看报纸，抬头看见她：“怎么了？”\n\n[P009] “顾言说……她明天要走，钥匙放您这儿。”许遥尽量让自己的声音听起来平稳，“她让我先拿一下。”\n\n[P010] 门卫大爷愣了一下，低头看了看桌上一个透明塑料袋里装着的钥匙——一把银色、一把铜色，系着一枚小小的蓝色塑料挂件。他拿起袋子递给许遥：“那姑娘刚才下来放的，说这两天不在。你是她室友？”\n\n[P011] “嗯。”许遥接过钥匙，指尖触到金属的凉意。\n\n[P012] 她转身走出门卫室，脚步比来时慢了很多。钥匙在手里沉甸甸的，蓝色挂件随着她的动作轻轻晃动。她站在宿舍楼下抬头看了一眼——五楼的窗户还暗着。\n\n[P013] 她拿出手机，拨了顾言的号码。\n\n[P014] 嘟——嘟——嘟——\n\n[P015] 没人接。\n\n[P016] 她又拨了一次。还是没人接。\n\n[P017] 许遥握着钥匙，站在暮色渐浓的走廊里。晚风从门缝里灌进来，带着傍晚特有的凉意。她看着手里那把系着蓝色挂件的钥匙，又抬头看了看五楼那扇漆黑的窗户，突然意识到一个问题——\n\n[P018] 她攥紧了钥匙，金属的边缘硌得掌心生疼。",
+          "input_tokens": 3655,
+          "output_tokens": 1329,
+          "reasoning_tokens": null,
+          "latency_ms": 11035,
+          "finish_reason": "stop",
+          "error_code": null,
+          "error_message": null,
+          "is_selected": true
+        }
+      ]
     },
     "writer": {
-      "status": "pending",
-      "selected_candidate_id": null,
+      "status": "completed",
+      "selected_candidate_id": "82c12b37-e209-4043-a44d-d0394c3e2984",
       "selected_issue_ids": null,
-      "candidates": []
+      "candidates": [
+        {
+          "candidate_id": "82c12b37-e209-4043-a44d-d0394c3e2984",
+          "attempt_number": 1,
+          "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+          "model_id": "deepseek-chat",
+          "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+          "parameters": {
+            "temperature": 0.7,
+            "top_p": 1.0,
+            "max_output_tokens": 4096,
+            "timeout_seconds": 300,
+            "response_format": "text"
+          },
+          "raw_response": "暮色从走廊尽头的窗户斜斜地铺进来，把许遥的影子拉成一道细长的暗痕贴在墙面上。她握着手机，屏幕上还亮着通话记录——刚才顾言的声音从走廊拐角传来，清晰得几乎没有失真。\n\n“……明天一早就走，钥匙我会放在门卫。”\n\n许遥的手指在屏幕上悬了一秒。她刚想开口叫住顾言，却听见脚步声已经往楼梯方向去了。等她绕过转角，只看见顾言的背影正快步上楼，深蓝色背包带在肩头一晃一晃，很快就消失在楼梯拐角的阴影里。\n\n走廊安静下来。宿舍门关着，灯还没亮。许遥站在原地，听见自己的心跳声在空旷的走廊里显得格外清晰。\n\n明天一早就走。钥匙放在门卫。\n\n她咬了咬下唇。如果顾言真的搬走——不告而别的那种——那她连问一句的机会都没有。现在追上去，推开宿舍门，直接问“你要搬去哪”，等于承认自己偷听了电话。她做不到。但如果不做点什么，明天一早顾言走了，钥匙交到门卫，她连联系的方式都断了。\n\n许遥深吸一口气，转身朝宿舍楼大门走去。\n\n她走得很快，几乎是小跑。楼梯间里传来其他人的说笑声，她侧身让过，脚步没有停顿。门卫室在宿舍楼入口左侧，玻璃窗里亮着暖黄色的灯光。她推开门，门卫大爷正戴着老花镜看报纸，抬头看见她，摘下眼镜：“怎么了？”\n\n“顾言说……她明天要走，钥匙放您这儿。”许遥尽量让自己的声音听起来平稳，“她让我先拿一下。”\n\n门卫大爷愣了一下，低头看了看桌上一个透明塑料袋里装着的钥匙——一把银色、一把铜色，系着一枚小小的蓝色塑料挂件。他拿起袋子递给许遥：“那姑娘刚才下来放的，说这两天不在。你是她室友？”\n\n“嗯。”许遥接过钥匙，指尖触到金属的凉意。\n\n她转身走出门卫室，脚步比来时慢了很多。钥匙在手里沉甸甸的，蓝色挂件随着她的动作轻轻晃动。她站在宿舍楼下抬头看了一眼——五楼，她们的窗户还暗着。\n\n她拿出手机，拨了顾言的号码。\n\n嘟——嘟——嘟——\n\n没人接。\n\n她又拨了一次。还是没人接。\n\n许遥握着钥匙，站在暮色渐浓的走廊里。晚风从门缝里灌进来，带着傍晚特有的凉意。她看着手里那把系着蓝色挂件的钥匙，又抬头看了看五楼那扇漆黑的窗户，突然意识到一个问题——\n\n如果顾言不是要搬走，只是出去几天，那她拿走钥匙，顾言回来怎么办？\n\n她攥紧了钥匙，金属的边缘硌得掌心生疼。",
+          "model_parsed_output": null,
+          "parsed_output": null,
+          "text_output": "暮色从走廊尽头的窗户斜斜地铺进来，把许遥的影子拉成一道细长的暗痕贴在墙面上。她握着手机，屏幕上还亮着通话记录——刚才顾言的声音从走廊拐角传来，清晰得几乎没有失真。\n\n“……明天一早就走，钥匙我会放在门卫。”\n\n许遥的手指在屏幕上悬了一秒。她刚想开口叫住顾言，却听见脚步声已经往楼梯方向去了。等她绕过转角，只看见顾言的背影正快步上楼，深蓝色背包带在肩头一晃一晃，很快就消失在楼梯拐角的阴影里。\n\n走廊安静下来。宿舍门关着，灯还没亮。许遥站在原地，听见自己的心跳声在空旷的走廊里显得格外清晰。\n\n明天一早就走。钥匙放在门卫。\n\n她咬了咬下唇。如果顾言真的搬走——不告而别的那种——那她连问一句的机会都没有。现在追上去，推开宿舍门，直接问“你要搬去哪”，等于承认自己偷听了电话。她做不到。但如果不做点什么，明天一早顾言走了，钥匙交到门卫，她连联系的方式都断了。\n\n许遥深吸一口气，转身朝宿舍楼大门走去。\n\n她走得很快，几乎是小跑。楼梯间里传来其他人的说笑声，她侧身让过，脚步没有停顿。门卫室在宿舍楼入口左侧，玻璃窗里亮着暖黄色的灯光。她推开门，门卫大爷正戴着老花镜看报纸，抬头看见她，摘下眼镜：“怎么了？”\n\n“顾言说……她明天要走，钥匙放您这儿。”许遥尽量让自己的声音听起来平稳，“她让我先拿一下。”\n\n门卫大爷愣了一下，低头看了看桌上一个透明塑料袋里装着的钥匙——一把银色、一把铜色，系着一枚小小的蓝色塑料挂件。他拿起袋子递给许遥：“那姑娘刚才下来放的，说这两天不在。你是她室友？”\n\n“嗯。”许遥接过钥匙，指尖触到金属的凉意。\n\n她转身走出门卫室，脚步比来时慢了很多。钥匙在手里沉甸甸的，蓝色挂件随着她的动作轻轻晃动。她站在宿舍楼下抬头看了一眼——五楼，她们的窗户还暗着。\n\n她拿出手机，拨了顾言的号码。\n\n嘟——嘟——嘟——\n\n没人接。\n\n她又拨了一次。还是没人接。\n\n许遥握着钥匙，站在暮色渐浓的走廊里。晚风从门缝里灌进来，带着傍晚特有的凉意。她看着手里那把系着蓝色挂件的钥匙，又抬头看了看五楼那扇漆黑的窗户，突然意识到一个问题——\n\n如果顾言不是要搬走，只是出去几天，那她拿走钥匙，顾言回来怎么办？\n\n她攥紧了钥匙，金属的边缘硌得掌心生疼。",
+          "input_tokens": 2275,
+          "output_tokens": 580,
+          "reasoning_tokens": null,
+          "latency_ms": 9784,
+          "finish_reason": "stop",
+          "error_code": null,
+          "error_message": null,
+          "is_selected": true
+        }
+      ]
     }
   },
-  "final_composition": "",
+  "final_composition": "暮色从走廊尽头的窗户斜斜铺进来，把许遥的影子拉成一道细长的暗痕贴在墙面上。她握着手机，屏幕上还亮着通话记录——刚才顾言的声音从走廊拐角传来。\n\n“……明天一早就走，钥匙我会放在门卫。”\n\n许遥的手指在屏幕上悬了一秒。她刚想开口叫住顾言，却听见脚步声已经往楼梯方向去了。等她绕过转角，只看见顾言的背影正快步上楼，深蓝色背包带在肩头一晃一晃，很快就消失在楼梯拐角的阴影里。\n\n走廊安静下来。宿舍门关着，灯还没亮。许遥站在原地，听见自己的心跳声在空旷的走廊里显得格外清晰。\n\n明天一早就走。钥匙放在门卫。\n\n她咬了咬下唇。现在追上去，推开宿舍门，直接问“你要搬去哪”，等于承认自己偷听了电话。她做不到。但如果不做点什么，明天一早顾言走了，钥匙交到门卫，她连联系的方式都断了。\n\n许遥深吸一口气，转身朝宿舍楼大门走去。\n\n她走得很快，几乎是小跑。楼梯间里传来其他人的说笑声，她侧身让过，脚步没有停顿。门卫室在宿舍楼入口左侧，玻璃窗里亮着暖黄色的灯光。她推开门，门卫大爷正戴着老花镜看报纸，抬头看见她：“怎么了？”\n\n“顾言说……她明天要走，钥匙放您这儿。”许遥尽量让自己的声音听起来平稳，“她让我先拿一下。”\n\n门卫大爷愣了一下，低头看了看桌上一个透明塑料袋里装着的钥匙——一把银色、一把铜色，系着一枚小小的蓝色塑料挂件。他拿起袋子递给许遥：“那姑娘刚才下来放的，说这两天不在。你是她室友？”\n\n“嗯。”许遥接过钥匙，指尖触到金属的凉意。\n\n她转身走出门卫室，脚步比来时慢了很多。钥匙在手里沉甸甸的，蓝色挂件随着她的动作轻轻晃动。她站在宿舍楼下抬头看了一眼——五楼的窗户还暗着。\n\n她拿出手机，拨了顾言的号码。\n\n嘟——嘟——嘟——\n\n没人接。\n\n她又拨了一次。还是没人接。\n\n许遥握着钥匙，站在暮色渐浓的走廊里。晚风从门缝里灌进来，带着傍晚特有的凉意。她看着手里那把系着蓝色挂件的钥匙，又抬头看了看五楼那扇漆黑的窗户，突然意识到一个问题——\n\n她攥紧了钥匙，金属的边缘硌得掌心生疼。",
   "source_mapping": {
-    "final_composition_source": "writer",
-    "writer_candidate_id": null,
-    "reviser_candidate_id": null,
-    "judge_candidate_id": null,
-    "judge_decision": null
+    "final_composition_source": "judge_final_text",
+    "writer_candidate_id": "82c12b37-e209-4043-a44d-d0394c3e2984",
+    "reviser_candidate_id": "07a28be9-3bbe-48fa-9840-1ad15faad516",
+    "judge_candidate_id": "f6688465-0a27-45b6-9f30-ac52c37797f9",
+    "judge_decision": "accept_merged"
   },
-  "error": {
-    "stage": "planner",
-    "code": "LLM_ERROR",
-    "message": ""
-  }
+  "error": null
 }

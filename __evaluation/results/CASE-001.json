@@ -1,0 +1,48 @@
+{
+  "case_id": "CASE-001",
+  "blind_pass": {
+    "preferred": "B",
+    "limited_information": "B",
+    "concrete_problem": "tie",
+    "choice_and_consequence": "B",
+    "ending_restraint": "B",
+    "prose_naturalness": "B",
+    "evidence": [
+      "A ends at an almost-contact; B makes actual contact."
+    ]
+  },
+  "contract_pass": {
+    "text_a": {
+      "visible_trigger": "present",
+      "rejected_alternative": "missing",
+      "character_choice": "present",
+      "cost_or_commitment": "partial",
+      "immediate_consequence": "present",
+      "next_constraint": "partial",
+      "stop_state": "partial",
+      "must_not_append": "present"
+    },
+    "text_b": {
+      "visible_trigger": "present",
+      "rejected_alternative": "missing",
+      "character_choice": "present",
+      "cost_or_commitment": "partial",
+      "immediate_consequence": "present",
+      "next_constraint": "partial",
+      "stop_state": "present",
+      "must_not_append": "present"
+    }
+  },
+  "pipeline_pass": {
+    "critic_diagnosis_correct": true,
+    "reviser_added_new_facts": false,
+    "reviser_fixed_confirmed_issues": false,
+    "judge_local_choices_supported": true,
+    "final_regressed_from_writer": false,
+    "evidence": [
+      "Critic caught the missing exact stop fact; Judge restored a Writer segment for an unresolved cost gap."
+    ]
+  },
+  "confidence": 0.86,
+  "notes": "Final wins, but rejected alternative remains absent."
+}

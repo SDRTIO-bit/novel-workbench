@@ -1,5 +1,150 @@
 {
   "case_id": "CASE-002",
-  "planner_candidate_id": null,
-  "planner_contract": null
+  "planner_candidate_id": "ab3461b9-d2d0-42a0-b594-237432670478",
+  "planner_contract": {
+    "planner_contract_version": 2,
+    "scene_goal": "通过林澈的一个具体动作，让周宁在公开点名时自己发现校服扣错，同时避免当众尴尬，展现林澈的观察与应对能力。",
+    "location": "学校操场，晨会队伍中",
+    "time": "晨会即将开始，点名之前",
+    "scene_state": {
+      "last_completed_action": "晨会队伍已基本站好，班长林澈在队伍前列，周宁正走向点名台。",
+      "present_characters": [
+        "林澈",
+        "周宁",
+        "周围同学"
+      ],
+      "visible_facts": [
+        "周宁的校服扣子错位，最上面的扣眼扣到了第二颗扣子",
+        "周宁正走向点名台",
+        "周围同学有的在看周宁"
+      ],
+      "available_objects": [
+        "校服扣子",
+        "点名台",
+        "队伍站位"
+      ],
+      "unresolved_problem": "如何让周宁在点名开始前自己发现扣子扣错而不被当众嘲笑",
+      "already_existing_constraints": [
+        "不能当众说明或嘲笑",
+        "不能直接提醒",
+        "必须在点名开始前解决"
+      ]
+    },
+    "characters": [
+      {
+        "name": "林澈",
+        "goal": "在不引起注意的情况下让周宁自己发现校服扣错",
+        "known": [
+          "周宁的校服扣子错位",
+          "周宁正走向点名台",
+          "周围同学在观察"
+        ],
+        "unknown": [
+          "周宁是否已经知道扣子扣错"
+        ],
+        "mistaken_beliefs": [],
+        "constraints": [
+          "不能当众说明",
+          "不能直接提醒",
+          "不能造成尴尬"
+        ],
+        "observed_evidence": [
+          "周宁的校服最上面扣眼扣到了第二颗扣子",
+          "周宁没有低头看自己的衣服"
+        ],
+        "current_interpretation": "周宁没有意识到扣子扣错，需要在他走上点名台前让他发现",
+        "how_interpretation_drives_action": "林澈决定用一个动作引导周宁自己检查，而不是直接指出"
+      },
+      {
+        "name": "周宁",
+        "goal": "在点名时保持正常表现",
+        "known": [
+          "自己要去点名台"
+        ],
+        "unknown": [
+          "校服扣子扣错"
+        ],
+        "mistaken_beliefs": [
+          "自己的校服穿戴整齐"
+        ],
+        "constraints": [
+          "不能当众出丑"
+        ],
+        "observed_evidence": [],
+        "current_interpretation": "一切正常",
+        "how_interpretation_drives_action": "继续走向点名台"
+      }
+    ],
+    "concrete_problem": "林澈如何用一个具体动作让周宁自己发现校服扣子错位，而不引起周围同学的注意？",
+    "pressure": "时间紧迫，周宁即将走上点名台，周围同学的目光可能随时变成嘲笑",
+    "turning_point": "林澈选择不直接叫住周宁，而是假装整理自己校服，故意把自己的扣子扣错一格，然后看向周宁，让周宁注意到林澈的扣子并对比自己的",
+    "end_condition": "周宁在走上点名台前自己低头发现扣子扣错，迅速调整好，然后继续走向点名台，林澈也恢复自己扣子",
+    "forbidden": [
+      "林澈不能当众说话或喊住周宁",
+      "不能有其他同学介入或提醒",
+      "不能使用道具或外部因素",
+      "不能造成周宁当众尴尬或嘲笑"
+    ],
+    "causal_transitions": [
+      {
+        "id": "CT01",
+        "kind": "evidence_to_action",
+        "visible_trigger": "林澈看到周宁的校服扣子错位，且周宁没有察觉，正在走向点名台",
+        "character_interpretation": "林澈认为如果直接提醒，周宁会当众尴尬；如果放任不管，点名时会被大家看到。必须用一种隐晦的方式让周宁自己发现。",
+        "character_next_action": "林澈迅速整理自己的校服，故意把最上面的扣子扣到第二个扣眼，然后抬头看向周宁，并用手轻抚自己的领口，做出一个微妙的提示动作。",
+        "rejected_alternative": "直接走到周宁身边低声提醒，但那样可能被周围同学注意到，且周宁可能慌张。",
+        "immediate_consequence": "周宁注意到林澈的动作，下意识看向自己的校服，发现扣子扣错，于是迅速调整好。",
+        "counterfactual_without_action": "如果林澈没有行动，周宁会继续走向点名台，在全校面前被看到扣子扣错，引起哄笑。",
+        "consequence_would_still_happen": false,
+        "state_delta": {
+          "before": "周宁校服扣错，走向点名台，周围同学开始注意但未行动",
+          "after": "周宁发现扣错并调整好，继续走向点名台，林澈也恢复自己扣子，周围同学未察觉异常"
+        },
+        "cost_or_commitment": "林澈短暂地让自己也处于扣错状态，冒着被他人注意的风险，并需要在事后迅速恢复。",
+        "next_constraint": "林澈必须确保自己的动作不被其他同学解读为奇怪行为",
+        "reader_must_infer": "林澈故意扣错自己的扣子是为了让周宁通过对比发现自己的错误",
+        "narrator_must_not_state": [
+          "林澈故意扣错扣子的意图",
+          "周宁的内心活动"
+        ]
+      }
+    ],
+    "chapter_contract_check": {
+      "function_aligned": true,
+      "must_deliver_covered": true,
+      "must_not_deliver_respected": true,
+      "main_change_enabled": true,
+      "main_payoff_prepared": true,
+      "ending_hook_established": true,
+      "causal_transitions_grounded": true,
+      "reader_inference_not_pre_resolved": true,
+      "scene_state_reconstructed": true,
+      "information_sources_legal": true,
+      "character_choice_is_real": true,
+      "consequence_is_counterfactual": true,
+      "state_delta_is_nonempty": true,
+      "next_constraint_is_new": true,
+      "stop_state_is_visible": true,
+      "stop_state_changes_future_actions": true
+    },
+    "tempo_guardrails": {
+      "entry_pressure": "周宁正走向点名台，校服扣子错位明显，周围同学的目光开始聚集",
+      "dominant_pressure": {
+        "kind": "social_friction",
+        "description": "林澈必须在避免当众尴尬的前提下解决问题，时间紧迫，周围同学的存在增加了压力"
+      },
+      "allowed_viewpoint_misread": "周围同学可能认为林澈在整理自己的衣服，没有意识到他在帮助周宁",
+      "disclosure_cap": 0,
+      "must_remain_unclassified": [
+        "林澈与周宁之间的关系深度"
+      ],
+      "stop_state": {
+        "type": "physical_change",
+        "visible_fact": "周宁的校服扣子已正确扣好，他继续走向点名台",
+        "what_is_now_different": "周宁从扣错状态变为正确状态，点名时的尴尬被避免",
+        "must_not_append": "不得解释周宁是否意识到林澈的帮助"
+      },
+      "final_line_must_include": "周宁的扣子已经整齐，他稳步走上点名台"
+    }
+  }
 }

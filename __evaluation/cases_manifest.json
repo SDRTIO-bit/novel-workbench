@@ -9,32 +9,24 @@
     },
     {
       "case_id": "CASE-002",
-      "status": "failed",
-      "run_id": "0abf92f6-be51-46ff-b213-d9cbf45ae377",
-      "error": {
-        "stage": "planner",
-        "code": "LLM_ERROR",
-        "message": ""
-      }
+      "status": "completed",
+      "run_id": "a1a60339-7782-43af-b30b-86cf9d5b6af9",
+      "error": null
     },
     {
       "case_id": "CASE-003",
-      "status": "failed",
-      "run_id": "1c69a766-5af9-46e6-bba9-674dd24ec731",
-      "error": {
-        "stage": "planner",
-        "code": "LLM_ERROR",
-        "message": ""
-      }
+      "status": "completed",
+      "run_id": "373e7947-741d-421e-b649-98b2185255f9",
+      "error": null
     },
     {
       "case_id": "CASE-004",
       "status": "failed",
-      "run_id": "615bfb17-4ffa-48be-bbe5-5d186045d716",
+      "run_id": "59c9f358-485e-4711-9880-d4ef736f3f5a",
       "error": {
-        "stage": "planner",
-        "code": "LLM_ERROR",
-        "message": ""
+        "stage": "judge",
+        "code": "JUDGE_OUTPUT_CONTRACT_INVALID",
+        "message": "JUDGE_OUTPUT_CONTRACT_INVALID: merged final_text must not contain paragraph labels"
       }
     }
   ]

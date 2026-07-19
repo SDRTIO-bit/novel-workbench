@@ -1,18 +1,18 @@
 {
   "blind_mapping": {
     "text_a": {
-      "source": "writer",
+      "source": "reviser",
       "candidate_id": null
     },
     "text_b": {
       "source": "writer",
-      "candidate_id": null
+      "candidate_id": "74e31b42-c427-4228-a4b5-6971f38fe087"
     }
   },
   "source_mapping": {
-    "final_composition_source": "writer",
-    "writer_candidate_id": null,
-    "reviser_candidate_id": null,
+    "final_composition_source": "reviser",
+    "writer_candidate_id": "74e31b42-c427-4228-a4b5-6971f38fe087",
+    "reviser_candidate_id": "9d32b929-86a7-430b-baf0-b14e4154bd76",
     "judge_candidate_id": null,
     "judge_decision": null
   }

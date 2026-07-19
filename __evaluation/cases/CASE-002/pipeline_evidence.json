@@ -1,27 +1,236 @@
 {
   "case_id": "CASE-002",
-  "run_id": "0abf92f6-be51-46ff-b213-d9cbf45ae377",
+  "run_id": "a1a60339-7782-43af-b30b-86cf9d5b6af9",
   "run_status": "completed",
   "stages": {
     "critic": {
-      "status": "pending",
-      "selected_candidate_id": null,
-      "selected_issue_ids": null,
-      "candidates": []
+      "status": "completed",
+      "selected_candidate_id": "4cdd5d0e-3e9c-457c-bad2-f4fa3a85198c",
+      "selected_issue_ids": [
+        "I01",
+        "I02",
+        "I03"
+      ],
+      "candidates": [
+        {
+          "candidate_id": "4cdd5d0e-3e9c-457c-bad2-f4fa3a85198c",
+          "attempt_number": 1,
+          "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+          "model_id": "deepseek-chat",
+          "prompt_version_id": "2f3993c9-811c-4e53-a144-14421704d88d",
+          "parameters": {
+            "temperature": 0.7,
+            "top_p": 1.0,
+            "max_output_tokens": 4096,
+            "timeout_seconds": 300,
+            "response_format": "json_object"
+          },
+          "raw_response": "{\n  \"overall_assessment\": \"初稿成功实现了通过动作引导周宁自我发现扣错的核心设计，但结尾部分提前揭示了林澈的恢复动作，削弱了因果链条的读者推理空间。\",\n  \"decision\": \"local_revision\",\n  \"strengths\": [\n    \"林澈通过模仿扣错来隐性提示的设计巧妙且符合角色约束\",\n    \"周宁自我发现的细节描写自然，符合人物行为逻辑\",\n    \"时间压力与社交张力的营造到位\"\n  ],\n  \"issues\": [\n    {\n      \"issue_id\": \"I01\",\n      \"severity\": \"medium\",\n      \"issue_type\": \"causal_transition_missing\",\n      \"paragraph_ids\": [13],\n      \"problem\": \"第13段直接说明林澈的扣子已恢复原样，但读者无法从可见事实推断出林澈何时恢复，破坏了因果链的完整性。\",\n      \"revision_goal\": \"删除或模糊化林澈恢复扣子的直接描述，让读者通过后续事实自行推断。\",\n      \"recommended_operation\": \"causalize\"\n    },\n    {\n      \"issue_id\": \"I02\",\n      \"severity\": \"low\",\n      \"issue_type\": \"inference_overexplained\",\n      \"paragraph_ids\": [6],\n      \"problem\": \"第6段直接列出林澈的内心禁止项，属于旁白解释而非通过行动展示。\",\n      \"revision_goal\": \"将内心禁令转化为林澈的观察或微动作，避免直接说明。\",\n      \"recommended_operation\": \"withhold_inference\"\n    },\n    {\n      \"issue_id\": \"I03\",\n      \"severity\": \"low\",\n      \"issue_type\": \"show_vs_tell\",\n      \"paragraph_ids\": [11],\n      \"problem\": \"第11段直接说明周宁发现了扣子错位的原因，属于直白叙述，减少了读者自行推断的空间。\",\n      \"revision_goal\": \"仅描述周宁的动作和触觉感受，让读者通过上下文理解扣错原因。\",\n      \"recommended_operation\": \"withhold_inference\"\n    }\n  ],\n  \"protected_strengths\": [\n    {\n      \"paragraph_ids\": [7, 8, 9, 10, 12, 14],\n      \"protection_reason\": \"这些段落构成了核心因果转折：林澈的动作、周宁的注意、发现和调整，以及最终状态，是必须保留的亮点。\",\n      \"strength_type\": \"choice_consequence_chain\"\n    },\n    {\n      \"paragraph_ids\": [3],\n      \"protection_reason\": \"对周宁校服错位的具体描写精准且直观，为后续行动提供了必要信息。\",\n      \"strength_type\": \"scene_specific_detail\"\n    }\n  ],\n  \"chapter_contract_check\": {\n    \"chapter_function_delivered\": true,\n    \"must_deliver_satisfied\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_advanced\": true,\n    \"main_payoff_delivered\": true,\n    \"ending_hook_set\": true,\n    \"fuel_reserved\": true,\n    \"target_length_met\": true\n  },\n  \"causal_transition_check\": [\n    {\n      \"transition_id\": \"CT01\",\n      \"trigger_visible\": true,\n      \"next_action_changed\": true,\n      \"reader_inference_withheld\": false,\n      \"forbidden_explanation_found\": true,\n      \"consequence_visible\": true,\n      \"next_constraint_preserved\": true,\n      \"paragraph_ids\": [7, 8, 9, 10, 11, 12, 13],\n      \"result\": \"fail\",\n      \"comment\": \"第13段直接说明林澈恢复扣子，违反了reader_must_infer要求；第11段解释了扣错原因，也提前揭示了推理。\"\n    }\n  ]\n}",
+          "model_parsed_output": null,
+          "parsed_output": {
+            "overall_assessment": "初稿成功实现了通过动作引导周宁自我发现扣错的核心设计，但结尾部分提前揭示了林澈的恢复动作，削弱了因果链条的读者推理空间。",
+            "decision": "local_revision",
+            "strengths": [
+              "林澈通过模仿扣错来隐性提示的设计巧妙且符合角色约束",
+              "周宁自我发现的细节描写自然，符合人物行为逻辑",
+              "时间压力与社交张力的营造到位"
+            ],
+            "issues": [
+              {
+                "issue_id": "I01",
+                "severity": "medium",
+                "issue_type": "causal_transition_missing",
+                "paragraph_ids": [
+                  "P013"
+                ],
+                "problem": "第13段直接说明林澈的扣子已恢复原样，但读者无法从可见事实推断出林澈何时恢复，破坏了因果链的完整性。",
+                "revision_goal": "删除或模糊化林澈恢复扣子的直接描述，让读者通过后续事实自行推断。",
+                "recommended_operation": "causalize"
+              },
+              {
+                "issue_id": "I02",
+                "severity": "low",
+                "issue_type": "inference_overexplained",
+                "paragraph_ids": [
+                  "P006"
+                ],
+                "problem": "第6段直接列出林澈的内心禁止项，属于旁白解释而非通过行动展示。",
+                "revision_goal": "将内心禁令转化为林澈的观察或微动作，避免直接说明。",
+                "recommended_operation": "withhold_inference"
+              },
+              {
+                "issue_id": "I03",
+                "severity": "low",
+                "issue_type": "show_vs_tell",
+                "paragraph_ids": [
+                  "P011"
+                ],
+                "problem": "第11段直接说明周宁发现了扣子错位的原因，属于直白叙述，减少了读者自行推断的空间。",
+                "revision_goal": "仅描述周宁的动作和触觉感受，让读者通过上下文理解扣错原因。",
+                "recommended_operation": "withhold_inference"
+              }
+            ],
+            "protected_strengths": [
+              {
+                "paragraph_ids": [
+                  "P007",
+                  "P008",
+                  "P009",
+                  "P010",
+                  "P012",
+                  "P014"
+                ],
+                "reason": "",
+                "strength_type": "choice_consequence_chain"
+              },
+              {
+                "paragraph_ids": [
+                  "P003"
+                ],
+                "reason": "",
+                "strength_type": "scene_specific_detail"
+              }
+            ],
+            "chapter_contract_check": {
+              "chapter_function_delivered": true,
+              "must_deliver_satisfied": true,
+              "must_not_deliver_respected": true,
+              "main_change_advanced": true,
+              "main_payoff_delivered": true,
+              "ending_hook_set": true,
+              "fuel_reserved": true,
+              "target_length_met": true
+            },
+            "causal_transition_check": [
+              {
+                "transition_id": "CT01",
+                "trigger_visible": true,
+                "next_action_changed": true,
+                "reader_inference_withheld": false,
+                "forbidden_explanation_found": [
+                  "存在禁止解释（模型未提供摘录）"
+                ],
+                "consequence_visible": true,
+                "next_constraint_preserved": true,
+                "paragraph_ids": [
+                  "P007",
+                  "P008",
+                  "P009",
+                  "P010",
+                  "P011",
+                  "P012",
+                  "P013"
+                ],
+                "result": "fail",
+                "comment": "第13段直接说明林澈恢复扣子，违反了reader_must_infer要求；第11段解释了扣错原因，也提前揭示了推理。"
+              }
+            ],
+            "tempo_profile_check": null
+          },
+          "text_output": "{\n  \"overall_assessment\": \"初稿成功实现了通过动作引导周宁自我发现扣错的核心设计，但结尾部分提前揭示了林澈的恢复动作，削弱了因果链条的读者推理空间。\",\n  \"decision\": \"local_revision\",\n  \"strengths\": [\n    \"林澈通过模仿扣错来隐性提示的设计巧妙且符合角色约束\",\n    \"周宁自我发现的细节描写自然，符合人物行为逻辑\",\n    \"时间压力与社交张力的营造到位\"\n  ],\n  \"issues\": [\n    {\n      \"issue_id\": \"I01\",\n      \"severity\": \"medium\",\n      \"issue_type\": \"causal_transition_missing\",\n      \"paragraph_ids\": [13],\n      \"problem\": \"第13段直接说明林澈的扣子已恢复原样，但读者无法从可见事实推断出林澈何时恢复，破坏了因果链的完整性。\",\n      \"revision_goal\": \"删除或模糊化林澈恢复扣子的直接描述，让读者通过后续事实自行推断。\",\n      \"recommended_operation\": \"causalize\"\n    },\n    {\n      \"issue_id\": \"I02\",\n      \"severity\": \"low\",\n      \"issue_type\": \"inference_overexplained\",\n      \"paragraph_ids\": [6],\n      \"problem\": \"第6段直接列出林澈的内心禁止项，属于旁白解释而非通过行动展示。\",\n      \"revision_goal\": \"将内心禁令转化为林澈的观察或微动作，避免直接说明。\",\n      \"recommended_operation\": \"withhold_inference\"\n    },\n    {\n      \"issue_id\": \"I03\",\n      \"severity\": \"low\",\n      \"issue_type\": \"show_vs_tell\",\n      \"paragraph_ids\": [11],\n      \"problem\": \"第11段直接说明周宁发现了扣子错位的原因，属于直白叙述，减少了读者自行推断的空间。\",\n      \"revision_goal\": \"仅描述周宁的动作和触觉感受，让读者通过上下文理解扣错原因。\",\n      \"recommended_operation\": \"withhold_inference\"\n    }\n  ],\n  \"protected_strengths\": [\n    {\n      \"paragraph_ids\": [7, 8, 9, 10, 12, 14],\n      \"protection_reason\": \"这些段落构成了核心因果转折：林澈的动作、周宁的注意、发现和调整，以及最终状态，是必须保留的亮点。\",\n      \"strength_type\": \"choice_consequence_chain\"\n    },\n    {\n      \"paragraph_ids\": [3],\n      \"protection_reason\": \"对周宁校服错位的具体描写精准且直观，为后续行动提供了必要信息。\",\n      \"strength_type\": \"scene_specific_detail\"\n    }\n  ],\n  \"chapter_contract_check\": {\n    \"chapter_function_delivered\": true,\n    \"must_deliver_satisfied\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_advanced\": true,\n    \"main_payoff_delivered\": true,\n    \"ending_hook_set\": true,\n    \"fuel_reserved\": true,\n    \"target_length_met\": true\n  },\n  \"causal_transition_check\": [\n    {\n      \"transition_id\": \"CT01\",\n      \"trigger_visible\": true,\n      \"next_action_changed\": true,\n      \"reader_inference_withheld\": false,\n      \"forbidden_explanation_found\": true,\n      \"consequence_visible\": true,\n      \"next_constraint_preserved\": true,\n      \"paragraph_ids\": [7, 8, 9, 10, 11, 12, 13],\n      \"result\": \"fail\",\n      \"comment\": \"第13段直接说明林澈恢复扣子，违反了reader_must_infer要求；第11段解释了扣错原因，也提前揭示了推理。\"\n    }\n  ]\n}",
+          "input_tokens": 3601,
+          "output_tokens": 844,
+          "reasoning_tokens": null,
+          "latency_ms": 9995,
+          "finish_reason": "stop",
+          "error_code": null,
+          "error_message": null,
+          "is_selected": true
+        }
+      ]
     },
     "judge": {
-      "status": "pending",
-      "selected_candidate_id": null,
-      "selected_issue_ids": null,
-      "candidates": []
-    },
-    "planner": {
-      "status": "failed",
-      "selected_candidate_id": null,
+      "status": "completed",
+      "selected_candidate_id": "65293c1c-0c2b-468f-9ca6-1898a85549b6",
       "selected_issue_ids": null,
       "candidates": [
         {
-          "candidate_id": "9f4a50c5-4dca-4600-bc06-fe954d7b3517",
+          "candidate_id": "65293c1c-0c2b-468f-9ca6-1898a85549b6",
+          "attempt_number": 1,
+          "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+          "model_id": "deepseek-chat",
+          "prompt_version_id": "9f5fa364-15ee-436e-80ef-ed5087e840e3",
+          "parameters": {
+            "temperature": 0.7,
+            "top_p": 1.0,
+            "max_output_tokens": 4096,
+            "timeout_seconds": 120,
+            "response_format": "json_object"
+          },
+          "raw_response": "{\n  \"decision\": \"accept_merged\",\n  \"issue_results\": [\n    {\n      \"issue_id\": \"I01\",\n      \"status\": \"resolved\",\n      \"action\": \"keep_revision\",\n      \"comment\": \"修订稿第13段改为'校服领口的扣子整齐地扣着'，删除了直接说明林澈恢复扣子的描述，读者只能通过后续事实推断，符合因果链要求。\"\n    },\n    {\n      \"issue_id\": \"I02\",\n      \"status\": \"resolved\",\n      \"action\": \"keep_revision\",\n      \"comment\": \"修订稿第6段将内心禁令转化为林澈的视线扫过周围和手指动作，避免了直接旁白解释。\"\n    },\n    {\n      \"issue_id\": \"I03\",\n      \"status\": \"resolved\",\n      \"action\": \"keep_revision\",\n      \"comment\": \"修订稿第11段删除了对扣错原因的直白解释，仅保留触觉感受，留给读者自行推断。\"\n    }\n  ],\n  \"new_problems\": [],\n  \"revision_became_cleaner_but_flatter\": false,\n  \"author_intent_preserved\": true,\n  \"chapter_contract_completed\": true,\n  \"main_payoff_preserved\": true,\n  \"final_text\": \"晨会的队伍在操场上站成整齐的方阵，旗杆的影子斜斜地压过第二排的脚边。林澈站在班级队伍的最前列，手垂在裤缝两侧，目光习惯性地扫过自己负责的队列。\\n\\n然后他看见了周宁。\\n\\n周宁正从队伍后方快步走向点名台，步子有些急，大概是怕迟到。他的校服拉链拉到领口，但最上面那颗白色纽扣的位置不对——扣眼错了一格，第一颗扣子塞进了第二颗扣眼，导致领口歪向左边，露出一截里衬的白色边缘。\\n\\n周围几个同学的目光已经落在那颗歪扣子上。有人嘴角动了动，还没出声。\\n\\n林澈的视线从周宁脸上移到那枚错位的扣子，又移回周宁的脸。周宁浑然不觉，正低头看了一眼点名台上的名单，脚步没有停顿。\\n\\n林澈的视线扫过周围——几个同学的目光已经落在周宁的领口上。他的手指在裤缝上捻了一下。\\n\\n林澈的手指在裤缝上轻轻一捻，随即抬起右手，摸到自己校服的领口。他用拇指和食指捏住最上面的那颗纽扣，解开了它，然后把它塞进第二个扣眼——和周宁一模一样的错法。\\n\\n他扣好之后，用手掌轻轻抚平领口，抬头看向周宁的方向。\\n\\n周宁正好走到队伍前方，离点名台还有三四步的距离。他看见林澈在整理校服领口，下意识地低头看了一眼自己的衣服。\\n\\n那一眼，他停住了。\\n\\n他的手指摸到领口，触到了错位的凸起——第一颗扣眼空着，第二颗扣眼里却塞着两颗纽扣。\\n\\n周宁的动作很快。他迅速解开扣子，重新扣好，手指从领口滑到第二颗，确认整齐。前后不过三秒。\\n\\n他抬起头时，林澈已经转回视线，面朝前方，校服领口的扣子整齐地扣着。\\n\\n周宁的扣子已经整齐，他稳步走上点名台。\",\n  \"quality_score\": 88,\n  \"state_patch\": {\n    \"facts_added\": [\n      \"周宁的校服扣子已正确扣好\",\n      \"林澈在校服扣子恢复原样后转回视线\"\n    ],\n    \"relationships_changed\": [],\n    \"threads_carry_forward\": [\n      \"林澈与周宁之间未明言的默契可能影响后续互动\"\n    ]\n  },\n  \"reader_inference_preserved\": true,\n  \"decision_consequence_preserved\": true,\n  \"narrator_management_reduced\": true,\n  \"necessary_information_lost\": false,\n  \"causal_transition_results\": [\n    {\n      \"transition_id\": \"CT01\",\n      \"original_status\": \"fail\",\n      \"revision_status\": \"pass\",\n      \"preferred_version\": \"revision\",\n      \"comment\": \"修订稿删除了直接说明林澈恢复扣子的描述，读者推理空间得以保留，因果链完整。\"\n    }\n  ]\n}",
+          "model_parsed_output": null,
+          "parsed_output": {
+            "decision": "accept_merged",
+            "issue_results": [
+              {
+                "issue_id": "I01",
+                "status": "resolved",
+                "action": "keep_revision",
+                "comment": "修订稿第13段改为'校服领口的扣子整齐地扣着'，删除了直接说明林澈恢复扣子的描述，读者只能通过后续事实推断，符合因果链要求。"
+              },
+              {
+                "issue_id": "I02",
+                "status": "resolved",
+                "action": "keep_revision",
+                "comment": "修订稿第6段将内心禁令转化为林澈的视线扫过周围和手指动作，避免了直接旁白解释。"
+              },
+              {
+                "issue_id": "I03",
+                "status": "resolved",
+                "action": "keep_revision",
+                "comment": "修订稿第11段删除了对扣错原因的直白解释，仅保留触觉感受，留给读者自行推断。"
+              }
+            ],
+            "new_problems": [],
+            "revision_became_cleaner_but_flatter": false,
+            "author_intent_preserved": true,
+            "chapter_contract_completed": true,
+            "main_payoff_preserved": true,
+            "final_text": "晨会的队伍在操场上站成整齐的方阵，旗杆的影子斜斜地压过第二排的脚边。林澈站在班级队伍的最前列，手垂在裤缝两侧，目光习惯性地扫过自己负责的队列。\n\n然后他看见了周宁。\n\n周宁正从队伍后方快步走向点名台，步子有些急，大概是怕迟到。他的校服拉链拉到领口，但最上面那颗白色纽扣的位置不对——扣眼错了一格，第一颗扣子塞进了第二颗扣眼，导致领口歪向左边，露出一截里衬的白色边缘。\n\n周围几个同学的目光已经落在那颗歪扣子上。有人嘴角动了动，还没出声。\n\n林澈的视线从周宁脸上移到那枚错位的扣子，又移回周宁的脸。周宁浑然不觉，正低头看了一眼点名台上的名单，脚步没有停顿。\n\n林澈的视线扫过周围——几个同学的目光已经落在周宁的领口上。他的手指在裤缝上捻了一下。\n\n林澈的手指在裤缝上轻轻一捻，随即抬起右手，摸到自己校服的领口。他用拇指和食指捏住最上面的那颗纽扣，解开了它，然后把它塞进第二个扣眼——和周宁一模一样的错法。\n\n他扣好之后，用手掌轻轻抚平领口，抬头看向周宁的方向。\n\n周宁正好走到队伍前方，离点名台还有三四步的距离。他看见林澈在整理校服领口，下意识地低头看了一眼自己的衣服。\n\n那一眼，他停住了。\n\n他的手指摸到领口，触到了错位的凸起——第一颗扣眼空着，第二颗扣眼里却塞着两颗纽扣。\n\n周宁的动作很快。他迅速解开扣子，重新扣好，手指从领口滑到第二颗，确认整齐。前后不过三秒。\n\n他抬起头时，林澈已经转回视线，面朝前方，校服领口的扣子整齐地扣着。\n\n周宁的扣子已经整齐，他稳步走上点名台。",
+            "quality_score": 88,
+            "state_patch": {
+              "facts_added": [
+                "周宁的校服扣子已正确扣好",
+                "林澈在校服扣子恢复原样后转回视线"
+              ],
+              "relationships_changed": [],
+              "threads_carry_forward": [
+                "林澈与周宁之间未明言的默契可能影响后续互动"
+              ]
+            },
+            "reader_inference_preserved": true,
+            "decision_consequence_preserved": true,
+            "narrator_management_reduced": true,
+            "necessary_information_lost": false,
+            "causal_transition_results": [
+              {
+                "transition_id": "CT01",
+                "original_status": "fail",
+                "revision_status": "pass",
+                "preferred_version": "revision",
+                "comment": "修订稿删除了直接说明林澈恢复扣子的描述，读者推理空间得以保留，因果链完整。"
+              }
+            ]
+          },
+          "text_output": "{\n  \"decision\": \"accept_merged\",\n  \"issue_results\": [\n    {\n      \"issue_id\": \"I01\",\n      \"status\": \"resolved\",\n      \"action\": \"keep_revision\",\n      \"comment\": \"修订稿第13段改为'校服领口的扣子整齐地扣着'，删除了直接说明林澈恢复扣子的描述，读者只能通过后续事实推断，符合因果链要求。\"\n    },\n    {\n      \"issue_id\": \"I02\",\n      \"status\": \"resolved\",\n      \"action\": \"keep_revision\",\n      \"comment\": \"修订稿第6段将内心禁令转化为林澈的视线扫过周围和手指动作，避免了直接旁白解释。\"\n    },\n    {\n      \"issue_id\": \"I03\",\n      \"status\": \"resolved\",\n      \"action\": \"keep_revision\",\n      \"comment\": \"修订稿第11段删除了对扣错原因的直白解释，仅保留触觉感受，留给读者自行推断。\"\n    }\n  ],\n  \"new_problems\": [],\n  \"revision_became_cleaner_but_flatter\": false,\n  \"author_intent_preserved\": true,\n  \"chapter_contract_completed\": true,\n  \"main_payoff_preserved\": true,\n  \"final_text\": \"晨会的队伍在操场上站成整齐的方阵，旗杆的影子斜斜地压过第二排的脚边。林澈站在班级队伍的最前列，手垂在裤缝两侧，目光习惯性地扫过自己负责的队列。\\n\\n然后他看见了周宁。\\n\\n周宁正从队伍后方快步走向点名台，步子有些急，大概是怕迟到。他的校服拉链拉到领口，但最上面那颗白色纽扣的位置不对——扣眼错了一格，第一颗扣子塞进了第二颗扣眼，导致领口歪向左边，露出一截里衬的白色边缘。\\n\\n周围几个同学的目光已经落在那颗歪扣子上。有人嘴角动了动，还没出声。\\n\\n林澈的视线从周宁脸上移到那枚错位的扣子，又移回周宁的脸。周宁浑然不觉，正低头看了一眼点名台上的名单，脚步没有停顿。\\n\\n林澈的视线扫过周围——几个同学的目光已经落在周宁的领口上。他的手指在裤缝上捻了一下。\\n\\n林澈的手指在裤缝上轻轻一捻，随即抬起右手，摸到自己校服的领口。他用拇指和食指捏住最上面的那颗纽扣，解开了它，然后把它塞进第二个扣眼——和周宁一模一样的错法。\\n\\n他扣好之后，用手掌轻轻抚平领口，抬头看向周宁的方向。\\n\\n周宁正好走到队伍前方，离点名台还有三四步的距离。他看见林澈在整理校服领口，下意识地低头看了一眼自己的衣服。\\n\\n那一眼，他停住了。\\n\\n他的手指摸到领口，触到了错位的凸起——第一颗扣眼空着，第二颗扣眼里却塞着两颗纽扣。\\n\\n周宁的动作很快。他迅速解开扣子，重新扣好，手指从领口滑到第二颗，确认整齐。前后不过三秒。\\n\\n他抬起头时，林澈已经转回视线，面朝前方，校服领口的扣子整齐地扣着。\\n\\n周宁的扣子已经整齐，他稳步走上点名台。\",\n  \"quality_score\": 88,\n  \"state_patch\": {\n    \"facts_added\": [\n      \"周宁的校服扣子已正确扣好\",\n      \"林澈在校服扣子恢复原样后转回视线\"\n    ],\n    \"relationships_changed\": [],\n    \"threads_carry_forward\": [\n      \"林澈与周宁之间未明言的默契可能影响后续互动\"\n    ]\n  },\n  \"reader_inference_preserved\": true,\n  \"decision_consequence_preserved\": true,\n  \"narrator_management_reduced\": true,\n  \"necessary_information_lost\": false,\n  \"causal_transition_results\": [\n    {\n      \"transition_id\": \"CT01\",\n      \"original_status\": \"fail\",\n      \"revision_status\": \"pass\",\n      \"preferred_version\": \"revision\",\n      \"comment\": \"修订稿删除了直接说明林澈恢复扣子的描述，读者推理空间得以保留，因果链完整。\"\n    }\n  ]\n}",
+          "input_tokens": 4658,
+          "output_tokens": 972,
+          "reasoning_tokens": null,
+          "latency_ms": 10094,
+          "finish_reason": "stop",
+          "error_code": null,
+          "error_message": null,
+          "is_selected": true
+        }
+      ]
+    },
+    "planner": {
+      "status": "completed",
+      "selected_candidate_id": "ab3461b9-d2d0-42a0-b594-237432670478",
+      "selected_issue_ids": null,
+      "candidates": [
+        {
+          "candidate_id": "ab3461b9-d2d0-42a0-b594-237432670478",
           "attempt_number": 1,
           "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
           "model_id": "deepseek-chat",
@@ -30,47 +239,282 @@
             "temperature": 0.7,
             "top_p": 1.0,
             "max_output_tokens": 4096,
-            "timeout_seconds": 300
+            "timeout_seconds": 300,
+            "response_format": "json_object"
           },
-          "raw_response": "",
+          "raw_response": "{\n  \"planner_contract_version\": 2,\n  \"scene_goal\": \"通过林澈的一个具体动作，让周宁在公开点名时自己发现校服扣错，同时避免当众尴尬，展现林澈的观察与应对能力。\",\n  \"location\": \"学校操场，晨会队伍中\",\n  \"time\": \"晨会即将开始，点名之前\",\n  \"scene_state\": {\n    \"last_completed_action\": \"晨会队伍已基本站好，班长林澈在队伍前列，周宁正走向点名台。\",\n    \"present_characters\": [\"林澈\", \"周宁\", \"周围同学\"],\n    \"visible_facts\": [\n      \"周宁的校服扣子错位，最上面的扣眼扣到了第二颗扣子\",\n      \"周宁正走向点名台\",\n      \"周围同学有的在看周宁\"\n    ],\n    \"available_objects\": [\"校服扣子\", \"点名台\", \"队伍站位\"],\n    \"unresolved_problem\": \"如何让周宁在点名开始前自己发现扣子扣错而不被当众嘲笑\",\n    \"already_existing_constraints\": [\n      \"不能当众说明或嘲笑\",\n      \"不能直接提醒\",\n      \"必须在点名开始前解决\"\n    ]\n  },\n  \"characters\": [\n    {\n      \"name\": \"林澈\",\n      \"goal\": \"在不引起注意的情况下让周宁自己发现校服扣错\",\n      \"known\": [\"周宁的校服扣子错位\", \"周宁正走向点名台\", \"周围同学在观察\"],\n      \"unknown\": [\"周宁是否已经知道扣子扣错\"],\n      \"mistaken_beliefs\": [],\n      \"constraints\": [\"不能当众说明\", \"不能直接提醒\", \"不能造成尴尬\"],\n      \"observed_evidence\": [\"周宁的校服最上面扣眼扣到了第二颗扣子\", \"周宁没有低头看自己的衣服\"],\n      \"current_interpretation\": \"周宁没有意识到扣子扣错，需要在他走上点名台前让他发现\",\n      \"how_interpretation_drives_action\": \"林澈决定用一个动作引导周宁自己检查，而不是直接指出\"\n    },\n    {\n      \"name\": \"周宁\",\n      \"goal\": \"在点名时保持正常表现\",\n      \"known\": [\"自己要去点名台\"],\n      \"unknown\": [\"校服扣子扣错\"],\n      \"mistaken_beliefs\": [\"自己的校服穿戴整齐\"],\n      \"constraints\": [\"不能当众出丑\"],\n      \"observed_evidence\": [],\n      \"current_interpretation\": \"一切正常\",\n      \"how_interpretation_drives_action\": \"继续走向点名台\"\n    }\n  ],\n  \"concrete_problem\": \"林澈如何用一个具体动作让周宁自己发现校服扣子错位，而不引起周围同学的注意？\",\n  \"pressure\": \"时间紧迫，周宁即将走上点名台，周围同学的目光可能随时变成嘲笑\",\n  \"turning_point\": \"林澈选择不直接叫住周宁，而是假装整理自己校服，故意把自己的扣子扣错一格，然后看向周宁，让周宁注意到林澈的扣子并对比自己的\",\n  \"end_condition\": \"周宁在走上点名台前自己低头发现扣子扣错，迅速调整好，然后继续走向点名台，林澈也恢复自己扣子\",\n  \"forbidden\": [\n    \"林澈不能当众说话或喊住周宁\",\n    \"不能有其他同学介入或提醒\",\n    \"不能使用道具或外部因素\",\n    \"不能造成周宁当众尴尬或嘲笑\"\n  ],\n  \"causal_transitions\": [\n    {\n      \"id\": \"CT01\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"林澈看到周宁的校服扣子错位，且周宁没有察觉，正在走向点名台\",\n      \"character_interpretation\": \"林澈认为如果直接提醒，周宁会当众尴尬；如果放任不管，点名时会被大家看到。必须用一种隐晦的方式让周宁自己发现。\",\n      \"character_next_action\": \"林澈迅速整理自己的校服，故意把最上面的扣子扣到第二个扣眼，然后抬头看向周宁，并用手轻抚自己的领口，做出一个微妙的提示动作。\",\n      \"rejected_alternative\": \"直接走到周宁身边低声提醒，但那样可能被周围同学注意到，且周宁可能慌张。\",\n      \"immediate_consequence\": \"周宁注意到林澈的动作，下意识看向自己的校服，发现扣子扣错，于是迅速调整好。\",\n      \"counterfactual_without_action\": \"如果林澈没有行动，周宁会继续走向点名台，在全校面前被看到扣子扣错，引起哄笑。\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"周宁校服扣错，走向点名台，周围同学开始注意但未行动\",\n        \"after\": \"周宁发现扣错并调整好，继续走向点名台，林澈也恢复自己扣子，周围同学未察觉异常\"\n      },\n      \"cost_or_commitment\": \"林澈短暂地让自己也处于扣错状态，冒着被他人注意的风险，并需要在事后迅速恢复。\",\n      \"next_constraint\": \"林澈必须确保自己的动作不被其他同学解读为奇怪行为\",\n      \"reader_must_infer\": \"林澈故意扣错自己的扣子是为了让周宁通过对比发现自己的错误\",\n      \"narrator_must_not_state\": [\n        \"林澈故意扣错扣子的意图\",\n        \"周宁的内心活动\"\n      ]\n    }\n  ],\n  \"tempo_guardrails\": {\n    \"entry_pressure\": \"周宁正走向点名台，校服扣子错位明显，周围同学的目光开始聚集\",\n    \"dominant_pressure\": {\n      \"kind\": \"social_friction\",\n      \"description\": \"林澈必须在避免当众尴尬的前提下解决问题，时间紧迫，周围同学的存在增加了压力\"\n    },\n    \"allowed_viewpoint_misread\": \"周围同学可能认为林澈在整理自己的衣服，没有意识到他在帮助周宁\",\n    \"disclosure_cap\": 0,\n    \"must_remain_unclassified\": [\n      \"林澈与周宁之间的关系深度\"\n    ],\n    \"stop_state\": {\n      \"type\": \"physical_change\",\n      \"visible_fact\": \"周宁的校服扣子已正确扣好，他继续走向点名台\",\n      \"what_is_now_different\": \"周宁从扣错状态变为正确状态，点名时的尴尬被避免\",\n      \"must_not_append\": \"不得解释周宁是否意识到林澈的帮助\"\n    },\n    \"final_line_must_include\": \"周宁的扣子已经整齐，他稳步走上点名台\"\n  },\n  \"chapter_contract_check\": {\n    \"function_aligned\": true,\n    \"must_deliver_covered\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_enabled\": true,\n    \"main_payoff_prepared\": true,\n    \"ending_hook_established\": true,\n    \"causal_transitions_grounded\": true,\n    \"reader_inference_not_pre_resolved\": true,\n    \"scene_state_reconstructed\": true,\n    \"information_sources_legal\": true,\n    \"character_choice_is_real\": true,\n    \"consequence_is_counterfactual\": true,\n    \"state_delta_is_nonempty\": true,\n    \"next_constraint_is_new\": true,\n    \"stop_state_is_visible\": true,\n    \"stop_state_changes_future_actions\": true\n  }\n}",
           "model_parsed_output": null,
-          "parsed_output": null,
-          "text_output": "",
-          "input_tokens": 0,
-          "output_tokens": 0,
+          "parsed_output": {
+            "planner_contract_version": 2,
+            "scene_goal": "通过林澈的一个具体动作，让周宁在公开点名时自己发现校服扣错，同时避免当众尴尬，展现林澈的观察与应对能力。",
+            "location": "学校操场，晨会队伍中",
+            "time": "晨会即将开始，点名之前",
+            "scene_state": {
+              "last_completed_action": "晨会队伍已基本站好，班长林澈在队伍前列，周宁正走向点名台。",
+              "present_characters": [
+                "林澈",
+                "周宁",
+                "周围同学"
+              ],
+              "visible_facts": [
+                "周宁的校服扣子错位，最上面的扣眼扣到了第二颗扣子",
+                "周宁正走向点名台",
+                "周围同学有的在看周宁"
+              ],
+              "available_objects": [
+                "校服扣子",
+                "点名台",
+                "队伍站位"
+              ],
+              "unresolved_problem": "如何让周宁在点名开始前自己发现扣子扣错而不被当众嘲笑",
+              "already_existing_constraints": [
+                "不能当众说明或嘲笑",
+                "不能直接提醒",
+                "必须在点名开始前解决"
+              ]
+            },
+            "characters": [
+              {
+                "name": "林澈",
+                "goal": "在不引起注意的情况下让周宁自己发现校服扣错",
+                "known": [
+                  "周宁的校服扣子错位",
+                  "周宁正走向点名台",
+                  "周围同学在观察"
+                ],
+                "unknown": [
+                  "周宁是否已经知道扣子扣错"
+                ],
+                "mistaken_beliefs": [],
+                "constraints": [
+                  "不能当众说明",
+                  "不能直接提醒",
+                  "不能造成尴尬"
+                ],
+                "observed_evidence": [
+                  "周宁的校服最上面扣眼扣到了第二颗扣子",
+                  "周宁没有低头看自己的衣服"
+                ],
+                "current_interpretation": "周宁没有意识到扣子扣错，需要在他走上点名台前让他发现",
+                "how_interpretation_drives_action": "林澈决定用一个动作引导周宁自己检查，而不是直接指出"
+              },
+              {
+                "name": "周宁",
+                "goal": "在点名时保持正常表现",
+                "known": [
+                  "自己要去点名台"
+                ],
+                "unknown": [
+                  "校服扣子扣错"
+                ],
+                "mistaken_beliefs": [
+                  "自己的校服穿戴整齐"
+                ],
+                "constraints": [
+                  "不能当众出丑"
+                ],
+                "observed_evidence": [],
+                "current_interpretation": "一切正常",
+                "how_interpretation_drives_action": "继续走向点名台"
+              }
+            ],
+            "concrete_problem": "林澈如何用一个具体动作让周宁自己发现校服扣子错位，而不引起周围同学的注意？",
+            "pressure": "时间紧迫，周宁即将走上点名台，周围同学的目光可能随时变成嘲笑",
+            "turning_point": "林澈选择不直接叫住周宁，而是假装整理自己校服，故意把自己的扣子扣错一格，然后看向周宁，让周宁注意到林澈的扣子并对比自己的",
+            "end_condition": "周宁在走上点名台前自己低头发现扣子扣错，迅速调整好，然后继续走向点名台，林澈也恢复自己扣子",
+            "forbidden": [
+              "林澈不能当众说话或喊住周宁",
+              "不能有其他同学介入或提醒",
+              "不能使用道具或外部因素",
+              "不能造成周宁当众尴尬或嘲笑"
+            ],
+            "causal_transitions": [
+              {
+                "id": "CT01",
+                "kind": "evidence_to_action",
+                "visible_trigger": "林澈看到周宁的校服扣子错位，且周宁没有察觉，正在走向点名台",
+                "character_interpretation": "林澈认为如果直接提醒，周宁会当众尴尬；如果放任不管，点名时会被大家看到。必须用一种隐晦的方式让周宁自己发现。",
+                "character_next_action": "林澈迅速整理自己的校服，故意把最上面的扣子扣到第二个扣眼，然后抬头看向周宁，并用手轻抚自己的领口，做出一个微妙的提示动作。",
+                "rejected_alternative": "直接走到周宁身边低声提醒，但那样可能被周围同学注意到，且周宁可能慌张。",
+                "immediate_consequence": "周宁注意到林澈的动作，下意识看向自己的校服，发现扣子扣错，于是迅速调整好。",
+                "counterfactual_without_action": "如果林澈没有行动，周宁会继续走向点名台，在全校面前被看到扣子扣错，引起哄笑。",
+                "consequence_would_still_happen": false,
+                "state_delta": {
+                  "before": "周宁校服扣错，走向点名台，周围同学开始注意但未行动",
+                  "after": "周宁发现扣错并调整好，继续走向点名台，林澈也恢复自己扣子，周围同学未察觉异常"
+                },
+                "cost_or_commitment": "林澈短暂地让自己也处于扣错状态，冒着被他人注意的风险，并需要在事后迅速恢复。",
+                "next_constraint": "林澈必须确保自己的动作不被其他同学解读为奇怪行为",
+                "reader_must_infer": "林澈故意扣错自己的扣子是为了让周宁通过对比发现自己的错误",
+                "narrator_must_not_state": [
+                  "林澈故意扣错扣子的意图",
+                  "周宁的内心活动"
+                ]
+              }
+            ],
+            "chapter_contract_check": {
+              "function_aligned": true,
+              "must_deliver_covered": true,
+              "must_not_deliver_respected": true,
+              "main_change_enabled": true,
+              "main_payoff_prepared": true,
+              "ending_hook_established": true,
+              "causal_transitions_grounded": true,
+              "reader_inference_not_pre_resolved": true,
+              "scene_state_reconstructed": true,
+              "information_sources_legal": true,
+              "character_choice_is_real": true,
+              "consequence_is_counterfactual": true,
+              "state_delta_is_nonempty": true,
+              "next_constraint_is_new": true,
+              "stop_state_is_visible": true,
+              "stop_state_changes_future_actions": true
+            },
+            "tempo_guardrails": {
+              "entry_pressure": "周宁正走向点名台，校服扣子错位明显，周围同学的目光开始聚集",
+              "dominant_pressure": {
+                "kind": "social_friction",
+                "description": "林澈必须在避免当众尴尬的前提下解决问题，时间紧迫，周围同学的存在增加了压力"
+              },
+              "allowed_viewpoint_misread": "周围同学可能认为林澈在整理自己的衣服，没有意识到他在帮助周宁",
+              "disclosure_cap": 0,
+              "must_remain_unclassified": [
+                "林澈与周宁之间的关系深度"
+              ],
+              "stop_state": {
+                "type": "physical_change",
+                "visible_fact": "周宁的校服扣子已正确扣好，他继续走向点名台",
+                "what_is_now_different": "周宁从扣错状态变为正确状态，点名时的尴尬被避免",
+                "must_not_append": "不得解释周宁是否意识到林澈的帮助"
+              },
+              "final_line_must_include": "周宁的扣子已经整齐，他稳步走上点名台"
+            }
+          },
+          "text_output": "{\n  \"planner_contract_version\": 2,\n  \"scene_goal\": \"通过林澈的一个具体动作，让周宁在公开点名时自己发现校服扣错，同时避免当众尴尬，展现林澈的观察与应对能力。\",\n  \"location\": \"学校操场，晨会队伍中\",\n  \"time\": \"晨会即将开始，点名之前\",\n  \"scene_state\": {\n    \"last_completed_action\": \"晨会队伍已基本站好，班长林澈在队伍前列，周宁正走向点名台。\",\n    \"present_characters\": [\"林澈\", \"周宁\", \"周围同学\"],\n    \"visible_facts\": [\n      \"周宁的校服扣子错位，最上面的扣眼扣到了第二颗扣子\",\n      \"周宁正走向点名台\",\n      \"周围同学有的在看周宁\"\n    ],\n    \"available_objects\": [\"校服扣子\", \"点名台\", \"队伍站位\"],\n    \"unresolved_problem\": \"如何让周宁在点名开始前自己发现扣子扣错而不被当众嘲笑\",\n    \"already_existing_constraints\": [\n      \"不能当众说明或嘲笑\",\n      \"不能直接提醒\",\n      \"必须在点名开始前解决\"\n    ]\n  },\n  \"characters\": [\n    {\n      \"name\": \"林澈\",\n      \"goal\": \"在不引起注意的情况下让周宁自己发现校服扣错\",\n      \"known\": [\"周宁的校服扣子错位\", \"周宁正走向点名台\", \"周围同学在观察\"],\n      \"unknown\": [\"周宁是否已经知道扣子扣错\"],\n      \"mistaken_beliefs\": [],\n      \"constraints\": [\"不能当众说明\", \"不能直接提醒\", \"不能造成尴尬\"],\n      \"observed_evidence\": [\"周宁的校服最上面扣眼扣到了第二颗扣子\", \"周宁没有低头看自己的衣服\"],\n      \"current_interpretation\": \"周宁没有意识到扣子扣错，需要在他走上点名台前让他发现\",\n      \"how_interpretation_drives_action\": \"林澈决定用一个动作引导周宁自己检查，而不是直接指出\"\n    },\n    {\n      \"name\": \"周宁\",\n      \"goal\": \"在点名时保持正常表现\",\n      \"known\": [\"自己要去点名台\"],\n      \"unknown\": [\"校服扣子扣错\"],\n      \"mistaken_beliefs\": [\"自己的校服穿戴整齐\"],\n      \"constraints\": [\"不能当众出丑\"],\n      \"observed_evidence\": [],\n      \"current_interpretation\": \"一切正常\",\n      \"how_interpretation_drives_action\": \"继续走向点名台\"\n    }\n  ],\n  \"concrete_problem\": \"林澈如何用一个具体动作让周宁自己发现校服扣子错位，而不引起周围同学的注意？\",\n  \"pressure\": \"时间紧迫，周宁即将走上点名台，周围同学的目光可能随时变成嘲笑\",\n  \"turning_point\": \"林澈选择不直接叫住周宁，而是假装整理自己校服，故意把自己的扣子扣错一格，然后看向周宁，让周宁注意到林澈的扣子并对比自己的\",\n  \"end_condition\": \"周宁在走上点名台前自己低头发现扣子扣错，迅速调整好，然后继续走向点名台，林澈也恢复自己扣子\",\n  \"forbidden\": [\n    \"林澈不能当众说话或喊住周宁\",\n    \"不能有其他同学介入或提醒\",\n    \"不能使用道具或外部因素\",\n    \"不能造成周宁当众尴尬或嘲笑\"\n  ],\n  \"causal_transitions\": [\n    {\n      \"id\": \"CT01\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"林澈看到周宁的校服扣子错位，且周宁没有察觉，正在走向点名台\",\n      \"character_interpretation\": \"林澈认为如果直接提醒，周宁会当众尴尬；如果放任不管，点名时会被大家看到。必须用一种隐晦的方式让周宁自己发现。\",\n      \"character_next_action\": \"林澈迅速整理自己的校服，故意把最上面的扣子扣到第二个扣眼，然后抬头看向周宁，并用手轻抚自己的领口，做出一个微妙的提示动作。\",\n      \"rejected_alternative\": \"直接走到周宁身边低声提醒，但那样可能被周围同学注意到，且周宁可能慌张。\",\n      \"immediate_consequence\": \"周宁注意到林澈的动作，下意识看向自己的校服，发现扣子扣错，于是迅速调整好。\",\n      \"counterfactual_without_action\": \"如果林澈没有行动，周宁会继续走向点名台，在全校面前被看到扣子扣错，引起哄笑。\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"周宁校服扣错，走向点名台，周围同学开始注意但未行动\",\n        \"after\": \"周宁发现扣错并调整好，继续走向点名台，林澈也恢复自己扣子，周围同学未察觉异常\"\n      },\n      \"cost_or_commitment\": \"林澈短暂地让自己也处于扣错状态，冒着被他人注意的风险，并需要在事后迅速恢复。\",\n      \"next_constraint\": \"林澈必须确保自己的动作不被其他同学解读为奇怪行为\",\n      \"reader_must_infer\": \"林澈故意扣错自己的扣子是为了让周宁通过对比发现自己的错误\",\n      \"narrator_must_not_state\": [\n        \"林澈故意扣错扣子的意图\",\n        \"周宁的内心活动\"\n      ]\n    }\n  ],\n  \"tempo_guardrails\": {\n    \"entry_pressure\": \"周宁正走向点名台，校服扣子错位明显，周围同学的目光开始聚集\",\n    \"dominant_pressure\": {\n      \"kind\": \"social_friction\",\n      \"description\": \"林澈必须在避免当众尴尬的前提下解决问题，时间紧迫，周围同学的存在增加了压力\"\n    },\n    \"allowed_viewpoint_misread\": \"周围同学可能认为林澈在整理自己的衣服，没有意识到他在帮助周宁\",\n    \"disclosure_cap\": 0,\n    \"must_remain_unclassified\": [\n      \"林澈与周宁之间的关系深度\"\n    ],\n    \"stop_state\": {\n      \"type\": \"physical_change\",\n      \"visible_fact\": \"周宁的校服扣子已正确扣好，他继续走向点名台\",\n      \"what_is_now_different\": \"周宁从扣错状态变为正确状态，点名时的尴尬被避免\",\n      \"must_not_append\": \"不得解释周宁是否意识到林澈的帮助\"\n    },\n    \"final_line_must_include\": \"周宁的扣子已经整齐，他稳步走上点名台\"\n  },\n  \"chapter_contract_check\": {\n    \"function_aligned\": true,\n    \"must_deliver_covered\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_enabled\": true,\n    \"main_payoff_prepared\": true,\n    \"ending_hook_established\": true,\n    \"causal_transitions_grounded\": true,\n    \"reader_inference_not_pre_resolved\": true,\n    \"scene_state_reconstructed\": true,\n    \"information_sources_legal\": true,\n    \"character_choice_is_real\": true,\n    \"consequence_is_counterfactual\": true,\n    \"state_delta_is_nonempty\": true,\n    \"next_constraint_is_new\": true,\n    \"stop_state_is_visible\": true,\n    \"stop_state_changes_future_actions\": true\n  }\n}",
+          "input_tokens": 3424,
+          "output_tokens": 1657,
           "reasoning_tokens": null,
-          "latency_ms": 90,
-          "finish_reason": null,
-          "error_code": "LLM_ERROR",
-          "error_message": "",
-          "is_selected": false
+          "latency_ms": 15887,
+          "finish_reason": "stop",
+          "error_code": null,
+          "error_message": null,
+          "is_selected": true
         }
       ]
     },
     "reviser": {
-      "status": "pending",
-      "selected_candidate_id": null,
+      "status": "completed",
+      "selected_candidate_id": "2b3c82c2-3d64-4763-870c-487895dc82e5",
       "selected_issue_ids": null,
-      "candidates": []
+      "candidates": [
+        {
+          "candidate_id": "2b3c82c2-3d64-4763-870c-487895dc82e5",
+          "attempt_number": 1,
+          "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+          "model_id": "deepseek-chat",
+          "prompt_version_id": "e9ef6215-16c7-459a-b769-477a8e62a5f0",
+          "parameters": {
+            "temperature": 0.7,
+            "top_p": 1.0,
+            "max_output_tokens": 4096,
+            "timeout_seconds": 300,
+            "response_format": "json_object"
+          },
+          "raw_response": "{\n  \"patches\": [\n    {\n      \"issue_id\": \"I01\",\n      \"operation\": \"replace\",\n      \"target_paragraph_ids\": [13],\n      \"replacement\": \"他抬起头时，林澈已经转回视线，面朝前方，校服领口的扣子整齐地扣着。\"\n    },\n    {\n      \"issue_id\": \"I02\",\n      \"operation\": \"replace\",\n      \"target_paragraph_ids\": [6],\n      \"replacement\": \"林澈的视线扫过周围——几个同学的目光已经落在周宁的领口上。他的手指在裤缝上捻了一下。\"\n    },\n    {\n      \"issue_id\": \"I03\",\n      \"operation\": \"replace\",\n      \"target_paragraph_ids\": [11],\n      \"replacement\": \"他的手指摸到领口，触到了错位的凸起——第一颗扣眼空着，第二颗扣眼里却塞着两颗纽扣。\"\n    }\n  ],\n  \"revised_text\": \"[P001] 晨会的队伍在操场上站成整齐的方阵，旗杆的影子斜斜地压过第二排的脚边。林澈站在班级队伍的最前列，手垂在裤缝两侧，目光习惯性地扫过自己负责的队列。\\n\\n[P002] 然后他看见了周宁。\\n\\n[P003] 周宁正从队伍后方快步走向点名台，步子有些急，大概是怕迟到。他的校服拉链拉到领口，但最上面那颗白色纽扣的位置不对——扣眼错了一格，第一颗扣子塞进了第二颗扣眼，导致领口歪向左边，露出一截里衬的白色边缘。\\n\\n[P004] 周围几个同学的目光已经落在那颗歪扣子上。有人嘴角动了动，还没出声。\\n\\n[P005] 林澈的视线从周宁脸上移到那枚错位的扣子，又移回周宁的脸。周宁浑然不觉，正低头看了一眼点名台上的名单，脚步没有停顿。\\n\\n[P006] 林澈的视线扫过周围——几个同学的目光已经落在周宁的领口上。他的手指在裤缝上捻了一下。\\n\\n[P007] 林澈的手指在裤缝上轻轻一捻，随即抬起右手，摸到自己校服的领口。他用拇指和食指捏住最上面的那颗纽扣，解开了它，然后把它塞进第二个扣眼——和周宁一模一样的错法。\\n\\n[P008] 他扣好之后，用手掌轻轻抚平领口，抬头看向周宁的方向。\\n\\n[P009] 周宁正好走到队伍前方，离点名台还有三四步的距离。他看见林澈在整理校服领口，下意识地低头看了一眼自己的衣服。\\n\\n[P010] 那一眼，他停住了。\\n\\n[P011] 他的手指摸到领口，触到了错位的凸起——第一颗扣眼空着，第二颗扣眼里却塞着两颗纽扣。\\n\\n[P012] 周宁的动作很快。他迅速解开扣子，重新扣好，手指从领口滑到第二颗，确认整齐。前后不过三秒。\\n\\n[P013] 他抬起头时，林澈已经转回视线，面朝前方，校服领口的扣子整齐地扣着。\\n\\n[P014] 周宁的扣子已经整齐，他稳步走上点名台。\",\n  \"unchanged_ratio\": 0.85,\n  \"introduced_facts\": [],\n  \"contract_verification\": {\n    \"chapter_function_preserved\": true,\n    \"must_deliver_preserved\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_preserved\": true,\n    \"main_payoff_preserved\": true,\n    \"ending_hook_preserved\": true,\n    \"fuel_remains_reserved\": true\n  }\n}",
+          "model_parsed_output": null,
+          "parsed_output": {
+            "patches": [
+              {
+                "issue_id": "I01",
+                "operation": "replace",
+                "target_paragraph_ids": [
+                  "P013"
+                ],
+                "replacement": "他抬起头时，林澈已经转回视线，面朝前方，校服领口的扣子整齐地扣着。"
+              },
+              {
+                "issue_id": "I02",
+                "operation": "replace",
+                "target_paragraph_ids": [
+                  "P006"
+                ],
+                "replacement": "林澈的视线扫过周围——几个同学的目光已经落在周宁的领口上。他的手指在裤缝上捻了一下。"
+              },
+              {
+                "issue_id": "I03",
+                "operation": "replace",
+                "target_paragraph_ids": [
+                  "P011"
+                ],
+                "replacement": "他的手指摸到领口，触到了错位的凸起——第一颗扣眼空着，第二颗扣眼里却塞着两颗纽扣。"
+              }
+            ],
+            "revised_text": "[P001] 晨会的队伍在操场上站成整齐的方阵，旗杆的影子斜斜地压过第二排的脚边。林澈站在班级队伍的最前列，手垂在裤缝两侧，目光习惯性地扫过自己负责的队列。\n\n[P002] 然后他看见了周宁。\n\n[P003] 周宁正从队伍后方快步走向点名台，步子有些急，大概是怕迟到。他的校服拉链拉到领口，但最上面那颗白色纽扣的位置不对——扣眼错了一格，第一颗扣子塞进了第二颗扣眼，导致领口歪向左边，露出一截里衬的白色边缘。\n\n[P004] 周围几个同学的目光已经落在那颗歪扣子上。有人嘴角动了动，还没出声。\n\n[P005] 林澈的视线从周宁脸上移到那枚错位的扣子，又移回周宁的脸。周宁浑然不觉，正低头看了一眼点名台上的名单，脚步没有停顿。\n\n[P006] 林澈的视线扫过周围——几个同学的目光已经落在周宁的领口上。他的手指在裤缝上捻了一下。\n\n[P007] 林澈的手指在裤缝上轻轻一捻，随即抬起右手，摸到自己校服的领口。他用拇指和食指捏住最上面的那颗纽扣，解开了它，然后把它塞进第二个扣眼——和周宁一模一样的错法。\n\n[P008] 他扣好之后，用手掌轻轻抚平领口，抬头看向周宁的方向。\n\n[P009] 周宁正好走到队伍前方，离点名台还有三四步的距离。他看见林澈在整理校服领口，下意识地低头看了一眼自己的衣服。\n\n[P010] 那一眼，他停住了。\n\n[P011] 他的手指摸到领口，触到了错位的凸起——第一颗扣眼空着，第二颗扣眼里却塞着两颗纽扣。\n\n[P012] 周宁的动作很快。他迅速解开扣子，重新扣好，手指从领口滑到第二颗，确认整齐。前后不过三秒。\n\n[P013] 他抬起头时，林澈已经转回视线，面朝前方，校服领口的扣子整齐地扣着。\n\n[P014] 周宁的扣子已经整齐，他稳步走上点名台。",
+            "unchanged_ratio": 0.85,
+            "introduced_facts": [],
+            "contract_verification": {
+              "chapter_function_preserved": true,
+              "must_deliver_preserved": true,
+              "must_not_deliver_respected": true,
+              "main_change_preserved": true,
+              "main_payoff_preserved": true,
+              "ending_hook_preserved": true,
+              "fuel_remains_reserved": true
+            }
+          },
+          "text_output": "[P001] 晨会的队伍在操场上站成整齐的方阵，旗杆的影子斜斜地压过第二排的脚边。林澈站在班级队伍的最前列，手垂在裤缝两侧，目光习惯性地扫过自己负责的队列。\n\n[P002] 然后他看见了周宁。\n\n[P003] 周宁正从队伍后方快步走向点名台，步子有些急，大概是怕迟到。他的校服拉链拉到领口，但最上面那颗白色纽扣的位置不对——扣眼错了一格，第一颗扣子塞进了第二颗扣眼，导致领口歪向左边，露出一截里衬的白色边缘。\n\n[P004] 周围几个同学的目光已经落在那颗歪扣子上。有人嘴角动了动，还没出声。\n\n[P005] 林澈的视线从周宁脸上移到那枚错位的扣子，又移回周宁的脸。周宁浑然不觉，正低头看了一眼点名台上的名单，脚步没有停顿。\n\n[P006] 林澈的视线扫过周围——几个同学的目光已经落在周宁的领口上。他的手指在裤缝上捻了一下。\n\n[P007] 林澈的手指在裤缝上轻轻一捻，随即抬起右手，摸到自己校服的领口。他用拇指和食指捏住最上面的那颗纽扣，解开了它，然后把它塞进第二个扣眼——和周宁一模一样的错法。\n\n[P008] 他扣好之后，用手掌轻轻抚平领口，抬头看向周宁的方向。\n\n[P009] 周宁正好走到队伍前方，离点名台还有三四步的距离。他看见林澈在整理校服领口，下意识地低头看了一眼自己的衣服。\n\n[P010] 那一眼，他停住了。\n\n[P011] 他的手指摸到领口，触到了错位的凸起——第一颗扣眼空着，第二颗扣眼里却塞着两颗纽扣。\n\n[P012] 周宁的动作很快。他迅速解开扣子，重新扣好，手指从领口滑到第二颗，确认整齐。前后不过三秒。\n\n[P013] 他抬起头时，林澈已经转回视线，面朝前方，校服领口的扣子整齐地扣着。\n\n[P014] 周宁的扣子已经整齐，他稳步走上点名台。",
+          "input_tokens": 2874,
+          "output_tokens": 864,
+          "reasoning_tokens": null,
+          "latency_ms": 8772,
+          "finish_reason": "stop",
+          "error_code": null,
+          "error_message": null,
+          "is_selected": true
+        }
+      ]
     },
     "writer": {
-      "status": "pending",
-      "selected_candidate_id": null,
+      "status": "completed",
+      "selected_candidate_id": "ac5f95e7-aebc-442b-9c0c-3a3ab5e8f88c",
       "selected_issue_ids": null,
-      "candidates": []
+      "candidates": [
+        {
+          "candidate_id": "ac5f95e7-aebc-442b-9c0c-3a3ab5e8f88c",
+          "attempt_number": 1,
+          "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+          "model_id": "deepseek-chat",
+          "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+          "parameters": {
+            "temperature": 0.7,
+            "top_p": 1.0,
+            "max_output_tokens": 4096,
+            "timeout_seconds": 300,
+            "response_format": "text"
+          },
+          "raw_response": "晨会的队伍在操场上站成整齐的方阵，旗杆的影子斜斜地压过第二排的脚边。林澈站在班级队伍的最前列，手垂在裤缝两侧，目光习惯性地扫过自己负责的队列。\n\n然后他看见了周宁。\n\n周宁正从队伍后方快步走向点名台，步子有些急，大概是怕迟到。他的校服拉链拉到领口，但最上面那颗白色纽扣的位置不对——扣眼错了一格，第一颗扣子塞进了第二颗扣眼，导致领口歪向左边，露出一截里衬的白色边缘。\n\n周围几个同学的目光已经落在那颗歪扣子上。有人嘴角动了动，还没出声。\n\n林澈的视线从周宁脸上移到那枚错位的扣子，又移回周宁的脸。周宁浑然不觉，正低头看了一眼点名台上的名单，脚步没有停顿。\n\n不能喊他。不能走过去。不能让他当众停下来。\n\n林澈的手指在裤缝上轻轻一捻，随即抬起右手，摸到自己校服的领口。他用拇指和食指捏住最上面的那颗纽扣，解开了它，然后把它塞进第二个扣眼——和周宁一模一样的错法。\n\n他扣好之后，用手掌轻轻抚平领口，抬头看向周宁的方向。\n\n周宁正好走到队伍前方，离点名台还有三四步的距离。他看见林澈在整理校服领口，下意识地低头看了一眼自己的衣服。\n\n那一眼，他停住了。\n\n他的手指摸到领口，触到了错位的凸起。他低头看见第一颗扣眼空着，第二颗扣眼里却塞着两颗纽扣——一颗是自己的，另一颗是原本该在第一个扣眼里的那颗。\n\n周宁的动作很快。他迅速解开扣子，重新扣好，手指从领口滑到第二颗，确认整齐。前后不过三秒。\n\n他抬起头时，林澈已经转回视线，面朝前方，校服领口的扣子不知什么时候已经恢复了原样。\n\n周宁的扣子已经整齐，他稳步走上点名台。",
+          "model_parsed_output": null,
+          "parsed_output": null,
+          "text_output": "晨会的队伍在操场上站成整齐的方阵，旗杆的影子斜斜地压过第二排的脚边。林澈站在班级队伍的最前列，手垂在裤缝两侧，目光习惯性地扫过自己负责的队列。\n\n然后他看见了周宁。\n\n周宁正从队伍后方快步走向点名台，步子有些急，大概是怕迟到。他的校服拉链拉到领口，但最上面那颗白色纽扣的位置不对——扣眼错了一格，第一颗扣子塞进了第二颗扣眼，导致领口歪向左边，露出一截里衬的白色边缘。\n\n周围几个同学的目光已经落在那颗歪扣子上。有人嘴角动了动，还没出声。\n\n林澈的视线从周宁脸上移到那枚错位的扣子，又移回周宁的脸。周宁浑然不觉，正低头看了一眼点名台上的名单，脚步没有停顿。\n\n不能喊他。不能走过去。不能让他当众停下来。\n\n林澈的手指在裤缝上轻轻一捻，随即抬起右手，摸到自己校服的领口。他用拇指和食指捏住最上面的那颗纽扣，解开了它，然后把它塞进第二个扣眼——和周宁一模一样的错法。\n\n他扣好之后，用手掌轻轻抚平领口，抬头看向周宁的方向。\n\n周宁正好走到队伍前方，离点名台还有三四步的距离。他看见林澈在整理校服领口，下意识地低头看了一眼自己的衣服。\n\n那一眼，他停住了。\n\n他的手指摸到领口，触到了错位的凸起。他低头看见第一颗扣眼空着，第二颗扣眼里却塞着两颗纽扣——一颗是自己的，另一颗是原本该在第一个扣眼里的那颗。\n\n周宁的动作很快。他迅速解开扣子，重新扣好，手指从领口滑到第二颗，确认整齐。前后不过三秒。\n\n他抬起头时，林澈已经转回视线，面朝前方，校服领口的扣子不知什么时候已经恢复了原样。\n\n周宁的扣子已经整齐，他稳步走上点名台。",
+          "input_tokens": 2515,
+          "output_tokens": 436,
+          "reasoning_tokens": null,
+          "latency_ms": 8673,
+          "finish_reason": "stop",
+          "error_code": null,
+          "error_message": null,
+          "is_selected": true
+        }
+      ]
     }
   },
-  "final_composition": "",
+  "final_composition": "晨会的队伍在操场上站成整齐的方阵，旗杆的影子斜斜地压过第二排的脚边。林澈站在班级队伍的最前列，手垂在裤缝两侧，目光习惯性地扫过自己负责的队列。\n\n然后他看见了周宁。\n\n周宁正从队伍后方快步走向点名台，步子有些急，大概是怕迟到。他的校服拉链拉到领口，但最上面那颗白色纽扣的位置不对——扣眼错了一格，第一颗扣子塞进了第二颗扣眼，导致领口歪向左边，露出一截里衬的白色边缘。\n\n周围几个同学的目光已经落在那颗歪扣子上。有人嘴角动了动，还没出声。\n\n林澈的视线从周宁脸上移到那枚错位的扣子，又移回周宁的脸。周宁浑然不觉，正低头看了一眼点名台上的名单，脚步没有停顿。\n\n林澈的视线扫过周围——几个同学的目光已经落在周宁的领口上。他的手指在裤缝上捻了一下。\n\n林澈的手指在裤缝上轻轻一捻，随即抬起右手，摸到自己校服的领口。他用拇指和食指捏住最上面的那颗纽扣，解开了它，然后把它塞进第二个扣眼——和周宁一模一样的错法。\n\n他扣好之后，用手掌轻轻抚平领口，抬头看向周宁的方向。\n\n周宁正好走到队伍前方，离点名台还有三四步的距离。他看见林澈在整理校服领口，下意识地低头看了一眼自己的衣服。\n\n那一眼，他停住了。\n\n他的手指摸到领口，触到了错位的凸起——第一颗扣眼空着，第二颗扣眼里却塞着两颗纽扣。\n\n周宁的动作很快。他迅速解开扣子，重新扣好，手指从领口滑到第二颗，确认整齐。前后不过三秒。\n\n他抬起头时，林澈已经转回视线，面朝前方，校服领口的扣子整齐地扣着。\n\n周宁的扣子已经整齐，他稳步走上点名台。",
   "source_mapping": {
-    "final_composition_source": "writer",
-    "writer_candidate_id": null,
-    "reviser_candidate_id": null,
-    "judge_candidate_id": null,
-    "judge_decision": null
+    "final_composition_source": "judge_final_text",
+    "writer_candidate_id": "ac5f95e7-aebc-442b-9c0c-3a3ab5e8f88c",
+    "reviser_candidate_id": "2b3c82c2-3d64-4763-870c-487895dc82e5",
+    "judge_candidate_id": "65293c1c-0c2b-468f-9ca6-1898a85549b6",
+    "judge_decision": "accept_merged"
   },
-  "error": {
-    "stage": "planner",
-    "code": "LLM_ERROR",
-    "message": ""
-  }
+  "error": null
 }

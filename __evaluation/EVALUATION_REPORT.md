@@ -1,39 +1,45 @@
 # GENERALIZATION_BATCH_V1 Evaluation Report
 
-本报告记录冻结管线的执行证据；外部 GPT 的盲评、合同审计和阶段归因尚待通过 Evaluation MCP 写入 `results/`。
+## Result
 
-## Case execution
+This batch does **not** establish that the multi-stage pipeline is more stable than a single Writer. It does establish a mixed result: the final composition wins anonymous comparison in three of four cases, but it reduces Planner-contract errors in only one of four and regresses in CASE-004.
 
-| Case | Pipeline status | Run |
-| --- | --- | --- |
-| CASE-001 | completed | 2acc9efb-b49b-4ffb-ac44-f0050875e5f2 |
-| CASE-002 | failed | 0abf92f6-be51-46ff-b213-d9cbf45ae377 |
-| CASE-003 | failed | 1c69a766-5af9-46e6-bba9-674dd24ec731 |
-| CASE-004 | failed | 615bfb17-4ffa-48be-bbe5-5d186045d716 |
+| Case | Anonymous winner | Final source | Result |
+| --- | --- | --- | --- |
+| CASE-001 | B | Final composition | Final wins; exact stop fact repaired. |
+| CASE-002 | A | Judge merged text | Final wins; prose becomes less explanatory. |
+| CASE-003 | B | Judge merged text | Final wins; ending restraint improves. |
+| CASE-004 | B | Reviser text | Final loses; Judge output contract failed. |
 
-## External evaluation status
+## Planner-contract audit
 
-盲评胜负、Planner 合同 A/B 对比、Critic 命中/误报、Reviser 新增事实和 Judge 局部裁决均待独立 GPT 按 `GPT_EVALUATOR_PROMPT.md` 完成。CASE-002～004 在 Planner 基础设施失败后停止，因此没有文本可供盲评；它们不能被计入通过分母。
+| Measure | Result | Threshold | Status |
+| --- | ---: | ---: | --- |
+| Final has fewer key contract errors than Writer | 1/4 | 3/4 | Fail |
+| Final adds important facts outside Planner | 0/4 | 0/4 | Pass |
+| Final stop state is present | 3/4 | 3/4 | Pass |
+| Judge local choices avoid regression | 3/4 | 3/4 | Pass |
 
-## Tokens, latency, and intervention
+CASE-001 improves the required contact from an almost-contact to actual contact. CASE-002 removes direct narration of Lin Che's inner prohibitions. CASE-003 removes the direct speculation about Gu Yan's destination, but its core contract was already complete. CASE-004 loses to Writer in blind reading and has no valid Judge decision because the Judge output contained paragraph labels.
 
-| Case | Input tokens | Output tokens | Total latency (ms) | Stage error |
+## Pipeline attribution
+
+- Critic diagnoses were supported in all four cases.
+- Reviser completely resolved selected issues only in CASE-002 and CASE-004; CASE-001 left the cost/commitment gap for manual source restoration, and CASE-003 retained one direct inner-monologue issue.
+- Reviser introduced no material fact outside the Planner contract in any case.
+- CASE-004 is the counterexample: the exported Reviser text is less natural than Writer, while Judge could not produce a valid decision.
+
+## Cost and execution
+
+| Case | Input tokens | Output tokens | Total latency (ms) | Pipeline status |
 | --- | ---: | ---: | ---: | --- |
-| CASE-001 | 95982 | 55108 | 857703 | — |
-| CASE-002 | 0 | 0 | 90 | LLM_ERROR |
-| CASE-003 | 0 | 0 | 1 | LLM_ERROR |
-| CASE-004 | 0 | 0 | 1 | LLM_ERROR |
+| CASE-001 | 95,982 | 55,108 | 857,703 | Existing benchmark export |
+| CASE-002 | 17,072 | 4,773 | 53,421 | Completed |
+| CASE-003 | 17,946 | 5,569 | 57,334 | Completed |
+| CASE-004 | 19,500 | 6,609 | 65,589 | Judge contract failure |
 
-人工介入次数为 0；运行器没有重试、没有变更 Prompt，也没有改写候选或最终稿。
+No stage was retried and no frozen Prompt, schema, stage, candidate contract, or prior final composition was changed.
 
-## Passing criteria
+## What the evidence supports
 
-- 盲评最终稿胜出：至少 3/4。
-- 关键 Planner 合同错误少于 Writer：至少 3/4。
-- 最终稿没有新增重要 Planner 之外剧情：4/4。
-- stop state 准确：至少 3/4。
-- Judge 局部裁决没有明显退化：至少 3/4。
-
-## Supported conclusions and limits
-
-`pipeline_evidence.json` 保存每个 Candidate 的原始响应、解析输出、选择关系、token、延迟、错误和最终来源映射。当前证据只支持“CASE-001 已导出可盲评基准；CASE-002～004 的第一次 Planner 调用失败且已停止”。在外部评估完成且至少三个新增案例取得可比较正文前，不能支持“冻结管线比单次 Writer 更稳定”的结论。单个案例失败不会触发 Prompt 修改建议。
+The frozen pipeline can improve local prose restraint and exact stop-state delivery: it did so in CASE-001 to CASE-003. The current evidence does not support enabling it as a reliable default: it fails the Planner-contract-improvement threshold and CASE-004 shows a concrete final-text regression with no successful Judge safety net. This report records the failure without proposing a Prompt change from one case.

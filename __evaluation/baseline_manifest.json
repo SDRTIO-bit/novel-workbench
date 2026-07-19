@@ -1,7 +1,7 @@
 {
   "batch": "GENERALIZATION_BATCH_V1",
   "random_seed": 20260719,
-  "git_commit": "605aef27e05ebfe36aa84d00dcc2002b9c8b7ac7",
+  "git_commit": "37de4238056f4c052b20cb1d26edc639c609928c",
   "alembic_revision": "h2i3j4k5l6m7",
   "workflow": {
     "workflow_id": "d63c9534-6779-44f0-8cf5-8d83a00043e0",

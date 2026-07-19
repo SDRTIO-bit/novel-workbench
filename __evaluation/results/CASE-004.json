@@ -1,0 +1,48 @@
+{
+  "case_id": "CASE-004",
+  "blind_pass": {
+    "preferred": "B",
+    "limited_information": "A",
+    "concrete_problem": "tie",
+    "choice_and_consequence": "B",
+    "ending_restraint": "tie",
+    "prose_naturalness": "B",
+    "evidence": [
+      "A retains paragraph labels and repeats evidence; B is more readable and shows the lie and consequence."
+    ]
+  },
+  "contract_pass": {
+    "text_a": {
+      "visible_trigger": "present",
+      "rejected_alternative": "missing",
+      "character_choice": "present",
+      "cost_or_commitment": "partial",
+      "immediate_consequence": "present",
+      "next_constraint": "partial",
+      "stop_state": "partial",
+      "must_not_append": "present"
+    },
+    "text_b": {
+      "visible_trigger": "present",
+      "rejected_alternative": "present",
+      "character_choice": "present",
+      "cost_or_commitment": "present",
+      "immediate_consequence": "present",
+      "next_constraint": "present",
+      "stop_state": "partial",
+      "must_not_append": "present"
+    }
+  },
+  "pipeline_pass": {
+    "critic_diagnosis_correct": true,
+    "reviser_added_new_facts": false,
+    "reviser_fixed_confirmed_issues": true,
+    "judge_local_choices_supported": false,
+    "final_regressed_from_writer": true,
+    "evidence": [
+      "Critic diagnoses explanatory passages, but Judge fails its output contract; exported Reviser final regresses."
+    ]
+  },
+  "confidence": 0.9,
+  "notes": "Final fails: Judge output invalid and final loses blind comparison."
+}

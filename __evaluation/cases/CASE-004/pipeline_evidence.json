@@ -1,27 +1,215 @@
 {
   "case_id": "CASE-004",
-  "run_id": "615bfb17-4ffa-48be-bbe5-5d186045d716",
+  "run_id": "59c9f358-485e-4711-9880-d4ef736f3f5a",
   "run_status": "completed",
   "stages": {
     "critic": {
-      "status": "pending",
-      "selected_candidate_id": null,
-      "selected_issue_ids": null,
-      "candidates": []
+      "status": "completed",
+      "selected_candidate_id": "66d57561-2d69-46e1-968a-a6eb15f3bfd2",
+      "selected_issue_ids": [
+        "I01",
+        "I02",
+        "I03",
+        "I04",
+        "I05"
+      ],
+      "candidates": [
+        {
+          "candidate_id": "66d57561-2d69-46e1-968a-a6eb15f3bfd2",
+          "attempt_number": 1,
+          "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+          "model_id": "deepseek-chat",
+          "prompt_version_id": "2f3993c9-811c-4e53-a144-14421704d88d",
+          "parameters": {
+            "temperature": 0.7,
+            "top_p": 1.0,
+            "max_output_tokens": 4096,
+            "timeout_seconds": 300,
+            "response_format": "json_object"
+          },
+          "raw_response": "{\n  \"overall_assessment\": \"场景紧张感扎实，但结尾赵朔的内心描写过多，且最后一句有轻微总结倾向，需收紧。\",\n  \"decision\": \"local_revision\",\n  \"strengths\": [\n    \"赵朔沉默与拉链动作的细节真实可信\",\n    \"陈可被冤枉时的无助感刻画到位\",\n    \"老师施压的对话自然推进冲突\"\n  ],\n  \"issues\": [\n    {\n      \"issue_id\": \"I01\",\n      \"severity\": \"medium\",\n      \"issue_type\": \"inference_overexplained\",\n      \"paragraph_ids\": [8],\n      \"problem\": \"段落8中'只要他说一句话……事情就解决了'以及后续内心独白，提前解释了赵朔的权衡，削弱了读者自行推断其动机的机会。\",\n      \"revision_goal\": \"删除直接的心理解释，仅保留客观观察和身体反应，让读者从动作中推断赵朔的内心挣扎。\",\n      \"recommended_operation\": \"withhold_inference\"\n    },\n    {\n      \"issue_id\": \"I02\",\n      \"severity\": \"low\",\n      \"issue_type\": \"consequence_summarized\",\n      \"paragraph_ids\": [26],\n      \"problem\": \"段落26中'赵朔站在原地……像被抽走了力气'，在可见后果（老师判罚、陈可反应）之后，又用比喻总结情绪，属于重复概括。\",\n      \"revision_goal\": \"删除'像被抽走了力气'，保持动作客观，让读者从陈可的慢动作自行感受。\",\n      \"recommended_operation\": \"withhold_inference\"\n    },\n    {\n      \"issue_id\": \"I03\",\n      \"severity\": \"low\",\n      \"issue_type\": \"show_vs_tell\",\n      \"paragraph_ids\": [31],\n      \"problem\": \"段落31中'书包里的登记表像一个烫手的秘密，隔着布料都能感觉到温度'，属于直接告诉读者赵朔的感受，而非展示。\",\n      \"revision_goal\": \"删除比喻性描述，仅保留客观动作：他弯腰捡起扫帚，又放下，最后背起书包。\",\n      \"recommended_operation\": \"tighten\"\n    },\n    {\n      \"issue_id\": \"I04\",\n      \"severity\": \"low\",\n      \"issue_type\": \"description_overload\",\n      \"paragraph_ids\": [1],\n      \"problem\": \"段落1的夕阳描写虽美但无助于紧张氛围，且与后续冲突的基调略有风格断裂。\",\n      \"revision_goal\": \"简化为一句环境交代，或删除，直接进入动作。\",\n      \"recommended_operation\": \"tighten\"\n    },\n    {\n      \"issue_id\": \"I05\",\n      \"severity\": \"low\",\n      \"issue_type\": \"exposition_clumsy\",\n      \"paragraph_ids\": [3],\n      \"problem\": \"段落3中'他记得很清楚……'以回忆方式交代背景，打断了当前动作的连续性。\",\n      \"revision_goal\": \"将信息融入赵朔的观察和动作中，例如通过他瞥见书包里的纸张来暗示。\",\n      \"recommended_operation\": \"naturalize\"\n    }\n  ],\n  \"protected_strengths\": [\n    {\n      \"paragraph_ids\": [11, 12],\n      \"reason\": \"赵朔拉上书包拉链的动作是核心转折，精准且无需修改。\",\n      \"strength_type\": \"scene_specific_detail\"\n    },\n    {\n      \"paragraph_ids\": [16, 17, 18, 19],\n      \"reason\": \"赵朔与陈可眼神交汇及撒谎的对话，紧张感真实，保留读者推断空间。\",\n      \"strength_type\": \"reader_inference_gap\"\n    },\n    {\n      \"paragraph_ids\": [29, 30],\n      \"reason\": \"赵朔叫陈可名字但被无视，简洁有力，符合'错误已造成但未解决'的停点。\",\n      \"strength_type\": \"effective_roughness\"\n    }\n  ],\n  \"chapter_contract_check\": {\n    \"chapter_function_delivered\": true,\n    \"must_deliver_satisfied\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_advanced\": true,\n    \"main_payoff_delivered\": true,\n    \"ending_hook_set\": true,\n    \"fuel_reserved\": true,\n    \"target_length_met\": true\n  },\n  \"causal_transition_check\": [\n    {\n      \"transition_id\": \"CT01\",\n      \"trigger_visible\": true,\n      \"next_action_changed\": true,\n      \"reader_inference_withheld\": false,\n      \"forbidden_explanation_found\": true,\n      \"consequence_visible\": true,\n      \"next_constraint_preserved\": true,\n      \"paragraph_ids\": [8, 11, 12, 22, 23, 24, 25],\n      \"result\": \"fail\",\n      \"comment\": \"段落8中提前解释了赵朔的动机，违反了'reader_inference_withheld'和'forbidden_explanation_found'。修改后应为pass。\"\n    }\n  ]\n}",
+          "model_parsed_output": null,
+          "parsed_output": {
+            "overall_assessment": "场景紧张感扎实，但结尾赵朔的内心描写过多，且最后一句有轻微总结倾向，需收紧。",
+            "decision": "local_revision",
+            "strengths": [
+              "赵朔沉默与拉链动作的细节真实可信",
+              "陈可被冤枉时的无助感刻画到位",
+              "老师施压的对话自然推进冲突"
+            ],
+            "issues": [
+              {
+                "issue_id": "I01",
+                "severity": "medium",
+                "issue_type": "inference_overexplained",
+                "paragraph_ids": [
+                  "P008"
+                ],
+                "problem": "段落8中'只要他说一句话……事情就解决了'以及后续内心独白，提前解释了赵朔的权衡，削弱了读者自行推断其动机的机会。",
+                "revision_goal": "删除直接的心理解释，仅保留客观观察和身体反应，让读者从动作中推断赵朔的内心挣扎。",
+                "recommended_operation": "withhold_inference"
+              },
+              {
+                "issue_id": "I02",
+                "severity": "low",
+                "issue_type": "consequence_summarized",
+                "paragraph_ids": [
+                  "P026"
+                ],
+                "problem": "段落26中'赵朔站在原地……像被抽走了力气'，在可见后果（老师判罚、陈可反应）之后，又用比喻总结情绪，属于重复概括。",
+                "revision_goal": "删除'像被抽走了力气'，保持动作客观，让读者从陈可的慢动作自行感受。",
+                "recommended_operation": "withhold_inference"
+              },
+              {
+                "issue_id": "I03",
+                "severity": "low",
+                "issue_type": "show_vs_tell",
+                "paragraph_ids": [
+                  "P031"
+                ],
+                "problem": "段落31中'书包里的登记表像一个烫手的秘密，隔着布料都能感觉到温度'，属于直接告诉读者赵朔的感受，而非展示。",
+                "revision_goal": "删除比喻性描述，仅保留客观动作：他弯腰捡起扫帚，又放下，最后背起书包。",
+                "recommended_operation": "tighten"
+              },
+              {
+                "issue_id": "I04",
+                "severity": "low",
+                "issue_type": "description_overload",
+                "paragraph_ids": [
+                  "P001"
+                ],
+                "problem": "段落1的夕阳描写虽美但无助于紧张氛围，且与后续冲突的基调略有风格断裂。",
+                "revision_goal": "简化为一句环境交代，或删除，直接进入动作。",
+                "recommended_operation": "tighten"
+              },
+              {
+                "issue_id": "I05",
+                "severity": "low",
+                "issue_type": "exposition_clumsy",
+                "paragraph_ids": [
+                  "P003"
+                ],
+                "problem": "段落3中'他记得很清楚……'以回忆方式交代背景，打断了当前动作的连续性。",
+                "revision_goal": "将信息融入赵朔的观察和动作中，例如通过他瞥见书包里的纸张来暗示。",
+                "recommended_operation": "naturalize"
+              }
+            ],
+            "protected_strengths": [
+              {
+                "paragraph_ids": [
+                  "P011",
+                  "P012"
+                ],
+                "reason": "赵朔拉上书包拉链的动作是核心转折，精准且无需修改。",
+                "strength_type": "scene_specific_detail"
+              },
+              {
+                "paragraph_ids": [
+                  "P016",
+                  "P017",
+                  "P018",
+                  "P019"
+                ],
+                "reason": "赵朔与陈可眼神交汇及撒谎的对话，紧张感真实，保留读者推断空间。",
+                "strength_type": "reader_inference_gap"
+              },
+              {
+                "paragraph_ids": [
+                  "P029",
+                  "P030"
+                ],
+                "reason": "赵朔叫陈可名字但被无视，简洁有力，符合'错误已造成但未解决'的停点。",
+                "strength_type": "effective_roughness"
+              }
+            ],
+            "chapter_contract_check": {
+              "chapter_function_delivered": true,
+              "must_deliver_satisfied": true,
+              "must_not_deliver_respected": true,
+              "main_change_advanced": true,
+              "main_payoff_delivered": true,
+              "ending_hook_set": true,
+              "fuel_reserved": true,
+              "target_length_met": true
+            },
+            "causal_transition_check": [
+              {
+                "transition_id": "CT01",
+                "trigger_visible": true,
+                "next_action_changed": true,
+                "reader_inference_withheld": false,
+                "forbidden_explanation_found": [
+                  "存在禁止解释（模型未提供摘录）"
+                ],
+                "consequence_visible": true,
+                "next_constraint_preserved": true,
+                "paragraph_ids": [
+                  "P008",
+                  "P011",
+                  "P012",
+                  "P022",
+                  "P023",
+                  "P024",
+                  "P025"
+                ],
+                "result": "fail",
+                "comment": "段落8中提前解释了赵朔的动机，违反了'reader_inference_withheld'和'forbidden_explanation_found'。修改后应为pass。"
+              }
+            ],
+            "tempo_profile_check": null
+          },
+          "text_output": "{\n  \"overall_assessment\": \"场景紧张感扎实，但结尾赵朔的内心描写过多，且最后一句有轻微总结倾向，需收紧。\",\n  \"decision\": \"local_revision\",\n  \"strengths\": [\n    \"赵朔沉默与拉链动作的细节真实可信\",\n    \"陈可被冤枉时的无助感刻画到位\",\n    \"老师施压的对话自然推进冲突\"\n  ],\n  \"issues\": [\n    {\n      \"issue_id\": \"I01\",\n      \"severity\": \"medium\",\n      \"issue_type\": \"inference_overexplained\",\n      \"paragraph_ids\": [8],\n      \"problem\": \"段落8中'只要他说一句话……事情就解决了'以及后续内心独白，提前解释了赵朔的权衡，削弱了读者自行推断其动机的机会。\",\n      \"revision_goal\": \"删除直接的心理解释，仅保留客观观察和身体反应，让读者从动作中推断赵朔的内心挣扎。\",\n      \"recommended_operation\": \"withhold_inference\"\n    },\n    {\n      \"issue_id\": \"I02\",\n      \"severity\": \"low\",\n      \"issue_type\": \"consequence_summarized\",\n      \"paragraph_ids\": [26],\n      \"problem\": \"段落26中'赵朔站在原地……像被抽走了力气'，在可见后果（老师判罚、陈可反应）之后，又用比喻总结情绪，属于重复概括。\",\n      \"revision_goal\": \"删除'像被抽走了力气'，保持动作客观，让读者从陈可的慢动作自行感受。\",\n      \"recommended_operation\": \"withhold_inference\"\n    },\n    {\n      \"issue_id\": \"I03\",\n      \"severity\": \"low\",\n      \"issue_type\": \"show_vs_tell\",\n      \"paragraph_ids\": [31],\n      \"problem\": \"段落31中'书包里的登记表像一个烫手的秘密，隔着布料都能感觉到温度'，属于直接告诉读者赵朔的感受，而非展示。\",\n      \"revision_goal\": \"删除比喻性描述，仅保留客观动作：他弯腰捡起扫帚，又放下，最后背起书包。\",\n      \"recommended_operation\": \"tighten\"\n    },\n    {\n      \"issue_id\": \"I04\",\n      \"severity\": \"low\",\n      \"issue_type\": \"description_overload\",\n      \"paragraph_ids\": [1],\n      \"problem\": \"段落1的夕阳描写虽美但无助于紧张氛围，且与后续冲突的基调略有风格断裂。\",\n      \"revision_goal\": \"简化为一句环境交代，或删除，直接进入动作。\",\n      \"recommended_operation\": \"tighten\"\n    },\n    {\n      \"issue_id\": \"I05\",\n      \"severity\": \"low\",\n      \"issue_type\": \"exposition_clumsy\",\n      \"paragraph_ids\": [3],\n      \"problem\": \"段落3中'他记得很清楚……'以回忆方式交代背景，打断了当前动作的连续性。\",\n      \"revision_goal\": \"将信息融入赵朔的观察和动作中，例如通过他瞥见书包里的纸张来暗示。\",\n      \"recommended_operation\": \"naturalize\"\n    }\n  ],\n  \"protected_strengths\": [\n    {\n      \"paragraph_ids\": [11, 12],\n      \"reason\": \"赵朔拉上书包拉链的动作是核心转折，精准且无需修改。\",\n      \"strength_type\": \"scene_specific_detail\"\n    },\n    {\n      \"paragraph_ids\": [16, 17, 18, 19],\n      \"reason\": \"赵朔与陈可眼神交汇及撒谎的对话，紧张感真实，保留读者推断空间。\",\n      \"strength_type\": \"reader_inference_gap\"\n    },\n    {\n      \"paragraph_ids\": [29, 30],\n      \"reason\": \"赵朔叫陈可名字但被无视，简洁有力，符合'错误已造成但未解决'的停点。\",\n      \"strength_type\": \"effective_roughness\"\n    }\n  ],\n  \"chapter_contract_check\": {\n    \"chapter_function_delivered\": true,\n    \"must_deliver_satisfied\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_advanced\": true,\n    \"main_payoff_delivered\": true,\n    \"ending_hook_set\": true,\n    \"fuel_reserved\": true,\n    \"target_length_met\": true\n  },\n  \"causal_transition_check\": [\n    {\n      \"transition_id\": \"CT01\",\n      \"trigger_visible\": true,\n      \"next_action_changed\": true,\n      \"reader_inference_withheld\": false,\n      \"forbidden_explanation_found\": true,\n      \"consequence_visible\": true,\n      \"next_constraint_preserved\": true,\n      \"paragraph_ids\": [8, 11, 12, 22, 23, 24, 25],\n      \"result\": \"fail\",\n      \"comment\": \"段落8中提前解释了赵朔的动机，违反了'reader_inference_withheld'和'forbidden_explanation_found'。修改后应为pass。\"\n    }\n  ]\n}",
+          "input_tokens": 3976,
+          "output_tokens": 1121,
+          "reasoning_tokens": null,
+          "latency_ms": 11694,
+          "finish_reason": "stop",
+          "error_code": null,
+          "error_message": null,
+          "is_selected": true
+        }
+      ]
     },
     "judge": {
-      "status": "pending",
-      "selected_candidate_id": null,
-      "selected_issue_ids": null,
-      "candidates": []
-    },
-    "planner": {
       "status": "failed",
       "selected_candidate_id": null,
       "selected_issue_ids": null,
       "candidates": [
         {
-          "candidate_id": "7f37517a-5d83-4372-87a3-ea8c91f6f916",
+          "candidate_id": "e53c1fba-7a91-43ea-a48b-1167529e8e3b",
+          "attempt_number": 1,
+          "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+          "model_id": "deepseek-chat",
+          "prompt_version_id": "9f5fa364-15ee-436e-80ef-ed5087e840e3",
+          "parameters": {
+            "temperature": 0.7,
+            "top_p": 1.0,
+            "max_output_tokens": 4096,
+            "timeout_seconds": 120,
+            "response_format": "json_object"
+          },
+          "raw_response": "{\n  \"decision\": \"accept_merged\",\n  \"issue_results\": [\n    {\n      \"issue_id\": \"I01\",\n      \"status\": \"resolved\",\n      \"action\": \"keep_revision\",\n      \"comment\": \"删除了'只要他说一句话……'等直接解释，改为仅保留身体反应和客观事实（妈妈加班），读者可从动作中自行推断赵朔的权衡。\"\n    },\n    {\n      \"issue_id\": \"I02\",\n      \"status\": \"resolved\",\n      \"action\": \"keep_revision\",\n      \"comment\": \"删除了'像被抽走了力气'，保持动作客观，读者从陈可的慢动作自行感受其情绪。\"\n    },\n    {\n      \"issue_id\": \"I03\",\n      \"status\": \"resolved\",\n      \"action\": \"keep_revision\",\n      \"comment\": \"删除了'像一个烫手的秘密'比喻，仅保留客观动作，符合show don't tell。\"\n    },\n    {\n      \"issue_id\": \"I04\",\n      \"status\": \"resolved\",\n      \"action\": \"keep_revision\",\n      \"comment\": \"简化为'夕阳从窗户斜照进来'，去掉了冗余比喻，节奏更紧凑。\"\n    },\n    {\n      \"issue_id\": \"I05\",\n      \"status\": \"resolved\",\n      \"action\": \"keep_revision\",\n      \"comment\": \"将回忆式交代改为通过赵朔瞥见纸张来暗示信息，自然融入当前动作，未打断连续性。\"\n    }\n  ],\n  \"new_problems\": [],\n  \"revision_became_cleaner_but_flatter\": false,\n  \"author_intent_preserved\": true,\n  \"chapter_contract_completed\": true,\n  \"main_payoff_preserved\": true,\n  \"final_text\": \"[P001] 放学后的教室只剩值日生还在忙碌。夕阳从窗户斜照进来。\\n\\n[P002] 赵朔握着扫帚，机械地把碎纸屑往簸箕里扫。他的书包就放在第一排的椅子上，拉链半开，露出一角白色纸张——实验室借用登记表。\\n\\n[P003] 他的书包就放在第一排的椅子上，拉链半开，露出一角白色纸张——实验室借用登记表。他瞥见那张纸，想起放学前去实验室还器材时顺手把它夹进课本里。后来老师走进教室，问“实验室的登记表谁收起来了”，他的心猛地一沉。\\n\\n[P004] “陈可，你们组今天负责实验室器材归还吧？”老师站在讲台旁，手里翻着班级日志。\\n\\n[P005] 陈可正在整理课桌，听到自己的名字抬起头：“啊？登记表？我……我没拿啊。”\\n\\n[P006] “那表呢？实验室那边说没收到。”\\n\\n[P007] “我真的没拿。”陈可放下手里的课本，弯腰翻自己的书包，“我以为是别的同学收走了。”\\n\\n[P008] 赵朔握着扫帚的手指收紧了些。书包里那张纸的重量像压在心脏上。妈妈今天加班，让他早点回去照顾妹妹。\\n\\n[P009] “你再找找。”老师的声音带上了不耐烦。\\n\\n[P010] 陈可把书包里的东西全倒在桌上，课本、笔袋、水杯散了一桌。“真的没有……老师，我明明放在实验室台子上的，可能、可能是哪个同学收走了没放回来？”\\n\\n[P011] 赵朔低下头，加快了扫地的速度。扫帚在地板上发出粗粝的声响。他往垃圾桶那边退了两步，正好背对着老师和陈可。\\n\\n[P012] 拉链的声音很小，但他听得清清楚楚。手指捏住拉链头，用力一扯，白色纸张被完全吞进书包深处。\\n\\n[P013] “赵朔，你们今天是一起做值日的吧？”老师的声音突然转向他。\\n\\n[P014] 他的后背僵住了。\\n\\n[P015] “你看见陈可拿登记表了吗？”\\n\\n[P016] 他转过身，目光越过老师的肩膀，正好对上陈可的眼睛。她正看着他，眼神里有种微弱的期待——好像在说，你帮我证明一下。\\n\\n[P017] 赵朔咽了口唾沫：“没……没注意。我在擦黑板。”\\n\\n[P018] “你走的时候实验室还有别人吗？”\\n\\n[P019] “没有了。”声音从喉咙里挤出来，干涩得不像自己的，“我们是最后一个走的。”\\n\\n[P020] 陈可低下头，继续翻找已经翻过三遍的书包。“老师，我真的没拿……会不会是隔壁班借了没还？”\\n\\n[P021] “登记表怎么可能借给隔壁班。”老师走到陈可面前，“你们组负责的事，现在表找不到了，你说怎么办？”\\n\\n[P022] “我……”\\n\\n[P023] “明天叫家长来一趟。”\\n\\n[P024] 陈可愣住了。她的手停在半空中，书页从指缝间滑落。“老师，我真的没——”\\n\\n[P025] “不是你的责任你慌什么？”老师打断她，“一个登记表都保管不好，下次怎么让你们做实验？明天上午让你家长来找我。”\\n\\n[P026] 赵朔站在原地，扫帚柄硌得手心发疼。他想说什么，可嘴巴像被胶水粘住了一样。陈可没有看他，只是低着头收拾桌上散落的东西，动作很慢。\\n\\n[P027] “行了，今天就到这。”老师转身走出教室，脚步声在走廊里渐渐远去。\\n\\n[P028] 陈可把课本塞回书包，拉链拉得哗啦响。赵朔站在那，看着她把椅子推进桌底，看着她背上书包往门口走。\\n\\n[P029] “陈可——”\\n\\n[P030] 她没回头。门在她身后关上了。\\n\\n[P031] 教室里安静下来。赵朔站在原地。他弯腰捡起扫帚，又放下，最后还是把书包背上了肩。\\n\\n[P032] 走廊里已经没有陈可的身影。夕阳把他的影子拉得很长，一直拖到教室后门的垃圾桶旁边。\",\n  \"quality_score\": 92,\n  \"state_patch\": {\n    \"facts_added\": [],\n    \"relationships_changed\": [\n      \"赵朔因隐瞒登记表而对陈可产生内疚，但未表露\"\n    ],\n    \"threads_carry_forward\": [\n      \"陈可被要求叫家长，但实际是否执行未知\",\n      \"登记表仍在赵朔书包中，未来可能暴露\"\n    ]\n  },\n  \"reader_inference_preserved\": true,\n  \"decision_consequence_preserved\": true,\n  \"narrator_management_reduced\": true,\n  \"necessary_information_lost\": false,\n  \"causal_transition_results\": [\n    {\n      \"transition_id\": \"CT01\",\n      \"original_status\": \"fail\",\n      \"revision_status\": \"pass\",\n      \"preferred_version\": \"revision\",\n      \"comment\": \"修订删除了直接解释赵朔动机的段落，读者需从动作推断，符合因果转折要求。\"\n    }\n  ]\n}",
+          "model_parsed_output": null,
+          "parsed_output": null,
+          "text_output": "",
+          "input_tokens": 5720,
+          "output_tokens": 1592,
+          "reasoning_tokens": null,
+          "latency_ms": 13691,
+          "finish_reason": "stop",
+          "error_code": "JUDGE_OUTPUT_CONTRACT_INVALID",
+          "error_message": "JUDGE_OUTPUT_CONTRACT_INVALID: merged final_text must not contain paragraph labels",
+          "is_selected": false
+        }
+      ]
+    },
+    "planner": {
+      "status": "completed",
+      "selected_candidate_id": "8ca4df8f-2d8a-43bf-98f2-27a6c86a3484",
+      "selected_issue_ids": null,
+      "candidates": [
+        {
+          "candidate_id": "8ca4df8f-2d8a-43bf-98f2-27a6c86a3484",
           "attempt_number": 1,
           "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
           "model_id": "deepseek-chat",
@@ -30,47 +218,312 @@
             "temperature": 0.7,
             "top_p": 1.0,
             "max_output_tokens": 4096,
-            "timeout_seconds": 300
+            "timeout_seconds": 300,
+            "response_format": "json_object"
           },
-          "raw_response": "",
+          "raw_response": "{\n  \"planner_contract_version\": 2,\n  \"scene_goal\": \"展现赵朔因害怕被老师留下而选择隐瞒登记表，导致陈可无辜承担后果，错误已造成但未解决。\",\n  \"location\": \"教室\",\n  \"time\": \"放学后，值日打扫接近尾声\",\n  \"scene_state\": {\n    \"last_completed_action\": \"赵朔发现登记表夹在自己书包里，但听到老师问陈可时选择了沉默\",\n    \"present_characters\": [\"赵朔\", \"陈可\", \"老师\"],\n    \"visible_facts\": [\n      \"赵朔的书包拉链半开，露出登记表一角\",\n      \"老师站在讲台旁，正在询问登记表的下落\",\n      \"陈可正在整理课桌，动作有些慌乱\"\n    ],\n    \"available_objects\": [\n      \"实验室借用登记表\",\n      \"赵朔的书包\",\n      \"讲台上的班级日志\"\n    ],\n    \"unresolved_problem\": \"登记表在赵朔书包里，但老师认为可能被陈可弄丢了\",\n    \"already_existing_constraints\": [\n      \"赵朔不敢在老师面前承认是自己拿走的\",\n      \"陈可没有证据证明自己没拿\"\n    ]\n  },\n  \"characters\": [\n    {\n      \"name\": \"赵朔\",\n      \"goal\": \"避免被老师留下训话，尽快脱身回家\",\n      \"known\": [\"登记表在自己书包里\", \"老师正在找登记表\", \"陈可被怀疑\"],\n      \"unknown\": [\"陈可是否会因此受到处罚\", \"老师是否会继续追查\"],\n      \"mistaken_beliefs\": [\n        \"只要现在不承认，事情就会过去\",\n        \"陈可能自己解释清楚\"\n      ],\n      \"constraints\": [\n        \"不能直接承认自己拿了登记表\",\n        \"不能在老师面前表现得太心虚\"\n      ],\n      \"observed_evidence\": [\n        \"老师看向陈可时表情严肃\",\n        \"陈可低头翻找自己的书包\"\n      ],\n      \"current_interpretation\": \"老师已经认定是陈可的责任，我现在承认只会让自己也被牵连\",\n      \"how_interpretation_drives_action\": \"他迅速拉上书包拉链，假装继续扫地，避免与老师目光接触\"\n    },\n    {\n      \"name\": \"陈可\",\n      \"goal\": \"证明自己没有拿登记表，避免被冤枉\",\n      \"known\": [\"自己没拿登记表\", \"登记表应该放在实验室\", \"老师现在怀疑自己\"],\n      \"unknown\": [\"登记表到底在哪\", \"赵朔为什么看起来紧张\"],\n      \"mistaken_beliefs\": [\n        \"可能只是自己忘记放回原处了\"\n      ],\n      \"constraints\": [\n        \"不能顶撞老师\",\n        \"必须找到登记表或证明自己清白\"\n      ],\n      \"observed_evidence\": [\n        \"老师直接问她登记表在哪\",\n        \"赵朔突然加快扫地速度，不看这边\"\n      ],\n      \"current_interpretation\": \"老师认为是我弄丢了，但我确实没拿，可能是别人拿走了\",\n      \"how_interpretation_drives_action\": \"她继续翻找自己的书包，并小声回答老师说自己没拿\"\n    }\n  ],\n  \"concrete_problem\": \"赵朔是否应该在老师询问时承认登记表在自己书包里？\",\n  \"pressure\": \"老师正在追问，时间紧迫，赵朔必须在几秒内决定是否承认\",\n  \"turning_point\": \"赵朔选择拉上书包拉链并沉默，将责任推向陈可\",\n  \"end_condition\": \"老师认定是陈可的责任，并让她明天叫家长，赵朔没有被发现\",\n  \"forbidden\": [\n    \"赵朔主动承认\",\n    \"陈可发现真相\",\n    \"老师发现登记表在赵朔书包里\",\n    \"出现暖灯、猫或总结性安慰\",\n    \"场景以和解或问题解决收尾\"\n  ],\n  \"causal_transitions\": [\n    {\n      \"id\": \"CT01\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"赵朔看到登记表一角露在自己书包里，同时听到老师问陈可登记表在哪\",\n      \"character_interpretation\": \"赵朔认为老师已经怀疑陈可，自己如果现在承认会被留下训话，不如沉默让事情过去\",\n      \"character_next_action\": \"赵朔迅速拉上书包拉链，假装继续扫地，避开老师目光\",\n      \"rejected_alternative\": \"赵朔可以当场拿出登记表并承认是自己不小心夹带的\",\n      \"immediate_consequence\": \"老师没有看到赵朔的动作，继续追问陈可，陈可无法解释，被老师认定是责任方\",\n      \"counterfactual_without_action\": \"如果赵朔没有拉上拉链，老师可能会注意到书包里的登记表\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"登记表在赵朔书包里，老师尚未确定怀疑对象\",\n        \"after\": \"老师认定陈可弄丢了登记表，赵朔的沉默使得陈可成为替罪羊\"\n      },\n      \"cost_or_commitment\": \"赵朔背负了内疚，但暂时避免了被老师留下的后果\",\n      \"next_constraint\": \"赵朔现在不能主动交出登记表，否则会被发现之前撒谎\",\n      \"reader_must_infer\": \"赵朔的沉默不是偶然，而是故意选择牺牲陈可来保全自己\",\n      \"narrator_must_not_state\": [\n        \"赵朔故意陷害陈可\",\n        \"陈可完全无辜\"\n      ]\n    }\n  ],\n  \"tempo_guardrails\": {\n    \"entry_pressure\": \"老师走进教室，问陈可登记表在哪\",\n    \"dominant_pressure\": {\n      \"kind\": \"social_friction\",\n      \"description\": \"赵朔在自我保护和同伴责任之间的冲突，以及陈可被冤枉时的无助\"\n    },\n    \"allowed_viewpoint_misread\": \"陈可可能认为赵朔的沉默是因为他也害怕老师，而不是故意隐瞒\",\n    \"disclosure_cap\": 0,\n    \"must_remain_unclassified\": [\n      \"赵朔内心的真实愧疚感\"\n    ],\n    \"stop_state\": {\n      \"type\": \"unresolved_problem\",\n      \"visible_fact\": \"老师让陈可明天叫家长，赵朔背着书包离开教室\",\n      \"what_is_now_different\": \"错误已经造成，陈可将承担后果，而赵朔带着秘密离开\",\n      \"must_not_append\": \"不得解释陈可是否会真的叫家长，或赵朔之后是否会后悔\"\n    },\n    \"final_line_must_include\": \"\"\n  },\n  \"chapter_contract_check\": {\n    \"function_aligned\": true,\n    \"must_deliver_covered\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_enabled\": true,\n    \"main_payoff_prepared\": true,\n    \"ending_hook_established\": true,\n    \"causal_transitions_grounded\": true,\n    \"reader_inference_not_pre_resolved\": true,\n    \"scene_state_reconstructed\": true,\n    \"information_sources_legal\": true,\n    \"character_choice_is_real\": true,\n    \"consequence_is_counterfactual\": true,\n    \"state_delta_is_nonempty\": true,\n    \"next_constraint_is_new\": true,\n    \"stop_state_is_visible\": true,\n    \"stop_state_changes_future_actions\": true\n  }\n}",
           "model_parsed_output": null,
-          "parsed_output": null,
-          "text_output": "",
-          "input_tokens": 0,
-          "output_tokens": 0,
+          "parsed_output": {
+            "planner_contract_version": 2,
+            "scene_goal": "展现赵朔因害怕被老师留下而选择隐瞒登记表，导致陈可无辜承担后果，错误已造成但未解决。",
+            "location": "教室",
+            "time": "放学后，值日打扫接近尾声",
+            "scene_state": {
+              "last_completed_action": "赵朔发现登记表夹在自己书包里，但听到老师问陈可时选择了沉默",
+              "present_characters": [
+                "赵朔",
+                "陈可",
+                "老师"
+              ],
+              "visible_facts": [
+                "赵朔的书包拉链半开，露出登记表一角",
+                "老师站在讲台旁，正在询问登记表的下落",
+                "陈可正在整理课桌，动作有些慌乱"
+              ],
+              "available_objects": [
+                "实验室借用登记表",
+                "赵朔的书包",
+                "讲台上的班级日志"
+              ],
+              "unresolved_problem": "登记表在赵朔书包里，但老师认为可能被陈可弄丢了",
+              "already_existing_constraints": [
+                "赵朔不敢在老师面前承认是自己拿走的",
+                "陈可没有证据证明自己没拿"
+              ]
+            },
+            "characters": [
+              {
+                "name": "赵朔",
+                "goal": "避免被老师留下训话，尽快脱身回家",
+                "known": [
+                  "登记表在自己书包里",
+                  "老师正在找登记表",
+                  "陈可被怀疑"
+                ],
+                "unknown": [
+                  "陈可是否会因此受到处罚",
+                  "老师是否会继续追查"
+                ],
+                "mistaken_beliefs": [
+                  "只要现在不承认，事情就会过去",
+                  "陈可能自己解释清楚"
+                ],
+                "constraints": [
+                  "不能直接承认自己拿了登记表",
+                  "不能在老师面前表现得太心虚"
+                ],
+                "observed_evidence": [
+                  "老师看向陈可时表情严肃",
+                  "陈可低头翻找自己的书包"
+                ],
+                "current_interpretation": "老师已经认定是陈可的责任，我现在承认只会让自己也被牵连",
+                "how_interpretation_drives_action": "他迅速拉上书包拉链，假装继续扫地，避免与老师目光接触"
+              },
+              {
+                "name": "陈可",
+                "goal": "证明自己没有拿登记表，避免被冤枉",
+                "known": [
+                  "自己没拿登记表",
+                  "登记表应该放在实验室",
+                  "老师现在怀疑自己"
+                ],
+                "unknown": [
+                  "登记表到底在哪",
+                  "赵朔为什么看起来紧张"
+                ],
+                "mistaken_beliefs": [
+                  "可能只是自己忘记放回原处了"
+                ],
+                "constraints": [
+                  "不能顶撞老师",
+                  "必须找到登记表或证明自己清白"
+                ],
+                "observed_evidence": [
+                  "老师直接问她登记表在哪",
+                  "赵朔突然加快扫地速度，不看这边"
+                ],
+                "current_interpretation": "老师认为是我弄丢了，但我确实没拿，可能是别人拿走了",
+                "how_interpretation_drives_action": "她继续翻找自己的书包，并小声回答老师说自己没拿"
+              }
+            ],
+            "concrete_problem": "赵朔是否应该在老师询问时承认登记表在自己书包里？",
+            "pressure": "老师正在追问，时间紧迫，赵朔必须在几秒内决定是否承认",
+            "turning_point": "赵朔选择拉上书包拉链并沉默，将责任推向陈可",
+            "end_condition": "老师认定是陈可的责任，并让她明天叫家长，赵朔没有被发现",
+            "forbidden": [
+              "赵朔主动承认",
+              "陈可发现真相",
+              "老师发现登记表在赵朔书包里",
+              "出现暖灯、猫或总结性安慰",
+              "场景以和解或问题解决收尾"
+            ],
+            "causal_transitions": [
+              {
+                "id": "CT01",
+                "kind": "evidence_to_action",
+                "visible_trigger": "赵朔看到登记表一角露在自己书包里，同时听到老师问陈可登记表在哪",
+                "character_interpretation": "赵朔认为老师已经怀疑陈可，自己如果现在承认会被留下训话，不如沉默让事情过去",
+                "character_next_action": "赵朔迅速拉上书包拉链，假装继续扫地，避开老师目光",
+                "rejected_alternative": "赵朔可以当场拿出登记表并承认是自己不小心夹带的",
+                "immediate_consequence": "老师没有看到赵朔的动作，继续追问陈可，陈可无法解释，被老师认定是责任方",
+                "counterfactual_without_action": "如果赵朔没有拉上拉链，老师可能会注意到书包里的登记表",
+                "consequence_would_still_happen": false,
+                "state_delta": {
+                  "before": "登记表在赵朔书包里，老师尚未确定怀疑对象",
+                  "after": "老师认定陈可弄丢了登记表，赵朔的沉默使得陈可成为替罪羊"
+                },
+                "cost_or_commitment": "赵朔背负了内疚，但暂时避免了被老师留下的后果",
+                "next_constraint": "赵朔现在不能主动交出登记表，否则会被发现之前撒谎",
+                "reader_must_infer": "赵朔的沉默不是偶然，而是故意选择牺牲陈可来保全自己",
+                "narrator_must_not_state": [
+                  "赵朔故意陷害陈可",
+                  "陈可完全无辜"
+                ]
+              }
+            ],
+            "chapter_contract_check": {
+              "function_aligned": true,
+              "must_deliver_covered": true,
+              "must_not_deliver_respected": true,
+              "main_change_enabled": true,
+              "main_payoff_prepared": true,
+              "ending_hook_established": true,
+              "causal_transitions_grounded": true,
+              "reader_inference_not_pre_resolved": true,
+              "scene_state_reconstructed": true,
+              "information_sources_legal": true,
+              "character_choice_is_real": true,
+              "consequence_is_counterfactual": true,
+              "state_delta_is_nonempty": true,
+              "next_constraint_is_new": true,
+              "stop_state_is_visible": true,
+              "stop_state_changes_future_actions": true
+            },
+            "tempo_guardrails": {
+              "entry_pressure": "老师走进教室，问陈可登记表在哪",
+              "dominant_pressure": {
+                "kind": "social_friction",
+                "description": "赵朔在自我保护和同伴责任之间的冲突，以及陈可被冤枉时的无助"
+              },
+              "allowed_viewpoint_misread": "陈可可能认为赵朔的沉默是因为他也害怕老师，而不是故意隐瞒",
+              "disclosure_cap": 0,
+              "must_remain_unclassified": [
+                "赵朔内心的真实愧疚感"
+              ],
+              "stop_state": {
+                "type": "unresolved_problem",
+                "visible_fact": "老师让陈可明天叫家长，赵朔背着书包离开教室",
+                "what_is_now_different": "错误已经造成，陈可将承担后果，而赵朔带着秘密离开",
+                "must_not_append": "不得解释陈可是否会真的叫家长，或赵朔之后是否会后悔"
+              },
+              "final_line_must_include": ""
+            }
+          },
+          "text_output": "{\n  \"planner_contract_version\": 2,\n  \"scene_goal\": \"展现赵朔因害怕被老师留下而选择隐瞒登记表，导致陈可无辜承担后果，错误已造成但未解决。\",\n  \"location\": \"教室\",\n  \"time\": \"放学后，值日打扫接近尾声\",\n  \"scene_state\": {\n    \"last_completed_action\": \"赵朔发现登记表夹在自己书包里，但听到老师问陈可时选择了沉默\",\n    \"present_characters\": [\"赵朔\", \"陈可\", \"老师\"],\n    \"visible_facts\": [\n      \"赵朔的书包拉链半开，露出登记表一角\",\n      \"老师站在讲台旁，正在询问登记表的下落\",\n      \"陈可正在整理课桌，动作有些慌乱\"\n    ],\n    \"available_objects\": [\n      \"实验室借用登记表\",\n      \"赵朔的书包\",\n      \"讲台上的班级日志\"\n    ],\n    \"unresolved_problem\": \"登记表在赵朔书包里，但老师认为可能被陈可弄丢了\",\n    \"already_existing_constraints\": [\n      \"赵朔不敢在老师面前承认是自己拿走的\",\n      \"陈可没有证据证明自己没拿\"\n    ]\n  },\n  \"characters\": [\n    {\n      \"name\": \"赵朔\",\n      \"goal\": \"避免被老师留下训话，尽快脱身回家\",\n      \"known\": [\"登记表在自己书包里\", \"老师正在找登记表\", \"陈可被怀疑\"],\n      \"unknown\": [\"陈可是否会因此受到处罚\", \"老师是否会继续追查\"],\n      \"mistaken_beliefs\": [\n        \"只要现在不承认，事情就会过去\",\n        \"陈可能自己解释清楚\"\n      ],\n      \"constraints\": [\n        \"不能直接承认自己拿了登记表\",\n        \"不能在老师面前表现得太心虚\"\n      ],\n      \"observed_evidence\": [\n        \"老师看向陈可时表情严肃\",\n        \"陈可低头翻找自己的书包\"\n      ],\n      \"current_interpretation\": \"老师已经认定是陈可的责任，我现在承认只会让自己也被牵连\",\n      \"how_interpretation_drives_action\": \"他迅速拉上书包拉链，假装继续扫地，避免与老师目光接触\"\n    },\n    {\n      \"name\": \"陈可\",\n      \"goal\": \"证明自己没有拿登记表，避免被冤枉\",\n      \"known\": [\"自己没拿登记表\", \"登记表应该放在实验室\", \"老师现在怀疑自己\"],\n      \"unknown\": [\"登记表到底在哪\", \"赵朔为什么看起来紧张\"],\n      \"mistaken_beliefs\": [\n        \"可能只是自己忘记放回原处了\"\n      ],\n      \"constraints\": [\n        \"不能顶撞老师\",\n        \"必须找到登记表或证明自己清白\"\n      ],\n      \"observed_evidence\": [\n        \"老师直接问她登记表在哪\",\n        \"赵朔突然加快扫地速度，不看这边\"\n      ],\n      \"current_interpretation\": \"老师认为是我弄丢了，但我确实没拿，可能是别人拿走了\",\n      \"how_interpretation_drives_action\": \"她继续翻找自己的书包，并小声回答老师说自己没拿\"\n    }\n  ],\n  \"concrete_problem\": \"赵朔是否应该在老师询问时承认登记表在自己书包里？\",\n  \"pressure\": \"老师正在追问，时间紧迫，赵朔必须在几秒内决定是否承认\",\n  \"turning_point\": \"赵朔选择拉上书包拉链并沉默，将责任推向陈可\",\n  \"end_condition\": \"老师认定是陈可的责任，并让她明天叫家长，赵朔没有被发现\",\n  \"forbidden\": [\n    \"赵朔主动承认\",\n    \"陈可发现真相\",\n    \"老师发现登记表在赵朔书包里\",\n    \"出现暖灯、猫或总结性安慰\",\n    \"场景以和解或问题解决收尾\"\n  ],\n  \"causal_transitions\": [\n    {\n      \"id\": \"CT01\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"赵朔看到登记表一角露在自己书包里，同时听到老师问陈可登记表在哪\",\n      \"character_interpretation\": \"赵朔认为老师已经怀疑陈可，自己如果现在承认会被留下训话，不如沉默让事情过去\",\n      \"character_next_action\": \"赵朔迅速拉上书包拉链，假装继续扫地，避开老师目光\",\n      \"rejected_alternative\": \"赵朔可以当场拿出登记表并承认是自己不小心夹带的\",\n      \"immediate_consequence\": \"老师没有看到赵朔的动作，继续追问陈可，陈可无法解释，被老师认定是责任方\",\n      \"counterfactual_without_action\": \"如果赵朔没有拉上拉链，老师可能会注意到书包里的登记表\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"登记表在赵朔书包里，老师尚未确定怀疑对象\",\n        \"after\": \"老师认定陈可弄丢了登记表，赵朔的沉默使得陈可成为替罪羊\"\n      },\n      \"cost_or_commitment\": \"赵朔背负了内疚，但暂时避免了被老师留下的后果\",\n      \"next_constraint\": \"赵朔现在不能主动交出登记表，否则会被发现之前撒谎\",\n      \"reader_must_infer\": \"赵朔的沉默不是偶然，而是故意选择牺牲陈可来保全自己\",\n      \"narrator_must_not_state\": [\n        \"赵朔故意陷害陈可\",\n        \"陈可完全无辜\"\n      ]\n    }\n  ],\n  \"tempo_guardrails\": {\n    \"entry_pressure\": \"老师走进教室，问陈可登记表在哪\",\n    \"dominant_pressure\": {\n      \"kind\": \"social_friction\",\n      \"description\": \"赵朔在自我保护和同伴责任之间的冲突，以及陈可被冤枉时的无助\"\n    },\n    \"allowed_viewpoint_misread\": \"陈可可能认为赵朔的沉默是因为他也害怕老师，而不是故意隐瞒\",\n    \"disclosure_cap\": 0,\n    \"must_remain_unclassified\": [\n      \"赵朔内心的真实愧疚感\"\n    ],\n    \"stop_state\": {\n      \"type\": \"unresolved_problem\",\n      \"visible_fact\": \"老师让陈可明天叫家长，赵朔背着书包离开教室\",\n      \"what_is_now_different\": \"错误已经造成，陈可将承担后果，而赵朔带着秘密离开\",\n      \"must_not_append\": \"不得解释陈可是否会真的叫家长，或赵朔之后是否会后悔\"\n    },\n    \"final_line_must_include\": \"\"\n  },\n  \"chapter_contract_check\": {\n    \"function_aligned\": true,\n    \"must_deliver_covered\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_enabled\": true,\n    \"main_payoff_prepared\": true,\n    \"ending_hook_established\": true,\n    \"causal_transitions_grounded\": true,\n    \"reader_inference_not_pre_resolved\": true,\n    \"scene_state_reconstructed\": true,\n    \"information_sources_legal\": true,\n    \"character_choice_is_real\": true,\n    \"consequence_is_counterfactual\": true,\n    \"state_delta_is_nonempty\": true,\n    \"next_constraint_is_new\": true,\n    \"stop_state_is_visible\": true,\n    \"stop_state_changes_future_actions\": true\n  }\n}",
+          "input_tokens": 3417,
+          "output_tokens": 1609,
           "reasoning_tokens": null,
-          "latency_ms": 1,
-          "finish_reason": null,
-          "error_code": "LLM_ERROR",
-          "error_message": "",
-          "is_selected": false
+          "latency_ms": 15340,
+          "finish_reason": "stop",
+          "error_code": null,
+          "error_message": null,
+          "is_selected": true
         }
       ]
     },
     "reviser": {
-      "status": "pending",
-      "selected_candidate_id": null,
+      "status": "completed",
+      "selected_candidate_id": "9d32b929-86a7-430b-baf0-b14e4154bd76",
       "selected_issue_ids": null,
-      "candidates": []
+      "candidates": [
+        {
+          "candidate_id": "9d32b929-86a7-430b-baf0-b14e4154bd76",
+          "attempt_number": 1,
+          "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+          "model_id": "deepseek-chat",
+          "prompt_version_id": "e9ef6215-16c7-459a-b769-477a8e62a5f0",
+          "parameters": {
+            "temperature": 0.7,
+            "top_p": 1.0,
+            "max_output_tokens": 4096,
+            "timeout_seconds": 300,
+            "response_format": "json_object"
+          },
+          "raw_response": "{\n  \"patches\": [\n    {\n      \"issue_id\": \"I01\",\n      \"operation\": \"replace\",\n      \"target_paragraph_ids\": [8],\n      \"replacement\": \"赵朔握着扫帚的手指收紧了些。书包里那张纸的重量像压在心脏上。妈妈今天加班，让他早点回去照顾妹妹。\"\n    },\n    {\n      \"issue_id\": \"I02\",\n      \"operation\": \"replace\",\n      \"target_paragraph_ids\": [26],\n      \"replacement\": \"赵朔站在原地，扫帚柄硌得手心发疼。他想说什么，可嘴巴像被胶水粘住了一样。陈可没有看他，只是低着头收拾桌上散落的东西，动作很慢。\"\n    },\n    {\n      \"issue_id\": \"I03\",\n      \"operation\": \"replace\",\n      \"target_paragraph_ids\": [31],\n      \"replacement\": \"教室里安静下来。赵朔站在原地。他弯腰捡起扫帚，又放下，最后还是把书包背上了肩。\"\n    },\n    {\n      \"issue_id\": \"I04\",\n      \"operation\": \"replace\",\n      \"target_paragraph_ids\": [1],\n      \"replacement\": \"放学后的教室只剩值日生还在忙碌。夕阳从窗户斜照进来。\"\n    },\n    {\n      \"issue_id\": \"I05\",\n      \"operation\": \"replace\",\n      \"target_paragraph_ids\": [3],\n      \"replacement\": \"他的书包就放在第一排的椅子上，拉链半开，露出一角白色纸张——实验室借用登记表。他瞥见那张纸，想起放学前去实验室还器材时顺手把它夹进课本里。后来老师走进教室，问“实验室的登记表谁收起来了”，他的心猛地一沉。\"\n    }\n  ],\n  \"revised_text\": \"[P001] 放学后的教室只剩值日生还在忙碌。夕阳从窗户斜照进来。\\n\\n[P002] 赵朔握着扫帚，机械地把碎纸屑往簸箕里扫。他的书包就放在第一排的椅子上，拉链半开，露出一角白色的纸张——实验室借用登记表。\\n\\n[P003] 他的书包就放在第一排的椅子上，拉链半开，露出一角白色纸张——实验室借用登记表。他瞥见那张纸，想起放学前去实验室还器材时顺手把它夹进课本里。后来老师走进教室，问“实验室的登记表谁收起来了”，他的心猛地一沉。\\n\\n[P004] “陈可，你们组今天负责实验室器材归还吧？”老师站在讲台旁，手里翻着班级日志。\\n\\n[P005] 陈可正在整理课桌，听到自己的名字抬起头：“啊？登记表？我……我没拿啊。”\\n\\n[P006] “那表呢？实验室那边说没收到。”\\n\\n[P007] “我真的没拿。”陈可放下手里的课本，弯腰翻自己的书包，“我以为是别的同学收走了。”\\n\\n[P008] 赵朔握着扫帚的手指收紧了些。书包里那张纸的重量像压在心脏上。妈妈今天加班，让他早点回去照顾妹妹。\\n\\n[P009] “你再找找。”老师的声音带上了不耐烦。\\n\\n[P010] 陈可把书包里的东西全倒在桌上，课本、笔袋、水杯散了一桌。“真的没有……老师，我明明放在实验室台子上的，可能、可能是哪个同学收走了没放回来？”\\n\\n[P011] 赵朔低下头，加快了扫地的速度。扫帚在地板上发出粗粝的声响。他往垃圾桶那边退了两步，正好背对着老师和陈可。\\n\\n[P012] 拉链的声音很小，但他听得清清楚楚。手指捏住拉链头，用力一扯，白色纸张被完全吞进书包深处。\\n\\n[P013] “赵朔，你们今天是一起做值日的吧？”老师的声音突然转向他。\\n\\n[P014] 他的后背僵住了。\\n\\n[P015] “你看见陈可拿登记表了吗？”\\n\\n[P016] 他转过身，目光越过老师的肩膀，正好对上陈可的眼睛。她正看着他，眼神里有种微弱的期待——好像在说，你帮我证明一下。\\n\\n[P017] 赵朔咽了口唾沫：“没……没注意。我在擦黑板。”\\n\\n[P018] “你走的时候实验室还有别人吗？”\\n\\n[P019] “没有了。”声音从喉咙里挤出来，干涩得不像自己的，“我们是最后一个走的。”\\n\\n[P020] 陈可低下头，继续翻找已经翻过三遍的书包。“老师，我真的没拿……会不会是隔壁班借了没还？”\\n\\n[P021] “登记表怎么可能借给隔壁班。”老师走到陈可面前，“你们组负责的事，现在表找不到了，你说怎么办？”\\n\\n[P022] “我……”\\n\\n[P023] “明天叫家长来一趟。”\\n\\n[P024] 陈可愣住了。她的手停在半空中，书页从指缝间滑落。“老师，我真的没——”\\n\\n[P025] “不是你的责任你慌什么？”老师打断她，“一个登记表都保管不好，下次怎么让你们做实验？明天上午让你家长来找我。”\\n\\n[P026] 赵朔站在原地，扫帚柄硌得手心发疼。他想说什么，可嘴巴像被胶水粘住了一样。陈可没有看他，只是低着头收拾桌上散落的东西，动作很慢。\\n\\n[P027] “行了，今天就到这。”老师转身走出教室，脚步声在走廊里渐渐远去。\\n\\n[P028] 陈可把课本塞回书包，拉链拉得哗啦响。赵朔站在那，看着她把椅子推进桌底，看着她背上书包往门口走。\\n\\n[P029] “陈可——”\\n\\n[P030] 她没回头。门在她身后关上了。\\n\\n[P031] 教室里安静下来。赵朔站在原地。他弯腰捡起扫帚，又放下，最后还是把书包背上了肩。\\n\\n[P032] 走廊里已经没有陈可的身影。夕阳把他的影子拉得很长，一直拖到教室后门的垃圾桶旁边。\",\n  \"unchanged_ratio\": 0.88,\n  \"introduced_facts\": [],\n  \"contract_verification\": {\n    \"chapter_function_preserved\": true,\n    \"must_deliver_preserved\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_preserved\": true,\n    \"main_payoff_preserved\": true,\n    \"ending_hook_preserved\": true,\n    \"fuel_remains_reserved\": true\n  }\n}",
+          "model_parsed_output": null,
+          "parsed_output": {
+            "patches": [
+              {
+                "issue_id": "I01",
+                "operation": "replace",
+                "target_paragraph_ids": [
+                  "P008"
+                ],
+                "replacement": "赵朔握着扫帚的手指收紧了些。书包里那张纸的重量像压在心脏上。妈妈今天加班，让他早点回去照顾妹妹。"
+              },
+              {
+                "issue_id": "I02",
+                "operation": "replace",
+                "target_paragraph_ids": [
+                  "P026"
+                ],
+                "replacement": "赵朔站在原地，扫帚柄硌得手心发疼。他想说什么，可嘴巴像被胶水粘住了一样。陈可没有看他，只是低着头收拾桌上散落的东西，动作很慢。"
+              },
+              {
+                "issue_id": "I03",
+                "operation": "replace",
+                "target_paragraph_ids": [
+                  "P031"
+                ],
+                "replacement": "教室里安静下来。赵朔站在原地。他弯腰捡起扫帚，又放下，最后还是把书包背上了肩。"
+              },
+              {
+                "issue_id": "I04",
+                "operation": "replace",
+                "target_paragraph_ids": [
+                  "P001"
+                ],
+                "replacement": "放学后的教室只剩值日生还在忙碌。夕阳从窗户斜照进来。"
+              },
+              {
+                "issue_id": "I05",
+                "operation": "replace",
+                "target_paragraph_ids": [
+                  "P003"
+                ],
+                "replacement": "他的书包就放在第一排的椅子上，拉链半开，露出一角白色纸张——实验室借用登记表。他瞥见那张纸，想起放学前去实验室还器材时顺手把它夹进课本里。后来老师走进教室，问“实验室的登记表谁收起来了”，他的心猛地一沉。"
+              }
+            ],
+            "revised_text": "[P001] 放学后的教室只剩值日生还在忙碌。夕阳从窗户斜照进来。\n\n[P002] 赵朔握着扫帚，机械地把碎纸屑往簸箕里扫。他的书包就放在第一排的椅子上，拉链半开，露出一角白色的纸张——实验室借用登记表。\n\n[P003] 他的书包就放在第一排的椅子上，拉链半开，露出一角白色纸张——实验室借用登记表。他瞥见那张纸，想起放学前去实验室还器材时顺手把它夹进课本里。后来老师走进教室，问“实验室的登记表谁收起来了”，他的心猛地一沉。\n\n[P004] “陈可，你们组今天负责实验室器材归还吧？”老师站在讲台旁，手里翻着班级日志。\n\n[P005] 陈可正在整理课桌，听到自己的名字抬起头：“啊？登记表？我……我没拿啊。”\n\n[P006] “那表呢？实验室那边说没收到。”\n\n[P007] “我真的没拿。”陈可放下手里的课本，弯腰翻自己的书包，“我以为是别的同学收走了。”\n\n[P008] 赵朔握着扫帚的手指收紧了些。书包里那张纸的重量像压在心脏上。妈妈今天加班，让他早点回去照顾妹妹。\n\n[P009] “你再找找。”老师的声音带上了不耐烦。\n\n[P010] 陈可把书包里的东西全倒在桌上，课本、笔袋、水杯散了一桌。“真的没有……老师，我明明放在实验室台子上的，可能、可能是哪个同学收走了没放回来？”\n\n[P011] 赵朔低下头，加快了扫地的速度。扫帚在地板上发出粗粝的声响。他往垃圾桶那边退了两步，正好背对着老师和陈可。\n\n[P012] 拉链的声音很小，但他听得清清楚楚。手指捏住拉链头，用力一扯，白色纸张被完全吞进书包深处。\n\n[P013] “赵朔，你们今天是一起做值日的吧？”老师的声音突然转向他。\n\n[P014] 他的后背僵住了。\n\n[P015] “你看见陈可拿登记表了吗？”\n\n[P016] 他转过身，目光越过老师的肩膀，正好对上陈可的眼睛。她正看着他，眼神里有种微弱的期待——好像在说，你帮我证明一下。\n\n[P017] 赵朔咽了口唾沫：“没……没注意。我在擦黑板。”\n\n[P018] “你走的时候实验室还有别人吗？”\n\n[P019] “没有了。”声音从喉咙里挤出来，干涩得不像自己的，“我们是最后一个走的。”\n\n[P020] 陈可低下头，继续翻找已经翻过三遍的书包。“老师，我真的没拿……会不会是隔壁班借了没还？”\n\n[P021] “登记表怎么可能借给隔壁班。”老师走到陈可面前，“你们组负责的事，现在表找不到了，你说怎么办？”\n\n[P022] “我……”\n\n[P023] “明天叫家长来一趟。”\n\n[P024] 陈可愣住了。她的手停在半空中，书页从指缝间滑落。“老师，我真的没——”\n\n[P025] “不是你的责任你慌什么？”老师打断她，“一个登记表都保管不好，下次怎么让你们做实验？明天上午让你家长来找我。”\n\n[P026] 赵朔站在原地，扫帚柄硌得手心发疼。他想说什么，可嘴巴像被胶水粘住了一样。陈可没有看他，只是低着头收拾桌上散落的东西，动作很慢。\n\n[P027] “行了，今天就到这。”老师转身走出教室，脚步声在走廊里渐渐远去。\n\n[P028] 陈可把课本塞回书包，拉链拉得哗啦响。赵朔站在那，看着她把椅子推进桌底，看着她背上书包往门口走。\n\n[P029] “陈可——”\n\n[P030] 她没回头。门在她身后关上了。\n\n[P031] 教室里安静下来。赵朔站在原地。他弯腰捡起扫帚，又放下，最后还是把书包背上了肩。\n\n[P032] 走廊里已经没有陈可的身影。夕阳把他的影子拉得很长，一直拖到教室后门的垃圾桶旁边。",
+            "unchanged_ratio": 0.88,
+            "introduced_facts": [],
+            "contract_verification": {
+              "chapter_function_preserved": true,
+              "must_deliver_preserved": true,
+              "must_not_deliver_respected": true,
+              "main_change_preserved": true,
+              "main_payoff_preserved": true,
+              "ending_hook_preserved": true,
+              "fuel_remains_reserved": true
+            }
+          },
+          "text_output": "[P001] 放学后的教室只剩值日生还在忙碌。夕阳从窗户斜照进来。\n\n[P002] 赵朔握着扫帚，机械地把碎纸屑往簸箕里扫。他的书包就放在第一排的椅子上，拉链半开，露出一角白色的纸张——实验室借用登记表。\n\n[P003] 他的书包就放在第一排的椅子上，拉链半开，露出一角白色纸张——实验室借用登记表。他瞥见那张纸，想起放学前去实验室还器材时顺手把它夹进课本里。后来老师走进教室，问“实验室的登记表谁收起来了”，他的心猛地一沉。\n\n[P004] “陈可，你们组今天负责实验室器材归还吧？”老师站在讲台旁，手里翻着班级日志。\n\n[P005] 陈可正在整理课桌，听到自己的名字抬起头：“啊？登记表？我……我没拿啊。”\n\n[P006] “那表呢？实验室那边说没收到。”\n\n[P007] “我真的没拿。”陈可放下手里的课本，弯腰翻自己的书包，“我以为是别的同学收走了。”\n\n[P008] 赵朔握着扫帚的手指收紧了些。书包里那张纸的重量像压在心脏上。妈妈今天加班，让他早点回去照顾妹妹。\n\n[P009] “你再找找。”老师的声音带上了不耐烦。\n\n[P010] 陈可把书包里的东西全倒在桌上，课本、笔袋、水杯散了一桌。“真的没有……老师，我明明放在实验室台子上的，可能、可能是哪个同学收走了没放回来？”\n\n[P011] 赵朔低下头，加快了扫地的速度。扫帚在地板上发出粗粝的声响。他往垃圾桶那边退了两步，正好背对着老师和陈可。\n\n[P012] 拉链的声音很小，但他听得清清楚楚。手指捏住拉链头，用力一扯，白色纸张被完全吞进书包深处。\n\n[P013] “赵朔，你们今天是一起做值日的吧？”老师的声音突然转向他。\n\n[P014] 他的后背僵住了。\n\n[P015] “你看见陈可拿登记表了吗？”\n\n[P016] 他转过身，目光越过老师的肩膀，正好对上陈可的眼睛。她正看着他，眼神里有种微弱的期待——好像在说，你帮我证明一下。\n\n[P017] 赵朔咽了口唾沫：“没……没注意。我在擦黑板。”\n\n[P018] “你走的时候实验室还有别人吗？”\n\n[P019] “没有了。”声音从喉咙里挤出来，干涩得不像自己的，“我们是最后一个走的。”\n\n[P020] 陈可低下头，继续翻找已经翻过三遍的书包。“老师，我真的没拿……会不会是隔壁班借了没还？”\n\n[P021] “登记表怎么可能借给隔壁班。”老师走到陈可面前，“你们组负责的事，现在表找不到了，你说怎么办？”\n\n[P022] “我……”\n\n[P023] “明天叫家长来一趟。”\n\n[P024] 陈可愣住了。她的手停在半空中，书页从指缝间滑落。“老师，我真的没——”\n\n[P025] “不是你的责任你慌什么？”老师打断她，“一个登记表都保管不好，下次怎么让你们做实验？明天上午让你家长来找我。”\n\n[P026] 赵朔站在原地，扫帚柄硌得手心发疼。他想说什么，可嘴巴像被胶水粘住了一样。陈可没有看他，只是低着头收拾桌上散落的东西，动作很慢。\n\n[P027] “行了，今天就到这。”老师转身走出教室，脚步声在走廊里渐渐远去。\n\n[P028] 陈可把课本塞回书包，拉链拉得哗啦响。赵朔站在那，看着她把椅子推进桌底，看着她背上书包往门口走。\n\n[P029] “陈可——”\n\n[P030] 她没回头。门在她身后关上了。\n\n[P031] 教室里安静下来。赵朔站在原地。他弯腰捡起扫帚，又放下，最后还是把书包背上了肩。\n\n[P032] 走廊里已经没有陈可的身影。夕阳把他的影子拉得很长，一直拖到教室后门的垃圾桶旁边。",
+          "input_tokens": 3948,
+          "output_tokens": 1476,
+          "reasoning_tokens": null,
+          "latency_ms": 11786,
+          "finish_reason": "stop",
+          "error_code": null,
+          "error_message": null,
+          "is_selected": true
+        }
+      ]
     },
     "writer": {
-      "status": "pending",
-      "selected_candidate_id": null,
+      "status": "completed",
+      "selected_candidate_id": "74e31b42-c427-4228-a4b5-6971f38fe087",
       "selected_issue_ids": null,
-      "candidates": []
+      "candidates": [
+        {
+          "candidate_id": "74e31b42-c427-4228-a4b5-6971f38fe087",
+          "attempt_number": 1,
+          "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+          "model_id": "deepseek-chat",
+          "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+          "parameters": {
+            "temperature": 0.7,
+            "top_p": 1.0,
+            "max_output_tokens": 4096,
+            "timeout_seconds": 300,
+            "response_format": "text"
+          },
+          "raw_response": "放学后的教室只剩值日生还在忙碌。夕阳斜斜地从窗户照进来，在地板上拉出一道道橘红色的光带。\n\n赵朔握着扫帚，机械地把碎纸屑往簸箕里扫。他的书包就放在第一排的椅子上，拉链半开，露出一角白色的纸张——实验室借用登记表。\n\n他记得很清楚。放学前去实验室还器材，顺手把登记表往桌上一放，大概是夹进课本里了。后来收拾书包，也没注意。直到老师走进教室，问“实验室的登记表谁收起来了”，他才猛地想起这件事。\n\n“陈可，你们组今天负责实验室器材归还吧？”老师站在讲台旁，手里翻着班级日志。\n\n陈可正在整理课桌，听到自己的名字抬起头：“啊？登记表？我……我没拿啊。”\n\n“那表呢？实验室那边说没收到。”\n\n“我真的没拿。”陈可放下手里的课本，弯腰翻自己的书包，“我以为是别的同学收走了。”\n\n赵朔握着扫帚的手指收紧了些。他能感觉到书包里那张纸的重量，像一块石头压在心脏上。只要他说一句话——“老师，在我这”——事情就解决了。可是老师会问为什么夹进书包里，会说他粗心大意，会让他留下来写完检查再走。妈妈今天加班，让他早点回去照顾妹妹。\n\n“你再找找。”老师的声音带上了不耐烦。\n\n陈可把书包里的东西全倒在桌上，课本、笔袋、水杯散了一桌。“真的没有……老师，我明明放在实验室台子上的，可能、可能是哪个同学收走了没放回来？”\n\n赵朔低下头，加快了扫地的速度。扫帚在地板上发出粗粝的声响。他往垃圾桶那边退了两步，正好背对着老师和陈可。\n\n拉链的声音很小，但他听得清清楚楚。手指捏住拉链头，用力一扯，白色纸张被完全吞进书包深处。\n\n“赵朔，你们今天是一起做值日的吧？”老师的声音突然转向他。\n\n他的后背僵住了。\n\n“你看见陈可拿登记表了吗？”\n\n他转过身，目光越过老师的肩膀，正好对上陈可的眼睛。她正看着他，眼神里有种微弱的期待——好像在说，你帮我证明一下。\n\n赵朔咽了口唾沫：“没……没注意。我在擦黑板。”\n\n“你走的时候实验室还有别人吗？”\n\n“没有了。”声音从喉咙里挤出来，干涩得不像自己的，“我们是最后一个走的。”\n\n陈可低下头，继续翻找已经翻过三遍的书包。“老师，我真的没拿……会不会是隔壁班借了没还？”\n\n“登记表怎么可能借给隔壁班。”老师走到陈可面前，“你们组负责的事，现在表找不到了，你说怎么办？”\n\n“我……”\n\n“明天叫家长来一趟。”\n\n陈可愣住了。她的手停在半空中，书页从指缝间滑落。“老师，我真的没——”\n\n“不是你的责任你慌什么？”老师打断她，“一个登记表都保管不好，下次怎么让你们做实验？明天上午让你家长来找我。”\n\n赵朔站在原地，扫帚柄硌得手心发疼。他想说什么，可嘴巴像被胶水粘住了一样。陈可没有看他，只是低着头收拾桌上散落的东西，动作很慢，像被抽走了力气。\n\n“行了，今天就到这。”老师转身走出教室，脚步声在走廊里渐渐远去。\n\n陈可把课本塞回书包，拉链拉得哗啦响。赵朔站在那，看着她把椅子推进桌底，看着她背上书包往门口走。\n\n“陈可——”\n\n她没回头。门在她身后关上了。\n\n教室里安静下来。赵朔站在原地，书包里的登记表像一个烫手的秘密，隔着布料都能感觉到温度。他弯腰捡起扫帚，又放下，最后还是把书包背上了肩。\n\n走廊里已经没有陈可的身影。夕阳把他的影子拉得很长，一直拖到教室后门的垃圾桶旁边。",
+          "model_parsed_output": null,
+          "parsed_output": null,
+          "text_output": "放学后的教室只剩值日生还在忙碌。夕阳斜斜地从窗户照进来，在地板上拉出一道道橘红色的光带。\n\n赵朔握着扫帚，机械地把碎纸屑往簸箕里扫。他的书包就放在第一排的椅子上，拉链半开，露出一角白色的纸张——实验室借用登记表。\n\n他记得很清楚。放学前去实验室还器材，顺手把登记表往桌上一放，大概是夹进课本里了。后来收拾书包，也没注意。直到老师走进教室，问“实验室的登记表谁收起来了”，他才猛地想起这件事。\n\n“陈可，你们组今天负责实验室器材归还吧？”老师站在讲台旁，手里翻着班级日志。\n\n陈可正在整理课桌，听到自己的名字抬起头：“啊？登记表？我……我没拿啊。”\n\n“那表呢？实验室那边说没收到。”\n\n“我真的没拿。”陈可放下手里的课本，弯腰翻自己的书包，“我以为是别的同学收走了。”\n\n赵朔握着扫帚的手指收紧了些。他能感觉到书包里那张纸的重量，像一块石头压在心脏上。只要他说一句话——“老师，在我这”——事情就解决了。可是老师会问为什么夹进书包里，会说他粗心大意，会让他留下来写完检查再走。妈妈今天加班，让他早点回去照顾妹妹。\n\n“你再找找。”老师的声音带上了不耐烦。\n\n陈可把书包里的东西全倒在桌上，课本、笔袋、水杯散了一桌。“真的没有……老师，我明明放在实验室台子上的，可能、可能是哪个同学收走了没放回来？”\n\n赵朔低下头，加快了扫地的速度。扫帚在地板上发出粗粝的声响。他往垃圾桶那边退了两步，正好背对着老师和陈可。\n\n拉链的声音很小，但他听得清清楚楚。手指捏住拉链头，用力一扯，白色纸张被完全吞进书包深处。\n\n“赵朔，你们今天是一起做值日的吧？”老师的声音突然转向他。\n\n他的后背僵住了。\n\n“你看见陈可拿登记表了吗？”\n\n他转过身，目光越过老师的肩膀，正好对上陈可的眼睛。她正看着他，眼神里有种微弱的期待——好像在说，你帮我证明一下。\n\n赵朔咽了口唾沫：“没……没注意。我在擦黑板。”\n\n“你走的时候实验室还有别人吗？”\n\n“没有了。”声音从喉咙里挤出来，干涩得不像自己的，“我们是最后一个走的。”\n\n陈可低下头，继续翻找已经翻过三遍的书包。“老师，我真的没拿……会不会是隔壁班借了没还？”\n\n“登记表怎么可能借给隔壁班。”老师走到陈可面前，“你们组负责的事，现在表找不到了，你说怎么办？”\n\n“我……”\n\n“明天叫家长来一趟。”\n\n陈可愣住了。她的手停在半空中，书页从指缝间滑落。“老师，我真的没——”\n\n“不是你的责任你慌什么？”老师打断她，“一个登记表都保管不好，下次怎么让你们做实验？明天上午让你家长来找我。”\n\n赵朔站在原地，扫帚柄硌得手心发疼。他想说什么，可嘴巴像被胶水粘住了一样。陈可没有看他，只是低着头收拾桌上散落的东西，动作很慢，像被抽走了力气。\n\n“行了，今天就到这。”老师转身走出教室，脚步声在走廊里渐渐远去。\n\n陈可把课本塞回书包，拉链拉得哗啦响。赵朔站在那，看着她把椅子推进桌底，看着她背上书包往门口走。\n\n“陈可——”\n\n她没回头。门在她身后关上了。\n\n教室里安静下来。赵朔站在原地，书包里的登记表像一个烫手的秘密，隔着布料都能感觉到温度。他弯腰捡起扫帚，又放下，最后还是把书包背上了肩。\n\n走廊里已经没有陈可的身影。夕阳把他的影子拉得很长，一直拖到教室后门的垃圾桶旁边。",
+          "input_tokens": 2439,
+          "output_tokens": 811,
+          "reasoning_tokens": null,
+          "latency_ms": 13078,
+          "finish_reason": "stop",
+          "error_code": null,
+          "error_message": null,
+          "is_selected": true
+        }
+      ]
     }
   },
-  "final_composition": "",
+  "final_composition": "[P001] 放学后的教室只剩值日生还在忙碌。夕阳从窗户斜照进来。\n\n[P002] 赵朔握着扫帚，机械地把碎纸屑往簸箕里扫。他的书包就放在第一排的椅子上，拉链半开，露出一角白色的纸张——实验室借用登记表。\n\n[P003] 他的书包就放在第一排的椅子上，拉链半开，露出一角白色纸张——实验室借用登记表。他瞥见那张纸，想起放学前去实验室还器材时顺手把它夹进课本里。后来老师走进教室，问“实验室的登记表谁收起来了”，他的心猛地一沉。\n\n[P004] “陈可，你们组今天负责实验室器材归还吧？”老师站在讲台旁，手里翻着班级日志。\n\n[P005] 陈可正在整理课桌，听到自己的名字抬起头：“啊？登记表？我……我没拿啊。”\n\n[P006] “那表呢？实验室那边说没收到。”\n\n[P007] “我真的没拿。”陈可放下手里的课本，弯腰翻自己的书包，“我以为是别的同学收走了。”\n\n[P008] 赵朔握着扫帚的手指收紧了些。书包里那张纸的重量像压在心脏上。妈妈今天加班，让他早点回去照顾妹妹。\n\n[P009] “你再找找。”老师的声音带上了不耐烦。\n\n[P010] 陈可把书包里的东西全倒在桌上，课本、笔袋、水杯散了一桌。“真的没有……老师，我明明放在实验室台子上的，可能、可能是哪个同学收走了没放回来？”\n\n[P011] 赵朔低下头，加快了扫地的速度。扫帚在地板上发出粗粝的声响。他往垃圾桶那边退了两步，正好背对着老师和陈可。\n\n[P012] 拉链的声音很小，但他听得清清楚楚。手指捏住拉链头，用力一扯，白色纸张被完全吞进书包深处。\n\n[P013] “赵朔，你们今天是一起做值日的吧？”老师的声音突然转向他。\n\n[P014] 他的后背僵住了。\n\n[P015] “你看见陈可拿登记表了吗？”\n\n[P016] 他转过身，目光越过老师的肩膀，正好对上陈可的眼睛。她正看着他，眼神里有种微弱的期待——好像在说，你帮我证明一下。\n\n[P017] 赵朔咽了口唾沫：“没……没注意。我在擦黑板。”\n\n[P018] “你走的时候实验室还有别人吗？”\n\n[P019] “没有了。”声音从喉咙里挤出来，干涩得不像自己的，“我们是最后一个走的。”\n\n[P020] 陈可低下头，继续翻找已经翻过三遍的书包。“老师，我真的没拿……会不会是隔壁班借了没还？”\n\n[P021] “登记表怎么可能借给隔壁班。”老师走到陈可面前，“你们组负责的事，现在表找不到了，你说怎么办？”\n\n[P022] “我……”\n\n[P023] “明天叫家长来一趟。”\n\n[P024] 陈可愣住了。她的手停在半空中，书页从指缝间滑落。“老师，我真的没——”\n\n[P025] “不是你的责任你慌什么？”老师打断她，“一个登记表都保管不好，下次怎么让你们做实验？明天上午让你家长来找我。”\n\n[P026] 赵朔站在原地，扫帚柄硌得手心发疼。他想说什么，可嘴巴像被胶水粘住了一样。陈可没有看他，只是低着头收拾桌上散落的东西，动作很慢。\n\n[P027] “行了，今天就到这。”老师转身走出教室，脚步声在走廊里渐渐远去。\n\n[P028] 陈可把课本塞回书包，拉链拉得哗啦响。赵朔站在那，看着她把椅子推进桌底，看着她背上书包往门口走。\n\n[P029] “陈可——”\n\n[P030] 她没回头。门在她身后关上了。\n\n[P031] 教室里安静下来。赵朔站在原地。他弯腰捡起扫帚，又放下，最后还是把书包背上了肩。\n\n[P032] 走廊里已经没有陈可的身影。夕阳把他的影子拉得很长，一直拖到教室后门的垃圾桶旁边。",
   "source_mapping": {
-    "final_composition_source": "writer",
-    "writer_candidate_id": null,
-    "reviser_candidate_id": null,
+    "final_composition_source": "reviser",
+    "writer_candidate_id": "74e31b42-c427-4228-a4b5-6971f38fe087",
+    "reviser_candidate_id": "9d32b929-86a7-430b-baf0-b14e4154bd76",
     "judge_candidate_id": null,
     "judge_decision": null
   },
   "error": {
-    "stage": "planner",
-    "code": "LLM_ERROR",
-    "message": ""
+    "stage": "judge",
+    "code": "JUDGE_OUTPUT_CONTRACT_INVALID",
+    "message": "JUDGE_OUTPUT_CONTRACT_INVALID: merged final_text must not contain paragraph labels"
   }
 }
