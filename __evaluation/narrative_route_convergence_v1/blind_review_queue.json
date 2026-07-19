@@ -1,378 +1,8 @@
 [
   {
-    "blind_id": "2AB957C1E4E9",
-    "case_id": "D-05",
-    "text_path": "cases\\D-05\\drafts\\route-3.txt"
-  },
-  {
-    "blind_id": "912FDA309FE7",
-    "case_id": "CAMPUS-04",
-    "text_path": "cases\\CAMPUS-04\\drafts\\route-2.txt"
-  },
-  {
-    "blind_id": "7FB5F3C9AE7F",
-    "case_id": "D-05",
-    "text_path": "cases\\D-05\\drafts\\baseline-2.txt"
-  },
-  {
-    "blind_id": "616D1EEFEA3E",
-    "case_id": "CAMPUS-02",
-    "text_path": "cases\\CAMPUS-02\\drafts\\route-1.txt"
-  },
-  {
-    "blind_id": "CBC113711593",
-    "case_id": "B-04",
-    "text_path": "cases\\B-04\\drafts\\route-2.txt"
-  },
-  {
-    "blind_id": "0C3026371A41",
-    "case_id": "A-05",
-    "text_path": "cases\\A-05\\drafts\\route-1.txt"
-  },
-  {
-    "blind_id": "CAAEEB01565D",
-    "case_id": "A-03",
-    "text_path": "cases\\A-03\\drafts\\route-3.txt"
-  },
-  {
-    "blind_id": "6F5830F6C70F",
-    "case_id": "A-03",
-    "text_path": "cases\\A-03\\drafts\\route-1.txt"
-  },
-  {
-    "blind_id": "D8D58D93BC24",
-    "case_id": "D-03",
-    "text_path": "cases\\D-03\\drafts\\baseline-2.txt"
-  },
-  {
-    "blind_id": "827F2A06A0AE",
-    "case_id": "CAMPUS-03",
-    "text_path": "cases\\CAMPUS-03\\drafts\\baseline-2.txt"
-  },
-  {
-    "blind_id": "912C8A7EEBDA",
-    "case_id": "ROMANCE-02",
-    "text_path": "cases\\ROMANCE-02\\drafts\\baseline-3.txt"
-  },
-  {
-    "blind_id": "F186BBA41679",
-    "case_id": "B-04",
-    "text_path": "cases\\B-04\\drafts\\route-1.txt"
-  },
-  {
-    "blind_id": "253FBA08340F",
-    "case_id": "A-06",
-    "text_path": "cases\\A-06\\drafts\\route-3.txt"
-  },
-  {
-    "blind_id": "356FAF8FD457",
-    "case_id": "TASK-02",
-    "text_path": "cases\\TASK-02\\drafts\\baseline-2.txt"
-  },
-  {
-    "blind_id": "A01C9B3FCAD3",
-    "case_id": "C-04",
-    "text_path": "cases\\C-04\\drafts\\route-3.txt"
-  },
-  {
-    "blind_id": "9EF0CDC7779A",
-    "case_id": "C-04",
-    "text_path": "cases\\C-04\\drafts\\baseline-3.txt"
-  },
-  {
-    "blind_id": "5BD99F552D11",
-    "case_id": "B-06",
-    "text_path": "cases\\B-06\\drafts\\route-3.txt"
-  },
-  {
-    "blind_id": "11263938BBB6",
-    "case_id": "ROMANCE-02",
-    "text_path": "cases\\ROMANCE-02\\drafts\\route-3.txt"
-  },
-  {
-    "blind_id": "A077D2CB3A3C",
-    "case_id": "A-05",
-    "text_path": "cases\\A-05\\drafts\\route-2.txt"
-  },
-  {
-    "blind_id": "C2EFBC177983",
-    "case_id": "C-03",
-    "text_path": "cases\\C-03\\drafts\\route-2.txt"
-  },
-  {
-    "blind_id": "DBACAFCC69EA",
-    "case_id": "B-03",
-    "text_path": "cases\\B-03\\drafts\\route-2.txt"
-  },
-  {
-    "blind_id": "A886C1A04AFD",
-    "case_id": "B-04",
-    "text_path": "cases\\B-04\\drafts\\baseline-2.txt"
-  },
-  {
-    "blind_id": "C7C3774B779B",
-    "case_id": "TASK-02",
-    "text_path": "cases\\TASK-02\\drafts\\route-1.txt"
-  },
-  {
-    "blind_id": "BC696885509A",
-    "case_id": "C-03",
-    "text_path": "cases\\C-03\\drafts\\baseline-2.txt"
-  },
-  {
-    "blind_id": "C39D068E3187",
-    "case_id": "D-05",
-    "text_path": "cases\\D-05\\drafts\\route-2.txt"
-  },
-  {
-    "blind_id": "735536264BB6",
-    "case_id": "ROMANCE-02",
-    "text_path": "cases\\ROMANCE-02\\drafts\\baseline-2.txt"
-  },
-  {
-    "blind_id": "B10573D404F4",
-    "case_id": "C-06",
-    "text_path": "cases\\C-06\\drafts\\baseline-3.txt"
-  },
-  {
-    "blind_id": "B30737D18A72",
-    "case_id": "B-05",
-    "text_path": "cases\\B-05\\drafts\\baseline-3.txt"
-  },
-  {
-    "blind_id": "9EED5335EC98",
-    "case_id": "CAMPUS-03",
-    "text_path": "cases\\CAMPUS-03\\drafts\\baseline-1.txt"
-  },
-  {
-    "blind_id": "A2463C776BD8",
-    "case_id": "D-05",
-    "text_path": "cases\\D-05\\drafts\\baseline-3.txt"
-  },
-  {
-    "blind_id": "EB76C08874AC",
-    "case_id": "D-06",
-    "text_path": "cases\\D-06\\drafts\\baseline-1.txt"
-  },
-  {
-    "blind_id": "1275FEC949D2",
-    "case_id": "A-06",
-    "text_path": "cases\\A-06\\drafts\\route-2.txt"
-  },
-  {
-    "blind_id": "C9C33AAA5B93",
-    "case_id": "D-03",
-    "text_path": "cases\\D-03\\drafts\\route-1.txt"
-  },
-  {
-    "blind_id": "FB7544D174FB",
-    "case_id": "C-03",
-    "text_path": "cases\\C-03\\drafts\\route-1.txt"
-  },
-  {
-    "blind_id": "0B37D38E2061",
-    "case_id": "CAMPUS-02",
-    "text_path": "cases\\CAMPUS-02\\drafts\\route-3.txt"
-  },
-  {
-    "blind_id": "1B688A5D80BB",
-    "case_id": "C-04",
-    "text_path": "cases\\C-04\\drafts\\route-1.txt"
-  },
-  {
-    "blind_id": "856FE75D905A",
-    "case_id": "A-04",
-    "text_path": "cases\\A-04\\drafts\\baseline-1.txt"
-  },
-  {
-    "blind_id": "5CFAFC0962E7",
-    "case_id": "B-04",
-    "text_path": "cases\\B-04\\drafts\\baseline-1.txt"
-  },
-  {
-    "blind_id": "CC498FE2DAEC",
-    "case_id": "D-06",
-    "text_path": "cases\\D-06\\drafts\\route-1.txt"
-  },
-  {
-    "blind_id": "09EF50D51403",
-    "case_id": "C-05",
-    "text_path": "cases\\C-05\\drafts\\baseline-1.txt"
-  },
-  {
-    "blind_id": "F4134F134158",
-    "case_id": "ROMANCE-02",
-    "text_path": "cases\\ROMANCE-02\\drafts\\route-1.txt"
-  },
-  {
     "blind_id": "D6E8FE1BC4CD",
     "case_id": "B-05",
     "text_path": "cases\\B-05\\drafts\\baseline-2.txt"
-  },
-  {
-    "blind_id": "ABED982D40CC",
-    "case_id": "ROMANCE-04",
-    "text_path": "cases\\ROMANCE-04\\drafts\\baseline-3.txt"
-  },
-  {
-    "blind_id": "4B62E80ECC92",
-    "case_id": "CAMPUS-03",
-    "text_path": "cases\\CAMPUS-03\\drafts\\route-2.txt"
-  },
-  {
-    "blind_id": "5533DEFB942C",
-    "case_id": "TASK-04",
-    "text_path": "cases\\TASK-04\\drafts\\route-1.txt"
-  },
-  {
-    "blind_id": "6F772EB3C80A",
-    "case_id": "C-02",
-    "text_path": "cases\\C-02\\drafts\\route-3.txt"
-  },
-  {
-    "blind_id": "243212F8FF30",
-    "case_id": "D-06",
-    "text_path": "cases\\D-06\\drafts\\route-3.txt"
-  },
-  {
-    "blind_id": "0E2B8C045859",
-    "case_id": "B-06",
-    "text_path": "cases\\B-06\\drafts\\baseline-1.txt"
-  },
-  {
-    "blind_id": "79FC1C793219",
-    "case_id": "TASK-04",
-    "text_path": "cases\\TASK-04\\drafts\\route-3.txt"
-  },
-  {
-    "blind_id": "47BCFED8787D",
-    "case_id": "CAMPUS-03",
-    "text_path": "cases\\CAMPUS-03\\drafts\\route-1.txt"
-  },
-  {
-    "blind_id": "0EFD8FA5FBB9",
-    "case_id": "B-05",
-    "text_path": "cases\\B-05\\drafts\\route-2.txt"
-  },
-  {
-    "blind_id": "BA0D447C831C",
-    "case_id": "TASK-04",
-    "text_path": "cases\\TASK-04\\drafts\\route-2.txt"
-  },
-  {
-    "blind_id": "01F5A2FF9910",
-    "case_id": "C-06",
-    "text_path": "cases\\C-06\\drafts\\route-1.txt"
-  },
-  {
-    "blind_id": "88ACC26CFC78",
-    "case_id": "C-05",
-    "text_path": "cases\\C-05\\drafts\\baseline-2.txt"
-  },
-  {
-    "blind_id": "CF05348729B1",
-    "case_id": "C-02",
-    "text_path": "cases\\C-02\\drafts\\baseline-3.txt"
-  },
-  {
-    "blind_id": "28AB42966F6E",
-    "case_id": "D-06",
-    "text_path": "cases\\D-06\\drafts\\baseline-3.txt"
-  },
-  {
-    "blind_id": "5BAB45D44D16",
-    "case_id": "B-03",
-    "text_path": "cases\\B-03\\drafts\\baseline-2.txt"
-  },
-  {
-    "blind_id": "43BEAF7AF671",
-    "case_id": "A-04",
-    "text_path": "cases\\A-04\\drafts\\baseline-3.txt"
-  },
-  {
-    "blind_id": "94F8F49D2CDB",
-    "case_id": "A-03",
-    "text_path": "cases\\A-03\\drafts\\baseline-1.txt"
-  },
-  {
-    "blind_id": "B83F7BBEB72A",
-    "case_id": "ROMANCE-04",
-    "text_path": "cases\\ROMANCE-04\\drafts\\baseline-1.txt"
-  },
-  {
-    "blind_id": "B6D5D4FEF8EA",
-    "case_id": "B-03",
-    "text_path": "cases\\B-03\\drafts\\baseline-1.txt"
-  },
-  {
-    "blind_id": "44E807F86792",
-    "case_id": "A-05",
-    "text_path": "cases\\A-05\\drafts\\baseline-2.txt"
-  },
-  {
-    "blind_id": "85520C8A748A",
-    "case_id": "C-02",
-    "text_path": "cases\\C-02\\drafts\\route-2.txt"
-  },
-  {
-    "blind_id": "31874F37C751",
-    "case_id": "ROMANCE-02",
-    "text_path": "cases\\ROMANCE-02\\drafts\\route-2.txt"
-  },
-  {
-    "blind_id": "5D8920D7009F",
-    "case_id": "A-04",
-    "text_path": "cases\\A-04\\drafts\\route-1.txt"
-  },
-  {
-    "blind_id": "C61847E23E0C",
-    "case_id": "A-05",
-    "text_path": "cases\\A-05\\drafts\\route-3.txt"
-  },
-  {
-    "blind_id": "A90A00AB37EB",
-    "case_id": "B-04",
-    "text_path": "cases\\B-04\\drafts\\route-3.txt"
-  },
-  {
-    "blind_id": "FDEF6276C166",
-    "case_id": "ROMANCE-04",
-    "text_path": "cases\\ROMANCE-04\\drafts\\route-2.txt"
-  },
-  {
-    "blind_id": "3E1967654746",
-    "case_id": "TASK-02",
-    "text_path": "cases\\TASK-02\\drafts\\route-3.txt"
-  },
-  {
-    "blind_id": "75D7B6ECAE95",
-    "case_id": "A-04",
-    "text_path": "cases\\A-04\\drafts\\route-3.txt"
-  },
-  {
-    "blind_id": "A4D68465AB5C",
-    "case_id": "D-05",
-    "text_path": "cases\\D-05\\drafts\\route-1.txt"
-  },
-  {
-    "blind_id": "7937059A5751",
-    "case_id": "D-05",
-    "text_path": "cases\\D-05\\drafts\\baseline-1.txt"
-  },
-  {
-    "blind_id": "F9A47FFBE45E",
-    "case_id": "CAMPUS-03",
-    "text_path": "cases\\CAMPUS-03\\drafts\\baseline-3.txt"
-  },
-  {
-    "blind_id": "A0EEB6DB7DBD",
-    "case_id": "CAMPUS-03",
-    "text_path": "cases\\CAMPUS-03\\drafts\\route-3.txt"
-  },
-  {
-    "blind_id": "C0A7A6E1C0CB",
-    "case_id": "C-05",
-    "text_path": "cases\\C-05\\drafts\\route-3.txt"
   },
   {
     "blind_id": "774132784565",
@@ -380,19 +10,134 @@
     "text_path": "cases\\TASK-04\\drafts\\baseline-3.txt"
   },
   {
-    "blind_id": "D4F1B55405DA",
+    "blind_id": "CC498FE2DAEC",
+    "case_id": "D-06",
+    "text_path": "cases\\D-06\\drafts\\route-1.txt"
+  },
+  {
+    "blind_id": "38D415DFCA17",
+    "case_id": "C-04",
+    "text_path": "cases\\C-04\\drafts\\baseline-1.txt"
+  },
+  {
+    "blind_id": "A077D2CB3A3C",
+    "case_id": "A-05",
+    "text_path": "cases\\A-05\\drafts\\route-2.txt"
+  },
+  {
+    "blind_id": "775B81157A15",
+    "case_id": "D-04",
+    "text_path": "cases\\D-04\\drafts\\route-2.txt"
+  },
+  {
+    "blind_id": "342EF47BB2F3",
+    "case_id": "CAMPUS-04",
+    "text_path": "cases\\CAMPUS-04\\drafts\\baseline-2.txt"
+  },
+  {
+    "blind_id": "28AB42966F6E",
+    "case_id": "D-06",
+    "text_path": "cases\\D-06\\drafts\\baseline-3.txt"
+  },
+  {
+    "blind_id": "ADA7549CC0AC",
+    "case_id": "B-05",
+    "text_path": "cases\\B-05\\drafts\\baseline-1.txt"
+  },
+  {
+    "blind_id": "CAAEEB01565D",
+    "case_id": "A-03",
+    "text_path": "cases\\A-03\\drafts\\route-3.txt"
+  },
+  {
+    "blind_id": "6F772EB3C80A",
+    "case_id": "C-02",
+    "text_path": "cases\\C-02\\drafts\\route-3.txt"
+  },
+  {
+    "blind_id": "31874F37C751",
+    "case_id": "ROMANCE-02",
+    "text_path": "cases\\ROMANCE-02\\drafts\\route-2.txt"
+  },
+  {
+    "blind_id": "912C8A7EEBDA",
+    "case_id": "ROMANCE-02",
+    "text_path": "cases\\ROMANCE-02\\drafts\\baseline-3.txt"
+  },
+  {
+    "blind_id": "94F8F49D2CDB",
+    "case_id": "A-03",
+    "text_path": "cases\\A-03\\drafts\\baseline-1.txt"
+  },
+  {
+    "blind_id": "A01C9B3FCAD3",
+    "case_id": "C-04",
+    "text_path": "cases\\C-04\\drafts\\route-3.txt"
+  },
+  {
+    "blind_id": "253FBA08340F",
+    "case_id": "A-06",
+    "text_path": "cases\\A-06\\drafts\\route-3.txt"
+  },
+  {
+    "blind_id": "CADB7B7A053D",
+    "case_id": "B-06",
+    "text_path": "cases\\B-06\\drafts\\route-1.txt"
+  },
+  {
+    "blind_id": "11263938BBB6",
+    "case_id": "ROMANCE-02",
+    "text_path": "cases\\ROMANCE-02\\drafts\\route-3.txt"
+  },
+  {
+    "blind_id": "86FD648EDD46",
     "case_id": "C-06",
-    "text_path": "cases\\C-06\\drafts\\route-3.txt"
+    "text_path": "cases\\C-06\\drafts\\baseline-1.txt"
   },
   {
-    "blind_id": "461B19043241",
+    "blind_id": "6F5830F6C70F",
+    "case_id": "A-03",
+    "text_path": "cases\\A-03\\drafts\\route-1.txt"
+  },
+  {
+    "blind_id": "3E1967654746",
     "case_id": "TASK-02",
-    "text_path": "cases\\TASK-02\\drafts\\route-2.txt"
+    "text_path": "cases\\TASK-02\\drafts\\route-3.txt"
   },
   {
-    "blind_id": "C4BB683A4DF6",
-    "case_id": "TASK-04",
-    "text_path": "cases\\TASK-04\\drafts\\baseline-2.txt"
+    "blind_id": "9915ACD30F4B",
+    "case_id": "D-03",
+    "text_path": "cases\\D-03\\drafts\\baseline-3.txt"
+  },
+  {
+    "blind_id": "B30737D18A72",
+    "case_id": "B-05",
+    "text_path": "cases\\B-05\\drafts\\baseline-3.txt"
+  },
+  {
+    "blind_id": "A2E0B191F27C",
+    "case_id": "CAMPUS-02",
+    "text_path": "cases\\CAMPUS-02\\drafts\\baseline-3.txt"
+  },
+  {
+    "blind_id": "E85F4D3C020F",
+    "case_id": "C-03",
+    "text_path": "cases\\C-03\\drafts\\baseline-1.txt"
+  },
+  {
+    "blind_id": "130D91A50981",
+    "case_id": "A-06",
+    "text_path": "cases\\A-06\\drafts\\baseline-1.txt"
+  },
+  {
+    "blind_id": "52CEE3578FFF",
+    "case_id": "C-02",
+    "text_path": "cases\\C-02\\drafts\\route-1.txt"
+  },
+  {
+    "blind_id": "2EA769AFD835",
+    "case_id": "ROMANCE-04",
+    "text_path": "cases\\ROMANCE-04\\drafts\\route-3.txt"
   },
   {
     "blind_id": "1B8FF34A4620",
@@ -400,19 +145,164 @@
     "text_path": "cases\\CAMPUS-04\\drafts\\baseline-3.txt"
   },
   {
-    "blind_id": "BDAD3F6E14EF",
-    "case_id": "C-06",
-    "text_path": "cases\\C-06\\drafts\\baseline-2.txt"
+    "blind_id": "BA0D447C831C",
+    "case_id": "TASK-04",
+    "text_path": "cases\\TASK-04\\drafts\\route-2.txt"
   },
   {
-    "blind_id": "90D6386EC21B",
-    "case_id": "A-04",
-    "text_path": "cases\\A-04\\drafts\\route-2.txt"
+    "blind_id": "D9C16AB50A69",
+    "case_id": "B-03",
+    "text_path": "cases\\B-03\\drafts\\route-1.txt"
   },
   {
-    "blind_id": "3A04CECB6D7E",
+    "blind_id": "DBACAFCC69EA",
+    "case_id": "B-03",
+    "text_path": "cases\\B-03\\drafts\\route-2.txt"
+  },
+  {
+    "blind_id": "2B35EC88DBF6",
+    "case_id": "TASK-02",
+    "text_path": "cases\\TASK-02\\drafts\\baseline-3.txt"
+  },
+  {
+    "blind_id": "1B688A5D80BB",
+    "case_id": "C-04",
+    "text_path": "cases\\C-04\\drafts\\route-1.txt"
+  },
+  {
+    "blind_id": "19EEA862F6E2",
+    "case_id": "D-04",
+    "text_path": "cases\\D-04\\drafts\\route-3.txt"
+  },
+  {
+    "blind_id": "5BAB45D44D16",
+    "case_id": "B-03",
+    "text_path": "cases\\B-03\\drafts\\baseline-2.txt"
+  },
+  {
+    "blind_id": "E1B08FE6F594",
+    "case_id": "B-03",
+    "text_path": "cases\\B-03\\drafts\\route-3.txt"
+  },
+  {
+    "blind_id": "B6D5D4FEF8EA",
+    "case_id": "B-03",
+    "text_path": "cases\\B-03\\drafts\\baseline-1.txt"
+  },
+  {
+    "blind_id": "09EF50D51403",
+    "case_id": "C-05",
+    "text_path": "cases\\C-05\\drafts\\baseline-1.txt"
+  },
+  {
+    "blind_id": "A2463C776BD8",
+    "case_id": "D-05",
+    "text_path": "cases\\D-05\\drafts\\baseline-3.txt"
+  },
+  {
+    "blind_id": "A2435BCF6778",
+    "case_id": "TASK-02",
+    "text_path": "cases\\TASK-02\\drafts\\baseline-1.txt"
+  },
+  {
+    "blind_id": "E062D511F865",
+    "case_id": "A-06",
+    "text_path": "cases\\A-06\\drafts\\route-1.txt"
+  },
+  {
+    "blind_id": "B417523002DB",
+    "case_id": "CAMPUS-02",
+    "text_path": "cases\\CAMPUS-02\\drafts\\baseline-1.txt"
+  },
+  {
+    "blind_id": "A90A00AB37EB",
+    "case_id": "B-04",
+    "text_path": "cases\\B-04\\drafts\\route-3.txt"
+  },
+  {
+    "blind_id": "C4BB683A4DF6",
+    "case_id": "TASK-04",
+    "text_path": "cases\\TASK-04\\drafts\\baseline-2.txt"
+  },
+  {
+    "blind_id": "6B80D9D8B575",
+    "case_id": "B-03",
+    "text_path": "cases\\B-03\\drafts\\baseline-3.txt"
+  },
+  {
+    "blind_id": "85520C8A748A",
+    "case_id": "C-02",
+    "text_path": "cases\\C-02\\drafts\\route-2.txt"
+  },
+  {
+    "blind_id": "0C3026371A41",
+    "case_id": "A-05",
+    "text_path": "cases\\A-05\\drafts\\route-1.txt"
+  },
+  {
+    "blind_id": "DCBC28EB4627",
+    "case_id": "B-06",
+    "text_path": "cases\\B-06\\drafts\\baseline-3.txt"
+  },
+  {
+    "blind_id": "C2EFBC177983",
+    "case_id": "C-03",
+    "text_path": "cases\\C-03\\drafts\\route-2.txt"
+  },
+  {
+    "blind_id": "1275FEC949D2",
+    "case_id": "A-06",
+    "text_path": "cases\\A-06\\drafts\\route-2.txt"
+  },
+  {
+    "blind_id": "F1701C9E20A9",
+    "case_id": "C-03",
+    "text_path": "cases\\C-03\\drafts\\baseline-3.txt"
+  },
+  {
+    "blind_id": "52E4D7730CD3",
+    "case_id": "D-06",
+    "text_path": "cases\\D-06\\drafts\\route-2.txt"
+  },
+  {
+    "blind_id": "CF05348729B1",
+    "case_id": "C-02",
+    "text_path": "cases\\C-02\\drafts\\baseline-3.txt"
+  },
+  {
+    "blind_id": "912FDA309FE7",
     "case_id": "CAMPUS-04",
-    "text_path": "cases\\CAMPUS-04\\drafts\\route-3.txt"
+    "text_path": "cases\\CAMPUS-04\\drafts\\route-2.txt"
+  },
+  {
+    "blind_id": "43BEAF7AF671",
+    "case_id": "A-04",
+    "text_path": "cases\\A-04\\drafts\\baseline-3.txt"
+  },
+  {
+    "blind_id": "856FE75D905A",
+    "case_id": "A-04",
+    "text_path": "cases\\A-04\\drafts\\baseline-1.txt"
+  },
+  {
+    "blind_id": "79F50E6D082C",
+    "case_id": "C-05",
+    "text_path": "cases\\C-05\\drafts\\route-2.txt"
+  },
+  {
+    "blind_id": "568D24173921",
+    "case_id": "D-03",
+    "text_path": "cases\\D-03\\drafts\\route-2.txt"
+  },
+  {
+    "blind_id": "47BCFED8787D",
+    "case_id": "CAMPUS-03",
+    "text_path": "cases\\CAMPUS-03\\drafts\\route-1.txt"
+  },
+  {
+    "blind_id": "769CDF358D6F",
+    "case_id": "C-05",
+    "text_path": "cases\\C-05\\drafts\\route-1.txt"
   },
   {
     "blind_id": "43500A597628",
@@ -425,59 +315,9 @@
     "text_path": "cases\\B-05\\drafts\\route-3.txt"
   },
   {
-    "blind_id": "F1701C9E20A9",
-    "case_id": "C-03",
-    "text_path": "cases\\C-03\\drafts\\baseline-3.txt"
-  },
-  {
-    "blind_id": "338549CB0B7D",
-    "case_id": "A-03",
-    "text_path": "cases\\A-03\\drafts\\route-2.txt"
-  },
-  {
-    "blind_id": "79F50E6D082C",
-    "case_id": "C-05",
-    "text_path": "cases\\C-05\\drafts\\route-2.txt"
-  },
-  {
-    "blind_id": "2BA1035E85D7",
-    "case_id": "A-03",
-    "text_path": "cases\\A-03\\drafts\\baseline-2.txt"
-  },
-  {
-    "blind_id": "7659CC08890E",
-    "case_id": "TASK-04",
-    "text_path": "cases\\TASK-04\\drafts\\baseline-1.txt"
-  },
-  {
-    "blind_id": "D7E2F0715889",
-    "case_id": "A-05",
-    "text_path": "cases\\A-05\\drafts\\baseline-1.txt"
-  },
-  {
-    "blind_id": "08FD4FABB9D6",
-    "case_id": "C-05",
-    "text_path": "cases\\C-05\\drafts\\baseline-3.txt"
-  },
-  {
-    "blind_id": "E85F4D3C020F",
-    "case_id": "C-03",
-    "text_path": "cases\\C-03\\drafts\\baseline-1.txt"
-  },
-  {
-    "blind_id": "C81DD9CCF0DC",
-    "case_id": "A-06",
-    "text_path": "cases\\A-06\\drafts\\baseline-2.txt"
-  },
-  {
-    "blind_id": "342EF47BB2F3",
-    "case_id": "CAMPUS-04",
-    "text_path": "cases\\CAMPUS-04\\drafts\\baseline-2.txt"
-  },
-  {
-    "blind_id": "C6B5F491B39E",
-    "case_id": "C-04",
-    "text_path": "cases\\C-04\\drafts\\baseline-2.txt"
+    "blind_id": "C7C3774B779B",
+    "case_id": "TASK-02",
+    "text_path": "cases\\TASK-02\\drafts\\route-1.txt"
   },
   {
     "blind_id": "18F2F1C33881",
@@ -485,29 +325,54 @@
     "text_path": "cases\\CAMPUS-04\\drafts\\baseline-1.txt"
   },
   {
-    "blind_id": "85BB831007D1",
-    "case_id": "ROMANCE-02",
-    "text_path": "cases\\ROMANCE-02\\drafts\\baseline-1.txt"
+    "blind_id": "79FC1C793219",
+    "case_id": "TASK-04",
+    "text_path": "cases\\TASK-04\\drafts\\route-3.txt"
   },
   {
-    "blind_id": "A1F62A67BCAF",
-    "case_id": "A-04",
-    "text_path": "cases\\A-04\\drafts\\baseline-2.txt"
+    "blind_id": "356FAF8FD457",
+    "case_id": "TASK-02",
+    "text_path": "cases\\TASK-02\\drafts\\baseline-2.txt"
   },
   {
-    "blind_id": "805E0E11DAEE",
+    "blind_id": "CBC113711593",
     "case_id": "B-04",
-    "text_path": "cases\\B-04\\drafts\\baseline-3.txt"
+    "text_path": "cases\\B-04\\drafts\\route-2.txt"
   },
   {
-    "blind_id": "DCBC28EB4627",
-    "case_id": "B-06",
-    "text_path": "cases\\B-06\\drafts\\baseline-3.txt"
+    "blind_id": "883C640CFEB0",
+    "case_id": "CAMPUS-02",
+    "text_path": "cases\\CAMPUS-02\\drafts\\route-2.txt"
   },
   {
-    "blind_id": "B1E9130331D8",
-    "case_id": "B-05",
-    "text_path": "cases\\B-05\\drafts\\route-1.txt"
+    "blind_id": "44E807F86792",
+    "case_id": "A-05",
+    "text_path": "cases\\A-05\\drafts\\baseline-2.txt"
+  },
+  {
+    "blind_id": "7937059A5751",
+    "case_id": "D-05",
+    "text_path": "cases\\D-05\\drafts\\baseline-1.txt"
+  },
+  {
+    "blind_id": "C39D068E3187",
+    "case_id": "D-05",
+    "text_path": "cases\\D-05\\drafts\\route-2.txt"
+  },
+  {
+    "blind_id": "2AB957C1E4E9",
+    "case_id": "D-05",
+    "text_path": "cases\\D-05\\drafts\\route-3.txt"
+  },
+  {
+    "blind_id": "B10573D404F4",
+    "case_id": "C-06",
+    "text_path": "cases\\C-06\\drafts\\baseline-3.txt"
+  },
+  {
+    "blind_id": "86C3D8724973",
+    "case_id": "C-02",
+    "text_path": "cases\\C-02\\drafts\\baseline-2.txt"
   },
   {
     "blind_id": "FB727C0D0C9C",
@@ -515,29 +380,29 @@
     "text_path": "cases\\D-06\\drafts\\baseline-2.txt"
   },
   {
-    "blind_id": "71C7A79A8878",
-    "case_id": "A-03",
-    "text_path": "cases\\A-03\\drafts\\baseline-3.txt"
+    "blind_id": "BC696885509A",
+    "case_id": "C-03",
+    "text_path": "cases\\C-03\\drafts\\baseline-2.txt"
   },
   {
-    "blind_id": "179E988FC557",
-    "case_id": "CAMPUS-04",
-    "text_path": "cases\\CAMPUS-04\\drafts\\route-1.txt"
+    "blind_id": "5D8920D7009F",
+    "case_id": "A-04",
+    "text_path": "cases\\A-04\\drafts\\route-1.txt"
   },
   {
-    "blind_id": "EECC842B5B9B",
-    "case_id": "A-06",
-    "text_path": "cases\\A-06\\drafts\\baseline-3.txt"
+    "blind_id": "C61847E23E0C",
+    "case_id": "A-05",
+    "text_path": "cases\\A-05\\drafts\\route-3.txt"
   },
   {
-    "blind_id": "C38152F04248",
-    "case_id": "C-04",
-    "text_path": "cases\\C-04\\drafts\\route-2.txt"
+    "blind_id": "F186BBA41679",
+    "case_id": "B-04",
+    "text_path": "cases\\B-04\\drafts\\route-1.txt"
   },
   {
-    "blind_id": "E1B08FE6F594",
-    "case_id": "B-03",
-    "text_path": "cases\\B-03\\drafts\\route-3.txt"
+    "blind_id": "A0EEB6DB7DBD",
+    "case_id": "CAMPUS-03",
+    "text_path": "cases\\CAMPUS-03\\drafts\\route-3.txt"
   },
   {
     "blind_id": "D4B7B3DF0FFC",
@@ -545,44 +410,49 @@
     "text_path": "cases\\B-06\\drafts\\baseline-2.txt"
   },
   {
-    "blind_id": "2EA769AFD835",
-    "case_id": "ROMANCE-04",
-    "text_path": "cases\\ROMANCE-04\\drafts\\route-3.txt"
+    "blind_id": "75D7B6ECAE95",
+    "case_id": "A-04",
+    "text_path": "cases\\A-04\\drafts\\route-3.txt"
   },
   {
-    "blind_id": "769CDF358D6F",
-    "case_id": "C-05",
-    "text_path": "cases\\C-05\\drafts\\route-1.txt"
-  },
-  {
-    "blind_id": "ADA7549CC0AC",
-    "case_id": "B-05",
-    "text_path": "cases\\B-05\\drafts\\baseline-1.txt"
-  },
-  {
-    "blind_id": "86FD648EDD46",
+    "blind_id": "01F5A2FF9910",
     "case_id": "C-06",
-    "text_path": "cases\\C-06\\drafts\\baseline-1.txt"
+    "text_path": "cases\\C-06\\drafts\\route-1.txt"
   },
   {
-    "blind_id": "E062D511F865",
-    "case_id": "A-06",
-    "text_path": "cases\\A-06\\drafts\\route-1.txt"
+    "blind_id": "85BB831007D1",
+    "case_id": "ROMANCE-02",
+    "text_path": "cases\\ROMANCE-02\\drafts\\baseline-1.txt"
   },
   {
-    "blind_id": "DA031F306858",
-    "case_id": "B-06",
-    "text_path": "cases\\B-06\\drafts\\route-2.txt"
+    "blind_id": "ABED982D40CC",
+    "case_id": "ROMANCE-04",
+    "text_path": "cases\\ROMANCE-04\\drafts\\baseline-3.txt"
   },
   {
-    "blind_id": "38D415DFCA17",
+    "blind_id": "2BE736B15F03",
+    "case_id": "D-03",
+    "text_path": "cases\\D-03\\drafts\\baseline-1.txt"
+  },
+  {
+    "blind_id": "C9C33AAA5B93",
+    "case_id": "D-03",
+    "text_path": "cases\\D-03\\drafts\\route-1.txt"
+  },
+  {
+    "blind_id": "9EF0CDC7779A",
     "case_id": "C-04",
-    "text_path": "cases\\C-04\\drafts\\baseline-1.txt"
+    "text_path": "cases\\C-04\\drafts\\baseline-3.txt"
   },
   {
-    "blind_id": "99408533A393",
-    "case_id": "C-03",
-    "text_path": "cases\\C-03\\drafts\\route-3.txt"
+    "blind_id": "179E988FC557",
+    "case_id": "CAMPUS-04",
+    "text_path": "cases\\CAMPUS-04\\drafts\\route-1.txt"
+  },
+  {
+    "blind_id": "08FD4FABB9D6",
+    "case_id": "C-05",
+    "text_path": "cases\\C-05\\drafts\\baseline-3.txt"
   },
   {
     "blind_id": "20D476246A38",
@@ -590,44 +460,19 @@
     "text_path": "cases\\A-05\\drafts\\baseline-3.txt"
   },
   {
-    "blind_id": "52CEE3578FFF",
-    "case_id": "C-02",
-    "text_path": "cases\\C-02\\drafts\\route-1.txt"
+    "blind_id": "88ACC26CFC78",
+    "case_id": "C-05",
+    "text_path": "cases\\C-05\\drafts\\baseline-2.txt"
   },
   {
-    "blind_id": "1D000EBCE371",
-    "case_id": "C-02",
-    "text_path": "cases\\C-02\\drafts\\baseline-1.txt"
+    "blind_id": "A4D68465AB5C",
+    "case_id": "D-05",
+    "text_path": "cases\\D-05\\drafts\\route-1.txt"
   },
   {
-    "blind_id": "775B81157A15",
-    "case_id": "D-04",
-    "text_path": "cases\\D-04\\drafts\\route-2.txt"
-  },
-  {
-    "blind_id": "A2435BCF6778",
-    "case_id": "TASK-02",
-    "text_path": "cases\\TASK-02\\drafts\\baseline-1.txt"
-  },
-  {
-    "blind_id": "130D91A50981",
-    "case_id": "A-06",
-    "text_path": "cases\\A-06\\drafts\\baseline-1.txt"
-  },
-  {
-    "blind_id": "CADB7B7A053D",
-    "case_id": "B-06",
-    "text_path": "cases\\B-06\\drafts\\route-1.txt"
-  },
-  {
-    "blind_id": "2B35EC88DBF6",
-    "case_id": "TASK-02",
-    "text_path": "cases\\TASK-02\\drafts\\baseline-3.txt"
-  },
-  {
-    "blind_id": "B417523002DB",
-    "case_id": "CAMPUS-02",
-    "text_path": "cases\\CAMPUS-02\\drafts\\baseline-1.txt"
+    "blind_id": "9EED5335EC98",
+    "case_id": "CAMPUS-03",
+    "text_path": "cases\\CAMPUS-03\\drafts\\baseline-1.txt"
   },
   {
     "blind_id": "CC0E4A329C5F",
@@ -635,8 +480,243 @@
     "text_path": "cases\\C-06\\drafts\\route-2.txt"
   },
   {
-    "blind_id": "883C640CFEB0",
+    "blind_id": "90D6386EC21B",
+    "case_id": "A-04",
+    "text_path": "cases\\A-04\\drafts\\route-2.txt"
+  },
+  {
+    "blind_id": "6345CDC7C172",
+    "case_id": "D-04",
+    "text_path": "cases\\D-04\\drafts\\route-1.txt"
+  },
+  {
+    "blind_id": "55721608F862",
+    "case_id": "ROMANCE-04",
+    "text_path": "cases\\ROMANCE-04\\drafts\\baseline-2.txt"
+  },
+  {
+    "blind_id": "B1E9130331D8",
+    "case_id": "B-05",
+    "text_path": "cases\\B-05\\drafts\\route-1.txt"
+  },
+  {
+    "blind_id": "99408533A393",
+    "case_id": "C-03",
+    "text_path": "cases\\C-03\\drafts\\route-3.txt"
+  },
+  {
+    "blind_id": "338549CB0B7D",
+    "case_id": "A-03",
+    "text_path": "cases\\A-03\\drafts\\route-2.txt"
+  },
+  {
+    "blind_id": "C6B5F491B39E",
+    "case_id": "C-04",
+    "text_path": "cases\\C-04\\drafts\\baseline-2.txt"
+  },
+  {
+    "blind_id": "2BA1035E85D7",
+    "case_id": "A-03",
+    "text_path": "cases\\A-03\\drafts\\baseline-2.txt"
+  },
+  {
+    "blind_id": "616D1EEFEA3E",
     "case_id": "CAMPUS-02",
-    "text_path": "cases\\CAMPUS-02\\drafts\\route-2.txt"
+    "text_path": "cases\\CAMPUS-02\\drafts\\route-1.txt"
+  },
+  {
+    "blind_id": "5533DEFB942C",
+    "case_id": "TASK-04",
+    "text_path": "cases\\TASK-04\\drafts\\route-1.txt"
+  },
+  {
+    "blind_id": "D7E2F0715889",
+    "case_id": "A-05",
+    "text_path": "cases\\A-05\\drafts\\baseline-1.txt"
+  },
+  {
+    "blind_id": "C0A7A6E1C0CB",
+    "case_id": "C-05",
+    "text_path": "cases\\C-05\\drafts\\route-3.txt"
+  },
+  {
+    "blind_id": "BD8DFBABAA9F",
+    "case_id": "D-04",
+    "text_path": "cases\\D-04\\drafts\\baseline-2.txt"
+  },
+  {
+    "blind_id": "FB7544D174FB",
+    "case_id": "C-03",
+    "text_path": "cases\\C-03\\drafts\\route-1.txt"
+  },
+  {
+    "blind_id": "C81DD9CCF0DC",
+    "case_id": "A-06",
+    "text_path": "cases\\A-06\\drafts\\baseline-2.txt"
+  },
+  {
+    "blind_id": "F9A47FFBE45E",
+    "case_id": "CAMPUS-03",
+    "text_path": "cases\\CAMPUS-03\\drafts\\baseline-3.txt"
+  },
+  {
+    "blind_id": "C38152F04248",
+    "case_id": "C-04",
+    "text_path": "cases\\C-04\\drafts\\route-2.txt"
+  },
+  {
+    "blind_id": "B83F7BBEB72A",
+    "case_id": "ROMANCE-04",
+    "text_path": "cases\\ROMANCE-04\\drafts\\baseline-1.txt"
+  },
+  {
+    "blind_id": "D8D58D93BC24",
+    "case_id": "D-03",
+    "text_path": "cases\\D-03\\drafts\\baseline-2.txt"
+  },
+  {
+    "blind_id": "7FB5F3C9AE7F",
+    "case_id": "D-05",
+    "text_path": "cases\\D-05\\drafts\\baseline-2.txt"
+  },
+  {
+    "blind_id": "5BD99F552D11",
+    "case_id": "B-06",
+    "text_path": "cases\\B-06\\drafts\\route-3.txt"
+  },
+  {
+    "blind_id": "A1F62A67BCAF",
+    "case_id": "A-04",
+    "text_path": "cases\\A-04\\drafts\\baseline-2.txt"
+  },
+  {
+    "blind_id": "5CFAFC0962E7",
+    "case_id": "B-04",
+    "text_path": "cases\\B-04\\drafts\\baseline-1.txt"
+  },
+  {
+    "blind_id": "0E2B8C045859",
+    "case_id": "B-06",
+    "text_path": "cases\\B-06\\drafts\\baseline-1.txt"
+  },
+  {
+    "blind_id": "A886C1A04AFD",
+    "case_id": "B-04",
+    "text_path": "cases\\B-04\\drafts\\baseline-2.txt"
+  },
+  {
+    "blind_id": "735536264BB6",
+    "case_id": "ROMANCE-02",
+    "text_path": "cases\\ROMANCE-02\\drafts\\baseline-2.txt"
+  },
+  {
+    "blind_id": "EB76C08874AC",
+    "case_id": "D-06",
+    "text_path": "cases\\D-06\\drafts\\baseline-1.txt"
+  },
+  {
+    "blind_id": "9B68C591B6A5",
+    "case_id": "D-04",
+    "text_path": "cases\\D-04\\drafts\\baseline-1.txt"
+  },
+  {
+    "blind_id": "71C7A79A8878",
+    "case_id": "A-03",
+    "text_path": "cases\\A-03\\drafts\\baseline-3.txt"
+  },
+  {
+    "blind_id": "4B62E80ECC92",
+    "case_id": "CAMPUS-03",
+    "text_path": "cases\\CAMPUS-03\\drafts\\route-2.txt"
+  },
+  {
+    "blind_id": "EECC842B5B9B",
+    "case_id": "A-06",
+    "text_path": "cases\\A-06\\drafts\\baseline-3.txt"
+  },
+  {
+    "blind_id": "243212F8FF30",
+    "case_id": "D-06",
+    "text_path": "cases\\D-06\\drafts\\route-3.txt"
+  },
+  {
+    "blind_id": "1D000EBCE371",
+    "case_id": "C-02",
+    "text_path": "cases\\C-02\\drafts\\baseline-1.txt"
+  },
+  {
+    "blind_id": "827F2A06A0AE",
+    "case_id": "CAMPUS-03",
+    "text_path": "cases\\CAMPUS-03\\drafts\\baseline-2.txt"
+  },
+  {
+    "blind_id": "461B19043241",
+    "case_id": "TASK-02",
+    "text_path": "cases\\TASK-02\\drafts\\route-2.txt"
+  },
+  {
+    "blind_id": "FDEF6276C166",
+    "case_id": "ROMANCE-04",
+    "text_path": "cases\\ROMANCE-04\\drafts\\route-2.txt"
+  },
+  {
+    "blind_id": "D4F1B55405DA",
+    "case_id": "C-06",
+    "text_path": "cases\\C-06\\drafts\\route-3.txt"
+  },
+  {
+    "blind_id": "0EFD8FA5FBB9",
+    "case_id": "B-05",
+    "text_path": "cases\\B-05\\drafts\\route-2.txt"
+  },
+  {
+    "blind_id": "321E9187659B",
+    "case_id": "CAMPUS-02",
+    "text_path": "cases\\CAMPUS-02\\drafts\\baseline-2.txt"
+  },
+  {
+    "blind_id": "F4134F134158",
+    "case_id": "ROMANCE-02",
+    "text_path": "cases\\ROMANCE-02\\drafts\\route-1.txt"
+  },
+  {
+    "blind_id": "DE05E711871C",
+    "case_id": "D-04",
+    "text_path": "cases\\D-04\\drafts\\baseline-3.txt"
+  },
+  {
+    "blind_id": "805E0E11DAEE",
+    "case_id": "B-04",
+    "text_path": "cases\\B-04\\drafts\\baseline-3.txt"
+  },
+  {
+    "blind_id": "3A04CECB6D7E",
+    "case_id": "CAMPUS-04",
+    "text_path": "cases\\CAMPUS-04\\drafts\\route-3.txt"
+  },
+  {
+    "blind_id": "E6FACF036282",
+    "case_id": "D-03",
+    "text_path": "cases\\D-03\\drafts\\route-3.txt"
+  },
+  {
+    "blind_id": "DA031F306858",
+    "case_id": "B-06",
+    "text_path": "cases\\B-06\\drafts\\route-2.txt"
+  },
+  {
+    "blind_id": "0B37D38E2061",
+    "case_id": "CAMPUS-02",
+    "text_path": "cases\\CAMPUS-02\\drafts\\route-3.txt"
+  },
+  {
+    "blind_id": "7659CC08890E",
+    "case_id": "TASK-04",
+    "text_path": "cases\\TASK-04\\drafts\\baseline-1.txt"
+  },
+  {
+    "blind_id": "BDAD3F6E14EF",
+    "case_id": "C-06",
+    "text_path": "cases\\C-06\\drafts\\baseline-2.txt"
   }
 ]

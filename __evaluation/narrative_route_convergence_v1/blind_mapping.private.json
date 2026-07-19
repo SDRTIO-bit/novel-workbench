@@ -2,641 +2,865 @@
   "6F5830F6C70F": {
     "case_id": "A-03",
     "group": "ROUTE-A_LITE_INFORMATION_GAP",
-    "replica": "1"
+    "replica": "1",
+    "error_code": null
   },
   "338549CB0B7D": {
     "case_id": "A-03",
     "group": "ROUTE-A_LITE_INFORMATION_GAP",
-    "replica": "2"
+    "replica": "2",
+    "error_code": null
   },
   "CAAEEB01565D": {
     "case_id": "A-03",
     "group": "ROUTE-A_LITE_INFORMATION_GAP",
-    "replica": "3"
+    "replica": "3",
+    "error_code": null
   },
   "94F8F49D2CDB": {
     "case_id": "A-03",
     "group": "BASELINE-complete_planner",
-    "replica": "1"
+    "replica": "1",
+    "error_code": null
   },
   "2BA1035E85D7": {
     "case_id": "A-03",
     "group": "BASELINE-complete_planner",
-    "replica": "2"
+    "replica": "2",
+    "error_code": null
   },
   "71C7A79A8878": {
     "case_id": "A-03",
     "group": "BASELINE-complete_planner",
-    "replica": "3"
+    "replica": "3",
+    "error_code": null
   },
   "5D8920D7009F": {
     "case_id": "A-04",
     "group": "ROUTE-C_OBJECT_CAUSAL",
-    "replica": "1"
+    "replica": "1",
+    "error_code": null
   },
   "90D6386EC21B": {
     "case_id": "A-04",
     "group": "ROUTE-C_OBJECT_CAUSAL",
-    "replica": "2"
+    "replica": "2",
+    "error_code": null
   },
   "75D7B6ECAE95": {
     "case_id": "A-04",
     "group": "ROUTE-C_OBJECT_CAUSAL",
-    "replica": "3"
+    "replica": "3",
+    "error_code": null
   },
   "856FE75D905A": {
     "case_id": "A-04",
     "group": "BASELINE-complete_planner",
-    "replica": "1"
+    "replica": "1",
+    "error_code": null
   },
   "A1F62A67BCAF": {
     "case_id": "A-04",
     "group": "BASELINE-complete_planner",
-    "replica": "2"
+    "replica": "2",
+    "error_code": null
   },
   "43BEAF7AF671": {
     "case_id": "A-04",
     "group": "BASELINE-complete_planner",
-    "replica": "3"
+    "replica": "3",
+    "error_code": null
   },
   "0C3026371A41": {
     "case_id": "A-05",
     "group": "ROUTE-A_LITE_INFORMATION_GAP",
-    "replica": "1"
+    "replica": "1",
+    "error_code": null
   },
   "A077D2CB3A3C": {
     "case_id": "A-05",
     "group": "ROUTE-A_LITE_INFORMATION_GAP",
-    "replica": "2"
+    "replica": "2",
+    "error_code": null
   },
   "C61847E23E0C": {
     "case_id": "A-05",
     "group": "ROUTE-A_LITE_INFORMATION_GAP",
-    "replica": "3"
+    "replica": "3",
+    "error_code": null
   },
   "D7E2F0715889": {
     "case_id": "A-05",
     "group": "BASELINE-complete_planner",
-    "replica": "1"
+    "replica": "1",
+    "error_code": null
   },
   "44E807F86792": {
     "case_id": "A-05",
     "group": "BASELINE-complete_planner",
-    "replica": "2"
+    "replica": "2",
+    "error_code": null
   },
   "20D476246A38": {
     "case_id": "A-05",
     "group": "BASELINE-complete_planner",
-    "replica": "3"
+    "replica": "3",
+    "error_code": null
   },
   "E062D511F865": {
     "case_id": "A-06",
     "group": "ROUTE-B_SHORT_RELATION",
-    "replica": "1"
+    "replica": "1",
+    "error_code": null
   },
   "1275FEC949D2": {
     "case_id": "A-06",
     "group": "ROUTE-B_SHORT_RELATION",
-    "replica": "2"
+    "replica": "2",
+    "error_code": null
   },
   "253FBA08340F": {
     "case_id": "A-06",
     "group": "ROUTE-B_SHORT_RELATION",
-    "replica": "3"
+    "replica": "3",
+    "error_code": null
   },
   "130D91A50981": {
     "case_id": "A-06",
     "group": "BASELINE-complete_planner",
-    "replica": "1"
+    "replica": "1",
+    "error_code": null
   },
   "C81DD9CCF0DC": {
     "case_id": "A-06",
     "group": "BASELINE-complete_planner",
-    "replica": "2"
+    "replica": "2",
+    "error_code": null
   },
   "EECC842B5B9B": {
     "case_id": "A-06",
     "group": "BASELINE-complete_planner",
-    "replica": "3"
+    "replica": "3",
+    "error_code": null
+  },
+  "D9C16AB50A69": {
+    "case_id": "B-03",
+    "group": "ROUTE-A_LITE_INFORMATION_GAP",
+    "replica": "1",
+    "error_code": "TEMPO_FINAL_LINE_MISMATCH"
   },
   "DBACAFCC69EA": {
     "case_id": "B-03",
     "group": "ROUTE-A_LITE_INFORMATION_GAP",
-    "replica": "2"
+    "replica": "2",
+    "error_code": null
   },
   "E1B08FE6F594": {
     "case_id": "B-03",
     "group": "ROUTE-A_LITE_INFORMATION_GAP",
-    "replica": "3"
+    "replica": "3",
+    "error_code": null
   },
   "B6D5D4FEF8EA": {
     "case_id": "B-03",
     "group": "BASELINE-writer_brief",
-    "replica": "1"
+    "replica": "1",
+    "error_code": null
   },
   "5BAB45D44D16": {
     "case_id": "B-03",
     "group": "BASELINE-writer_brief",
-    "replica": "2"
+    "replica": "2",
+    "error_code": null
+  },
+  "6B80D9D8B575": {
+    "case_id": "B-03",
+    "group": "BASELINE-writer_brief",
+    "replica": "3",
+    "error_code": "TEMPO_FINAL_LINE_MISMATCH"
   },
   "F186BBA41679": {
     "case_id": "B-04",
     "group": "ROUTE-A_LITE_INFORMATION_GAP",
-    "replica": "1"
+    "replica": "1",
+    "error_code": null
   },
   "CBC113711593": {
     "case_id": "B-04",
     "group": "ROUTE-A_LITE_INFORMATION_GAP",
-    "replica": "2"
+    "replica": "2",
+    "error_code": null
   },
   "A90A00AB37EB": {
     "case_id": "B-04",
     "group": "ROUTE-A_LITE_INFORMATION_GAP",
-    "replica": "3"
+    "replica": "3",
+    "error_code": null
   },
   "5CFAFC0962E7": {
     "case_id": "B-04",
     "group": "BASELINE-writer_brief",
-    "replica": "1"
+    "replica": "1",
+    "error_code": null
   },
   "A886C1A04AFD": {
     "case_id": "B-04",
     "group": "BASELINE-writer_brief",
-    "replica": "2"
+    "replica": "2",
+    "error_code": null
   },
   "805E0E11DAEE": {
     "case_id": "B-04",
     "group": "BASELINE-writer_brief",
-    "replica": "3"
+    "replica": "3",
+    "error_code": null
   },
   "B1E9130331D8": {
     "case_id": "B-05",
     "group": "ROUTE-C_OBJECT_CAUSAL",
-    "replica": "1"
+    "replica": "1",
+    "error_code": null
   },
   "0EFD8FA5FBB9": {
     "case_id": "B-05",
     "group": "ROUTE-C_OBJECT_CAUSAL",
-    "replica": "2"
+    "replica": "2",
+    "error_code": null
   },
   "8A4D230D9126": {
     "case_id": "B-05",
     "group": "ROUTE-C_OBJECT_CAUSAL",
-    "replica": "3"
+    "replica": "3",
+    "error_code": null
   },
   "ADA7549CC0AC": {
     "case_id": "B-05",
     "group": "BASELINE-writer_brief",
-    "replica": "1"
+    "replica": "1",
+    "error_code": null
   },
   "D6E8FE1BC4CD": {
     "case_id": "B-05",
     "group": "BASELINE-writer_brief",
-    "replica": "2"
+    "replica": "2",
+    "error_code": null
   },
   "B30737D18A72": {
     "case_id": "B-05",
     "group": "BASELINE-writer_brief",
-    "replica": "3"
+    "replica": "3",
+    "error_code": null
   },
   "CADB7B7A053D": {
     "case_id": "B-06",
     "group": "ROUTE-C_OBJECT_CAUSAL",
-    "replica": "1"
+    "replica": "1",
+    "error_code": null
   },
   "DA031F306858": {
     "case_id": "B-06",
     "group": "ROUTE-C_OBJECT_CAUSAL",
-    "replica": "2"
+    "replica": "2",
+    "error_code": null
   },
   "5BD99F552D11": {
     "case_id": "B-06",
     "group": "ROUTE-C_OBJECT_CAUSAL",
-    "replica": "3"
+    "replica": "3",
+    "error_code": null
   },
   "0E2B8C045859": {
     "case_id": "B-06",
     "group": "BASELINE-writer_brief",
-    "replica": "1"
+    "replica": "1",
+    "error_code": null
   },
   "D4B7B3DF0FFC": {
     "case_id": "B-06",
     "group": "BASELINE-writer_brief",
-    "replica": "2"
+    "replica": "2",
+    "error_code": null
   },
   "DCBC28EB4627": {
     "case_id": "B-06",
     "group": "BASELINE-writer_brief",
-    "replica": "3"
+    "replica": "3",
+    "error_code": null
   },
   "52CEE3578FFF": {
     "case_id": "C-02",
     "group": "ROUTE-C_OBJECT_CAUSAL",
-    "replica": "1"
+    "replica": "1",
+    "error_code": null
   },
   "85520C8A748A": {
     "case_id": "C-02",
     "group": "ROUTE-C_OBJECT_CAUSAL",
-    "replica": "2"
+    "replica": "2",
+    "error_code": null
   },
   "6F772EB3C80A": {
     "case_id": "C-02",
     "group": "ROUTE-C_OBJECT_CAUSAL",
-    "replica": "3"
+    "replica": "3",
+    "error_code": null
   },
   "1D000EBCE371": {
     "case_id": "C-02",
     "group": "BASELINE-writer_brief",
-    "replica": "1"
+    "replica": "1",
+    "error_code": null
+  },
+  "86C3D8724973": {
+    "case_id": "C-02",
+    "group": "BASELINE-writer_brief",
+    "replica": "2",
+    "error_code": "TEMPO_FINAL_LINE_MISMATCH"
   },
   "CF05348729B1": {
     "case_id": "C-02",
     "group": "BASELINE-writer_brief",
-    "replica": "3"
+    "replica": "3",
+    "error_code": null
   },
   "FB7544D174FB": {
     "case_id": "C-03",
     "group": "ROUTE-C_OBJECT_CAUSAL",
-    "replica": "1"
+    "replica": "1",
+    "error_code": null
   },
   "C2EFBC177983": {
     "case_id": "C-03",
     "group": "ROUTE-C_OBJECT_CAUSAL",
-    "replica": "2"
+    "replica": "2",
+    "error_code": null
   },
   "99408533A393": {
     "case_id": "C-03",
     "group": "ROUTE-C_OBJECT_CAUSAL",
-    "replica": "3"
+    "replica": "3",
+    "error_code": null
   },
   "E85F4D3C020F": {
     "case_id": "C-03",
     "group": "BASELINE-writer_brief",
-    "replica": "1"
+    "replica": "1",
+    "error_code": null
   },
   "BC696885509A": {
     "case_id": "C-03",
     "group": "BASELINE-writer_brief",
-    "replica": "2"
+    "replica": "2",
+    "error_code": null
   },
   "F1701C9E20A9": {
     "case_id": "C-03",
     "group": "BASELINE-writer_brief",
-    "replica": "3"
+    "replica": "3",
+    "error_code": null
   },
   "1B688A5D80BB": {
     "case_id": "C-04",
     "group": "ROUTE-A_LITE_INFORMATION_GAP",
-    "replica": "1"
+    "replica": "1",
+    "error_code": null
   },
   "C38152F04248": {
     "case_id": "C-04",
     "group": "ROUTE-A_LITE_INFORMATION_GAP",
-    "replica": "2"
+    "replica": "2",
+    "error_code": null
   },
   "A01C9B3FCAD3": {
     "case_id": "C-04",
     "group": "ROUTE-A_LITE_INFORMATION_GAP",
-    "replica": "3"
+    "replica": "3",
+    "error_code": null
   },
   "38D415DFCA17": {
     "case_id": "C-04",
     "group": "BASELINE-writer_brief",
-    "replica": "1"
+    "replica": "1",
+    "error_code": null
   },
   "C6B5F491B39E": {
     "case_id": "C-04",
     "group": "BASELINE-writer_brief",
-    "replica": "2"
+    "replica": "2",
+    "error_code": null
   },
   "9EF0CDC7779A": {
     "case_id": "C-04",
     "group": "BASELINE-writer_brief",
-    "replica": "3"
+    "replica": "3",
+    "error_code": null
   },
   "769CDF358D6F": {
     "case_id": "C-05",
     "group": "ROUTE-C_OBJECT_CAUSAL",
-    "replica": "1"
+    "replica": "1",
+    "error_code": null
   },
   "79F50E6D082C": {
     "case_id": "C-05",
     "group": "ROUTE-C_OBJECT_CAUSAL",
-    "replica": "2"
+    "replica": "2",
+    "error_code": null
   },
   "C0A7A6E1C0CB": {
     "case_id": "C-05",
     "group": "ROUTE-C_OBJECT_CAUSAL",
-    "replica": "3"
+    "replica": "3",
+    "error_code": null
   },
   "09EF50D51403": {
     "case_id": "C-05",
     "group": "BASELINE-writer_brief",
-    "replica": "1"
+    "replica": "1",
+    "error_code": null
   },
   "88ACC26CFC78": {
     "case_id": "C-05",
     "group": "BASELINE-writer_brief",
-    "replica": "2"
+    "replica": "2",
+    "error_code": null
   },
   "08FD4FABB9D6": {
     "case_id": "C-05",
     "group": "BASELINE-writer_brief",
-    "replica": "3"
+    "replica": "3",
+    "error_code": null
   },
   "01F5A2FF9910": {
     "case_id": "C-06",
     "group": "ROUTE-B_DEFAULT",
-    "replica": "1"
+    "replica": "1",
+    "error_code": null
   },
   "CC0E4A329C5F": {
     "case_id": "C-06",
     "group": "ROUTE-B_DEFAULT",
-    "replica": "2"
+    "replica": "2",
+    "error_code": null
   },
   "D4F1B55405DA": {
     "case_id": "C-06",
     "group": "ROUTE-B_DEFAULT",
-    "replica": "3"
+    "replica": "3",
+    "error_code": null
   },
   "86FD648EDD46": {
     "case_id": "C-06",
     "group": "BASELINE-writer_brief",
-    "replica": "1"
+    "replica": "1",
+    "error_code": null
   },
   "BDAD3F6E14EF": {
     "case_id": "C-06",
     "group": "BASELINE-writer_brief",
-    "replica": "2"
+    "replica": "2",
+    "error_code": null
   },
   "B10573D404F4": {
     "case_id": "C-06",
     "group": "BASELINE-writer_brief",
-    "replica": "3"
+    "replica": "3",
+    "error_code": null
   },
   "616D1EEFEA3E": {
     "case_id": "CAMPUS-02",
     "group": "ROUTE-A_LITE_INFORMATION_GAP",
-    "replica": "1"
+    "replica": "1",
+    "error_code": null
   },
   "883C640CFEB0": {
     "case_id": "CAMPUS-02",
     "group": "ROUTE-A_LITE_INFORMATION_GAP",
-    "replica": "2"
+    "replica": "2",
+    "error_code": null
   },
   "0B37D38E2061": {
     "case_id": "CAMPUS-02",
     "group": "ROUTE-A_LITE_INFORMATION_GAP",
-    "replica": "3"
+    "replica": "3",
+    "error_code": null
   },
   "B417523002DB": {
     "case_id": "CAMPUS-02",
     "group": "BASELINE-complete_planner",
-    "replica": "1"
+    "replica": "1",
+    "error_code": null
+  },
+  "321E9187659B": {
+    "case_id": "CAMPUS-02",
+    "group": "BASELINE-complete_planner",
+    "replica": "2",
+    "error_code": "TEMPO_FINAL_LINE_MISMATCH"
+  },
+  "A2E0B191F27C": {
+    "case_id": "CAMPUS-02",
+    "group": "BASELINE-complete_planner",
+    "replica": "3",
+    "error_code": "TEMPO_FINAL_LINE_MISMATCH"
   },
   "47BCFED8787D": {
     "case_id": "CAMPUS-03",
     "group": "ROUTE-C_OBJECT_CAUSAL",
-    "replica": "1"
+    "replica": "1",
+    "error_code": null
   },
   "4B62E80ECC92": {
     "case_id": "CAMPUS-03",
     "group": "ROUTE-C_OBJECT_CAUSAL",
-    "replica": "2"
+    "replica": "2",
+    "error_code": null
   },
   "A0EEB6DB7DBD": {
     "case_id": "CAMPUS-03",
     "group": "ROUTE-C_OBJECT_CAUSAL",
-    "replica": "3"
+    "replica": "3",
+    "error_code": null
   },
   "9EED5335EC98": {
     "case_id": "CAMPUS-03",
     "group": "BASELINE-writer_brief",
-    "replica": "1"
+    "replica": "1",
+    "error_code": null
   },
   "827F2A06A0AE": {
     "case_id": "CAMPUS-03",
     "group": "BASELINE-writer_brief",
-    "replica": "2"
+    "replica": "2",
+    "error_code": null
   },
   "F9A47FFBE45E": {
     "case_id": "CAMPUS-03",
     "group": "BASELINE-writer_brief",
-    "replica": "3"
+    "replica": "3",
+    "error_code": null
   },
   "179E988FC557": {
     "case_id": "CAMPUS-04",
     "group": "ROUTE-C_OBJECT_CAUSAL",
-    "replica": "1"
+    "replica": "1",
+    "error_code": null
   },
   "912FDA309FE7": {
     "case_id": "CAMPUS-04",
     "group": "ROUTE-C_OBJECT_CAUSAL",
-    "replica": "2"
+    "replica": "2",
+    "error_code": null
   },
   "3A04CECB6D7E": {
     "case_id": "CAMPUS-04",
     "group": "ROUTE-C_OBJECT_CAUSAL",
-    "replica": "3"
+    "replica": "3",
+    "error_code": null
   },
   "18F2F1C33881": {
     "case_id": "CAMPUS-04",
     "group": "BASELINE-complete_planner",
-    "replica": "1"
+    "replica": "1",
+    "error_code": null
   },
   "342EF47BB2F3": {
     "case_id": "CAMPUS-04",
     "group": "BASELINE-complete_planner",
-    "replica": "2"
+    "replica": "2",
+    "error_code": null
   },
   "1B8FF34A4620": {
     "case_id": "CAMPUS-04",
     "group": "BASELINE-complete_planner",
-    "replica": "3"
+    "replica": "3",
+    "error_code": null
   },
   "C9C33AAA5B93": {
     "case_id": "D-03",
     "group": "ROUTE-D_FALLIBLE_TASK",
-    "replica": "1"
+    "replica": "1",
+    "error_code": null
+  },
+  "568D24173921": {
+    "case_id": "D-03",
+    "group": "ROUTE-D_FALLIBLE_TASK",
+    "replica": "2",
+    "error_code": "TEMPO_FINAL_LINE_MISMATCH"
+  },
+  "E6FACF036282": {
+    "case_id": "D-03",
+    "group": "ROUTE-D_FALLIBLE_TASK",
+    "replica": "3",
+    "error_code": "TEMPO_FINAL_LINE_MISMATCH"
+  },
+  "2BE736B15F03": {
+    "case_id": "D-03",
+    "group": "BASELINE-writer_brief",
+    "replica": "1",
+    "error_code": "TEMPO_FINAL_LINE_MISMATCH"
   },
   "D8D58D93BC24": {
     "case_id": "D-03",
     "group": "BASELINE-writer_brief",
-    "replica": "2"
+    "replica": "2",
+    "error_code": null
+  },
+  "9915ACD30F4B": {
+    "case_id": "D-03",
+    "group": "BASELINE-writer_brief",
+    "replica": "3",
+    "error_code": "TEMPO_FINAL_LINE_MISMATCH"
+  },
+  "6345CDC7C172": {
+    "case_id": "D-04",
+    "group": "ROUTE-D_FALLIBLE_TASK",
+    "replica": "1",
+    "error_code": "TEMPO_FINAL_LINE_MISMATCH"
   },
   "775B81157A15": {
     "case_id": "D-04",
     "group": "ROUTE-D_FALLIBLE_TASK",
-    "replica": "2"
+    "replica": "2",
+    "error_code": null
+  },
+  "19EEA862F6E2": {
+    "case_id": "D-04",
+    "group": "ROUTE-D_FALLIBLE_TASK",
+    "replica": "3",
+    "error_code": "TEMPO_FINAL_LINE_MISMATCH"
+  },
+  "9B68C591B6A5": {
+    "case_id": "D-04",
+    "group": "BASELINE-writer_brief",
+    "replica": "1",
+    "error_code": "TEMPO_FINAL_LINE_MISMATCH"
+  },
+  "BD8DFBABAA9F": {
+    "case_id": "D-04",
+    "group": "BASELINE-writer_brief",
+    "replica": "2",
+    "error_code": "TEMPO_FINAL_LINE_MISMATCH"
+  },
+  "DE05E711871C": {
+    "case_id": "D-04",
+    "group": "BASELINE-writer_brief",
+    "replica": "3",
+    "error_code": "TEMPO_FINAL_LINE_MISMATCH"
   },
   "A4D68465AB5C": {
     "case_id": "D-05",
     "group": "ROUTE-A_LITE_INFORMATION_GAP",
-    "replica": "1"
+    "replica": "1",
+    "error_code": null
   },
   "C39D068E3187": {
     "case_id": "D-05",
     "group": "ROUTE-A_LITE_INFORMATION_GAP",
-    "replica": "2"
+    "replica": "2",
+    "error_code": null
   },
   "2AB957C1E4E9": {
     "case_id": "D-05",
     "group": "ROUTE-A_LITE_INFORMATION_GAP",
-    "replica": "3"
+    "replica": "3",
+    "error_code": null
   },
   "7937059A5751": {
     "case_id": "D-05",
     "group": "BASELINE-writer_brief",
-    "replica": "1"
+    "replica": "1",
+    "error_code": null
   },
   "7FB5F3C9AE7F": {
     "case_id": "D-05",
     "group": "BASELINE-writer_brief",
-    "replica": "2"
+    "replica": "2",
+    "error_code": null
   },
   "A2463C776BD8": {
     "case_id": "D-05",
     "group": "BASELINE-writer_brief",
-    "replica": "3"
+    "replica": "3",
+    "error_code": null
   },
   "CC498FE2DAEC": {
     "case_id": "D-06",
     "group": "ROUTE-B_SHORT_RELATION",
-    "replica": "1"
+    "replica": "1",
+    "error_code": null
+  },
+  "52E4D7730CD3": {
+    "case_id": "D-06",
+    "group": "ROUTE-B_SHORT_RELATION",
+    "replica": "2",
+    "error_code": "TEMPO_FINAL_LINE_MISMATCH"
   },
   "243212F8FF30": {
     "case_id": "D-06",
     "group": "ROUTE-B_SHORT_RELATION",
-    "replica": "3"
+    "replica": "3",
+    "error_code": null
   },
   "EB76C08874AC": {
     "case_id": "D-06",
     "group": "BASELINE-writer_brief",
-    "replica": "1"
+    "replica": "1",
+    "error_code": null
   },
   "FB727C0D0C9C": {
     "case_id": "D-06",
     "group": "BASELINE-writer_brief",
-    "replica": "2"
+    "replica": "2",
+    "error_code": null
   },
   "28AB42966F6E": {
     "case_id": "D-06",
     "group": "BASELINE-writer_brief",
-    "replica": "3"
+    "replica": "3",
+    "error_code": null
   },
   "F4134F134158": {
     "case_id": "ROMANCE-02",
     "group": "ROUTE-B_SHORT_RELATION",
-    "replica": "1"
+    "replica": "1",
+    "error_code": null
   },
   "31874F37C751": {
     "case_id": "ROMANCE-02",
     "group": "ROUTE-B_SHORT_RELATION",
-    "replica": "2"
+    "replica": "2",
+    "error_code": null
   },
   "11263938BBB6": {
     "case_id": "ROMANCE-02",
     "group": "ROUTE-B_SHORT_RELATION",
-    "replica": "3"
+    "replica": "3",
+    "error_code": null
   },
   "85BB831007D1": {
     "case_id": "ROMANCE-02",
     "group": "BASELINE-writer_brief",
-    "replica": "1"
+    "replica": "1",
+    "error_code": null
   },
   "735536264BB6": {
     "case_id": "ROMANCE-02",
     "group": "BASELINE-writer_brief",
-    "replica": "2"
+    "replica": "2",
+    "error_code": null
   },
   "912C8A7EEBDA": {
     "case_id": "ROMANCE-02",
     "group": "BASELINE-writer_brief",
-    "replica": "3"
+    "replica": "3",
+    "error_code": null
   },
   "43500A597628": {
     "case_id": "ROMANCE-04",
     "group": "ROUTE-B_SHORT_RELATION",
-    "replica": "1"
+    "replica": "1",
+    "error_code": null
   },
   "FDEF6276C166": {
     "case_id": "ROMANCE-04",
     "group": "ROUTE-B_SHORT_RELATION",
-    "replica": "2"
+    "replica": "2",
+    "error_code": null
   },
   "2EA769AFD835": {
     "case_id": "ROMANCE-04",
     "group": "ROUTE-B_SHORT_RELATION",
-    "replica": "3"
+    "replica": "3",
+    "error_code": null
   },
   "B83F7BBEB72A": {
     "case_id": "ROMANCE-04",
     "group": "BASELINE-writer_brief",
-    "replica": "1"
+    "replica": "1",
+    "error_code": null
+  },
+  "55721608F862": {
+    "case_id": "ROMANCE-04",
+    "group": "BASELINE-writer_brief",
+    "replica": "2",
+    "error_code": "TEMPO_FINAL_LINE_MISMATCH"
   },
   "ABED982D40CC": {
     "case_id": "ROMANCE-04",
     "group": "BASELINE-writer_brief",
-    "replica": "3"
+    "replica": "3",
+    "error_code": null
   },
   "C7C3774B779B": {
     "case_id": "TASK-02",
     "group": "ROUTE-D_FALLIBLE_TASK",
-    "replica": "1"
+    "replica": "1",
+    "error_code": null
   },
   "461B19043241": {
     "case_id": "TASK-02",
     "group": "ROUTE-D_FALLIBLE_TASK",
-    "replica": "2"
+    "replica": "2",
+    "error_code": null
   },
   "3E1967654746": {
     "case_id": "TASK-02",
     "group": "ROUTE-D_FALLIBLE_TASK",
-    "replica": "3"
+    "replica": "3",
+    "error_code": null
   },
   "A2435BCF6778": {
     "case_id": "TASK-02",
     "group": "BASELINE-writer_brief",
-    "replica": "1"
+    "replica": "1",
+    "error_code": null
   },
   "356FAF8FD457": {
     "case_id": "TASK-02",
     "group": "BASELINE-writer_brief",
-    "replica": "2"
+    "replica": "2",
+    "error_code": null
   },
   "2B35EC88DBF6": {
     "case_id": "TASK-02",
     "group": "BASELINE-writer_brief",
-    "replica": "3"
+    "replica": "3",
+    "error_code": null
   },
   "5533DEFB942C": {
     "case_id": "TASK-04",
     "group": "ROUTE-D_FALLIBLE_TASK",
-    "replica": "1"
+    "replica": "1",
+    "error_code": null
   },
   "BA0D447C831C": {
     "case_id": "TASK-04",
     "group": "ROUTE-D_FALLIBLE_TASK",
-    "replica": "2"
+    "replica": "2",
+    "error_code": null
   },
   "79FC1C793219": {
     "case_id": "TASK-04",
     "group": "ROUTE-D_FALLIBLE_TASK",
-    "replica": "3"
+    "replica": "3",
+    "error_code": null
   },
   "7659CC08890E": {
     "case_id": "TASK-04",
     "group": "BASELINE-writer_brief",
-    "replica": "1"
+    "replica": "1",
+    "error_code": null
   },
   "C4BB683A4DF6": {
     "case_id": "TASK-04",
     "group": "BASELINE-writer_brief",
-    "replica": "2"
+    "replica": "2",
+    "error_code": null
   },
   "774132784565": {
     "case_id": "TASK-04",
     "group": "BASELINE-writer_brief",
-    "replica": "3"
+    "replica": "3",
+    "error_code": null
   }
 }
