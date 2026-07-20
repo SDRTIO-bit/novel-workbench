@@ -123,6 +123,93 @@ class TestPromptList:
         assert "{{tempo_guardrails}}" in text
         assert "final_line_must_include" in text
 
+    def test_writer_v6_v7_v8_tiers_coexist(self):
+        from app.prompts.defaults import BUILTIN_PROMPTS
+
+        writers = [item for item in BUILTIN_PROMPTS if item["stage"] == "writer"]
+        by_name = {item["name"]: item for item in writers}
+
+        assert "默认场景写作" in by_name
+        assert "Sacrificial Preflight v7" in by_name
+        assert "Sacrificial Preflight Fusion v8" in by_name
+
+        v6 = by_name["默认场景写作"]
+        v7 = by_name["Sacrificial Preflight v7"]
+        v8 = by_name["Sacrificial Preflight Fusion v8"]
+
+        assert v6["output_mode"] == "plain_text"
+        assert v6["output_schema_name"] is None
+        assert "场景响应规则" in v6["system_template"]
+        assert "<draft_notes>" not in v6["system_template"]
+        assert "请写出场景正文。" in v6["user_template"]
+
+        assert v7["output_mode"] == "xml_story"
+        assert v7["output_schema_name"] is None
+        assert "<draft_notes>" in v7["system_template"]
+        assert "<story>" in v7["system_template"]
+        assert "正文目标长度：" in v7["system_template"]
+        assert "请按上述格式输出 <draft_notes> 和 <story> 两个区块。" in v7["user_template"]
+        assert "人物套路淘汰" not in v7["system_template"]
+        assert "行动与篇幅骨架" not in v7["system_template"]
+
+        assert v8["stage"] == "writer"
+        assert v8["output_mode"] == "xml_story"
+        assert v8["output_schema_name"] is None
+
+        sys8 = v8["system_template"]
+        for phrase in (
+            "<draft_notes>",
+            "<story>",
+            "{{target_length}}",
+            "正文最低字数",
+            "2000字只是底线",
+            "2400—3200",
+            "人物套路淘汰",
+            "剧情套路淘汰",
+            "句式套路淘汰",
+            "信息边界",
+            "现状重构",
+            "行动与篇幅骨架",
+            "不得提前让stop_state成立",
+            "stop_state成立后结束",
+        ):
+            assert phrase in sys8, f"missing in v8 system_template: {phrase}"
+
+        user8 = v8["user_template"]
+        for phrase in (
+            "<draft_notes>",
+            "<story>",
+            "{{target_length}}是story的最低正文长度，不是上限",
+        ):
+            assert phrase in user8, f"missing in v8 user_template: {phrase}"
+
+        # v6/v7 must not be overwritten by v8 content
+        assert v6["system_template"] != v8["system_template"]
+        assert v7["system_template"] != v8["system_template"]
+        assert "融合TGbreak" in v8["description"] or "TGbreak" in v8["description"]
+
+    def test_writer_v8_seeded_as_independent_builtin_profile(self, api_client):
+        resp = api_client.get("/api/prompts?stage=writer")
+        assert resp.status_code == 200
+        data = resp.json()
+        builtins = [p for p in data if p["is_builtin"]]
+        names = {p["name"] for p in builtins}
+
+        assert "默认场景写作" in names
+        assert "Sacrificial Preflight v7" in names
+        assert "Sacrificial Preflight Fusion v8" in names
+
+        v8 = next(p for p in builtins if p["name"] == "Sacrificial Preflight Fusion v8")
+        versions = api_client.get(f"/api/prompts/{v8['id']}/versions").json()
+        assert len(versions) >= 1
+        latest = versions[0]
+        assert latest["output_mode"] == "xml_story"
+        assert latest.get("output_schema_name") in (None, "")
+        assert "<draft_notes>" in latest["system_template"]
+        assert "<story>" in latest["system_template"]
+        assert "正文最低字数" in latest["system_template"]
+        assert "{{target_length}}是story的最低正文长度，不是上限" in latest["user_template"]
+
     def test_editor_prompts_preserve_visible_hook_when_cutting_a_summary(self):
         from app.prompts.defaults import BUILTIN_PROMPTS
 
