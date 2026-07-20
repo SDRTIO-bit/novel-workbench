@@ -1,0 +1,104 @@
+STRICT_LIMITED_PLANNER_WRITER_FACTORIAL_V1 — DRY-RUN (no model calls)
+
+Scenes: 4 | Replicas: 3
+Planner groups: ['P2', 'P3'] | Writer groups: ['W9', 'W10']
+Factorial groups: ['P2W9', 'P2W10', 'P3W9', 'P3W10']
+Planner calls: 24 = 4 scenes × 3 replicas × 2 planners
+Writer calls: 48 = 24 planner outputs × 2 writers
+Total calls: 72
+Writer text slots: 48 = 4 scenes × 4 groups × 3 replicas
+
+── Pre-generation assertions ──
+  cases=4 -> True
+  planner_groups=2 -> True
+  writer_groups=2 -> True
+  factorial_groups=4 -> True
+  replicas=3 -> True
+  planner_calls=24 -> True
+  writer_calls=48 -> True
+  total_calls=72 -> True
+  writer_slots=48 -> True
+
+── Groups ──
+  P2: Planner v2 '默认场景规划' (planner_v2)
+  P3: Planner v3 'Strict Limited Capacity Planner v3' (planner_v3)
+  W9: Writer v9 'Sacrificial Preflight Fusion v9' (xml_story, writer_brief)
+  W10: Writer v10 'Sacrificial Preflight Fusion Strict Limited v10' (xml_story, writer_brief_v3)
+
+── Frozen parameters (identical across all groups) ──
+  provider_id = 34c14b6b-7231-432a-96b2-8272329b828d
+  model_id = deepseek-v4-pro
+  temperature = 0.7
+  top_p = 1.0
+  max_output_tokens = 6000
+  timeout_seconds = 300
+
+── Seed ──
+  Provider/adapter exposes no model seed (LlmRequest has no seed field; DeepSeek chat/completions documents none). seed=null is recorded for every call; temperature/top_p/max_output_tokens/timeout are held identical across groups; reproducibility is not faked. The SEED constant only drives blind-token generation and call-order shuffling.
+
+── target_length=2000, write_mode=new_chapter ──
+  No extra instructions. No length patches. No anti-AI patches.
+
+── Scenes (source from v9 databases) ──
+  [NM-03] 城市日常 《洗衣房的滚筒》 db=FOUND
+      replica 1: planners=P3 → P2
+                P3 writers=W10 → W9
+                P2 writers=W9 → W10
+      replica 2: planners=P2 → P3
+                P2 writers=W10 → W9
+                P3 writers=W9 → W10
+      replica 3: planners=P2 → P3
+                P2 writers=W9 → W10
+                P3 writers=W10 → W9
+  [ROMANCE-02] 恋爱日常 《未读消息》 db=FOUND
+      replica 1: planners=P2 → P3
+                P2 writers=W10 → W9
+                P3 writers=W10 → W9
+      replica 2: planners=P3 → P2
+                P3 writers=W10 → W9
+                P2 writers=W10 → W9
+      replica 3: planners=P3 → P2
+                P3 writers=W9 → W10
+                P2 writers=W9 → W10
+  [CO-04] 校园日常 《操场上错拿的水壶》 db=FOUND
+      replica 1: planners=P3 → P2
+                P3 writers=W10 → W9
+                P2 writers=W10 → W9
+      replica 2: planners=P3 → P2
+                P3 writers=W10 → W9
+                P2 writers=W10 → W9
+      replica 3: planners=P3 → P2
+                P3 writers=W9 → W10
+                P2 writers=W9 → W10
+  [CO-05] 日常任务 《快递架上的同名包裹》 db=FOUND
+      replica 1: planners=P2 → P3
+                P2 writers=W10 → W9
+                P3 writers=W9 → W10
+      replica 2: planners=P2 → P3
+                P2 writers=W9 → W10
+                P3 writers=W10 → W9
+      replica 3: planners=P2 → P3
+                P2 writers=W10 → W9
+                P3 writers=W10 → W9
+
+── Output paths ──
+  root: E:\3\novel-workbench\__evaluation\strict_limited_planner_writer_factorial_v1
+  cases/<CASE>/replicas/<REPLICA>/p2/{planner_raw, planner_parsed, planner_metadata}/
+  cases/<CASE>/replicas/<REPLICA>/p3/{planner_raw, planner_parsed, planner_metadata}/
+  cases/<CASE>/replicas/<REPLICA>/{raw_xml, draft_notes, story, metadata}/
+  manifest.json | execution_summary.json | validation_summary.json
+  blind_review_queue.json | blind_mapping.private.json
+  zhuque/
+
+── Failure discipline ──
+  v9 database missing: abort entire run immediately.
+  Planner failures: recorded as-is; no retry; writers for that planner skip.
+  Writer failures: recorded as-is; no retry; other slots continue.
+  xml_story parse failure: error_code recorded; no LLM repair.
+  No filtering based on length, TEMPO mismatch, or content.
+
+── Zhuque packing ──
+  Generated automatically after run completes.
+  48 articles, anonymous shuffled, 5-newline separator.
+  draft_notes and XML tags excluded from submission.
+  Blind boundaries verified by character-range recovery.
