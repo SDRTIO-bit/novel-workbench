@@ -153,7 +153,11 @@ def _find_builtin_prompt(name: str, stage: str) -> dict | None:
 async def ensure_prompt_exists(
     session: AsyncSession, name: str, stage: str
 ) -> str:
-    """Ensure a named builtin prompt profile + version exist. Returns the PromptVersion.id."""
+    """Ensure a named builtin prompt profile + version exist. Returns the PromptVersion.id.
+
+    Always creates a fresh version from BUILTIN_PROMPTS content — never reuses
+    stale cached versions from previous runs.
+    """
     entry = _find_builtin_prompt(name, stage)
     if entry is None:
         raise RuntimeError(
@@ -170,23 +174,24 @@ async def ensure_prompt_exists(
         )
     ).scalar_one_or_none()
 
-    if existing is not None:
-        await session.refresh(existing, ["versions"])
-        if existing.versions:
-            return existing.versions[-1].id
+    if existing is None:
+        profile = PromptProfile(
+            stage=stage,
+            name=entry["name"],
+            description=entry["description"],
+            is_builtin=True,
+        )
+        session.add(profile)
+        await session.flush()
+    else:
+        profile = existing
 
-    profile = PromptProfile(
-        stage=stage,
-        name=entry["name"],
-        description=entry["description"],
-        is_builtin=True,
-    )
-    session.add(profile)
-    await session.flush()
-
+    # Always create a fresh version from current BUILTIN_PROMPTS content
+    await session.refresh(profile, ["versions"])
+    next_version = max((v.version_number for v in profile.versions), default=0) + 1
     version = PromptVersion(
         profile_id=profile.id,
-        version_number=1,
+        version_number=next_version,
         system_template=entry["system_template"],
         user_template=entry["user_template"],
         output_mode=entry["output_mode"],
@@ -250,9 +255,9 @@ async def load_source_input(session: AsyncSession, case_id: str) -> dict[str, An
             select(GenerationRun).where(
                 GenerationRun.project_id == project.id,
                 GenerationRun.chapter_id == chapter.id,
-            )
+            ).order_by(GenerationRun.created_at).limit(1)
         )
-    ).scalar_one_or_none()
+    ).scalars().first()
     if run is None:
         raise RuntimeError(f"GenerationRun for '{project_name}' not found")
 
@@ -821,6 +826,9 @@ async def run_replica(
             candidate = await generation.execute_stage(
                 run_obj.id, "planner", override
             )
+            await session.flush()
+            if not candidate.error_code:
+                await generation.select_candidate(run_obj.id, "planner", candidate.id)
             await session.commit()
 
             pr = record_candidate(candidate, planner_group, replica)
