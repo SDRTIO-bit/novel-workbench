@@ -1,0 +1,62 @@
+[
+  {
+    "pair_id": "C02DD5664F9C",
+    "text_x_path": "cases\\NM-03\\story\\f9-3.txt",
+    "text_y_path": "cases\\NM-03\\story\\p7-3.txt"
+  },
+  {
+    "pair_id": "EF51A418159C",
+    "text_x_path": "cases\\CO-04\\story\\p7-3.txt",
+    "text_y_path": "cases\\CO-04\\story\\f9-3.txt"
+  },
+  {
+    "pair_id": "4266995FAEF7",
+    "text_x_path": "cases\\CO-05\\story\\p7-3.txt",
+    "text_y_path": "cases\\CO-05\\story\\f9-3.txt"
+  },
+  {
+    "pair_id": "AB87DBCBFA74",
+    "text_x_path": "cases\\ROMANCE-02\\story\\p7-3.txt",
+    "text_y_path": "cases\\ROMANCE-02\\story\\f9-3.txt"
+  },
+  {
+    "pair_id": "FAD15904EE73",
+    "text_x_path": "cases\\ROMANCE-02\\story\\f9-2.txt",
+    "text_y_path": "cases\\ROMANCE-02\\story\\p7-2.txt"
+  },
+  {
+    "pair_id": "964A1F4B4C85",
+    "text_x_path": "cases\\NM-03\\story\\p7-1.txt",
+    "text_y_path": "cases\\NM-03\\story\\f9-1.txt"
+  },
+  {
+    "pair_id": "96B19A432C11",
+    "text_x_path": "cases\\CO-04\\story\\f9-2.txt",
+    "text_y_path": "cases\\CO-04\\story\\p7-2.txt"
+  },
+  {
+    "pair_id": "C1521CFF32EE",
+    "text_x_path": "cases\\CO-04\\story\\p7-1.txt",
+    "text_y_path": "cases\\CO-04\\story\\f9-1.txt"
+  },
+  {
+    "pair_id": "506FDE1B8649",
+    "text_x_path": "cases\\ROMANCE-02\\story\\p7-1.txt",
+    "text_y_path": "cases\\ROMANCE-02\\story\\f9-1.txt"
+  },
+  {
+    "pair_id": "7C7F8CE8906D",
+    "text_x_path": "cases\\NM-03\\story\\p7-2.txt",
+    "text_y_path": "cases\\NM-03\\story\\f9-2.txt"
+  },
+  {
+    "pair_id": "FDBD5D23FBFB",
+    "text_x_path": "cases\\CO-05\\story\\p7-2.txt",
+    "text_y_path": "cases\\CO-05\\story\\f9-2.txt"
+  },
+  {
+    "pair_id": "6218011D5596",
+    "text_x_path": "cases\\CO-05\\story\\p7-1.txt",
+    "text_y_path": "cases\\CO-05\\story\\f9-1.txt"
+  }
+]

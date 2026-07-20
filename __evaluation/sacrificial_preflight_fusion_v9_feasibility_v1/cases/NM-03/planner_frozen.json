@@ -1,0 +1,163 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "通过洗衣机状态的事实，拆穿方笛或老人其中一方的错误记忆，并让方笛意识到自己的记忆可能不可靠，为后续记忆偏差埋下伏笔。",
+  "location": "小区自助洗衣房",
+  "time": "傍晚，洗衣机运行时段",
+  "scene_state": {
+    "last_completed_action": "方笛走进洗衣房，走向自己用的滚筒洗衣机，发现机器已停止运行，一位老人正在旁边等待。",
+    "present_characters": [
+      "方笛",
+      "老人"
+    ],
+    "visible_facts": [
+      "洗衣机滚筒玻璃上有少量水迹，但无明显泡沫",
+      "洗衣机面板显示“结束”或剩余时间为0",
+      "老人手里拿着洗衣篮，里面有一些湿衣服",
+      "洗衣房内其他机器都在正常运转"
+    ],
+    "available_objects": [
+      "滚筒洗衣机",
+      "洗衣篮",
+      "湿衣服",
+      "洗衣房内的座椅"
+    ],
+    "unresolved_problem": "方笛和老人对洗衣机是否属于方笛的洗衣周期存在争执，需要确定机器状态以证明谁记错了。",
+    "already_existing_constraints": [
+      "方笛不能与老人激烈争执",
+      "方笛不能强行打开滚筒门",
+      "洗衣房是公共空间，言行需得体"
+    ]
+  },
+  "characters": [
+    {
+      "name": "方笛",
+      "goal": "确认洗衣机里的衣服是自己的，并取回衣服",
+      "known": [
+        "自己设定了一小时洗衣模式",
+        "现在时间大约过去四十分钟",
+        "洗衣机看起来已经停了"
+      ],
+      "unknown": [
+        "洗衣机实际运行了多久",
+        "老人是否在说谎或记错",
+        "自己的记忆是否准确"
+      ],
+      "mistaken_beliefs": [
+        "洗衣机一定还没洗完，因为设定时间未到",
+        "老人可能想插队或搞错了机器"
+      ],
+      "constraints": [
+        "不能与老人发生冲突",
+        "不能直接打开滚筒门查看衣服",
+        "必须尊重公共秩序"
+      ],
+      "observed_evidence": [
+        "面板显示“结束”或剩余时间为0",
+        "滚筒玻璃上只有水迹，没有泡沫",
+        "老人手里的衣服是湿的，且看起来像是刚从洗衣机拿出来的"
+      ],
+      "current_interpretation": "面板显示结束，但自己设定的时间还没到，可能是机器故障或老人动了手脚，但老人手里的湿衣服又像是刚洗好的。",
+      "how_interpretation_drives_action": "她决定先检查面板上的洗涤记录或时间日志，而不是直接争论。"
+    },
+    {
+      "name": "老人",
+      "goal": "取回自己洗完的衣服，继续使用洗衣机或离开",
+      "known": [
+        "自己的衣服在这台洗衣机里洗完了",
+        "机器停了有一会儿了",
+        "这个年轻女孩似乎认为机器还是她的"
+      ],
+      "unknown": [
+        "方笛设定的具体时间",
+        "方笛的记忆为何出错"
+      ],
+      "mistaken_beliefs": [
+        "方笛可能想霸占机器",
+        "年轻人可能记错了时间"
+      ],
+      "constraints": [
+        "不能与年轻人争吵",
+        "需要尽快取衣让出机器"
+      ],
+      "observed_evidence": [
+        "方笛看着面板，表情困惑",
+        "滚筒玻璃上显示机器已停止"
+      ],
+      "current_interpretation": "女孩似乎真的认为机器还是她的，但机器明显已经结束，可能是她记错了时间。",
+      "how_interpretation_drives_action": "老人保持耐心，指着面板和滚筒，平静地解释机器已经停了。"
+    }
+  ],
+  "concrete_problem": "方笛必须通过检查洗衣机面板上的状态或记录，判断机器是否真的完成了她的洗衣周期，从而决定是否让步。",
+  "pressure": "公共洗衣房内，双方都希望避免冲突，但机器状态必须澄清，时间拖延可能引起旁人注意或老人不耐烦。",
+  "turning_point": "方笛在面板上找到了洗衣完成的准确时间记录，证明洗衣周期确实已经结束，她不得不接受自己记忆错误的事实。",
+  "end_condition": "方笛确认机器已完成洗衣，向老人道歉并让出机器，但内心开始怀疑自己的记忆可靠性。",
+  "forbidden": [
+    "方笛与老人发生激烈争吵",
+    "方笛强行打开滚筒门",
+    "引入第三方人物调解",
+    "揭示方笛记忆偏差的根本原因",
+    "使用超自然或科幻元素解释记忆错误"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "洗衣机面板显示“结束”且剩余时间为0，但方笛记得设定的一小时还差20分钟。",
+      "character_interpretation": "方笛认为可能是机器故障或老人误操作提前结束了程序，但老人手里的湿衣服又暗示机器可能真的完成了。",
+      "character_next_action": "方笛按下面板上的“详情”或“历史”按钮，查看洗涤完成的准确时间戳。",
+      "rejected_alternative": "方笛没有直接相信老人并离开，也没有坚持机器属于自己而争吵。",
+      "immediate_consequence": "面板显示洗涤完成时间是在十分钟前，总运行时间确实是40分钟，而非她记忆中的一小时。",
+      "counterfactual_without_action": "如果方笛不查看时间记录，她会继续坚持自己的记忆，与老人僵持或产生口角。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "方笛坚信自己的记忆正确，机器可能故障",
+        "after": "方笛看到客观时间记录，意识到自己的记忆有误"
+      },
+      "cost_or_commitment": "方笛付出了承认自己记忆错误的代价，内心产生自我怀疑。",
+      "next_constraint": "方笛必须接受记忆不可靠的事实，并在未来更谨慎地依赖记忆。",
+      "reader_must_infer": "方笛的记忆错误并非偶然，可能与某种心理或生理状态有关，为后续情节埋下伏笔。",
+      "narrator_must_not_state": [
+        "方笛记忆错误的具体原因",
+        "方笛此刻是否已经联想到过去的类似事件"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "方笛走进洗衣房，发现老人站在自己用的洗衣机前，机器已停。",
+    "dominant_pressure": {
+      "kind": "information_gap",
+      "description": "双方对洗衣机状态的理解存在信息差，必须通过机器记录澄清事实。"
+    },
+    "allowed_viewpoint_misread": "方笛可能将老人的平静误解为心虚，老人可能将方笛的困惑误解为故意纠缠。",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "方笛记忆偏差的根本原因",
+      "老人是否曾经有过类似经历"
+    ],
+    "stop_state": {
+      "type": "information_conflict",
+      "visible_fact": "方笛看到面板上洗涤完成的时间记录，与自己记忆的时间不符。",
+      "what_is_now_different": "方笛从坚信自己正确转变为接受记忆错误，并产生自我怀疑。",
+      "must_not_append": "不得解释方笛为何会记错时间，只呈现事实。"
+    },
+    "final_line_must_include": "她盯着那个时间，突然不确定自己是不是真的设了一小时。"
+  }
+}

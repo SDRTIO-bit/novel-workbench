@@ -1,0 +1,114 @@
+{
+  "experiment": "SACRIFICIAL_PREFLIGHT_FUSION_V9_FEASIBILITY_V1",
+  "git_commit": "b0184e295a683cb160ca49ebbd2fae3a7d73c4f6",
+  "seed": 202607208,
+  "model_seed": null,
+  "seed_note": "Provider/adapter exposes no model seed (LlmRequest has no seed field; DeepSeek chat/completions documents none). seed=null is recorded for every call; temperature/top_p/max_output_tokens/timeout are held identical across groups; reproducibility is not faked. The SEED constant only drives blind-token generation and call-order shuffling.",
+  "replicas_per_group": 3,
+  "case_ids": [
+    "NM-03",
+    "ROMANCE-02",
+    "CO-04",
+    "CO-05"
+  ],
+  "target_length": 2000,
+  "groups": {
+    "P7": "Writer v7 Sacrificial Preflight (xml_story)",
+    "F9": "Writer v9 Sacrificial Preflight Fusion v9 (xml_story)"
+  },
+  "p7_prompt_version_id": "5cd45de3-833e-4b74-89a2-981119016daf",
+  "f9_prompt_version_id": "f42948d1-22ca-42ad-8596-88db58c763d9",
+  "p7_profile_id": "4df49535-5984-4d14-9d8c-0f9b3c3c6d4a",
+  "f9_profile_id": "2f807d19-f785-4b9b-84af-949be13db358",
+  "frozen_parameters": {
+    "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+    "model_id": "deepseek-v4-pro",
+    "planner_prompt_version_id": "f9052f8a-dc4e-5408-b14e-fc1badaf57f8",
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 6000,
+    "timeout_seconds": 300
+  },
+  "source_planner_experiment": "SACRIFICIAL_PREFLIGHT_FEASIBILITY_V1",
+  "execution_model": "scene-level parallelism (4 concurrent scenes, each with its own isolated SQLite copy); writers sequential within a scene; NO Planner calls — frozen Planner reused from SACRIFICIAL_PREFLIGHT_FEASIBILITY_V1",
+  "rules": [
+    "ZERO Planner calls; frozen Planner outputs reused.",
+    "2 groups x 3 replicas per scene; stratified-random P7/F9 call order per replica.",
+    "No Critic/Reviser/Judge. No retry. No filtering. All failures preserved.",
+    "Both groups: xml_story mode; generation_service extracts <story>; raw_response preserved.",
+    "xml_story parse failure: error_code recorded; no LLM repair.",
+    "seed=null for every model call; other parameters held identical.",
+    "max_output_tokens=6000 is an experiment-level override for BOTH groups.",
+    "The ONLY delta between P7 and F9 is the Writer prompt version."
+  ],
+  "success_criteria": {
+    "format_and_mechanism": {
+      "A1": "F9 at least 11/12 successfully extract story",
+      "A2": "F9 successful outputs: XML leak = 0",
+      "A3": "F9 successful outputs: draft_notes leak = 0",
+      "A4": "F9 at least 10/12 contain 8-section draft_notes structure",
+      "A5": "F9 at least 9/12 contain 6-9 narrative units in section 7"
+    },
+    "length": {
+      "B1": "F9 at least 10/12 reach 2000 chars",
+      "B2": "F9 story median >= 2200 chars",
+      "B3": "F9 mean story chars >= P7 mean by 25%",
+      "B4": "In pairs where P7 < 2000, F9 crosses 2000 in at least 2/3",
+      "B5": "F9 at least 8/12 reach 2000 chars (anti-mean-skew floor)"
+    },
+    "quality": {
+      "C1": "'Better as final text': F9 wins >= 7/12",
+      "C2": "'More complete chapter': F9 wins >= 7/12",
+      "C3": "F9 padded_repetition tags <= 3",
+      "C4": "F9 delayed_stop tags <= 3",
+      "C5": "F9 early_stop tags <= 2",
+      "C6": "F9 missing_context or process_jump tags <= 2",
+      "C7": "F9 does not lose 0:3 in any single scene"
+    },
+    "zhuque": {
+      "D1": "F9 char-weighted human rate not < P7 by >5pp",
+      "D2": "F9 per-article human rate median not < P7 by >5pp",
+      "D3": "F9 wins median in >= 2/4 scenes",
+      "D4": "F9 human-rate >= 60% count not < P7 by >= 2"
+    },
+    "overall_judgment": {
+      "STRONG_PASS": "All A + B + C + D strong signal",
+      "PASS": "All A + B + C + D non-inferior",
+      "PARTIAL": "A + B passed, C or D not yet",
+      "FAIL": "Major shortfall in length, quality, or Zhuque"
+    }
+  },
+  "status": "completed",
+  "p7_prompt_identity": {
+    "prompt_version_id": "5cd45de3-833e-4b74-89a2-981119016daf",
+    "found": true,
+    "version_number": 1,
+    "output_mode": "xml_story",
+    "output_schema_name": null,
+    "system_template_sha256": "d04fa952a6ba5e185f71dc889a8a6b80eec9aed2643f307538c2f878beddf9cb",
+    "user_template_sha256": "fbbf67a431f4f5984f1f73949403141f594cdce9452df22b551fb415961f2c7b"
+  },
+  "f9_prompt_identity": {
+    "prompt_version_id": "f42948d1-22ca-42ad-8596-88db58c763d9",
+    "found": true,
+    "version_number": 1,
+    "output_mode": "xml_story",
+    "output_schema_name": null,
+    "system_template_sha256": "70ab3074a388fe688d2d4c0d08990cebe5f1d0df4afd33d1bad15f631e8a273d",
+    "user_template_sha256": "eadf4137a9f95730820a0afae538bc76a3a6a406cf017f358b6255e921ec909b"
+  },
+  "post_generation_assertions": {
+    "checks": {
+      "writer_slots": true,
+      "group_P7_texts": true,
+      "group_F9_texts": true,
+      "per_case_6": true,
+      "per_case_group_3": true
+    },
+    "all_passed": true,
+    "drafts_total": 24,
+    "queued_texts": 24,
+    "expected_texts": 24
+  },
+  "wall_seconds": 324.8
+}
