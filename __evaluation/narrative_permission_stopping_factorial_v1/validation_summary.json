@@ -1,0 +1,2405 @@
+{
+  "experiment": "NARRATIVE_PERMISSION_STOPPING_FACTORIAL_V1",
+  "drafts": [
+    {
+      "case_id": "AL-01",
+      "group": "C",
+      "replica": 1,
+      "character_count": 695,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "AL-01",
+      "group": "B",
+      "replica": 1,
+      "character_count": 656,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "AL-01",
+      "group": "D",
+      "replica": 1,
+      "character_count": 750,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "AL-01",
+      "group": "A",
+      "replica": 1,
+      "character_count": 626,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "AL-01",
+      "group": "C",
+      "replica": 2,
+      "character_count": 1064,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "AL-01",
+      "group": "A",
+      "replica": 2,
+      "character_count": 924,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "AL-01",
+      "group": "D",
+      "replica": 2,
+      "character_count": 1505,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "AL-01",
+      "group": "B",
+      "replica": 2,
+      "character_count": 1125,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "AL-01",
+      "group": "A",
+      "replica": 3,
+      "character_count": 621,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "AL-01",
+      "group": "C",
+      "replica": 3,
+      "character_count": 935,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "AL-01",
+      "group": "D",
+      "replica": 3,
+      "character_count": 926,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "AL-01",
+      "group": "B",
+      "replica": 3,
+      "character_count": 889,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "CO-04",
+      "group": "A",
+      "replica": 1,
+      "character_count": 605,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "CO-04",
+      "group": "C",
+      "replica": 1,
+      "character_count": 767,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "CO-04",
+      "group": "B",
+      "replica": 1,
+      "character_count": 843,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "CO-04",
+      "group": "D",
+      "replica": 1,
+      "character_count": 455,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "CO-04",
+      "group": "B",
+      "replica": 2,
+      "character_count": 842,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "CO-04",
+      "group": "D",
+      "replica": 2,
+      "character_count": 528,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "CO-04",
+      "group": "C",
+      "replica": 2,
+      "character_count": 401,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "CO-04",
+      "group": "A",
+      "replica": 2,
+      "character_count": 742,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "CO-04",
+      "group": "A",
+      "replica": 3,
+      "character_count": 861,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "CO-04",
+      "group": "D",
+      "replica": 3,
+      "character_count": 494,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "CO-04",
+      "group": "B",
+      "replica": 3,
+      "character_count": 587,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "CO-04",
+      "group": "C",
+      "replica": 3,
+      "character_count": 458,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "CO-05",
+      "group": "B",
+      "replica": 1,
+      "character_count": 534,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "CO-05",
+      "group": "A",
+      "replica": 1,
+      "character_count": 807,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "CO-05",
+      "group": "C",
+      "replica": 1,
+      "character_count": 454,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "CO-05",
+      "group": "D",
+      "replica": 1,
+      "character_count": 1053,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "CO-05",
+      "group": "A",
+      "replica": 2,
+      "character_count": 425,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "CO-05",
+      "group": "D",
+      "replica": 2,
+      "character_count": 1194,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "CO-05",
+      "group": "B",
+      "replica": 2,
+      "character_count": 691,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "CO-05",
+      "group": "C",
+      "replica": 2,
+      "character_count": 670,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "CO-05",
+      "group": "A",
+      "replica": 3,
+      "character_count": 828,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "CO-05",
+      "group": "C",
+      "replica": 3,
+      "character_count": 794,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "CO-05",
+      "group": "B",
+      "replica": 3,
+      "character_count": 790,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "CO-05",
+      "group": "D",
+      "replica": 3,
+      "character_count": 946,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "ROMANCE-02",
+      "group": "D",
+      "replica": 1,
+      "character_count": 629,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "ROMANCE-02",
+      "group": "A",
+      "replica": 1,
+      "character_count": 862,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "ROMANCE-02",
+      "group": "C",
+      "replica": 1,
+      "character_count": 1509,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "ROMANCE-02",
+      "group": "B",
+      "replica": 1,
+      "character_count": 982,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "ROMANCE-02",
+      "group": "D",
+      "replica": 2,
+      "character_count": 775,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "ROMANCE-02",
+      "group": "C",
+      "replica": 2,
+      "character_count": 645,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "ROMANCE-02",
+      "group": "B",
+      "replica": 2,
+      "character_count": 972,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "ROMANCE-02",
+      "group": "A",
+      "replica": 2,
+      "character_count": 894,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "ROMANCE-02",
+      "group": "C",
+      "replica": 3,
+      "character_count": 972,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "ROMANCE-02",
+      "group": "B",
+      "replica": 3,
+      "character_count": 896,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "ROMANCE-02",
+      "group": "A",
+      "replica": 3,
+      "character_count": 835,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "ROMANCE-02",
+      "group": "D",
+      "replica": 3,
+      "character_count": 1195,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "NM-01",
+      "group": "D",
+      "replica": 1,
+      "character_count": 688,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "NM-01",
+      "group": "C",
+      "replica": 1,
+      "character_count": 635,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "NM-01",
+      "group": "B",
+      "replica": 1,
+      "character_count": 907,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": true,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "NM-01",
+      "group": "A",
+      "replica": 1,
+      "character_count": 772,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "NM-01",
+      "group": "D",
+      "replica": 2,
+      "character_count": 642,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "NM-01",
+      "group": "B",
+      "replica": 2,
+      "character_count": 1183,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": true,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "NM-01",
+      "group": "A",
+      "replica": 2,
+      "character_count": 547,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "NM-01",
+      "group": "C",
+      "replica": 2,
+      "character_count": 587,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "NM-01",
+      "group": "A",
+      "replica": 3,
+      "character_count": 574,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": true,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "NM-01",
+      "group": "D",
+      "replica": 3,
+      "character_count": 992,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": true,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "NM-01",
+      "group": "C",
+      "replica": 3,
+      "character_count": 1263,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "NM-01",
+      "group": "B",
+      "replica": 3,
+      "character_count": 860,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": true,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "NM-02",
+      "group": "B",
+      "replica": 1,
+      "character_count": 901,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "NM-02",
+      "group": "A",
+      "replica": 1,
+      "character_count": 1221,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "NM-02",
+      "group": "C",
+      "replica": 1,
+      "character_count": 1243,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "NM-02",
+      "group": "D",
+      "replica": 1,
+      "character_count": 756,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "NM-02",
+      "group": "B",
+      "replica": 2,
+      "character_count": 1039,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "NM-02",
+      "group": "D",
+      "replica": 2,
+      "character_count": 696,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "NM-02",
+      "group": "C",
+      "replica": 2,
+      "character_count": 752,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "NM-02",
+      "group": "A",
+      "replica": 2,
+      "character_count": 903,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "NM-02",
+      "group": "A",
+      "replica": 3,
+      "character_count": 1350,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "NM-02",
+      "group": "C",
+      "replica": 3,
+      "character_count": 1032,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "NM-02",
+      "group": "D",
+      "replica": 3,
+      "character_count": 1209,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "NM-02",
+      "group": "B",
+      "replica": 3,
+      "character_count": 1003,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "NM-03",
+      "group": "B",
+      "replica": 1,
+      "character_count": 1588,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "NM-03",
+      "group": "A",
+      "replica": 1,
+      "character_count": 1040,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "NM-03",
+      "group": "D",
+      "replica": 1,
+      "character_count": 1522,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "NM-03",
+      "group": "C",
+      "replica": 1,
+      "character_count": 1805,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "NM-03",
+      "group": "C",
+      "replica": 2,
+      "character_count": 1149,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "NM-03",
+      "group": "B",
+      "replica": 2,
+      "character_count": 1869,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "NM-03",
+      "group": "A",
+      "replica": 2,
+      "character_count": 1710,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "NM-03",
+      "group": "D",
+      "replica": 2,
+      "character_count": 1155,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "NM-03",
+      "group": "B",
+      "replica": 3,
+      "character_count": 1650,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "NM-03",
+      "group": "A",
+      "replica": 3,
+      "character_count": 1811,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "NM-03",
+      "group": "D",
+      "replica": 3,
+      "character_count": 3328,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "NM-03",
+      "group": "C",
+      "replica": 3,
+      "character_count": 891,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "NM-04",
+      "group": "C",
+      "replica": 1,
+      "character_count": 632,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "NM-04",
+      "group": "D",
+      "replica": 1,
+      "character_count": 652,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "NM-04",
+      "group": "B",
+      "replica": 1,
+      "character_count": 626,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "NM-04",
+      "group": "A",
+      "replica": 1,
+      "character_count": 523,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "NM-04",
+      "group": "A",
+      "replica": 2,
+      "character_count": 498,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "NM-04",
+      "group": "C",
+      "replica": 2,
+      "character_count": 415,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "NM-04",
+      "group": "D",
+      "replica": 2,
+      "character_count": 522,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "NM-04",
+      "group": "B",
+      "replica": 2,
+      "character_count": 631,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": true,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "NM-04",
+      "group": "A",
+      "replica": 3,
+      "character_count": 346,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "NM-04",
+      "group": "C",
+      "replica": 3,
+      "character_count": 802,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "NM-04",
+      "group": "D",
+      "replica": 3,
+      "character_count": 633,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": false,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    },
+    {
+      "case_id": "NM-04",
+      "group": "B",
+      "replica": 3,
+      "character_count": 564,
+      "validator_codes": [
+        "STOP_MARKER_LITERAL_MISS"
+      ],
+      "banned_sentence_hits": {},
+      "second_confirmation_hits": [],
+      "environment_coda_hits": [],
+      "stop_marker_first_char": null,
+      "post_stop_character_count": null,
+      "tempo_final_line_mismatch": true,
+      "manual_review_required": [
+        "viewpoint_violation",
+        "cross_mind_assertion",
+        "other_character_motive_as_fact",
+        "true_stop_state_position",
+        "visible_state_transition_count",
+        "relationship_or_meaning_summary",
+        "shared_atmosphere_declaration",
+        "narrator_correction_with_backstage_fact"
+      ]
+    }
+  ]
+}

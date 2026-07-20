@@ -1,0 +1,112 @@
+NARRATIVE_PERMISSION_STOPPING_FACTORIAL_V1 — DRY-RUN (no model calls)
+
+Scenes: 8 | Groups: ['A', 'B', 'C', 'D'] | Replicas: 3
+Slots: 96 texts = 8 scenes x 4 groups x 3 replicas
+Model calls: 8 Planner + 96 Writer = 104
+
+── Frozen parameters (identical across all groups) ──
+  provider_id = 34c14b6b-7231-432a-96b2-8272329b828d
+  model_id = deepseek-v4-pro
+  planner_prompt_version_id = f9052f8a-dc4e-5408-b14e-fc1badaf57f8
+  writer_prompt_version_id = f7760cd8-8048-4f3c-839c-e33333eb96fb
+  temperature = 0.7
+  top_p = 1.0
+  planner_max_output_tokens = 12288
+  max_output_tokens = 4000
+  timeout_seconds = 300
+  writer_input_mode = writer_brief   writer_behavior_mode = None
+
+── Seed ──
+  Provider/adapter exposes no model seed (LlmRequest has no seed field; DeepSeek chat/completions documents none). seed=null is recorded for every call; temperature/top_p/max_output_tokens/timeout/thinking are held identical across groups; reproducibility is not faked. The SEED constant only drives blind-token generation and call-order shuffling.
+
+── Pre-registered overlap notice ──
+  Frozen DB writer prompt v6 section 5 already contains a strong stop rule (stop at the stop fact; no coda, no psychological explanation, no relationship summary, no theme elevation). STRICT_STOP is therefore a small-delta treatment: a weak C-group main effect is an attribute of the variable, and must NOT be read as an instruction-injection failure.
+
+── Group deltas (the ONLY differences between groups) ──
+  A: no instruction block (pure production)
+  B: STRICT_LIMITED instruction  sha256=f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b
+  C: STRICT_STOP instruction     sha256=6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1
+  D: STRICT_LIMITED + STRICT_STOP sha256=11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e
+
+── STRICT_LIMITED instruction (verbatim) ──
+## 叙述权限（在既有规则之上追加的限制）
+本篇使用第三人称，并严格限定为单一视角人物（viewpoint_character）的限知叙述。
+一、全文只有视角人物可以出现内心、记忆、判断、感觉；不得切入第二个人物的内心或真实动机。
+二、正文只允许直接陈述：视角人物看见或听见的内容、其身体感受、其记忆、其判断猜测与误判，以及其能够确认的已发生事实。
+三、其他人物只能通过可见动作、可听语言、停顿、视线、姿势、物件操作，以及对现场状态的可见改变来呈现；不得把其他人物的心理、真实意图或正确解释作为事实宣布。
+四、视角人物无法确认时，正文必须保持不确定（他没听清、她分辨不出、他以为、她猜、看起来像、可能）；不得在下一句公布正确答案。
+五、禁止以下叙述功能：「他不知道的是……」「其实她早就……」「实际上对方只是……」；同时解释两个人物的真实心理；宣布所有旁观者共同感受到某种气氛；宣布人物关系已经发生变化；直接总结事件的主题或意义；用视角人物尚无法确认的信息纠正其判断。
+六、本限制不弱化 Planner 已确定的现场事实：要求发生的事件仍须实际发生；受限制的只是叙述者向读者释放信息的范围。
+
+── STRICT_STOP instruction (verbatim) ──
+## 停止纪律（在既有规则之上追加的限制）
+一、正文第一次出现满足 stop_state 的可见事实时，立即结束全文。
+二、该事实成立之后，不得再写：对刚才动作的解释；双方再次确认；人物心理变化的回顾；关系或意义总结；环境余韵；同一物件的再次描写；新的停顿或对视；「他没有走」「她也没有退开」一类第二确认；旁白对局面变化的宣布。
+三、允许停止在：一个物件被放回、一个人改变方向、一句话获得回应、一个请求被接受或拒绝、一项现场状态被改变、一个新限制变得可见。
+四、不得为满足字数继续生成；正文长度以实际停点为准。
+
+── Scenes and per-replica call orders ──
+  [AL-01] 校园误会 《撤回的作业评语》
+      instruction: 课间，乔雨发现班主任在企业微信上给自己发了一条评语又撤回了，只看到预览里'你这次的……'四个字。同桌正拿着手机走过来。乔雨不能问班主任，也不能假装没看见。她必须根据这条被撤回的消息做个具体选择。停在新出现的事实。
+      replica 1: C → B → D → A
+      replica 2: C → A → D → B
+      replica 3: A → C → D → B
+  [CO-04] 校园日常 《操场上错拿的水壶》
+      instruction: 体育课自由活动时，路远发现自己的蓝色运动水壶被一个不认识的男生拿起来喝了一口。那个男生正往篮球场方向走，手里还拿着水壶。路远不能跑过去抢回来，也不能在操场上喊。他必须用一个现场物件让对方发现。停在水壶回到正确位置的事实。
+      replica 1: A → C → B → D
+      replica 2: B → D → C → A
+      replica 3: A → D → B → C
+  [CO-05] 日常任务 《快递架上的同名包裹》
+      instruction: 小区快递架上，向暖发现一个写着'向暖'的包裹——但收件地址不是自己的楼栋。真正的收件人可能就在附近。包裹不大，架子上还有其他未取件。向暖不能拆包裹验证，也不能拿错的东西回家。她必须用一个现场物件标记或通知。停在包裹归属出现新事实。
+      replica 1: B → A → C → D
+      replica 2: A → D → B → C
+      replica 3: A → C → B → D
+  [ROMANCE-02] 恋爱日常 《未读消息》
+      instruction: 合租屋厨房里，夏知看见韩川的手机亮起自己昨晚的未读消息，韩川却先把手机扣在桌上去洗菜。水已经开了，桌上只有两只碗。夏知不能偷看手机，也不能断言对方为何没回；她需要根据可见事实选择继续帮忙、离开或提出别的行动，并让代价和后果落在现场。
+      replica 1: D → A → C → B
+      replica 2: D → C → B → A
+      replica 3: C → B → A → D
+  [NM-01] 城市日常 《半截语音》
+      instruction: 下班地铁上，林悄收到合租室友发来的一条语音，外放只听到前半句'你桌上那个蓝色文件夹我……'就被进站噪声盖过去，再听时语音已被对方撤回。蓝色文件夹里有她明天投标要用的文件。室友的电话正在占线。林悄不能假定对方动了文件夹，也不能等到家再确认。她必须在两站路之内做一个具体行动。停在新出现的事实。
+      replica 1: D → C → B → A
+      replica 2: D → B → A → C
+      replica 3: A → D → C → B
+  [NM-02] 校园日常 《自习区错收的书》
+      instruction: 图书馆自习区，周淇去接水回来，发现自己摊在桌上的考研单词书被邻座男生收进了他的书包——那本书里夹着她手写的租房合同草稿。男生还在低头做题，没有要走的意思。周淇不能当众翻他书包，也不能喊管理员。她必须用桌上的一个物件让对方自己发现收错了。停在单词书归属出现新事实。
+      replica 1: B → A → C → D
+      replica 2: B → D → C → A
+      replica 3: A → C → D → B
+  [NM-03] 城市日常 《洗衣房的滚筒》
+      instruction: 小区自助洗衣房里，方笛认为自己那台滚筒还没洗完——她记得设定的是一小时，现在才过去四十分钟。旁边等着用机器的老人说机器早停了，里面是他的衣服。方笛不能跟老人争，也不能直接把滚筒门拉开。滚筒玻璃上的水位和面板上的状态会证明谁记错了。她必须用一个可见事实处理这个争执。停在机器状态拆穿其中一方判断的事实。
+      replica 1: B → A → D → C
+      replica 2: C → B → A → D
+      replica 3: B → A → D → C
+  [NM-04] 恋爱日常 《掉链子的自行车》
+      instruction: 周日早上，合租的苏叶发现自己自行车的链条掉了，而室友沈一凡正蹲在门口修他自己的车。工具箱就摊在两人中间。苏叶从来没开口请他帮过忙，也不能把车子一推说'你顺便看看'。她必须提出一个具体的请求。停在请求被接受或被拒绝的可见事实。
+      replica 1: C → D → B → A
+      replica 2: A → C → D → B
+      replica 3: A → C → D → B
+
+── Output paths ──
+  root: E:\3\novel-workbench\__evaluation\narrative_permission_stopping_factorial_v1
+  cases/<CASE>/{planner.json, result.json, drafts/*.txt|json}
+  blind_review_queue.json | blind_mapping.private.json | manifest.json
+  generation_policy_summary.json | validation_summary.json | execution_summary.json
+  zhuque/{zhuque_submission_all.txt, zhuque_blind_boundaries.json, zhuque_submission_manifest.json}
+
+── Hash strategy ──
+  instruction_hash: sha256 of the exact instruction block appended to the prompt
+  rendered_user_prompt_sha256: sha256 of the final user prompt per candidate
+  zhuque_submission_all.txt: whole-file sha256 in zhuque_submission_manifest.json
+  prompt identity: version_number + template sha256 of planner/writer prompt rows
+
+── Cost upper bound ──
+  Planner: 8 x max 12288 output tokens = 98304
+  Writer: 96 x max 4000 output tokens = 384000
+  Total output-token ceiling ≈ 482304
+
+── Failure discipline ──
+  Planner hard failure: abort entire run (D3), status=aborted, no zhuque files.
+  Writer/provider failures: recorded; any existing text (incl. TEMPO_FINAL_LINE_MISMATCH) queued.
+  Export blocked unless: queue=96, mapping=96, boundaries=96, texts=96,
+  per-group=24, per-case=12, per-case-group=3.

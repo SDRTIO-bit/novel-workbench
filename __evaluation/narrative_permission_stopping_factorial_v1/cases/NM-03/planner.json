@@ -1,0 +1,185 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "通过洗衣房滚筒归属的争执，用一次可见事实的确认，让方笛从记忆自信转向自我怀疑，并建立她与陌生老人之间微妙的社交关系。",
+  "location": "小区自助洗衣房",
+  "time": "工作日下午，阳光斜照进洗衣房",
+  "scene_state": {
+    "last_completed_action": "方笛走进洗衣房，走向自己使用的那台滚筒洗衣机，发现机器已经停止运转。",
+    "present_characters": [
+      "方笛",
+      "陌生老人"
+    ],
+    "visible_facts": [
+      "滚筒玻璃门内可见衣物，水位已排空",
+      "面板显示程序结束，指示灯熄灭",
+      "老人站在机器旁，手里拿着空洗衣篮"
+    ],
+    "available_objects": [
+      "停止的滚筒洗衣机",
+      "老人手里的洗衣篮",
+      "方笛的手机（可查看时间）"
+    ],
+    "unresolved_problem": "谁才是滚筒内衣物的主人——方笛认为自己设定的时间未到，老人声称是自己的衣服。",
+    "already_existing_constraints": [
+      "方笛不能强行打开滚筒门",
+      "方笛不能与老人发生激烈争执",
+      "方笛的记忆可能出错"
+    ]
+  },
+  "characters": [
+    {
+      "name": "方笛",
+      "goal": "确认滚筒里的衣服是自己的，拿回衣物并离开",
+      "known": [
+        "她记得设定了60分钟洗涤程序",
+        "她离开洗衣房大约40分钟",
+        "滚筒已经停了，老人说是他的衣服"
+      ],
+      "unknown": [
+        "机器是否提前结束程序",
+        "老人是否在说谎或记错",
+        "自己记忆是否准确"
+      ],
+      "mistaken_beliefs": [
+        "她确信自己设定了60分钟，因此还有20分钟才结束"
+      ],
+      "constraints": [
+        "不能直接拉开滚筒门查看衣物细节",
+        "不能质疑老人的诚实",
+        "需要保持礼貌"
+      ],
+      "observed_evidence": [
+        "面板显示程序已结束，无剩余时间",
+        "滚筒内衣物模糊可见，但无法辨认细节",
+        "老人语气笃定，并主动提出可以打开门验证"
+      ],
+      "current_interpretation": "机器可能故障提前停止，或者自己记错了时间，但衣物归属仍不确定",
+      "how_interpretation_drives_action": "她同意老人打开滚筒门，通过识别衣物特征来确认归属"
+    },
+    {
+      "name": "陌生老人",
+      "goal": "取回自己的衣物，不想与年轻人发生冲突",
+      "known": [
+        "他记得自己在这台机器洗了衣服",
+        "机器停了有一会儿了",
+        "这个年轻女孩声称是她的衣服"
+      ],
+      "unknown": [
+        "女孩是否真的用了这台机器",
+        "女孩是否在说谎",
+        "机器是否被误用"
+      ],
+      "mistaken_beliefs": [
+        "他认为女孩可能记错了机器编号"
+      ],
+      "constraints": [
+        "不能显得欺负年轻人",
+        "需要证明衣物是自己的",
+        "避免争吵"
+      ],
+      "observed_evidence": [
+        "女孩坚持说机器应该还有20分钟",
+        "面板显示程序已结束",
+        "女孩看起来困惑而非蛮横"
+      ],
+      "current_interpretation": "女孩可能真的记错了，或者机器出了故障，但打开门看看就能解决",
+      "how_interpretation_drives_action": "他主动提议打开滚筒门，让衣物本身说话"
+    }
+  ],
+  "concrete_problem": "方笛必须在不强行开门的情况下，通过老人提议的开门验证，确认滚筒内衣物的真正主人。",
+  "pressure": "机器状态已经停止，两人僵持在洗衣房，时间在流逝，方笛的自信正在被面板事实侵蚀。",
+  "turning_point": "当滚筒门打开，方笛看到一件不属于她的格子衬衫时，她不得不接受自己记错了，并向老人道歉。",
+  "end_condition": "方笛帮老人把衣物装进篮子，老人离开，她独自站在洗衣房，重新审视自己的记忆。",
+  "forbidden": [
+    "不得让方笛强行打开滚筒门",
+    "不得让老人主动让步或承认错误",
+    "不得引入第三方调解",
+    "不得使用手机记录或监控录像作为证据",
+    "不得让方笛的衣物也出现在同一滚筒内（即不能是两人都放了衣服）",
+    "不得让方笛最终证明自己是对的"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "老人指着面板说：“你看，早就停了，里面是我的衣服。”",
+      "character_interpretation": "方笛看到面板确实显示结束，但依然相信自己的记忆，不过老人语气坚定，她开始动摇。",
+      "character_next_action": "方笛没有争辩，而是轻声说：“那……能打开看看吗？”",
+      "rejected_alternative": "方笛本可以坚持说机器故障，要求查看自己的洗衣记录或叫管理员，但她选择了直接验证。",
+      "immediate_consequence": "老人同意了，伸手拉开滚筒门，衣物暴露在两人眼前。",
+      "counterfactual_without_action": "如果方笛坚持不打开门，僵持会继续，老人可能不耐烦而离开，但问题悬而未决。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "滚筒门关闭，衣物归属不明，两人各执一词",
+        "after": "滚筒门打开，衣物完全可见，等待识别"
+      },
+      "cost_or_commitment": "方笛放弃了坚持自己记忆正确的立场，接受了可能出错的局面。",
+      "next_constraint": "方笛必须根据看到的衣物做出反应，不能再依赖记忆。",
+      "reader_must_infer": "方笛在看到衣物前的瞬间，已经预感自己可能错了，因为老人的坦然让她怀疑自己。",
+      "narrator_must_not_state": [
+        "方笛此刻已经知道自己错了",
+        "老人其实也有一丝不确定"
+      ]
+    },
+    {
+      "id": "CT02",
+      "kind": "evidence_to_action",
+      "visible_trigger": "滚筒内最上面是一件蓝白格子衬衫，方笛从未见过。",
+      "character_interpretation": "方笛立刻意识到这件衬衫不是自己的，自己的衣物应该是纯色T恤和牛仔裤。",
+      "character_next_action": "方笛后退半步，低声说：“对不起，是我记错了。”",
+      "rejected_alternative": "方笛本可以继续翻找，看看下面有没有自己的衣物，但她选择立即承认错误。",
+      "immediate_consequence": "老人松了口气，开始往外拿衣物，并安慰她说“没事，机器多，容易混”。",
+      "counterfactual_without_action": "如果方笛不立即道歉，而是翻找，会让局面更尴尬，老人可能觉得她不信任人。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "方笛还抱有衣物可能是自己的希望",
+        "after": "方笛完全接受自己记错了机器或时间"
+      },
+      "cost_or_commitment": "方笛牺牲了自己的面子，承认记忆错误，并主动帮老人装衣物以示歉意。",
+      "next_constraint": "方笛必须找到自己真正的洗衣机，或者接受自己可能忘了洗衣这件事。",
+      "reader_must_infer": "方笛的自我怀疑从此开始蔓延，她意识到记忆不可靠。",
+      "narrator_must_not_state": [
+        "方笛决定以后再也不相信自己的记忆",
+        "老人觉得这个女孩很可怜"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "方笛走向洗衣机，发现机器停了，老人声称是他的衣服",
+    "dominant_pressure": {
+      "kind": "social_friction",
+      "description": "两人对机器归属的认知冲突，但都保持礼貌，压力在于如何用最小冲突的方式解决事实分歧。"
+    },
+    "allowed_viewpoint_misread": "方笛可能把老人的笃定误解为不耐烦或指责",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "方笛是否真的在这台机器洗了衣服，还是完全记错了机器",
+      "老人是否曾有过类似的记忆混淆"
+    ],
+    "stop_state": {
+      "type": "relationship_shift",
+      "visible_fact": "方笛帮老人把最后一件衣服装进篮子，老人点头离开",
+      "what_is_now_different": "方笛从一个自信的年轻人变成了一个自我怀疑的人，她与老人之间建立了一种基于谅解的短暂联系",
+      "must_not_append": "不得写方笛之后找到自己衣物的情节"
+    },
+    "final_line_must_include": ""
+  }
+}

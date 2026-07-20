@@ -1,0 +1,64 @@
+{
+  "candidate_id": "db848413-99e2-491c-b668-41e90b7c9ffd",
+  "attempt_number": 1,
+  "group": "D",
+  "replica": 2,
+  "permission_policy": "STRICT_LIMITED",
+  "stop_policy": "STRICT_STOP",
+  "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e",
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e",
+    "policy_metadata": {
+      "group": "D",
+      "permission_policy": "STRICT_LIMITED",
+      "stop_policy": "STRICT_STOP",
+      "policy_version": "narrative-permission-stop-v1",
+      "policy_hash": "533ba9fe37558af28e5b9a277971d13c5f7674a7a297a2c3d7f1a96c77af3123",
+      "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e",
+      "permission_instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+      "stop_instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+      "seed": null
+    },
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "地铁报站的女声从头顶传来，下一站是翠苑。林悄把手机从耳边拿开，屏幕上那条语音条已经变成了灰色小字——“对方撤回了一条消息”。她点了一下，没反应，再点，还是没反应。\n\n她刚才外放的时候只听到前半句。\n\n“你桌上那个蓝色文件夹我……”\n\n后面被进站的噪音吞了个干净。等她下了扶梯重新掏出手机，语音已经撤回了。\n\n林悄给室友拨过去，听筒里传来占线的忙音，一连响了六声，她挂断，又拨，还是占线。\n\n蓝色文件夹。明天上午九点投标，全套文件都在那个文件夹里，她昨晚核对完就放在书桌左手边，封面贴了黄色索引标签，位置她记得很清楚。\n\n她不知道室友为什么提到它。不知道后半句是“我帮你收起来了”还是“我不小心弄脏了”还是别的什么。也不知道语音为什么撤回，电话为什么占线。\n\n但投标文件不能出问题。\n\n车厢晃了一下，她扶住扶手。屏幕上和室友的聊天记录还停在昨天下午，对方问晚不回来吃饭，她回了个“加班，不用等”。现在那条撤回提示孤零零地挂在下面，像个没说完的半句话。\n\n她拇指在键盘上停了两秒，开始打字。\n\n“刚在地铁上没听清，蓝色文件夹怎么啦？方便时回我～”\n\n发送。\n\n报站又响了。下一站，终点站翠苑。\n\n她把手机握在手里，屏幕朝上。车窗外的隧道灯一盏一盏往后退，手机屏幕暗了又亮，没有新消息。她拇指在音量键上无意识地蹭了两下，屏幕又暗下去。\n\n隧道到头，车厢里灌进站台的白光。手机震了一下。\n\n她低头看。\n\n室友的回复弹出来，两行字。第一行是“没事”，紧接着第二行——“我帮你收起来了，回头说。”",
+  "raw_response": "地铁报站的女声从头顶传来，下一站是翠苑。林悄把手机从耳边拿开，屏幕上那条语音条已经变成了灰色小字——“对方撤回了一条消息”。她点了一下，没反应，再点，还是没反应。\n\n她刚才外放的时候只听到前半句。\n\n“你桌上那个蓝色文件夹我……”\n\n后面被进站的噪音吞了个干净。等她下了扶梯重新掏出手机，语音已经撤回了。\n\n林悄给室友拨过去，听筒里传来占线的忙音，一连响了六声，她挂断，又拨，还是占线。\n\n蓝色文件夹。明天上午九点投标，全套文件都在那个文件夹里，她昨晚核对完就放在书桌左手边，封面贴了黄色索引标签，位置她记得很清楚。\n\n她不知道室友为什么提到它。不知道后半句是“我帮你收起来了”还是“我不小心弄脏了”还是别的什么。也不知道语音为什么撤回，电话为什么占线。\n\n但投标文件不能出问题。\n\n车厢晃了一下，她扶住扶手。屏幕上和室友的聊天记录还停在昨天下午，对方问晚不回来吃饭，她回了个“加班，不用等”。现在那条撤回提示孤零零地挂在下面，像个没说完的半句话。\n\n她拇指在键盘上停了两秒，开始打字。\n\n“刚在地铁上没听清，蓝色文件夹怎么啦？方便时回我～”\n\n发送。\n\n报站又响了。下一站，终点站翠苑。\n\n她把手机握在手里，屏幕朝上。车窗外的隧道灯一盏一盏往后退，手机屏幕暗了又亮，没有新消息。她拇指在音量键上无意识地蹭了两下，屏幕又暗下去。\n\n隧道到头，车厢里灌进站台的白光。手机震了一下。\n\n她低头看。\n\n室友的回复弹出来，两行字。第一行是“没事”，紧接着第二行——“我帮你收起来了，回头说。”",
+  "input_tokens": 1679,
+  "output_tokens": 404,
+  "latency_ms": 28339,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "36a39fe53e0f7de7003fc3b6af9922e8c8216646a680ba5e1843d90cabf774f8",
+  "validation": {
+    "character_count": 642,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "banned_sentence_hits": {},
+    "second_confirmation_hits": [],
+    "environment_coda_hits": [],
+    "stop_marker_first_char": null,
+    "post_stop_character_count": null,
+    "tempo_final_line_mismatch": false,
+    "manual_review_required": [
+      "viewpoint_violation",
+      "cross_mind_assertion",
+      "other_character_motive_as_fact",
+      "true_stop_state_position",
+      "visible_state_transition_count",
+      "relationship_or_meaning_summary",
+      "shared_atmosphere_declaration",
+      "narrator_correction_with_backstage_fact"
+    ]
+  },
+  "text_path": "cases\\NM-01\\drafts\\d-2.txt"
+}

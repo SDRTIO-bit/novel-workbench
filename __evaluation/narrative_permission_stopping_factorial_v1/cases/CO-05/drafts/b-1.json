@@ -1,0 +1,64 @@
+{
+  "candidate_id": "dc5e8b2f-c335-4921-b780-2ae2719e6625",
+  "attempt_number": 1,
+  "group": "B",
+  "replica": 1,
+  "permission_policy": "STRICT_LIMITED",
+  "stop_policy": "CURRENT",
+  "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+    "policy_metadata": {
+      "group": "B",
+      "permission_policy": "STRICT_LIMITED",
+      "stop_policy": "CURRENT",
+      "policy_version": "narrative-permission-stop-v1",
+      "policy_hash": "a42fb8f38620720ad1dda5407ffa44c03e929f1b34d89ecb5fbf1b5ea7325c24",
+      "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+      "permission_instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+      "stop_instruction_hash": null,
+      "seed": null
+    },
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "向暖的手指停在包裹上，那上面的黑色马克笔字迹确实是“向暖”两个字，工工整整，没有涂改的痕迹。收件地址那栏写着7号楼2单元，不是她的9号楼。\n\n她把包裹翻过来，背面贴着一张旧的快递单，被撕掉了一半，只剩下一小截条形码和半个模糊的手机号。单子边缘卷着，黏了一层灰，像是贴在什么上面又被揭下来过的。\n\n快递架上的其他包裹安安静静地躺着，三件，两件，角落里还有一件落了灰的，收件人名字都跟她无关。旁边墙上挂着一支圆珠笔，笔帽裂了，下面压着一叠黄色的便签纸，最上面那张被人写过又撕掉了，留下一行没撕干净的边。\n\n她拿起笔，抽了一张便签。笔尖在纸上顿了一下，她写了几个字，撕掉，揉成团塞进口袋。重新写。\n\n“你好，这个包裹写的是我的名字，但地址是7号楼。我猜你可能也姓向，或者快递员弄错了。我把包裹放到7号楼的架子上了。如果有什么问题，可以联系我。”\n\n她停了一下，在最后加上自己的手机号。\n\n写完她把便签贴在包裹上，按了按边角，确保不会掉。然后拿起包裹，转身朝7号楼的方向走。\n\n7号楼的快递架比9号楼的空，只有一件快递躺在最上层，收件人姓王。向暖把包裹放在第二层中间，便签朝上，压平，又退后一步看了一眼。\n\n包裹上“向暖”两个字对着走廊的方向。\n\n她把笔插回笔帽里，转身走了。",
+  "raw_response": "向暖的手指停在包裹上，那上面的黑色马克笔字迹确实是“向暖”两个字，工工整整，没有涂改的痕迹。收件地址那栏写着7号楼2单元，不是她的9号楼。\n\n她把包裹翻过来，背面贴着一张旧的快递单，被撕掉了一半，只剩下一小截条形码和半个模糊的手机号。单子边缘卷着，黏了一层灰，像是贴在什么上面又被揭下来过的。\n\n快递架上的其他包裹安安静静地躺着，三件，两件，角落里还有一件落了灰的，收件人名字都跟她无关。旁边墙上挂着一支圆珠笔，笔帽裂了，下面压着一叠黄色的便签纸，最上面那张被人写过又撕掉了，留下一行没撕干净的边。\n\n她拿起笔，抽了一张便签。笔尖在纸上顿了一下，她写了几个字，撕掉，揉成团塞进口袋。重新写。\n\n“你好，这个包裹写的是我的名字，但地址是7号楼。我猜你可能也姓向，或者快递员弄错了。我把包裹放到7号楼的架子上了。如果有什么问题，可以联系我。”\n\n她停了一下，在最后加上自己的手机号。\n\n写完她把便签贴在包裹上，按了按边角，确保不会掉。然后拿起包裹，转身朝7号楼的方向走。\n\n7号楼的快递架比9号楼的空，只有一件快递躺在最上层，收件人姓王。向暖把包裹放在第二层中间，便签朝上，压平，又退后一步看了一眼。\n\n包裹上“向暖”两个字对着走廊的方向。\n\n她把笔插回笔帽里，转身走了。",
+  "input_tokens": 1534,
+  "output_tokens": 355,
+  "latency_ms": 16797,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "28dbaa6e5cae08e2ef79615cc148f1dba5e45fe6555b91aa4bd9e790582e6ad8",
+  "validation": {
+    "character_count": 534,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "banned_sentence_hits": {},
+    "second_confirmation_hits": [],
+    "environment_coda_hits": [],
+    "stop_marker_first_char": null,
+    "post_stop_character_count": null,
+    "tempo_final_line_mismatch": false,
+    "manual_review_required": [
+      "viewpoint_violation",
+      "cross_mind_assertion",
+      "other_character_motive_as_fact",
+      "true_stop_state_position",
+      "visible_state_transition_count",
+      "relationship_or_meaning_summary",
+      "shared_atmosphere_declaration",
+      "narrator_correction_with_backstage_fact"
+    ]
+  },
+  "text_path": "cases\\CO-05\\drafts\\b-1.txt"
+}

@@ -1,0 +1,63 @@
+{
+  "candidate_id": "e198e55c-4139-49a5-91c9-caa5cf7c1c92",
+  "attempt_number": 1,
+  "group": "A",
+  "replica": 1,
+  "permission_policy": "CURRENT",
+  "stop_policy": "CURRENT",
+  "instruction_hash": null,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "policy_metadata": {
+      "group": "A",
+      "permission_policy": "CURRENT",
+      "stop_policy": "CURRENT",
+      "policy_version": "narrative-permission-stop-v1",
+      "policy_hash": "bcba9c79e51e6722c8796bc8a1defd65461d017dbbaf922efbe9c16df2ba3d4f",
+      "instruction_hash": null,
+      "permission_instruction_hash": null,
+      "stop_instruction_hash": null,
+      "seed": null
+    },
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "篮球场边的水泥地上，一颗篮球弹了一下，歪歪斜斜地滚了出去。\n\n路远松开手的时候，指尖还残留着球皮粗糙的触感。他没有看那颗球，而是低头整理自己的鞋带——鞋带没松，他只是蹲下去，手指搭在鞋面上，一动不动。\n\n篮球滚过三分线，滚过边线，撞在男生右脚的后跟上。\n\n男生停下来。\n\n他先低头看了看球，又抬头环顾了一圈操场。路远蹲在原地，手还搭在鞋上，余光里看见男生弯腰，把水壶夹在腋下，腾出两只手捡起了篮球。\n\n水壶。\n\n路远站起来，拍了拍膝盖上不存在的灰，朝篮球场边走过去。他的步子不快，像是只是路过，像是要去拿回一颗被风吹跑的球。\n\n男生单手托着篮球，正往球场里看，大概在找是谁的球。路远走到他面前两步远的地方，伸出手。\n\n“球是我的。”路远说。\n\n男生把球递过来。路远接过球的时候，视线落在男生腋下夹着的蓝色水壶上。壶身有一道浅浅的划痕，是上周体育课在单杠边上蹭的。\n\n男生顺着他的视线低头看了一眼。\n\n“这水壶——”路远说，声音很平，“好像是我的。”\n\n男生愣了一下，把水壶从腋下拿出来，翻过来看了看壶底。壶底贴着一张被水泡得有点卷边的姓名贴，蓝色的圆珠笔写着“路远”两个字。\n\n“操。”男生把水壶塞回路远手里，“拿错了，我的也在那边放着。”\n\n他朝休息区的长凳方向扬了扬下巴，转身跑向篮球场。\n\n路远拿着水壶站在原地。壶身还是温的，被别人的手捂热了。他把篮球夹在臂弯里，拧开壶盖看了一眼，又拧回去。\n\n没有喝。",
+  "raw_response": "篮球场边的水泥地上，一颗篮球弹了一下，歪歪斜斜地滚了出去。\n\n路远松开手的时候，指尖还残留着球皮粗糙的触感。他没有看那颗球，而是低头整理自己的鞋带——鞋带没松，他只是蹲下去，手指搭在鞋面上，一动不动。\n\n篮球滚过三分线，滚过边线，撞在男生右脚的后跟上。\n\n男生停下来。\n\n他先低头看了看球，又抬头环顾了一圈操场。路远蹲在原地，手还搭在鞋上，余光里看见男生弯腰，把水壶夹在腋下，腾出两只手捡起了篮球。\n\n水壶。\n\n路远站起来，拍了拍膝盖上不存在的灰，朝篮球场边走过去。他的步子不快，像是只是路过，像是要去拿回一颗被风吹跑的球。\n\n男生单手托着篮球，正往球场里看，大概在找是谁的球。路远走到他面前两步远的地方，伸出手。\n\n“球是我的。”路远说。\n\n男生把球递过来。路远接过球的时候，视线落在男生腋下夹着的蓝色水壶上。壶身有一道浅浅的划痕，是上周体育课在单杠边上蹭的。\n\n男生顺着他的视线低头看了一眼。\n\n“这水壶——”路远说，声音很平，“好像是我的。”\n\n男生愣了一下，把水壶从腋下拿出来，翻过来看了看壶底。壶底贴着一张被水泡得有点卷边的姓名贴，蓝色的圆珠笔写着“路远”两个字。\n\n“操。”男生把水壶塞回路远手里，“拿错了，我的也在那边放着。”\n\n他朝休息区的长凳方向扬了扬下巴，转身跑向篮球场。\n\n路远拿着水壶站在原地。壶身还是温的，被别人的手捂热了。他把篮球夹在臂弯里，拧开壶盖看了一眼，又拧回去。\n\n没有喝。",
+  "input_tokens": 1183,
+  "output_tokens": 397,
+  "latency_ms": 18977,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "c2c4eba5faec4f112afb45d86aec373358e4df6fc4bebf6574e603b3915fc3d6",
+  "validation": {
+    "character_count": 605,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "banned_sentence_hits": {},
+    "second_confirmation_hits": [],
+    "environment_coda_hits": [],
+    "stop_marker_first_char": null,
+    "post_stop_character_count": null,
+    "tempo_final_line_mismatch": false,
+    "manual_review_required": [
+      "viewpoint_violation",
+      "cross_mind_assertion",
+      "other_character_motive_as_fact",
+      "true_stop_state_position",
+      "visible_state_transition_count",
+      "relationship_or_meaning_summary",
+      "shared_atmosphere_declaration",
+      "narrator_correction_with_backstage_fact"
+    ]
+  },
+  "text_path": "cases\\CO-04\\drafts\\a-1.txt"
+}

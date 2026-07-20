@@ -1,0 +1,30 @@
+{
+  "case_id": "ROMANCE-02",
+  "category": "恋爱日常与关系试探",
+  "title": "未读消息",
+  "run_id": "f54cd65e-ce1d-4e6b-a618-59a738931d7a",
+  "planner": {
+    "candidate_id": "838ed451-010f-4530-9cbe-b760f97acd71",
+    "attempt_number": 1,
+    "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+    "model_id": "deepseek-v4-pro",
+    "prompt_version_id": "f9052f8a-dc4e-5408-b14e-fc1badaf57f8",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4096,
+      "timeout_seconds": 300,
+      "response_format": "json_object"
+    },
+    "text_output": "",
+    "raw_response": "{\n  \"planner_contract_version\": 2,\n  \"scene_goal\": \"夏知在尴尬中发现韩川可能故意忽略她的消息，需要决定是否装作若无其事，以维持表面和谐。\",\n  \"location\": \"合租屋厨房\",\n  \"time\": \"傍晚，准备晚饭时\",\n  \"scene_state\": {\n    \"last_completed_action\": \"韩川把洗好的菜放进锅里，水开了，蒸汽升腾。\",\n    \"present_characters\": [\"夏知\", \"韩川\"],\n    \"visible_facts\": [\n      \"桌上有一只手机，屏幕曾亮起，显示夏知的未读消息\",\n      \"韩川将手机扣在桌面上\",\n      \"水壶里的水沸腾冒着蒸汽\",\n      \"桌上摆着两只碗\",\n      \"韩川在水槽边洗菜\"\n    ],\n    \"available_objects\": [\"手机\", \"两只碗\",",
+    "input_tokens": 3325,
+    "output_tokens": 4096,
+    "latency_ms": 87543,
+    "finish_reason": "length",
+    "error_code": "STRUCTURED_OUTPUT_TRUNCATED",
+    "error_message": "模型因达到 max_output_tokens 停止，结构化输出可能不完整",
+    "rendered_user_prompt_sha256": "5c9b546b67147f034492d490047fdc9065866e1c80a4a98b85fc6f0510a44909"
+  },
+  "drafts": []
+}

@@ -1,0 +1,1 @@
+﻿{"jsonrpc":"2.0","id":10,"method":"tools/call","params":{"name":"create_project","arguments":{"name":"最后一课","genre":"现实主义短篇","author_note":"一个退休教师在最后一天回到学校的故事","default_pov":"第三人称限制视角"}}}

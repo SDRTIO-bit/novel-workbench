@@ -1,0 +1,156 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "陆祈必须在门禁队伍中让沈晚自己发现借书证夹在习题册里，避免当众揭穿，同时维持纪律委员的职责形象。",
+  "location": "学校图书馆入口门禁处",
+  "time": "午间12:20，门禁队伍缓慢移动中",
+  "scene_state": {
+    "last_completed_action": "沈晚翻找书包未果，准备向管理员解释忘带学生证",
+    "present_characters": [
+      "陆祈",
+      "沈晚",
+      "门禁管理员",
+      "排队同学"
+    ],
+    "visible_facts": [
+      "沈晚的借书证夹在陆祈的习题册里",
+      "沈晚正在翻书包，脸上有焦急神色",
+      "门禁队伍正在向前移动",
+      "管理员正看向沈晚方向"
+    ],
+    "available_objects": [
+      "陆祈的习题册",
+      "沈晚的借书证（夹在册中）",
+      "沈晚的书包",
+      "门禁闸机"
+    ],
+    "unresolved_problem": "沈晚没有意识到借书证就在陆祈的习题册里，陆祈需要在不直接说明的情况下让她发现",
+    "already_existing_constraints": [
+      "不能当众揭穿",
+      "不能直接递给沈晚",
+      "不能引起管理员注意",
+      "不能拖延队伍进度"
+    ]
+  },
+  "characters": [
+    {
+      "name": "陆祈",
+      "goal": "让沈晚自己发现借书证在习题册里，避免当众揭穿或违规",
+      "known": [
+        "沈晚的借书证夹在自己习题册里",
+        "沈晚早晨借过自己的习题册"
+      ],
+      "unknown": [
+        "沈晚是否记得借书证夹在里面",
+        "沈晚为什么不翻习题册"
+      ],
+      "mistaken_beliefs": [],
+      "constraints": [
+        "不能直接说明",
+        "不能引起他人注意",
+        "必须维持纪律委员形象"
+      ],
+      "observed_evidence": [
+        "沈晚翻书包时没有检查习题册",
+        "沈晚表情焦急准备解释"
+      ],
+      "current_interpretation": "沈晚完全忘了借书证夹在册子里，需要提示她检查习题册",
+      "how_interpretation_drives_action": "陆祈决定用翻找自己东西的动作引导沈晚注意习题册"
+    },
+    {
+      "name": "沈晚",
+      "goal": "通过门禁进入图书馆",
+      "known": [
+        "自己没找到学生证"
+      ],
+      "unknown": [
+        "借书证夹在陆祈的习题册里"
+      ],
+      "mistaken_beliefs": [
+        "学生证可能丢了"
+      ],
+      "constraints": [
+        "不能强闯门禁",
+        "需要向管理员解释"
+      ],
+      "observed_evidence": [
+        "书包里没有学生证"
+      ],
+      "current_interpretation": "学生证可能忘在宿舍或丢了",
+      "how_interpretation_drives_action": "准备向管理员说明情况请求通融"
+    }
+  ],
+  "concrete_problem": "陆祈如何用一个具体动作让沈晚注意到习题册里的借书证，而不直接指出？",
+  "pressure": "门禁队伍在前进，沈晚即将面对管理员，时间紧迫且不能制造骚动",
+  "turning_point": "陆祈假装翻阅习题册，故意让夹着的借书证滑落一角，沈晚看到后自己取出",
+  "end_condition": "沈晚从习题册中取出借书证，顺利通过门禁，陆祈没有直接揭穿",
+  "forbidden": [
+    "不能直接说明借书证位置",
+    "不能当众揭穿沈晚早晨借册子",
+    "不能引起管理员关注",
+    "不能拖延队伍进度",
+    "不能使用‘借书证’‘学生证’等词提示",
+    "不能有肢体接触递送"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "沈晚翻完书包后抬头，准备向管理员解释",
+      "character_interpretation": "陆祈认为沈晚完全没想起借书证在册子里，必须在她开口前干预",
+      "character_next_action": "陆祈快速翻开自己的习题册，假装查看笔记，让夹着的借书证露出一角",
+      "rejected_alternative": "直接叫住沈晚并告诉她借书证在这里（违反约束）",
+      "immediate_consequence": "沈晚看到借书证一角，愣住，然后伸手抽出，表情从焦急转为惊讶",
+      "counterfactual_without_action": "沈晚会向管理员解释，可能导致登记或返回宿舍取证",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "沈晚准备解释，陆祈旁观",
+        "after": "沈晚取出借书证，顺利刷卡通过"
+      },
+      "cost_or_commitment": "陆祈必须假装自己也在找东西，避免被看出刻意引导",
+      "next_constraint": "沈晚可能会怀疑陆祈是故意让她发现的，但无法确认",
+      "reader_must_infer": "陆祈翻册子的动作是故意让沈晚看到借书证",
+      "narrator_must_not_state": [
+        "陆祈是故意翻开册子的",
+        "沈晚意识到陆祈在帮她",
+        "其他排队同学注意到这个小插曲"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "沈晚翻完书包，抬头准备向管理员解释忘带学生证",
+    "dominant_pressure": {
+      "kind": "social_friction",
+      "description": "陆祈不能当众揭穿，但又必须在沈晚开口前让她发现，时间紧迫且不能破坏纪律委员的形象"
+    },
+    "allowed_viewpoint_misread": "沈晚可能以为陆祈只是偶然翻册子，而非有意帮忙",
+    "disclosure_cap": 0,
+    "must_remain_unclassified": [
+      "陆祈为什么知道借书证在册子里"
+    ],
+    "stop_state": {
+      "type": "information_conflict",
+      "visible_fact": "沈晚从陆祈的习题册中取出自己的借书证",
+      "what_is_now_different": "沈晚意识到借书证一直在她早晨借过的册子里，而陆祈知道这一点",
+      "must_not_append": "不得解释沈晚是否明白陆祈是故意让她发现的"
+    },
+    "final_line_must_include": "沈晚抽出那张借书证，在闸机上刷了一下，门开了。"
+  }
+}

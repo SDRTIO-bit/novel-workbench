@@ -1,0 +1,152 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "苏叶必须向沈一凡提出一个具体的修车请求，并停在请求被接受或被拒绝的可见事实上。",
+  "location": "合租房门口，自行车停放处",
+  "time": "周日早上",
+  "scene_state": {
+    "last_completed_action": "苏叶发现自己的自行车链条掉了，沈一凡正蹲在门口修他自己的车。",
+    "present_characters": [
+      "苏叶",
+      "沈一凡"
+    ],
+    "visible_facts": [
+      "苏叶的自行车链条脱落",
+      "沈一凡正在修理自己的自行车",
+      "工具箱摊开在两人中间"
+    ],
+    "available_objects": [
+      "自行车",
+      "工具箱",
+      "脱落的链条"
+    ],
+    "unresolved_problem": "苏叶需要修车，但从未主动向沈一凡求助过，不知道如何开口。",
+    "already_existing_constraints": [
+      "苏叶不能把车子一推说'你顺便看看'",
+      "苏叶必须提出一个具体的请求"
+    ]
+  },
+  "characters": [
+    {
+      "name": "苏叶",
+      "goal": "让沈一凡帮忙修车，但不显得依赖或冒昧",
+      "known": [
+        "链条掉了",
+        "沈一凡会修车",
+        "工具箱就在旁边"
+      ],
+      "unknown": [
+        "沈一凡是否愿意帮忙",
+        "如何提出请求才不尴尬"
+      ],
+      "mistaken_beliefs": [
+        "直接开口可能会被拒绝或显得很笨拙"
+      ],
+      "constraints": [
+        "不能把车子推过去说'你顺便看看'",
+        "必须提出一个具体的请求"
+      ],
+      "observed_evidence": [
+        "沈一凡修车的动作熟练",
+        "工具箱里有适合的工具",
+        "沈一凡抬头看了她一眼"
+      ],
+      "current_interpretation": "沈一凡可能注意到她的困境，但不会主动开口，她需要自己打破沉默。",
+      "how_interpretation_drives_action": "她决定用具体问题作为开场，比如问某个工具怎么用，从而引出帮忙。"
+    },
+    {
+      "name": "沈一凡",
+      "goal": "修好自己的车，同时观察苏叶是否需要帮助",
+      "known": [
+        "苏叶的自行车链条掉了",
+        "苏叶很少主动求助"
+      ],
+      "unknown": [
+        "苏叶是否会开口求助",
+        "她想要怎样的帮助"
+      ],
+      "mistaken_beliefs": [
+        "苏叶可能想自己解决，不喜欢别人插手"
+      ],
+      "constraints": [
+        "不能主动提出帮忙，以免让她感到被冒犯"
+      ],
+      "observed_evidence": [
+        "苏叶在自行车旁犹豫",
+        "她看着工具箱"
+      ],
+      "current_interpretation": "她可能需要帮助，但不好意思说。",
+      "how_interpretation_drives_action": "他放慢修车速度，把工具箱往她那边推了推，给她创造开口的机会。"
+    }
+  ],
+  "concrete_problem": "苏叶如何在不违背自我设定的情况下，向沈一凡提出一个具体的修车请求？",
+  "pressure": "工具和时机稍纵即逝，沉默越久越难开口。",
+  "turning_point": "苏叶拿起一个扳手，问沈一凡这个工具是不是用来紧链条的，沈一凡抬头回答并接过她手里的工具。",
+  "end_condition": "沈一凡接过苏叶递来的扳手，并说'我来帮你看看'，或者苏叶收回请求的迹象。",
+  "forbidden": [
+    "苏叶把车子推过去说'你顺便看看'",
+    "沈一凡主动提出帮忙",
+    "任何旁白解释苏叶的内心活动超过一句",
+    "使用'尴尬'、'羞涩'等抽象情绪词直接概括"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "沈一凡把工具箱往苏叶的方向推了推",
+      "character_interpretation": "苏叶认为沈一凡在暗示她可以自己拿工具，或者是在给她制造说话的机会。",
+      "character_next_action": "苏叶拿起一个扳手，问沈一凡这个是不是用来紧链条的。",
+      "rejected_alternative": "苏叶决定不开口，继续自己摸索，或者直接推车离开。",
+      "immediate_consequence": "沈一凡抬头回答，并接过她手里的扳手，开始走向她的自行车。",
+      "counterfactual_without_action": "如果苏叶不开口，沈一凡会继续修自己的车，两人错过这次互动。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "两人各自面对自己的自行车，沉默",
+        "after": "沈一凡接过工具，准备帮忙修车"
+      },
+      "cost_or_commitment": "苏叶打破了沉默，暴露了自己的需求。",
+      "next_constraint": "沈一凡帮忙修车的过程中，苏叶必须留在现场，不能直接离开。",
+      "reader_must_infer": "沈一凡推工具箱的动作是有意的，他在等待苏叶开口。",
+      "narrator_must_not_state": [
+        "沈一凡推工具箱的意图",
+        "苏叶内心的紧张程度"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "工具箱摊开，沈一凡正在修车，苏叶的链条掉了",
+    "dominant_pressure": {
+      "kind": "social_friction",
+      "description": "两人之间尚未建立顺畅的求助与帮助的互动模式，开口需要克服心理障碍"
+    },
+    "allowed_viewpoint_misread": "苏叶可能把沈一凡推工具箱的动作理解为不耐烦或无意之举",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "沈一凡对苏叶的真实态度"
+    ],
+    "stop_state": {
+      "type": "social_commitment",
+      "visible_fact": "沈一凡接过苏叶递来的扳手，并说'我来帮你看看'",
+      "what_is_now_different": "苏叶的请求被接受，两人形成了临时的帮助关系",
+      "must_not_append": "不得描写修车过程或结果"
+    },
+    "final_line_must_include": "我来帮你看看"
+  }
+}

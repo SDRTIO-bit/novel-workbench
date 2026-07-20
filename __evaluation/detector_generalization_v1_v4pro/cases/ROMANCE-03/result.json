@@ -1,0 +1,30 @@
+{
+  "case_id": "ROMANCE-03",
+  "category": "恋爱日常与关系试探",
+  "title": "错过末班车",
+  "run_id": "bc1f2767-f720-4501-8fd1-9a4a2da73230",
+  "planner": {
+    "candidate_id": "2515db99-9b4f-4b90-90a5-ca6e8aca12a2",
+    "attempt_number": 1,
+    "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+    "model_id": "deepseek-v4-pro",
+    "prompt_version_id": "f9052f8a-dc4e-5408-b14e-fc1badaf57f8",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4096,
+      "timeout_seconds": 300,
+      "response_format": "json_object"
+    },
+    "text_output": "",
+    "raw_response": "{\n  \"planner_contract_version\": 2,\n  \"scene_goal\": \"陆青通过一个具体行动试探方予的真实态度，并在末班车已走的困境下形成新的同行局面\",\n  \"location\": \"演出场馆外的公交站（站台带檐，路边有路灯）\",\n  \"time\": \"深夜，雨后，路面潮湿\",\n  \"scene_state\": {\n    \"last_completed_action\": \"方予把伞递给陆青，自己退到站台檐下，没有说是否同行\",\n    \"present_characters\": [\"陆青\", \"方予\"],\n    \"visible_facts\": [\"末班车已开走\", \"持续下着小雨\", \"方予手里已无伞\", \"站台除二人外无其他人\"],\n    \"available_objects\": [\"一把黑伞\", \"站台长椅\", \"路灯\", \"被雨水打湿的站牌\"],\n    \"unresolved_problem\": \"两人因工作安排分歧产生的隔阂尚未化解，且现在必须面对如何回家的现实\",\n    \"already_existing_constraints\": [\"末班车已走，公共交通已不可用\", \"两人关系微妙，任何一方都不宜直接询问对方的真实想法\"]\n  },\n  \"characters\": [\n    {\n      \"name\": \"陆青\",\n      \"goal\": \"试探方予是否愿意同行，同时解决自己回家的困境，避免直接引发冲突\",\n      \"known\": [\"末班车已经开走\", \"两人刚因工作安排有过分歧\", \"方予把自己的伞给了他\"],\n      \"unknown\": [\"方予递伞后的真实打算\", \"方予是否还在生气\", \"方予是否愿意一起走\"],\n      \"mistaken_beliefs\": [\"方予把伞给他只是出于客气，并不想和他共伞\"],\n      \"constraints\": [\"不能直接用语言询问方予是否同行或是否还在生气\", \"不能表现出过于依赖对方\"],\n      \"observed_evidence\": [\"方予递伞后快速退到站台檐下，且没有靠近的动作\", \"方予的视线没有与他对视\"],\n      \"current_interpretation\": \"方予不想和他共伞，可能还在因为分歧不快\",\n      \"how_interpretation_drives_action\": \"陆青决定把伞还给方予，然后自己冒雨离开，以此试探方予是否会挽留或跟上来\"\n    },\n    {\n      \"name\": \"方予\",\n      \"goal\": \"缓和与陆青的关系，但不愿主动示弱，希望在行动中传递和解信号\",\n      \"known\": [\"两人有分歧\", \"陆青可能因为分歧感到不快\", \"末班车已走\"],\n      \"unknown\": [\"陆青此刻的真实情绪\", \"陆青是否接受他的伞\", \"陆青是否愿意同行\"],\n      \"mistaken_beliefs\": [\"陆青可能会直接拿伞离开，不会回头\"],\n      \"constraints\": [\"不能直接说‘我们一起走吧’或承认分歧\", \"不能显得太主动\"],\n      \"observed_evidence\": [\"陆青看了伞几秒，然后把伞递回来\", \"陆青转身走进雨中\"],\n      \"current_interpretation\": \"陆青宁愿淋雨也不愿接受他的伞，可能还在生气或不想欠他人情\",\n      \"how_interpretation_drives_action\": \"方予追上陆青，把伞举到两人头顶，用行动表明愿意同行\"\n    }\n  ],\n  \"concrete_problem\": \"陆青不知道方予是否愿意共伞同行，必须在无法直接询问的情况下，决定是接受伞独自离开，还是冒雨归还伞来试探方予的反应\",\n  \"pressure\": \"末班车已走，雨还在下，两人刚因工作分歧产生隔阂，任何一方的主动都可能被误解，时间越晚回家的难度越大\",\n  \"turning_point\": \"陆青选择把伞还给方予并独自走进雨中，放弃了安全回家的机会，用自我暴露于困境的方式迫使方予做出反应\",\n  \"end_condition\": \"方予冲进雨中把伞举到陆青头顶，两人一起站在雨里，共享一把伞\",\n  \"forbidden\": [\"旁白直接描述陆青与方予的关系本质或过去经历\", \"方予的真实想法完全坦白\", \"陆青通过语言直接询问关系或分歧\"],\n  \"causal_transitions\": [\n    {\n      \"id\": \"CT01\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"方予把伞递出后立即退到站台檐下，没有靠近陆青\",\n      \"character_interpretation\": \"陆青理解为方予不想和他共伞，递伞只是礼貌\",\n      \"character_next_action\": \"陆青把伞还回，说‘你拿着’，然后转身走进雨中\",\n      \"rejected_alternative\": \"陆青可以直接问‘要不要一起走’，但他选择了用行动试探，宁愿自己淋雨\",\n      \"immediate_consequence\": \"方予愣了一下，然后跑进雨里，把伞举到陆青头顶两人之间\",\n      \"counterfactual_without_action\": \"如果陆青直接撑伞离开，方予可能就独自淋雨跑回家，两人将在冷战和尴尬中各自回家\",\n",
+    "input_tokens": 3324,
+    "output_tokens": 4096,
+    "latency_ms": 83926,
+    "finish_reason": "length",
+    "error_code": "STRUCTURED_OUTPUT_TRUNCATED",
+    "error_message": "模型因达到 max_output_tokens 停止，结构化输出可能不完整",
+    "rendered_user_prompt_sha256": "a827c3509731642aa997a61b66f15cbdafe934ccbc19da3620cef1a55c4f7cd5"
+  },
+  "drafts": []
+}

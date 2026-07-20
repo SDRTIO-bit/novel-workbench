@@ -1,0 +1,63 @@
+{
+  "candidate_id": "4b6bd5fa-f150-4644-90cc-35814f8563e9",
+  "attempt_number": 1,
+  "group": "A",
+  "replica": 3,
+  "permission_policy": "CURRENT",
+  "stop_policy": "CURRENT",
+  "instruction_hash": null,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "policy_metadata": {
+      "group": "A",
+      "permission_policy": "CURRENT",
+      "stop_policy": "CURRENT",
+      "policy_version": "narrative-permission-stop-v1",
+      "policy_hash": "bcba9c79e51e6722c8796bc8a1defd65461d017dbbaf922efbe9c16df2ba3d4f",
+      "instruction_hash": null,
+      "permission_instruction_hash": null,
+      "stop_instruction_hash": null,
+      "seed": null
+    },
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "地铁车厢晃了一下，林悄把手机从耳边拿开，屏幕上的语音条灰了，底下三个灰色小字：已撤回。\n\n她拇指往上一划，聊天记录里只剩下系统提示。刚才外放的前半句还挂在耳朵里——“你桌上那个蓝色文件夹我……”后面的字被隧道吞了，轰隆隆一阵，等她低头再看，语音已经没了。\n\n林悄按了回拨。听筒里嘟了两声，跳成机械女音：您拨打的电话正在通话中。她挂断，又拨了一次，还是占线。\n\n车厢广播响了：“前方到站——武定门站。”\n\n武定门。下一站就是她下车的站。两站路，加起来不到四分钟。\n\n林悄点进室友的聊天框，打了几个字，删掉，又打。拇指悬在屏幕上方停了两秒，然后落下去，敲了一行字发出去：\n\n“刚在地铁上没听清，蓝色文件夹怎么啦？方便时回我～”\n\n消息发出去，左边跳出一个白色气泡。她盯着那个气泡看了三秒钟，没有已读标记。\n\n车厢进站，灯光明灭了一下。林悄把手机屏幕朝下扣在大腿上，抬头看车门上方的线路图。武定门站的灯已经亮了，下一站的灯还暗着。\n\n大腿上手机震了一下。\n\n她翻过来看，微信消息预览框里躺着室友的头像，底下是两行字。她解锁，点进去。\n\n室友的白色气泡：\n\n“没事，我帮你收起来了，回头说。”\n\n林悄的拇指停在屏幕上方，悬在那个气泡旁边。她没打字。地铁减速，车身往前倾了一下，她肩膀撞上旁边的扶手杆。\n\n车门开了。\n\n她站起来，把手机揣进外套口袋，下了车。",
+  "raw_response": "地铁车厢晃了一下，林悄把手机从耳边拿开，屏幕上的语音条灰了，底下三个灰色小字：已撤回。\n\n她拇指往上一划，聊天记录里只剩下系统提示。刚才外放的前半句还挂在耳朵里——“你桌上那个蓝色文件夹我……”后面的字被隧道吞了，轰隆隆一阵，等她低头再看，语音已经没了。\n\n林悄按了回拨。听筒里嘟了两声，跳成机械女音：您拨打的电话正在通话中。她挂断，又拨了一次，还是占线。\n\n车厢广播响了：“前方到站——武定门站。”\n\n武定门。下一站就是她下车的站。两站路，加起来不到四分钟。\n\n林悄点进室友的聊天框，打了几个字，删掉，又打。拇指悬在屏幕上方停了两秒，然后落下去，敲了一行字发出去：\n\n“刚在地铁上没听清，蓝色文件夹怎么啦？方便时回我～”\n\n消息发出去，左边跳出一个白色气泡。她盯着那个气泡看了三秒钟，没有已读标记。\n\n车厢进站，灯光明灭了一下。林悄把手机屏幕朝下扣在大腿上，抬头看车门上方的线路图。武定门站的灯已经亮了，下一站的灯还暗着。\n\n大腿上手机震了一下。\n\n她翻过来看，微信消息预览框里躺着室友的头像，底下是两行字。她解锁，点进去。\n\n室友的白色气泡：\n\n“没事，我帮你收起来了，回头说。”\n\n林悄的拇指停在屏幕上方，悬在那个气泡旁边。她没打字。地铁减速，车身往前倾了一下，她肩膀撞上旁边的扶手杆。\n\n车门开了。\n\n她站起来，把手机揣进外套口袋，下了车。",
+  "input_tokens": 1251,
+  "output_tokens": 377,
+  "latency_ms": 27289,
+  "finish_reason": "stop",
+  "error_code": "TEMPO_FINAL_LINE_MISMATCH",
+  "error_message": "TEMPO_FINAL_LINE_MISMATCH: final paragraph must include the required marker '回头说'",
+  "rendered_user_prompt_sha256": "011155cfec08fd95ee7eed2da636bf2a60f973f43b0f2738cd1569275fd9ff4a",
+  "validation": {
+    "character_count": 574,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "banned_sentence_hits": {},
+    "second_confirmation_hits": [],
+    "environment_coda_hits": [],
+    "stop_marker_first_char": null,
+    "post_stop_character_count": null,
+    "tempo_final_line_mismatch": true,
+    "manual_review_required": [
+      "viewpoint_violation",
+      "cross_mind_assertion",
+      "other_character_motive_as_fact",
+      "true_stop_state_position",
+      "visible_state_transition_count",
+      "relationship_or_meaning_summary",
+      "shared_atmosphere_declaration",
+      "narrator_correction_with_backstage_fact"
+    ]
+  },
+  "text_path": "cases\\NM-01\\drafts\\a-3.txt"
+}

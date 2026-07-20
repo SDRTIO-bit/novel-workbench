@@ -1,0 +1,30 @@
+{
+  "case_id": "CAMPUS-02",
+  "category": "校园尴尬与误会",
+  "title": "社团名单",
+  "run_id": "0841874a-911c-4cc3-96d9-4080d20f444b",
+  "planner": {
+    "candidate_id": "ab000b74-5c28-4ba8-b26d-57018c5992de",
+    "attempt_number": 1,
+    "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+    "model_id": "deepseek-chat",
+    "prompt_version_id": "f9052f8a-dc4e-5408-b14e-fc1badaf57f8",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 1800,
+      "timeout_seconds": 300,
+      "response_format": "json_object"
+    },
+    "text_output": "",
+    "raw_response": "{\n  \"planner_contract_version\": 2,\n  \"scene_goal\": \"许澄在广播站门口看到自己名字在迟到名单上，误以为周弈忘记帮她登记，她必须放弃当面追问，采取一个会带来具体麻烦的行动。\",\n  \"location\": \"校园广播站门口走廊\",\n  \"time\": \"午休刚结束，下午第一节课前\",\n  \"scene_state\": {\n    \"last_completed_action\": \"许澄走到广播站门口，看到墙上新贴的迟到名单上有自己的名字。\",\n    \"present_characters\": [\"许澄\", \"周弈\", \"值班老师\"],\n    \"visible_facts\": [\n      \"迟到名单上许澄的名字清晰可见\",\n      \"周弈抱着器材从走廊另一头走来\",\n      \"值班老师站在广播站门口翻看记录本\"\n    ],\n    \"available_objects\": [\"迟到名单\", \"广播站门\", \"走廊墙壁\", \"周弈手中的摄影器材\"],\n    \"unresolved_problem\": \"许澄的名字出现在迟到名单上，她需要确认是否周弈忘了帮她登记。\",\n    \"already_existing_constraints\": [\n      \"许澄不能直接质问周弈，因为值班老师在旁边\",\n      \"周弈正忙着搬器材，不方便停下来交谈\",\n      \"迟到名单已经张贴，撤销需要正式程序\"\n    ]\n  },\n  \"characters\": [\n    {\n      \"name\": \"许澄\",\n      \"goal\": \"在不引起注意的情况下确认周弈是否忘了帮她登记，并处理迟到名单的问题。\",\n      \"known\": [\"自己的名字在迟到名单上\", \"周弈今天负责登记出勤\", \"值班老师在现场\"],\n      \"unknown\": [\"周弈是否真的忘了登记\", \"周弈的实际安排是什么\", \"迟到名单是否还有转圜余地\"],\n      \"mistaken_beliefs\": [\"周弈可能因为忙而忘记帮她登记\"],\n      \"constraints\": [\"不能直接质问周弈\", \"不能表现出异常情绪\", \"必须在短时间内行动\"],\n      \"observed_evidence\": [\"迟到名单上自己的名字\", \"周弈抱着器材走来，没有立即看向她\", \"值班老师正在记录什么\"],\n      \"current_interpretation\": \"周弈可能忘了帮我登记，导致我被记迟到。\",\n      \"how_interpretation_drives_action\": \"她决定不等周弈解释，而是主动去做一件会带来麻烦的事——比如去办公室找班主任说明情况，这样会暴露自己迟到的事实。\"\n    },\n    {\n      \"name\": \"周弈\",\n      \"goal\": \"尽快把器材送到广播站，并找机会告诉许澄他其实已经帮她登记了，只是名单有误。\",\n      \"known\": [\"自己已经帮许澄登记了出勤\", \"迟到名单是旧版，有错误\", \"许澄可能看到了名单\"],\n      \"unknown\": [\"许澄已经误会了他\", \"许澄打算做什么\"],\n      \"mistaken_beliefs\": [\"许澄会等他解释清楚\"],\n      \"constraints\": [\"器材很重，不能放下\", \"值班老师在旁边，不便私下交谈\"],\n      \"observed_evidence\": [\"许澄站在名单前\", \"许澄的表情不太自然\"],\n      \"current_interpretation\": \"许澄可能看到了名单，但应该会等我来解释。\",\n      \"how_interpretation_drives_action\": \"他加快脚步，想尽快放下器材后找许澄说话。\"\n    },\n    {\n      \"name\": \"值班老师\",\n      \"goal\": \"监督广播站纪律，记录迟到情况。\",\n      \"known\": [\"名单是今天早上贴的\", \"许澄是名单上的人之一\", \"周弈是负责登记的学生\"],\n      \"unknown\": [\"许澄和周弈之间的约定\", \"名单可能有误\"],\n      \"mistaken_beliefs\": [\"迟到名单准确无误\"],\n      \"constraints\": [\"必须按规章制度处理迟到\"],\n      \"observed_evidence\": [\"许澄在名单前停留\", \"周弈抱着器材过来\"],\n      \"current_interpretation\": \"许澄可能看到自己迟到，周弈是来送器材的。\",\n      \"how_interpretation_drives_action\": \"他继续记录，没有主动干预。\"\n    }\n  ],\n  \"concrete_problem\": \"许澄必须决定是否要放弃当面问周弈，而立刻去办公室找班主任说明迟到情况——这个行动会让她被正式记过。\",\n  \"pressure\": \"值班老师在旁边，周弈正在走来但无法立即交谈，许澄必须在几秒内决定是等周弈还是自己行动。\",\n  \"turning_point\": \"许澄转身离开，没有等周弈，径直走向班主任办公室。\",\n  \"end_condition\": \"许澄敲响了班主任办公室的门，周弈在走廊上愣住。\",\n  \"forbidden\": [\n    \"不得让周弈或值班老师主动说出名单有误\",\n    \"不得让许澄直接质问周弈\",\n    \"不得解释周弈的真实安排\",\n    \"不得出现外部巧合（如突然有人出来说明情况）\",\n    \"不得使用后期燃料：周弈的暗恋、许澄的家庭背景\"\n  ],\n  \"causal_transitions\": [\n    {\n      \"id\": \"CT01\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"许澄看到迟到名单上自己的名字，而周弈抱着器材走来，没有立即看向她。\",\n      \"character_interpretation\": \"许澄认为周弈因为忙而忘记帮她登记，现在也没有注意到她的处境。\",\n      \"character_next_action\": \"许澄转身离开广播站，走向班主任办公室。\",\n      \"rejected_alternative\": \"留在原地等周弈放下器材后再问清楚。\",\n      \"immediate_consequence\": \"许澄离开后，周弈放下器材发现她不在，值班老师提醒他许澄去了办公室。\",\n      \"counterfactual_without_action\": \"如果许澄没有离开，她会等到周弈放下器材，然后得知名单有误。\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"许澄站在名单前犹豫，周弈正在走来。\",\n        \"after\": \"许澄离开走廊前往办公室，周弈放下器材后寻找她。\"\n      },\n      \"cost_or_commitment\": \"许澄主动去办公室会让自己正式被记迟到，可能影响期末评优。\",\n      \"next_constraint\": \"许澄已经离开现场，无法再与周弈私下沟通。\",\n      \"reader_must_infer\": \"许澄的行动是基于误解，她本可以等一等。\",\n      \"narrator_must_not_state\": [\n        \"周弈其实已经帮她登记了\",\n        \"名单是旧版错误\"\n      ]\n    }\n  ],\n  \"tempo_guardrails\": {\n    \"entry_pressure\": \"许澄刚看到名单上的名字，周弈正抱着器材走来。\",\n    \"dominant_pressure\": {\n      \"kind\": \"information_gap\",\n      \"description\": \"许澄不知道周弈已经帮她登记，周弈不知道许澄已经误会，两人都缺少关键信息。\"\n    },\n    \"allowed_viewpoint_misread\": \"许澄可能把周弈的忙碌误解为忽视。\",\n    \"disclosure_cap\": 0,\n    \"must_remain_unclassified\": [\n      \"周弈的真实安排\"\n    ],\n    \"stop_state\": {\n      \"type\": \"unresolved_problem\",\n      \"visible_fact\": \"许澄敲响了班主任办公室的门。\",\n      \"what_is_now_different\": \"许澄从等待解释变成了主动承担后果，问题从误会升级为正式记录。\",\n      \"must_not_append\": \"不得说明班主任的反应。\"\n    },\n    \"final_line_must_include\": \"许澄深吸一口气，敲响了门。\"\n  },\n  \"chapter_contract_check\": {\n    \"function_aligned\": true,\n    \"must_deliver_covered\": true,\n    \"must_not_deliver_respected\": true,\n    \"main_change_enabled\": true,\n    \"main_payoff_prepared\": true,\n    \"ending_hook_established\": true,\n    \"causal_transitions_grounded\": true,\n    \"reader_inference_not_pre_resolved\": true,\n    \"scene_state_reconstructed\": true,\n    \"information_sources_legal\": true,\n    \"character_choice_is_real\": true,\n    \"consequence_is_counterfactual\": true",
+    "input_tokens": 3317,
+    "output_tokens": 1801,
+    "latency_ms": 19050,
+    "finish_reason": "length",
+    "error_code": "STRUCTURED_OUTPUT_TRUNCATED",
+    "error_message": "模型因达到 max_output_tokens 停止，结构化输出可能不完整",
+    "rendered_user_prompt_sha256": "dd41a22170add17f8cc461213620fd620e5da8a1f37c8036b56ef4de178858e3"
+  },
+  "drafts": []
+}

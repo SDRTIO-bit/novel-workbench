@@ -1,0 +1,64 @@
+{
+  "candidate_id": "c5461193-0937-48b7-917d-0c1b43133617",
+  "attempt_number": 1,
+  "group": "D",
+  "replica": 2,
+  "permission_policy": "STRICT_LIMITED",
+  "stop_policy": "STRICT_STOP",
+  "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e",
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e",
+    "policy_metadata": {
+      "group": "D",
+      "permission_policy": "STRICT_LIMITED",
+      "stop_policy": "STRICT_STOP",
+      "policy_version": "narrative-permission-stop-v1",
+      "policy_hash": "533ba9fe37558af28e5b9a277971d13c5f7674a7a297a2c3d7f1a96c77af3123",
+      "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e",
+      "permission_instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+      "stop_instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+      "seed": null
+    },
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "水烧开的声音从厨房里传出来，咕嘟咕嘟的，蒸汽把锅盖顶得轻轻跳动。\n\n夏知站在厨房门口，看见韩川的手机屏幕亮了一下。\n\n屏幕上弹出一条消息预览，是她昨晚发的那条——“明天早上要不要一起去图书馆？我看天气预报说下午会下雨，可以早点回来。”消息前面有个未读的红点，白底黑字，清清楚楚。\n\n韩川正从冰箱里拿出两颗青菜。他低头看了一眼屏幕，动作顿了一下，然后把手机翻过来，屏幕朝下扣在大理石台面上。\n\n他把青菜放进水槽，拧开水龙头。\n\n夏知的手在卫衣口袋里攥了一下。她看见桌上摆着两只碗，白色的瓷碗，筷子已经搁好了。炉灶上的水还在滚，蒸汽从锅盖边缘嘶嘶地往外冒。\n\n韩川背对着她，水龙头的声音盖过了其他动静。他把青菜叶子一片一片掰开，冲掉根部的泥。\n\n夏知走进厨房。\n\n她走到桌边，手指碰到其中一只碗的碗沿，拿起来。“需要帮忙吗？”\n\n韩川的手在水流里停了一秒。他转过头看了她一眼，然后关掉水龙头，把洗好的青菜放在砧板上。“面在柜子里，左手边第二个。”\n\n夏知拉开柜门，拿出一把挂面。她走到灶台前，锅里的水已经滚得很厉害了。她把面条竖着放进沸水里，筷子轻轻拨了一下，不让它们粘在一起。\n\n韩川开始切菜。刀落在砧板上的声音很快，很均匀。他把切好的青菜拢到刀面上，走到灶台边，把菜倒进锅里。他的手臂从她肩膀旁边伸过去，袖子蹭到了她的卫衣。\n\n夏知没有退开。她拿起盐罐，往锅里撒了一点盐，然后把筷子递给他。\n\n韩川接过筷子，搅了一下锅里的面。蒸汽升起来，模糊了他侧脸的轮廓。\n\n面煮好了。夏知把火关掉，韩川端起锅，把面和汤分别盛进两只碗里。青菜叶子浮在汤面上，面条盘在碗底。\n\n他把其中一碗推到夏知面前。\n\n桌上，他的手机还扣在那里，黑色的手机壳贴着大理石台面，屏幕朝下。\n\n夏知拉开椅子坐下。韩川在她对面坐下来，拿起筷子。\n\n他把筷子伸进碗里，挑起一撮面，吹了吹。",
+  "raw_response": "水烧开的声音从厨房里传出来，咕嘟咕嘟的，蒸汽把锅盖顶得轻轻跳动。\n\n夏知站在厨房门口，看见韩川的手机屏幕亮了一下。\n\n屏幕上弹出一条消息预览，是她昨晚发的那条——“明天早上要不要一起去图书馆？我看天气预报说下午会下雨，可以早点回来。”消息前面有个未读的红点，白底黑字，清清楚楚。\n\n韩川正从冰箱里拿出两颗青菜。他低头看了一眼屏幕，动作顿了一下，然后把手机翻过来，屏幕朝下扣在大理石台面上。\n\n他把青菜放进水槽，拧开水龙头。\n\n夏知的手在卫衣口袋里攥了一下。她看见桌上摆着两只碗，白色的瓷碗，筷子已经搁好了。炉灶上的水还在滚，蒸汽从锅盖边缘嘶嘶地往外冒。\n\n韩川背对着她，水龙头的声音盖过了其他动静。他把青菜叶子一片一片掰开，冲掉根部的泥。\n\n夏知走进厨房。\n\n她走到桌边，手指碰到其中一只碗的碗沿，拿起来。“需要帮忙吗？”\n\n韩川的手在水流里停了一秒。他转过头看了她一眼，然后关掉水龙头，把洗好的青菜放在砧板上。“面在柜子里，左手边第二个。”\n\n夏知拉开柜门，拿出一把挂面。她走到灶台前，锅里的水已经滚得很厉害了。她把面条竖着放进沸水里，筷子轻轻拨了一下，不让它们粘在一起。\n\n韩川开始切菜。刀落在砧板上的声音很快，很均匀。他把切好的青菜拢到刀面上，走到灶台边，把菜倒进锅里。他的手臂从她肩膀旁边伸过去，袖子蹭到了她的卫衣。\n\n夏知没有退开。她拿起盐罐，往锅里撒了一点盐，然后把筷子递给他。\n\n韩川接过筷子，搅了一下锅里的面。蒸汽升起来，模糊了他侧脸的轮廓。\n\n面煮好了。夏知把火关掉，韩川端起锅，把面和汤分别盛进两只碗里。青菜叶子浮在汤面上，面条盘在碗底。\n\n他把其中一碗推到夏知面前。\n\n桌上，他的手机还扣在那里，黑色的手机壳贴着大理石台面，屏幕朝下。\n\n夏知拉开椅子坐下。韩川在她对面坐下来，拿起筷子。\n\n他把筷子伸进碗里，挑起一撮面，吹了吹。",
+  "input_tokens": 1663,
+  "output_tokens": 504,
+  "latency_ms": 20000,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "7644868e4b2ac2ee6c812bd9d1d094c4dfdb5c9bbddf34e93a04bbaab074738c",
+  "validation": {
+    "character_count": 775,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "banned_sentence_hits": {},
+    "second_confirmation_hits": [],
+    "environment_coda_hits": [],
+    "stop_marker_first_char": null,
+    "post_stop_character_count": null,
+    "tempo_final_line_mismatch": false,
+    "manual_review_required": [
+      "viewpoint_violation",
+      "cross_mind_assertion",
+      "other_character_motive_as_fact",
+      "true_stop_state_position",
+      "visible_state_transition_count",
+      "relationship_or_meaning_summary",
+      "shared_atmosphere_declaration",
+      "narrator_correction_with_backstage_fact"
+    ]
+  },
+  "text_path": "cases\\ROMANCE-02\\drafts\\d-2.txt"
+}

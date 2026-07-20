@@ -1,0 +1,139 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "向暖在快递架上发现一个和自己同名的包裹，但收件地址不是自己的楼栋。她必须在不能拆包裹、不能拿走的情况下，现场找到一个物件标记或通知，以便真正的收件人知道这个包裹的存在或归属问题。场景结束时，包裹归属出现新事实，为后续章节钩子搭建入口。",
+  "location": "小区快递架",
+  "time": "傍晚，取件高峰期刚过",
+  "scene_state": {
+    "last_completed_action": "向暖从快递架上拿起一个写着自己名字的包裹，核对收件地址后放回原位。",
+    "present_characters": [
+      "向暖"
+    ],
+    "visible_facts": [
+      "快递架上有一个写着'向暖'的包裹，但收件地址不是向暖的楼栋",
+      "架子上还有其他未取走的包裹",
+      "快递架旁有笔和便签纸",
+      "向暖的手机有电量，可以拍照或发消息"
+    ],
+    "available_objects": [
+      "快递架上的包裹",
+      "笔",
+      "便签纸",
+      "向暖的手机",
+      "其他未取件包裹"
+    ],
+    "unresolved_problem": "真正的收件人可能就在附近，但向暖无法直接联系对方，也不能拿走包裹。",
+    "already_existing_constraints": [
+      "不能拆包裹验证内容",
+      "不能把包裹带回家",
+      "不能长时间逗留等待收件人出现"
+    ]
+  },
+  "characters": [
+    {
+      "name": "向暖",
+      "goal": "用现场物件标记或通知，让真正的收件人知道这个包裹的存在或归属问题，从而可能联系自己或解决误会。",
+      "known": [
+        "包裹上写着自己的名字",
+        "收件地址不是自己的楼栋",
+        "快递架上有笔和便签纸",
+        "手机可以拍照或发消息"
+      ],
+      "unknown": [
+        "真正的收件人是谁",
+        "为什么会有同名同姓的人住在附近",
+        "包裹里是什么"
+      ],
+      "mistaken_beliefs": [
+        "也许只是快递员放错了架子",
+        "同名的人可能就在这个小区，或许可以很快找到"
+      ],
+      "constraints": [
+        "不能拆包裹验证内容",
+        "不能把包裹带回家",
+        "不能长时间逗留等待收件人出现",
+        "必须留下一个不侵犯隐私但有效的通知"
+      ],
+      "observed_evidence": [
+        "包裹上的收件地址是隔壁楼栋",
+        "快递架上有便签纸和笔"
+      ],
+      "current_interpretation": "这个包裹很可能属于另一个同名的人，对方可能没有注意到包裹放错了架子，或者快递员误写了名字。",
+      "how_interpretation_drives_action": "向暖决定在包裹上贴一张便签，留下自己的联系方式，并写明情况，希望真正的收件人看到后联系她。"
+    }
+  ],
+  "concrete_problem": "向暖如何在不拆包裹、不拿走包裹的情况下，用现场物件标记或通知，让真正的收件人知道这个包裹的归属问题？",
+  "pressure": "取件高峰期已过，周围无人，向暖担心包裹被错拿或退回，但也不能一直守在这里。",
+  "turning_point": "向暖在便签上写下信息，贴到包裹上，但突然发现包裹侧面有一个模糊的旧标签，上面隐约可见另一个地址，似乎是真正的收件地址。",
+  "end_condition": "向暖根据旧标签上的地址，将包裹送到正确楼栋的快递架，并留下便签说明情况。包裹归属出现新事实：真正的收件人可能就在隔壁楼栋，但向暖没有直接见到对方。",
+  "forbidden": [
+    "拆开包裹",
+    "拿走包裹",
+    "直接见到真正的收件人",
+    "使用手机联系快递公司或物业",
+    "引入第三方角色介入"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "向暖发现包裹侧面有一个模糊的旧标签，上面隐约可见另一个地址。",
+      "character_interpretation": "这个旧标签可能是真正的收件地址，说明快递被错误地覆盖了新标签，或者二次投递时写错了。",
+      "character_next_action": "向暖仔细辨认旧标签上的地址，并决定将包裹送到那个地址的快递架，同时留下便签说明情况。",
+      "rejected_alternative": "她可以忽略旧标签，只贴便签在原地等待，但那样可能延误包裹送达。",
+      "immediate_consequence": "包裹被移到了正确楼栋的快递架上，并附带了向暖的便签。",
+      "counterfactual_without_action": "如果向暖不行动，包裹可能被错拿或退回，真正的收件人永远不知道它的存在。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "包裹在向暖所在楼栋的快递架上，归属不明。",
+        "after": "包裹在隔壁楼栋的快递架上，附有向暖的便签，归属指向正确地址。"
+      },
+      "cost_or_commitment": "向暖花费了额外时间，并留下了自己的联系方式，可能被陌生人联系。",
+      "next_constraint": "向暖必须等待可能的联系，且不能主动寻找收件人。",
+      "reader_must_infer": "旧标签上的地址是否正确，以及真正的收件人是否会看到便签并联系向暖。",
+      "narrator_must_not_state": [
+        "旧标签上的地址就是真正的收件地址",
+        "真正的收件人一定会看到便签",
+        "向暖的决定完全正确"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "向暖拿起包裹又放下，周围无人，她知道自己不能一直站在这里。",
+    "dominant_pressure": {
+      "kind": "information_gap",
+      "description": "包裹的真正归属信息缺失，向暖必须在不违规的情况下获取或传递信息。"
+    },
+    "allowed_viewpoint_misread": "向暖可能认为旧标签就是正确的，但实际上可能是更早的错误地址。",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "真正的收件人是谁",
+      "包裹内容",
+      "旧标签的来源"
+    ],
+    "stop_state": {
+      "type": "physical_change",
+      "visible_fact": "包裹出现在隔壁楼栋的快递架上，并贴有向暖的便签。",
+      "what_is_now_different": "包裹的位置和归属信息发生了物理变化，从错误楼栋移到了疑似正确楼栋。",
+      "must_not_append": "不得描述收件人是否取走包裹或联系向暖。"
+    },
+    "final_line_must_include": ""
+  }
+}

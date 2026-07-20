@@ -1,0 +1,63 @@
+{
+  "candidate_id": "d64a152a-ebf0-4aee-bc23-f6c628dddc30",
+  "attempt_number": 1,
+  "group": "A",
+  "replica": 3,
+  "permission_policy": "CURRENT",
+  "stop_policy": "CURRENT",
+  "instruction_hash": null,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "policy_metadata": {
+      "group": "A",
+      "permission_policy": "CURRENT",
+      "stop_policy": "CURRENT",
+      "policy_version": "narrative-permission-stop-v1",
+      "policy_hash": "bcba9c79e51e6722c8796bc8a1defd65461d017dbbaf922efbe9c16df2ba3d4f",
+      "instruction_hash": null,
+      "permission_instruction_hash": null,
+      "stop_instruction_hash": null,
+      "seed": null
+    },
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "向暖把包裹翻过来，标签上的楼栋号不是她的。\n\n她抬头看了一眼快递架侧面的编号牌，确认自己没站错位置——没错，三号楼。包裹上写的是五号楼。\n\n她又看了一遍收件人那一栏。“向暖”两个字印得清清楚楚，电话号码的后四位也对得上。但地址不对。\n\n架子上还摞着七八个快递，纸箱、泡沫袋、一个被胶带缠了好几圈的鞋盒。旁边墙上挂着一支圆珠笔和一本便签纸，笔用细绳拴在挂钩上，便签纸被撕掉了大半，最上面那张印着一个模糊的鞋印。\n\n向暖把包裹放回架子上。\n\n她不能拆。不是自己的东西，地址不对，拆了就是另一个性质的问题。也不能直接拿走——万一真正的收件人回来找，看到空架子，只会以为快递被偷了。\n\n小区里有人和她同名同姓，住在五号楼。这件事本身不奇怪，但此刻它变成了一件需要现场处理的事。她不能一直站在这里，也不能当没看见。\n\n向暖拿起手机拍了张包裹标签的照片，然后撕下一张便签纸，拔开圆珠笔帽。\n\n笔芯是快用完的那种，写出来的字断断续续。她用力按了两下，在便签上写：\n\n“这个包裹放在了三号楼的架子上，收件人写的是向暖，但地址是五号楼。我把它转到五号楼快递架。如有问题请联系——”\n\n她停了一下，写上自己的手机号。\n\n写完之后她把便签贴在包裹正面，又拍了一张照片。然后拿起包裹，转身往五号楼走。\n\n五号楼的快递架在单元门内侧，比三号楼的小一圈，上面只放了四个快递。向暖扫了一眼，没有一个收件人叫向暖。她把包裹放在最上层靠边的位置，便签朝外，确保有人过来取件时第一眼就能看到。\n\n她又看了一眼那个包裹。不大，比手掌宽一些，厚度不到十厘米，晃一下没有明显声响。标签上的寄件人信息被磨掉了一半，只剩一个模糊的姓氏和一个外省的区号。\n\n向暖把笔和便签的事在脑子里过了一遍——三号楼那边还有便签纸，笔还在，她没带走任何不属于自己的东西。包裹现在在它应该去的楼栋的架子上，附着她留下的说明。\n\n她退出单元门，阳光打在脸上，手机屏幕亮了一下，是刚才拍的那两张照片。她锁屏，把手机塞回口袋。",
+  "raw_response": "向暖把包裹翻过来，标签上的楼栋号不是她的。\n\n她抬头看了一眼快递架侧面的编号牌，确认自己没站错位置——没错，三号楼。包裹上写的是五号楼。\n\n她又看了一遍收件人那一栏。“向暖”两个字印得清清楚楚，电话号码的后四位也对得上。但地址不对。\n\n架子上还摞着七八个快递，纸箱、泡沫袋、一个被胶带缠了好几圈的鞋盒。旁边墙上挂着一支圆珠笔和一本便签纸，笔用细绳拴在挂钩上，便签纸被撕掉了大半，最上面那张印着一个模糊的鞋印。\n\n向暖把包裹放回架子上。\n\n她不能拆。不是自己的东西，地址不对，拆了就是另一个性质的问题。也不能直接拿走——万一真正的收件人回来找，看到空架子，只会以为快递被偷了。\n\n小区里有人和她同名同姓，住在五号楼。这件事本身不奇怪，但此刻它变成了一件需要现场处理的事。她不能一直站在这里，也不能当没看见。\n\n向暖拿起手机拍了张包裹标签的照片，然后撕下一张便签纸，拔开圆珠笔帽。\n\n笔芯是快用完的那种，写出来的字断断续续。她用力按了两下，在便签上写：\n\n“这个包裹放在了三号楼的架子上，收件人写的是向暖，但地址是五号楼。我把它转到五号楼快递架。如有问题请联系——”\n\n她停了一下，写上自己的手机号。\n\n写完之后她把便签贴在包裹正面，又拍了一张照片。然后拿起包裹，转身往五号楼走。\n\n五号楼的快递架在单元门内侧，比三号楼的小一圈，上面只放了四个快递。向暖扫了一眼，没有一个收件人叫向暖。她把包裹放在最上层靠边的位置，便签朝外，确保有人过来取件时第一眼就能看到。\n\n她又看了一眼那个包裹。不大，比手掌宽一些，厚度不到十厘米，晃一下没有明显声响。标签上的寄件人信息被磨掉了一半，只剩一个模糊的姓氏和一个外省的区号。\n\n向暖把笔和便签的事在脑子里过了一遍——三号楼那边还有便签纸，笔还在，她没带走任何不属于自己的东西。包裹现在在它应该去的楼栋的架子上，附着她留下的说明。\n\n她退出单元门，阳光打在脸上，手机屏幕亮了一下，是刚才拍的那两张照片。她锁屏，把手机塞回口袋。",
+  "input_tokens": 1256,
+  "output_tokens": 531,
+  "latency_ms": 20262,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "5ee79fd724495caa67e1b830fb9e5b028a1fb7472c77aecde8db5605b15c1c9d",
+  "validation": {
+    "character_count": 828,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "banned_sentence_hits": {},
+    "second_confirmation_hits": [],
+    "environment_coda_hits": [],
+    "stop_marker_first_char": null,
+    "post_stop_character_count": null,
+    "tempo_final_line_mismatch": false,
+    "manual_review_required": [
+      "viewpoint_violation",
+      "cross_mind_assertion",
+      "other_character_motive_as_fact",
+      "true_stop_state_position",
+      "visible_state_transition_count",
+      "relationship_or_meaning_summary",
+      "shared_atmosphere_declaration",
+      "narrator_correction_with_backstage_fact"
+    ]
+  },
+  "text_path": "cases\\CO-05\\drafts\\a-3.txt"
+}

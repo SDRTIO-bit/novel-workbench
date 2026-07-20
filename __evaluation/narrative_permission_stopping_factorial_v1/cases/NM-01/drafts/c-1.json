@@ -1,0 +1,64 @@
+{
+  "candidate_id": "732ea26c-8b01-42cf-b38c-4d5f2db2e71c",
+  "attempt_number": 1,
+  "group": "C",
+  "replica": 1,
+  "permission_policy": "CURRENT",
+  "stop_policy": "STRICT_STOP",
+  "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+    "policy_metadata": {
+      "group": "C",
+      "permission_policy": "CURRENT",
+      "stop_policy": "STRICT_STOP",
+      "policy_version": "narrative-permission-stop-v1",
+      "policy_hash": "15e6b754a467a03569fe265abb7861ce24f144ba737ce3f2973776c1c2e76d47",
+      "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+      "permission_instruction_hash": null,
+      "stop_instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+      "seed": null
+    },
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "地铁还在隧道里轰隆隆地跑，头顶的报站灯跳了一下——“下一站：长椿街”。\n\n林悄把手机贴紧耳朵，语音条已经变成一行灰字：对方撤回了一条消息。\n\n她点开室友的头像，拨语音电话。嘟——嘟——嘟——第四声还没响就被掐断，屏幕跳回聊天界面，顶栏显示“对方正在通话中”。\n\n林悄又拨了一遍。占线。\n\n车厢晃了一下，她扶住拉环。旁边穿灰色冲锋衣的中年男人拎着塑料袋往门口挤，塑料袋擦过她的手腕。她没动。\n\n她点开那条撤回提示旁边的空白，往上翻。聊天记录停在前天晚上，室友发了一串猫的视频，她回了个表情包。再往上，上周三，室友问洗衣液是不是用完了。再往上——\n\n报站灯又跳：“长椿街站，到了。”\n\n车门打开，冷风灌进来。有人下车，有人上车。林悄没动。\n\n她看着手机屏幕。语音前半句还在耳朵里转——你桌上那个蓝色文件夹我——那个“我”字拖了半拍，像是话没想好就被匆忙说出口，又像是说到一半被人打断。她不知道是哪种。她不知道的事情太多了。\n\n车门关上。地铁重新启动。\n\n还有一站。\n\n林悄退出通话界面，打开和室友的对话框。拇指在输入框上停了两秒，开始打字。\n\n“刚在地铁上没听清，蓝色文件夹怎么啦？方便时回我～”\n\n发送。\n\n她把手机屏幕朝下扣在腿上，看着对面车窗里自己的倒影。隧道壁上的灯带快速闪过，一道一道，像某种倒计时。\n\n地铁减速。报站灯亮了——“下一站：复兴门”。\n\n手机震了一下。\n\n林悄翻过屏幕。聊天界面里，室友的头像右边跳出一条新消息。\n\n“没事，我帮你收起来了，回头说。”",
+  "raw_response": "地铁还在隧道里轰隆隆地跑，头顶的报站灯跳了一下——“下一站：长椿街”。\n\n林悄把手机贴紧耳朵，语音条已经变成一行灰字：对方撤回了一条消息。\n\n她点开室友的头像，拨语音电话。嘟——嘟——嘟——第四声还没响就被掐断，屏幕跳回聊天界面，顶栏显示“对方正在通话中”。\n\n林悄又拨了一遍。占线。\n\n车厢晃了一下，她扶住拉环。旁边穿灰色冲锋衣的中年男人拎着塑料袋往门口挤，塑料袋擦过她的手腕。她没动。\n\n她点开那条撤回提示旁边的空白，往上翻。聊天记录停在前天晚上，室友发了一串猫的视频，她回了个表情包。再往上，上周三，室友问洗衣液是不是用完了。再往上——\n\n报站灯又跳：“长椿街站，到了。”\n\n车门打开，冷风灌进来。有人下车，有人上车。林悄没动。\n\n她看着手机屏幕。语音前半句还在耳朵里转——你桌上那个蓝色文件夹我——那个“我”字拖了半拍，像是话没想好就被匆忙说出口，又像是说到一半被人打断。她不知道是哪种。她不知道的事情太多了。\n\n车门关上。地铁重新启动。\n\n还有一站。\n\n林悄退出通话界面，打开和室友的对话框。拇指在输入框上停了两秒，开始打字。\n\n“刚在地铁上没听清，蓝色文件夹怎么啦？方便时回我～”\n\n发送。\n\n她把手机屏幕朝下扣在腿上，看着对面车窗里自己的倒影。隧道壁上的灯带快速闪过，一道一道，像某种倒计时。\n\n地铁减速。报站灯亮了——“下一站：复兴门”。\n\n手机震了一下。\n\n林悄翻过屏幕。聊天界面里，室友的头像右边跳出一条新消息。\n\n“没事，我帮你收起来了，回头说。”",
+  "input_tokens": 1401,
+  "output_tokens": 403,
+  "latency_ms": 21600,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "d0842c68cfe6dde70043069224ec8930ea5d0c1223ac3f8723a444d1ef822f83",
+  "validation": {
+    "character_count": 635,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "banned_sentence_hits": {},
+    "second_confirmation_hits": [],
+    "environment_coda_hits": [],
+    "stop_marker_first_char": null,
+    "post_stop_character_count": null,
+    "tempo_final_line_mismatch": false,
+    "manual_review_required": [
+      "viewpoint_violation",
+      "cross_mind_assertion",
+      "other_character_motive_as_fact",
+      "true_stop_state_position",
+      "visible_state_transition_count",
+      "relationship_or_meaning_summary",
+      "shared_atmosphere_declaration",
+      "narrator_correction_with_backstage_fact"
+    ]
+  },
+  "text_path": "cases\\NM-01\\drafts\\c-1.txt"
+}

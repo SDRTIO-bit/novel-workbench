@@ -1,0 +1,64 @@
+{
+  "candidate_id": "e947db24-8329-4ee4-ac49-d48bd8ea1f54",
+  "attempt_number": 1,
+  "group": "B",
+  "replica": 3,
+  "permission_policy": "STRICT_LIMITED",
+  "stop_policy": "CURRENT",
+  "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+    "policy_metadata": {
+      "group": "B",
+      "permission_policy": "STRICT_LIMITED",
+      "stop_policy": "CURRENT",
+      "policy_version": "narrative-permission-stop-v1",
+      "policy_hash": "a42fb8f38620720ad1dda5407ffa44c03e929f1b34d89ecb5fbf1b5ea7325c24",
+      "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+      "permission_instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+      "stop_instruction_hash": null,
+      "seed": null
+    },
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "课间铃已经响过两分钟，乔雨的手指还停在手机屏幕上。\n\n企业微信的对话框里，班主任张老师的头像旁边只剩一行灰色小字——“对方撤回了一条消息”。上面是预览残留的四个字：你这次的……\n\n她盯着那四个字，拇指没动。通知栏弹出来的预览她只扫到一眼，手机就震了第二下，提示撤回。前后不到三秒。\n\n你这次的什么？\n\n乔雨把通知栏往下拉了一截。企业微信的预览已经缩成一句话，和锁屏上显示的完全一样。没有更多。\n\n脚步声从左边靠过来。\n\n她没转头，先听见同桌赵一鸣的帆布鞋踩在教室地砖上那种不带跟的摩擦声。然后是手机壳背面那排支架环磕在桌沿的轻响——他每次走过来都习惯把手机屏幕朝下扣着拿，支架环正好撞到桌子。\n\n乔雨按了侧键。屏幕黑掉的时候，她看见通知栏里那行撤回提示还挂着。\n\n“哎，”赵一鸣已经走到她桌子左边，手机翻过来朝她晃了一下，“你看这个。”\n\n乔雨抬起眼。他屏幕上是张图片，放大了看是某个短视频评论区的截图，一串点赞数特别高的神回复。\n\n“你先让我看看你笑什么。”乔雨把手机屏幕朝下搁在课本上，侧过身去看他的手机。\n\n赵一鸣把图片往下划了一下，露出第二条评论。“就这个，你看这人说的——”他念出声来，念到一半自己先笑了，后面几个字含含糊糊的。\n\n乔雨跟着笑了一下。她没听清后半句，但赵一鸣笑的时候肩膀会往上耸，眼镜往下滑，这个反应她见过太多次，知道这时候只要等他笑完就会自己再解释一遍。\n\n她余光扫了一眼自己扣在桌上的手机。\n\n“你刚才在看什么？”赵一鸣笑完了，把手机收回去，下巴朝她桌上那台屏幕朝下的手机点了点，“我一过来你就锁屏。”\n\n“看时间。”乔雨说，“还有三分钟上课。”\n\n“哦。”赵一鸣没追问，又低头划自己手机，“对了，你看到张老师在班级群发的消息没？就刚才。”\n\n乔雨的手已经碰到自己手机背面，停住了。\n\n“什么消息？”\n\n“就班级群啊，”赵一鸣把手机转过来给她看，“刚才弹出来的，我还没点进去。”\n\n他的通知栏上挂着一条企业微信的群消息预览。班级群，发送人张老师，预览显示的前几个字是：各位同学，关于下周——\n\n不是作业。\n\n乔雨看着那条预览，手指没去翻自己的手机。",
+  "raw_response": "课间铃已经响过两分钟，乔雨的手指还停在手机屏幕上。\n\n企业微信的对话框里，班主任张老师的头像旁边只剩一行灰色小字——“对方撤回了一条消息”。上面是预览残留的四个字：你这次的……\n\n她盯着那四个字，拇指没动。通知栏弹出来的预览她只扫到一眼，手机就震了第二下，提示撤回。前后不到三秒。\n\n你这次的什么？\n\n乔雨把通知栏往下拉了一截。企业微信的预览已经缩成一句话，和锁屏上显示的完全一样。没有更多。\n\n脚步声从左边靠过来。\n\n她没转头，先听见同桌赵一鸣的帆布鞋踩在教室地砖上那种不带跟的摩擦声。然后是手机壳背面那排支架环磕在桌沿的轻响——他每次走过来都习惯把手机屏幕朝下扣着拿，支架环正好撞到桌子。\n\n乔雨按了侧键。屏幕黑掉的时候，她看见通知栏里那行撤回提示还挂着。\n\n“哎，”赵一鸣已经走到她桌子左边，手机翻过来朝她晃了一下，“你看这个。”\n\n乔雨抬起眼。他屏幕上是张图片，放大了看是某个短视频评论区的截图，一串点赞数特别高的神回复。\n\n“你先让我看看你笑什么。”乔雨把手机屏幕朝下搁在课本上，侧过身去看他的手机。\n\n赵一鸣把图片往下划了一下，露出第二条评论。“就这个，你看这人说的——”他念出声来，念到一半自己先笑了，后面几个字含含糊糊的。\n\n乔雨跟着笑了一下。她没听清后半句，但赵一鸣笑的时候肩膀会往上耸，眼镜往下滑，这个反应她见过太多次，知道这时候只要等他笑完就会自己再解释一遍。\n\n她余光扫了一眼自己扣在桌上的手机。\n\n“你刚才在看什么？”赵一鸣笑完了，把手机收回去，下巴朝她桌上那台屏幕朝下的手机点了点，“我一过来你就锁屏。”\n\n“看时间。”乔雨说，“还有三分钟上课。”\n\n“哦。”赵一鸣没追问，又低头划自己手机，“对了，你看到张老师在班级群发的消息没？就刚才。”\n\n乔雨的手已经碰到自己手机背面，停住了。\n\n“什么消息？”\n\n“就班级群啊，”赵一鸣把手机转过来给她看，“刚才弹出来的，我还没点进去。”\n\n他的通知栏上挂着一条企业微信的群消息预览。班级群，发送人张老师，预览显示的前几个字是：各位同学，关于下周——\n\n不是作业。\n\n乔雨看着那条预览，手指没去翻自己的手机。",
+  "input_tokens": 1459,
+  "output_tokens": 560,
+  "latency_ms": 18403,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "1f6e04c79e8b56382ac73ff744c31f3b0a67a3a9b890dd8c5b4d5b05c08190e7",
+  "validation": {
+    "character_count": 889,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "banned_sentence_hits": {},
+    "second_confirmation_hits": [],
+    "environment_coda_hits": [],
+    "stop_marker_first_char": null,
+    "post_stop_character_count": null,
+    "tempo_final_line_mismatch": false,
+    "manual_review_required": [
+      "viewpoint_violation",
+      "cross_mind_assertion",
+      "other_character_motive_as_fact",
+      "true_stop_state_position",
+      "visible_state_transition_count",
+      "relationship_or_meaning_summary",
+      "shared_atmosphere_declaration",
+      "narrator_correction_with_backstage_fact"
+    ]
+  },
+  "text_path": "cases\\AL-01\\drafts\\b-3.txt"
+}

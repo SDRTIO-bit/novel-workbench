@@ -1,0 +1,30 @@
+{
+  "case_id": "ROMANCE-04",
+  "category": "恋爱日常与关系试探",
+  "title": "生日蜡烛",
+  "run_id": "c5ade669-504c-4681-aada-f0cbaabb69b5",
+  "planner": {
+    "candidate_id": "1440837e-798e-4257-b46c-02972ac6061d",
+    "attempt_number": 1,
+    "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+    "model_id": "deepseek-chat",
+    "prompt_version_id": "f9052f8a-dc4e-5408-b14e-fc1badaf57f8",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 1800,
+      "timeout_seconds": 300,
+      "response_format": "json_object"
+    },
+    "text_output": "",
+    "raw_response": "{\n  \"planner_contract_version\": 2,\n  \"scene_goal\": \"许岚发现桌角有生日蜡烛，不能直接问是否为她准备，必须通过可见动作处理尴尬，并让一次选择产生可见的承诺或退路。\",\n  \"location\": \"朋友聚餐后的餐馆包间\",\n  \"time\": \"聚餐结束，服务员开始收拾邻桌\",\n  \"scene_state\": {\n    \"last_completed_action\": \"朋友聚餐结束，大家陆续离席，陈述开始收盘子\",\n    \"present_characters\": [\"许岚\", \"陈述\"],\n    \"visible_facts\": [\"桌角有一小盒未拆封的生日蜡烛\", \"陈述正在收拾桌上的空盘和垃圾\", \"其他朋友已经离开包间\"],\n    \"available_objects\": [\"生日蜡烛盒\", \"空盘子\", \"垃圾袋\", \"打火机（假设陈述随身携带）\"],\n    \"unresolved_problem\": \"许岚不确定蜡烛是否为她准备，但无法直接询问\",\n    \"already_existing_constraints\": [\"不能直接问‘是不是给我准备的’\", \"不能表现出过度期待或失望\"]\n  },\n  \"characters\": [\n    {\n      \"name\": \"许岚\",\n      \"goal\": \"在不直接询问的前提下确认蜡烛是否与自己有关，并保持自然\",\n      \"known\": [\"今天不是她的生日\", \"她上周随口提过自己的生日日期\", \"陈述记得很多小事\"],\n      \"unknown\": [\"蜡烛的真实用途\", \"陈述是否特意为她准备\"],\n      \"mistaken_beliefs\": [\"蜡烛可能是店家赠送的\", \"陈述可能只是顺手没扔\"],\n      \"constraints\": [\"不能直接问蜡烛是否为她准备\", \"不能显得太在意\"],\n      \"observed_evidence\": [\"蜡烛盒放在桌角，未被拆封\", \"陈述没有主动提及蜡烛\"],\n      \"current_interpretation\": \"蜡烛可能是给我的，但他没主动说，我直接问会尴尬\",\n      \"how_interpretation_drives_action\": \"她决定用一个间接动作来试探——比如拿起蜡烛盒看背面，或者问‘这个要扔掉吗？’\"\n    },\n    {\n      \"name\": \"陈述\",\n      \"goal\": \"在不直接解释的前提下让许岚明白蜡烛是给她的，同时不让自己显得刻意\",\n      \"known\": [\"今天是许岚的生日（她上周说的日期）\", \"蜡烛是他特意准备的\"],\n      \"unknown\": [\"许岚是否记得自己提过生日\", \"许岚是否注意到蜡烛\"],\n      \"mistaken_beliefs\": [\"许岚可能以为蜡烛是餐厅的赠品\"],\n      \"constraints\": [\"不想让许岚觉得他刻意讨好\", \"不想破坏当下自然的氛围\"],\n      \"observed_evidence\": [\"许岚的视线扫过蜡烛盒\", \"其他朋友已经离开\"],\n      \"current_interpretation\": \"她可能注意到了蜡烛，但不确定是不是给她的\",\n      \"how_interpretation_drives_action\": \"他故意把蜡烛留在桌上，等许岚先开口，或者用其他动作暗示\"\n    }\n  ],\n  \"concrete_problem\": \"许岚必须决定如何处理桌角的蜡烛盒——是拿起它、忽略它、还是询问陈述，才能既试探真相又不失体面。\",\n  \"pressure\": \"朋友已走，包间渐静，蜡烛盒的存在感越来越强，任何动作都可能暴露心思。\",\n  \"turning_point\": \"许岚拿起蜡烛盒假装查看背面说明，然后问陈述‘这个要扔掉吗？’，陈述回答‘留着吧，说不定有用’——这个选择让许岚确信蜡烛是给她的，同时陈述给出了一个可退的台阶。\",\n  \"end_condition\": \"许岚将蜡烛盒放入自己包中，陈述没有阻止，两人之间形成一种默契的承诺。\",\n  \"forbidden\": [\"许岚直接问‘是不是给我准备的’\", \"陈述直接说‘这是给你的生日礼物’\", \"蜡烛被扔掉或遗忘\", \"引入其他朋友返回或服务员干扰\", \"许岚表现出确认后的过度兴奋或感动\"],\n  \"causal_transitions\": [\n    {\n      \"id\": \"CT01\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"许岚的手伸向蜡烛盒，指尖碰触盒子边缘\",\n      \"character_interpretation\": \"许岚想：我拿起它看看，如果陈述有反应，就说明是他的；如果没反应，我就问要不要扔。\",\n      \"character_next_action\": \"许岚拿起蜡烛盒，翻到背面假装看生产日期\",\n      \"rejected_alternative\": \"她可以忽略蜡烛直接离开，但那样会错过试探的机会\",\n      \"immediate_consequence\": \"陈述注意到她的动作，停下收盘子的手，看着她\",\n      \"counterfactual_without_action\": \"如果许岚没有拿起蜡烛，陈述可能会在收拾时默默收走，两人都装作没这回事\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\"before\": \"蜡烛盒静静放在桌角，两人都不碰它\", \"after\": \"蜡烛盒被许岚拿在手中，陈述的目光聚焦在她手上\"},\n      \"cost_or_commitment\": \"许岚承担了主动打破沉默的风险，如果判断错误会显得自作多情\",\n      \"next_constraint\": \"许岚不能再对蜡烛盒视而不见，必须给出一个处理决定\",\n      \"reader_must_infer\": \"许岚拿起蜡烛是为了试探陈述，而非真的关心生产日期\",\n      \"narrator_must_not_state\": [\"许岚的真实动机是试探\", \"陈述知道许岚在试探\"]\n    },\n    {\n      \"id\": \"CT02\",\n      \"kind\": \"constraint_to_choice\",\n      \"visible_trigger\": \"许岚问‘这个要扔掉吗？’同时把蜡烛盒举向陈述\",\n      \"character_interpretation\": \"陈述想：她在给我机会解释，如果我说扔掉，她就知道不是给她的；如果我说留着，她就明白。\",\n      \"character_next_action\": \"陈述接过蜡烛盒，放回桌上，说‘留着吧，说不定有用’\",\n      \"rejected_alternative\": \"陈述可以说‘这是餐厅送的，你拿走吧’——那样会直接切断暧昧\",\n      \"immediate_consequence\": \"许岚确认蜡烛是陈述特意留的，她沉默片刻后把蜡烛盒放进自己包里\",\n      \"counterfactual_without_action\": \"如果陈述回答‘扔掉吧’，许岚就会失望地把它丢进垃圾袋，两人关系退回普通朋友\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\"before\": \"许岚手持蜡烛盒，等待陈述的回应\", \"after\": \"许岚将蜡烛盒放入包中，陈述继续收盘子但嘴角微扬\"},\n      \"cost_or_commitment\": \"陈述放弃了解释的机会，选择让许岚自己领悟，承担了她可能没懂的风险\",\n      \"next_constraint\": \"许岚收下了礼物，意味着她接受了陈述的心意，后续需要回应\",\n      \"reader_must_infer\": \"陈述说‘说不定有用’暗示他知道许岚的生日即将到来\",\n      \"narrator_must_not_state\": [\"陈述知道许岚的生日是下周\", \"许岚已经明白蜡烛是生日礼物\"]\n    }\n  ],\n  \"tempo_guardrails\": {\n    \"entry_pressure\": \"朋友陆续离开，包间只剩下许岚和陈述，桌角的蜡烛盒未被触碰\",\n    \"dominant_pressure\": {\n      \"kind\": \"social_friction\",\n      \"description\": \"两人之间因不确定对方心意而产生的微妙尴尬，任何关于蜡烛的言行都可能被过度解读\"\n    },\n    \"allowed_viewpoint_misread\": \"许岚可能认为陈述只是随手没扔蜡烛，而非特意准备\",\n    \"disclosure_cap\": 0,\n    \"must_remain_unclassified\": [\"蜡烛是否是生日礼物\", \"陈述是否记得许岚的生日\"],\n    \"stop_state\": {\n      \"type\": \"relationship_shift\",\n      \"visible_fact\": \"许岚将蜡烛盒放入自己的包中\",\n      \"what_is_now_different\": \"两人之间形成了一种未言明的默契，许岚接受了陈述的礼物暗示\",\n      \"must_not_append\": \"不得解释许岚是否完全确认蜡烛是生日礼物\"\n    },\n    \"final_line_must_include\": \"\"\n  },\n  \"chapter_contract_check\": {\n    \"function_aligned\": true,\n    \"must_deliver_covered",
+    "input_tokens": 3322,
+    "output_tokens": 1800,
+    "latency_ms": 22628,
+    "finish_reason": "length",
+    "error_code": "STRUCTURED_OUTPUT_TRUNCATED",
+    "error_message": "模型因达到 max_output_tokens 停止，结构化输出可能不完整",
+    "rendered_user_prompt_sha256": "ff1d29b3f6016ec1e6edf508122bed0fc3efc8a9af542bae8f1dbb9fb81bff3d"
+  },
+  "drafts": []
+}

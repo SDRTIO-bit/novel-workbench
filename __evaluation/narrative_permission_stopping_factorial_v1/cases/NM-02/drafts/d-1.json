@@ -1,0 +1,64 @@
+{
+  "candidate_id": "62e64342-df1f-4bbf-884f-015689df3830",
+  "attempt_number": 1,
+  "group": "D",
+  "replica": 1,
+  "permission_policy": "STRICT_LIMITED",
+  "stop_policy": "STRICT_STOP",
+  "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e",
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e",
+    "policy_metadata": {
+      "group": "D",
+      "permission_policy": "STRICT_LIMITED",
+      "stop_policy": "STRICT_STOP",
+      "policy_version": "narrative-permission-stop-v1",
+      "policy_hash": "533ba9fe37558af28e5b9a277971d13c5f7674a7a297a2c3d7f1a96c77af3123",
+      "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e",
+      "permission_instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+      "stop_instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+      "seed": null
+    },
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "周淇端着水杯穿过自习区，杯壁上凝了一层薄薄的水珠。\n\n她的座位靠窗，桌上摊开的笔和荧光笔还维持着刚才的阵型，但中间空了一块——那本红皮考研单词书不见了。她下意识扫了一眼地面，没有。椅子底下，也没有。\n\n邻座的男生还在低头做题，耳机塞着，笔在草稿纸上刷刷地划。他的书包搁在椅子右侧，拉链没完全拉上，露出一角红色封面。和他桌上摊着的那本蓝皮考研数学不是一个颜色。\n\n周淇把水杯放在桌上，指腹在杯壁上蹭了一下，沾了一手凉水。\n\n男生翻了一页自己桌上的书，头也没抬。\n\n周淇拉开自己的笔袋，又合上。她盯着那个书包开口看了两秒，红色封面只露出不到两指宽，压在一摞打印资料下面，但那个封皮的磨损位置——右上角翘了一小块——和她那本一模一样。\n\n男生还在写题，左手压着草稿纸，右手握笔，身体微微前倾，完全没有要停下来翻书包的意思。\n\n周淇拿起水杯喝了一口，杯沿磕在牙齿上，水没喝进去多少。她把杯子放回去，手指在杯壁上又蹭了一下。杯子外面全是冷凝水，桌面上已经积了一小圈水渍。\n\n她松开手。\n\n杯子倒了。\n\n水从杯口涌出来，沿着桌面往右边淌，绕过荧光笔，流过笔袋边沿，直直地朝男生书包的方向漫过去。\n\n周淇吸了一口气，声音不大，但足够近。\n\n男生抬头，顺着她的视线看到桌面上的水，又看到自己书包的方向。他猛地摘下耳机，一把抓起书包提手，把包拎起来放在腿上。水刚好流到他椅子脚旁边，没碰到包底。\n\n他拉开拉链，翻看里面的资料和书有没有沾湿。红色单词书从资料下面滑出来一截，封面朝上，右上角那块磨损在自习区的灯光下清清楚楚。\n\n他动作顿了一下，把那本书抽出来，看了看封面，又看了看自己桌上摊着的蓝皮数学书。\n\n然后他抬头，看向周淇，手里举着那本红皮单词书，眉头拧着，嘴唇张开又闭上，最后只是把书往她的方向递了一点，像是在等一个解释。",
+  "raw_response": "周淇端着水杯穿过自习区，杯壁上凝了一层薄薄的水珠。\n\n她的座位靠窗，桌上摊开的笔和荧光笔还维持着刚才的阵型，但中间空了一块——那本红皮考研单词书不见了。她下意识扫了一眼地面，没有。椅子底下，也没有。\n\n邻座的男生还在低头做题，耳机塞着，笔在草稿纸上刷刷地划。他的书包搁在椅子右侧，拉链没完全拉上，露出一角红色封面。和他桌上摊着的那本蓝皮考研数学不是一个颜色。\n\n周淇把水杯放在桌上，指腹在杯壁上蹭了一下，沾了一手凉水。\n\n男生翻了一页自己桌上的书，头也没抬。\n\n周淇拉开自己的笔袋，又合上。她盯着那个书包开口看了两秒，红色封面只露出不到两指宽，压在一摞打印资料下面，但那个封皮的磨损位置——右上角翘了一小块——和她那本一模一样。\n\n男生还在写题，左手压着草稿纸，右手握笔，身体微微前倾，完全没有要停下来翻书包的意思。\n\n周淇拿起水杯喝了一口，杯沿磕在牙齿上，水没喝进去多少。她把杯子放回去，手指在杯壁上又蹭了一下。杯子外面全是冷凝水，桌面上已经积了一小圈水渍。\n\n她松开手。\n\n杯子倒了。\n\n水从杯口涌出来，沿着桌面往右边淌，绕过荧光笔，流过笔袋边沿，直直地朝男生书包的方向漫过去。\n\n周淇吸了一口气，声音不大，但足够近。\n\n男生抬头，顺着她的视线看到桌面上的水，又看到自己书包的方向。他猛地摘下耳机，一把抓起书包提手，把包拎起来放在腿上。水刚好流到他椅子脚旁边，没碰到包底。\n\n他拉开拉链，翻看里面的资料和书有没有沾湿。红色单词书从资料下面滑出来一截，封面朝上，右上角那块磨损在自习区的灯光下清清楚楚。\n\n他动作顿了一下，把那本书抽出来，看了看封面，又看了看自己桌上摊着的蓝皮数学书。\n\n然后他抬头，看向周淇，手里举着那本红皮单词书，眉头拧着，嘴唇张开又闭上，最后只是把书往她的方向递了一点，像是在等一个解释。",
+  "input_tokens": 1732,
+  "output_tokens": 491,
+  "latency_ms": 16121,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "29dbf33924b26b27a1518c71e22e0df878f58f9b5f983877532dcbaf35847d64",
+  "validation": {
+    "character_count": 756,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "banned_sentence_hits": {},
+    "second_confirmation_hits": [],
+    "environment_coda_hits": [],
+    "stop_marker_first_char": null,
+    "post_stop_character_count": null,
+    "tempo_final_line_mismatch": false,
+    "manual_review_required": [
+      "viewpoint_violation",
+      "cross_mind_assertion",
+      "other_character_motive_as_fact",
+      "true_stop_state_position",
+      "visible_state_transition_count",
+      "relationship_or_meaning_summary",
+      "shared_atmosphere_declaration",
+      "narrator_correction_with_backstage_fact"
+    ]
+  },
+  "text_path": "cases\\NM-02\\drafts\\d-1.txt"
+}

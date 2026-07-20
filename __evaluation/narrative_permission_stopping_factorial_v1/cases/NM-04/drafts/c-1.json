@@ -1,0 +1,64 @@
+{
+  "candidate_id": "5534ee6d-9bce-4a87-b1d0-df920802ad58",
+  "attempt_number": 1,
+  "group": "C",
+  "replica": 1,
+  "permission_policy": "CURRENT",
+  "stop_policy": "STRICT_STOP",
+  "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+    "policy_metadata": {
+      "group": "C",
+      "permission_policy": "CURRENT",
+      "stop_policy": "STRICT_STOP",
+      "policy_version": "narrative-permission-stop-v1",
+      "policy_hash": "15e6b754a467a03569fe265abb7861ce24f144ba737ce3f2973776c1c2e76d47",
+      "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+      "permission_instruction_hash": null,
+      "stop_instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+      "seed": null
+    },
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "周日早上的阳光还没完全晒热院子，苏叶蹲在自己的自行车旁边，看着垂在地上的链条发愣。\n\n链条从齿轮上脱下来，松松垮垮地搭在踏板的边缘，沾着黑色的油泥。她伸手碰了一下，指尖立刻染上一层黏腻的黑色。她下意识在裤子上蹭了蹭，然后意识到这条裤子是新换的，又把手移开了。\n\n沈一凡蹲在两米外。\n\n他正在给自己的车换刹车线，工具箱摊开在两人中间的水泥地上。扳手、螺丝刀、钳子，还有一罐润滑油，摆得整整齐齐。他拆下旧刹车线的动作很利索，手指捏住线头往外一抽，旧的直接扔进旁边的塑料袋里。\n\n苏叶盯着那个工具箱看了几秒。\n\n工具箱里有她需要的东西。但她不知道该拿哪一个，也不知道拿起来之后要干什么。链条挂回去她试过，上次自己弄了半小时，最后是推着车去修车铺解决的。\n\n沈一凡拆开新刹车线的包装，把线头对准卡槽穿进去。他没抬头。\n\n苏叶站起来，走到工具箱旁边，蹲下身。她的视线扫过那些工具，最后落在一把扳手上。她伸手拿起来，扳手比想象中重，握在手里有点凉。\n\n她转过身，面向沈一凡。\n\n“这个——”她开口，声音比预想中干涩，她清了清嗓子，“这个是不是用来紧链条的？”\n\n沈一凡的手停了一下。\n\n他抬起头，先看了看她手里的扳手，又越过她看向后面那辆链条垂地的自行车。\n\n他把新刹车线搁在车架上，站起来，伸手接过她手里的扳手。\n\n“不是，”他说，把扳手放回工具箱，弯腰拿起另一把钳子，“那个是调座管的。紧链条用这个。”\n\n他把钳子在手里转了半圈，然后看向她的自行车。\n\n“我来帮你看看。”",
+  "raw_response": "周日早上的阳光还没完全晒热院子，苏叶蹲在自己的自行车旁边，看着垂在地上的链条发愣。\n\n链条从齿轮上脱下来，松松垮垮地搭在踏板的边缘，沾着黑色的油泥。她伸手碰了一下，指尖立刻染上一层黏腻的黑色。她下意识在裤子上蹭了蹭，然后意识到这条裤子是新换的，又把手移开了。\n\n沈一凡蹲在两米外。\n\n他正在给自己的车换刹车线，工具箱摊开在两人中间的水泥地上。扳手、螺丝刀、钳子，还有一罐润滑油，摆得整整齐齐。他拆下旧刹车线的动作很利索，手指捏住线头往外一抽，旧的直接扔进旁边的塑料袋里。\n\n苏叶盯着那个工具箱看了几秒。\n\n工具箱里有她需要的东西。但她不知道该拿哪一个，也不知道拿起来之后要干什么。链条挂回去她试过，上次自己弄了半小时，最后是推着车去修车铺解决的。\n\n沈一凡拆开新刹车线的包装，把线头对准卡槽穿进去。他没抬头。\n\n苏叶站起来，走到工具箱旁边，蹲下身。她的视线扫过那些工具，最后落在一把扳手上。她伸手拿起来，扳手比想象中重，握在手里有点凉。\n\n她转过身，面向沈一凡。\n\n“这个——”她开口，声音比预想中干涩，她清了清嗓子，“这个是不是用来紧链条的？”\n\n沈一凡的手停了一下。\n\n他抬起头，先看了看她手里的扳手，又越过她看向后面那辆链条垂地的自行车。\n\n他把新刹车线搁在车架上，站起来，伸手接过她手里的扳手。\n\n“不是，”他说，把扳手放回工具箱，弯腰拿起另一把钳子，“那个是调座管的。紧链条用这个。”\n\n他把钳子在手里转了半圈，然后看向她的自行车。\n\n“我来帮你看看。”",
+  "input_tokens": 1332,
+  "output_tokens": 402,
+  "latency_ms": 16956,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "f1c23ce9131f411b49ef39ea8df811e5002dcfbb58edaca205e66fa6f3e3f097",
+  "validation": {
+    "character_count": 632,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "banned_sentence_hits": {},
+    "second_confirmation_hits": [],
+    "environment_coda_hits": [],
+    "stop_marker_first_char": null,
+    "post_stop_character_count": null,
+    "tempo_final_line_mismatch": false,
+    "manual_review_required": [
+      "viewpoint_violation",
+      "cross_mind_assertion",
+      "other_character_motive_as_fact",
+      "true_stop_state_position",
+      "visible_state_transition_count",
+      "relationship_or_meaning_summary",
+      "shared_atmosphere_declaration",
+      "narrator_correction_with_backstage_fact"
+    ]
+  },
+  "text_path": "cases\\NM-04\\drafts\\c-1.txt"
+}

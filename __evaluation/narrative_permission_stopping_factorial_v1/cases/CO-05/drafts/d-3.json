@@ -1,0 +1,64 @@
+{
+  "candidate_id": "d383f60c-e13c-466f-9f1f-f90b75eb0a7f",
+  "attempt_number": 1,
+  "group": "D",
+  "replica": 3,
+  "permission_policy": "STRICT_LIMITED",
+  "stop_policy": "STRICT_STOP",
+  "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e",
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e",
+    "policy_metadata": {
+      "group": "D",
+      "permission_policy": "STRICT_LIMITED",
+      "stop_policy": "STRICT_STOP",
+      "policy_version": "narrative-permission-stop-v1",
+      "policy_hash": "533ba9fe37558af28e5b9a277971d13c5f7674a7a297a2c3d7f1a96c77af3123",
+      "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e",
+      "permission_instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+      "stop_instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+      "seed": null
+    },
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "向暖的手指停在那个包裹上。\n\n快递架的第三层，一个巴掌大的纸盒，面单朝上，收件人一栏清清楚楚写着“向暖”。她自己的名字。但下面的地址不是她的楼栋——是隔壁那栋，7号楼。\n\n她把包裹拿起来，翻到侧面。面单边缘有点卷，贴得不算平整，底下隐约还有一层旧的标签，被撕掉大半，只剩一小截白色底纸粘在胶带上。她试着从侧面看，只能辨认出一个“7”和半个模糊的房号。\n\n不是她的。\n\n向暖把包裹放回原位，指尖在纸盒边缘敲了两下。快递架前没人。下午三点的小区，阳光打在架空层的瓷砖地上，远处有小孩在喊什么，声音被楼体挡得闷闷的。她左右看了一眼——架子上还堆着七八个包裹，大小不一，有的面单朝下扣着，有的挤在最里层只露出一个角。\n\n她不能拆。这不是她的东西，哪怕写着她的名字。\n\n也不能直接拿走。万一真正的收件人下来找，包裹不见了，事情就说不清楚。\n\n她掏出手机，打开相机对准面单拍了一张。屏幕上的地址清晰可辨：7号楼，后面跟着具体的楼层和房号。她把手机收回口袋，又看了那包裹一眼。\n\n快递架侧面挂着一卷便签纸和一支绑着绳子的圆珠笔，物业留的，大概是给人留言用的。向暖撕下一张，按在架子上写字。\n\n笔不太出水，她用力划了两下才出墨。\n\n“你好，这个包裹收件人写的是‘向暖’，但地址是7号楼。我是6号楼的向暖，包裹放错架子了。我把它送到7号楼快递架，看到请联系我。”\n\n她停了一下，在末尾加上自己的手机号。\n\n便签拿在手里，她又看了一眼那个包裹。纸盒不重，晃一晃没有声音，封口胶带完好。她把便签贴在包裹正面，挨着面单，确保不会掉。\n\n然后拿起包裹，走出6号楼的架空层。\n\n7号楼就在隔壁，中间隔着一小片绿化带和一条人行道。向暖走得不快，包裹夹在胳膊底下，便签在风里轻轻翘起一个角，她用拇指按住了。到了7号楼架空层，快递架摆在同样的位置，靠墙，灰色铁架子，上面稀稀落落放着四五个包裹。她把手里那个放在第二层最外侧，面单朝外，便签朝上，确保进来拿快递的人一眼就能看见。\n\n她退后一步，看了看架子的位置。没有遮挡，灯亮着，旁边的信箱区偶尔会有人经过。\n\n向暖把便签纸剩下的那卷挂回原处，笔也插回去。她拍了拍手上不存在的灰，转身往自己楼栋走。\n\n包裹留在7号楼的快递架上，便签贴着，面单上的地址和架子所在的楼栋终于对上了。",
+  "raw_response": "向暖的手指停在那个包裹上。\n\n快递架的第三层，一个巴掌大的纸盒，面单朝上，收件人一栏清清楚楚写着“向暖”。她自己的名字。但下面的地址不是她的楼栋——是隔壁那栋，7号楼。\n\n她把包裹拿起来，翻到侧面。面单边缘有点卷，贴得不算平整，底下隐约还有一层旧的标签，被撕掉大半，只剩一小截白色底纸粘在胶带上。她试着从侧面看，只能辨认出一个“7”和半个模糊的房号。\n\n不是她的。\n\n向暖把包裹放回原位，指尖在纸盒边缘敲了两下。快递架前没人。下午三点的小区，阳光打在架空层的瓷砖地上，远处有小孩在喊什么，声音被楼体挡得闷闷的。她左右看了一眼——架子上还堆着七八个包裹，大小不一，有的面单朝下扣着，有的挤在最里层只露出一个角。\n\n她不能拆。这不是她的东西，哪怕写着她的名字。\n\n也不能直接拿走。万一真正的收件人下来找，包裹不见了，事情就说不清楚。\n\n她掏出手机，打开相机对准面单拍了一张。屏幕上的地址清晰可辨：7号楼，后面跟着具体的楼层和房号。她把手机收回口袋，又看了那包裹一眼。\n\n快递架侧面挂着一卷便签纸和一支绑着绳子的圆珠笔，物业留的，大概是给人留言用的。向暖撕下一张，按在架子上写字。\n\n笔不太出水，她用力划了两下才出墨。\n\n“你好，这个包裹收件人写的是‘向暖’，但地址是7号楼。我是6号楼的向暖，包裹放错架子了。我把它送到7号楼快递架，看到请联系我。”\n\n她停了一下，在末尾加上自己的手机号。\n\n便签拿在手里，她又看了一眼那个包裹。纸盒不重，晃一晃没有声音，封口胶带完好。她把便签贴在包裹正面，挨着面单，确保不会掉。\n\n然后拿起包裹，走出6号楼的架空层。\n\n7号楼就在隔壁，中间隔着一小片绿化带和一条人行道。向暖走得不快，包裹夹在胳膊底下，便签在风里轻轻翘起一个角，她用拇指按住了。到了7号楼架空层，快递架摆在同样的位置，靠墙，灰色铁架子，上面稀稀落落放着四五个包裹。她把手里那个放在第二层最外侧，面单朝外，便签朝上，确保进来拿快递的人一眼就能看见。\n\n她退后一步，看了看架子的位置。没有遮挡，灯亮着，旁边的信箱区偶尔会有人经过。\n\n向暖把便签纸剩下的那卷挂回原处，笔也插回去。她拍了拍手上不存在的灰，转身往自己楼栋走。\n\n包裹留在7号楼的快递架上，便签贴着，面单上的地址和架子所在的楼栋终于对上了。",
+  "input_tokens": 1684,
+  "output_tokens": 627,
+  "latency_ms": 22590,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "11dde2ec3226b7ef8264762c2d80b8350b68dd82b00cf207fb8e2de13af8f8f3",
+  "validation": {
+    "character_count": 946,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "banned_sentence_hits": {},
+    "second_confirmation_hits": [],
+    "environment_coda_hits": [],
+    "stop_marker_first_char": null,
+    "post_stop_character_count": null,
+    "tempo_final_line_mismatch": false,
+    "manual_review_required": [
+      "viewpoint_violation",
+      "cross_mind_assertion",
+      "other_character_motive_as_fact",
+      "true_stop_state_position",
+      "visible_state_transition_count",
+      "relationship_or_meaning_summary",
+      "shared_atmosphere_declaration",
+      "narrator_correction_with_backstage_fact"
+    ]
+  },
+  "text_path": "cases\\CO-05\\drafts\\d-3.txt"
+}

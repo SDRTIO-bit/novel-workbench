@@ -1,0 +1,64 @@
+{
+  "candidate_id": "abeedef5-2f4b-42fc-abbc-096c741a3a61",
+  "attempt_number": 1,
+  "group": "D",
+  "replica": 3,
+  "permission_policy": "STRICT_LIMITED",
+  "stop_policy": "STRICT_STOP",
+  "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e",
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e",
+    "policy_metadata": {
+      "group": "D",
+      "permission_policy": "STRICT_LIMITED",
+      "stop_policy": "STRICT_STOP",
+      "policy_version": "narrative-permission-stop-v1",
+      "policy_hash": "533ba9fe37558af28e5b9a277971d13c5f7674a7a297a2c3d7f1a96c77af3123",
+      "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e",
+      "permission_instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+      "stop_instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+      "seed": null
+    },
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "课间铃声刚过，教室里还乱哄哄的。乔雨从桌肚里摸出手机，拇指按亮屏幕，通知栏上挂着一条企业微信的提醒。\n\n班主任头像旁边是系统自动生成的那行灰字：“对方撤回了一条消息”。\n\n她点进去，对话框里只剩一个撤回提示，上面压着预览栏里没来得及消失的四个字——“你这次的……”\n\n后面什么都没有。\n\n乔雨盯着那四个字看了两秒。手指没动。班主任的头像还亮着在线状态，但她不能发消息问——问什么？问您刚才撤回了什么？问您是不是打错字了？问您是不是写了什么又后悔了？\n\n脚步声响起来，从教室后门方向过来的，踩在瓷砖地上，节奏她认得。\n\n同桌李思颖。\n\n乔雨拇指按上侧边键，屏幕黑了。她把手机翻过来扣在课本上，抬头。\n\n李思颖正低头看着自己的手机，嘴角挂着点笑，走得不算快，但方向明确——她的座位，乔雨右手边的位置。\n\n“你笑什么？”乔雨开口，声音比平时高了半度。\n\n李思颖抬起头，把手机屏幕朝她这边转了转：“你看这个，我表姐发的，她家猫把自己卡在窗帘穗子里了。”\n\n照片上确实有只橘猫，脑袋顶着一串流苏，表情呆滞。乔雨笑了，笑得比平时用力一点，身体往李思颖那边倾过去，肩膀挡住了自己扣在课本上的手机。\n\n“它怎么进去的？”乔雨问。\n\n“谁知道，我表姐说听见哗啦哗啦响，过去一看就这样了。”李思颖坐下来，把手机搁在两人课桌中间，又滑了两张照片，“这张是解救过程，你看它那个不情愿的样子。”\n\n乔雨凑过去看。李思颖的手指在屏幕上滑动，没有往她课本那边瞟一眼。扣着的手机安静地贴着书皮，没震动，没亮屏。\n\n“你表姐家是不是还养了只蓝猫？”乔雨问。\n\n“对，那只就聪明多了，从来不钻窗帘。”\n\n“品种差异。”\n\n“可能是智商差异。”\n\n两个人笑起来。前排的男生回头看了一眼，又转回去了。\n\n李思颖把手机收回来，拇指还在划拉，忽然“哎”了一声。\n\n乔雨看见她表情变了一下——不是笑，是那种看到什么通知时的停顿。\n\n“怎么了？”\n\n“班主任在班级群里发消息了。”李思颖说着，把手机又往她这边偏了偏，“你看。”\n\n乔雨低头看过去。企业微信班级群的界面上，班主任的头像旁边冒出一条新消息的气泡，预览栏里显示着文字——但乔雨只扫到前几个字，和“作业”两个字没有关系。\n\n她没看清完整内容。",
+  "raw_response": "课间铃声刚过，教室里还乱哄哄的。乔雨从桌肚里摸出手机，拇指按亮屏幕，通知栏上挂着一条企业微信的提醒。\n\n班主任头像旁边是系统自动生成的那行灰字：“对方撤回了一条消息”。\n\n她点进去，对话框里只剩一个撤回提示，上面压着预览栏里没来得及消失的四个字——“你这次的……”\n\n后面什么都没有。\n\n乔雨盯着那四个字看了两秒。手指没动。班主任的头像还亮着在线状态，但她不能发消息问——问什么？问您刚才撤回了什么？问您是不是打错字了？问您是不是写了什么又后悔了？\n\n脚步声响起来，从教室后门方向过来的，踩在瓷砖地上，节奏她认得。\n\n同桌李思颖。\n\n乔雨拇指按上侧边键，屏幕黑了。她把手机翻过来扣在课本上，抬头。\n\n李思颖正低头看着自己的手机，嘴角挂着点笑，走得不算快，但方向明确——她的座位，乔雨右手边的位置。\n\n“你笑什么？”乔雨开口，声音比平时高了半度。\n\n李思颖抬起头，把手机屏幕朝她这边转了转：“你看这个，我表姐发的，她家猫把自己卡在窗帘穗子里了。”\n\n照片上确实有只橘猫，脑袋顶着一串流苏，表情呆滞。乔雨笑了，笑得比平时用力一点，身体往李思颖那边倾过去，肩膀挡住了自己扣在课本上的手机。\n\n“它怎么进去的？”乔雨问。\n\n“谁知道，我表姐说听见哗啦哗啦响，过去一看就这样了。”李思颖坐下来，把手机搁在两人课桌中间，又滑了两张照片，“这张是解救过程，你看它那个不情愿的样子。”\n\n乔雨凑过去看。李思颖的手指在屏幕上滑动，没有往她课本那边瞟一眼。扣着的手机安静地贴着书皮，没震动，没亮屏。\n\n“你表姐家是不是还养了只蓝猫？”乔雨问。\n\n“对，那只就聪明多了，从来不钻窗帘。”\n\n“品种差异。”\n\n“可能是智商差异。”\n\n两个人笑起来。前排的男生回头看了一眼，又转回去了。\n\n李思颖把手机收回来，拇指还在划拉，忽然“哎”了一声。\n\n乔雨看见她表情变了一下——不是笑，是那种看到什么通知时的停顿。\n\n“怎么了？”\n\n“班主任在班级群里发消息了。”李思颖说着，把手机又往她这边偏了偏，“你看。”\n\n乔雨低头看过去。企业微信班级群的界面上，班主任的头像旁边冒出一条新消息的气泡，预览栏里显示着文字——但乔雨只扫到前几个字，和“作业”两个字没有关系。\n\n她没看清完整内容。",
+  "input_tokens": 1609,
+  "output_tokens": 588,
+  "latency_ms": 24180,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "78ed30016769d455254be402c70a5c926ec373453451fed00731549e8110e46b",
+  "validation": {
+    "character_count": 926,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "banned_sentence_hits": {},
+    "second_confirmation_hits": [],
+    "environment_coda_hits": [],
+    "stop_marker_first_char": null,
+    "post_stop_character_count": null,
+    "tempo_final_line_mismatch": false,
+    "manual_review_required": [
+      "viewpoint_violation",
+      "cross_mind_assertion",
+      "other_character_motive_as_fact",
+      "true_stop_state_position",
+      "visible_state_transition_count",
+      "relationship_or_meaning_summary",
+      "shared_atmosphere_declaration",
+      "narrator_correction_with_backstage_fact"
+    ]
+  },
+  "text_path": "cases\\AL-01\\drafts\\d-3.txt"
+}

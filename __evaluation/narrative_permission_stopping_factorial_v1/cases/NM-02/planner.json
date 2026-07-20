@@ -1,0 +1,162 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "周淇在不引起旁人注意、不直接冲突的情况下，让邻座男生主动发现并归还错收的单词书，从而拿回夹在书中的租房合同草稿。",
+  "location": "图书馆自习区",
+  "time": "下午自习时段",
+  "scene_state": {
+    "last_completed_action": "周淇接水回来，发现邻座男生将她的考研单词书收进了他的书包，书里夹着手写的租房合同草稿。",
+    "present_characters": [
+      "周淇",
+      "邻座男生"
+    ],
+    "visible_facts": [
+      "周淇的座位空着，桌上只剩笔和水杯",
+      "邻座男生正在低头做题，书包放在身旁",
+      "周淇的考研单词书不在桌上"
+    ],
+    "available_objects": [
+      "周淇的水杯",
+      "周淇的笔",
+      "邻座男生的文具和书本",
+      "邻座男生的书包"
+    ],
+    "unresolved_problem": "单词书被错收进邻座男生的书包，周淇需要在不暴露合同隐私的情况下拿回书。",
+    "already_existing_constraints": [
+      "不能当众翻对方书包",
+      "不能喊管理员",
+      "不能大声喧哗",
+      "不能暴露租房合同草稿的存在"
+    ]
+  },
+  "characters": [
+    {
+      "name": "周淇",
+      "goal": "拿回单词书及合同草稿，且不引起旁人注意",
+      "known": [
+        "自己的单词书被邻座男生错收",
+        "书里夹着重要的租房合同草稿",
+        "男生还不知道自己收错了东西"
+      ],
+      "unknown": [
+        "男生是否已经发现书不是他的",
+        "男生何时会离开",
+        "合同草稿是否已被看到"
+      ],
+      "mistaken_beliefs": [
+        "男生可能完全没注意到多了一本书"
+      ],
+      "constraints": [
+        "不能直接开口要求对方翻书包",
+        "不能暴露合同的存在",
+        "必须在男生离开前行动"
+      ],
+      "observed_evidence": [
+        "男生书包拉链未完全拉上，露出一角类似单词书封面的颜色",
+        "男生自己的考研书仍摊在桌上，封面与周淇的书不同",
+        "男生做题时偶尔会翻动自己桌上的书，但未碰书包"
+      ],
+      "current_interpretation": "男生尚未发现书包里多了一本书，但他的书包开口处能看到书的痕迹，如果制造一个自然的契机让他检查书包，他可能会主动发现并归还。",
+      "how_interpretation_drives_action": "周淇决定利用桌上的物品制造一个轻微干扰，让男生注意到书包的异常，从而自己发现错收的书。"
+    },
+    {
+      "name": "邻座男生",
+      "goal": "完成当前习题，可能准备离开",
+      "known": [
+        "自己桌上的书本和文具",
+        "周淇之前坐在旁边"
+      ],
+      "unknown": [
+        "自己错收了周淇的单词书",
+        "书里夹着重要文件",
+        "周淇已经发现书不见了"
+      ],
+      "mistaken_beliefs": [
+        "自己的书包里只有自己的东西"
+      ],
+      "constraints": [
+        "不能随意翻别人东西",
+        "在图书馆需保持安静"
+      ],
+      "observed_evidence": [
+        "周淇回到座位，但桌上似乎少了东西",
+        "周淇没有立即坐下，而是在找什么"
+      ],
+      "current_interpretation": "周淇可能在找自己的东西，但不确定是什么。",
+      "how_interpretation_drives_action": "他暂时没有行动，继续做题，但可能因为周淇的举动而稍后检查自己物品。"
+    }
+  ],
+  "concrete_problem": "周淇如何用桌上的一个物件让邻座男生自己发现书包里多了一本书？",
+  "pressure": "男生随时可能收拾东西离开，一旦离开就更难在不暴露的情况下拿回书和合同。",
+  "turning_point": "周淇故意将自己的水杯碰倒，水流向男生书包方向，男生慌忙检查书包是否被弄湿，从而发现多出的单词书。",
+  "end_condition": "男生从书包里拿出单词书，疑惑地看向周淇，周淇确认那是自己的书。",
+  "forbidden": [
+    "周淇直接开口索要",
+    "周淇翻男生书包",
+    "喊管理员介入",
+    "暴露租房合同的存在",
+    "使用手机或电子设备",
+    "其他同学介入"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "周淇看到男生书包拉链未完全拉上，露出一角与自己单词书封面相同的颜色。",
+      "character_interpretation": "男生还没发现书包里多了书，但如果让他主动打开书包检查，他就能看到。",
+      "character_next_action": "周淇假装不小心碰倒自己的水杯，让水向男生书包方向流去。",
+      "rejected_alternative": "周淇本可以写纸条提醒，但那会暴露自己知道书被收错，且可能让男生看到合同。",
+      "immediate_consequence": "男生发现水流向书包，急忙提起书包检查是否进水，打开书包后看到了不属于自己的单词书。",
+      "counterfactual_without_action": "如果周淇不行动，男生可能会直接收拾东西离开，周淇将失去拿回书的机会。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "男生书包里安静地躺着错收的单词书，无人知晓。",
+        "after": "男生打开书包，单词书暴露在他眼前。"
+      },
+      "cost_or_commitment": "周淇的水杯空了，需要重新接水，且制造了短暂的混乱。",
+      "next_constraint": "男生发现书后，周淇必须自然地认领，不能显得过于急切。",
+      "reader_must_infer": "周淇是故意碰倒水杯的，但男生可能不会立刻意识到。",
+      "narrator_must_not_state": [
+        "周淇策划这一行动的心理活动",
+        "水杯是故意碰倒的"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "周淇接水回来，发现单词书不见了，而男生还在埋头做题。",
+    "dominant_pressure": {
+      "kind": "resource_constraint",
+      "description": "时间有限，男生随时可能离开，一旦离开书和合同就拿不回来了。"
+    },
+    "allowed_viewpoint_misread": "男生可能以为水杯是不小心碰倒的，不会立刻怀疑周淇有意为之。",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "租房合同的具体内容",
+      "周淇为什么手写合同"
+    ],
+    "stop_state": {
+      "type": "physical_change",
+      "visible_fact": "男生从书包里拿出单词书，疑惑地看向周淇。",
+      "what_is_now_different": "单词书的归属出现了新事实：男生知道这本书不是他的，周淇有机会认领。",
+      "must_not_append": "不得描述周淇认领后的对话或合同是否被看到。"
+    },
+    "final_line_must_include": ""
+  }
+}

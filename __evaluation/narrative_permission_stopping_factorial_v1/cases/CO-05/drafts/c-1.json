@@ -1,0 +1,64 @@
+{
+  "candidate_id": "cf456163-fe80-4aab-9f6d-78f50c259970",
+  "attempt_number": 1,
+  "group": "C",
+  "replica": 1,
+  "permission_policy": "CURRENT",
+  "stop_policy": "STRICT_STOP",
+  "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+    "policy_metadata": {
+      "group": "C",
+      "permission_policy": "CURRENT",
+      "stop_policy": "STRICT_STOP",
+      "policy_version": "narrative-permission-stop-v1",
+      "policy_hash": "15e6b754a467a03569fe265abb7861ce24f144ba737ce3f2973776c1c2e76d47",
+      "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+      "permission_instruction_hash": null,
+      "stop_instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+      "seed": null
+    },
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "向暖站在快递架前，手指搭在那个包裹的边角上，没拿起来。\n\n收件人写着“向暖”，两个字清清楚楚。但地址不是她住的那栋楼。隔壁楼栋，三栋，她住的是五栋。\n\n她把包裹翻过来，胶带封口完好，没有破损，标签纸边缘微微卷起，像是贴了很久。架子最上层还有三个未取件，中层塞着两个纸箱，她手里这个原本放在最外侧，一伸手就能碰到。\n\n旁边墙上钉着一块小木板，上面压着一支圆珠笔和一叠黄色便签纸，物业留的，让业主标记错放的快递。\n\n向暖拿出手机拍了张照片，标签上的地址拍得很清楚。她把包裹夹在腋下，撕下一张便签，按在木板上写字。\n\n笔不太出水，她用力划了两道才写出字来。\n\n“同名误放，已转至三栋快递架。如有问题请联系——”\n\n她停了一下，写上自己的手机号。\n\n便签贴在包裹正面，压住“向暖”两个字的一角。她转身往三栋走。\n\n三栋的快递架在单元门内侧，比五栋的矮一层，铁灰色，最上层空着。她把包裹放上去，便签朝外，手机号那行字正好对着取件人站的位置。\n\n架子旁边没有笔和便签纸。\n\n她看了一眼那个包裹，转身推开单元门，走了出去。",
+  "raw_response": "向暖站在快递架前，手指搭在那个包裹的边角上，没拿起来。\n\n收件人写着“向暖”，两个字清清楚楚。但地址不是她住的那栋楼。隔壁楼栋，三栋，她住的是五栋。\n\n她把包裹翻过来，胶带封口完好，没有破损，标签纸边缘微微卷起，像是贴了很久。架子最上层还有三个未取件，中层塞着两个纸箱，她手里这个原本放在最外侧，一伸手就能碰到。\n\n旁边墙上钉着一块小木板，上面压着一支圆珠笔和一叠黄色便签纸，物业留的，让业主标记错放的快递。\n\n向暖拿出手机拍了张照片，标签上的地址拍得很清楚。她把包裹夹在腋下，撕下一张便签，按在木板上写字。\n\n笔不太出水，她用力划了两道才写出字来。\n\n“同名误放，已转至三栋快递架。如有问题请联系——”\n\n她停了一下，写上自己的手机号。\n\n便签贴在包裹正面，压住“向暖”两个字的一角。她转身往三栋走。\n\n三栋的快递架在单元门内侧，比五栋的矮一层，铁灰色，最上层空着。她把包裹放上去，便签朝外，手机号那行字正好对着取件人站的位置。\n\n架子旁边没有笔和便签纸。\n\n她看了一眼那个包裹，转身推开单元门，走了出去。",
+  "input_tokens": 1406,
+  "output_tokens": 307,
+  "latency_ms": 20247,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "49942b296503f3b08e2bae47b768040bde017de5d3d94e74ea3ad96d0dc982fd",
+  "validation": {
+    "character_count": 454,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "banned_sentence_hits": {},
+    "second_confirmation_hits": [],
+    "environment_coda_hits": [],
+    "stop_marker_first_char": null,
+    "post_stop_character_count": null,
+    "tempo_final_line_mismatch": false,
+    "manual_review_required": [
+      "viewpoint_violation",
+      "cross_mind_assertion",
+      "other_character_motive_as_fact",
+      "true_stop_state_position",
+      "visible_state_transition_count",
+      "relationship_or_meaning_summary",
+      "shared_atmosphere_declaration",
+      "narrator_correction_with_backstage_fact"
+    ]
+  },
+  "text_path": "cases\\CO-05\\drafts\\c-1.txt"
+}

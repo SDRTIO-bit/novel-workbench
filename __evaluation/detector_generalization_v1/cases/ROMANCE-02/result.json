@@ -1,0 +1,30 @@
+{
+  "case_id": "ROMANCE-02",
+  "category": "恋爱日常与关系试探",
+  "title": "未读消息",
+  "run_id": "079df5e1-52a3-4287-bc93-83480f68f1a6",
+  "planner": {
+    "candidate_id": "5c0f5c61-4ac7-4890-9f2d-3ba5b1bb2e6b",
+    "attempt_number": 1,
+    "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+    "model_id": "deepseek-chat",
+    "prompt_version_id": "f9052f8a-dc4e-5408-b14e-fc1badaf57f8",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 1800,
+      "timeout_seconds": 300,
+      "response_format": "json_object"
+    },
+    "text_output": "",
+    "raw_response": "{\n  \"planner_contract_version\": 2,\n  \"scene_goal\": \"夏知在合租屋厨房面对韩川未回消息的尴尬，选择如何行动以维持表面正常并试探对方态度\",\n  \"location\": \"合租屋厨房\",\n  \"time\": \"晚饭前，水已烧开\",\n  \"scene_state\": {\n    \"last_completed_action\": \"夏知走进厨房，看见韩川的手机屏幕亮起，显示自己昨晚的未读消息，韩川随即把手机扣在桌上，转身去洗菜\",\n    \"present_characters\": [\"夏知\", \"韩川\"],\n    \"visible_facts\": [\n      \"韩川手机屏幕显示夏知昨晚的未读消息\",\n      \"韩川把手机扣在桌面\",\n      \"韩川正在洗菜\",\n      \"灶台上的水已经烧开\",\n      \"桌上只有两只碗\"\n    ],\n    \"available_objects\": [\"手机（扣在桌上）\", \"洗菜盆\", \"烧水壶\", \"两只碗\", \"菜刀\", \"砧板\"],\n    \"unresolved_problem\": \"夏知不确定韩川是故意不回消息还是没看到，也不清楚两人关系是否出现变化\",\n    \"already_existing_constraints\": [\n      \"夏知不能偷看韩川的手机\",\n      \"夏知不能直接质问韩川为何不回消息\",\n      \"夏知必须维持合租生活的正常互动\"\n    ]\n  },\n  \"characters\": [\n    {\n      \"name\": \"夏知\",\n      \"goal\": \"在不破坏当前气氛的前提下，确认韩川对自己昨晚消息的态度，同时维持关系稳定\",\n      \"known\": [\n        \"自己昨晚给韩川发了消息\",\n        \"韩川的手机显示有未读消息（可能是自己的）\",\n        \"韩川把手机扣在桌上\",\n        \"韩川正在洗菜\",\n        \"水已烧开，桌上只有两只碗\"\n      ],\n      \"unknown\": [\n        \"韩川是否真的看到了消息\",\n        \"韩川不回消息的原因\",\n        \"韩川对自己的感觉是否有变化\"\n      ],\n      \"mistaken_beliefs\": [\n        \"夏知可能认为韩川是故意不回消息，以此疏远自己\"\n      ],\n      \"constraints\": [\n        \"不能偷看手机\",\n        \"不能直接质问\",\n        \"不能表现出过度在意\"\n      ],\n      \"observed_evidence\": [\n        \"韩川手机屏幕亮起时显示了自己的消息\",\n        \"韩川迅速把手机扣在桌上\",\n        \"韩川没有立即查看或回复\"\n      ],\n      \"current_interpretation\": \"韩川看到了我的消息但选择不回，甚至不愿让我看到屏幕内容，他可能在回避我\",\n      \"how_interpretation_drives_action\": \"夏知决定不主动提及消息，而是通过观察韩川是否主动解释或改变态度来获取信息，同时用正常帮忙来掩饰内心的不安\"\n    },\n    {\n      \"name\": \"韩川\",\n      \"goal\": \"在不暴露自己因紧张而不知如何回复消息的前提下，维持合租生活的正常节奏\",\n      \"known\": [\n        \"夏知昨晚发了消息，自己看到了但不知如何回复\",\n        \"夏知现在走进了厨房\",\n        \"自己把手机扣在桌上可能引起了注意\",\n        \"水开了，需要下面条\"\n      ],\n      \"unknown\": [\n        \"夏知是否注意到了手机屏幕的内容\",\n        \"夏知是否会追问消息的事\"\n      ],\n      \"mistaken_beliefs\": [\n        \"韩川认为夏知可能会因为自己没回消息而生气或失望\"\n      ],\n      \"constraints\": [\n        \"不能直接解释自己为何没回消息（因为会暴露紧张）\",\n        \"不能表现出刻意回避\",\n        \"需要保持日常互动自然\"\n      ],\n      \"observed_evidence\": [\n        \"夏知走进厨房时目光扫过手机屏幕\",\n        \"夏知没有立即说话或质问\"\n      ],\n      \"current_interpretation\": \"夏知可能已经看到了未读消息，但她没有问，也许她在等我自己解释，或者她并不在意\",\n      \"how_interpretation_drives_action\": \"韩川决定先完成洗菜，用日常动作拖延时间，观察夏知的反应再决定是否主动提及消息\"\n    }\n  ],\n  \"concrete_problem\": \"夏知在韩川未回消息且将手机扣在桌上的情况下，应该继续帮忙做饭、离开厨房还是以其他方式打破沉默？\",\n  \"pressure\": \"水已烧开，晚饭时间逼近，但两人之间因未读消息形成的沉默让合作变得尴尬\",\n  \"turning_point\": \"夏知选择拿起空碗准备盛面，而不是离开或质问，用行动表明她愿意维持现状\",\n  \"end_condition\": \"韩川在夏知盛面时主动开口说了一句与消息无关的日常话，两人恢复表面正常互动\",\n  \"forbidden\": [\n    \"夏知偷看手机或直接质问\",\n    \"韩川直接解释未回消息的原因\",\n    \"两人发生正面争吵\",\n    \"夏知离开厨房导致关系破裂\",\n    \"韩川当场回复消息\",\n    \"使用外部巧合（如手机没电、信号差）来解释未回消息\"\n  ],\n  \"causal_transitions\": [\n    {\n      \"id\": \"CT01\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"夏知看见韩川把手机扣在桌上，然后转身洗菜\",\n      \"character_interpretation\": \"夏知认为韩川是在刻意回避自己的消息，不想让她看到屏幕\",\n      \"character_next_action\": \"夏知深吸一口气，走到灶台前拿起空碗，准备盛面，装作一切正常\",\n      \"rejected_alternative\": \"夏知可以转身离开厨房，但那样会显得自己在意；她也可以直接问韩川为什么不回消息，但会破坏气氛\",\n      \"immediate_consequence\": \"韩川看到夏知主动盛面，意识到她选择不质问，内心松了一口气，但同时也感到愧疚\",\n      \"counterfactual_without_action\": \"如果夏知没有盛面而是离开，韩川会认为她在生气，两人关系会更加尴尬\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"夏知站在原地，与韩川之间隔着沉默和未读消息\",\n        \"after\": \"夏知开始盛面，打破了僵局，两人进入日常合作状态\"\n      },\n      \"cost_or_commitment\": \"夏知压抑了自己的不安和好奇心，选择信任韩川会主动解释\",\n      \"next_constraint\": \"夏知不能再在此时追问消息的事，否则会推翻自己刚刚建立的正常姿态\",\n      \"reader_must_infer\": \"夏知盛面这个动作是对韩川的妥协和信任，她希望韩川能意识到并回应\",\n      \"narrator_must_not_state\": [\n        \"夏知盛面是为了给韩川台阶下\",\n        \"韩川的愧疚感\",\n        \"夏知内心的委屈\"\n      ]\n    },\n    {\n      \"id\": \"CT02\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"夏知拿起碗盛面时，韩川停下洗菜的动作，看着她的背影\",\n      \"character_interpretation\": \"韩川觉得夏知的行为是在给他机会，她并没有生气，而是用行动维持正常\",\n      \"character_next_action\": \"韩川擦了擦手，走到灶台旁，从夏知手中接过碗，说‘我来吧，你去拿筷子’\",\n      \"rejected_alternative\": \"韩川可以继续沉默，或者直接道歉解释，但前者会延长尴尬，后者会暴露自己的紧张\",\n      \"immediate_consequence\": \"夏知把碗递给韩川，转身去拿筷子，两人恢复了日常分工，气氛缓和\",\n      \"counterfactual_without_action\": \"如果韩川没有接过碗，夏知会继续盛面，但沉默会持续，关系不会改善\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"韩川站在原地观察夏知，两人没有直接互动\",\n        \"after\": \"韩川接过碗，两人开始合作，有了简单的对话\"\n      },\n      \"cost_or_commitment\": \"韩川主动打破了沉默，但代价是必须继续回避消息话题，直到合适时机\",\n      \"next_constraint\": \"韩川不能在接下来的吃饭时间再次回避话题，否则",
+    "input_tokens": 3325,
+    "output_tokens": 1800,
+    "latency_ms": 20537,
+    "finish_reason": "length",
+    "error_code": "STRUCTURED_OUTPUT_TRUNCATED",
+    "error_message": "模型因达到 max_output_tokens 停止，结构化输出可能不完整",
+    "rendered_user_prompt_sha256": "5c9b546b67147f034492d490047fdc9065866e1c80a4a98b85fc6f0510a44909"
+  },
+  "drafts": []
+}

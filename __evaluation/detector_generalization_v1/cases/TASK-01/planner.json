@@ -1,0 +1,152 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "魏临必须在晚自习前处理机房天花板漏水，避免水流入插线板导致短路，同时确保安全并留下后续伏笔",
+  "location": "学校机房",
+  "time": "晚自习前",
+  "scene_state": {
+    "last_completed_action": "天花板开始滴水，水正往插线板方向流",
+    "present_characters": [
+      "魏临"
+    ],
+    "visible_facts": [
+      "天花板滴水",
+      "水往插线板方向流",
+      "插线板通电",
+      "门口有总闸提示牌"
+    ],
+    "available_objects": [
+      "一把拖把",
+      "一卷胶带",
+      "总闸提示牌"
+    ],
+    "unresolved_problem": "如何在不造成短路或触电的情况下阻止水流向插线板",
+    "already_existing_constraints": [
+      "不能碰湿插线板",
+      "维修老师不在另一栋楼",
+      "时间紧迫"
+    ]
+  },
+  "characters": [
+    {
+      "name": "魏临",
+      "goal": "阻止水流向插线板，确保安全",
+      "known": [
+        "天花板滴水",
+        "水往插线板方向流",
+        "插线板通电",
+        "维修老师不在另一栋楼",
+        "有拖把、胶带和总闸提示牌"
+      ],
+      "unknown": [
+        "维修老师何时能到",
+        "漏水点具体位置"
+      ],
+      "mistaken_beliefs": [
+        "可能以为用拖把直接吸水能快速解决"
+      ],
+      "constraints": [
+        "不能冒险碰湿插线板",
+        "不能假装没看见"
+      ],
+      "observed_evidence": [
+        "水滴落在插线板附近",
+        "地面已有小水流"
+      ],
+      "current_interpretation": "必须立即行动，否则短路风险增加",
+      "how_interpretation_drives_action": "他决定先关总闸再处理积水，但需要放弃直接拖地的想法"
+    }
+  ],
+  "concrete_problem": "魏临应该先关总闸还是先尝试用拖把改变水流方向？",
+  "pressure": "时间紧迫，水正在接近插线板，维修老师无法立即赶到",
+  "turning_point": "魏临选择先关总闸，而不是直接拖地，这延迟了处理时间但确保了安全",
+  "end_condition": "魏临关掉总闸，用拖把和胶带临时阻止水流，但漏水仍在继续，维修老师未到",
+  "forbidden": [
+    "维修老师出现",
+    "插线板短路起火",
+    "魏临受伤",
+    "漏水中止"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "水滴落在插线板旁边，发出轻微的滋滋声",
+      "character_interpretation": "魏临认为水可能已经导电，直接拖地有触电风险",
+      "character_next_action": "他放下拖把，走向门口去关总闸",
+      "rejected_alternative": "他原本想直接拖地改变水流方向",
+      "immediate_consequence": "机房断电，电脑关闭，但水流暂时停止接近插线板",
+      "counterfactual_without_action": "如果他不关总闸，水可能已经流入插线板导致短路",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "机房通电，水在流，插线板带电",
+        "after": "机房断电，水在流，插线板不带电"
+      },
+      "cost_or_commitment": "魏临失去了利用电脑继续自习的机会",
+      "next_constraint": "在维修老师到来前，机房无法使用电脑",
+      "reader_must_infer": "魏临选择安全优先，但可能影响自习进度",
+      "narrator_must_not_state": [
+        "魏临是否担心自习进度",
+        "维修老师的具体到达时间"
+      ]
+    },
+    {
+      "id": "CT02",
+      "kind": "constraint_to_choice",
+      "visible_trigger": "关掉总闸后，水继续从天花板滴下，在地面形成水洼",
+      "character_interpretation": "魏临意识到关总闸只是临时措施，必须处理漏水源头",
+      "character_next_action": "他用胶带在漏水点下方贴出一个导流槽，引导水流到桶里",
+      "rejected_alternative": "他可以用拖把吸水，但拖把会湿，可能导电",
+      "immediate_consequence": "水流被暂时引导，但胶带可能不牢固",
+      "counterfactual_without_action": "如果不处理，水会扩散到更大范围",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "水在地面自由流淌",
+        "after": "水被胶带引导流入桶中"
+      },
+      "cost_or_commitment": "魏临用掉了整卷胶带，且需要不断观察",
+      "next_constraint": "胶带用完，无法再修复其他漏水点",
+      "reader_must_infer": "魏临的临时措施可能撑不了多久",
+      "narrator_must_not_state": [
+        "胶带是否足够牢固",
+        "维修老师是否已经接到通知"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "天花板开始滴水，水往插线板方向流",
+    "dominant_pressure": {
+      "kind": "physical_problem",
+      "description": "漏水直接威胁安全，魏临必须立即行动，但可用资源有限"
+    },
+    "allowed_viewpoint_misread": "魏临可能低估漏水速度",
+    "disclosure_cap": 0,
+    "must_remain_unclassified": [
+      "漏水原因"
+    ],
+    "stop_state": {
+      "type": "physical_change",
+      "visible_fact": "机房断电，水流被引导入桶，但漏水未停止",
+      "what_is_now_different": "机房从通电状态变为断电，水流从自由流淌变为受控",
+      "must_not_append": "不得说明漏水是否彻底解决"
+    },
+    "final_line_must_include": "水还在滴"
+  }
+}

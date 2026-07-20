@@ -1,0 +1,3 @@
+event: message
+data: {"jsonrpc":"2.0","id":14,"result":{"content":[{"type":"text","text":"{\"id\":\"00b2aad9-1412-4fa3-88bf-220274ad30cd\",\"kind\":\"world\",\"title\":\"世界观\"}"}],"structuredContent":{"id":"00b2aad9-1412-4fa3-88bf-220274ad30cd","kind":"world","title":"世界观"},"isError":false}}
+

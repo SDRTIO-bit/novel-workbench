@@ -1,0 +1,63 @@
+{
+  "candidate_id": "28ee1a93-8bdd-4676-8fab-b83f37dd30ee",
+  "attempt_number": 1,
+  "group": "A",
+  "replica": 2,
+  "permission_policy": "CURRENT",
+  "stop_policy": "CURRENT",
+  "instruction_hash": null,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "policy_metadata": {
+      "group": "A",
+      "permission_policy": "CURRENT",
+      "stop_policy": "CURRENT",
+      "policy_version": "narrative-permission-stop-v1",
+      "policy_hash": "bcba9c79e51e6722c8796bc8a1defd65461d017dbbaf922efbe9c16df2ba3d4f",
+      "instruction_hash": null,
+      "permission_instruction_hash": null,
+      "stop_instruction_hash": null,
+      "seed": null
+    },
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "向暖把包裹从架子上拿起来，翻到贴单的那一面。\n\n收件人那一栏清清楚楚写着“向暖”，电话号码的后四位不是她的。地址是隔壁那栋——17号楼，她现在站在15号楼的快递架前。\n\n她把包裹放回原处，又拿起来。\n\n架子上还摞着三个快递盒，一个牛皮纸袋，两件衣服包装袋。旁边墙上钉着一支圆珠笔和一本便签纸，笔用透明胶带拴在钉子上，便签纸被人撕掉过几页，剩下一小摞歪歪地挂着。\n\n向暖拿起笔，在第一张便签上写：“这个包裹收件人叫向暖，但地址是17号楼，应该是放错了。我把它送到17号楼的架子上。——向暖（15号楼）”\n\n她把便签贴到包裹正面，盖住了原来贴单的一角，没盖住收件人名字和地址。\n\n然后她拿起包裹走出15号楼。\n\n隔壁楼栋的快递架在单元门内侧，铁灰色，三层。最上层空着，中间那层放了一个纸箱，底层有两个小包裹。向暖把手里这个搁到最上层，贴着架子内侧放稳，便签朝外。\n\n她看了一眼包裹上的“向暖”两个字，松开手。\n\n包裹停在17号楼的快递架上，便签贴在上面。",
+  "raw_response": "向暖把包裹从架子上拿起来，翻到贴单的那一面。\n\n收件人那一栏清清楚楚写着“向暖”，电话号码的后四位不是她的。地址是隔壁那栋——17号楼，她现在站在15号楼的快递架前。\n\n她把包裹放回原处，又拿起来。\n\n架子上还摞着三个快递盒，一个牛皮纸袋，两件衣服包装袋。旁边墙上钉着一支圆珠笔和一本便签纸，笔用透明胶带拴在钉子上，便签纸被人撕掉过几页，剩下一小摞歪歪地挂着。\n\n向暖拿起笔，在第一张便签上写：“这个包裹收件人叫向暖，但地址是17号楼，应该是放错了。我把它送到17号楼的架子上。——向暖（15号楼）”\n\n她把便签贴到包裹正面，盖住了原来贴单的一角，没盖住收件人名字和地址。\n\n然后她拿起包裹走出15号楼。\n\n隔壁楼栋的快递架在单元门内侧，铁灰色，三层。最上层空着，中间那层放了一个纸箱，底层有两个小包裹。向暖把手里这个搁到最上层，贴着架子内侧放稳，便签朝外。\n\n她看了一眼包裹上的“向暖”两个字，松开手。\n\n包裹停在17号楼的快递架上，便签贴在上面。",
+  "input_tokens": 1256,
+  "output_tokens": 290,
+  "latency_ms": 16067,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "5ee79fd724495caa67e1b830fb9e5b028a1fb7472c77aecde8db5605b15c1c9d",
+  "validation": {
+    "character_count": 425,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "banned_sentence_hits": {},
+    "second_confirmation_hits": [],
+    "environment_coda_hits": [],
+    "stop_marker_first_char": null,
+    "post_stop_character_count": null,
+    "tempo_final_line_mismatch": false,
+    "manual_review_required": [
+      "viewpoint_violation",
+      "cross_mind_assertion",
+      "other_character_motive_as_fact",
+      "true_stop_state_position",
+      "visible_state_transition_count",
+      "relationship_or_meaning_summary",
+      "shared_atmosphere_declaration",
+      "narrator_correction_with_backstage_fact"
+    ]
+  },
+  "text_path": "cases\\CO-05\\drafts\\a-2.txt"
+}

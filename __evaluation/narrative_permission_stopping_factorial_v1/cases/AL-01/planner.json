@@ -1,0 +1,175 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "乔雨根据班主任撤回的评语预览做出选择，决定是否主动询问或保持沉默，从而引发与同桌的互动，为后续误会埋下伏笔。",
+  "location": "教室，课间",
+  "time": "上午第二节课后",
+  "scene_state": {
+    "last_completed_action": "乔雨看到班主任撤回的评语预览“你这次的……”",
+    "present_characters": [
+      "乔雨",
+      "同桌"
+    ],
+    "visible_facts": [
+      "班主任在企业微信上发了一条评语又撤回了",
+      "预览显示“你这次的……”",
+      "同桌正拿着手机走过来"
+    ],
+    "available_objects": [
+      "乔雨的手机",
+      "同桌的手机"
+    ],
+    "unresolved_problem": "乔雨不知道评语完整内容，也无法直接询问班主任",
+    "already_existing_constraints": [
+      "乔雨不能问班主任",
+      "乔雨不能假装没看见"
+    ]
+  },
+  "characters": [
+    {
+      "name": "乔雨",
+      "goal": "弄清班主任撤回的评语内容，同时避免在同学面前显得异常",
+      "known": [
+        "班主任发了评语又撤回",
+        "预览只有“你这次的……”",
+        "同桌正走过来"
+      ],
+      "unknown": [
+        "评语完整内容",
+        "班主任撤回的原因",
+        "同桌是否也看到了撤回提示"
+      ],
+      "mistaken_beliefs": [
+        "班主任可能对作业不满，所以撤回修改措辞"
+      ],
+      "constraints": [
+        "不能直接问班主任",
+        "不能假装没看见",
+        "不能在同桌面前暴露焦虑"
+      ],
+      "observed_evidence": [
+        "手机通知栏的撤回提示",
+        "预览文字“你这次的……”",
+        "同桌靠近的脚步声"
+      ],
+      "current_interpretation": "班主任可能写了负面评语后后悔，同桌可能也看到了通知",
+      "how_interpretation_drives_action": "乔雨迅速锁屏，试图用自然话题转移同桌注意力，同时暗自决定稍后试探同桌是否知情"
+    },
+    {
+      "name": "同桌",
+      "goal": "和乔雨分享手机上的有趣内容",
+      "known": [
+        "自己手机上有好玩的东西",
+        "乔雨刚才在看手机"
+      ],
+      "unknown": [
+        "乔雨收到班主任撤回的评语",
+        "乔雨此刻的焦虑"
+      ],
+      "mistaken_beliefs": [
+        "乔雨只是在刷手机消遣"
+      ],
+      "constraints": [
+        "不能窥探乔雨隐私"
+      ],
+      "observed_evidence": [
+        "乔雨迅速锁屏的动作",
+        "乔雨略显紧张的表情"
+      ],
+      "current_interpretation": "乔雨可能在看不方便分享的内容，有点尴尬",
+      "how_interpretation_drives_action": "同桌稍微停顿，但仍决定分享手机，用轻松语气打破可能存在的尴尬"
+    }
+  ],
+  "concrete_problem": "乔雨必须在同桌走到面前之前，决定是主动提及撤回消息还是完全隐藏，且这个选择不能引起同桌怀疑。",
+  "pressure": "同桌正在走近，时间有限，乔雨必须立刻做出反应，同时内心的好奇与不安逐渐加剧。",
+  "turning_point": "乔雨选择不主动提及撤回消息，而是用其他话题转移注意力，但这个选择导致同桌无意中透露班主任也在班级群发了消息，使乔雨陷入更大的信息困惑。",
+  "end_condition": "同桌提到班主任在班级群发了一条消息，乔雨意识到事情可能不止涉及自己，从而决定查看群消息，但场景在此停止。",
+  "forbidden": [
+    "揭示评语完整内容",
+    "让乔雨直接联系班主任",
+    "同桌直接说出评语内容",
+    "乔雨向同桌坦白撤回消息",
+    "使用外部巧合解决矛盾"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "同桌正拿着手机走过来，目光扫过乔雨的手机屏幕",
+      "character_interpretation": "同桌可能看到了撤回提示，会追问发生了什么",
+      "character_next_action": "乔雨迅速锁屏，主动开口问同桌在看什么，试图主导对话方向",
+      "rejected_alternative": "乔雨也可以假装没看见同桌，继续盯着手机，但那样更显可疑",
+      "immediate_consequence": "同桌没有追问乔雨的手机内容，转而分享自己手机上的趣事，两人暂时避开撤回话题",
+      "counterfactual_without_action": "如果乔雨不主动转移话题，同桌可能会直接问“刚才班主任是不是给你发消息了？”",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "乔雨手机亮着，同桌目光可能触及撤回提示",
+        "after": "乔雨手机锁屏，同桌注意力被转移至自己的手机"
+      },
+      "cost_or_commitment": "乔雨放弃了立即弄清评语的机会，并承担了后续可能被同桌发现的压力",
+      "next_constraint": "乔雨不能在当前对话中再提起撤回消息，否则显得前后矛盾",
+      "reader_must_infer": "乔雨转移话题的果断背后是害怕负面评价被同桌知道",
+      "narrator_must_not_state": [
+        "乔雨内心真正的恐惧：班主任可能认为她作业很差"
+      ]
+    },
+    {
+      "id": "CT02",
+      "kind": "constraint_to_choice",
+      "visible_trigger": "同桌分享完趣事后随口说：“对了，班主任刚在班级群发了条消息，你看了吗？”",
+      "character_interpretation": "班主任可能把评语发到群里了，或者发了其他通知，但无论如何，自己可能不是唯一收到消息的人",
+      "character_next_action": "乔雨决定立即打开班级群查看，并假装只是看普通通知",
+      "rejected_alternative": "乔雨也可以继续掩饰，说“等会儿看”，但这会错过重要信息，且显得不关心班级事务",
+      "immediate_consequence": "乔雨看到班级群消息的预览，但内容与作业无关，而是关于班级活动通知，这让她更加困惑评语的事",
+      "counterfactual_without_action": "如果乔雨不立即查看，她会继续陷入猜测，且同桌可能察觉她的异常回避",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "乔雨只知道撤回的评语，同桌不知道乔雨的困扰",
+        "after": "乔雨知道班主任在群里发了其他消息，同桌仍未察觉乔雨的心事"
+      },
+      "cost_or_commitment": "乔雨在查看群消息时，必须控制表情，不能流露出对评语的过度关注",
+      "next_constraint": "乔雨不能向同桌询问“班主任有没有单独给你发消息”，因为那会暴露她收到了特殊消息",
+      "reader_must_infer": "班主任撤回评语可能不是针对乔雨个人，而是发错了或者群发后撤回",
+      "narrator_must_not_state": [
+        "班主任撤回评语的真实原因"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "同桌正拿着手机走过来，乔雨的手机上还显示着撤回提示",
+    "dominant_pressure": {
+      "kind": "social_friction",
+      "description": "乔雨必须在同桌面前隐藏自己的不安，同时内心对撤回评语的好奇和担忧不断升级"
+    },
+    "allowed_viewpoint_misread": "同桌可能把乔雨的紧张理解为不想被打扰",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "班主任撤回评语的完整内容",
+      "班主任撤回的真实动机"
+    ],
+    "stop_state": {
+      "type": "information_conflict",
+      "visible_fact": "同桌提到班主任在班级群发了消息，乔雨看到群消息预览与作业无关",
+      "what_is_now_different": "乔雨从认为评语只针对自己，变成怀疑评语可能涉及更广范围或发错人",
+      "must_not_append": "不得揭示群消息具体内容或乔雨查看后的完整反应"
+    },
+    "final_line_must_include": ""
+  }
+}

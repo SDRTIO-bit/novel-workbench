@@ -1,0 +1,64 @@
+{
+  "candidate_id": "d7659afb-79f4-4a7f-9c86-11287336fcf5",
+  "attempt_number": 1,
+  "group": "D",
+  "replica": 3,
+  "permission_policy": "STRICT_LIMITED",
+  "stop_policy": "STRICT_STOP",
+  "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e",
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e",
+    "policy_metadata": {
+      "group": "D",
+      "permission_policy": "STRICT_LIMITED",
+      "stop_policy": "STRICT_STOP",
+      "policy_version": "narrative-permission-stop-v1",
+      "policy_hash": "533ba9fe37558af28e5b9a277971d13c5f7674a7a297a2c3d7f1a96c77af3123",
+      "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e",
+      "permission_instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+      "stop_instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+      "seed": null
+    },
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "地铁报站的女声从头顶传来，下一站是春秀路。\n\n林悄低着头，手机屏幕的光打在她脸上。微信聊天框里，室友周敏的语音条右侧挂着两个灰色小字：已撤回。\n\n她刚才点开的时候，车厢里正吵。广播混着铁轨的摩擦声，周敏的声音只漏出来半句——“你桌上那个蓝色文件夹我”——然后被进站的轰鸣吞了个干净。她下意识把听筒往耳朵上贴，手指碰到屏幕，语音条消失了。\n\n已撤回。\n\n林悄盯着那两个字看了三秒，拇指划上去，拨了周敏的电话。\n\n忙音。\n\n嘟——嘟——嘟——短促的占线声重复了三轮，她挂断，又拨了一次。\n\n还是忙音。\n\n车厢晃了一下，她扶住扶手。蓝色文件夹。她桌上那个蓝色文件夹。里面有明天投标要用的报价单和资质复印件，她昨晚核对到凌晨一点，页码都用便签标好了，摊开放在书桌右上角。\n\n周敏不是会翻她东西的人，合租一年半，连厨房的调料都分开放。但语音前半句已经说出来了，“你桌上那个蓝色文件夹我”——后面是什么？“我帮你放好了”？“我不小心碰掉了”？“我借来看一下”？\n\n她不知道。撤回意味着周敏不想让她听见，或者觉得不该说出来。占线的电话意味着周敏正在跟别人通话，或者——她的电话被拉黑了？不对，忙音不是被拉黑的提示音。\n\n地铁开始减速，春秀路站的站台灯光从窗外滑进来。\n\n林悄把微信重新打开，指尖在输入框上悬了两秒。她不能假定周敏动了文件夹，也不能假定没动。她需要让周敏自己说出来，但不能让周敏觉得她在质问。\n\n她打字：“刚在地铁上没听清，蓝色文件夹怎么啦？方便时回我～”\n\n发送。\n\n车门打开，有人从她身边挤过去。她没有下车。还有一站路，她得等回复。\n\n两分钟。\n\n地铁重新启动，驶入隧道。窗外变成流动的黑色，车厢玻璃上映出她自己的脸。手机屏幕暗了又亮，她按亮，微信没有新消息。她打开和周敏的聊天框，消息已经变成“已读”。\n\n已读，但没回。\n\n林悄把手机翻了个面，又翻回来。站台上的风从没关严的车窗缝里钻进来，带着隧道里铁锈和潮气的味道。\n\n屏幕亮了。\n\n周敏的白色气泡弹出来：“没事，我帮你收起来了，回头说。”\n\n林悄读了两遍。第一遍看字面：收起来了，文件夹不在桌上了。第二遍看尾巴：回头说。不是“回家说”，不是“等会儿说”，是“回头说”——一个不指定时间、不指定地点、不让她追问的词。\n\n她拇指停在输入框上。\n\n地铁报站，下一站是终点站。她该下车了。\n\n车门打开的时候，她把手机锁屏，攥在手里。",
+  "raw_response": "地铁报站的女声从头顶传来，下一站是春秀路。\n\n林悄低着头，手机屏幕的光打在她脸上。微信聊天框里，室友周敏的语音条右侧挂着两个灰色小字：已撤回。\n\n她刚才点开的时候，车厢里正吵。广播混着铁轨的摩擦声，周敏的声音只漏出来半句——“你桌上那个蓝色文件夹我”——然后被进站的轰鸣吞了个干净。她下意识把听筒往耳朵上贴，手指碰到屏幕，语音条消失了。\n\n已撤回。\n\n林悄盯着那两个字看了三秒，拇指划上去，拨了周敏的电话。\n\n忙音。\n\n嘟——嘟——嘟——短促的占线声重复了三轮，她挂断，又拨了一次。\n\n还是忙音。\n\n车厢晃了一下，她扶住扶手。蓝色文件夹。她桌上那个蓝色文件夹。里面有明天投标要用的报价单和资质复印件，她昨晚核对到凌晨一点，页码都用便签标好了，摊开放在书桌右上角。\n\n周敏不是会翻她东西的人，合租一年半，连厨房的调料都分开放。但语音前半句已经说出来了，“你桌上那个蓝色文件夹我”——后面是什么？“我帮你放好了”？“我不小心碰掉了”？“我借来看一下”？\n\n她不知道。撤回意味着周敏不想让她听见，或者觉得不该说出来。占线的电话意味着周敏正在跟别人通话，或者——她的电话被拉黑了？不对，忙音不是被拉黑的提示音。\n\n地铁开始减速，春秀路站的站台灯光从窗外滑进来。\n\n林悄把微信重新打开，指尖在输入框上悬了两秒。她不能假定周敏动了文件夹，也不能假定没动。她需要让周敏自己说出来，但不能让周敏觉得她在质问。\n\n她打字：“刚在地铁上没听清，蓝色文件夹怎么啦？方便时回我～”\n\n发送。\n\n车门打开，有人从她身边挤过去。她没有下车。还有一站路，她得等回复。\n\n两分钟。\n\n地铁重新启动，驶入隧道。窗外变成流动的黑色，车厢玻璃上映出她自己的脸。手机屏幕暗了又亮，她按亮，微信没有新消息。她打开和周敏的聊天框，消息已经变成“已读”。\n\n已读，但没回。\n\n林悄把手机翻了个面，又翻回来。站台上的风从没关严的车窗缝里钻进来，带着隧道里铁锈和潮气的味道。\n\n屏幕亮了。\n\n周敏的白色气泡弹出来：“没事，我帮你收起来了，回头说。”\n\n林悄读了两遍。第一遍看字面：收起来了，文件夹不在桌上了。第二遍看尾巴：回头说。不是“回家说”，不是“等会儿说”，是“回头说”——一个不指定时间、不指定地点、不让她追问的词。\n\n她拇指停在输入框上。\n\n地铁报站，下一站是终点站。她该下车了。\n\n车门打开的时候，她把手机锁屏，攥在手里。",
+  "input_tokens": 1679,
+  "output_tokens": 639,
+  "latency_ms": 28408,
+  "finish_reason": "stop",
+  "error_code": "TEMPO_FINAL_LINE_MISMATCH",
+  "error_message": "TEMPO_FINAL_LINE_MISMATCH: final paragraph must include the required marker '回头说'",
+  "rendered_user_prompt_sha256": "36a39fe53e0f7de7003fc3b6af9922e8c8216646a680ba5e1843d90cabf774f8",
+  "validation": {
+    "character_count": 992,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "banned_sentence_hits": {},
+    "second_confirmation_hits": [],
+    "environment_coda_hits": [],
+    "stop_marker_first_char": null,
+    "post_stop_character_count": null,
+    "tempo_final_line_mismatch": true,
+    "manual_review_required": [
+      "viewpoint_violation",
+      "cross_mind_assertion",
+      "other_character_motive_as_fact",
+      "true_stop_state_position",
+      "visible_state_transition_count",
+      "relationship_or_meaning_summary",
+      "shared_atmosphere_declaration",
+      "narrator_correction_with_backstage_fact"
+    ]
+  },
+  "text_path": "cases\\NM-01\\drafts\\d-3.txt"
+}

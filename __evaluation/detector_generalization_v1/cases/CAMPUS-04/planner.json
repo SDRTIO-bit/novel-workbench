@@ -1,0 +1,161 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "叶舟在无法直接追问唐闻的情况下，通过一个公开动作获取更多信息，同时承担被同学误解的代价，结尾保留便签后半句未知。",
+  "location": "高二（3）班教室，课间",
+  "time": "上午第二节课后，课间十分钟",
+  "scene_state": {
+    "last_completed_action": "叶舟在黑板槽里发现一张写着自己名字的便签，只看见'别再……'三个字",
+    "present_characters": [
+      "叶舟",
+      "唐闻",
+      "班长",
+      "收作业的同学A",
+      "同学B"
+    ],
+    "visible_facts": [
+      "便签上写着'别再……'，叶舟的名字可见",
+      "唐闻刚从讲台下来，距离黑板槽约三步",
+      "收作业的同学正在各组间走动",
+      "班长站在讲台旁整理作业本"
+    ],
+    "available_objects": [
+      "便签",
+      "黑板槽",
+      "粉笔",
+      "黑板擦",
+      "作业本"
+    ],
+    "unresolved_problem": "便签后半句内容未知，叶舟需要在不公开便签的情况下获取信息",
+    "already_existing_constraints": [
+      "叶舟不能把便签内容念出来",
+      "叶舟不能直接追问唐闻",
+      "便签后半句必须保持未知"
+    ]
+  },
+  "characters": [
+    {
+      "name": "叶舟",
+      "goal": "在不公开便签内容且不直接追问唐闻的前提下，弄清便签后半句的意思",
+      "known": [
+        "便签上写着自己的名字和'别再……'三个字",
+        "唐闻刚从讲台下来，可能是写便签的人"
+      ],
+      "unknown": [
+        "便签后半句的具体内容",
+        "唐闻写便签的动机"
+      ],
+      "mistaken_beliefs": [
+        "唐闻可能是在警告自己别再做什么事"
+      ],
+      "constraints": [
+        "不能公开便签内容",
+        "不能直接追问唐闻",
+        "课间时间有限"
+      ],
+      "observed_evidence": [
+        "便签上只有'别再……'和自己名字",
+        "唐闻从讲台方向走来，神情略显紧张"
+      ],
+      "current_interpretation": "唐闻想私下提醒我，但不想让别人知道",
+      "how_interpretation_drives_action": "叶舟决定用肢体动作暗示唐闻她已看到便签，并创造私下交流的机会"
+    },
+    {
+      "name": "唐闻",
+      "goal": "确保叶舟看到便签并理解自己的意思，但不被其他人发现",
+      "known": [
+        "自己写了便签并放在黑板槽",
+        "便签内容完整是'别再一个人去天台'"
+      ],
+      "unknown": [
+        "叶舟是否已经理解便签的完整意思",
+        "是否有其他同学注意到便签"
+      ],
+      "mistaken_beliefs": [
+        "叶舟可能已经看到完整内容"
+      ],
+      "constraints": [
+        "不能直接跟叶舟说话解释",
+        "不能引起其他同学注意"
+      ],
+      "observed_evidence": [
+        "叶舟从黑板槽拿起便签并看了一眼",
+        "叶舟没有念出内容"
+      ],
+      "current_interpretation": "叶舟看到了便签，但不确定她是否理解",
+      "how_interpretation_drives_action": "唐闻试图用眼神和微表情暗示叶舟，同时保持自然"
+    }
+  ],
+  "concrete_problem": "叶舟如何在课间众目睽睽之下，既不公开便签，又不直接询问唐闻，从唐闻那里获得更多信息？",
+  "pressure": "课间时间有限，班长和同学随时可能注意到便签，叶舟必须立即行动，但任何不当举动都可能引发误会",
+  "turning_point": "叶舟假装不小心把作业本碰落，弯腰捡起时顺手将便签折好放进口袋，同时与唐闻短暂对视——唐闻微微点头。这个动作让周围同学认为叶舟只是捡作业本，但唐闻明白叶舟收到了信息。",
+  "end_condition": "叶舟将便签放入口袋，唐闻微不可察地点头，班长催促交作业，便签后半句仍然未知",
+  "forbidden": [
+    "不能公开便签完整内容",
+    "不能直接追问唐闻",
+    "便签后半句不得在本章揭示",
+    "不能使用'别再一个人去天台'或其他完整句子"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "唐闻从讲台下来时，目光与叶舟短暂相遇，他下意识地抿了一下嘴唇",
+      "character_interpretation": "叶舟认为唐闻在紧张地确认自己是否看到了便签，并且不希望别人介入",
+      "character_next_action": "叶舟故意将手边的作业本碰落在地，弯腰去捡，同时用身体挡住黑板槽方向，将便签折好放入口袋",
+      "rejected_alternative": "叶舟原本可以叫住唐闻直接问，但那样会暴露便签的存在",
+      "immediate_consequence": "唐闻看到叶舟的动作，明白她已收到便签并藏好，他微微点头表示认可",
+      "counterfactual_without_action": "如果叶舟没有碰落作业本，而是直接拿起便签看，班长可能会注意到并询问",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "便签暴露在黑板槽，叶舟与唐闻之间没有确认信号",
+        "after": "便签被叶舟藏入口袋，唐闻通过点头确认了叶舟已收到信息"
+      },
+      "cost_or_commitment": "叶舟为了制造掩护，故意弄乱了自己的作业本，可能引起同学注意",
+      "next_constraint": "叶舟不能在其他同学面前查看便签，必须等到独处时",
+      "reader_must_infer": "唐闻的点头意味着他认可叶舟的保密行动，且便签内容可能涉及敏感话题",
+      "narrator_must_not_state": [
+        "唐闻点头的具体含义",
+        "便签的完整内容",
+        "叶舟是否完全理解唐闻的意图"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "叶舟刚拿起便签，唐闻从讲台下来，班长正在整理作业本",
+    "dominant_pressure": {
+      "kind": "social_friction",
+      "description": "叶舟必须在众目睽睽下处理便签，任何异常举动都可能被同学误解或引起好奇，她与唐闻之间无法直接沟通"
+    },
+    "allowed_viewpoint_misread": "同学可能认为叶舟只是不小心碰落了作业本，而唐闻的点头可能被误解为对叶舟笨拙动作的回应",
+    "disclosure_cap": 0,
+    "must_remain_unclassified": [
+      "便签后半句内容",
+      "唐闻写便签的真正动机"
+    ],
+    "stop_state": {
+      "type": "relationship_shift",
+      "visible_fact": "唐闻对叶舟微微点头",
+      "what_is_now_different": "叶舟和唐闻之间建立了秘密的确认信号，但关系仍处于未明状态",
+      "must_not_append": "不得解释点头的含义或便签内容"
+    },
+    "final_line_must_include": ""
+  }
+}

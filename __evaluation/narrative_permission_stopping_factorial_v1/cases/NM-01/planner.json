@@ -1,0 +1,137 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "林悄在两站路内必须采取一个具体行动来应对室友撤回语音带来的信息缺失，并在此过程中展现她的谨慎和边界感，同时为后续章节埋下伏笔。",
+  "location": "地铁车厢内及站台",
+  "time": "下班晚高峰，地铁行进中",
+  "scene_state": {
+    "last_completed_action": "林悄外放听到室友语音前半句，被噪声盖过后发现语音已撤回，室友电话占线。",
+    "present_characters": [
+      "林悄",
+      "室友（仅通过语音和占线电话间接存在）"
+    ],
+    "visible_facts": [
+      "语音前半句提到蓝色文件夹",
+      "语音被撤回",
+      "室友电话占线",
+      "蓝色文件夹内有明天投标文件",
+      "地铁还有两站路到家"
+    ],
+    "available_objects": [
+      "手机",
+      "微信界面",
+      "蓝色文件夹（不在现场）"
+    ],
+    "unresolved_problem": "室友是否动了蓝色文件夹？林悄无法确认，但必须在到家前采取行动以确保投标文件安全。",
+    "already_existing_constraints": [
+      "不能假定室友动了文件夹（林悄的自我约束）",
+      "不能等到家再确认（时间压力）",
+      "室友电话占线，无法直接询问"
+    ]
+  },
+  "characters": [
+    {
+      "name": "林悄",
+      "goal": "确保投标文件安全，同时不冒犯室友的边界",
+      "known": [
+        "蓝色文件夹内有明天投标的文件",
+        "室友提到了蓝色文件夹",
+        "语音被撤回",
+        "室友电话占线"
+      ],
+      "unknown": [
+        "室友撤回语音的原因",
+        "室友是否动了文件夹",
+        "室友为什么电话占线"
+      ],
+      "mistaken_beliefs": [
+        "语音后半句可能包含重要信息，但未必是坏事"
+      ],
+      "constraints": [
+        "不能直接假定室友动了文件夹",
+        "不能直接冲回家质问",
+        "必须在两站路内行动"
+      ],
+      "observed_evidence": [
+        "语音前半句：'你桌上那个蓝色文件夹我……'",
+        "语音被撤回",
+        "室友电话占线"
+      ],
+      "current_interpretation": "室友可能动了文件夹，但撤回语音和占线电话意味着事情可能紧急或有变故，需要谨慎处理。",
+      "how_interpretation_drives_action": "林悄决定先发一条措辞谨慎的文字消息给室友，既询问情况又不显冒犯，然后尝试再次拨打电话。"
+    }
+  ],
+  "concrete_problem": "林悄必须决定如何利用地铁上的最后两站路，在不假定室友动过文件夹的前提下，确认投标文件的安全。",
+  "pressure": "地铁即将到站，时间紧迫，信息缺失，室友暂时失联，投标文件的重要性加剧焦虑。",
+  "turning_point": "林悄在发送消息和再次拨打电话之间做出选择，并构思了一条既询问文件夹又为室友留出解释空间的文字。",
+  "end_condition": "林悄发出文字消息，并在地铁到站前收到室友的简短回复，但回复内容并未完全解决疑问，反而引入新的事实。",
+  "forbidden": [
+    "林悄直接假设室友动了文件夹",
+    "林悄冲回家大发雷霆",
+    "室友直接道歉或完全解释清楚",
+    "揭示蓝色文件夹的最终命运",
+    "揭示室友撤回语音的完整原因"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "室友撤回语音且电话占线",
+      "character_interpretation": "室友可能正在处理与文件夹相关的紧急事务，不便通话，但撤回语音暗示她可能不想让林悄听到后半句。",
+      "character_next_action": "林悄给室友发微信文字消息：'刚在地铁上没听清，蓝色文件夹怎么啦？方便时回我～'",
+      "rejected_alternative": "林悄本可以不断拨打室友电话直到接通，但那样可能显得咄咄逼人。",
+      "immediate_consequence": "室友在两分钟后回复：'没事，我帮你收起来了，回头说。'",
+      "counterfactual_without_action": "如果林悄不主动发消息，她只能焦虑地等到家，可能因不确定而做出过激反应。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "林悄对文件夹状况一无所知，室友失联。",
+        "after": "林悄得知文件夹被室友收起来，但室友的简短回复和回避态度让她产生新的疑虑。"
+      },
+      "cost_or_commitment": "林悄主动迈出沟通第一步，但可能让室友感到被追问的压力。",
+      "next_constraint": "室友回复中的'回头说'暗示现在不方便详谈，林悄不能继续追问，只能等待。",
+      "reader_must_infer": "室友撤回语音的真正原因可能与文件内容有关，而不仅仅是'收起来'这么简单。",
+      "narrator_must_not_state": [
+        "室友撤回语音的真实动机",
+        "蓝色文件夹是否被动过手脚"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "地铁报站提示还有两站到家，林悄盯着微信界面，室友的语音条显示'已撤回'。",
+    "dominant_pressure": {
+      "kind": "information_gap",
+      "description": "林悄缺少决定下一步行动所需的关键信息：室友是否动了文件夹、撤回语音的原因、以及电话占线的缘由。同时时间紧迫，加剧了信息缺失带来的焦虑。"
+    },
+    "allowed_viewpoint_misread": "读者可能误以为室友在刻意隐瞒什么，但也许只是手误或信号问题。",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "室友撤回语音的完整句子",
+      "室友电话占线的真正原因",
+      "蓝色文件夹内文件的具体内容"
+    ],
+    "stop_state": {
+      "type": "information_conflict",
+      "visible_fact": "室友回复'没事，我帮你收起来了，回头说。'",
+      "what_is_now_different": "林悄从完全不知情变为知道文件夹被室友收起，但室友的回避态度与她声称的'没事'形成矛盾，引发新的不安。",
+      "must_not_append": "不得解释室友为什么说'回头说'，不得透露室友是否在撒谎。"
+    },
+    "final_line_must_include": "回头说"
+  }
+}

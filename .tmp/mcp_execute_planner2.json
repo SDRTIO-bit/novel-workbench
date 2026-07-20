@@ -1,0 +1,1 @@
+﻿{"jsonrpc":"2.0","id":41,"method":"tools/call","params":{"name":"execute_stage","arguments":{"run_id":"76a99772-c4ff-4096-a374-09fc55661da2","stage":"planner","provider_id":"1fdf6268-7d82-4b2c-8c0c-41cf8e9d9b0b","model_id":"deepseek-v4-pro"}}}

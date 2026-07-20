@@ -1,0 +1,1 @@
+﻿{"jsonrpc":"2.0","id":70,"method":"tools/call","params":{"name":"select_candidate","arguments":{"run_id":"76a99772-c4ff-4096-a374-09fc55661da2","stage":"writer","candidate_id":"80517cc7-e36d-4e45-b506-113294095d0c"}}}

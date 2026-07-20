@@ -1,0 +1,64 @@
+{
+  "candidate_id": "e559550f-edbf-41db-b400-d6ab06119ef5",
+  "attempt_number": 1,
+  "group": "C",
+  "replica": 2,
+  "permission_policy": "CURRENT",
+  "stop_policy": "STRICT_STOP",
+  "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+    "policy_metadata": {
+      "group": "C",
+      "permission_policy": "CURRENT",
+      "stop_policy": "STRICT_STOP",
+      "policy_version": "narrative-permission-stop-v1",
+      "policy_hash": "15e6b754a467a03569fe265abb7861ce24f144ba737ce3f2973776c1c2e76d47",
+      "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+      "permission_instruction_hash": null,
+      "stop_instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+      "seed": null
+    },
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "周日早上七点四十，苏叶蹲在楼道口，看着自己那辆自行车的后轮链条垂在地上，沾了一圈黑油泥。\n\n工具箱摊在她右手边不到一米的地方，沈一凡正蹲在他那辆山地车前，扳手卡住后轴螺母，拧了两圈，链条绷紧。他动作不快，但每一下都到位，螺母转完，拇指压了压链条中段，试松紧。\n\n苏叶伸手碰了一下自己那根链条，指尖沾上油污，链节卡在后飞轮外侧，错开了三个齿。她试着把链条往回推，铁片纹丝不动。\n\n沈一凡那边扳手又响了一声。他把后轮轴螺母拧死，链条试完，开始收工具。活动扳手放回工具箱，内六角扳手归位，螺丝刀插进帆布套侧袋。\n\n苏叶在裤子上蹭掉指尖的油，站起来。\n\n工具箱里还剩一把活动扳手，手柄朝外，就搁在她脚边。\n\n她弯腰捡起来。\n\n沈一凡抬头。\n\n苏叶把扳手在手里转了半圈，问他：“这个是不是用来紧链条的。”\n\n沈一凡看了她一眼，又看了她身后那辆自行车一眼。他把手里的抹布叠好搁在工具箱盖上，站起来，伸手接过她递来的扳手。\n\n“我来帮你看看。”",
+  "raw_response": "周日早上七点四十，苏叶蹲在楼道口，看着自己那辆自行车的后轮链条垂在地上，沾了一圈黑油泥。\n\n工具箱摊在她右手边不到一米的地方，沈一凡正蹲在他那辆山地车前，扳手卡住后轴螺母，拧了两圈，链条绷紧。他动作不快，但每一下都到位，螺母转完，拇指压了压链条中段，试松紧。\n\n苏叶伸手碰了一下自己那根链条，指尖沾上油污，链节卡在后飞轮外侧，错开了三个齿。她试着把链条往回推，铁片纹丝不动。\n\n沈一凡那边扳手又响了一声。他把后轮轴螺母拧死，链条试完，开始收工具。活动扳手放回工具箱，内六角扳手归位，螺丝刀插进帆布套侧袋。\n\n苏叶在裤子上蹭掉指尖的油，站起来。\n\n工具箱里还剩一把活动扳手，手柄朝外，就搁在她脚边。\n\n她弯腰捡起来。\n\n沈一凡抬头。\n\n苏叶把扳手在手里转了半圈，问他：“这个是不是用来紧链条的。”\n\n沈一凡看了她一眼，又看了她身后那辆自行车一眼。他把手里的抹布叠好搁在工具箱盖上，站起来，伸手接过她递来的扳手。\n\n“我来帮你看看。”",
+  "input_tokens": 1332,
+  "output_tokens": 289,
+  "latency_ms": 32123,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "f1c23ce9131f411b49ef39ea8df811e5002dcfbb58edaca205e66fa6f3e3f097",
+  "validation": {
+    "character_count": 415,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "banned_sentence_hits": {},
+    "second_confirmation_hits": [],
+    "environment_coda_hits": [],
+    "stop_marker_first_char": null,
+    "post_stop_character_count": null,
+    "tempo_final_line_mismatch": false,
+    "manual_review_required": [
+      "viewpoint_violation",
+      "cross_mind_assertion",
+      "other_character_motive_as_fact",
+      "true_stop_state_position",
+      "visible_state_transition_count",
+      "relationship_or_meaning_summary",
+      "shared_atmosphere_declaration",
+      "narrator_correction_with_backstage_fact"
+    ]
+  },
+  "text_path": "cases\\NM-04\\drafts\\c-2.txt"
+}

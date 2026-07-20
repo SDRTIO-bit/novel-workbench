@@ -1,0 +1,63 @@
+{
+  "candidate_id": "ce017e74-fc3f-4946-b4ec-18c39bce13c7",
+  "attempt_number": 1,
+  "group": "A",
+  "replica": 3,
+  "permission_policy": "CURRENT",
+  "stop_policy": "CURRENT",
+  "instruction_hash": null,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "policy_metadata": {
+      "group": "A",
+      "permission_policy": "CURRENT",
+      "stop_policy": "CURRENT",
+      "policy_version": "narrative-permission-stop-v1",
+      "policy_hash": "bcba9c79e51e6722c8796bc8a1defd65461d017dbbaf922efbe9c16df2ba3d4f",
+      "instruction_hash": null,
+      "permission_instruction_hash": null,
+      "stop_instruction_hash": null,
+      "seed": null
+    },
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "苏叶蹲在自行车旁边，手指捏着那条垂下来的链条，油污蹭了一手。\n\n她抬头看了一眼门口。\n\n沈一凡正蹲在他那辆公路车前面，扳手卡着后轮的螺母，拧了两圈，动作很稳。工具箱敞着盖子摊在他脚边，内六角、螺丝刀、链条油，码得整整齐齐。\n\n苏叶又低头看了看自己手里的链条。她试着把它挂回齿轮上，铁片卡进去一半，一松手又滑下来。\n\n第三次滑脱的时候，沈一凡抬头看了她一眼。\n\n苏叶对上他的视线，站起来，走到工具箱旁边。她弯腰拿起一把扳手，握在手里掂了一下，然后转过身，朝他走了两步。\n\n“这个，”她把扳手举起来，让他能看清，“是不是用来紧链条的？”\n\n沈一凡停下手里的活儿。他看着她手里的扳手，又看了看她身后那辆掉链子的自行车。\n\n他把自己的扳手搁在地上，站起来，伸手接过她递来的那把。\n\n“我来帮你看看。”",
+  "raw_response": "苏叶蹲在自行车旁边，手指捏着那条垂下来的链条，油污蹭了一手。\n\n她抬头看了一眼门口。\n\n沈一凡正蹲在他那辆公路车前面，扳手卡着后轮的螺母，拧了两圈，动作很稳。工具箱敞着盖子摊在他脚边，内六角、螺丝刀、链条油，码得整整齐齐。\n\n苏叶又低头看了看自己手里的链条。她试着把它挂回齿轮上，铁片卡进去一半，一松手又滑下来。\n\n第三次滑脱的时候，沈一凡抬头看了她一眼。\n\n苏叶对上他的视线，站起来，走到工具箱旁边。她弯腰拿起一把扳手，握在手里掂了一下，然后转过身，朝他走了两步。\n\n“这个，”她把扳手举起来，让他能看清，“是不是用来紧链条的？”\n\n沈一凡停下手里的活儿。他看着她手里的扳手，又看了看她身后那辆掉链子的自行车。\n\n他把自己的扳手搁在地上，站起来，伸手接过她递来的那把。\n\n“我来帮你看看。”",
+  "input_tokens": 1182,
+  "output_tokens": 219,
+  "latency_ms": 12427,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "9b733f113787503b81184b8490b6fe80d706ecd34faa4081ff4e28dcc1ca341e",
+  "validation": {
+    "character_count": 346,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "banned_sentence_hits": {},
+    "second_confirmation_hits": [],
+    "environment_coda_hits": [],
+    "stop_marker_first_char": null,
+    "post_stop_character_count": null,
+    "tempo_final_line_mismatch": false,
+    "manual_review_required": [
+      "viewpoint_violation",
+      "cross_mind_assertion",
+      "other_character_motive_as_fact",
+      "true_stop_state_position",
+      "visible_state_transition_count",
+      "relationship_or_meaning_summary",
+      "shared_atmosphere_declaration",
+      "narrator_correction_with_backstage_fact"
+    ]
+  },
+  "text_path": "cases\\NM-04\\drafts\\a-3.txt"
+}

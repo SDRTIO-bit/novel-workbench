@@ -1,0 +1,72 @@
+{
+  "experiment": "NARRATIVE_PERMISSION_STOPPING_FACTORIAL_V1",
+  "git_commit": "94059c955d9d15fc04e518dd9429b0ca6421b51e",
+  "seed": 20260721,
+  "model_seed": null,
+  "seed_note": "Provider/adapter exposes no model seed (LlmRequest has no seed field; DeepSeek chat/completions documents none). seed=null is recorded for every call; temperature/top_p/max_output_tokens/timeout/thinking are held identical across groups; reproducibility is not faked. The SEED constant only drives blind-token generation and call-order shuffling.",
+  "replicas_per_group": 3,
+  "case_ids": [
+    "AL-01",
+    "CO-04",
+    "CO-05",
+    "ROMANCE-02",
+    "NM-01",
+    "NM-02",
+    "NM-03",
+    "NM-04"
+  ],
+  "groups": {
+    "A": "CURRENT permission + CURRENT stop (pure production, no instruction)",
+    "B": "STRICT_LIMITED + CURRENT stop",
+    "C": "CURRENT permission + STRICT_STOP",
+    "D": "STRICT_LIMITED + STRICT_STOP"
+  },
+  "writer_input_mode": "writer_brief",
+  "writer_behavior_mode": null,
+  "policy_version": "narrative-permission-stop-v1",
+  "writer_prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "planner_prompt_version_id": "f9052f8a-dc4e-5408-b14e-fc1badaf57f8",
+  "frozen_parameters": {
+    "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+    "model_id": "deepseek-v4-pro",
+    "planner_prompt_version_id": "f9052f8a-dc4e-5408-b14e-fc1badaf57f8",
+    "writer_prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "planner_max_output_tokens": 12288,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300
+  },
+  "overlap_notice": "Frozen DB writer prompt v6 section 5 already contains a strong stop rule (stop at the stop fact; no coda, no psychological explanation, no relationship summary, no theme elevation). STRICT_STOP is therefore a small-delta treatment: a weak C-group main effect is an attribute of the variable, and must NOT be read as an instruction-injection failure.",
+  "execution_model": "scene-level parallelism (8 concurrent scenes, each with its own isolated SQLite copy); writers sequential within a scene; all hash/boundary/blind artifacts are per-slot deterministic and order-independent",
+  "rules": [
+    "One Planner call per scene; all 12 Writers share the frozen Planner output.",
+    "4 groups x 3 replicas per scene; stratified-random call order per replica block.",
+    "No Critic/Reviser/Judge. No retry. No filtering. All failures preserved.",
+    "Any existing text enters the blind queue, including TEMPO_FINAL_LINE_MISMATCH drafts.",
+    "Planner hard failure aborts the entire run (D3); no per-scene makeup runs.",
+    "All groups use third person; no first-person arms; no narrative_route modes.",
+    "seed=null for every model call; other parameters held identical."
+  ],
+  "status": "completed",
+  "writer_prompt_identity": {
+    "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+    "found": true,
+    "version_number": 6,
+    "output_mode": "plain_text",
+    "output_schema_name": null,
+    "system_template_sha256": "e933b446316349802745d7dcd5f918e7fb550c1ae78c5c7cfa7a69e095dffdef",
+    "user_template_sha256": "25004d53ea9cbc7662e95c37ca6292c033e1269fa66ebf5e8d9e24879ae0a913"
+  },
+  "planner_prompt_identity": {
+    "prompt_version_id": "f9052f8a-dc4e-5408-b14e-fc1badaf57f8",
+    "found": true,
+    "version_number": 6,
+    "output_mode": "structured",
+    "output_schema_name": "planner_v2",
+    "system_template_sha256": "5e1a50eac9751dcc28fa84242ba8a1f0b54a78ec15f30c0c1b6f1d0078fd0a33",
+    "user_template_sha256": "119cc39b9d0b61c966b9c2ac0de61a458455c939fed0186067816468d89c5ed7"
+  },
+  "export_problems": [],
+  "wall_seconds": 532.5
+}

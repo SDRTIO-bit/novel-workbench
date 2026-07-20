@@ -1,0 +1,64 @@
+{
+  "candidate_id": "5de01724-b744-48bb-8d67-0f854edd6af7",
+  "attempt_number": 1,
+  "group": "B",
+  "replica": 3,
+  "permission_policy": "STRICT_LIMITED",
+  "stop_policy": "CURRENT",
+  "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+    "policy_metadata": {
+      "group": "B",
+      "permission_policy": "STRICT_LIMITED",
+      "stop_policy": "CURRENT",
+      "policy_version": "narrative-permission-stop-v1",
+      "policy_hash": "a42fb8f38620720ad1dda5407ffa44c03e929f1b34d89ecb5fbf1b5ea7325c24",
+      "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+      "permission_instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+      "stop_instruction_hash": null,
+      "seed": null
+    },
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "周淇端着水杯走回座位时，第一眼就发现桌上空了。\n\n她的考研单词书不在原来的位置。桌上只剩一支笔和刚才接水前放下的保温杯，杯盖还拧开着，热气往上飘。她站住，视线在桌面扫了一遍——没有。椅子底下没有。旁边的空座也没有。\n\n邻座的男生还在低头做题，左手压着自己的考研书，右手握笔在草稿纸上演算。他的书包立在身体右侧，靠着椅子腿，拉链没完全拉上，露出一截书脊的颜色。\n\n周淇认出了那个颜色。\n\n深蓝色封面，白色印刷体书名，和她那本考研单词书一模一样。她自己的书脊上还有一道折痕，是上周塞进书包时不小心压的——现在那道折痕正从男生书包的开口处露出来。\n\n她把水杯放在桌上，没坐下。\n\n书里夹着她手写的租房合同草稿。三页纸，对折，塞在最后几页的夹层里。不是正式文件，但上面写了她的身份证号和联系电话。她不能让一个陌生人带着那东西离开。\n\n男生还在做题。他翻了一页自己桌上的书，用笔尖点了点某个选项，写下答案。他的动作很慢，没有要走的意思，也没有碰书包。\n\n周淇扫了一眼他摊在桌上的那本书。封面是红色的，和她那本完全不同。他显然没注意到自己收错了东西——可能刚才收拾桌面时顺手把那本深蓝色的书塞进了书包，以为是自己掉下去的。\n\n她不能直接说。周围是自习区，安静得能听见隔壁桌翻书页的声音。她也不能伸手去碰他的书包，更不能叫管理员过来——管理员只会让他打开书包检查，到时候合同的事就藏不住了。\n\n她需要让他自己发现。\n\n男生又翻了一页。周淇的手指搭在保温杯的杯身上，不锈钢的温度透过指尖传上来。她低头看了一眼自己的水杯——杯盖拧开着，水面离杯口不到两厘米。\n\n她松开手指，用指节轻轻推了一下杯身。\n\n保温杯向右侧倾倒，水从杯口涌出来，沿着桌面流开。水流的速度比她预想的快，先漫过她的笔，然后越过桌面那条看不见的中线，朝男生书包的方向淌过去。\n\n周淇“啊”了一声，声音不大，但在安静的自习区足够让邻座听见。\n\n男生抬起头。\n\n他先看到周淇站着，然后顺着她的视线低头——水已经流到他椅子腿旁边，快要碰到书包底部。他立刻把笔一扔，弯腰抓起书包，拉起来搁在自己腿上。\n\n书包拉链被他扯开，他往里看了一眼，大概是在检查有没有进水。\n\n然后他的手停住了。\n\n周淇看见他从书包里抽出一本深蓝色封面的书。他盯着封面看了两秒，又转头看了看自己桌上摊着的那本红色考研书。\n\n他抬起头，手里拿着那本不属于他的单词书，表情困惑，视线落在周淇脸上。",
+  "raw_response": "周淇端着水杯走回座位时，第一眼就发现桌上空了。\n\n她的考研单词书不在原来的位置。桌上只剩一支笔和刚才接水前放下的保温杯，杯盖还拧开着，热气往上飘。她站住，视线在桌面扫了一遍——没有。椅子底下没有。旁边的空座也没有。\n\n邻座的男生还在低头做题，左手压着自己的考研书，右手握笔在草稿纸上演算。他的书包立在身体右侧，靠着椅子腿，拉链没完全拉上，露出一截书脊的颜色。\n\n周淇认出了那个颜色。\n\n深蓝色封面，白色印刷体书名，和她那本考研单词书一模一样。她自己的书脊上还有一道折痕，是上周塞进书包时不小心压的——现在那道折痕正从男生书包的开口处露出来。\n\n她把水杯放在桌上，没坐下。\n\n书里夹着她手写的租房合同草稿。三页纸，对折，塞在最后几页的夹层里。不是正式文件，但上面写了她的身份证号和联系电话。她不能让一个陌生人带着那东西离开。\n\n男生还在做题。他翻了一页自己桌上的书，用笔尖点了点某个选项，写下答案。他的动作很慢，没有要走的意思，也没有碰书包。\n\n周淇扫了一眼他摊在桌上的那本书。封面是红色的，和她那本完全不同。他显然没注意到自己收错了东西——可能刚才收拾桌面时顺手把那本深蓝色的书塞进了书包，以为是自己掉下去的。\n\n她不能直接说。周围是自习区，安静得能听见隔壁桌翻书页的声音。她也不能伸手去碰他的书包，更不能叫管理员过来——管理员只会让他打开书包检查，到时候合同的事就藏不住了。\n\n她需要让他自己发现。\n\n男生又翻了一页。周淇的手指搭在保温杯的杯身上，不锈钢的温度透过指尖传上来。她低头看了一眼自己的水杯——杯盖拧开着，水面离杯口不到两厘米。\n\n她松开手指，用指节轻轻推了一下杯身。\n\n保温杯向右侧倾倒，水从杯口涌出来，沿着桌面流开。水流的速度比她预想的快，先漫过她的笔，然后越过桌面那条看不见的中线，朝男生书包的方向淌过去。\n\n周淇“啊”了一声，声音不大，但在安静的自习区足够让邻座听见。\n\n男生抬起头。\n\n他先看到周淇站着，然后顺着她的视线低头——水已经流到他椅子腿旁边，快要碰到书包底部。他立刻把笔一扔，弯腰抓起书包，拉起来搁在自己腿上。\n\n书包拉链被他扯开，他往里看了一眼，大概是在检查有没有进水。\n\n然后他的手停住了。\n\n周淇看见他从书包里抽出一本深蓝色封面的书。他盯着封面看了两秒，又转头看了看自己桌上摊着的那本红色考研书。\n\n他抬起头，手里拿着那本不属于他的单词书，表情困惑，视线落在周淇脸上。",
+  "input_tokens": 1582,
+  "output_tokens": 619,
+  "latency_ms": 19097,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "715a9d4babe03f523576cfe059eb75404d9d677547f6b557e80c4e3d30a2be9f",
+  "validation": {
+    "character_count": 1003,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "banned_sentence_hits": {},
+    "second_confirmation_hits": [],
+    "environment_coda_hits": [],
+    "stop_marker_first_char": null,
+    "post_stop_character_count": null,
+    "tempo_final_line_mismatch": false,
+    "manual_review_required": [
+      "viewpoint_violation",
+      "cross_mind_assertion",
+      "other_character_motive_as_fact",
+      "true_stop_state_position",
+      "visible_state_transition_count",
+      "relationship_or_meaning_summary",
+      "shared_atmosphere_declaration",
+      "narrator_correction_with_backstage_fact"
+    ]
+  },
+  "text_path": "cases\\NM-02\\drafts\\b-3.txt"
+}

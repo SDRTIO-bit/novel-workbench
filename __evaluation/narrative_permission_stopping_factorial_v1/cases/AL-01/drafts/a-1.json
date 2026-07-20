@@ -1,0 +1,63 @@
+{
+  "candidate_id": "64587492-a337-4d65-ace8-b46d00d65f1f",
+  "attempt_number": 1,
+  "group": "A",
+  "replica": 1,
+  "permission_policy": "CURRENT",
+  "stop_policy": "CURRENT",
+  "instruction_hash": null,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "policy_metadata": {
+      "group": "A",
+      "permission_policy": "CURRENT",
+      "stop_policy": "CURRENT",
+      "policy_version": "narrative-permission-stop-v1",
+      "policy_hash": "bcba9c79e51e6722c8796bc8a1defd65461d017dbbaf922efbe9c16df2ba3d4f",
+      "instruction_hash": null,
+      "permission_instruction_hash": null,
+      "stop_instruction_hash": null,
+      "seed": null
+    },
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "乔雨盯着手机屏幕上的撤回提示，那四个字像卡在屏幕里一样——“你这次的……”\n\n她没来得及往下想。\n\n同桌的脚步声从两排课桌外传过来，运动鞋底蹭着地砖，节奏不快，但方向明确。乔雨的拇指按上电源键，屏幕黑了。她把手机翻过来扣在桌面上，抬起头。\n\n同桌已经走到她桌边，手机横握着，屏幕亮着，嘴角带着那种“你过来看看这个”的表情。\n\n“你看什么呢？”乔雨先开了口，声音比平时大了一点，她自己也感觉到了。\n\n同桌没在意，把手机往她这边一转。“你看这个，我表姐发的，她家猫把窗帘整个拽下来了，房东说要从押金里扣。”\n\n屏幕上是一只灰白相间的猫蹲在满地窗帘布中间，表情无辜。乔雨笑了，笑声从喉咙里出来，有点短。\n\n“它还挺骄傲的。”乔雨说。\n\n“是吧？我表姐气死了，说这猫平时装得可乖了。”同桌把手机收回去，自己又看了两眼，然后锁屏放进校服口袋。\n\n乔雨的手指搭在自己手机背面，能感觉到机身还温着。她没翻过来看。\n\n“对了，”同桌往自己座位上一靠，从口袋里又摸出手机，“刚才我看班级群弹了条消息，老班发的，你看了没？”\n\n乔雨的手指在手机壳边缘停住。\n\n“没，”她说，“我手机刚才静音了。”\n\n“我还没点进去，”同桌划开屏幕，“好像是什么通知，不是作业吧？要是作业我就当没看见。”\n\n乔雨没接话。她把手机拿起来，按亮屏幕，点进企业微信。班级群的头像上挂着红点，最新一条消息的预览显示在列表里——“各位同学，关于下周的……”\n\n不是作业。\n\n乔雨把手机重新扣在桌面上。",
+  "raw_response": "乔雨盯着手机屏幕上的撤回提示，那四个字像卡在屏幕里一样——“你这次的……”\n\n她没来得及往下想。\n\n同桌的脚步声从两排课桌外传过来，运动鞋底蹭着地砖，节奏不快，但方向明确。乔雨的拇指按上电源键，屏幕黑了。她把手机翻过来扣在桌面上，抬起头。\n\n同桌已经走到她桌边，手机横握着，屏幕亮着，嘴角带着那种“你过来看看这个”的表情。\n\n“你看什么呢？”乔雨先开了口，声音比平时大了一点，她自己也感觉到了。\n\n同桌没在意，把手机往她这边一转。“你看这个，我表姐发的，她家猫把窗帘整个拽下来了，房东说要从押金里扣。”\n\n屏幕上是一只灰白相间的猫蹲在满地窗帘布中间，表情无辜。乔雨笑了，笑声从喉咙里出来，有点短。\n\n“它还挺骄傲的。”乔雨说。\n\n“是吧？我表姐气死了，说这猫平时装得可乖了。”同桌把手机收回去，自己又看了两眼，然后锁屏放进校服口袋。\n\n乔雨的手指搭在自己手机背面，能感觉到机身还温着。她没翻过来看。\n\n“对了，”同桌往自己座位上一靠，从口袋里又摸出手机，“刚才我看班级群弹了条消息，老班发的，你看了没？”\n\n乔雨的手指在手机壳边缘停住。\n\n“没，”她说，“我手机刚才静音了。”\n\n“我还没点进去，”同桌划开屏幕，“好像是什么通知，不是作业吧？要是作业我就当没看见。”\n\n乔雨没接话。她把手机拿起来，按亮屏幕，点进企业微信。班级群的头像上挂着红点，最新一条消息的预览显示在列表里——“各位同学，关于下周的……”\n\n不是作业。\n\n乔雨把手机重新扣在桌面上。",
+  "input_tokens": 1181,
+  "output_tokens": 399,
+  "latency_ms": 24658,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "4d5a39e898ab2cae7c8749913d1715c204ef930adefa161ef7ad845e18db5bad",
+  "validation": {
+    "character_count": 626,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "banned_sentence_hits": {},
+    "second_confirmation_hits": [],
+    "environment_coda_hits": [],
+    "stop_marker_first_char": null,
+    "post_stop_character_count": null,
+    "tempo_final_line_mismatch": false,
+    "manual_review_required": [
+      "viewpoint_violation",
+      "cross_mind_assertion",
+      "other_character_motive_as_fact",
+      "true_stop_state_position",
+      "visible_state_transition_count",
+      "relationship_or_meaning_summary",
+      "shared_atmosphere_declaration",
+      "narrator_correction_with_backstage_fact"
+    ]
+  },
+  "text_path": "cases\\AL-01\\drafts\\a-1.txt"
+}

@@ -1,0 +1,22 @@
+{
+  "run_id": "76a99772-c4ff-4096-a374-09fc55661da2",
+  "project_id": "4c8d77e3-ec87-44dd-bffa-161eefc5cacf",
+  "project_name": "最后一课",
+  "chapter_id": "98c2cd78-bca7-4fd7-8f8a-fa68714a0f27",
+  "chapter_title": "最后一课",
+  "workflow_profile_id": null,
+  "provider_id": "2015ffd1-4b76-462e-baa2-18b27748332c",
+  "provider_name": "本地演示",
+  "model_id": "mock-model",
+  "planner_prompt_version_id": null,
+  "writer_prompt_version_id": null,
+  "planner_candidate_id": "64e39303-43b1-4163-89e0-aa9e088e505a",
+  "writer_candidate_id": "80517cc7-e36d-4e45-b506-113294095d0c",
+  "critic_candidate_id": "2616f926-1580-4850-902f-8fa3d849c33d",
+  "reviser_candidate_id": "e2daa979-f82d-468f-a42f-83788cbb20c0",
+  "judge_candidate_id": "31781eff-b12e-4615-809b-9aebac7f403b",
+  "started_at": "2026-07-18T06:58:15.356499",
+  "completed_at": "2026-07-18T07:05:00.000000",
+  "status": "completed",
+  "notes": "由于 opencode provider 和 DeepSeek provider 均无法使用（频率限制/余额不足），最终使用 Mock Provider 完成流程验证。Planner v2 合同版本验证通过。"
+}

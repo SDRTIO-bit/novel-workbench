@@ -1,0 +1,3 @@
+event: message
+data: {"jsonrpc":"2.0","id":15,"result":{"content":[{"type":"text","text":"{\"id\":\"9886ea46-1f82-45b9-aae5-56a02f90b900\",\"kind\":\"style\",\"title\":\"写作风格\"}"}],"structuredContent":{"id":"9886ea46-1f82-45b9-aae5-56a02f90b900","kind":"style","title":"写作风格"},"isError":false}}
+

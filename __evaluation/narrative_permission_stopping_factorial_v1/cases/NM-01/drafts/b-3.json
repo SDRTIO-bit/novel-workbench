@@ -1,0 +1,64 @@
+{
+  "candidate_id": "6c9b59c0-9519-463f-ac1d-b9aad1121286",
+  "attempt_number": 1,
+  "group": "B",
+  "replica": 3,
+  "permission_policy": "STRICT_LIMITED",
+  "stop_policy": "CURRENT",
+  "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+    "policy_metadata": {
+      "group": "B",
+      "permission_policy": "STRICT_LIMITED",
+      "stop_policy": "CURRENT",
+      "policy_version": "narrative-permission-stop-v1",
+      "policy_hash": "a42fb8f38620720ad1dda5407ffa44c03e929f1b34d89ecb5fbf1b5ea7325c24",
+      "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+      "permission_instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+      "stop_instruction_hash": null,
+      "seed": null
+    },
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "地铁报站的女声从头顶传来，下一站是翠苑。林悄把手机从耳朵边拿下来，屏幕上的语音条已经变成了灰色小字——“对方已撤回一条消息”。\n\n她点了一下那条提示，什么反应也没有。\n\n车厢晃了一下，她肩膀撞上旁边的扶手杆。微信界面还停留在和室友的对话框，那条撤回的语音前面，是三个小时前她发的“今晚加班，大概九点到家”。室友没回那条。\n\n林悄把语音条往上划了划，没划出任何东西。她又点开室友的头像，拨了个语音通话。听筒里嘟了三声，变成了急促的忙音——对方正在通话中。\n\n她挂断，又拨了一次。还是占线。\n\n地铁减速，翠苑站的灯光从窗外扫进来。车门打开，几个人挤出去，几个人挤进来。林悄没动。她站在门边，低头看着屏幕上的对话框，把手机音量调到最大，把听筒凑近耳朵，重新点开那条“对方已撤回一条消息”的提示。\n\n什么也没有。\n\n她把手机从耳朵边拿开，拇指在对话框里飞快地打了几个字，删掉，又打了几个字，停下来。\n\n地铁启动，报站声又响了。下一站，翠苑南。两站路。\n\n林悄退出微信，打开通讯录，找到室友的电话号码，直接拨了过去。听筒里还是嘟了三声，然后跳成忙音。占线。\n\n她挂断，盯着屏幕看了两秒，又切回微信。室友的头像还在，朋友圈三天可见，签名是空的。对话框里，上一条消息还是室友撤回的那条，再往上是一周前发的电费分摊表。\n\n林悄把那条电费分摊表往上翻了翻，确认了一下时间，又拉回底部。\n\n她打了一行字：“刚在地铁上没听清，蓝色文件夹怎么啦？方便时回我～”\n\n发送。\n\n消息跳上去，左边弹出绿色的气泡。没有秒回。\n\n林悄把手机握在手里，屏幕朝下。地铁在隧道里轰隆隆地跑，窗玻璃上映着她自己的脸，眉头皱着。她又把手机翻过来，看了一眼对话框。没有回复。\n\n翠苑南站到了。\n\n车门打开。林悄没下车。她往车厢里面挪了两步，让开门口的位置，后背靠上另一侧的扶手杆。\n\n手机震了一下。\n\n她低头看。室友回了。\n\n三个字：“没事，”紧接着又弹出一条，“我帮你收起来了，回头说。”\n\n林悄盯着最后三个字。回头说。\n\n列车启动，报站声又响了。下一站不是她家。",
+  "raw_response": "地铁报站的女声从头顶传来，下一站是翠苑。林悄把手机从耳朵边拿下来，屏幕上的语音条已经变成了灰色小字——“对方已撤回一条消息”。\n\n她点了一下那条提示，什么反应也没有。\n\n车厢晃了一下，她肩膀撞上旁边的扶手杆。微信界面还停留在和室友的对话框，那条撤回的语音前面，是三个小时前她发的“今晚加班，大概九点到家”。室友没回那条。\n\n林悄把语音条往上划了划，没划出任何东西。她又点开室友的头像，拨了个语音通话。听筒里嘟了三声，变成了急促的忙音——对方正在通话中。\n\n她挂断，又拨了一次。还是占线。\n\n地铁减速，翠苑站的灯光从窗外扫进来。车门打开，几个人挤出去，几个人挤进来。林悄没动。她站在门边，低头看着屏幕上的对话框，把手机音量调到最大，把听筒凑近耳朵，重新点开那条“对方已撤回一条消息”的提示。\n\n什么也没有。\n\n她把手机从耳朵边拿开，拇指在对话框里飞快地打了几个字，删掉，又打了几个字，停下来。\n\n地铁启动，报站声又响了。下一站，翠苑南。两站路。\n\n林悄退出微信，打开通讯录，找到室友的电话号码，直接拨了过去。听筒里还是嘟了三声，然后跳成忙音。占线。\n\n她挂断，盯着屏幕看了两秒，又切回微信。室友的头像还在，朋友圈三天可见，签名是空的。对话框里，上一条消息还是室友撤回的那条，再往上是一周前发的电费分摊表。\n\n林悄把那条电费分摊表往上翻了翻，确认了一下时间，又拉回底部。\n\n她打了一行字：“刚在地铁上没听清，蓝色文件夹怎么啦？方便时回我～”\n\n发送。\n\n消息跳上去，左边弹出绿色的气泡。没有秒回。\n\n林悄把手机握在手里，屏幕朝下。地铁在隧道里轰隆隆地跑，窗玻璃上映着她自己的脸，眉头皱着。她又把手机翻过来，看了一眼对话框。没有回复。\n\n翠苑南站到了。\n\n车门打开。林悄没下车。她往车厢里面挪了两步，让开门口的位置，后背靠上另一侧的扶手杆。\n\n手机震了一下。\n\n她低头看。室友回了。\n\n三个字：“没事，”紧接着又弹出一条，“我帮你收起来了，回头说。”\n\n林悄盯着最后三个字。回头说。\n\n列车启动，报站声又响了。下一站不是她家。",
+  "input_tokens": 1529,
+  "output_tokens": 552,
+  "latency_ms": 20712,
+  "finish_reason": "stop",
+  "error_code": "TEMPO_FINAL_LINE_MISMATCH",
+  "error_message": "TEMPO_FINAL_LINE_MISMATCH: final paragraph must include the required marker '回头说'",
+  "rendered_user_prompt_sha256": "b520c0239a973c1c11017670f85b61c1724029a87954ad336c6188638e2446ca",
+  "validation": {
+    "character_count": 860,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "banned_sentence_hits": {},
+    "second_confirmation_hits": [],
+    "environment_coda_hits": [],
+    "stop_marker_first_char": null,
+    "post_stop_character_count": null,
+    "tempo_final_line_mismatch": true,
+    "manual_review_required": [
+      "viewpoint_violation",
+      "cross_mind_assertion",
+      "other_character_motive_as_fact",
+      "true_stop_state_position",
+      "visible_state_transition_count",
+      "relationship_or_meaning_summary",
+      "shared_atmosphere_declaration",
+      "narrator_correction_with_backstage_fact"
+    ]
+  },
+  "text_path": "cases\\NM-01\\drafts\\b-3.txt"
+}

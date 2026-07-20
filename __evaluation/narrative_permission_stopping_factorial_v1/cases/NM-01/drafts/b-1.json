@@ -1,0 +1,64 @@
+{
+  "candidate_id": "fa61bb73-fd89-4a2f-b45b-9aea9aa3e886",
+  "attempt_number": 1,
+  "group": "B",
+  "replica": 1,
+  "permission_policy": "STRICT_LIMITED",
+  "stop_policy": "CURRENT",
+  "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+    "policy_metadata": {
+      "group": "B",
+      "permission_policy": "STRICT_LIMITED",
+      "stop_policy": "CURRENT",
+      "policy_version": "narrative-permission-stop-v1",
+      "policy_hash": "a42fb8f38620720ad1dda5407ffa44c03e929f1b34d89ecb5fbf1b5ea7325c24",
+      "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+      "permission_instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+      "stop_instruction_hash": null,
+      "seed": null
+    },
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "地铁报站的女声从头顶传下来，下一站是翠苑。林悄把手机从耳边拿开，屏幕上的微信界面还亮着，那条语音条后面跟着一行灰色小字——\"对方撤回了一条消息\"。\n\n她拇指往上划了一下，聊天记录里只剩下自己早上发的那句\"晚上回来带奶茶\"，和对方撤回后空出来的位置。\n\n语音的前半句是从耳机漏出来的。她当时正在刷二维码出站，耳机线挂在脖子上，外放音量不大，但\"你桌上那个蓝色文件夹我\"这几个字咬得很清楚。后面被进站的广播盖过去，等她低头再点，语音条已经消失了。\n\n林悄靠在车门边的扶手上，给室友拨了个电话。\n\n忙音。\n\n她又拨了一次，还是占线。\n\n车厢里人不多，对面坐着一个戴耳机打游戏的男生，旁边站着一个拎超市袋子的阿姨。空调出风口吹得她额前的头发往一边偏，她没管，盯着手机屏幕上的时间——下一站翠苑，再下一站就是她下车的站。\n\n蓝色文件夹。\n\n她记得自己早上出门前把它放在书桌左手边，封面右下角贴了一张黄色便利贴，上面写着\"明天投标，勿动\"。文件夹里是明天上午十点要交的投标文件，纸质版和U盘都在里面。她昨晚做完最后一遍核对，特意放在显眼的位置，怕自己忘带。\n\n林悄点开微信，打字：\"刚在地铁上没听清，蓝色文件夹怎么啦？方便时回我～\"\n\n发出去。\n\n她把手机屏幕朝上握在手里，看着聊天窗口最上面的状态从\"在线\"变成\"对方正在输入...\"，停了两秒，又变回\"在线\"。\n\n报站广播又响了，翠苑到了。车门打开，那个拎超市袋子的阿姨下了车，上来一个穿校服的中学生。车门关上，列车重新启动。\n\n林悄低头看手机。\n\n\"对方正在输入...\"又闪了一下。\n\n她等了几秒，状态又消失了。\n\n手指在屏幕边缘敲了两下。她又点进室友的聊天记录，往上翻到昨晚。昨晚十一点室友发过一条\"你明天几点走\"，她回了\"七点半\"，室友回了个\"OK\"。再往上就是一些水电费转账和快递代收的日常消息，没什么异常。\n\n手机震了一下。\n\n聊天窗口弹出一条新消息：\"没事，我帮你收起来了，回头说。\"\n\n林悄读了两遍。句号结尾，没有表情包，没有波浪线。\n\n她打了两个字：\"好的\"，拇指悬在发送键上方停了一秒，按下去。\n\n列车开始减速，车窗外的隧道墙壁变成了站台的灯光。她到站了。",
+  "raw_response": "地铁报站的女声从头顶传下来，下一站是翠苑。林悄把手机从耳边拿开，屏幕上的微信界面还亮着，那条语音条后面跟着一行灰色小字——\"对方撤回了一条消息\"。\n\n她拇指往上划了一下，聊天记录里只剩下自己早上发的那句\"晚上回来带奶茶\"，和对方撤回后空出来的位置。\n\n语音的前半句是从耳机漏出来的。她当时正在刷二维码出站，耳机线挂在脖子上，外放音量不大，但\"你桌上那个蓝色文件夹我\"这几个字咬得很清楚。后面被进站的广播盖过去，等她低头再点，语音条已经消失了。\n\n林悄靠在车门边的扶手上，给室友拨了个电话。\n\n忙音。\n\n她又拨了一次，还是占线。\n\n车厢里人不多，对面坐着一个戴耳机打游戏的男生，旁边站着一个拎超市袋子的阿姨。空调出风口吹得她额前的头发往一边偏，她没管，盯着手机屏幕上的时间——下一站翠苑，再下一站就是她下车的站。\n\n蓝色文件夹。\n\n她记得自己早上出门前把它放在书桌左手边，封面右下角贴了一张黄色便利贴，上面写着\"明天投标，勿动\"。文件夹里是明天上午十点要交的投标文件，纸质版和U盘都在里面。她昨晚做完最后一遍核对，特意放在显眼的位置，怕自己忘带。\n\n林悄点开微信，打字：\"刚在地铁上没听清，蓝色文件夹怎么啦？方便时回我～\"\n\n发出去。\n\n她把手机屏幕朝上握在手里，看着聊天窗口最上面的状态从\"在线\"变成\"对方正在输入...\"，停了两秒，又变回\"在线\"。\n\n报站广播又响了，翠苑到了。车门打开，那个拎超市袋子的阿姨下了车，上来一个穿校服的中学生。车门关上，列车重新启动。\n\n林悄低头看手机。\n\n\"对方正在输入...\"又闪了一下。\n\n她等了几秒，状态又消失了。\n\n手指在屏幕边缘敲了两下。她又点进室友的聊天记录，往上翻到昨晚。昨晚十一点室友发过一条\"你明天几点走\"，她回了\"七点半\"，室友回了个\"OK\"。再往上就是一些水电费转账和快递代收的日常消息，没什么异常。\n\n手机震了一下。\n\n聊天窗口弹出一条新消息：\"没事，我帮你收起来了，回头说。\"\n\n林悄读了两遍。句号结尾，没有表情包，没有波浪线。\n\n她打了两个字：\"好的\"，拇指悬在发送键上方停了一秒，按下去。\n\n列车开始减速，车窗外的隧道墙壁变成了站台的灯光。她到站了。",
+  "input_tokens": 1529,
+  "output_tokens": 565,
+  "latency_ms": 23822,
+  "finish_reason": "stop",
+  "error_code": "TEMPO_FINAL_LINE_MISMATCH",
+  "error_message": "TEMPO_FINAL_LINE_MISMATCH: final paragraph must include the required marker '回头说'",
+  "rendered_user_prompt_sha256": "b520c0239a973c1c11017670f85b61c1724029a87954ad336c6188638e2446ca",
+  "validation": {
+    "character_count": 907,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "banned_sentence_hits": {},
+    "second_confirmation_hits": [],
+    "environment_coda_hits": [],
+    "stop_marker_first_char": null,
+    "post_stop_character_count": null,
+    "tempo_final_line_mismatch": true,
+    "manual_review_required": [
+      "viewpoint_violation",
+      "cross_mind_assertion",
+      "other_character_motive_as_fact",
+      "true_stop_state_position",
+      "visible_state_transition_count",
+      "relationship_or_meaning_summary",
+      "shared_atmosphere_declaration",
+      "narrator_correction_with_backstage_fact"
+    ]
+  },
+  "text_path": "cases\\NM-01\\drafts\\b-1.txt"
+}

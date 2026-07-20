@@ -1,0 +1,1 @@
+﻿{"jsonrpc":"2.0","id":100,"method":"tools/call","params":{"name":"select_critic_issues","arguments":{"run_id":"76a99772-c4ff-4096-a374-09fc55661da2","issue_ids":["I02","I05"],"operation_by_issue":"{\"I02\":\"ground_detail\",\"I05\":\"rhythm_adjust\"}"}}}

@@ -1,0 +1,482 @@
+[
+  {
+    "blind_id": "A2D97246CFF1",
+    "case_id": "NM-03",
+    "text_path": "cases\\NM-03\\drafts\\c-1.txt"
+  },
+  {
+    "blind_id": "F7417E3732B2",
+    "case_id": "ROMANCE-02",
+    "text_path": "cases\\ROMANCE-02\\drafts\\b-3.txt"
+  },
+  {
+    "blind_id": "5A17CFF2EF36",
+    "case_id": "NM-03",
+    "text_path": "cases\\NM-03\\drafts\\d-2.txt"
+  },
+  {
+    "blind_id": "25CE92428AF8",
+    "case_id": "CO-04",
+    "text_path": "cases\\CO-04\\drafts\\d-2.txt"
+  },
+  {
+    "blind_id": "94E59E168EA6",
+    "case_id": "NM-02",
+    "text_path": "cases\\NM-02\\drafts\\b-2.txt"
+  },
+  {
+    "blind_id": "7F5D46E000F9",
+    "case_id": "ROMANCE-02",
+    "text_path": "cases\\ROMANCE-02\\drafts\\a-3.txt"
+  },
+  {
+    "blind_id": "B9C9B40239B2",
+    "case_id": "NM-04",
+    "text_path": "cases\\NM-04\\drafts\\c-1.txt"
+  },
+  {
+    "blind_id": "FA467A776701",
+    "case_id": "CO-04",
+    "text_path": "cases\\CO-04\\drafts\\d-1.txt"
+  },
+  {
+    "blind_id": "C1E99060DEF4",
+    "case_id": "AL-01",
+    "text_path": "cases\\AL-01\\drafts\\a-3.txt"
+  },
+  {
+    "blind_id": "FBD3E77C7BDB",
+    "case_id": "AL-01",
+    "text_path": "cases\\AL-01\\drafts\\c-2.txt"
+  },
+  {
+    "blind_id": "30CBFC4DAC4F",
+    "case_id": "CO-04",
+    "text_path": "cases\\CO-04\\drafts\\b-1.txt"
+  },
+  {
+    "blind_id": "32219C08A5F2",
+    "case_id": "CO-05",
+    "text_path": "cases\\CO-05\\drafts\\c-2.txt"
+  },
+  {
+    "blind_id": "E9E9789FD59F",
+    "case_id": "CO-05",
+    "text_path": "cases\\CO-05\\drafts\\a-1.txt"
+  },
+  {
+    "blind_id": "2FB158408D51",
+    "case_id": "NM-04",
+    "text_path": "cases\\NM-04\\drafts\\a-2.txt"
+  },
+  {
+    "blind_id": "37B923DA043D",
+    "case_id": "AL-01",
+    "text_path": "cases\\AL-01\\drafts\\b-3.txt"
+  },
+  {
+    "blind_id": "C92769458045",
+    "case_id": "NM-04",
+    "text_path": "cases\\NM-04\\drafts\\b-1.txt"
+  },
+  {
+    "blind_id": "96D6D5AD77D0",
+    "case_id": "CO-04",
+    "text_path": "cases\\CO-04\\drafts\\c-1.txt"
+  },
+  {
+    "blind_id": "58525F4430AE",
+    "case_id": "CO-04",
+    "text_path": "cases\\CO-04\\drafts\\a-2.txt"
+  },
+  {
+    "blind_id": "53D40BC29E6B",
+    "case_id": "CO-05",
+    "text_path": "cases\\CO-05\\drafts\\b-1.txt"
+  },
+  {
+    "blind_id": "E7EB4CAD305C",
+    "case_id": "AL-01",
+    "text_path": "cases\\AL-01\\drafts\\a-2.txt"
+  },
+  {
+    "blind_id": "A80F1E919629",
+    "case_id": "NM-01",
+    "text_path": "cases\\NM-01\\drafts\\c-2.txt"
+  },
+  {
+    "blind_id": "B4F79D464693",
+    "case_id": "NM-01",
+    "text_path": "cases\\NM-01\\drafts\\d-2.txt"
+  },
+  {
+    "blind_id": "919C85E7623B",
+    "case_id": "ROMANCE-02",
+    "text_path": "cases\\ROMANCE-02\\drafts\\c-3.txt"
+  },
+  {
+    "blind_id": "C4B89AFB1562",
+    "case_id": "NM-04",
+    "text_path": "cases\\NM-04\\drafts\\d-1.txt"
+  },
+  {
+    "blind_id": "476025D719F8",
+    "case_id": "CO-05",
+    "text_path": "cases\\CO-05\\drafts\\a-2.txt"
+  },
+  {
+    "blind_id": "3D64DE8CF2BD",
+    "case_id": "NM-01",
+    "text_path": "cases\\NM-01\\drafts\\d-3.txt"
+  },
+  {
+    "blind_id": "347A74EF235F",
+    "case_id": "ROMANCE-02",
+    "text_path": "cases\\ROMANCE-02\\drafts\\d-2.txt"
+  },
+  {
+    "blind_id": "D7B61C2D1B66",
+    "case_id": "ROMANCE-02",
+    "text_path": "cases\\ROMANCE-02\\drafts\\b-1.txt"
+  },
+  {
+    "blind_id": "4895AC6D05E9",
+    "case_id": "ROMANCE-02",
+    "text_path": "cases\\ROMANCE-02\\drafts\\a-2.txt"
+  },
+  {
+    "blind_id": "E2D6BBD48CDF",
+    "case_id": "AL-01",
+    "text_path": "cases\\AL-01\\drafts\\d-2.txt"
+  },
+  {
+    "blind_id": "E1D96667AB3D",
+    "case_id": "NM-01",
+    "text_path": "cases\\NM-01\\drafts\\a-2.txt"
+  },
+  {
+    "blind_id": "746862DDD1FB",
+    "case_id": "NM-02",
+    "text_path": "cases\\NM-02\\drafts\\d-2.txt"
+  },
+  {
+    "blind_id": "66CAA3303477",
+    "case_id": "AL-01",
+    "text_path": "cases\\AL-01\\drafts\\c-3.txt"
+  },
+  {
+    "blind_id": "AFBB012C2680",
+    "case_id": "ROMANCE-02",
+    "text_path": "cases\\ROMANCE-02\\drafts\\c-2.txt"
+  },
+  {
+    "blind_id": "C46E30DC8F67",
+    "case_id": "ROMANCE-02",
+    "text_path": "cases\\ROMANCE-02\\drafts\\a-1.txt"
+  },
+  {
+    "blind_id": "CBE7CD8C57BA",
+    "case_id": "CO-05",
+    "text_path": "cases\\CO-05\\drafts\\d-2.txt"
+  },
+  {
+    "blind_id": "302E9EC7D94F",
+    "case_id": "NM-04",
+    "text_path": "cases\\NM-04\\drafts\\c-3.txt"
+  },
+  {
+    "blind_id": "FD924880B3B7",
+    "case_id": "AL-01",
+    "text_path": "cases\\AL-01\\drafts\\d-1.txt"
+  },
+  {
+    "blind_id": "28066C60951C",
+    "case_id": "NM-03",
+    "text_path": "cases\\NM-03\\drafts\\a-1.txt"
+  },
+  {
+    "blind_id": "CBAFF0D5CD4A",
+    "case_id": "AL-01",
+    "text_path": "cases\\AL-01\\drafts\\b-2.txt"
+  },
+  {
+    "blind_id": "62E4B1A23645",
+    "case_id": "NM-02",
+    "text_path": "cases\\NM-02\\drafts\\b-1.txt"
+  },
+  {
+    "blind_id": "A6AD28658652",
+    "case_id": "NM-02",
+    "text_path": "cases\\NM-02\\drafts\\d-3.txt"
+  },
+  {
+    "blind_id": "3C53631950E8",
+    "case_id": "NM-04",
+    "text_path": "cases\\NM-04\\drafts\\a-3.txt"
+  },
+  {
+    "blind_id": "FAA36ACAC644",
+    "case_id": "NM-03",
+    "text_path": "cases\\NM-03\\drafts\\b-3.txt"
+  },
+  {
+    "blind_id": "BFE26DF12D99",
+    "case_id": "NM-02",
+    "text_path": "cases\\NM-02\\drafts\\a-3.txt"
+  },
+  {
+    "blind_id": "83D2E0A7D904",
+    "case_id": "CO-05",
+    "text_path": "cases\\CO-05\\drafts\\d-1.txt"
+  },
+  {
+    "blind_id": "21E225B058EE",
+    "case_id": "NM-04",
+    "text_path": "cases\\NM-04\\drafts\\d-3.txt"
+  },
+  {
+    "blind_id": "1E080D1B2A65",
+    "case_id": "ROMANCE-02",
+    "text_path": "cases\\ROMANCE-02\\drafts\\b-2.txt"
+  },
+  {
+    "blind_id": "C7EB236B6170",
+    "case_id": "NM-02",
+    "text_path": "cases\\NM-02\\drafts\\c-3.txt"
+  },
+  {
+    "blind_id": "E5780E3B6406",
+    "case_id": "NM-03",
+    "text_path": "cases\\NM-03\\drafts\\c-3.txt"
+  },
+  {
+    "blind_id": "07813E15715E",
+    "case_id": "NM-04",
+    "text_path": "cases\\NM-04\\drafts\\c-2.txt"
+  },
+  {
+    "blind_id": "61BA8C54903F",
+    "case_id": "AL-01",
+    "text_path": "cases\\AL-01\\drafts\\a-1.txt"
+  },
+  {
+    "blind_id": "A6F4668E93E4",
+    "case_id": "CO-05",
+    "text_path": "cases\\CO-05\\drafts\\a-3.txt"
+  },
+  {
+    "blind_id": "E2E45C0B9E13",
+    "case_id": "CO-04",
+    "text_path": "cases\\CO-04\\drafts\\c-2.txt"
+  },
+  {
+    "blind_id": "DE5232F6E3D4",
+    "case_id": "NM-03",
+    "text_path": "cases\\NM-03\\drafts\\b-1.txt"
+  },
+  {
+    "blind_id": "2E04BB0861BE",
+    "case_id": "CO-05",
+    "text_path": "cases\\CO-05\\drafts\\c-3.txt"
+  },
+  {
+    "blind_id": "19155D1CBDF2",
+    "case_id": "NM-02",
+    "text_path": "cases\\NM-02\\drafts\\a-2.txt"
+  },
+  {
+    "blind_id": "1EF4F51F6D0A",
+    "case_id": "NM-02",
+    "text_path": "cases\\NM-02\\drafts\\d-1.txt"
+  },
+  {
+    "blind_id": "E7CD10813AEC",
+    "case_id": "NM-02",
+    "text_path": "cases\\NM-02\\drafts\\a-1.txt"
+  },
+  {
+    "blind_id": "82A477347899",
+    "case_id": "NM-01",
+    "text_path": "cases\\NM-01\\drafts\\c-3.txt"
+  },
+  {
+    "blind_id": "8BF8666B647A",
+    "case_id": "NM-04",
+    "text_path": "cases\\NM-04\\drafts\\b-3.txt"
+  },
+  {
+    "blind_id": "818AD63DD1C1",
+    "case_id": "ROMANCE-02",
+    "text_path": "cases\\ROMANCE-02\\drafts\\c-1.txt"
+  },
+  {
+    "blind_id": "C45BE50814B2",
+    "case_id": "NM-04",
+    "text_path": "cases\\NM-04\\drafts\\a-1.txt"
+  },
+  {
+    "blind_id": "11E91479B9CD",
+    "case_id": "NM-01",
+    "text_path": "cases\\NM-01\\drafts\\b-2.txt"
+  },
+  {
+    "blind_id": "1E579D0FF0FE",
+    "case_id": "NM-04",
+    "text_path": "cases\\NM-04\\drafts\\b-2.txt"
+  },
+  {
+    "blind_id": "88C5A3057D4A",
+    "case_id": "CO-04",
+    "text_path": "cases\\CO-04\\drafts\\a-3.txt"
+  },
+  {
+    "blind_id": "B5C36A9FFEEB",
+    "case_id": "AL-01",
+    "text_path": "cases\\AL-01\\drafts\\d-3.txt"
+  },
+  {
+    "blind_id": "083AA60BF6BE",
+    "case_id": "CO-04",
+    "text_path": "cases\\CO-04\\drafts\\d-3.txt"
+  },
+  {
+    "blind_id": "0C7F41681442",
+    "case_id": "CO-05",
+    "text_path": "cases\\CO-05\\drafts\\b-3.txt"
+  },
+  {
+    "blind_id": "0BB2C0334C95",
+    "case_id": "NM-03",
+    "text_path": "cases\\NM-03\\drafts\\d-3.txt"
+  },
+  {
+    "blind_id": "7900FF4338E1",
+    "case_id": "NM-02",
+    "text_path": "cases\\NM-02\\drafts\\c-2.txt"
+  },
+  {
+    "blind_id": "B065F4A49B08",
+    "case_id": "AL-01",
+    "text_path": "cases\\AL-01\\drafts\\b-1.txt"
+  },
+  {
+    "blind_id": "B8A3A02CB721",
+    "case_id": "NM-02",
+    "text_path": "cases\\NM-02\\drafts\\c-1.txt"
+  },
+  {
+    "blind_id": "73D3DB6FE4F3",
+    "case_id": "ROMANCE-02",
+    "text_path": "cases\\ROMANCE-02\\drafts\\d-1.txt"
+  },
+  {
+    "blind_id": "6C5CE1BC8F29",
+    "case_id": "ROMANCE-02",
+    "text_path": "cases\\ROMANCE-02\\drafts\\d-3.txt"
+  },
+  {
+    "blind_id": "4ADFF8A34E13",
+    "case_id": "NM-02",
+    "text_path": "cases\\NM-02\\drafts\\b-3.txt"
+  },
+  {
+    "blind_id": "E9DDAF6B65ED",
+    "case_id": "NM-03",
+    "text_path": "cases\\NM-03\\drafts\\c-2.txt"
+  },
+  {
+    "blind_id": "9AB4DF309388",
+    "case_id": "CO-04",
+    "text_path": "cases\\CO-04\\drafts\\a-1.txt"
+  },
+  {
+    "blind_id": "0306B5B0F6F4",
+    "case_id": "NM-03",
+    "text_path": "cases\\NM-03\\drafts\\b-2.txt"
+  },
+  {
+    "blind_id": "F5B6C17FC99E",
+    "case_id": "NM-01",
+    "text_path": "cases\\NM-01\\drafts\\c-1.txt"
+  },
+  {
+    "blind_id": "756CC7F0BCBF",
+    "case_id": "CO-05",
+    "text_path": "cases\\CO-05\\drafts\\b-2.txt"
+  },
+  {
+    "blind_id": "B1DA5884A41A",
+    "case_id": "CO-04",
+    "text_path": "cases\\CO-04\\drafts\\b-3.txt"
+  },
+  {
+    "blind_id": "9D9CF040B8EF",
+    "case_id": "NM-03",
+    "text_path": "cases\\NM-03\\drafts\\a-3.txt"
+  },
+  {
+    "blind_id": "B7B8A5C565C2",
+    "case_id": "CO-04",
+    "text_path": "cases\\CO-04\\drafts\\b-2.txt"
+  },
+  {
+    "blind_id": "257E086B4CA9",
+    "case_id": "NM-03",
+    "text_path": "cases\\NM-03\\drafts\\d-1.txt"
+  },
+  {
+    "blind_id": "1BB069FE8D47",
+    "case_id": "NM-01",
+    "text_path": "cases\\NM-01\\drafts\\a-3.txt"
+  },
+  {
+    "blind_id": "F84A0684ED26",
+    "case_id": "CO-05",
+    "text_path": "cases\\CO-05\\drafts\\c-1.txt"
+  },
+  {
+    "blind_id": "B7DCE5E20D38",
+    "case_id": "AL-01",
+    "text_path": "cases\\AL-01\\drafts\\c-1.txt"
+  },
+  {
+    "blind_id": "08D3564B5A40",
+    "case_id": "NM-01",
+    "text_path": "cases\\NM-01\\drafts\\b-3.txt"
+  },
+  {
+    "blind_id": "E391C542F4FE",
+    "case_id": "CO-05",
+    "text_path": "cases\\CO-05\\drafts\\d-3.txt"
+  },
+  {
+    "blind_id": "79175D3842F5",
+    "case_id": "NM-01",
+    "text_path": "cases\\NM-01\\drafts\\a-1.txt"
+  },
+  {
+    "blind_id": "C0E89C866F48",
+    "case_id": "NM-01",
+    "text_path": "cases\\NM-01\\drafts\\b-1.txt"
+  },
+  {
+    "blind_id": "6B7D46F108BA",
+    "case_id": "NM-04",
+    "text_path": "cases\\NM-04\\drafts\\d-2.txt"
+  },
+  {
+    "blind_id": "4AE82D6B06D2",
+    "case_id": "NM-01",
+    "text_path": "cases\\NM-01\\drafts\\d-1.txt"
+  },
+  {
+    "blind_id": "E737B209DA3C",
+    "case_id": "CO-04",
+    "text_path": "cases\\CO-04\\drafts\\c-3.txt"
+  },
+  {
+    "blind_id": "5AF8AA4F3EDE",
+    "case_id": "NM-03",
+    "text_path": "cases\\NM-03\\drafts\\a-2.txt"
+  }
+]

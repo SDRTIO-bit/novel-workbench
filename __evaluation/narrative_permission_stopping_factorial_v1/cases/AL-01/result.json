@@ -1,0 +1,798 @@
+{
+  "case_id": "AL-01",
+  "category": "校园误会",
+  "title": "撤回的作业评语",
+  "run_id": "500696e4-5bfd-4877-ba83-f750564b3aae",
+  "planner": {
+    "candidate_id": "84211002-105a-459f-ac9c-6fb2180f0c74",
+    "error_code": null,
+    "error_message": null
+  },
+  "drafts": [
+    {
+      "candidate_id": "41e857f2-59b1-49e2-a2a9-ebd4e8815283",
+      "attempt_number": 1,
+      "group": "C",
+      "replica": 1,
+      "permission_policy": "CURRENT",
+      "stop_policy": "STRICT_STOP",
+      "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+        "policy_metadata": {
+          "group": "C",
+          "permission_policy": "CURRENT",
+          "stop_policy": "STRICT_STOP",
+          "policy_version": "narrative-permission-stop-v1",
+          "policy_hash": "15e6b754a467a03569fe265abb7861ce24f144ba737ce3f2973776c1c2e76d47",
+          "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+          "permission_instruction_hash": null,
+          "stop_instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+          "seed": null
+        },
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "课间的教室里充斥着桌椅拖动和聊天的声音。乔雨低头看着手机屏幕，通知栏上那条灰色的“对方撤回了一条消息”还挂在那里。她盯着预览栏里仅剩的四个字——“你这次的……”——手指停在屏幕上方没动。\n\n班主任发的。企业微信。发完又撤了。\n\n乔雨脑子里转过几个可能：作业批语？上周的随堂测试？还是她前天课代表交表时漏填的那一栏？\n\n脚步声靠近。她抬起眼皮，同桌正从教室后门的方向走回来，手里攥着手机，屏幕还亮着，脸上的表情介于“你猜我看到了什么”和“你绝对想不到”之间。\n\n乔雨拇指一按，锁屏。\n\n屏幕黑下去的瞬间，她把手机翻了个面扣在桌上，抬起头，赶在同桌张嘴之前开了口：“你在看什么？笑成这样。”\n\n同桌一屁股坐回椅子上，胳膊肘撑在两人课桌之间的分界线上，把手机往她这边歪了歪：“你看这个，三班那个李什么来着，在操场摔了个狗啃泥，被人拍下来了，表情绝了。”\n\n乔雨凑过去看了一眼。视频里一个男生在跑道上绊了一跤，脸朝下摔进草坪，评论区已经盖了三十多楼。\n\n她笑了两声，把视线收回来，手指无意识地碰了碰自己扣在桌上的手机壳边缘。\n\n同桌还在往下划评论，边划边笑，完全没有提撤回消息的事。乔雨的余光扫过自己的手机背面，黑色的壳子上沾了点铅笔灰，她拿拇指蹭了一下，没蹭掉。\n\n“哦对了，”同桌忽然把手机一收，抬起头，“刚班主任在班级群里发东西了，你看了没？”\n\n乔雨的手停住。\n\n她拿起手机，解锁，点开班级群。最新一条消息顶在聊天列表最上方，发送时间是两分钟前——和她那条撤回提示几乎同时。\n\n群消息预览栏跳出来的几个字和她刚才看到的四个字完全不同。\n\n乔雨盯着预览栏里那行和作业无关的文字，手指没点进去。",
+      "raw_response": "课间的教室里充斥着桌椅拖动和聊天的声音。乔雨低头看着手机屏幕，通知栏上那条灰色的“对方撤回了一条消息”还挂在那里。她盯着预览栏里仅剩的四个字——“你这次的……”——手指停在屏幕上方没动。\n\n班主任发的。企业微信。发完又撤了。\n\n乔雨脑子里转过几个可能：作业批语？上周的随堂测试？还是她前天课代表交表时漏填的那一栏？\n\n脚步声靠近。她抬起眼皮，同桌正从教室后门的方向走回来，手里攥着手机，屏幕还亮着，脸上的表情介于“你猜我看到了什么”和“你绝对想不到”之间。\n\n乔雨拇指一按，锁屏。\n\n屏幕黑下去的瞬间，她把手机翻了个面扣在桌上，抬起头，赶在同桌张嘴之前开了口：“你在看什么？笑成这样。”\n\n同桌一屁股坐回椅子上，胳膊肘撑在两人课桌之间的分界线上，把手机往她这边歪了歪：“你看这个，三班那个李什么来着，在操场摔了个狗啃泥，被人拍下来了，表情绝了。”\n\n乔雨凑过去看了一眼。视频里一个男生在跑道上绊了一跤，脸朝下摔进草坪，评论区已经盖了三十多楼。\n\n她笑了两声，把视线收回来，手指无意识地碰了碰自己扣在桌上的手机壳边缘。\n\n同桌还在往下划评论，边划边笑，完全没有提撤回消息的事。乔雨的余光扫过自己的手机背面，黑色的壳子上沾了点铅笔灰，她拿拇指蹭了一下，没蹭掉。\n\n“哦对了，”同桌忽然把手机一收，抬起头，“刚班主任在班级群里发东西了，你看了没？”\n\n乔雨的手停住。\n\n她拿起手机，解锁，点开班级群。最新一条消息顶在聊天列表最上方，发送时间是两分钟前——和她那条撤回提示几乎同时。\n\n群消息预览栏跳出来的几个字和她刚才看到的四个字完全不同。\n\n乔雨盯着预览栏里那行和作业无关的文字，手指没点进去。",
+      "input_tokens": 1331,
+      "output_tokens": 435,
+      "latency_ms": 20975,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "dc9bbab8f9a0b5bbddd77fca3dbf9ca6ba7fcbdacbd4c1a0f0e78e5bd8b04f56",
+      "validation": {
+        "character_count": 695,
+        "validator_codes": [
+          "STOP_MARKER_LITERAL_MISS"
+        ],
+        "banned_sentence_hits": {},
+        "second_confirmation_hits": [],
+        "environment_coda_hits": [],
+        "stop_marker_first_char": null,
+        "post_stop_character_count": null,
+        "tempo_final_line_mismatch": false,
+        "manual_review_required": [
+          "viewpoint_violation",
+          "cross_mind_assertion",
+          "other_character_motive_as_fact",
+          "true_stop_state_position",
+          "visible_state_transition_count",
+          "relationship_or_meaning_summary",
+          "shared_atmosphere_declaration",
+          "narrator_correction_with_backstage_fact"
+        ]
+      },
+      "text_path": "cases\\AL-01\\drafts\\c-1.txt"
+    },
+    {
+      "candidate_id": "bfc1def6-a19d-4d82-a941-e1c69084357f",
+      "attempt_number": 1,
+      "group": "B",
+      "replica": 1,
+      "permission_policy": "STRICT_LIMITED",
+      "stop_policy": "CURRENT",
+      "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+        "policy_metadata": {
+          "group": "B",
+          "permission_policy": "STRICT_LIMITED",
+          "stop_policy": "CURRENT",
+          "policy_version": "narrative-permission-stop-v1",
+          "policy_hash": "a42fb8f38620720ad1dda5407ffa44c03e929f1b34d89ecb5fbf1b5ea7325c24",
+          "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+          "permission_instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+          "stop_instruction_hash": null,
+          "seed": null
+        },
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "乔雨盯着手机屏幕上那条撤回提示，通知栏里还残留着预览的前四个字——“你这次的……”。\n\n班主任发的。企业微信。\n\n她拇指停在屏幕上方，没点进去。同桌的脚步声从教室后门那边过来了，运动鞋踩在水磨石地面上，节奏很轻快。乔雨按了一下电源键，屏幕黑了。她把手机翻过来扣在桌面上，抬起头。\n\n同桌已经走到座位旁边，手机举在眼前，嘴角带着点笑意，显然在刷什么有趣的内容。她没看乔雨，但马上就要坐下来了。\n\n“你在看什么？”乔雨问。\n\n声音比平时大了一点。她自己也注意到了，但话已经出口。同桌抬起头，愣了一下，然后把手机屏幕转过来给她看——是学校万能墙上的一条投稿，有人拍了食堂今天的麻辣香锅，配文是“阿姨今天手终于不抖了，给我打了三颗鹌鹑蛋”。\n\n“你看这个，”同桌笑着说，把图片放大，“三颗。破纪录了。”\n\n乔雨凑过去看了一眼。确实三颗。她笑了一声，说：“明天估计又抖回去了。”\n\n“所以今天必须吃。”同桌坐下来，把手机搁在桌上，开始翻桌上的课本，“中午一起去？”\n\n“行。”\n\n乔雨应完，手指无意识地碰了一下自己手机的背面。冰凉的。屏幕还黑着。她没翻过来看。\n\n同桌翻了两页书，忽然“哦”了一声，又拿起手机：“对了，班主任在班级群里发消息了。”\n\n乔雨的手指停住。\n\n“你看群里了吗？”同桌问，眼睛看着自己的屏幕，“刚发的。”\n\n乔雨拿起手机，解锁。通知栏里那条撤回提示还在，她直接划掉，点进班级群。最新一条消息是班主任两分钟前发的，预览显示在聊天列表里，她看到几个字——不是“你这次的”，和作业无关。\n\n她还没点进去。",
+      "raw_response": "乔雨盯着手机屏幕上那条撤回提示，通知栏里还残留着预览的前四个字——“你这次的……”。\n\n班主任发的。企业微信。\n\n她拇指停在屏幕上方，没点进去。同桌的脚步声从教室后门那边过来了，运动鞋踩在水磨石地面上，节奏很轻快。乔雨按了一下电源键，屏幕黑了。她把手机翻过来扣在桌面上，抬起头。\n\n同桌已经走到座位旁边，手机举在眼前，嘴角带着点笑意，显然在刷什么有趣的内容。她没看乔雨，但马上就要坐下来了。\n\n“你在看什么？”乔雨问。\n\n声音比平时大了一点。她自己也注意到了，但话已经出口。同桌抬起头，愣了一下，然后把手机屏幕转过来给她看——是学校万能墙上的一条投稿，有人拍了食堂今天的麻辣香锅，配文是“阿姨今天手终于不抖了，给我打了三颗鹌鹑蛋”。\n\n“你看这个，”同桌笑着说，把图片放大，“三颗。破纪录了。”\n\n乔雨凑过去看了一眼。确实三颗。她笑了一声，说：“明天估计又抖回去了。”\n\n“所以今天必须吃。”同桌坐下来，把手机搁在桌上，开始翻桌上的课本，“中午一起去？”\n\n“行。”\n\n乔雨应完，手指无意识地碰了一下自己手机的背面。冰凉的。屏幕还黑着。她没翻过来看。\n\n同桌翻了两页书，忽然“哦”了一声，又拿起手机：“对了，班主任在班级群里发消息了。”\n\n乔雨的手指停住。\n\n“你看群里了吗？”同桌问，眼睛看着自己的屏幕，“刚发的。”\n\n乔雨拿起手机，解锁。通知栏里那条撤回提示还在，她直接划掉，点进班级群。最新一条消息是班主任两分钟前发的，预览显示在聊天列表里，她看到几个字——不是“你这次的”，和作业无关。\n\n她还没点进去。",
+      "input_tokens": 1459,
+      "output_tokens": 395,
+      "latency_ms": 28355,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "1f6e04c79e8b56382ac73ff744c31f3b0a67a3a9b890dd8c5b4d5b05c08190e7",
+      "validation": {
+        "character_count": 656,
+        "validator_codes": [
+          "STOP_MARKER_LITERAL_MISS"
+        ],
+        "banned_sentence_hits": {},
+        "second_confirmation_hits": [],
+        "environment_coda_hits": [],
+        "stop_marker_first_char": null,
+        "post_stop_character_count": null,
+        "tempo_final_line_mismatch": false,
+        "manual_review_required": [
+          "viewpoint_violation",
+          "cross_mind_assertion",
+          "other_character_motive_as_fact",
+          "true_stop_state_position",
+          "visible_state_transition_count",
+          "relationship_or_meaning_summary",
+          "shared_atmosphere_declaration",
+          "narrator_correction_with_backstage_fact"
+        ]
+      },
+      "text_path": "cases\\AL-01\\drafts\\b-1.txt"
+    },
+    {
+      "candidate_id": "c0a8bf7a-40d5-4a2f-93ec-62aa695475a9",
+      "attempt_number": 1,
+      "group": "D",
+      "replica": 1,
+      "permission_policy": "STRICT_LIMITED",
+      "stop_policy": "STRICT_STOP",
+      "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e",
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e",
+        "policy_metadata": {
+          "group": "D",
+          "permission_policy": "STRICT_LIMITED",
+          "stop_policy": "STRICT_STOP",
+          "policy_version": "narrative-permission-stop-v1",
+          "policy_hash": "533ba9fe37558af28e5b9a277971d13c5f7674a7a297a2c3d7f1a96c77af3123",
+          "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e",
+          "permission_instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+          "stop_instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+          "seed": null
+        },
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "课间铃声刚响过，教室里还乱着。乔雨低头看了一眼手机屏幕，通知栏上挂着企业微信的撤回提示，预览框里只剩四个字——“你这次的……”\n\n她还没来得及点进去，同桌的脚步声就从过道那头过来了。\n\n乔雨按了电源键，屏幕一黑。她抬起头，同桌正盯着自己的手机，嘴角挂着点笑意，脚步没停。\n\n“你在看什么？”乔雨问，声音比她预想的要稳。\n\n同桌在椅子里坐下来，把手机往她这边斜了斜。“你看这个，我表姐发的，她家猫把窗帘整个扯下来了。”\n\n手机屏幕上是一只橘猫挂在窗帘布上，爪子还勾着线头，表情理直气壮。乔雨笑了，肩膀落下去一点。同桌的手指在屏幕上划了一下，翻到下一张照片，猫已经从窗帘上被抱下来，窝在沙发上舔爪子，旁边是一地碎布。\n\n“她家窗帘是租的房子自带的，”同桌说，“现在得赔钱了。”\n\n“那猫还挺得意。”\n\n“可不是嘛。”同桌把手机收回去，自己又看了两眼，然后锁了屏，从桌肚里摸出水杯。\n\n乔雨没再说话。她把手搭在自己手机背面，屏幕是暗的，机身边缘有一点温热。刚才那条撤回提示还在通知栏里，她没清掉，也没点进去看。班主任的头像是学校统一拍的蓝底证件照，发消息的时间是两分钟前。\n\n同桌拧开水杯盖子喝了一口，突然想起什么似的，拿起手机又滑了两下。“对了，班主任刚才在班级群发了条消息，你看没？”\n\n乔雨的手指在自己手机上顿了一下。\n\n“还没看。”她说。\n\n“我这也才看到，”同桌说着，把屏幕侧过来给她看群聊界面，“就这个。”\n\n乔雨看见班级群的聊天窗口，班主任的头像旁边冒出一段预览文字。不是作业通知的格式，没有“请各位同学”或者“截止时间”这类字眼。\n\n“行吧。”乔雨说，没伸手去拿自己的手机。\n\n同桌把水杯放回桌肚，手机搁在课本旁边，转头去翻下一节课要用的卷子。乔雨的手指在手机背面轻轻敲了两下，没有翻过来。",
+      "raw_response": "课间铃声刚响过，教室里还乱着。乔雨低头看了一眼手机屏幕，通知栏上挂着企业微信的撤回提示，预览框里只剩四个字——“你这次的……”\n\n她还没来得及点进去，同桌的脚步声就从过道那头过来了。\n\n乔雨按了电源键，屏幕一黑。她抬起头，同桌正盯着自己的手机，嘴角挂着点笑意，脚步没停。\n\n“你在看什么？”乔雨问，声音比她预想的要稳。\n\n同桌在椅子里坐下来，把手机往她这边斜了斜。“你看这个，我表姐发的，她家猫把窗帘整个扯下来了。”\n\n手机屏幕上是一只橘猫挂在窗帘布上，爪子还勾着线头，表情理直气壮。乔雨笑了，肩膀落下去一点。同桌的手指在屏幕上划了一下，翻到下一张照片，猫已经从窗帘上被抱下来，窝在沙发上舔爪子，旁边是一地碎布。\n\n“她家窗帘是租的房子自带的，”同桌说，“现在得赔钱了。”\n\n“那猫还挺得意。”\n\n“可不是嘛。”同桌把手机收回去，自己又看了两眼，然后锁了屏，从桌肚里摸出水杯。\n\n乔雨没再说话。她把手搭在自己手机背面，屏幕是暗的，机身边缘有一点温热。刚才那条撤回提示还在通知栏里，她没清掉，也没点进去看。班主任的头像是学校统一拍的蓝底证件照，发消息的时间是两分钟前。\n\n同桌拧开水杯盖子喝了一口，突然想起什么似的，拿起手机又滑了两下。“对了，班主任刚才在班级群发了条消息，你看没？”\n\n乔雨的手指在自己手机上顿了一下。\n\n“还没看。”她说。\n\n“我这也才看到，”同桌说着，把屏幕侧过来给她看群聊界面，“就这个。”\n\n乔雨看见班级群的聊天窗口，班主任的头像旁边冒出一段预览文字。不是作业通知的格式，没有“请各位同学”或者“截止时间”这类字眼。\n\n“行吧。”乔雨说，没伸手去拿自己的手机。\n\n同桌把水杯放回桌肚，手机搁在课本旁边，转头去翻下一节课要用的卷子。乔雨的手指在手机背面轻轻敲了两下，没有翻过来。",
+      "input_tokens": 1609,
+      "output_tokens": 473,
+      "latency_ms": 21151,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "78ed30016769d455254be402c70a5c926ec373453451fed00731549e8110e46b",
+      "validation": {
+        "character_count": 750,
+        "validator_codes": [
+          "STOP_MARKER_LITERAL_MISS"
+        ],
+        "banned_sentence_hits": {},
+        "second_confirmation_hits": [],
+        "environment_coda_hits": [],
+        "stop_marker_first_char": null,
+        "post_stop_character_count": null,
+        "tempo_final_line_mismatch": false,
+        "manual_review_required": [
+          "viewpoint_violation",
+          "cross_mind_assertion",
+          "other_character_motive_as_fact",
+          "true_stop_state_position",
+          "visible_state_transition_count",
+          "relationship_or_meaning_summary",
+          "shared_atmosphere_declaration",
+          "narrator_correction_with_backstage_fact"
+        ]
+      },
+      "text_path": "cases\\AL-01\\drafts\\d-1.txt"
+    },
+    {
+      "candidate_id": "64587492-a337-4d65-ace8-b46d00d65f1f",
+      "attempt_number": 1,
+      "group": "A",
+      "replica": 1,
+      "permission_policy": "CURRENT",
+      "stop_policy": "CURRENT",
+      "instruction_hash": null,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "policy_metadata": {
+          "group": "A",
+          "permission_policy": "CURRENT",
+          "stop_policy": "CURRENT",
+          "policy_version": "narrative-permission-stop-v1",
+          "policy_hash": "bcba9c79e51e6722c8796bc8a1defd65461d017dbbaf922efbe9c16df2ba3d4f",
+          "instruction_hash": null,
+          "permission_instruction_hash": null,
+          "stop_instruction_hash": null,
+          "seed": null
+        },
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "乔雨盯着手机屏幕上的撤回提示，那四个字像卡在屏幕里一样——“你这次的……”\n\n她没来得及往下想。\n\n同桌的脚步声从两排课桌外传过来，运动鞋底蹭着地砖，节奏不快，但方向明确。乔雨的拇指按上电源键，屏幕黑了。她把手机翻过来扣在桌面上，抬起头。\n\n同桌已经走到她桌边，手机横握着，屏幕亮着，嘴角带着那种“你过来看看这个”的表情。\n\n“你看什么呢？”乔雨先开了口，声音比平时大了一点，她自己也感觉到了。\n\n同桌没在意，把手机往她这边一转。“你看这个，我表姐发的，她家猫把窗帘整个拽下来了，房东说要从押金里扣。”\n\n屏幕上是一只灰白相间的猫蹲在满地窗帘布中间，表情无辜。乔雨笑了，笑声从喉咙里出来，有点短。\n\n“它还挺骄傲的。”乔雨说。\n\n“是吧？我表姐气死了，说这猫平时装得可乖了。”同桌把手机收回去，自己又看了两眼，然后锁屏放进校服口袋。\n\n乔雨的手指搭在自己手机背面，能感觉到机身还温着。她没翻过来看。\n\n“对了，”同桌往自己座位上一靠，从口袋里又摸出手机，“刚才我看班级群弹了条消息，老班发的，你看了没？”\n\n乔雨的手指在手机壳边缘停住。\n\n“没，”她说，“我手机刚才静音了。”\n\n“我还没点进去，”同桌划开屏幕，“好像是什么通知，不是作业吧？要是作业我就当没看见。”\n\n乔雨没接话。她把手机拿起来，按亮屏幕，点进企业微信。班级群的头像上挂着红点，最新一条消息的预览显示在列表里——“各位同学，关于下周的……”\n\n不是作业。\n\n乔雨把手机重新扣在桌面上。",
+      "raw_response": "乔雨盯着手机屏幕上的撤回提示，那四个字像卡在屏幕里一样——“你这次的……”\n\n她没来得及往下想。\n\n同桌的脚步声从两排课桌外传过来，运动鞋底蹭着地砖，节奏不快，但方向明确。乔雨的拇指按上电源键，屏幕黑了。她把手机翻过来扣在桌面上，抬起头。\n\n同桌已经走到她桌边，手机横握着，屏幕亮着，嘴角带着那种“你过来看看这个”的表情。\n\n“你看什么呢？”乔雨先开了口，声音比平时大了一点，她自己也感觉到了。\n\n同桌没在意，把手机往她这边一转。“你看这个，我表姐发的，她家猫把窗帘整个拽下来了，房东说要从押金里扣。”\n\n屏幕上是一只灰白相间的猫蹲在满地窗帘布中间，表情无辜。乔雨笑了，笑声从喉咙里出来，有点短。\n\n“它还挺骄傲的。”乔雨说。\n\n“是吧？我表姐气死了，说这猫平时装得可乖了。”同桌把手机收回去，自己又看了两眼，然后锁屏放进校服口袋。\n\n乔雨的手指搭在自己手机背面，能感觉到机身还温着。她没翻过来看。\n\n“对了，”同桌往自己座位上一靠，从口袋里又摸出手机，“刚才我看班级群弹了条消息，老班发的，你看了没？”\n\n乔雨的手指在手机壳边缘停住。\n\n“没，”她说，“我手机刚才静音了。”\n\n“我还没点进去，”同桌划开屏幕，“好像是什么通知，不是作业吧？要是作业我就当没看见。”\n\n乔雨没接话。她把手机拿起来，按亮屏幕，点进企业微信。班级群的头像上挂着红点，最新一条消息的预览显示在列表里——“各位同学，关于下周的……”\n\n不是作业。\n\n乔雨把手机重新扣在桌面上。",
+      "input_tokens": 1181,
+      "output_tokens": 399,
+      "latency_ms": 24658,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "4d5a39e898ab2cae7c8749913d1715c204ef930adefa161ef7ad845e18db5bad",
+      "validation": {
+        "character_count": 626,
+        "validator_codes": [
+          "STOP_MARKER_LITERAL_MISS"
+        ],
+        "banned_sentence_hits": {},
+        "second_confirmation_hits": [],
+        "environment_coda_hits": [],
+        "stop_marker_first_char": null,
+        "post_stop_character_count": null,
+        "tempo_final_line_mismatch": false,
+        "manual_review_required": [
+          "viewpoint_violation",
+          "cross_mind_assertion",
+          "other_character_motive_as_fact",
+          "true_stop_state_position",
+          "visible_state_transition_count",
+          "relationship_or_meaning_summary",
+          "shared_atmosphere_declaration",
+          "narrator_correction_with_backstage_fact"
+        ]
+      },
+      "text_path": "cases\\AL-01\\drafts\\a-1.txt"
+    },
+    {
+      "candidate_id": "c5af41a3-9f58-4517-87ae-bfe6b7429654",
+      "attempt_number": 1,
+      "group": "C",
+      "replica": 2,
+      "permission_policy": "CURRENT",
+      "stop_policy": "STRICT_STOP",
+      "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+        "policy_metadata": {
+          "group": "C",
+          "permission_policy": "CURRENT",
+          "stop_policy": "STRICT_STOP",
+          "policy_version": "narrative-permission-stop-v1",
+          "policy_hash": "15e6b754a467a03569fe265abb7861ce24f144ba737ce3f2973776c1c2e76d47",
+          "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+          "permission_instruction_hash": null,
+          "stop_instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+          "seed": null
+        },
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "课间的教室嘈杂得像一锅沸水，乔雨却只听见自己手机那声短促的震动。\n\n她低头看了一眼屏幕，企业微信的通知栏上挂着班主任的名字，消息预览只闪了不到一秒——“你这次的……”\n\n然后那条消息就消失了。取而代之的是灰色的系统提示：对方撤回了一条消息。\n\n乔雨盯着那四个字看了三秒。撤回。班主任给她发了什么，又收回去了。她拇指悬在屏幕上方，没有点进去。预览里的“你这次的”后面是什么？你这次的成绩？你这次的表现？你这次的退步？她脑子里快速滚过几个可能，每一个都不像是好话。\n\n班主任从不在企业微信上跟她闲聊。\n\n脚步声从右边靠近。乔雨抬起眼皮，同桌林知夏正从教室后门的方向走过来，手里举着手机，屏幕还亮着，脸上带着那种“你绝对想不到”的表情。\n\n乔雨的拇指按上电源键。屏幕黑了。她把手机翻过来扣在桌面上，动作不大，但手腕转得有点快。\n\n林知夏已经走到桌边，一屁股坐进椅子，膝盖撞了一下桌腿。“哎你猜我刚才在厕所门口看见谁了——”\n\n“你看什么呢？”乔雨先开了口，下巴朝林知夏的手机一抬。\n\n林知夏愣了一下，低头看看自己的屏幕，又看看乔雨，嘴角重新翘起来。“哦这个！隔壁班那个谁，就是上次运动会跑接力最后一棒那个男的，他发了条朋友圈，你看——”她把手机往乔雨面前一递，屏幕几乎戳到乔雨的课本上。\n\n乔雨接过来看了一眼。一张食堂鸡腿饭的照片，配文是“今天的肉量是昨天的两倍”。她扯了一下嘴角，把手机还回去。“他是不是每天就拍这个。”\n\n“对啊！他还专门开了个相册叫‘食堂鸡腿观察日志’，你敢信？”林知夏笑得肩膀直抖，手指往下划拉，“你看你看，周一是红烧的，周二是炸的，他还打分——”\n\n乔雨跟着笑了一声。笑声从喉咙里出来，有点短。她的手机扣在桌面上，背面朝上，壳子的边缘压着英语书的一角。她没去翻它。\n\n林知夏还在划那个鸡腿相册，嘴里碎碎念着“三分半也太低了吧这人是不是没吃过好的”。乔雨把手肘撑在桌上，身体往林知夏那边偏了一点，像是也在看屏幕，余光却扫了一眼自己的手机。\n\n黑色的壳子。安静地扣在那里。\n\n“哦对了，”林知夏突然抬起头，像是想起了什么，“你看见班主任在班级群里发的那个了吗？”\n\n乔雨的视线从手机上弹回来。“什么？”\n\n“班级群啊，”林知夏说，手指已经从鸡腿相册切了出去，“就刚刚发的，我手机震了一下，好像不是作业的事。”\n\n她把屏幕转过来给乔雨看。\n\n班级群的最新一条消息来自班主任，时间就在一分钟前。乔雨看到了预览栏里的前十几个字——不是作业通知，不是考试安排，不是任何她立刻能判断性质的文字。\n\n消息还在那里，没有撤回。",
+      "raw_response": "课间的教室嘈杂得像一锅沸水，乔雨却只听见自己手机那声短促的震动。\n\n她低头看了一眼屏幕，企业微信的通知栏上挂着班主任的名字，消息预览只闪了不到一秒——“你这次的……”\n\n然后那条消息就消失了。取而代之的是灰色的系统提示：对方撤回了一条消息。\n\n乔雨盯着那四个字看了三秒。撤回。班主任给她发了什么，又收回去了。她拇指悬在屏幕上方，没有点进去。预览里的“你这次的”后面是什么？你这次的成绩？你这次的表现？你这次的退步？她脑子里快速滚过几个可能，每一个都不像是好话。\n\n班主任从不在企业微信上跟她闲聊。\n\n脚步声从右边靠近。乔雨抬起眼皮，同桌林知夏正从教室后门的方向走过来，手里举着手机，屏幕还亮着，脸上带着那种“你绝对想不到”的表情。\n\n乔雨的拇指按上电源键。屏幕黑了。她把手机翻过来扣在桌面上，动作不大，但手腕转得有点快。\n\n林知夏已经走到桌边，一屁股坐进椅子，膝盖撞了一下桌腿。“哎你猜我刚才在厕所门口看见谁了——”\n\n“你看什么呢？”乔雨先开了口，下巴朝林知夏的手机一抬。\n\n林知夏愣了一下，低头看看自己的屏幕，又看看乔雨，嘴角重新翘起来。“哦这个！隔壁班那个谁，就是上次运动会跑接力最后一棒那个男的，他发了条朋友圈，你看——”她把手机往乔雨面前一递，屏幕几乎戳到乔雨的课本上。\n\n乔雨接过来看了一眼。一张食堂鸡腿饭的照片，配文是“今天的肉量是昨天的两倍”。她扯了一下嘴角，把手机还回去。“他是不是每天就拍这个。”\n\n“对啊！他还专门开了个相册叫‘食堂鸡腿观察日志’，你敢信？”林知夏笑得肩膀直抖，手指往下划拉，“你看你看，周一是红烧的，周二是炸的，他还打分——”\n\n乔雨跟着笑了一声。笑声从喉咙里出来，有点短。她的手机扣在桌面上，背面朝上，壳子的边缘压着英语书的一角。她没去翻它。\n\n林知夏还在划那个鸡腿相册，嘴里碎碎念着“三分半也太低了吧这人是不是没吃过好的”。乔雨把手肘撑在桌上，身体往林知夏那边偏了一点，像是也在看屏幕，余光却扫了一眼自己的手机。\n\n黑色的壳子。安静地扣在那里。\n\n“哦对了，”林知夏突然抬起头，像是想起了什么，“你看见班主任在班级群里发的那个了吗？”\n\n乔雨的视线从手机上弹回来。“什么？”\n\n“班级群啊，”林知夏说，手指已经从鸡腿相册切了出去，“就刚刚发的，我手机震了一下，好像不是作业的事。”\n\n她把屏幕转过来给乔雨看。\n\n班级群的最新一条消息来自班主任，时间就在一分钟前。乔雨看到了预览栏里的前十几个字——不是作业通知，不是考试安排，不是任何她立刻能判断性质的文字。\n\n消息还在那里，没有撤回。",
+      "input_tokens": 1331,
+      "output_tokens": 650,
+      "latency_ms": 32611,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "dc9bbab8f9a0b5bbddd77fca3dbf9ca6ba7fcbdacbd4c1a0f0e78e5bd8b04f56",
+      "validation": {
+        "character_count": 1064,
+        "validator_codes": [
+          "STOP_MARKER_LITERAL_MISS"
+        ],
+        "banned_sentence_hits": {},
+        "second_confirmation_hits": [],
+        "environment_coda_hits": [],
+        "stop_marker_first_char": null,
+        "post_stop_character_count": null,
+        "tempo_final_line_mismatch": false,
+        "manual_review_required": [
+          "viewpoint_violation",
+          "cross_mind_assertion",
+          "other_character_motive_as_fact",
+          "true_stop_state_position",
+          "visible_state_transition_count",
+          "relationship_or_meaning_summary",
+          "shared_atmosphere_declaration",
+          "narrator_correction_with_backstage_fact"
+        ]
+      },
+      "text_path": "cases\\AL-01\\drafts\\c-2.txt"
+    },
+    {
+      "candidate_id": "9da69324-c886-4de4-b1c1-c07bddfa9790",
+      "attempt_number": 1,
+      "group": "A",
+      "replica": 2,
+      "permission_policy": "CURRENT",
+      "stop_policy": "CURRENT",
+      "instruction_hash": null,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "policy_metadata": {
+          "group": "A",
+          "permission_policy": "CURRENT",
+          "stop_policy": "CURRENT",
+          "policy_version": "narrative-permission-stop-v1",
+          "policy_hash": "bcba9c79e51e6722c8796bc8a1defd65461d017dbbaf922efbe9c16df2ba3d4f",
+          "instruction_hash": null,
+          "permission_instruction_hash": null,
+          "stop_instruction_hash": null,
+          "seed": null
+        },
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "乔雨盯着手机屏幕，通知栏上那条灰色的小字还没消失——“班主任撤回了一条消息”。\n\n她点进去，企业微信的对话框里只剩下一行系统提示。预览栏里残留着四个字：你这次的……\n\n没了。\n\n脚步声从左边过来，橡胶鞋底摩擦地砖的那种声音，急促又轻快。乔雨的手指比脑子快，电源键按下去，屏幕黑了。她把手机翻过来扣在桌面上，抬起头。\n\n同桌已经走到她桌边了，手机举在面前，屏幕亮着，嘴角带着那种“你绝对要看看这个”的笑。\n\n“乔雨你看这个——”她刚开口，视线往下扫了一眼乔雨扣着的手机，顿了一下，“你刚才在看什么？”\n\n乔雨靠在椅背上，手肘自然地搭在手机上面，朝同桌的手机扬了扬下巴：“你先说你那个。什么东西？”\n\n同桌的注意力立刻被拽回去了。她把手机翻转过来，屏幕几乎怼到乔雨面前，是一个短视频，某只猫在试图跳上冰箱，结果后腿蹬空，整个身子挂在把手上晃荡。\n\n“你看它你看它——”同桌笑出声来，拇指在屏幕上划拉，“还有这个，它主人给配的音，笑死我了。”\n\n乔雨跟着笑，肩膀放松了一些。手机壳在胳膊肘下面硌着，硬的，提醒她那条撤回提示还在对话框里躺着。她没有低头去看。\n\n同桌连放了三个视频，笑得趴在乔雨桌上，书包带子从肩膀滑下来也没管。上课铃还没响，教室里闹哄哄的，有人在后面扔纸飞机，有人趴在桌上补觉，没人注意她们这边。\n\n“哎对了，”同桌直起身，收了手机，顺手把滑下来的书包带拽回去，“你刚才是不是在看企业微信？我刚才好像瞥见——”\n\n“班主任给我发了个通知，”乔雨说，声音平稳，“估计发错了，撤回了。”\n\n她说这话的时候眼睛看着同桌，没有躲。手还搭在手机上，指节松着，没握紧。\n\n同桌“哦”了一声，没追问，低头划开自己的手机：“说到班主任，她刚才在班级群发消息了，你看没看？”\n\n乔雨的手从手机上移开了。她拿起自己的手机，解锁，点进班级群。\n\n最新一条消息来自班主任，发送时间是两分钟前。群聊预览显示在列表里，几个字，没有“作业”两个字，也没有任何跟考试、成绩、排名相关的关键词。\n\n乔雨盯着那行预览，手指悬在屏幕上方，没有点进去。\n\n同桌在旁边说：“不知道又要通知什么，希望不是补课。”\n\n乔雨没回答。她把手机重新放回桌面，屏幕朝上，群聊预览还在那里亮着。",
+      "raw_response": "乔雨盯着手机屏幕，通知栏上那条灰色的小字还没消失——“班主任撤回了一条消息”。\n\n她点进去，企业微信的对话框里只剩下一行系统提示。预览栏里残留着四个字：你这次的……\n\n没了。\n\n脚步声从左边过来，橡胶鞋底摩擦地砖的那种声音，急促又轻快。乔雨的手指比脑子快，电源键按下去，屏幕黑了。她把手机翻过来扣在桌面上，抬起头。\n\n同桌已经走到她桌边了，手机举在面前，屏幕亮着，嘴角带着那种“你绝对要看看这个”的笑。\n\n“乔雨你看这个——”她刚开口，视线往下扫了一眼乔雨扣着的手机，顿了一下，“你刚才在看什么？”\n\n乔雨靠在椅背上，手肘自然地搭在手机上面，朝同桌的手机扬了扬下巴：“你先说你那个。什么东西？”\n\n同桌的注意力立刻被拽回去了。她把手机翻转过来，屏幕几乎怼到乔雨面前，是一个短视频，某只猫在试图跳上冰箱，结果后腿蹬空，整个身子挂在把手上晃荡。\n\n“你看它你看它——”同桌笑出声来，拇指在屏幕上划拉，“还有这个，它主人给配的音，笑死我了。”\n\n乔雨跟着笑，肩膀放松了一些。手机壳在胳膊肘下面硌着，硬的，提醒她那条撤回提示还在对话框里躺着。她没有低头去看。\n\n同桌连放了三个视频，笑得趴在乔雨桌上，书包带子从肩膀滑下来也没管。上课铃还没响，教室里闹哄哄的，有人在后面扔纸飞机，有人趴在桌上补觉，没人注意她们这边。\n\n“哎对了，”同桌直起身，收了手机，顺手把滑下来的书包带拽回去，“你刚才是不是在看企业微信？我刚才好像瞥见——”\n\n“班主任给我发了个通知，”乔雨说，声音平稳，“估计发错了，撤回了。”\n\n她说这话的时候眼睛看着同桌，没有躲。手还搭在手机上，指节松着，没握紧。\n\n同桌“哦”了一声，没追问，低头划开自己的手机：“说到班主任，她刚才在班级群发消息了，你看没看？”\n\n乔雨的手从手机上移开了。她拿起自己的手机，解锁，点进班级群。\n\n最新一条消息来自班主任，发送时间是两分钟前。群聊预览显示在列表里，几个字，没有“作业”两个字，也没有任何跟考试、成绩、排名相关的关键词。\n\n乔雨盯着那行预览，手指悬在屏幕上方，没有点进去。\n\n同桌在旁边说：“不知道又要通知什么，希望不是补课。”\n\n乔雨没回答。她把手机重新放回桌面，屏幕朝上，群聊预览还在那里亮着。",
+      "input_tokens": 1181,
+      "output_tokens": 565,
+      "latency_ms": 24366,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "4d5a39e898ab2cae7c8749913d1715c204ef930adefa161ef7ad845e18db5bad",
+      "validation": {
+        "character_count": 924,
+        "validator_codes": [
+          "STOP_MARKER_LITERAL_MISS"
+        ],
+        "banned_sentence_hits": {},
+        "second_confirmation_hits": [],
+        "environment_coda_hits": [],
+        "stop_marker_first_char": null,
+        "post_stop_character_count": null,
+        "tempo_final_line_mismatch": false,
+        "manual_review_required": [
+          "viewpoint_violation",
+          "cross_mind_assertion",
+          "other_character_motive_as_fact",
+          "true_stop_state_position",
+          "visible_state_transition_count",
+          "relationship_or_meaning_summary",
+          "shared_atmosphere_declaration",
+          "narrator_correction_with_backstage_fact"
+        ]
+      },
+      "text_path": "cases\\AL-01\\drafts\\a-2.txt"
+    },
+    {
+      "candidate_id": "ee0045ba-3c28-4ec8-a006-25b60e356b86",
+      "attempt_number": 1,
+      "group": "D",
+      "replica": 2,
+      "permission_policy": "STRICT_LIMITED",
+      "stop_policy": "STRICT_STOP",
+      "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e",
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e",
+        "policy_metadata": {
+          "group": "D",
+          "permission_policy": "STRICT_LIMITED",
+          "stop_policy": "STRICT_STOP",
+          "policy_version": "narrative-permission-stop-v1",
+          "policy_hash": "533ba9fe37558af28e5b9a277971d13c5f7674a7a297a2c3d7f1a96c77af3123",
+          "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e",
+          "permission_instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+          "stop_instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+          "seed": null
+        },
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "课间休息的教室嗡嗡作响，乔雨的手机屏幕还亮着。\n\n通知栏上那条撤回提示像一块没咽下去的饼干，卡在视线正中间——“班主任 撤回了一条消息”。她只来得及在锁屏前扫到预览栏里的四个字：你这次的。\n\n你这次的什么？\n\n乔雨盯着那行灰色小字，手指僵在屏幕上方。企业微信的撤回不留痕迹，聊天框里干干净净，好像什么都没发生过。但通知栏不会骗人，班主任确实发过什么，又在几秒内收了回去。\n\n她不能问。撤回本身就是答案——对方不想让她看到。\n\n脚步声从左侧靠近。乔雨抬头，同桌正绕过讲台边缘朝这边走，手里举着手机，屏幕朝外，嘴角带着那种准备分享什么东西的笑。\n\n乔雨按了电源键。\n\n屏幕黑下去的瞬间，通知栏的白光在她视网膜上留了半秒残影。她把手机屏幕朝下扣在桌面上，手指压住机身边缘，感觉到金属壳上自己掌心的潮气。\n\n“哎你看这个——”\n\n“你在看什么？”乔雨的声音抢在前头，比她预想的更亮一点。\n\n同桌愣了一拍，视线从自己手机屏幕上移开，看了乔雨一眼。那一眼落在乔雨脸上，又往下滑了半寸，扫过桌面上扣着的手机。\n\n乔雨没动。她把手肘搭在桌沿上，身体微微前倾，目光定在同桌的手机屏幕上——一个姿势把桌面上的手机挡在了手臂内侧的阴影里。\n\n“我还没说呢，”同桌笑了，把手机转过来，“你先看，我们班群炸了。”\n\n班级群。\n\n乔雨的手指在桌沿上收紧了一瞬。她接过同桌递来的手机，屏幕上正是班级微信群的聊天界面。最新一条消息是班长发的，往上翻还有几条，头像密集地叠在一起。\n\n不是企业微信。\n\n她呼出一口气，把手机还回去：“什么炸了？”\n\n“班主任刚发的通知，”同桌接过手机，拇指在屏幕上划了一下，找到那条消息点开，“你看。”\n\n乔雨凑过去看。同桌的手机屏幕上，班主任的头像旁边跟着一段文字，开头几个字是“各位同学，请于本周五前”。\n\n后面的话她没看进去。\n\n同桌还在说什么，声音从乔雨左耳进来，在脑子里转了一圈，没找到可以落脚的词。她只听见自己刚才抢话时那个过亮的语调，还在耳膜上嗡嗡地响。\n\n撤回的评语是单独发给她的。班级群的通知是另一回事。\n\n两件事撞在同一分钟里，同桌拿着手机走过来，差一点就看见她屏幕上那条撤回提示。如果她没锁屏，同桌会问什么？她会怎么答？\n\n乔雨把后背靠回椅子上。椅背的塑料凉意透过校服衬衫印在她肩胛骨之间。\n\n“——所以周五之前要交，”同桌说完了，把手机揣回校服口袋，“你听见没？”\n\n“听见了，”乔雨说，“周五之前交。”\n\n她其实没听清交什么。\n\n同桌看了她一眼，这次停了两秒。乔雨迎上那道视线，没躲，伸手去拿自己的水杯。杯子里水只剩底，她拧开盖子喝了一口，凉水滑过喉咙，让她嗓子里的紧涩感散开了一点。\n\n“你刚才想给我看什么？”乔雨问。\n\n“哦对，”同桌又掏出手机，这次翻到另一个界面，屏幕转过来，“你看这个猫，我们小区楼下的，胖成球了。”\n\n一只橘猫蜷在电动车座上，肚子的肉从两侧溢出来，确实胖得离谱。\n\n乔雨笑了一声。这次是真的。\n\n她把水杯放回桌角，手指离开杯身时，指尖在桌面上轻轻敲了一下。手机还扣在桌面原处，屏幕朝下，像一块安静的铁片。\n\n上课铃还没响。同桌开始讲那只猫怎么霸占了三辆电动车，乔雨听着，偶尔点头，没有再碰自己的手机。\n\n班主任撤回的那四个字还在她脑子里转。\n\n你这次的。\n\n她不知道后面接的是什么。可能是表扬，可能是批评，可能是发错了人。但撤回这个动作本身比内容更重——班主任发了一条不想让她看到的消息，又后悔了。\n\n或者，根本没后悔，只是觉得不该留下文字记录。\n\n乔雨把桌上的笔袋拉开，抽出一支黑笔，在指尖转了一圈。笔身磕在中指关节上，发出轻微的响声。\n\n同桌还在说猫的事。",
+      "raw_response": "课间休息的教室嗡嗡作响，乔雨的手机屏幕还亮着。\n\n通知栏上那条撤回提示像一块没咽下去的饼干，卡在视线正中间——“班主任 撤回了一条消息”。她只来得及在锁屏前扫到预览栏里的四个字：你这次的。\n\n你这次的什么？\n\n乔雨盯着那行灰色小字，手指僵在屏幕上方。企业微信的撤回不留痕迹，聊天框里干干净净，好像什么都没发生过。但通知栏不会骗人，班主任确实发过什么，又在几秒内收了回去。\n\n她不能问。撤回本身就是答案——对方不想让她看到。\n\n脚步声从左侧靠近。乔雨抬头，同桌正绕过讲台边缘朝这边走，手里举着手机，屏幕朝外，嘴角带着那种准备分享什么东西的笑。\n\n乔雨按了电源键。\n\n屏幕黑下去的瞬间，通知栏的白光在她视网膜上留了半秒残影。她把手机屏幕朝下扣在桌面上，手指压住机身边缘，感觉到金属壳上自己掌心的潮气。\n\n“哎你看这个——”\n\n“你在看什么？”乔雨的声音抢在前头，比她预想的更亮一点。\n\n同桌愣了一拍，视线从自己手机屏幕上移开，看了乔雨一眼。那一眼落在乔雨脸上，又往下滑了半寸，扫过桌面上扣着的手机。\n\n乔雨没动。她把手肘搭在桌沿上，身体微微前倾，目光定在同桌的手机屏幕上——一个姿势把桌面上的手机挡在了手臂内侧的阴影里。\n\n“我还没说呢，”同桌笑了，把手机转过来，“你先看，我们班群炸了。”\n\n班级群。\n\n乔雨的手指在桌沿上收紧了一瞬。她接过同桌递来的手机，屏幕上正是班级微信群的聊天界面。最新一条消息是班长发的，往上翻还有几条，头像密集地叠在一起。\n\n不是企业微信。\n\n她呼出一口气，把手机还回去：“什么炸了？”\n\n“班主任刚发的通知，”同桌接过手机，拇指在屏幕上划了一下，找到那条消息点开，“你看。”\n\n乔雨凑过去看。同桌的手机屏幕上，班主任的头像旁边跟着一段文字，开头几个字是“各位同学，请于本周五前”。\n\n后面的话她没看进去。\n\n同桌还在说什么，声音从乔雨左耳进来，在脑子里转了一圈，没找到可以落脚的词。她只听见自己刚才抢话时那个过亮的语调，还在耳膜上嗡嗡地响。\n\n撤回的评语是单独发给她的。班级群的通知是另一回事。\n\n两件事撞在同一分钟里，同桌拿着手机走过来，差一点就看见她屏幕上那条撤回提示。如果她没锁屏，同桌会问什么？她会怎么答？\n\n乔雨把后背靠回椅子上。椅背的塑料凉意透过校服衬衫印在她肩胛骨之间。\n\n“——所以周五之前要交，”同桌说完了，把手机揣回校服口袋，“你听见没？”\n\n“听见了，”乔雨说，“周五之前交。”\n\n她其实没听清交什么。\n\n同桌看了她一眼，这次停了两秒。乔雨迎上那道视线，没躲，伸手去拿自己的水杯。杯子里水只剩底，她拧开盖子喝了一口，凉水滑过喉咙，让她嗓子里的紧涩感散开了一点。\n\n“你刚才想给我看什么？”乔雨问。\n\n“哦对，”同桌又掏出手机，这次翻到另一个界面，屏幕转过来，“你看这个猫，我们小区楼下的，胖成球了。”\n\n一只橘猫蜷在电动车座上，肚子的肉从两侧溢出来，确实胖得离谱。\n\n乔雨笑了一声。这次是真的。\n\n她把水杯放回桌角，手指离开杯身时，指尖在桌面上轻轻敲了一下。手机还扣在桌面原处，屏幕朝下，像一块安静的铁片。\n\n上课铃还没响。同桌开始讲那只猫怎么霸占了三辆电动车，乔雨听着，偶尔点头，没有再碰自己的手机。\n\n班主任撤回的那四个字还在她脑子里转。\n\n你这次的。\n\n她不知道后面接的是什么。可能是表扬，可能是批评，可能是发错了人。但撤回这个动作本身比内容更重——班主任发了一条不想让她看到的消息，又后悔了。\n\n或者，根本没后悔，只是觉得不该留下文字记录。\n\n乔雨把桌上的笔袋拉开，抽出一支黑笔，在指尖转了一圈。笔身磕在中指关节上，发出轻微的响声。\n\n同桌还在说猫的事。",
+      "input_tokens": 1609,
+      "output_tokens": 939,
+      "latency_ms": 33326,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "78ed30016769d455254be402c70a5c926ec373453451fed00731549e8110e46b",
+      "validation": {
+        "character_count": 1505,
+        "validator_codes": [
+          "STOP_MARKER_LITERAL_MISS"
+        ],
+        "banned_sentence_hits": {},
+        "second_confirmation_hits": [],
+        "environment_coda_hits": [],
+        "stop_marker_first_char": null,
+        "post_stop_character_count": null,
+        "tempo_final_line_mismatch": false,
+        "manual_review_required": [
+          "viewpoint_violation",
+          "cross_mind_assertion",
+          "other_character_motive_as_fact",
+          "true_stop_state_position",
+          "visible_state_transition_count",
+          "relationship_or_meaning_summary",
+          "shared_atmosphere_declaration",
+          "narrator_correction_with_backstage_fact"
+        ]
+      },
+      "text_path": "cases\\AL-01\\drafts\\d-2.txt"
+    },
+    {
+      "candidate_id": "a298b1d7-a2a4-4c8a-a62e-93be8ab930ec",
+      "attempt_number": 1,
+      "group": "B",
+      "replica": 2,
+      "permission_policy": "STRICT_LIMITED",
+      "stop_policy": "CURRENT",
+      "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+        "policy_metadata": {
+          "group": "B",
+          "permission_policy": "STRICT_LIMITED",
+          "stop_policy": "CURRENT",
+          "policy_version": "narrative-permission-stop-v1",
+          "policy_hash": "a42fb8f38620720ad1dda5407ffa44c03e929f1b34d89ecb5fbf1b5ea7325c24",
+          "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+          "permission_instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+          "stop_instruction_hash": null,
+          "seed": null
+        },
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "乔雨盯着手机屏幕。\n\n通知栏上那条撤回提示还挂在那里——“班主任”撤回了一条消息。她只来得及在锁屏预览里看到四个字：你这次的。\n\n然后它就消失了。\n\n乔雨没有点进去。手指悬在屏幕上方，没动。企业微信的对话框里只剩下一行灰色小字：对方撤回了一条消息。班主任的头像还在旁边，一只猫趴在书上，是上学期开学时拍的。\n\n她听见脚步声。\n\n同桌陈茉正从讲台那边走过来，手里拿着手机，屏幕亮着，步子不快，但方向明确——就是冲着她来的。\n\n乔雨按下电源键。\n\n屏幕黑了。她把手机翻过来扣在桌面上，动作不大，像只是放了个东西。然后抬头，在陈茉走到桌边之前先开了口。\n\n“你在看什么？”\n\n声音比她自己想的稳。\n\n陈茉已经走到座位旁边，正低头划拉手机，听见她问，抬起眼，“嗯？”了一下，然后笑了，把手机转过来给她看。\n\n“你看这个，三班那个谁，就是上次元旦晚会跳街舞那个男生，居然在操场跟人表白被拍了。”\n\n屏幕上是一段视频，暂停在某个角度，操场边上围了一圈人，中间有个人举着什么东西。乔雨没看清，但陈茉已经在点播放了。\n\n“谁拍的？”乔雨问。\n\n“不知道，年级群有人转的，”陈茉坐下来，把椅子往她这边拖了拖，肩膀凑过来，“你看你看，他手里拿的是花还是什么——哦，是个盒子。”\n\n视频开始播了。操场上的声音很杂，有人在喊，有人在笑。乔雨看着屏幕，看见那个男生确实站在一个女生面前，手里的盒子打开了，看不清里面是什么。\n\n陈茉看得津津有味，胳膊肘撑在桌上，脑袋歪着。\n\n乔雨的视线从手机上移开了一瞬，落在自己扣在桌面的手机上。黑色手机壳，边角有点磨损，屏幕朝下，什么也看不见。\n\n“诶，”陈茉忽然说，“你看班级群了吗？老班刚才发消息了。”\n\n乔雨的手指在桌沿上停了一下。\n\n“没看，”她说，“怎么了？”\n\n“不知道，我还没点进去，”陈茉把视频暂停，退出去，手指在屏幕上划了一下，“就刚才弹了个通知，好像是发了条——我看看。”\n\n陈茉点进班级群。\n\n乔雨拿起自己的手机，翻过来，解锁，点进微信。班级群被她设了免打扰，没有弹窗，但红点已经在了。消息列表里，“高二三班”那个群后面跟着一行预览。\n\n她没点进去。\n\n陈茉先念出来了：“‘各位同学，本次——’哦，是通知。”\n\n乔雨扫了一眼自己手机上的群消息预览。\n\n“各位同学，本次月考的考场安排已发至教务系统，请大家自行查看，有问题……”\n\n后面的字被截断了。\n\n不是作业。不是评语。不是关于她的任何事。\n\n陈茉还在往下翻，“考场安排啊，我还以为发成绩了呢，吓我一跳。”\n\n乔雨把手机放下，屏幕朝上，没有锁屏。班级群的对话框还开着，消息列表里，班主任的猫头像安静地待在置顶位置，最后一条仍然是那行灰色小字。\n\n对方撤回了一条消息。",
+      "raw_response": "乔雨盯着手机屏幕。\n\n通知栏上那条撤回提示还挂在那里——“班主任”撤回了一条消息。她只来得及在锁屏预览里看到四个字：你这次的。\n\n然后它就消失了。\n\n乔雨没有点进去。手指悬在屏幕上方，没动。企业微信的对话框里只剩下一行灰色小字：对方撤回了一条消息。班主任的头像还在旁边，一只猫趴在书上，是上学期开学时拍的。\n\n她听见脚步声。\n\n同桌陈茉正从讲台那边走过来，手里拿着手机，屏幕亮着，步子不快，但方向明确——就是冲着她来的。\n\n乔雨按下电源键。\n\n屏幕黑了。她把手机翻过来扣在桌面上，动作不大，像只是放了个东西。然后抬头，在陈茉走到桌边之前先开了口。\n\n“你在看什么？”\n\n声音比她自己想的稳。\n\n陈茉已经走到座位旁边，正低头划拉手机，听见她问，抬起眼，“嗯？”了一下，然后笑了，把手机转过来给她看。\n\n“你看这个，三班那个谁，就是上次元旦晚会跳街舞那个男生，居然在操场跟人表白被拍了。”\n\n屏幕上是一段视频，暂停在某个角度，操场边上围了一圈人，中间有个人举着什么东西。乔雨没看清，但陈茉已经在点播放了。\n\n“谁拍的？”乔雨问。\n\n“不知道，年级群有人转的，”陈茉坐下来，把椅子往她这边拖了拖，肩膀凑过来，“你看你看，他手里拿的是花还是什么——哦，是个盒子。”\n\n视频开始播了。操场上的声音很杂，有人在喊，有人在笑。乔雨看着屏幕，看见那个男生确实站在一个女生面前，手里的盒子打开了，看不清里面是什么。\n\n陈茉看得津津有味，胳膊肘撑在桌上，脑袋歪着。\n\n乔雨的视线从手机上移开了一瞬，落在自己扣在桌面的手机上。黑色手机壳，边角有点磨损，屏幕朝下，什么也看不见。\n\n“诶，”陈茉忽然说，“你看班级群了吗？老班刚才发消息了。”\n\n乔雨的手指在桌沿上停了一下。\n\n“没看，”她说，“怎么了？”\n\n“不知道，我还没点进去，”陈茉把视频暂停，退出去，手指在屏幕上划了一下，“就刚才弹了个通知，好像是发了条——我看看。”\n\n陈茉点进班级群。\n\n乔雨拿起自己的手机，翻过来，解锁，点进微信。班级群被她设了免打扰，没有弹窗，但红点已经在了。消息列表里，“高二三班”那个群后面跟着一行预览。\n\n她没点进去。\n\n陈茉先念出来了：“‘各位同学，本次——’哦，是通知。”\n\n乔雨扫了一眼自己手机上的群消息预览。\n\n“各位同学，本次月考的考场安排已发至教务系统，请大家自行查看，有问题……”\n\n后面的字被截断了。\n\n不是作业。不是评语。不是关于她的任何事。\n\n陈茉还在往下翻，“考场安排啊，我还以为发成绩了呢，吓我一跳。”\n\n乔雨把手机放下，屏幕朝上，没有锁屏。班级群的对话框还开着，消息列表里，班主任的猫头像安静地待在置顶位置，最后一条仍然是那行灰色小字。\n\n对方撤回了一条消息。",
+      "input_tokens": 1459,
+      "output_tokens": 686,
+      "latency_ms": 20408,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "1f6e04c79e8b56382ac73ff744c31f3b0a67a3a9b890dd8c5b4d5b05c08190e7",
+      "validation": {
+        "character_count": 1125,
+        "validator_codes": [
+          "STOP_MARKER_LITERAL_MISS"
+        ],
+        "banned_sentence_hits": {},
+        "second_confirmation_hits": [],
+        "environment_coda_hits": [],
+        "stop_marker_first_char": null,
+        "post_stop_character_count": null,
+        "tempo_final_line_mismatch": false,
+        "manual_review_required": [
+          "viewpoint_violation",
+          "cross_mind_assertion",
+          "other_character_motive_as_fact",
+          "true_stop_state_position",
+          "visible_state_transition_count",
+          "relationship_or_meaning_summary",
+          "shared_atmosphere_declaration",
+          "narrator_correction_with_backstage_fact"
+        ]
+      },
+      "text_path": "cases\\AL-01\\drafts\\b-2.txt"
+    },
+    {
+      "candidate_id": "7c868d57-8ca7-49e9-9081-8cf7dcfb298d",
+      "attempt_number": 1,
+      "group": "A",
+      "replica": 3,
+      "permission_policy": "CURRENT",
+      "stop_policy": "CURRENT",
+      "instruction_hash": null,
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "policy_metadata": {
+          "group": "A",
+          "permission_policy": "CURRENT",
+          "stop_policy": "CURRENT",
+          "policy_version": "narrative-permission-stop-v1",
+          "policy_hash": "bcba9c79e51e6722c8796bc8a1defd65461d017dbbaf922efbe9c16df2ba3d4f",
+          "instruction_hash": null,
+          "permission_instruction_hash": null,
+          "stop_instruction_hash": null,
+          "seed": null
+        },
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "乔雨盯着手机屏幕，通知栏上那条撤回提示还亮着，预览框里只有四个字——“你这次的”。\n\n她拇指悬在屏幕上方，没点进去。\n\n脚步声从左边过来，橡胶鞋底蹭过地砖的声响越来越近。乔雨把手机翻了个面扣在桌面上，屏幕贴着课本，动作比脑子快。\n\n“哎，你看这个。”同桌已经走到她桌边，手机举到她眼前，屏幕上是张截图，某个短视频平台的热搜榜单，“咱们班有人把物理老师上课打喷嚏那段剪进去了，评论都两千多了。”\n\n乔雨的视线从同桌手机屏幕上移开，扫了一眼自己的手机壳背面。黑色磨砂壳，什么都看不见。\n\n“你刚才在跟谁聊？”同桌收回手机，下巴朝她桌面点了点。\n\n“没聊。”乔雨把手机塞进校服口袋，站起来靠住窗台，肩膀挡住同桌看桌面的角度，“你那个视频发我看看。”\n\n同桌划了几下屏幕，把链接分享给她。乔雨感觉到口袋里手机震了一下，没掏出来看。\n\n“对了，”同桌靠在乔雨旁边的窗台上，压低声音，“你看到没？刚才班主任在群里发东西了。”\n\n乔雨的手指在窗台边缘收紧了一下。\n\n“什么群？”她问。\n\n“班级群啊。”同桌已经低头刷着手机，“就刚才，发了一条又发一条，我还没点开。”\n\n乔雨从口袋里拿出手机。锁屏界面上躺着同桌分享的视频链接，下面压着班级群的两条消息预览。\n\n第一条来自班主任，预览显示：“各位同学，关于本周的”\n\n第二条还是班主任，预览显示：“请家长协助”\n\n跟作业无关。\n\n乔雨没解锁屏幕。她把手机重新放回口袋，手指碰到机身边缘时，指腹上沾了一层薄汗。",
+      "raw_response": "乔雨盯着手机屏幕，通知栏上那条撤回提示还亮着，预览框里只有四个字——“你这次的”。\n\n她拇指悬在屏幕上方，没点进去。\n\n脚步声从左边过来，橡胶鞋底蹭过地砖的声响越来越近。乔雨把手机翻了个面扣在桌面上，屏幕贴着课本，动作比脑子快。\n\n“哎，你看这个。”同桌已经走到她桌边，手机举到她眼前，屏幕上是张截图，某个短视频平台的热搜榜单，“咱们班有人把物理老师上课打喷嚏那段剪进去了，评论都两千多了。”\n\n乔雨的视线从同桌手机屏幕上移开，扫了一眼自己的手机壳背面。黑色磨砂壳，什么都看不见。\n\n“你刚才在跟谁聊？”同桌收回手机，下巴朝她桌面点了点。\n\n“没聊。”乔雨把手机塞进校服口袋，站起来靠住窗台，肩膀挡住同桌看桌面的角度，“你那个视频发我看看。”\n\n同桌划了几下屏幕，把链接分享给她。乔雨感觉到口袋里手机震了一下，没掏出来看。\n\n“对了，”同桌靠在乔雨旁边的窗台上，压低声音，“你看到没？刚才班主任在群里发东西了。”\n\n乔雨的手指在窗台边缘收紧了一下。\n\n“什么群？”她问。\n\n“班级群啊。”同桌已经低头刷着手机，“就刚才，发了一条又发一条，我还没点开。”\n\n乔雨从口袋里拿出手机。锁屏界面上躺着同桌分享的视频链接，下面压着班级群的两条消息预览。\n\n第一条来自班主任，预览显示：“各位同学，关于本周的”\n\n第二条还是班主任，预览显示：“请家长协助”\n\n跟作业无关。\n\n乔雨没解锁屏幕。她把手机重新放回口袋，手指碰到机身边缘时，指腹上沾了一层薄汗。",
+      "input_tokens": 1181,
+      "output_tokens": 378,
+      "latency_ms": 16345,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "4d5a39e898ab2cae7c8749913d1715c204ef930adefa161ef7ad845e18db5bad",
+      "validation": {
+        "character_count": 621,
+        "validator_codes": [
+          "STOP_MARKER_LITERAL_MISS"
+        ],
+        "banned_sentence_hits": {},
+        "second_confirmation_hits": [],
+        "environment_coda_hits": [],
+        "stop_marker_first_char": null,
+        "post_stop_character_count": null,
+        "tempo_final_line_mismatch": false,
+        "manual_review_required": [
+          "viewpoint_violation",
+          "cross_mind_assertion",
+          "other_character_motive_as_fact",
+          "true_stop_state_position",
+          "visible_state_transition_count",
+          "relationship_or_meaning_summary",
+          "shared_atmosphere_declaration",
+          "narrator_correction_with_backstage_fact"
+        ]
+      },
+      "text_path": "cases\\AL-01\\drafts\\a-3.txt"
+    },
+    {
+      "candidate_id": "82587bec-6f55-45e6-9ab4-b4103be95a98",
+      "attempt_number": 1,
+      "group": "C",
+      "replica": 3,
+      "permission_policy": "CURRENT",
+      "stop_policy": "STRICT_STOP",
+      "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+        "policy_metadata": {
+          "group": "C",
+          "permission_policy": "CURRENT",
+          "stop_policy": "STRICT_STOP",
+          "policy_version": "narrative-permission-stop-v1",
+          "policy_hash": "15e6b754a467a03569fe265abb7861ce24f144ba737ce3f2973776c1c2e76d47",
+          "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+          "permission_instruction_hash": null,
+          "stop_instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+          "seed": null
+        },
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "课间铃声刚响过，走廊里开始有人走动。\n\n乔雨低头看了一眼手机屏幕，通知栏上挂着一条企业微信的撤回提示——“班主任 撤回了一条消息”。她拇指往上一滑，预览栏里只留下四个字：你这次的……\n\n后面什么都没有。\n\n她盯着那四个字看了两秒。撤回时间是十五秒前。也就是说班主任发出来之后几乎立刻就撤了。\n\n乔雨没有点进去。企业微信点进去会显示“对方已撤回”，但也会留下已读标记。她不想让班主任知道自己看到了。\n\n她把手机翻了个面扣在桌上，抬起头，同桌正从教室后门走进来，手里举着手机，屏幕上亮着一片花花绿绿的画面，脚步很快，明显是冲着她来的。\n\n乔雨的手指在桌面上按了一下手机的边缘，然后拿起来，拇指摸到侧边键，锁屏。\n\n屏幕黑掉的瞬间，同桌已经走到桌边，一屁股坐下来，把手机往她这边一推：“你快看这个，笑死我了。”\n\n乔雨没低头看她手机，先开口问了一句：“什么东西啊，你笑得跟捡了钱似的。”\n\n同桌没注意到她刚才锁屏的动作，手指在屏幕上划拉，语速很快：“就咱们年级那个表白墙，有人投稿说体委昨天在操场上对着单杠练引体向上，结果挂上去下不来了，视频都拍下来了，你看这个评论——”\n\n乔雨凑过去看她的屏幕，跟着笑了一声。\n\n笑完她没再接话，把目光收回到自己桌上。同桌还在往下翻评论，嘴里念着一条“体委看了连夜退学”，自己先笑得拍桌子。\n\n乔雨把手放在桌面上，手机压在掌心底下，屏幕贴着皮肤，凉的。\n\n同桌笑够了，退出了表白墙的页面，随手点开微信，嘴里还在念叨：“不过体委确实该练练，他也太菜——”\n\n话说到一半，她突然“哎”了一声，手指在屏幕上顿了一下。\n\n乔雨看见了那个动作。\n\n同桌的眼睛在屏幕上扫了扫，然后抬起头看了乔雨一眼，嘴唇动了动，像是要说什么。\n\n但她没说。她把手机转过来给乔雨看，语气变得有点奇怪：“班主任在班级群里发消息了。”\n\n乔雨没动自己的手机。她侧过头去看同桌的屏幕。\n\n班级群的聊天窗口里，最新一条消息是班主任发的，绿色的气泡，前面几行字被折叠在预览里。同桌没点进去，乔雨看到的只是消息列表上的预览行，前面几个字是“各位同学，关于今天……”\n\n跟作业无关。\n\n乔雨的视线从同桌的手机屏幕上移开。她自己的手机还扣在掌心底下，撤回提示还在通知栏里挂着，屏幕锁着。",
+      "raw_response": "课间铃声刚响过，走廊里开始有人走动。\n\n乔雨低头看了一眼手机屏幕，通知栏上挂着一条企业微信的撤回提示——“班主任 撤回了一条消息”。她拇指往上一滑，预览栏里只留下四个字：你这次的……\n\n后面什么都没有。\n\n她盯着那四个字看了两秒。撤回时间是十五秒前。也就是说班主任发出来之后几乎立刻就撤了。\n\n乔雨没有点进去。企业微信点进去会显示“对方已撤回”，但也会留下已读标记。她不想让班主任知道自己看到了。\n\n她把手机翻了个面扣在桌上，抬起头，同桌正从教室后门走进来，手里举着手机，屏幕上亮着一片花花绿绿的画面，脚步很快，明显是冲着她来的。\n\n乔雨的手指在桌面上按了一下手机的边缘，然后拿起来，拇指摸到侧边键，锁屏。\n\n屏幕黑掉的瞬间，同桌已经走到桌边，一屁股坐下来，把手机往她这边一推：“你快看这个，笑死我了。”\n\n乔雨没低头看她手机，先开口问了一句：“什么东西啊，你笑得跟捡了钱似的。”\n\n同桌没注意到她刚才锁屏的动作，手指在屏幕上划拉，语速很快：“就咱们年级那个表白墙，有人投稿说体委昨天在操场上对着单杠练引体向上，结果挂上去下不来了，视频都拍下来了，你看这个评论——”\n\n乔雨凑过去看她的屏幕，跟着笑了一声。\n\n笑完她没再接话，把目光收回到自己桌上。同桌还在往下翻评论，嘴里念着一条“体委看了连夜退学”，自己先笑得拍桌子。\n\n乔雨把手放在桌面上，手机压在掌心底下，屏幕贴着皮肤，凉的。\n\n同桌笑够了，退出了表白墙的页面，随手点开微信，嘴里还在念叨：“不过体委确实该练练，他也太菜——”\n\n话说到一半，她突然“哎”了一声，手指在屏幕上顿了一下。\n\n乔雨看见了那个动作。\n\n同桌的眼睛在屏幕上扫了扫，然后抬起头看了乔雨一眼，嘴唇动了动，像是要说什么。\n\n但她没说。她把手机转过来给乔雨看，语气变得有点奇怪：“班主任在班级群里发消息了。”\n\n乔雨没动自己的手机。她侧过头去看同桌的屏幕。\n\n班级群的聊天窗口里，最新一条消息是班主任发的，绿色的气泡，前面几行字被折叠在预览里。同桌没点进去，乔雨看到的只是消息列表上的预览行，前面几个字是“各位同学，关于今天……”\n\n跟作业无关。\n\n乔雨的视线从同桌的手机屏幕上移开。她自己的手机还扣在掌心底下，撤回提示还在通知栏里挂着，屏幕锁着。",
+      "input_tokens": 1331,
+      "output_tokens": 567,
+      "latency_ms": 23249,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "dc9bbab8f9a0b5bbddd77fca3dbf9ca6ba7fcbdacbd4c1a0f0e78e5bd8b04f56",
+      "validation": {
+        "character_count": 935,
+        "validator_codes": [
+          "STOP_MARKER_LITERAL_MISS"
+        ],
+        "banned_sentence_hits": {},
+        "second_confirmation_hits": [],
+        "environment_coda_hits": [],
+        "stop_marker_first_char": null,
+        "post_stop_character_count": null,
+        "tempo_final_line_mismatch": false,
+        "manual_review_required": [
+          "viewpoint_violation",
+          "cross_mind_assertion",
+          "other_character_motive_as_fact",
+          "true_stop_state_position",
+          "visible_state_transition_count",
+          "relationship_or_meaning_summary",
+          "shared_atmosphere_declaration",
+          "narrator_correction_with_backstage_fact"
+        ]
+      },
+      "text_path": "cases\\AL-01\\drafts\\c-3.txt"
+    },
+    {
+      "candidate_id": "abeedef5-2f4b-42fc-abbc-096c741a3a61",
+      "attempt_number": 1,
+      "group": "D",
+      "replica": 3,
+      "permission_policy": "STRICT_LIMITED",
+      "stop_policy": "STRICT_STOP",
+      "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e",
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e",
+        "policy_metadata": {
+          "group": "D",
+          "permission_policy": "STRICT_LIMITED",
+          "stop_policy": "STRICT_STOP",
+          "policy_version": "narrative-permission-stop-v1",
+          "policy_hash": "533ba9fe37558af28e5b9a277971d13c5f7674a7a297a2c3d7f1a96c77af3123",
+          "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e",
+          "permission_instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+          "stop_instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+          "seed": null
+        },
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "课间铃声刚过，教室里还乱哄哄的。乔雨从桌肚里摸出手机，拇指按亮屏幕，通知栏上挂着一条企业微信的提醒。\n\n班主任头像旁边是系统自动生成的那行灰字：“对方撤回了一条消息”。\n\n她点进去，对话框里只剩一个撤回提示，上面压着预览栏里没来得及消失的四个字——“你这次的……”\n\n后面什么都没有。\n\n乔雨盯着那四个字看了两秒。手指没动。班主任的头像还亮着在线状态，但她不能发消息问——问什么？问您刚才撤回了什么？问您是不是打错字了？问您是不是写了什么又后悔了？\n\n脚步声响起来，从教室后门方向过来的，踩在瓷砖地上，节奏她认得。\n\n同桌李思颖。\n\n乔雨拇指按上侧边键，屏幕黑了。她把手机翻过来扣在课本上，抬头。\n\n李思颖正低头看着自己的手机，嘴角挂着点笑，走得不算快，但方向明确——她的座位，乔雨右手边的位置。\n\n“你笑什么？”乔雨开口，声音比平时高了半度。\n\n李思颖抬起头，把手机屏幕朝她这边转了转：“你看这个，我表姐发的，她家猫把自己卡在窗帘穗子里了。”\n\n照片上确实有只橘猫，脑袋顶着一串流苏，表情呆滞。乔雨笑了，笑得比平时用力一点，身体往李思颖那边倾过去，肩膀挡住了自己扣在课本上的手机。\n\n“它怎么进去的？”乔雨问。\n\n“谁知道，我表姐说听见哗啦哗啦响，过去一看就这样了。”李思颖坐下来，把手机搁在两人课桌中间，又滑了两张照片，“这张是解救过程，你看它那个不情愿的样子。”\n\n乔雨凑过去看。李思颖的手指在屏幕上滑动，没有往她课本那边瞟一眼。扣着的手机安静地贴着书皮，没震动，没亮屏。\n\n“你表姐家是不是还养了只蓝猫？”乔雨问。\n\n“对，那只就聪明多了，从来不钻窗帘。”\n\n“品种差异。”\n\n“可能是智商差异。”\n\n两个人笑起来。前排的男生回头看了一眼，又转回去了。\n\n李思颖把手机收回来，拇指还在划拉，忽然“哎”了一声。\n\n乔雨看见她表情变了一下——不是笑，是那种看到什么通知时的停顿。\n\n“怎么了？”\n\n“班主任在班级群里发消息了。”李思颖说着，把手机又往她这边偏了偏，“你看。”\n\n乔雨低头看过去。企业微信班级群的界面上，班主任的头像旁边冒出一条新消息的气泡，预览栏里显示着文字——但乔雨只扫到前几个字，和“作业”两个字没有关系。\n\n她没看清完整内容。",
+      "raw_response": "课间铃声刚过，教室里还乱哄哄的。乔雨从桌肚里摸出手机，拇指按亮屏幕，通知栏上挂着一条企业微信的提醒。\n\n班主任头像旁边是系统自动生成的那行灰字：“对方撤回了一条消息”。\n\n她点进去，对话框里只剩一个撤回提示，上面压着预览栏里没来得及消失的四个字——“你这次的……”\n\n后面什么都没有。\n\n乔雨盯着那四个字看了两秒。手指没动。班主任的头像还亮着在线状态，但她不能发消息问——问什么？问您刚才撤回了什么？问您是不是打错字了？问您是不是写了什么又后悔了？\n\n脚步声响起来，从教室后门方向过来的，踩在瓷砖地上，节奏她认得。\n\n同桌李思颖。\n\n乔雨拇指按上侧边键，屏幕黑了。她把手机翻过来扣在课本上，抬头。\n\n李思颖正低头看着自己的手机，嘴角挂着点笑，走得不算快，但方向明确——她的座位，乔雨右手边的位置。\n\n“你笑什么？”乔雨开口，声音比平时高了半度。\n\n李思颖抬起头，把手机屏幕朝她这边转了转：“你看这个，我表姐发的，她家猫把自己卡在窗帘穗子里了。”\n\n照片上确实有只橘猫，脑袋顶着一串流苏，表情呆滞。乔雨笑了，笑得比平时用力一点，身体往李思颖那边倾过去，肩膀挡住了自己扣在课本上的手机。\n\n“它怎么进去的？”乔雨问。\n\n“谁知道，我表姐说听见哗啦哗啦响，过去一看就这样了。”李思颖坐下来，把手机搁在两人课桌中间，又滑了两张照片，“这张是解救过程，你看它那个不情愿的样子。”\n\n乔雨凑过去看。李思颖的手指在屏幕上滑动，没有往她课本那边瞟一眼。扣着的手机安静地贴着书皮，没震动，没亮屏。\n\n“你表姐家是不是还养了只蓝猫？”乔雨问。\n\n“对，那只就聪明多了，从来不钻窗帘。”\n\n“品种差异。”\n\n“可能是智商差异。”\n\n两个人笑起来。前排的男生回头看了一眼，又转回去了。\n\n李思颖把手机收回来，拇指还在划拉，忽然“哎”了一声。\n\n乔雨看见她表情变了一下——不是笑，是那种看到什么通知时的停顿。\n\n“怎么了？”\n\n“班主任在班级群里发消息了。”李思颖说着，把手机又往她这边偏了偏，“你看。”\n\n乔雨低头看过去。企业微信班级群的界面上，班主任的头像旁边冒出一条新消息的气泡，预览栏里显示着文字——但乔雨只扫到前几个字，和“作业”两个字没有关系。\n\n她没看清完整内容。",
+      "input_tokens": 1609,
+      "output_tokens": 588,
+      "latency_ms": 24180,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "78ed30016769d455254be402c70a5c926ec373453451fed00731549e8110e46b",
+      "validation": {
+        "character_count": 926,
+        "validator_codes": [
+          "STOP_MARKER_LITERAL_MISS"
+        ],
+        "banned_sentence_hits": {},
+        "second_confirmation_hits": [],
+        "environment_coda_hits": [],
+        "stop_marker_first_char": null,
+        "post_stop_character_count": null,
+        "tempo_final_line_mismatch": false,
+        "manual_review_required": [
+          "viewpoint_violation",
+          "cross_mind_assertion",
+          "other_character_motive_as_fact",
+          "true_stop_state_position",
+          "visible_state_transition_count",
+          "relationship_or_meaning_summary",
+          "shared_atmosphere_declaration",
+          "narrator_correction_with_backstage_fact"
+        ]
+      },
+      "text_path": "cases\\AL-01\\drafts\\d-3.txt"
+    },
+    {
+      "candidate_id": "e947db24-8329-4ee4-ac49-d48bd8ea1f54",
+      "attempt_number": 1,
+      "group": "B",
+      "replica": 3,
+      "permission_policy": "STRICT_LIMITED",
+      "stop_policy": "CURRENT",
+      "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+      "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+      "model_id": "deepseek-v4-pro",
+      "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_output_tokens": 4000,
+        "timeout_seconds": 300,
+        "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+        "policy_metadata": {
+          "group": "B",
+          "permission_policy": "STRICT_LIMITED",
+          "stop_policy": "CURRENT",
+          "policy_version": "narrative-permission-stop-v1",
+          "policy_hash": "a42fb8f38620720ad1dda5407ffa44c03e929f1b34d89ecb5fbf1b5ea7325c24",
+          "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+          "permission_instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+          "stop_instruction_hash": null,
+          "seed": null
+        },
+        "thinking": "disabled",
+        "response_format": "text"
+      },
+      "text_output": "课间铃已经响过两分钟，乔雨的手指还停在手机屏幕上。\n\n企业微信的对话框里，班主任张老师的头像旁边只剩一行灰色小字——“对方撤回了一条消息”。上面是预览残留的四个字：你这次的……\n\n她盯着那四个字，拇指没动。通知栏弹出来的预览她只扫到一眼，手机就震了第二下，提示撤回。前后不到三秒。\n\n你这次的什么？\n\n乔雨把通知栏往下拉了一截。企业微信的预览已经缩成一句话，和锁屏上显示的完全一样。没有更多。\n\n脚步声从左边靠过来。\n\n她没转头，先听见同桌赵一鸣的帆布鞋踩在教室地砖上那种不带跟的摩擦声。然后是手机壳背面那排支架环磕在桌沿的轻响——他每次走过来都习惯把手机屏幕朝下扣着拿，支架环正好撞到桌子。\n\n乔雨按了侧键。屏幕黑掉的时候，她看见通知栏里那行撤回提示还挂着。\n\n“哎，”赵一鸣已经走到她桌子左边，手机翻过来朝她晃了一下，“你看这个。”\n\n乔雨抬起眼。他屏幕上是张图片，放大了看是某个短视频评论区的截图，一串点赞数特别高的神回复。\n\n“你先让我看看你笑什么。”乔雨把手机屏幕朝下搁在课本上，侧过身去看他的手机。\n\n赵一鸣把图片往下划了一下，露出第二条评论。“就这个，你看这人说的——”他念出声来，念到一半自己先笑了，后面几个字含含糊糊的。\n\n乔雨跟着笑了一下。她没听清后半句，但赵一鸣笑的时候肩膀会往上耸，眼镜往下滑，这个反应她见过太多次，知道这时候只要等他笑完就会自己再解释一遍。\n\n她余光扫了一眼自己扣在桌上的手机。\n\n“你刚才在看什么？”赵一鸣笑完了，把手机收回去，下巴朝她桌上那台屏幕朝下的手机点了点，“我一过来你就锁屏。”\n\n“看时间。”乔雨说，“还有三分钟上课。”\n\n“哦。”赵一鸣没追问，又低头划自己手机，“对了，你看到张老师在班级群发的消息没？就刚才。”\n\n乔雨的手已经碰到自己手机背面，停住了。\n\n“什么消息？”\n\n“就班级群啊，”赵一鸣把手机转过来给她看，“刚才弹出来的，我还没点进去。”\n\n他的通知栏上挂着一条企业微信的群消息预览。班级群，发送人张老师，预览显示的前几个字是：各位同学，关于下周——\n\n不是作业。\n\n乔雨看着那条预览，手指没去翻自己的手机。",
+      "raw_response": "课间铃已经响过两分钟，乔雨的手指还停在手机屏幕上。\n\n企业微信的对话框里，班主任张老师的头像旁边只剩一行灰色小字——“对方撤回了一条消息”。上面是预览残留的四个字：你这次的……\n\n她盯着那四个字，拇指没动。通知栏弹出来的预览她只扫到一眼，手机就震了第二下，提示撤回。前后不到三秒。\n\n你这次的什么？\n\n乔雨把通知栏往下拉了一截。企业微信的预览已经缩成一句话，和锁屏上显示的完全一样。没有更多。\n\n脚步声从左边靠过来。\n\n她没转头，先听见同桌赵一鸣的帆布鞋踩在教室地砖上那种不带跟的摩擦声。然后是手机壳背面那排支架环磕在桌沿的轻响——他每次走过来都习惯把手机屏幕朝下扣着拿，支架环正好撞到桌子。\n\n乔雨按了侧键。屏幕黑掉的时候，她看见通知栏里那行撤回提示还挂着。\n\n“哎，”赵一鸣已经走到她桌子左边，手机翻过来朝她晃了一下，“你看这个。”\n\n乔雨抬起眼。他屏幕上是张图片，放大了看是某个短视频评论区的截图，一串点赞数特别高的神回复。\n\n“你先让我看看你笑什么。”乔雨把手机屏幕朝下搁在课本上，侧过身去看他的手机。\n\n赵一鸣把图片往下划了一下，露出第二条评论。“就这个，你看这人说的——”他念出声来，念到一半自己先笑了，后面几个字含含糊糊的。\n\n乔雨跟着笑了一下。她没听清后半句，但赵一鸣笑的时候肩膀会往上耸，眼镜往下滑，这个反应她见过太多次，知道这时候只要等他笑完就会自己再解释一遍。\n\n她余光扫了一眼自己扣在桌上的手机。\n\n“你刚才在看什么？”赵一鸣笑完了，把手机收回去，下巴朝她桌上那台屏幕朝下的手机点了点，“我一过来你就锁屏。”\n\n“看时间。”乔雨说，“还有三分钟上课。”\n\n“哦。”赵一鸣没追问，又低头划自己手机，“对了，你看到张老师在班级群发的消息没？就刚才。”\n\n乔雨的手已经碰到自己手机背面，停住了。\n\n“什么消息？”\n\n“就班级群啊，”赵一鸣把手机转过来给她看，“刚才弹出来的，我还没点进去。”\n\n他的通知栏上挂着一条企业微信的群消息预览。班级群，发送人张老师，预览显示的前几个字是：各位同学，关于下周——\n\n不是作业。\n\n乔雨看着那条预览，手指没去翻自己的手机。",
+      "input_tokens": 1459,
+      "output_tokens": 560,
+      "latency_ms": 18403,
+      "finish_reason": "stop",
+      "error_code": null,
+      "error_message": null,
+      "rendered_user_prompt_sha256": "1f6e04c79e8b56382ac73ff744c31f3b0a67a3a9b890dd8c5b4d5b05c08190e7",
+      "validation": {
+        "character_count": 889,
+        "validator_codes": [
+          "STOP_MARKER_LITERAL_MISS"
+        ],
+        "banned_sentence_hits": {},
+        "second_confirmation_hits": [],
+        "environment_coda_hits": [],
+        "stop_marker_first_char": null,
+        "post_stop_character_count": null,
+        "tempo_final_line_mismatch": false,
+        "manual_review_required": [
+          "viewpoint_violation",
+          "cross_mind_assertion",
+          "other_character_motive_as_fact",
+          "true_stop_state_position",
+          "visible_state_transition_count",
+          "relationship_or_meaning_summary",
+          "shared_atmosphere_declaration",
+          "narrator_correction_with_backstage_fact"
+        ]
+      },
+      "text_path": "cases\\AL-01\\drafts\\b-3.txt"
+    }
+  ],
+  "call_orders": {
+    "1": [
+      "C",
+      "B",
+      "D",
+      "A"
+    ],
+    "2": [
+      "C",
+      "A",
+      "D",
+      "B"
+    ],
+    "3": [
+      "A",
+      "C",
+      "D",
+      "B"
+    ]
+  }
+}

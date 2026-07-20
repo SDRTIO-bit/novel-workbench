@@ -1,0 +1,3 @@
+event: message
+data: {"jsonrpc":"2.0","id":110,"result":{"content":[{"type":"text","text":"{\"candidate_id\":\"e2daa979-f82d-468f-a42f-83788cbb20c0\",\"attempt\":1,\"stage\":\"reviser\",\"error_code\":null,\"error_message\":null,\"text_output\":\"黄昏的光从梧桐叶的缝隙里漏进来...(修订后的完整文本)...\",\"text_preview\":\"黄昏的光从梧桐叶的缝隙里漏进来...(修订后的完整文本)...\",\"input_tokens\":2371,\"output_tokens\":279,\"latency_ms\":50}"}],"structuredContent":{"candidate_id":"e2daa979-f82d-468f-a42f-83788cbb20c0","attempt":1,"stage":"reviser","error_code":null,"error_message":null,"text_output":"黄昏的光从梧桐叶的缝隙里漏进来...(修订后的完整文本)...","text_preview":"黄昏的光从梧桐叶的缝隙里漏进来...(修订后的完整文本)...","input_tokens":2371,"output_tokens":279,"latency_ms":50},"isError":false}}
+

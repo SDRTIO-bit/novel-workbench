@@ -1,0 +1,1 @@
+﻿{"jsonrpc":"2.0","id":43,"method":"tools/call","params":{"name":"execute_stage","arguments":{"run_id":"76a99772-c4ff-4096-a374-09fc55661da2","stage":"planner","provider_id":"2015ffd1-4b76-462e-baa2-18b27748332c","model_id":"mock-model"}}}

@@ -1,0 +1,64 @@
+{
+  "candidate_id": "0c74cec0-768c-4fd1-bc9a-918bd02e182a",
+  "attempt_number": 1,
+  "group": "C",
+  "replica": 2,
+  "permission_policy": "CURRENT",
+  "stop_policy": "STRICT_STOP",
+  "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+    "policy_metadata": {
+      "group": "C",
+      "permission_policy": "CURRENT",
+      "stop_policy": "STRICT_STOP",
+      "policy_version": "narrative-permission-stop-v1",
+      "policy_hash": "15e6b754a467a03569fe265abb7861ce24f144ba737ce3f2973776c1c2e76d47",
+      "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+      "permission_instruction_hash": null,
+      "stop_instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+      "seed": null
+    },
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "地铁报站的女声从头顶传下来：“下一站，翠苑。”\n\n林悄盯着微信界面，室友周黎的语音条旁边标着灰色小字——已撤回。她拇指悬在屏幕上方，没动。\n\n刚才外放的时候，周黎的声音从嘈杂的背景音里挤出来：“你桌上那个蓝色文件夹我——”然后地铁进站的轰鸣把后半句整个吞掉。她低头插上耳机再点，语音条已经变成一行系统提示。\n\n她给周黎拨过去，忙音。\n\n车厢晃了一下，她肩膀撞上扶手杆。旁边穿灰色夹克的男人往边上挪了半寸。林悄没看他。她拇指划开通讯录，又划回来，点进和周黎的聊天框。\n\n蓝色文件夹。桌上。明天投标。\n\n她不知道周黎到底说完了什么。可能是“我帮你收起来了”，也可能是“我不小心把咖啡洒上面了”，也可能是“我拿去给谁看了”，也可能跟文件夹根本没关系，周黎只是在说别的事情，只是恰好提到了那个蓝色文件夹——但语音被撤回了。\n\n地铁减速，站台灯光从窗外扫进来。翠苑站。\n\n车门打开，冷风灌进来。林悄没下车。她靠在扶手杆上，低头打字，拇指按在屏幕上，一个字一个字地删了又改。\n\n最后发出去的是：“刚在地铁上没听清，蓝色文件夹怎么啦？方便时回我～”\n\n加了个波浪线。她盯着那个波浪线看了两秒，锁屏。\n\n地铁启动，往下一站碾过去。窗外隧道壁上的电缆线一根一根往后抽。\n\n手机震了一下。\n\n林悄解锁。周黎的回复躺在对话框里，时间戳距她发出消息刚好两分钟。\n\n“没事，我帮你收起来了，回头说。”",
+  "raw_response": "地铁报站的女声从头顶传下来：“下一站，翠苑。”\n\n林悄盯着微信界面，室友周黎的语音条旁边标着灰色小字——已撤回。她拇指悬在屏幕上方，没动。\n\n刚才外放的时候，周黎的声音从嘈杂的背景音里挤出来：“你桌上那个蓝色文件夹我——”然后地铁进站的轰鸣把后半句整个吞掉。她低头插上耳机再点，语音条已经变成一行系统提示。\n\n她给周黎拨过去，忙音。\n\n车厢晃了一下，她肩膀撞上扶手杆。旁边穿灰色夹克的男人往边上挪了半寸。林悄没看他。她拇指划开通讯录，又划回来，点进和周黎的聊天框。\n\n蓝色文件夹。桌上。明天投标。\n\n她不知道周黎到底说完了什么。可能是“我帮你收起来了”，也可能是“我不小心把咖啡洒上面了”，也可能是“我拿去给谁看了”，也可能跟文件夹根本没关系，周黎只是在说别的事情，只是恰好提到了那个蓝色文件夹——但语音被撤回了。\n\n地铁减速，站台灯光从窗外扫进来。翠苑站。\n\n车门打开，冷风灌进来。林悄没下车。她靠在扶手杆上，低头打字，拇指按在屏幕上，一个字一个字地删了又改。\n\n最后发出去的是：“刚在地铁上没听清，蓝色文件夹怎么啦？方便时回我～”\n\n加了个波浪线。她盯着那个波浪线看了两秒，锁屏。\n\n地铁启动，往下一站碾过去。窗外隧道壁上的电缆线一根一根往后抽。\n\n手机震了一下。\n\n林悄解锁。周黎的回复躺在对话框里，时间戳距她发出消息刚好两分钟。\n\n“没事，我帮你收起来了，回头说。”",
+  "input_tokens": 1401,
+  "output_tokens": 373,
+  "latency_ms": 15988,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "d0842c68cfe6dde70043069224ec8930ea5d0c1223ac3f8723a444d1ef822f83",
+  "validation": {
+    "character_count": 587,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "banned_sentence_hits": {},
+    "second_confirmation_hits": [],
+    "environment_coda_hits": [],
+    "stop_marker_first_char": null,
+    "post_stop_character_count": null,
+    "tempo_final_line_mismatch": false,
+    "manual_review_required": [
+      "viewpoint_violation",
+      "cross_mind_assertion",
+      "other_character_motive_as_fact",
+      "true_stop_state_position",
+      "visible_state_transition_count",
+      "relationship_or_meaning_summary",
+      "shared_atmosphere_declaration",
+      "narrator_correction_with_backstage_fact"
+    ]
+  },
+  "text_path": "cases\\NM-01\\drafts\\c-2.txt"
+}

@@ -1,0 +1,3 @@
+event: message
+data: {"jsonrpc":"2.0","id":13,"result":{"content":[{"type":"text","text":"{\"id\":\"9d77c11f-6886-4fab-aeb1-6b8f7ab5a90c\",\"kind\":\"characters\",\"title\":\"人物设定\"}"}],"structuredContent":{"id":"9d77c11f-6886-4fab-aeb1-6b8f7ab5a90c","kind":"characters","title":"人物设定"},"isError":false}}
+

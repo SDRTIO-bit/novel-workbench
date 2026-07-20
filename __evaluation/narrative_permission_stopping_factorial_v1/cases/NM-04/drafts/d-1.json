@@ -1,0 +1,64 @@
+{
+  "candidate_id": "65591fe7-1d08-4d93-bbe2-134ce35a1ce8",
+  "attempt_number": 1,
+  "group": "D",
+  "replica": 1,
+  "permission_policy": "STRICT_LIMITED",
+  "stop_policy": "STRICT_STOP",
+  "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e",
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e",
+    "policy_metadata": {
+      "group": "D",
+      "permission_policy": "STRICT_LIMITED",
+      "stop_policy": "STRICT_STOP",
+      "policy_version": "narrative-permission-stop-v1",
+      "policy_hash": "533ba9fe37558af28e5b9a277971d13c5f7674a7a297a2c3d7f1a96c77af3123",
+      "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e",
+      "permission_instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+      "stop_instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+      "seed": null
+    },
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "周日早晨的阳光还没完全照进楼道，苏叶蹲在单元门口，看着自己那辆自行车的链条像条死蛇一样耷拉在地上。\n\n她伸手碰了一下，指尖沾上黑色的油泥。链条后半截卡在后轮齿轮和车架之间，前半截完全脱落，垂在踏板下方晃荡。她试着拽了拽，链条纹丝不动。\n\n三米外，沈一凡正蹲在他那辆山地车旁边，左手扶着踏板，右手用扳手拧着什么。他动作很快，拧两下，转一下轮子，再拧两下。工具箱摊开在他脚边，红色内衬里嵌着各种尺寸的扳手、螺丝刀，还有一个她叫不出名字的小铁片。\n\n苏叶又拽了一下链条。手指滑脱，指甲刮在金属上发出一声刺耳的响。\n\n沈一凡抬头看了她一眼。\n\n就一眼。然后继续拧他的螺丝。\n\n苏叶站起来，走到楼道门口，又走回来。她看见自己车筐里还放着昨天买的菜，塑料袋上凝了一层水珠。链条掉成这样，她连推都推不走。\n\n沈一凡把扳手放下，从工具箱里拿出那个小铁片，卡进自己车轮的某个位置。他转了一下轮子，铁片跟着转，发出均匀的嗒嗒声。\n\n苏叶走到工具箱旁边蹲下来。\n\n工具箱里的扳手从小到大排成一排。她记得小时候看人修车，好像要用扳手把后轮螺丝拧松，链条才能重新套上去。但哪个是紧链条的，她不确定。\n\n她伸手拿起一个中号的扳手，金属冰凉，比想象中重。\n\n“这个，”她开口，声音在楼道里显得有点干，“是用来紧链条的吗？”\n\n沈一凡停下手里的动作。他先看了看她手里的扳手，又看了看她蹲在工具箱旁边的姿势，最后视线越过她，落在那辆链条掉了一地的自行车上。\n\n他把自己的小铁片放回工具箱，伸手接过她手里的扳手。\n\n“我来帮你看看。”他说。",
+  "raw_response": "周日早晨的阳光还没完全照进楼道，苏叶蹲在单元门口，看着自己那辆自行车的链条像条死蛇一样耷拉在地上。\n\n她伸手碰了一下，指尖沾上黑色的油泥。链条后半截卡在后轮齿轮和车架之间，前半截完全脱落，垂在踏板下方晃荡。她试着拽了拽，链条纹丝不动。\n\n三米外，沈一凡正蹲在他那辆山地车旁边，左手扶着踏板，右手用扳手拧着什么。他动作很快，拧两下，转一下轮子，再拧两下。工具箱摊开在他脚边，红色内衬里嵌着各种尺寸的扳手、螺丝刀，还有一个她叫不出名字的小铁片。\n\n苏叶又拽了一下链条。手指滑脱，指甲刮在金属上发出一声刺耳的响。\n\n沈一凡抬头看了她一眼。\n\n就一眼。然后继续拧他的螺丝。\n\n苏叶站起来，走到楼道门口，又走回来。她看见自己车筐里还放着昨天买的菜，塑料袋上凝了一层水珠。链条掉成这样，她连推都推不走。\n\n沈一凡把扳手放下，从工具箱里拿出那个小铁片，卡进自己车轮的某个位置。他转了一下轮子，铁片跟着转，发出均匀的嗒嗒声。\n\n苏叶走到工具箱旁边蹲下来。\n\n工具箱里的扳手从小到大排成一排。她记得小时候看人修车，好像要用扳手把后轮螺丝拧松，链条才能重新套上去。但哪个是紧链条的，她不确定。\n\n她伸手拿起一个中号的扳手，金属冰凉，比想象中重。\n\n“这个，”她开口，声音在楼道里显得有点干，“是用来紧链条的吗？”\n\n沈一凡停下手里的动作。他先看了看她手里的扳手，又看了看她蹲在工具箱旁边的姿势，最后视线越过她，落在那辆链条掉了一地的自行车上。\n\n他把自己的小铁片放回工具箱，伸手接过她手里的扳手。\n\n“我来帮你看看。”他说。",
+  "input_tokens": 1610,
+  "output_tokens": 431,
+  "latency_ms": 24214,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "ec37a1052b6c418e1444b9abc19b66707de9f36bd89e7dcb9214c3c559d54353",
+  "validation": {
+    "character_count": 652,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "banned_sentence_hits": {},
+    "second_confirmation_hits": [],
+    "environment_coda_hits": [],
+    "stop_marker_first_char": null,
+    "post_stop_character_count": null,
+    "tempo_final_line_mismatch": false,
+    "manual_review_required": [
+      "viewpoint_violation",
+      "cross_mind_assertion",
+      "other_character_motive_as_fact",
+      "true_stop_state_position",
+      "visible_state_transition_count",
+      "relationship_or_meaning_summary",
+      "shared_atmosphere_declaration",
+      "narrator_correction_with_backstage_fact"
+    ]
+  },
+  "text_path": "cases\\NM-04\\drafts\\d-1.txt"
+}

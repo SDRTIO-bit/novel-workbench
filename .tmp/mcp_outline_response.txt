@@ -1,0 +1,3 @@
+event: message
+data: {"jsonrpc":"2.0","id":12,"result":{"content":[{"type":"text","text":"{\"id\":\"7def7bfb-27fe-4015-957f-01bb70f07ffb\",\"kind\":\"outline\",\"title\":\"章节大纲\"}"}],"structuredContent":{"id":"7def7bfb-27fe-4015-957f-01bb70f07ffb","kind":"outline","title":"章节大纲"},"isError":false}}
+

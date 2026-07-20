@@ -1,0 +1,63 @@
+{
+  "candidate_id": "c7f01c5b-3398-4def-952e-bdac5dd128d8",
+  "attempt_number": 1,
+  "group": "A",
+  "replica": 1,
+  "permission_policy": "CURRENT",
+  "stop_policy": "CURRENT",
+  "instruction_hash": null,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "policy_metadata": {
+      "group": "A",
+      "permission_policy": "CURRENT",
+      "stop_policy": "CURRENT",
+      "policy_version": "narrative-permission-stop-v1",
+      "policy_hash": "bcba9c79e51e6722c8796bc8a1defd65461d017dbbaf922efbe9c16df2ba3d4f",
+      "instruction_hash": null,
+      "permission_instruction_hash": null,
+      "stop_instruction_hash": null,
+      "seed": null
+    },
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "方笛推开洗衣房的门时，手机屏幕显示三点二十。\n\n她记得自己两点四十把衣服塞进滚筒，投了币，选了标准洗，六十分钟。应该还有二十分钟才对。\n\n但她的那台机器是停的。\n\n面板全黑，指示灯一颗都不亮。滚筒玻璃后面能看到一团模糊的衣物，贴在壁上，水位已经排空了。\n\n一个老人站在机器旁边，手里拎着个空洗衣篮。\n\n方笛走过去，伸手碰了一下滚筒的门把手。\n\n“哎，那我的。”老人说。\n\n方笛的手停在半空。\n\n“我刚放的，”老人把篮子搁在机器顶上，“洗完了，正准备拿出来。”\n\n“这台机器……”方笛看着面板，“我两点四十来的。”\n\n“我两点半就在这了，”老人说，“你记错了吧。”\n\n方笛没接话。她看了一眼玻璃后面的衣服。深色的，团成一团，看不出什么。她又看了一眼手机——三点二十一。从她离开到现在，确实只过了四十分钟。\n\n但面板上没有任何剩余时间。程序已经结束了。\n\n“这机器有时候会提前停，”方笛说，“我设的六十分钟。”\n\n“六十分钟？”老人笑了一下，“那你看，现在停了，说明不是你的。我的就设的快洗，半小时。”\n\n方笛咬了一下嘴唇内侧。\n\n她不能直接拉开门。万一真是老人的衣服，她一个年轻人翻人家衣服，说不清楚。但她也不能就这么走——她记得自己放进去了那件灰色卫衣，袖子口有块洗不掉的墨水印。\n\n“那……能打开看看吗？”她说。\n\n老人看了她一眼，倒也没犹豫，伸手就把滚筒门拉开了。\n\n一股洗衣液的香味涌出来。\n\n老人拽住一件衣服的袖子往外拉。第一件是深蓝色棉毛裤，接着是一件格子衬衫，然后是条灰色运动裤，一条毛巾，两双袜子。\n\n方笛盯着那件灰色运动裤看。不是卫衣。没有墨水印。\n\n她往滚筒里又看了一眼。最里面还有一只白色袜子，卷在角落里。老人伸手够出来，丢进篮子里。\n\n空了。\n\n“你看，”老人把篮子从机器顶上拿下来，拎在手里，“我说是我的吧。”\n\n方笛退了一步，让出路来。\n\n老人把篮子搁在地上，弯腰捡起掉出来的一只袜子。袜子滚到了方笛脚边，方笛先一步蹲下去，捡起来递过去。\n\n“谢谢。”老人接过来，塞进篮子边上的缝隙里。\n\n方笛站起来，看着老人把最后那件格子衬衫的袖子往篮子里掖了掖。篮子装得满满当当，最上面那条毛巾的一个角翘起来，老人按了一下，没按下去，就算了。\n\n老人提起篮子，朝门口走。经过方笛身边时停了一步。\n\n“你那衣服可能在别的机器里，”老人说，“这排有三台一样的。”\n\n方笛点了点头。\n\n老人推开门出去了。洗衣房里只剩下滚筒门还敞着，里面空荡荡的，不锈钢内壁上挂着一层水珠。",
+  "raw_response": "方笛推开洗衣房的门时，手机屏幕显示三点二十。\n\n她记得自己两点四十把衣服塞进滚筒，投了币，选了标准洗，六十分钟。应该还有二十分钟才对。\n\n但她的那台机器是停的。\n\n面板全黑，指示灯一颗都不亮。滚筒玻璃后面能看到一团模糊的衣物，贴在壁上，水位已经排空了。\n\n一个老人站在机器旁边，手里拎着个空洗衣篮。\n\n方笛走过去，伸手碰了一下滚筒的门把手。\n\n“哎，那我的。”老人说。\n\n方笛的手停在半空。\n\n“我刚放的，”老人把篮子搁在机器顶上，“洗完了，正准备拿出来。”\n\n“这台机器……”方笛看着面板，“我两点四十来的。”\n\n“我两点半就在这了，”老人说，“你记错了吧。”\n\n方笛没接话。她看了一眼玻璃后面的衣服。深色的，团成一团，看不出什么。她又看了一眼手机——三点二十一。从她离开到现在，确实只过了四十分钟。\n\n但面板上没有任何剩余时间。程序已经结束了。\n\n“这机器有时候会提前停，”方笛说，“我设的六十分钟。”\n\n“六十分钟？”老人笑了一下，“那你看，现在停了，说明不是你的。我的就设的快洗，半小时。”\n\n方笛咬了一下嘴唇内侧。\n\n她不能直接拉开门。万一真是老人的衣服，她一个年轻人翻人家衣服，说不清楚。但她也不能就这么走——她记得自己放进去了那件灰色卫衣，袖子口有块洗不掉的墨水印。\n\n“那……能打开看看吗？”她说。\n\n老人看了她一眼，倒也没犹豫，伸手就把滚筒门拉开了。\n\n一股洗衣液的香味涌出来。\n\n老人拽住一件衣服的袖子往外拉。第一件是深蓝色棉毛裤，接着是一件格子衬衫，然后是条灰色运动裤，一条毛巾，两双袜子。\n\n方笛盯着那件灰色运动裤看。不是卫衣。没有墨水印。\n\n她往滚筒里又看了一眼。最里面还有一只白色袜子，卷在角落里。老人伸手够出来，丢进篮子里。\n\n空了。\n\n“你看，”老人把篮子从机器顶上拿下来，拎在手里，“我说是我的吧。”\n\n方笛退了一步，让出路来。\n\n老人把篮子搁在地上，弯腰捡起掉出来的一只袜子。袜子滚到了方笛脚边，方笛先一步蹲下去，捡起来递过去。\n\n“谢谢。”老人接过来，塞进篮子边上的缝隙里。\n\n方笛站起来，看着老人把最后那件格子衬衫的袖子往篮子里掖了掖。篮子装得满满当当，最上面那条毛巾的一个角翘起来，老人按了一下，没按下去，就算了。\n\n老人提起篮子，朝门口走。经过方笛身边时停了一步。\n\n“你那衣服可能在别的机器里，”老人说，“这排有三台一样的。”\n\n方笛点了点头。\n\n老人推开门出去了。洗衣房里只剩下滚筒门还敞着，里面空荡荡的，不锈钢内壁上挂着一层水珠。",
+  "input_tokens": 1249,
+  "output_tokens": 622,
+  "latency_ms": 23905,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "c4fd4a9ab5121e318e21203dbc18497b2b48587b44b333de6c33775fdde34a50",
+  "validation": {
+    "character_count": 1040,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "banned_sentence_hits": {},
+    "second_confirmation_hits": [],
+    "environment_coda_hits": [],
+    "stop_marker_first_char": null,
+    "post_stop_character_count": null,
+    "tempo_final_line_mismatch": false,
+    "manual_review_required": [
+      "viewpoint_violation",
+      "cross_mind_assertion",
+      "other_character_motive_as_fact",
+      "true_stop_state_position",
+      "visible_state_transition_count",
+      "relationship_or_meaning_summary",
+      "shared_atmosphere_declaration",
+      "narrator_correction_with_backstage_fact"
+    ]
+  },
+  "text_path": "cases\\NM-03\\drafts\\a-1.txt"
+}

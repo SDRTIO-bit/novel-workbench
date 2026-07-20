@@ -1,0 +1,10 @@
+{
+  "experiment_id": "DETECTOR_GENERALIZATION_V2",
+  "source_commit": "",
+  "total_articles": 72,
+  "total_content_characters": 70953,
+  "separator": "five newline characters (\\\\n\\\\n\\\\n\\\\n\\\\n)",
+  "submission_sha256": "d4364c851aef531df4caa844fe2ffd4e876e4fa91c9ed4d5a80d49fe02b50187",
+  "blind_queue_sha256": "bb490ab49b88490f930dd0a9aacca7833c4c783766aace112948c99ebd4780a8",
+  "generated_at": "2026-07-19T19:51:20+08:00"
+}

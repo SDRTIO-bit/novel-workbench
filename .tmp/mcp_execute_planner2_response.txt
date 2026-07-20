@@ -1,0 +1,3 @@
+event: message
+data: {"jsonrpc":"2.0","id":41,"result":{"content":[{"type":"text","text":"{\"candidate_id\":\"4a21dfc4-8a4e-4069-a5a8-722e15a0f293\",\"attempt\":2,\"stage\":\"planner\",\"error_code\":\"LLM_RATE_LIMIT\",\"error_message\":\"('LLM_RATE_LIMIT', '请求频率超限，请稍后重试', 502)\",\"text_output\":\"\",\"text_preview\":\"\",\"input_tokens\":0,\"output_tokens\":0,\"latency_ms\":2323}"}],"structuredContent":{"candidate_id":"4a21dfc4-8a4e-4069-a5a8-722e15a0f293","attempt":2,"stage":"planner","error_code":"LLM_RATE_LIMIT","error_message":"('LLM_RATE_LIMIT', '请求频率超限，请稍后重试', 502)","text_output":"","text_preview":"","input_tokens":0,"output_tokens":0,"latency_ms":2323},"isError":false}}
+

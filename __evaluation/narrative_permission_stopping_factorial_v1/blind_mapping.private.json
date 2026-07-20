@@ -1,0 +1,1826 @@
+{
+  "B7DCE5E20D38": {
+    "case_id": "AL-01",
+    "group": "C",
+    "permission_policy": "CURRENT",
+    "stop_policy": "STRICT_STOP",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "1",
+    "seed": null,
+    "text_path": "cases\\AL-01\\drafts\\c-1.txt",
+    "candidate_id": "41e857f2-59b1-49e2-a2a9-ebd4e8815283",
+    "planner_candidate_id": "84211002-105a-459f-ac9c-6fb2180f0c74",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "dc9bbab8f9a0b5bbddd77fca3dbf9ca6ba7fcbdacbd4c1a0f0e78e5bd8b04f56",
+    "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1"
+  },
+  "B065F4A49B08": {
+    "case_id": "AL-01",
+    "group": "B",
+    "permission_policy": "STRICT_LIMITED",
+    "stop_policy": "CURRENT",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "1",
+    "seed": null,
+    "text_path": "cases\\AL-01\\drafts\\b-1.txt",
+    "candidate_id": "bfc1def6-a19d-4d82-a941-e1c69084357f",
+    "planner_candidate_id": "84211002-105a-459f-ac9c-6fb2180f0c74",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "1f6e04c79e8b56382ac73ff744c31f3b0a67a3a9b890dd8c5b4d5b05c08190e7",
+    "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b"
+  },
+  "FD924880B3B7": {
+    "case_id": "AL-01",
+    "group": "D",
+    "permission_policy": "STRICT_LIMITED",
+    "stop_policy": "STRICT_STOP",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "1",
+    "seed": null,
+    "text_path": "cases\\AL-01\\drafts\\d-1.txt",
+    "candidate_id": "c0a8bf7a-40d5-4a2f-93ec-62aa695475a9",
+    "planner_candidate_id": "84211002-105a-459f-ac9c-6fb2180f0c74",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "78ed30016769d455254be402c70a5c926ec373453451fed00731549e8110e46b",
+    "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e"
+  },
+  "61BA8C54903F": {
+    "case_id": "AL-01",
+    "group": "A",
+    "permission_policy": "CURRENT",
+    "stop_policy": "CURRENT",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "1",
+    "seed": null,
+    "text_path": "cases\\AL-01\\drafts\\a-1.txt",
+    "candidate_id": "64587492-a337-4d65-ace8-b46d00d65f1f",
+    "planner_candidate_id": "84211002-105a-459f-ac9c-6fb2180f0c74",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "4d5a39e898ab2cae7c8749913d1715c204ef930adefa161ef7ad845e18db5bad",
+    "instruction_hash": null
+  },
+  "FBD3E77C7BDB": {
+    "case_id": "AL-01",
+    "group": "C",
+    "permission_policy": "CURRENT",
+    "stop_policy": "STRICT_STOP",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "2",
+    "seed": null,
+    "text_path": "cases\\AL-01\\drafts\\c-2.txt",
+    "candidate_id": "c5af41a3-9f58-4517-87ae-bfe6b7429654",
+    "planner_candidate_id": "84211002-105a-459f-ac9c-6fb2180f0c74",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "dc9bbab8f9a0b5bbddd77fca3dbf9ca6ba7fcbdacbd4c1a0f0e78e5bd8b04f56",
+    "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1"
+  },
+  "E7EB4CAD305C": {
+    "case_id": "AL-01",
+    "group": "A",
+    "permission_policy": "CURRENT",
+    "stop_policy": "CURRENT",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "2",
+    "seed": null,
+    "text_path": "cases\\AL-01\\drafts\\a-2.txt",
+    "candidate_id": "9da69324-c886-4de4-b1c1-c07bddfa9790",
+    "planner_candidate_id": "84211002-105a-459f-ac9c-6fb2180f0c74",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "4d5a39e898ab2cae7c8749913d1715c204ef930adefa161ef7ad845e18db5bad",
+    "instruction_hash": null
+  },
+  "E2D6BBD48CDF": {
+    "case_id": "AL-01",
+    "group": "D",
+    "permission_policy": "STRICT_LIMITED",
+    "stop_policy": "STRICT_STOP",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "2",
+    "seed": null,
+    "text_path": "cases\\AL-01\\drafts\\d-2.txt",
+    "candidate_id": "ee0045ba-3c28-4ec8-a006-25b60e356b86",
+    "planner_candidate_id": "84211002-105a-459f-ac9c-6fb2180f0c74",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "78ed30016769d455254be402c70a5c926ec373453451fed00731549e8110e46b",
+    "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e"
+  },
+  "CBAFF0D5CD4A": {
+    "case_id": "AL-01",
+    "group": "B",
+    "permission_policy": "STRICT_LIMITED",
+    "stop_policy": "CURRENT",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "2",
+    "seed": null,
+    "text_path": "cases\\AL-01\\drafts\\b-2.txt",
+    "candidate_id": "a298b1d7-a2a4-4c8a-a62e-93be8ab930ec",
+    "planner_candidate_id": "84211002-105a-459f-ac9c-6fb2180f0c74",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "1f6e04c79e8b56382ac73ff744c31f3b0a67a3a9b890dd8c5b4d5b05c08190e7",
+    "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b"
+  },
+  "C1E99060DEF4": {
+    "case_id": "AL-01",
+    "group": "A",
+    "permission_policy": "CURRENT",
+    "stop_policy": "CURRENT",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "3",
+    "seed": null,
+    "text_path": "cases\\AL-01\\drafts\\a-3.txt",
+    "candidate_id": "7c868d57-8ca7-49e9-9081-8cf7dcfb298d",
+    "planner_candidate_id": "84211002-105a-459f-ac9c-6fb2180f0c74",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "4d5a39e898ab2cae7c8749913d1715c204ef930adefa161ef7ad845e18db5bad",
+    "instruction_hash": null
+  },
+  "66CAA3303477": {
+    "case_id": "AL-01",
+    "group": "C",
+    "permission_policy": "CURRENT",
+    "stop_policy": "STRICT_STOP",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "3",
+    "seed": null,
+    "text_path": "cases\\AL-01\\drafts\\c-3.txt",
+    "candidate_id": "82587bec-6f55-45e6-9ab4-b4103be95a98",
+    "planner_candidate_id": "84211002-105a-459f-ac9c-6fb2180f0c74",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "dc9bbab8f9a0b5bbddd77fca3dbf9ca6ba7fcbdacbd4c1a0f0e78e5bd8b04f56",
+    "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1"
+  },
+  "B5C36A9FFEEB": {
+    "case_id": "AL-01",
+    "group": "D",
+    "permission_policy": "STRICT_LIMITED",
+    "stop_policy": "STRICT_STOP",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "3",
+    "seed": null,
+    "text_path": "cases\\AL-01\\drafts\\d-3.txt",
+    "candidate_id": "abeedef5-2f4b-42fc-abbc-096c741a3a61",
+    "planner_candidate_id": "84211002-105a-459f-ac9c-6fb2180f0c74",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "78ed30016769d455254be402c70a5c926ec373453451fed00731549e8110e46b",
+    "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e"
+  },
+  "37B923DA043D": {
+    "case_id": "AL-01",
+    "group": "B",
+    "permission_policy": "STRICT_LIMITED",
+    "stop_policy": "CURRENT",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "3",
+    "seed": null,
+    "text_path": "cases\\AL-01\\drafts\\b-3.txt",
+    "candidate_id": "e947db24-8329-4ee4-ac49-d48bd8ea1f54",
+    "planner_candidate_id": "84211002-105a-459f-ac9c-6fb2180f0c74",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "1f6e04c79e8b56382ac73ff744c31f3b0a67a3a9b890dd8c5b4d5b05c08190e7",
+    "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b"
+  },
+  "9AB4DF309388": {
+    "case_id": "CO-04",
+    "group": "A",
+    "permission_policy": "CURRENT",
+    "stop_policy": "CURRENT",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "1",
+    "seed": null,
+    "text_path": "cases\\CO-04\\drafts\\a-1.txt",
+    "candidate_id": "e198e55c-4139-49a5-91c9-caa5cf7c1c92",
+    "planner_candidate_id": "b9dfbb58-fd42-4a9a-a3ba-4c7dc7494c7b",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "c2c4eba5faec4f112afb45d86aec373358e4df6fc4bebf6574e603b3915fc3d6",
+    "instruction_hash": null
+  },
+  "96D6D5AD77D0": {
+    "case_id": "CO-04",
+    "group": "C",
+    "permission_policy": "CURRENT",
+    "stop_policy": "STRICT_STOP",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "1",
+    "seed": null,
+    "text_path": "cases\\CO-04\\drafts\\c-1.txt",
+    "candidate_id": "b3c99e1d-4574-40b1-af14-1b369ff87b00",
+    "planner_candidate_id": "b9dfbb58-fd42-4a9a-a3ba-4c7dc7494c7b",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "ad091ac1cc9fa8a5454b4fac05681ab30eb95eda6abcc0e6a99e2033d7fd4b12",
+    "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1"
+  },
+  "30CBFC4DAC4F": {
+    "case_id": "CO-04",
+    "group": "B",
+    "permission_policy": "STRICT_LIMITED",
+    "stop_policy": "CURRENT",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "1",
+    "seed": null,
+    "text_path": "cases\\CO-04\\drafts\\b-1.txt",
+    "candidate_id": "8cc69625-ee22-4c3b-b6c4-d047165c1e98",
+    "planner_candidate_id": "b9dfbb58-fd42-4a9a-a3ba-4c7dc7494c7b",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "b531168b46a3e16de6a9328486a99b30c7e7d99d00a33b0e0dd02d7360856c91",
+    "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b"
+  },
+  "FA467A776701": {
+    "case_id": "CO-04",
+    "group": "D",
+    "permission_policy": "STRICT_LIMITED",
+    "stop_policy": "STRICT_STOP",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "1",
+    "seed": null,
+    "text_path": "cases\\CO-04\\drafts\\d-1.txt",
+    "candidate_id": "ab39dfd4-da3d-4c1b-8c58-04654c876042",
+    "planner_candidate_id": "b9dfbb58-fd42-4a9a-a3ba-4c7dc7494c7b",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "9a5969ec58a5832caf1036cbdae7d3a0543cbfa1001b313975334de13ab08b1d",
+    "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e"
+  },
+  "B7B8A5C565C2": {
+    "case_id": "CO-04",
+    "group": "B",
+    "permission_policy": "STRICT_LIMITED",
+    "stop_policy": "CURRENT",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "2",
+    "seed": null,
+    "text_path": "cases\\CO-04\\drafts\\b-2.txt",
+    "candidate_id": "2c26698b-23ef-4739-a2be-a3f60782d781",
+    "planner_candidate_id": "b9dfbb58-fd42-4a9a-a3ba-4c7dc7494c7b",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "b531168b46a3e16de6a9328486a99b30c7e7d99d00a33b0e0dd02d7360856c91",
+    "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b"
+  },
+  "25CE92428AF8": {
+    "case_id": "CO-04",
+    "group": "D",
+    "permission_policy": "STRICT_LIMITED",
+    "stop_policy": "STRICT_STOP",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "2",
+    "seed": null,
+    "text_path": "cases\\CO-04\\drafts\\d-2.txt",
+    "candidate_id": "fe4aeaed-48eb-4c47-888e-b1d2754152ad",
+    "planner_candidate_id": "b9dfbb58-fd42-4a9a-a3ba-4c7dc7494c7b",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "9a5969ec58a5832caf1036cbdae7d3a0543cbfa1001b313975334de13ab08b1d",
+    "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e"
+  },
+  "E2E45C0B9E13": {
+    "case_id": "CO-04",
+    "group": "C",
+    "permission_policy": "CURRENT",
+    "stop_policy": "STRICT_STOP",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "2",
+    "seed": null,
+    "text_path": "cases\\CO-04\\drafts\\c-2.txt",
+    "candidate_id": "88df5099-db99-4211-add3-559dc2803847",
+    "planner_candidate_id": "b9dfbb58-fd42-4a9a-a3ba-4c7dc7494c7b",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "ad091ac1cc9fa8a5454b4fac05681ab30eb95eda6abcc0e6a99e2033d7fd4b12",
+    "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1"
+  },
+  "58525F4430AE": {
+    "case_id": "CO-04",
+    "group": "A",
+    "permission_policy": "CURRENT",
+    "stop_policy": "CURRENT",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "2",
+    "seed": null,
+    "text_path": "cases\\CO-04\\drafts\\a-2.txt",
+    "candidate_id": "d3bab4ae-3b82-4f0f-9e80-d84fbd7deeb7",
+    "planner_candidate_id": "b9dfbb58-fd42-4a9a-a3ba-4c7dc7494c7b",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "c2c4eba5faec4f112afb45d86aec373358e4df6fc4bebf6574e603b3915fc3d6",
+    "instruction_hash": null
+  },
+  "88C5A3057D4A": {
+    "case_id": "CO-04",
+    "group": "A",
+    "permission_policy": "CURRENT",
+    "stop_policy": "CURRENT",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "3",
+    "seed": null,
+    "text_path": "cases\\CO-04\\drafts\\a-3.txt",
+    "candidate_id": "c0a65e3b-e5c9-4812-93f8-c57ad8725bf2",
+    "planner_candidate_id": "b9dfbb58-fd42-4a9a-a3ba-4c7dc7494c7b",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "c2c4eba5faec4f112afb45d86aec373358e4df6fc4bebf6574e603b3915fc3d6",
+    "instruction_hash": null
+  },
+  "083AA60BF6BE": {
+    "case_id": "CO-04",
+    "group": "D",
+    "permission_policy": "STRICT_LIMITED",
+    "stop_policy": "STRICT_STOP",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "3",
+    "seed": null,
+    "text_path": "cases\\CO-04\\drafts\\d-3.txt",
+    "candidate_id": "3ddd1655-1363-4275-ade0-8fa167d82066",
+    "planner_candidate_id": "b9dfbb58-fd42-4a9a-a3ba-4c7dc7494c7b",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "9a5969ec58a5832caf1036cbdae7d3a0543cbfa1001b313975334de13ab08b1d",
+    "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e"
+  },
+  "B1DA5884A41A": {
+    "case_id": "CO-04",
+    "group": "B",
+    "permission_policy": "STRICT_LIMITED",
+    "stop_policy": "CURRENT",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "3",
+    "seed": null,
+    "text_path": "cases\\CO-04\\drafts\\b-3.txt",
+    "candidate_id": "f5c21779-26c4-46fd-9071-d2f4a84f494b",
+    "planner_candidate_id": "b9dfbb58-fd42-4a9a-a3ba-4c7dc7494c7b",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "b531168b46a3e16de6a9328486a99b30c7e7d99d00a33b0e0dd02d7360856c91",
+    "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b"
+  },
+  "E737B209DA3C": {
+    "case_id": "CO-04",
+    "group": "C",
+    "permission_policy": "CURRENT",
+    "stop_policy": "STRICT_STOP",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "3",
+    "seed": null,
+    "text_path": "cases\\CO-04\\drafts\\c-3.txt",
+    "candidate_id": "a5690265-aa89-425c-9d74-88e7cdfa8cc0",
+    "planner_candidate_id": "b9dfbb58-fd42-4a9a-a3ba-4c7dc7494c7b",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "ad091ac1cc9fa8a5454b4fac05681ab30eb95eda6abcc0e6a99e2033d7fd4b12",
+    "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1"
+  },
+  "53D40BC29E6B": {
+    "case_id": "CO-05",
+    "group": "B",
+    "permission_policy": "STRICT_LIMITED",
+    "stop_policy": "CURRENT",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "1",
+    "seed": null,
+    "text_path": "cases\\CO-05\\drafts\\b-1.txt",
+    "candidate_id": "dc5e8b2f-c335-4921-b780-2ae2719e6625",
+    "planner_candidate_id": "c3c70c6f-26aa-4aa8-ba27-0dc086e07a86",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "28dbaa6e5cae08e2ef79615cc148f1dba5e45fe6555b91aa4bd9e790582e6ad8",
+    "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b"
+  },
+  "E9E9789FD59F": {
+    "case_id": "CO-05",
+    "group": "A",
+    "permission_policy": "CURRENT",
+    "stop_policy": "CURRENT",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "1",
+    "seed": null,
+    "text_path": "cases\\CO-05\\drafts\\a-1.txt",
+    "candidate_id": "40eb7fc9-295e-4300-9e5c-41716d2330bb",
+    "planner_candidate_id": "c3c70c6f-26aa-4aa8-ba27-0dc086e07a86",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "5ee79fd724495caa67e1b830fb9e5b028a1fb7472c77aecde8db5605b15c1c9d",
+    "instruction_hash": null
+  },
+  "F84A0684ED26": {
+    "case_id": "CO-05",
+    "group": "C",
+    "permission_policy": "CURRENT",
+    "stop_policy": "STRICT_STOP",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "1",
+    "seed": null,
+    "text_path": "cases\\CO-05\\drafts\\c-1.txt",
+    "candidate_id": "cf456163-fe80-4aab-9f6d-78f50c259970",
+    "planner_candidate_id": "c3c70c6f-26aa-4aa8-ba27-0dc086e07a86",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "49942b296503f3b08e2bae47b768040bde017de5d3d94e74ea3ad96d0dc982fd",
+    "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1"
+  },
+  "83D2E0A7D904": {
+    "case_id": "CO-05",
+    "group": "D",
+    "permission_policy": "STRICT_LIMITED",
+    "stop_policy": "STRICT_STOP",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "1",
+    "seed": null,
+    "text_path": "cases\\CO-05\\drafts\\d-1.txt",
+    "candidate_id": "e673fdea-d5b0-4079-a707-e45fec308b18",
+    "planner_candidate_id": "c3c70c6f-26aa-4aa8-ba27-0dc086e07a86",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "11dde2ec3226b7ef8264762c2d80b8350b68dd82b00cf207fb8e2de13af8f8f3",
+    "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e"
+  },
+  "476025D719F8": {
+    "case_id": "CO-05",
+    "group": "A",
+    "permission_policy": "CURRENT",
+    "stop_policy": "CURRENT",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "2",
+    "seed": null,
+    "text_path": "cases\\CO-05\\drafts\\a-2.txt",
+    "candidate_id": "28ee1a93-8bdd-4676-8fab-b83f37dd30ee",
+    "planner_candidate_id": "c3c70c6f-26aa-4aa8-ba27-0dc086e07a86",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "5ee79fd724495caa67e1b830fb9e5b028a1fb7472c77aecde8db5605b15c1c9d",
+    "instruction_hash": null
+  },
+  "CBE7CD8C57BA": {
+    "case_id": "CO-05",
+    "group": "D",
+    "permission_policy": "STRICT_LIMITED",
+    "stop_policy": "STRICT_STOP",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "2",
+    "seed": null,
+    "text_path": "cases\\CO-05\\drafts\\d-2.txt",
+    "candidate_id": "66012e83-8997-49da-9fa3-0f2f811fdddd",
+    "planner_candidate_id": "c3c70c6f-26aa-4aa8-ba27-0dc086e07a86",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "11dde2ec3226b7ef8264762c2d80b8350b68dd82b00cf207fb8e2de13af8f8f3",
+    "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e"
+  },
+  "756CC7F0BCBF": {
+    "case_id": "CO-05",
+    "group": "B",
+    "permission_policy": "STRICT_LIMITED",
+    "stop_policy": "CURRENT",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "2",
+    "seed": null,
+    "text_path": "cases\\CO-05\\drafts\\b-2.txt",
+    "candidate_id": "8f261d1c-3f69-4068-8831-c7994e1b4826",
+    "planner_candidate_id": "c3c70c6f-26aa-4aa8-ba27-0dc086e07a86",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "28dbaa6e5cae08e2ef79615cc148f1dba5e45fe6555b91aa4bd9e790582e6ad8",
+    "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b"
+  },
+  "32219C08A5F2": {
+    "case_id": "CO-05",
+    "group": "C",
+    "permission_policy": "CURRENT",
+    "stop_policy": "STRICT_STOP",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "2",
+    "seed": null,
+    "text_path": "cases\\CO-05\\drafts\\c-2.txt",
+    "candidate_id": "c5fc5304-4bdf-426f-a543-735ea07d89e7",
+    "planner_candidate_id": "c3c70c6f-26aa-4aa8-ba27-0dc086e07a86",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "49942b296503f3b08e2bae47b768040bde017de5d3d94e74ea3ad96d0dc982fd",
+    "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1"
+  },
+  "A6F4668E93E4": {
+    "case_id": "CO-05",
+    "group": "A",
+    "permission_policy": "CURRENT",
+    "stop_policy": "CURRENT",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "3",
+    "seed": null,
+    "text_path": "cases\\CO-05\\drafts\\a-3.txt",
+    "candidate_id": "d64a152a-ebf0-4aee-bc23-f6c628dddc30",
+    "planner_candidate_id": "c3c70c6f-26aa-4aa8-ba27-0dc086e07a86",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "5ee79fd724495caa67e1b830fb9e5b028a1fb7472c77aecde8db5605b15c1c9d",
+    "instruction_hash": null
+  },
+  "2E04BB0861BE": {
+    "case_id": "CO-05",
+    "group": "C",
+    "permission_policy": "CURRENT",
+    "stop_policy": "STRICT_STOP",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "3",
+    "seed": null,
+    "text_path": "cases\\CO-05\\drafts\\c-3.txt",
+    "candidate_id": "d2da7c0b-68f5-4f88-9ca2-b426829424b3",
+    "planner_candidate_id": "c3c70c6f-26aa-4aa8-ba27-0dc086e07a86",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "49942b296503f3b08e2bae47b768040bde017de5d3d94e74ea3ad96d0dc982fd",
+    "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1"
+  },
+  "0C7F41681442": {
+    "case_id": "CO-05",
+    "group": "B",
+    "permission_policy": "STRICT_LIMITED",
+    "stop_policy": "CURRENT",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "3",
+    "seed": null,
+    "text_path": "cases\\CO-05\\drafts\\b-3.txt",
+    "candidate_id": "5e95b690-b6a9-4cdc-83e3-23f8930e5ed6",
+    "planner_candidate_id": "c3c70c6f-26aa-4aa8-ba27-0dc086e07a86",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "28dbaa6e5cae08e2ef79615cc148f1dba5e45fe6555b91aa4bd9e790582e6ad8",
+    "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b"
+  },
+  "E391C542F4FE": {
+    "case_id": "CO-05",
+    "group": "D",
+    "permission_policy": "STRICT_LIMITED",
+    "stop_policy": "STRICT_STOP",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "3",
+    "seed": null,
+    "text_path": "cases\\CO-05\\drafts\\d-3.txt",
+    "candidate_id": "d383f60c-e13c-466f-9f1f-f90b75eb0a7f",
+    "planner_candidate_id": "c3c70c6f-26aa-4aa8-ba27-0dc086e07a86",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "11dde2ec3226b7ef8264762c2d80b8350b68dd82b00cf207fb8e2de13af8f8f3",
+    "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e"
+  },
+  "73D3DB6FE4F3": {
+    "case_id": "ROMANCE-02",
+    "group": "D",
+    "permission_policy": "STRICT_LIMITED",
+    "stop_policy": "STRICT_STOP",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "1",
+    "seed": null,
+    "text_path": "cases\\ROMANCE-02\\drafts\\d-1.txt",
+    "candidate_id": "a2c69921-6406-4286-8adc-b612896a25ff",
+    "planner_candidate_id": "9d5ff444-cb0f-47bc-9514-140313e8ae4a",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "7644868e4b2ac2ee6c812bd9d1d094c4dfdb5c9bbddf34e93a04bbaab074738c",
+    "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e"
+  },
+  "C46E30DC8F67": {
+    "case_id": "ROMANCE-02",
+    "group": "A",
+    "permission_policy": "CURRENT",
+    "stop_policy": "CURRENT",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "1",
+    "seed": null,
+    "text_path": "cases\\ROMANCE-02\\drafts\\a-1.txt",
+    "candidate_id": "ced2456f-b8c4-4413-993a-e4dcf5e6834d",
+    "planner_candidate_id": "9d5ff444-cb0f-47bc-9514-140313e8ae4a",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "44e63dd6e0170a6007b0eb1312fcd156d0caccf89a8201b01b09587fcad3bf55",
+    "instruction_hash": null
+  },
+  "818AD63DD1C1": {
+    "case_id": "ROMANCE-02",
+    "group": "C",
+    "permission_policy": "CURRENT",
+    "stop_policy": "STRICT_STOP",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "1",
+    "seed": null,
+    "text_path": "cases\\ROMANCE-02\\drafts\\c-1.txt",
+    "candidate_id": "d5cdb2dc-5453-4464-a182-39afb2683991",
+    "planner_candidate_id": "9d5ff444-cb0f-47bc-9514-140313e8ae4a",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "702c279ac9e76950aa968166097e8f04f7ef96b769bee79d1a81fa186e2693f2",
+    "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1"
+  },
+  "D7B61C2D1B66": {
+    "case_id": "ROMANCE-02",
+    "group": "B",
+    "permission_policy": "STRICT_LIMITED",
+    "stop_policy": "CURRENT",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "1",
+    "seed": null,
+    "text_path": "cases\\ROMANCE-02\\drafts\\b-1.txt",
+    "candidate_id": "8f1a9a52-3149-47e2-a17b-c5a958675626",
+    "planner_candidate_id": "9d5ff444-cb0f-47bc-9514-140313e8ae4a",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "7a88e695c90add2efae66b5f499274d6b6b385e0194877495bd21ee87f8d5416",
+    "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b"
+  },
+  "347A74EF235F": {
+    "case_id": "ROMANCE-02",
+    "group": "D",
+    "permission_policy": "STRICT_LIMITED",
+    "stop_policy": "STRICT_STOP",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "2",
+    "seed": null,
+    "text_path": "cases\\ROMANCE-02\\drafts\\d-2.txt",
+    "candidate_id": "c5461193-0937-48b7-917d-0c1b43133617",
+    "planner_candidate_id": "9d5ff444-cb0f-47bc-9514-140313e8ae4a",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "7644868e4b2ac2ee6c812bd9d1d094c4dfdb5c9bbddf34e93a04bbaab074738c",
+    "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e"
+  },
+  "AFBB012C2680": {
+    "case_id": "ROMANCE-02",
+    "group": "C",
+    "permission_policy": "CURRENT",
+    "stop_policy": "STRICT_STOP",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "2",
+    "seed": null,
+    "text_path": "cases\\ROMANCE-02\\drafts\\c-2.txt",
+    "candidate_id": "24072803-5afa-4601-b4fe-76d9299e86a1",
+    "planner_candidate_id": "9d5ff444-cb0f-47bc-9514-140313e8ae4a",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "702c279ac9e76950aa968166097e8f04f7ef96b769bee79d1a81fa186e2693f2",
+    "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1"
+  },
+  "1E080D1B2A65": {
+    "case_id": "ROMANCE-02",
+    "group": "B",
+    "permission_policy": "STRICT_LIMITED",
+    "stop_policy": "CURRENT",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "2",
+    "seed": null,
+    "text_path": "cases\\ROMANCE-02\\drafts\\b-2.txt",
+    "candidate_id": "7de0558c-60b9-43e9-a77d-804c992c7326",
+    "planner_candidate_id": "9d5ff444-cb0f-47bc-9514-140313e8ae4a",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "7a88e695c90add2efae66b5f499274d6b6b385e0194877495bd21ee87f8d5416",
+    "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b"
+  },
+  "4895AC6D05E9": {
+    "case_id": "ROMANCE-02",
+    "group": "A",
+    "permission_policy": "CURRENT",
+    "stop_policy": "CURRENT",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "2",
+    "seed": null,
+    "text_path": "cases\\ROMANCE-02\\drafts\\a-2.txt",
+    "candidate_id": "c888dff1-e72b-49b7-a307-11ca271ac764",
+    "planner_candidate_id": "9d5ff444-cb0f-47bc-9514-140313e8ae4a",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "44e63dd6e0170a6007b0eb1312fcd156d0caccf89a8201b01b09587fcad3bf55",
+    "instruction_hash": null
+  },
+  "919C85E7623B": {
+    "case_id": "ROMANCE-02",
+    "group": "C",
+    "permission_policy": "CURRENT",
+    "stop_policy": "STRICT_STOP",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "3",
+    "seed": null,
+    "text_path": "cases\\ROMANCE-02\\drafts\\c-3.txt",
+    "candidate_id": "f652faff-a5d3-452a-b34c-8214cdd89a98",
+    "planner_candidate_id": "9d5ff444-cb0f-47bc-9514-140313e8ae4a",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "702c279ac9e76950aa968166097e8f04f7ef96b769bee79d1a81fa186e2693f2",
+    "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1"
+  },
+  "F7417E3732B2": {
+    "case_id": "ROMANCE-02",
+    "group": "B",
+    "permission_policy": "STRICT_LIMITED",
+    "stop_policy": "CURRENT",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "3",
+    "seed": null,
+    "text_path": "cases\\ROMANCE-02\\drafts\\b-3.txt",
+    "candidate_id": "e4f963b4-0ccf-4119-93f6-a0d4547259c2",
+    "planner_candidate_id": "9d5ff444-cb0f-47bc-9514-140313e8ae4a",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "7a88e695c90add2efae66b5f499274d6b6b385e0194877495bd21ee87f8d5416",
+    "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b"
+  },
+  "7F5D46E000F9": {
+    "case_id": "ROMANCE-02",
+    "group": "A",
+    "permission_policy": "CURRENT",
+    "stop_policy": "CURRENT",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "3",
+    "seed": null,
+    "text_path": "cases\\ROMANCE-02\\drafts\\a-3.txt",
+    "candidate_id": "27f6ed30-87d1-4f5e-a85e-136dddf653c7",
+    "planner_candidate_id": "9d5ff444-cb0f-47bc-9514-140313e8ae4a",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "44e63dd6e0170a6007b0eb1312fcd156d0caccf89a8201b01b09587fcad3bf55",
+    "instruction_hash": null
+  },
+  "6C5CE1BC8F29": {
+    "case_id": "ROMANCE-02",
+    "group": "D",
+    "permission_policy": "STRICT_LIMITED",
+    "stop_policy": "STRICT_STOP",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "3",
+    "seed": null,
+    "text_path": "cases\\ROMANCE-02\\drafts\\d-3.txt",
+    "candidate_id": "71e233da-d955-4407-a74e-f9af1e13ecb0",
+    "planner_candidate_id": "9d5ff444-cb0f-47bc-9514-140313e8ae4a",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "7644868e4b2ac2ee6c812bd9d1d094c4dfdb5c9bbddf34e93a04bbaab074738c",
+    "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e"
+  },
+  "4AE82D6B06D2": {
+    "case_id": "NM-01",
+    "group": "D",
+    "permission_policy": "STRICT_LIMITED",
+    "stop_policy": "STRICT_STOP",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "1",
+    "seed": null,
+    "text_path": "cases\\NM-01\\drafts\\d-1.txt",
+    "candidate_id": "3e73619b-b254-45d7-80f1-2893a2426a6f",
+    "planner_candidate_id": "44f51ec3-903e-490b-9e27-a8b3fc0f1256",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "36a39fe53e0f7de7003fc3b6af9922e8c8216646a680ba5e1843d90cabf774f8",
+    "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e"
+  },
+  "F5B6C17FC99E": {
+    "case_id": "NM-01",
+    "group": "C",
+    "permission_policy": "CURRENT",
+    "stop_policy": "STRICT_STOP",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "1",
+    "seed": null,
+    "text_path": "cases\\NM-01\\drafts\\c-1.txt",
+    "candidate_id": "732ea26c-8b01-42cf-b38c-4d5f2db2e71c",
+    "planner_candidate_id": "44f51ec3-903e-490b-9e27-a8b3fc0f1256",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "d0842c68cfe6dde70043069224ec8930ea5d0c1223ac3f8723a444d1ef822f83",
+    "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1"
+  },
+  "C0E89C866F48": {
+    "case_id": "NM-01",
+    "group": "B",
+    "permission_policy": "STRICT_LIMITED",
+    "stop_policy": "CURRENT",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "1",
+    "seed": null,
+    "text_path": "cases\\NM-01\\drafts\\b-1.txt",
+    "candidate_id": "fa61bb73-fd89-4a2f-b45b-9aea9aa3e886",
+    "planner_candidate_id": "44f51ec3-903e-490b-9e27-a8b3fc0f1256",
+    "error_code": "TEMPO_FINAL_LINE_MISMATCH",
+    "tempo_final_line_mismatch": true,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "b520c0239a973c1c11017670f85b61c1724029a87954ad336c6188638e2446ca",
+    "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b"
+  },
+  "79175D3842F5": {
+    "case_id": "NM-01",
+    "group": "A",
+    "permission_policy": "CURRENT",
+    "stop_policy": "CURRENT",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "1",
+    "seed": null,
+    "text_path": "cases\\NM-01\\drafts\\a-1.txt",
+    "candidate_id": "8747a579-b680-45bb-a3a7-0292f6478944",
+    "planner_candidate_id": "44f51ec3-903e-490b-9e27-a8b3fc0f1256",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "011155cfec08fd95ee7eed2da636bf2a60f973f43b0f2738cd1569275fd9ff4a",
+    "instruction_hash": null
+  },
+  "B4F79D464693": {
+    "case_id": "NM-01",
+    "group": "D",
+    "permission_policy": "STRICT_LIMITED",
+    "stop_policy": "STRICT_STOP",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "2",
+    "seed": null,
+    "text_path": "cases\\NM-01\\drafts\\d-2.txt",
+    "candidate_id": "db848413-99e2-491c-b668-41e90b7c9ffd",
+    "planner_candidate_id": "44f51ec3-903e-490b-9e27-a8b3fc0f1256",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "36a39fe53e0f7de7003fc3b6af9922e8c8216646a680ba5e1843d90cabf774f8",
+    "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e"
+  },
+  "11E91479B9CD": {
+    "case_id": "NM-01",
+    "group": "B",
+    "permission_policy": "STRICT_LIMITED",
+    "stop_policy": "CURRENT",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "2",
+    "seed": null,
+    "text_path": "cases\\NM-01\\drafts\\b-2.txt",
+    "candidate_id": "802a3a14-0ae0-4214-93db-a7a5a31e204f",
+    "planner_candidate_id": "44f51ec3-903e-490b-9e27-a8b3fc0f1256",
+    "error_code": "TEMPO_FINAL_LINE_MISMATCH",
+    "tempo_final_line_mismatch": true,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "b520c0239a973c1c11017670f85b61c1724029a87954ad336c6188638e2446ca",
+    "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b"
+  },
+  "E1D96667AB3D": {
+    "case_id": "NM-01",
+    "group": "A",
+    "permission_policy": "CURRENT",
+    "stop_policy": "CURRENT",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "2",
+    "seed": null,
+    "text_path": "cases\\NM-01\\drafts\\a-2.txt",
+    "candidate_id": "d2fb2e81-db06-4136-ad18-fc8aae2e8858",
+    "planner_candidate_id": "44f51ec3-903e-490b-9e27-a8b3fc0f1256",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "011155cfec08fd95ee7eed2da636bf2a60f973f43b0f2738cd1569275fd9ff4a",
+    "instruction_hash": null
+  },
+  "A80F1E919629": {
+    "case_id": "NM-01",
+    "group": "C",
+    "permission_policy": "CURRENT",
+    "stop_policy": "STRICT_STOP",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "2",
+    "seed": null,
+    "text_path": "cases\\NM-01\\drafts\\c-2.txt",
+    "candidate_id": "0c74cec0-768c-4fd1-bc9a-918bd02e182a",
+    "planner_candidate_id": "44f51ec3-903e-490b-9e27-a8b3fc0f1256",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "d0842c68cfe6dde70043069224ec8930ea5d0c1223ac3f8723a444d1ef822f83",
+    "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1"
+  },
+  "1BB069FE8D47": {
+    "case_id": "NM-01",
+    "group": "A",
+    "permission_policy": "CURRENT",
+    "stop_policy": "CURRENT",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "3",
+    "seed": null,
+    "text_path": "cases\\NM-01\\drafts\\a-3.txt",
+    "candidate_id": "4b6bd5fa-f150-4644-90cc-35814f8563e9",
+    "planner_candidate_id": "44f51ec3-903e-490b-9e27-a8b3fc0f1256",
+    "error_code": "TEMPO_FINAL_LINE_MISMATCH",
+    "tempo_final_line_mismatch": true,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "011155cfec08fd95ee7eed2da636bf2a60f973f43b0f2738cd1569275fd9ff4a",
+    "instruction_hash": null
+  },
+  "3D64DE8CF2BD": {
+    "case_id": "NM-01",
+    "group": "D",
+    "permission_policy": "STRICT_LIMITED",
+    "stop_policy": "STRICT_STOP",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "3",
+    "seed": null,
+    "text_path": "cases\\NM-01\\drafts\\d-3.txt",
+    "candidate_id": "d7659afb-79f4-4a7f-9c86-11287336fcf5",
+    "planner_candidate_id": "44f51ec3-903e-490b-9e27-a8b3fc0f1256",
+    "error_code": "TEMPO_FINAL_LINE_MISMATCH",
+    "tempo_final_line_mismatch": true,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "36a39fe53e0f7de7003fc3b6af9922e8c8216646a680ba5e1843d90cabf774f8",
+    "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e"
+  },
+  "82A477347899": {
+    "case_id": "NM-01",
+    "group": "C",
+    "permission_policy": "CURRENT",
+    "stop_policy": "STRICT_STOP",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "3",
+    "seed": null,
+    "text_path": "cases\\NM-01\\drafts\\c-3.txt",
+    "candidate_id": "78ac1c2c-e1c0-424d-91f2-50d7a12d163a",
+    "planner_candidate_id": "44f51ec3-903e-490b-9e27-a8b3fc0f1256",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "d0842c68cfe6dde70043069224ec8930ea5d0c1223ac3f8723a444d1ef822f83",
+    "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1"
+  },
+  "08D3564B5A40": {
+    "case_id": "NM-01",
+    "group": "B",
+    "permission_policy": "STRICT_LIMITED",
+    "stop_policy": "CURRENT",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "3",
+    "seed": null,
+    "text_path": "cases\\NM-01\\drafts\\b-3.txt",
+    "candidate_id": "6c9b59c0-9519-463f-ac1d-b9aad1121286",
+    "planner_candidate_id": "44f51ec3-903e-490b-9e27-a8b3fc0f1256",
+    "error_code": "TEMPO_FINAL_LINE_MISMATCH",
+    "tempo_final_line_mismatch": true,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "b520c0239a973c1c11017670f85b61c1724029a87954ad336c6188638e2446ca",
+    "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b"
+  },
+  "62E4B1A23645": {
+    "case_id": "NM-02",
+    "group": "B",
+    "permission_policy": "STRICT_LIMITED",
+    "stop_policy": "CURRENT",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "1",
+    "seed": null,
+    "text_path": "cases\\NM-02\\drafts\\b-1.txt",
+    "candidate_id": "8c806321-f230-4710-a630-910726c34e05",
+    "planner_candidate_id": "788de048-f389-464e-a350-d53f2f7c36a0",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "715a9d4babe03f523576cfe059eb75404d9d677547f6b557e80c4e3d30a2be9f",
+    "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b"
+  },
+  "E7CD10813AEC": {
+    "case_id": "NM-02",
+    "group": "A",
+    "permission_policy": "CURRENT",
+    "stop_policy": "CURRENT",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "1",
+    "seed": null,
+    "text_path": "cases\\NM-02\\drafts\\a-1.txt",
+    "candidate_id": "5c18edac-a409-4276-a89e-bdd1c5721921",
+    "planner_candidate_id": "788de048-f389-464e-a350-d53f2f7c36a0",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "f4e5fc3ff12cca896de421ccb20efaa420db9f769400530475b49b7a823dd0c4",
+    "instruction_hash": null
+  },
+  "B8A3A02CB721": {
+    "case_id": "NM-02",
+    "group": "C",
+    "permission_policy": "CURRENT",
+    "stop_policy": "STRICT_STOP",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "1",
+    "seed": null,
+    "text_path": "cases\\NM-02\\drafts\\c-1.txt",
+    "candidate_id": "f2555e86-aed5-44fb-a452-e44955a8c599",
+    "planner_candidate_id": "788de048-f389-464e-a350-d53f2f7c36a0",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "d7fd101f568908f0b433770587d04379aafae1e99c98bb39f9323548584f3005",
+    "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1"
+  },
+  "1EF4F51F6D0A": {
+    "case_id": "NM-02",
+    "group": "D",
+    "permission_policy": "STRICT_LIMITED",
+    "stop_policy": "STRICT_STOP",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "1",
+    "seed": null,
+    "text_path": "cases\\NM-02\\drafts\\d-1.txt",
+    "candidate_id": "62e64342-df1f-4bbf-884f-015689df3830",
+    "planner_candidate_id": "788de048-f389-464e-a350-d53f2f7c36a0",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "29dbf33924b26b27a1518c71e22e0df878f58f9b5f983877532dcbaf35847d64",
+    "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e"
+  },
+  "94E59E168EA6": {
+    "case_id": "NM-02",
+    "group": "B",
+    "permission_policy": "STRICT_LIMITED",
+    "stop_policy": "CURRENT",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "2",
+    "seed": null,
+    "text_path": "cases\\NM-02\\drafts\\b-2.txt",
+    "candidate_id": "74e4906f-222a-428d-956b-b70a8dd5e34a",
+    "planner_candidate_id": "788de048-f389-464e-a350-d53f2f7c36a0",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "715a9d4babe03f523576cfe059eb75404d9d677547f6b557e80c4e3d30a2be9f",
+    "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b"
+  },
+  "746862DDD1FB": {
+    "case_id": "NM-02",
+    "group": "D",
+    "permission_policy": "STRICT_LIMITED",
+    "stop_policy": "STRICT_STOP",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "2",
+    "seed": null,
+    "text_path": "cases\\NM-02\\drafts\\d-2.txt",
+    "candidate_id": "40eb3d74-34f0-410c-b886-f29135701886",
+    "planner_candidate_id": "788de048-f389-464e-a350-d53f2f7c36a0",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "29dbf33924b26b27a1518c71e22e0df878f58f9b5f983877532dcbaf35847d64",
+    "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e"
+  },
+  "7900FF4338E1": {
+    "case_id": "NM-02",
+    "group": "C",
+    "permission_policy": "CURRENT",
+    "stop_policy": "STRICT_STOP",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "2",
+    "seed": null,
+    "text_path": "cases\\NM-02\\drafts\\c-2.txt",
+    "candidate_id": "24f89d9d-0bb0-4135-9ebd-41ba72352915",
+    "planner_candidate_id": "788de048-f389-464e-a350-d53f2f7c36a0",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "d7fd101f568908f0b433770587d04379aafae1e99c98bb39f9323548584f3005",
+    "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1"
+  },
+  "19155D1CBDF2": {
+    "case_id": "NM-02",
+    "group": "A",
+    "permission_policy": "CURRENT",
+    "stop_policy": "CURRENT",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "2",
+    "seed": null,
+    "text_path": "cases\\NM-02\\drafts\\a-2.txt",
+    "candidate_id": "0e6405bf-70d8-4846-a59f-7a5c7a11fa72",
+    "planner_candidate_id": "788de048-f389-464e-a350-d53f2f7c36a0",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "f4e5fc3ff12cca896de421ccb20efaa420db9f769400530475b49b7a823dd0c4",
+    "instruction_hash": null
+  },
+  "BFE26DF12D99": {
+    "case_id": "NM-02",
+    "group": "A",
+    "permission_policy": "CURRENT",
+    "stop_policy": "CURRENT",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "3",
+    "seed": null,
+    "text_path": "cases\\NM-02\\drafts\\a-3.txt",
+    "candidate_id": "2a0e6f67-34a7-4439-bb96-2f8a7e9f74b2",
+    "planner_candidate_id": "788de048-f389-464e-a350-d53f2f7c36a0",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "f4e5fc3ff12cca896de421ccb20efaa420db9f769400530475b49b7a823dd0c4",
+    "instruction_hash": null
+  },
+  "C7EB236B6170": {
+    "case_id": "NM-02",
+    "group": "C",
+    "permission_policy": "CURRENT",
+    "stop_policy": "STRICT_STOP",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "3",
+    "seed": null,
+    "text_path": "cases\\NM-02\\drafts\\c-3.txt",
+    "candidate_id": "257fb3d5-4d90-4002-ad2d-a441fd48f69c",
+    "planner_candidate_id": "788de048-f389-464e-a350-d53f2f7c36a0",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "d7fd101f568908f0b433770587d04379aafae1e99c98bb39f9323548584f3005",
+    "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1"
+  },
+  "A6AD28658652": {
+    "case_id": "NM-02",
+    "group": "D",
+    "permission_policy": "STRICT_LIMITED",
+    "stop_policy": "STRICT_STOP",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "3",
+    "seed": null,
+    "text_path": "cases\\NM-02\\drafts\\d-3.txt",
+    "candidate_id": "b1434cc7-b0c1-4fe8-be99-4c1f6ba5fac2",
+    "planner_candidate_id": "788de048-f389-464e-a350-d53f2f7c36a0",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "29dbf33924b26b27a1518c71e22e0df878f58f9b5f983877532dcbaf35847d64",
+    "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e"
+  },
+  "4ADFF8A34E13": {
+    "case_id": "NM-02",
+    "group": "B",
+    "permission_policy": "STRICT_LIMITED",
+    "stop_policy": "CURRENT",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "3",
+    "seed": null,
+    "text_path": "cases\\NM-02\\drafts\\b-3.txt",
+    "candidate_id": "5de01724-b744-48bb-8d67-0f854edd6af7",
+    "planner_candidate_id": "788de048-f389-464e-a350-d53f2f7c36a0",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "715a9d4babe03f523576cfe059eb75404d9d677547f6b557e80c4e3d30a2be9f",
+    "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b"
+  },
+  "DE5232F6E3D4": {
+    "case_id": "NM-03",
+    "group": "B",
+    "permission_policy": "STRICT_LIMITED",
+    "stop_policy": "CURRENT",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "1",
+    "seed": null,
+    "text_path": "cases\\NM-03\\drafts\\b-1.txt",
+    "candidate_id": "0614d3f5-e9e5-48e2-abc7-0b0350c7da68",
+    "planner_candidate_id": "6f400ad7-96e3-43a1-93bd-aad2ab349f83",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "9d0f0e92beb5d0245c5521fce5ac3dd3c58d54ca744e73b6c481fb2bb641aaca",
+    "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b"
+  },
+  "28066C60951C": {
+    "case_id": "NM-03",
+    "group": "A",
+    "permission_policy": "CURRENT",
+    "stop_policy": "CURRENT",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "1",
+    "seed": null,
+    "text_path": "cases\\NM-03\\drafts\\a-1.txt",
+    "candidate_id": "c7f01c5b-3398-4def-952e-bdac5dd128d8",
+    "planner_candidate_id": "6f400ad7-96e3-43a1-93bd-aad2ab349f83",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "c4fd4a9ab5121e318e21203dbc18497b2b48587b44b333de6c33775fdde34a50",
+    "instruction_hash": null
+  },
+  "257E086B4CA9": {
+    "case_id": "NM-03",
+    "group": "D",
+    "permission_policy": "STRICT_LIMITED",
+    "stop_policy": "STRICT_STOP",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "1",
+    "seed": null,
+    "text_path": "cases\\NM-03\\drafts\\d-1.txt",
+    "candidate_id": "82692ee1-5e7b-4e31-b4cb-dcc08f9c7197",
+    "planner_candidate_id": "6f400ad7-96e3-43a1-93bd-aad2ab349f83",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "0b5a5c130236af8e0c8f555e64be6f5c40e177338ff253763cc4184e7813ad0e",
+    "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e"
+  },
+  "A2D97246CFF1": {
+    "case_id": "NM-03",
+    "group": "C",
+    "permission_policy": "CURRENT",
+    "stop_policy": "STRICT_STOP",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "1",
+    "seed": null,
+    "text_path": "cases\\NM-03\\drafts\\c-1.txt",
+    "candidate_id": "e5624242-0f66-4495-a560-84799f90290b",
+    "planner_candidate_id": "6f400ad7-96e3-43a1-93bd-aad2ab349f83",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "c2c37632071f0360a024dd9ce37120dbcf0e80e86a9d180d52a508fc33aa6df5",
+    "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1"
+  },
+  "E9DDAF6B65ED": {
+    "case_id": "NM-03",
+    "group": "C",
+    "permission_policy": "CURRENT",
+    "stop_policy": "STRICT_STOP",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "2",
+    "seed": null,
+    "text_path": "cases\\NM-03\\drafts\\c-2.txt",
+    "candidate_id": "fc007c1a-bda7-4cde-aa69-61fbb2356f51",
+    "planner_candidate_id": "6f400ad7-96e3-43a1-93bd-aad2ab349f83",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "c2c37632071f0360a024dd9ce37120dbcf0e80e86a9d180d52a508fc33aa6df5",
+    "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1"
+  },
+  "0306B5B0F6F4": {
+    "case_id": "NM-03",
+    "group": "B",
+    "permission_policy": "STRICT_LIMITED",
+    "stop_policy": "CURRENT",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "2",
+    "seed": null,
+    "text_path": "cases\\NM-03\\drafts\\b-2.txt",
+    "candidate_id": "d052c8ab-b2af-4f8c-9fa1-d13df95fc6ff",
+    "planner_candidate_id": "6f400ad7-96e3-43a1-93bd-aad2ab349f83",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "9d0f0e92beb5d0245c5521fce5ac3dd3c58d54ca744e73b6c481fb2bb641aaca",
+    "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b"
+  },
+  "5AF8AA4F3EDE": {
+    "case_id": "NM-03",
+    "group": "A",
+    "permission_policy": "CURRENT",
+    "stop_policy": "CURRENT",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "2",
+    "seed": null,
+    "text_path": "cases\\NM-03\\drafts\\a-2.txt",
+    "candidate_id": "5169bd73-57d4-4f0a-bcaa-14f24cea4c79",
+    "planner_candidate_id": "6f400ad7-96e3-43a1-93bd-aad2ab349f83",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "c4fd4a9ab5121e318e21203dbc18497b2b48587b44b333de6c33775fdde34a50",
+    "instruction_hash": null
+  },
+  "5A17CFF2EF36": {
+    "case_id": "NM-03",
+    "group": "D",
+    "permission_policy": "STRICT_LIMITED",
+    "stop_policy": "STRICT_STOP",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "2",
+    "seed": null,
+    "text_path": "cases\\NM-03\\drafts\\d-2.txt",
+    "candidate_id": "aba06654-7ec1-48bb-a16f-910e31babdc2",
+    "planner_candidate_id": "6f400ad7-96e3-43a1-93bd-aad2ab349f83",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "0b5a5c130236af8e0c8f555e64be6f5c40e177338ff253763cc4184e7813ad0e",
+    "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e"
+  },
+  "FAA36ACAC644": {
+    "case_id": "NM-03",
+    "group": "B",
+    "permission_policy": "STRICT_LIMITED",
+    "stop_policy": "CURRENT",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "3",
+    "seed": null,
+    "text_path": "cases\\NM-03\\drafts\\b-3.txt",
+    "candidate_id": "2ab73e57-80c6-46fa-9cee-87a1bc8f5b7e",
+    "planner_candidate_id": "6f400ad7-96e3-43a1-93bd-aad2ab349f83",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "9d0f0e92beb5d0245c5521fce5ac3dd3c58d54ca744e73b6c481fb2bb641aaca",
+    "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b"
+  },
+  "9D9CF040B8EF": {
+    "case_id": "NM-03",
+    "group": "A",
+    "permission_policy": "CURRENT",
+    "stop_policy": "CURRENT",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "3",
+    "seed": null,
+    "text_path": "cases\\NM-03\\drafts\\a-3.txt",
+    "candidate_id": "2883d7b1-dcbd-4164-ba4f-8c91f584e0d3",
+    "planner_candidate_id": "6f400ad7-96e3-43a1-93bd-aad2ab349f83",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "c4fd4a9ab5121e318e21203dbc18497b2b48587b44b333de6c33775fdde34a50",
+    "instruction_hash": null
+  },
+  "0BB2C0334C95": {
+    "case_id": "NM-03",
+    "group": "D",
+    "permission_policy": "STRICT_LIMITED",
+    "stop_policy": "STRICT_STOP",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "3",
+    "seed": null,
+    "text_path": "cases\\NM-03\\drafts\\d-3.txt",
+    "candidate_id": "52629361-da95-49aa-a6ae-792cdc482004",
+    "planner_candidate_id": "6f400ad7-96e3-43a1-93bd-aad2ab349f83",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "0b5a5c130236af8e0c8f555e64be6f5c40e177338ff253763cc4184e7813ad0e",
+    "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e"
+  },
+  "E5780E3B6406": {
+    "case_id": "NM-03",
+    "group": "C",
+    "permission_policy": "CURRENT",
+    "stop_policy": "STRICT_STOP",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "3",
+    "seed": null,
+    "text_path": "cases\\NM-03\\drafts\\c-3.txt",
+    "candidate_id": "520ffabb-9999-4950-8636-ccfe9344bfbc",
+    "planner_candidate_id": "6f400ad7-96e3-43a1-93bd-aad2ab349f83",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "c2c37632071f0360a024dd9ce37120dbcf0e80e86a9d180d52a508fc33aa6df5",
+    "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1"
+  },
+  "B9C9B40239B2": {
+    "case_id": "NM-04",
+    "group": "C",
+    "permission_policy": "CURRENT",
+    "stop_policy": "STRICT_STOP",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "1",
+    "seed": null,
+    "text_path": "cases\\NM-04\\drafts\\c-1.txt",
+    "candidate_id": "5534ee6d-9bce-4a87-b1d0-df920802ad58",
+    "planner_candidate_id": "ee1f8e82-9073-43af-bf51-a464c0fc4295",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "f1c23ce9131f411b49ef39ea8df811e5002dcfbb58edaca205e66fa6f3e3f097",
+    "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1"
+  },
+  "C4B89AFB1562": {
+    "case_id": "NM-04",
+    "group": "D",
+    "permission_policy": "STRICT_LIMITED",
+    "stop_policy": "STRICT_STOP",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "1",
+    "seed": null,
+    "text_path": "cases\\NM-04\\drafts\\d-1.txt",
+    "candidate_id": "65591fe7-1d08-4d93-bbe2-134ce35a1ce8",
+    "planner_candidate_id": "ee1f8e82-9073-43af-bf51-a464c0fc4295",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "ec37a1052b6c418e1444b9abc19b66707de9f36bd89e7dcb9214c3c559d54353",
+    "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e"
+  },
+  "C92769458045": {
+    "case_id": "NM-04",
+    "group": "B",
+    "permission_policy": "STRICT_LIMITED",
+    "stop_policy": "CURRENT",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "1",
+    "seed": null,
+    "text_path": "cases\\NM-04\\drafts\\b-1.txt",
+    "candidate_id": "ca98551d-e0c8-4722-9206-464049ab818c",
+    "planner_candidate_id": "ee1f8e82-9073-43af-bf51-a464c0fc4295",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "87dc33e1f508de80164f04cf8d75cb0b22b6beac0320dfb0acd33ecab84c9b2a",
+    "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b"
+  },
+  "C45BE50814B2": {
+    "case_id": "NM-04",
+    "group": "A",
+    "permission_policy": "CURRENT",
+    "stop_policy": "CURRENT",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "1",
+    "seed": null,
+    "text_path": "cases\\NM-04\\drafts\\a-1.txt",
+    "candidate_id": "64ff9bdd-266a-4d07-b3df-29f4256736cc",
+    "planner_candidate_id": "ee1f8e82-9073-43af-bf51-a464c0fc4295",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "9b733f113787503b81184b8490b6fe80d706ecd34faa4081ff4e28dcc1ca341e",
+    "instruction_hash": null
+  },
+  "2FB158408D51": {
+    "case_id": "NM-04",
+    "group": "A",
+    "permission_policy": "CURRENT",
+    "stop_policy": "CURRENT",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "2",
+    "seed": null,
+    "text_path": "cases\\NM-04\\drafts\\a-2.txt",
+    "candidate_id": "f6661310-c621-462c-ae74-c8f4ef549263",
+    "planner_candidate_id": "ee1f8e82-9073-43af-bf51-a464c0fc4295",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "9b733f113787503b81184b8490b6fe80d706ecd34faa4081ff4e28dcc1ca341e",
+    "instruction_hash": null
+  },
+  "07813E15715E": {
+    "case_id": "NM-04",
+    "group": "C",
+    "permission_policy": "CURRENT",
+    "stop_policy": "STRICT_STOP",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "2",
+    "seed": null,
+    "text_path": "cases\\NM-04\\drafts\\c-2.txt",
+    "candidate_id": "e559550f-edbf-41db-b400-d6ab06119ef5",
+    "planner_candidate_id": "ee1f8e82-9073-43af-bf51-a464c0fc4295",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "f1c23ce9131f411b49ef39ea8df811e5002dcfbb58edaca205e66fa6f3e3f097",
+    "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1"
+  },
+  "6B7D46F108BA": {
+    "case_id": "NM-04",
+    "group": "D",
+    "permission_policy": "STRICT_LIMITED",
+    "stop_policy": "STRICT_STOP",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "2",
+    "seed": null,
+    "text_path": "cases\\NM-04\\drafts\\d-2.txt",
+    "candidate_id": "6c2422e2-b45b-4be9-a899-899a19686e80",
+    "planner_candidate_id": "ee1f8e82-9073-43af-bf51-a464c0fc4295",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "ec37a1052b6c418e1444b9abc19b66707de9f36bd89e7dcb9214c3c559d54353",
+    "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e"
+  },
+  "1E579D0FF0FE": {
+    "case_id": "NM-04",
+    "group": "B",
+    "permission_policy": "STRICT_LIMITED",
+    "stop_policy": "CURRENT",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "2",
+    "seed": null,
+    "text_path": "cases\\NM-04\\drafts\\b-2.txt",
+    "candidate_id": "ac55e3ff-9e2d-40a8-a5b8-d91cfff04d51",
+    "planner_candidate_id": "ee1f8e82-9073-43af-bf51-a464c0fc4295",
+    "error_code": "TEMPO_FINAL_LINE_MISMATCH",
+    "tempo_final_line_mismatch": true,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "87dc33e1f508de80164f04cf8d75cb0b22b6beac0320dfb0acd33ecab84c9b2a",
+    "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b"
+  },
+  "3C53631950E8": {
+    "case_id": "NM-04",
+    "group": "A",
+    "permission_policy": "CURRENT",
+    "stop_policy": "CURRENT",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "3",
+    "seed": null,
+    "text_path": "cases\\NM-04\\drafts\\a-3.txt",
+    "candidate_id": "ce017e74-fc3f-4946-b4ec-18c39bce13c7",
+    "planner_candidate_id": "ee1f8e82-9073-43af-bf51-a464c0fc4295",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "9b733f113787503b81184b8490b6fe80d706ecd34faa4081ff4e28dcc1ca341e",
+    "instruction_hash": null
+  },
+  "302E9EC7D94F": {
+    "case_id": "NM-04",
+    "group": "C",
+    "permission_policy": "CURRENT",
+    "stop_policy": "STRICT_STOP",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "3",
+    "seed": null,
+    "text_path": "cases\\NM-04\\drafts\\c-3.txt",
+    "candidate_id": "3bb51640-b139-4888-b75c-6be316cd1e2b",
+    "planner_candidate_id": "ee1f8e82-9073-43af-bf51-a464c0fc4295",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "f1c23ce9131f411b49ef39ea8df811e5002dcfbb58edaca205e66fa6f3e3f097",
+    "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1"
+  },
+  "21E225B058EE": {
+    "case_id": "NM-04",
+    "group": "D",
+    "permission_policy": "STRICT_LIMITED",
+    "stop_policy": "STRICT_STOP",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "3",
+    "seed": null,
+    "text_path": "cases\\NM-04\\drafts\\d-3.txt",
+    "candidate_id": "7fc433d5-3cbb-4a28-a082-d961e673c64c",
+    "planner_candidate_id": "ee1f8e82-9073-43af-bf51-a464c0fc4295",
+    "error_code": null,
+    "tempo_final_line_mismatch": false,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "ec37a1052b6c418e1444b9abc19b66707de9f36bd89e7dcb9214c3c559d54353",
+    "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e"
+  },
+  "8BF8666B647A": {
+    "case_id": "NM-04",
+    "group": "B",
+    "permission_policy": "STRICT_LIMITED",
+    "stop_policy": "CURRENT",
+    "policy_version": "narrative-permission-stop-v1",
+    "replica": "3",
+    "seed": null,
+    "text_path": "cases\\NM-04\\drafts\\b-3.txt",
+    "candidate_id": "6d471417-fff1-4a70-8bd1-6c1ca55f41a1",
+    "planner_candidate_id": "ee1f8e82-9073-43af-bf51-a464c0fc4295",
+    "error_code": "TEMPO_FINAL_LINE_MISMATCH",
+    "tempo_final_line_mismatch": true,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "rendered_user_prompt_sha256": "87dc33e1f508de80164f04cf8d75cb0b22b6beac0320dfb0acd33ecab84c9b2a",
+    "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b"
+  }
+}

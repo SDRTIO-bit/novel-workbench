@@ -1,0 +1,3 @@
+event: message
+data: {"jsonrpc":"2.0","id":11,"result":{"content":[{"type":"text","text":"{\"id\":\"51c5229f-9de1-4c9a-84b2-b6d77f0a9b5b\",\"kind\":\"synopsis\",\"title\":\"故事梗概\"}"}],"structuredContent":{"id":"51c5229f-9de1-4c9a-84b2-b6d77f0a9b5b","kind":"synopsis","title":"故事梗概"},"isError":false}}
+

@@ -1,0 +1,64 @@
+{
+  "candidate_id": "520ffabb-9999-4950-8636-ccfe9344bfbc",
+  "attempt_number": 1,
+  "group": "C",
+  "replica": 3,
+  "permission_policy": "CURRENT",
+  "stop_policy": "STRICT_STOP",
+  "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+    "policy_metadata": {
+      "group": "C",
+      "permission_policy": "CURRENT",
+      "stop_policy": "STRICT_STOP",
+      "policy_version": "narrative-permission-stop-v1",
+      "policy_hash": "15e6b754a467a03569fe265abb7861ce24f144ba737ce3f2973776c1c2e76d47",
+      "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+      "permission_instruction_hash": null,
+      "stop_instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+      "seed": null
+    },
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "方笛走进洗衣房时，看见那台滚筒已经停了。\n\n面板全黑，指示灯一颗都没亮。玻璃门后面堆着湿衣物的影子，绞成一团贴着内壁。她下意识看了一眼手机上的时间——下午三点十二分。她记得自己两点半左右把衣服塞进去，设了六十分钟的程序。应该还有将近二十分钟才对。\n\n一个老人站在机器旁边，手里拎着空洗衣篮，塑料篮沿上还挂着没擦干的水珠。他看见方笛朝这台机器走过来，往旁边让了半步，但没让多远。\n\n“这台是你的？”方笛问。\n\n“是啊，”老人说，“刚洗完，我正准备拿出来。”\n\n方笛看了看滚筒玻璃。水位已经排空了，衣物贴在桶壁上，颜色和轮廓都模糊，只能大概看出有几件深色的东西。她自己的床单是浅灰色的，但湿了之后颜色会变深，她不确定从外面看到的那一团是不是自己的。\n\n“我好像也是这台，”她说，“两点半放的，设了一个小时。”\n\n老人摇头。“我进来的时候这台就停了，里面是我的衣服。你可能是记错机器了。”他指了指旁边那排滚筒，“那边还有好几台空的。”\n\n方笛没动。她记得很清楚，进门左手第二台，就是这台。但面板上确实什么显示都没有，没有剩余时间，没有报错代码，就是干干净净地结束了。如果机器提前停了，那可能是故障。如果没故障，那就是她记错了时间。\n\n“那……能打开看看吗？”方笛说。\n\n老人看了她一眼，没犹豫，伸手握住滚筒门的把手往下一压。门咔嗒一声弹开了。\n\n湿衣物挤在门口，最上面是一件深蓝色的棉毛衫，袖口翻卷着，露出里面磨得起球的衬里。方笛没见过这件衣服。棉毛衫下面压着一条灰白条纹的毛巾，再往下是一件浅棕色的毛背心，肩线处缝着一颗深色的扣子，颜色和毛线本身不太一样，是后来补上去的。\n\n没有她的浅灰色床单。\n\n方笛把手从自己篮子上松开，往后退了一步。\n\n“是您的，”她说，“我记错了。”\n\n老人嗯了一声，把篮子搁在地上，弯腰从滚筒里往外掏衣服。他动作不快，一件一件叠得整齐，先放毛巾，再放毛背心，最后把棉毛衫抖开对折了两次。方笛站在旁边，看着他往篮子里装，最上面那件棉毛衫的袖口还翻着，露出起球的衬里。\n\n她伸手把那截袖口翻正了，压平。\n\n老人抬头看了看她，点了下头，把篮子拎起来，转身朝门口走。",
+  "raw_response": "方笛走进洗衣房时，看见那台滚筒已经停了。\n\n面板全黑，指示灯一颗都没亮。玻璃门后面堆着湿衣物的影子，绞成一团贴着内壁。她下意识看了一眼手机上的时间——下午三点十二分。她记得自己两点半左右把衣服塞进去，设了六十分钟的程序。应该还有将近二十分钟才对。\n\n一个老人站在机器旁边，手里拎着空洗衣篮，塑料篮沿上还挂着没擦干的水珠。他看见方笛朝这台机器走过来，往旁边让了半步，但没让多远。\n\n“这台是你的？”方笛问。\n\n“是啊，”老人说，“刚洗完，我正准备拿出来。”\n\n方笛看了看滚筒玻璃。水位已经排空了，衣物贴在桶壁上，颜色和轮廓都模糊，只能大概看出有几件深色的东西。她自己的床单是浅灰色的，但湿了之后颜色会变深，她不确定从外面看到的那一团是不是自己的。\n\n“我好像也是这台，”她说，“两点半放的，设了一个小时。”\n\n老人摇头。“我进来的时候这台就停了，里面是我的衣服。你可能是记错机器了。”他指了指旁边那排滚筒，“那边还有好几台空的。”\n\n方笛没动。她记得很清楚，进门左手第二台，就是这台。但面板上确实什么显示都没有，没有剩余时间，没有报错代码，就是干干净净地结束了。如果机器提前停了，那可能是故障。如果没故障，那就是她记错了时间。\n\n“那……能打开看看吗？”方笛说。\n\n老人看了她一眼，没犹豫，伸手握住滚筒门的把手往下一压。门咔嗒一声弹开了。\n\n湿衣物挤在门口，最上面是一件深蓝色的棉毛衫，袖口翻卷着，露出里面磨得起球的衬里。方笛没见过这件衣服。棉毛衫下面压着一条灰白条纹的毛巾，再往下是一件浅棕色的毛背心，肩线处缝着一颗深色的扣子，颜色和毛线本身不太一样，是后来补上去的。\n\n没有她的浅灰色床单。\n\n方笛把手从自己篮子上松开，往后退了一步。\n\n“是您的，”她说，“我记错了。”\n\n老人嗯了一声，把篮子搁在地上，弯腰从滚筒里往外掏衣服。他动作不快，一件一件叠得整齐，先放毛巾，再放毛背心，最后把棉毛衫抖开对折了两次。方笛站在旁边，看着他往篮子里装，最上面那件棉毛衫的袖口还翻着，露出起球的衬里。\n\n她伸手把那截袖口翻正了，压平。\n\n老人抬头看了看她，点了下头，把篮子拎起来，转身朝门口走。",
+  "input_tokens": 1399,
+  "output_tokens": 569,
+  "latency_ms": 17620,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "c2c37632071f0360a024dd9ce37120dbcf0e80e86a9d180d52a508fc33aa6df5",
+  "validation": {
+    "character_count": 891,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "banned_sentence_hits": {},
+    "second_confirmation_hits": [],
+    "environment_coda_hits": [],
+    "stop_marker_first_char": null,
+    "post_stop_character_count": null,
+    "tempo_final_line_mismatch": false,
+    "manual_review_required": [
+      "viewpoint_violation",
+      "cross_mind_assertion",
+      "other_character_motive_as_fact",
+      "true_stop_state_position",
+      "visible_state_transition_count",
+      "relationship_or_meaning_summary",
+      "shared_atmosphere_declaration",
+      "narrator_correction_with_backstage_fact"
+    ]
+  },
+  "text_path": "cases\\NM-03\\drafts\\c-3.txt"
+}

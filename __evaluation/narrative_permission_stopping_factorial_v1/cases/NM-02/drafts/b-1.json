@@ -1,0 +1,64 @@
+{
+  "candidate_id": "8c806321-f230-4710-a630-910726c34e05",
+  "attempt_number": 1,
+  "group": "B",
+  "replica": 1,
+  "permission_policy": "STRICT_LIMITED",
+  "stop_policy": "CURRENT",
+  "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+    "policy_metadata": {
+      "group": "B",
+      "permission_policy": "STRICT_LIMITED",
+      "stop_policy": "CURRENT",
+      "policy_version": "narrative-permission-stop-v1",
+      "policy_hash": "a42fb8f38620720ad1dda5407ffa44c03e929f1b34d89ecb5fbf1b5ea7325c24",
+      "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+      "permission_instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+      "stop_instruction_hash": null,
+      "seed": null
+    },
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "周淇端着水杯走回座位时，第一眼就发现桌上空了。\n\n她的考研单词书不见了。\n\n笔还在，透明水杯刚才放的位置也没变，但书——那本红色封面的新东方绿皮乱序版——不在桌上。她放下水杯，弯腰看了看椅子底下，又侧身扫了一眼桌缝。没有。\n\n邻座的男生还在低头做题。他左手边摊着一本考研数学真题集，右手握着笔，耳机线从领口垂下来，整个人沉浸在题目里。他的书包靠在椅子右侧，拉链没完全拉上，露出一截书脊。\n\n红色封面。\n\n周淇盯着那截红色看了三秒。她认得自己的书——封面上用黑色马克笔写了个“淇”字，就在右上角。那本书里还夹着一张对折的打印纸，上面是她昨晚手写的租房合同草稿，房东的名字、押金金额、水电费分摊方式，全写在上面。\n\n男生翻了一页真题集，笔尖在草稿纸上划拉了几下。他没抬头。\n\n周淇坐回自己的椅子。她不能直接伸手去翻他的书包，也不能说“你是不是拿错我书了”——万一不是呢？万一那截红色是他自己的什么书呢？她盯着男生桌上摊开的书看了一会儿。他的考研数学真题集封面是蓝白的，旁边还摞着一本政治背诵手册，一本英语真题。没有单词书。\n\n男生自己的桌上没有单词书。\n\n周淇的手指搭在水杯边缘。杯子是塑料的，杯壁凝着一层水珠，她刚从饮水机接的温水。她看了一眼男生的书包——拉链开口朝上，那截红色书脊从缝隙里露出来，距离她不到一臂。\n\n男生还在做题。他翻了一页真题集，左手伸向桌上的笔袋，摸出一支红笔，在某个选项上画了个圈。\n\n周淇的手指收紧了一下，然后松开。\n\n她站起来，拿起水杯，假装要绕过桌子去另一侧的书架找书。经过男生身边时，她的胳膊肘碰到了杯身。\n\n水杯倾斜。\n\n温水从杯口泼出来，沿着桌面边缘淌下去，直直地流向男生书包的方向。\n\n“哎——”周淇低声喊了一声，身体往后退了半步。\n\n男生猛地抬头，顺着她的视线看向自己的书包。水已经流到书包底部，浸湿了帆布面的一角。他一把抓起书包，拉开拉链，把里面的东西往外掏——一本笔记本，一个充电宝，一包纸巾，然后是一本红色封面的书。\n\n他把书抽出来，翻了个面。\n\n封面上写着一个“淇”字。\n\n男生愣了一下，低头看看自己桌上摊开的书，又看看手里这本。他抬起头，疑惑地看向周淇。",
+  "raw_response": "周淇端着水杯走回座位时，第一眼就发现桌上空了。\n\n她的考研单词书不见了。\n\n笔还在，透明水杯刚才放的位置也没变，但书——那本红色封面的新东方绿皮乱序版——不在桌上。她放下水杯，弯腰看了看椅子底下，又侧身扫了一眼桌缝。没有。\n\n邻座的男生还在低头做题。他左手边摊着一本考研数学真题集，右手握着笔，耳机线从领口垂下来，整个人沉浸在题目里。他的书包靠在椅子右侧，拉链没完全拉上，露出一截书脊。\n\n红色封面。\n\n周淇盯着那截红色看了三秒。她认得自己的书——封面上用黑色马克笔写了个“淇”字，就在右上角。那本书里还夹着一张对折的打印纸，上面是她昨晚手写的租房合同草稿，房东的名字、押金金额、水电费分摊方式，全写在上面。\n\n男生翻了一页真题集，笔尖在草稿纸上划拉了几下。他没抬头。\n\n周淇坐回自己的椅子。她不能直接伸手去翻他的书包，也不能说“你是不是拿错我书了”——万一不是呢？万一那截红色是他自己的什么书呢？她盯着男生桌上摊开的书看了一会儿。他的考研数学真题集封面是蓝白的，旁边还摞着一本政治背诵手册，一本英语真题。没有单词书。\n\n男生自己的桌上没有单词书。\n\n周淇的手指搭在水杯边缘。杯子是塑料的，杯壁凝着一层水珠，她刚从饮水机接的温水。她看了一眼男生的书包——拉链开口朝上，那截红色书脊从缝隙里露出来，距离她不到一臂。\n\n男生还在做题。他翻了一页真题集，左手伸向桌上的笔袋，摸出一支红笔，在某个选项上画了个圈。\n\n周淇的手指收紧了一下，然后松开。\n\n她站起来，拿起水杯，假装要绕过桌子去另一侧的书架找书。经过男生身边时，她的胳膊肘碰到了杯身。\n\n水杯倾斜。\n\n温水从杯口泼出来，沿着桌面边缘淌下去，直直地流向男生书包的方向。\n\n“哎——”周淇低声喊了一声，身体往后退了半步。\n\n男生猛地抬头，顺着她的视线看向自己的书包。水已经流到书包底部，浸湿了帆布面的一角。他一把抓起书包，拉开拉链，把里面的东西往外掏——一本笔记本，一个充电宝，一包纸巾，然后是一本红色封面的书。\n\n他把书抽出来，翻了个面。\n\n封面上写着一个“淇”字。\n\n男生愣了一下，低头看看自己桌上摊开的书，又看看手里这本。他抬起头，疑惑地看向周淇。",
+  "input_tokens": 1582,
+  "output_tokens": 579,
+  "latency_ms": 24754,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "715a9d4babe03f523576cfe059eb75404d9d677547f6b557e80c4e3d30a2be9f",
+  "validation": {
+    "character_count": 901,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "banned_sentence_hits": {},
+    "second_confirmation_hits": [],
+    "environment_coda_hits": [],
+    "stop_marker_first_char": null,
+    "post_stop_character_count": null,
+    "tempo_final_line_mismatch": false,
+    "manual_review_required": [
+      "viewpoint_violation",
+      "cross_mind_assertion",
+      "other_character_motive_as_fact",
+      "true_stop_state_position",
+      "visible_state_transition_count",
+      "relationship_or_meaning_summary",
+      "shared_atmosphere_declaration",
+      "narrator_correction_with_backstage_fact"
+    ]
+  },
+  "text_path": "cases\\NM-02\\drafts\\b-1.txt"
+}

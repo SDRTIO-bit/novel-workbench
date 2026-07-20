@@ -1,0 +1,26 @@
+{
+  "group": "A",
+  "replica": 1,
+  "candidate_id": "54ab65aa-8263-48fa-974b-e241548bc647",
+  "attempt_number": 1,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-chat",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 1800,
+    "timeout_seconds": 300,
+    "response_format": "text"
+  },
+  "text_output": "沈晚把书包拉链拉上，直起身时眉头已经拧紧了。她朝管理员的方向侧过脸，嘴唇微微张开——\n\n陆祈的手动了一下。\n\n他把夹在臂弯里的习题册拿到身前，翻开。动作很自然，像任何一个排队时忽然想起要确认笔记的人。纸张翻动的声音在门禁通道的嘈杂里几乎听不见。\n\n但沈晚的余光捕捉到了什么。\n\n她停住了正要开口的动作，视线落在那本翻开的册子上——准确地说，是落在册子中间露出一角的卡片上。蓝色的边，白色的字，照片一角刚好从纸张边缘探出来。\n\n她的表情从焦急变成愣怔。\n\n然后她伸手，从册子里抽出那张借书证。动作很快，像是怕自己看错。卡片完全脱离纸张的那一刻，她的手指顿了一下——她认出了这是自己早晨借过的那本习题册。\n\n陆祈已经合上册子，重新夹回臂弯里，目光平视前方，像什么都没发生。\n\n沈晚拿着借书证，在闸机上刷了一下。\n\n门开了。",
+  "raw_response": "沈晚把书包拉链拉上，直起身时眉头已经拧紧了。她朝管理员的方向侧过脸，嘴唇微微张开——\n\n陆祈的手动了一下。\n\n他把夹在臂弯里的习题册拿到身前，翻开。动作很自然，像任何一个排队时忽然想起要确认笔记的人。纸张翻动的声音在门禁通道的嘈杂里几乎听不见。\n\n但沈晚的余光捕捉到了什么。\n\n她停住了正要开口的动作，视线落在那本翻开的册子上——准确地说，是落在册子中间露出一角的卡片上。蓝色的边，白色的字，照片一角刚好从纸张边缘探出来。\n\n她的表情从焦急变成愣怔。\n\n然后她伸手，从册子里抽出那张借书证。动作很快，像是怕自己看错。卡片完全脱离纸张的那一刻，她的手指顿了一下——她认出了这是自己早晨借过的那本习题册。\n\n陆祈已经合上册子，重新夹回臂弯里，目光平视前方，像什么都没发生。\n\n沈晚拿着借书证，在闸机上刷了一下。\n\n门开了。",
+  "input_tokens": 2498,
+  "output_tokens": 224,
+  "latency_ms": 7847,
+  "finish_reason": "stop",
+  "error_code": "TEMPO_FINAL_LINE_MISMATCH",
+  "error_message": "TEMPO_FINAL_LINE_MISMATCH: final paragraph must include the required marker '沈晚抽出那张借书证，在闸机上刷了一下，门开了。'",
+  "rendered_user_prompt_sha256": "59ed6fecfb8f2415d36e5295a5b22a90c5815e9b92ca5ba686ddeeaf2fab71ac",
+  "text_path": "cases\\CAMPUS-01\\drafts\\A-1.txt"
+}

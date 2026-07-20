@@ -1,0 +1,64 @@
+{
+  "candidate_id": "e4f963b4-0ccf-4119-93f6-a0d4547259c2",
+  "attempt_number": 1,
+  "group": "B",
+  "replica": 3,
+  "permission_policy": "STRICT_LIMITED",
+  "stop_policy": "CURRENT",
+  "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+    "policy_metadata": {
+      "group": "B",
+      "permission_policy": "STRICT_LIMITED",
+      "stop_policy": "CURRENT",
+      "policy_version": "narrative-permission-stop-v1",
+      "policy_hash": "a42fb8f38620720ad1dda5407ffa44c03e929f1b34d89ecb5fbf1b5ea7325c24",
+      "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+      "permission_instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+      "stop_instruction_hash": null,
+      "seed": null
+    },
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "水开了，白色的蒸汽从锅盖边缘挤出来，发出细碎的噗噗声。\n\n夏知推开厨房门的时候，正好看见韩川的手机屏幕亮了一下。屏幕上弹出一条消息预览，绿色的对话框，昵称是她自己的名字。她一眼就认出来了——那是她昨晚发的消息，到现在还没显示已读。\n\n韩川低头看了一眼手机屏幕。\n\n然后他把手机翻了个面，屏幕朝下扣在大理石台面上。动作很轻，几乎没发出什么声音。\n\n他转身走到水槽边，拧开水龙头开始洗一把小青菜。水流哗哗地冲在菜叶上，他背对着门口，肩膀微微弓着，像是没听见她进来。\n\n灶台上的锅还在翻腾，蒸汽越冒越大。\n\n桌上摆着两只碗。白瓷的，并排放在一起，碗底已经放好了调料和葱花。\n\n夏知站在门口，手指在门框上轻轻搭了一下。\n\n“需要帮忙吗？”她问。\n\n韩川的手在水槽里停了一瞬。水流还在冲，菜叶被翻了个面。\n\n“不用。”他说，没回头，“马上就好。”\n\n夏知走过去，拿起桌上其中一只碗。碗是凉的，里面的酱油底已经调好了，葱花切得很细。\n\n“那我盛面。”她说。\n\n她走到灶台边，伸手去掀锅盖。蒸汽一下子涌出来，烫得她缩了一下手指。\n\n韩川转过头看了一眼。他关上水龙头，把洗好的青菜放在沥水篮里，走过来从她手里接过锅盖。\n\n“我来。”他说。\n\n他站在她旁边，手臂伸过来的时候，肩膀几乎碰到她的头发。他把锅盖掀开放到一边，拿起筷子在锅里搅了一下，面条在沸水里散开。\n\n夏知往旁边让了半步，把手里的碗递过去。\n\n韩川接过碗，用筷子把面捞起来。热气腾腾的面条沥着水，一根根落进碗里，汤底被冲开，酱油的颜色晕开来。他捞完一碗，又接过她递来的第二只碗。\n\n两个人站在灶台前，蒸汽模糊了厨房的窗户。\n\n韩川把捞好的两碗面端到桌上。青菜还躺在沥水篮里，生的。\n\n“青菜。”夏知说。\n\n韩川看了一眼沥水篮，又转身开火，往锅里倒了点油。他把青菜倒进去，锅铲翻了几下，菜叶子迅速变软变深。不到一分钟就盛出来，分进两只碗里。\n\n他把锅铲放进水槽，在围裙上擦了擦手。\n\n桌上两碗面冒着热气。手机仍然扣在那里，黑色的手机壳贴着大理石台面，屏幕朝下。\n\n夏知拉开椅子坐下。韩川把筷子递给她，自己坐到对面。\n\n面很烫。夏知夹起一筷子吹了吹。",
+  "raw_response": "水开了，白色的蒸汽从锅盖边缘挤出来，发出细碎的噗噗声。\n\n夏知推开厨房门的时候，正好看见韩川的手机屏幕亮了一下。屏幕上弹出一条消息预览，绿色的对话框，昵称是她自己的名字。她一眼就认出来了——那是她昨晚发的消息，到现在还没显示已读。\n\n韩川低头看了一眼手机屏幕。\n\n然后他把手机翻了个面，屏幕朝下扣在大理石台面上。动作很轻，几乎没发出什么声音。\n\n他转身走到水槽边，拧开水龙头开始洗一把小青菜。水流哗哗地冲在菜叶上，他背对着门口，肩膀微微弓着，像是没听见她进来。\n\n灶台上的锅还在翻腾，蒸汽越冒越大。\n\n桌上摆着两只碗。白瓷的，并排放在一起，碗底已经放好了调料和葱花。\n\n夏知站在门口，手指在门框上轻轻搭了一下。\n\n“需要帮忙吗？”她问。\n\n韩川的手在水槽里停了一瞬。水流还在冲，菜叶被翻了个面。\n\n“不用。”他说，没回头，“马上就好。”\n\n夏知走过去，拿起桌上其中一只碗。碗是凉的，里面的酱油底已经调好了，葱花切得很细。\n\n“那我盛面。”她说。\n\n她走到灶台边，伸手去掀锅盖。蒸汽一下子涌出来，烫得她缩了一下手指。\n\n韩川转过头看了一眼。他关上水龙头，把洗好的青菜放在沥水篮里，走过来从她手里接过锅盖。\n\n“我来。”他说。\n\n他站在她旁边，手臂伸过来的时候，肩膀几乎碰到她的头发。他把锅盖掀开放到一边，拿起筷子在锅里搅了一下，面条在沸水里散开。\n\n夏知往旁边让了半步，把手里的碗递过去。\n\n韩川接过碗，用筷子把面捞起来。热气腾腾的面条沥着水，一根根落进碗里，汤底被冲开，酱油的颜色晕开来。他捞完一碗，又接过她递来的第二只碗。\n\n两个人站在灶台前，蒸汽模糊了厨房的窗户。\n\n韩川把捞好的两碗面端到桌上。青菜还躺在沥水篮里，生的。\n\n“青菜。”夏知说。\n\n韩川看了一眼沥水篮，又转身开火，往锅里倒了点油。他把青菜倒进去，锅铲翻了几下，菜叶子迅速变软变深。不到一分钟就盛出来，分进两只碗里。\n\n他把锅铲放进水槽，在围裙上擦了擦手。\n\n桌上两碗面冒着热气。手机仍然扣在那里，黑色的手机壳贴着大理石台面，屏幕朝下。\n\n夏知拉开椅子坐下。韩川把筷子递给她，自己坐到对面。\n\n面很烫。夏知夹起一筷子吹了吹。",
+  "input_tokens": 1513,
+  "output_tokens": 588,
+  "latency_ms": 19823,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "7a88e695c90add2efae66b5f499274d6b6b385e0194877495bd21ee87f8d5416",
+  "validation": {
+    "character_count": 896,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "banned_sentence_hits": {},
+    "second_confirmation_hits": [],
+    "environment_coda_hits": [],
+    "stop_marker_first_char": null,
+    "post_stop_character_count": null,
+    "tempo_final_line_mismatch": false,
+    "manual_review_required": [
+      "viewpoint_violation",
+      "cross_mind_assertion",
+      "other_character_motive_as_fact",
+      "true_stop_state_position",
+      "visible_state_transition_count",
+      "relationship_or_meaning_summary",
+      "shared_atmosphere_declaration",
+      "narrator_correction_with_backstage_fact"
+    ]
+  },
+  "text_path": "cases\\ROMANCE-02\\drafts\\b-3.txt"
+}

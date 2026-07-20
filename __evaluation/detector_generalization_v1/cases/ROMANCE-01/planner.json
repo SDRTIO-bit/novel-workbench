@@ -1,0 +1,156 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "姜禾在便利店门口面对程砚放在窗边的第二杯豆浆，必须在店员和顾客面前做出一个选择，并承担关系上的小风险。",
+  "location": "下雨傍晚的便利店门口",
+  "time": "傍晚，下雨",
+  "scene_state": {
+    "last_completed_action": "程砚把第二杯热豆浆放到便利店窗边，但没有叫姜禾。",
+    "present_characters": [
+      "姜禾",
+      "程砚",
+      "店员",
+      "排队顾客"
+    ],
+    "visible_facts": [
+      "程砚把第二杯热豆浆放到窗边",
+      "程砚没有叫姜禾",
+      "姜禾站在门口",
+      "下雨",
+      "店员和顾客在场"
+    ],
+    "available_objects": [
+      "热豆浆（两杯）",
+      "便利店门",
+      "雨伞"
+    ],
+    "unresolved_problem": "姜禾不确定程砚是否特意为她买了豆浆，以及如何回应而不显得自作多情。",
+    "already_existing_constraints": [
+      "不能直接问程砚是不是给她买的",
+      "不能在公共场合让程砚难堪"
+    ]
+  },
+  "characters": [
+    {
+      "name": "姜禾",
+      "goal": "在不直接询问的情况下确认程砚的心意，并决定是否接受那杯豆浆。",
+      "known": [
+        "程砚把第二杯豆浆放在窗边",
+        "两人上午因为一句玩笑僵住",
+        "店员和顾客在看着"
+      ],
+      "unknown": [
+        "程砚是否特意为她买的豆浆",
+        "程砚现在的情绪状态"
+      ],
+      "mistaken_beliefs": [
+        "程砚可能因为上午的玩笑还在生气"
+      ],
+      "constraints": [
+        "不能直接问程砚是不是给她买的",
+        "不能在公共场合让程砚难堪"
+      ],
+      "observed_evidence": [
+        "程砚放下豆浆后没有看她",
+        "程砚自己拿起一杯开始喝"
+      ],
+      "current_interpretation": "程砚可能想给但不好意思开口，或者豆浆是给别人准备的。",
+      "how_interpretation_drives_action": "她决定不直接询问，而是通过一个动作试探——比如走过去拿起那杯豆浆，看程砚的反应。"
+    },
+    {
+      "name": "程砚",
+      "goal": "在不主动解释的情况下，让姜禾明白豆浆是给她的。",
+      "known": [
+        "上午的玩笑让姜禾不太自在",
+        "他特意多买了一杯豆浆"
+      ],
+      "unknown": [
+        "姜禾是否会接受这杯豆浆"
+      ],
+      "mistaken_beliefs": [
+        "姜禾可能还在为上午的事生气"
+      ],
+      "constraints": [
+        "不能直接说破心意",
+        "不能在公共场合显得太刻意"
+      ],
+      "observed_evidence": [
+        "姜禾站在门口没有进来",
+        "姜禾看到了豆浆"
+      ],
+      "current_interpretation": "姜禾在犹豫是否要拿那杯豆浆。",
+      "how_interpretation_drives_action": "他继续喝自己的豆浆，假装不在意，但余光关注姜禾的动作。"
+    }
+  ],
+  "concrete_problem": "姜禾必须决定是直接拿起窗边那杯豆浆，还是转身离开，以回应程砚未言明的举动。",
+  "pressure": "店员和排队顾客的注视让姜禾无法长时间犹豫，她必须在几秒内做出选择。",
+  "turning_point": "姜禾选择拿起那杯豆浆，并走向程砚，轻声说了一句‘谢谢’，程砚微微点头，两人之间僵住的气氛开始松动。",
+  "end_condition": "姜禾拿起了豆浆，程砚没有拒绝，两人之间形成了一种新的默契。",
+  "forbidden": [
+    "姜禾直接问程砚是不是给她买的",
+    "程砚主动解释豆浆是给姜禾的",
+    "上午玩笑的具体内容被揭露",
+    "店员或顾客介入两人的互动",
+    "任何内心独白直接解释程砚的动机"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "姜禾看到程砚放下第二杯豆浆后，自己拿起一杯开始喝，没有看她。",
+      "character_interpretation": "姜禾认为程砚在回避她，豆浆可能不是给她的。",
+      "character_next_action": "姜禾犹豫片刻，决定走过去拿起窗边的豆浆。",
+      "rejected_alternative": "姜禾可以选择转身离开，假装没看到那杯豆浆。",
+      "immediate_consequence": "姜禾拿起豆浆时，程砚抬眼看她，两人目光相遇。",
+      "counterfactual_without_action": "如果姜禾转身离开，程砚可能会认为她还在生气，两人关系继续僵持。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "姜禾站在门口，两人之间隔着距离和沉默。",
+        "after": "姜禾拿起豆浆，两人目光相遇，距离缩短。"
+      },
+      "cost_or_commitment": "姜禾冒了被拒绝或误会的风险，表明她愿意主动修复关系。",
+      "next_constraint": "姜禾不能否认自己主动拿起了豆浆。",
+      "reader_must_infer": "姜禾的主动表明她愿意放下上午的不快。",
+      "narrator_must_not_state": [
+        "程砚是否故意让姜禾看到豆浆",
+        "程砚内心的真实想法"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "姜禾站在便利店门口，看到程砚把第二杯豆浆放在窗边。",
+    "dominant_pressure": {
+      "kind": "social_friction",
+      "description": "上午的玩笑让两人之间产生隔阂，加上店员和顾客的在场，姜禾必须谨慎回应。"
+    },
+    "allowed_viewpoint_misread": "姜禾可能误以为程砚还在生气，而实际上程砚在等她主动。",
+    "disclosure_cap": 0,
+    "must_remain_unclassified": [
+      "程砚多买一杯豆浆的真实动机"
+    ],
+    "stop_state": {
+      "type": "relationship_shift",
+      "visible_fact": "姜禾拿起豆浆，程砚没有阻止。",
+      "what_is_now_different": "两人从僵持状态转为一种未言明的默契。",
+      "must_not_append": "不得解释程砚是否原本就打算给姜禾。"
+    },
+    "final_line_must_include": "姜禾拿起豆浆，轻声说了句‘谢谢’。"
+  }
+}

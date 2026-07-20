@@ -1,0 +1,64 @@
+{
+  "candidate_id": "f652faff-a5d3-452a-b34c-8214cdd89a98",
+  "attempt_number": 1,
+  "group": "C",
+  "replica": 3,
+  "permission_policy": "CURRENT",
+  "stop_policy": "STRICT_STOP",
+  "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+    "policy_metadata": {
+      "group": "C",
+      "permission_policy": "CURRENT",
+      "stop_policy": "STRICT_STOP",
+      "policy_version": "narrative-permission-stop-v1",
+      "policy_hash": "15e6b754a467a03569fe265abb7861ce24f144ba737ce3f2973776c1c2e76d47",
+      "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+      "permission_instruction_hash": null,
+      "stop_instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+      "seed": null
+    },
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "水已经在锅里翻了好一会儿了。\n\n夏知站在厨房门口，看见韩川的手机屏幕亮了一下。屏幕上弹出来的消息预览就一行字，是她昨晚发的——她一眼就认出来了，因为那行字前面还挂着她的备注名。\n\n韩川低头看了一眼。\n\n然后他把手机翻了个面，扣在料理台边上。\n\n动作不快也不慢，像是顺手。扣完之后他就转身去了水槽那边，拧开水龙头开始洗一把小青菜。水声哗哗的，盖过了锅里沸水的声音。\n\n夏知的手在门框上搭了一下。\n\n桌上摆着两只碗。白的，一样大，并排放在电磁炉旁边。筷子也已经搁好了，一双朝左，一双朝右。\n\n她走进厨房。\n\n“需要帮忙吗？”\n\n韩川回过头。他手上还拿着那把青菜，水珠顺着菜叶子往下滴。\n\n“不用，”他说，“马上就好。”\n\n夏知走到桌边，把其中一只碗拿起来。碗是常温的，还没盛过东西。\n\n“那我先把碗放过去。”\n\n她端着碗走到电磁炉旁边。锅里的水还在滚，面条还没下。韩川关上水龙头，甩了甩菜叶上的水，走过来把青菜放在砧板上。\n\n两个人之间隔着电磁炉。\n\n“面你吃多少？”韩川问。\n\n“正常就行。”\n\n韩川拆开那包挂面，抽了一小把出来，顿了顿，又抽了一小把。他把面放进沸水里，用筷子搅了两下。\n\n夏知把碗放在锅边。两只碗现在都在她面前。\n\n韩川搅面的动作没停。手机还扣在料理台那头，屏幕朝下，黑色的手机壳和深色的台面几乎融为一体。\n\n“青菜要现在放还是等会儿？”夏知问。\n\n“等面煮到一半再放。”\n\n“行。”\n\n她没走。韩川也没再说“不用帮忙”。他把砧板上的青菜切成两段，刀落在木板上的声音很干脆。锅里的面条在沸水里慢慢散开，白色的水汽往上蒸。\n\n夏知拿起筷子，把两只碗里的筷子都摆正了一下。\n\n韩川把青菜拨进锅里。菜叶子一碰到沸水就软下去，颜色变深。他用筷子把菜和面搅在一起，然后从碗架上取了一只漏勺。\n\n“碗。”\n\n夏知把第一只碗推过去。韩川捞了一碗面，又捞了些青菜，浇了两勺面汤。他把碗推回来，又去捞第二碗。\n\n夏知端起第一碗面，转身放到餐桌上。\n\n她回来的时候，第二碗也已经盛好了。锅里还剩一点汤底，韩川关了火。\n\n料理台上，手机还是扣着的。\n\n夏知端起第二碗面。\n\n“筷子。”韩川说。\n\n“拿了。”\n\n她端着碗走向餐桌。韩川跟在她后面，手里什么都没拿。两个人坐下来的时候，桌上的两碗面还在冒热气。\n\n手机留在厨房里，扣在料理台边上，屏幕朝下。",
+  "raw_response": "水已经在锅里翻了好一会儿了。\n\n夏知站在厨房门口，看见韩川的手机屏幕亮了一下。屏幕上弹出来的消息预览就一行字，是她昨晚发的——她一眼就认出来了，因为那行字前面还挂着她的备注名。\n\n韩川低头看了一眼。\n\n然后他把手机翻了个面，扣在料理台边上。\n\n动作不快也不慢，像是顺手。扣完之后他就转身去了水槽那边，拧开水龙头开始洗一把小青菜。水声哗哗的，盖过了锅里沸水的声音。\n\n夏知的手在门框上搭了一下。\n\n桌上摆着两只碗。白的，一样大，并排放在电磁炉旁边。筷子也已经搁好了，一双朝左，一双朝右。\n\n她走进厨房。\n\n“需要帮忙吗？”\n\n韩川回过头。他手上还拿着那把青菜，水珠顺着菜叶子往下滴。\n\n“不用，”他说，“马上就好。”\n\n夏知走到桌边，把其中一只碗拿起来。碗是常温的，还没盛过东西。\n\n“那我先把碗放过去。”\n\n她端着碗走到电磁炉旁边。锅里的水还在滚，面条还没下。韩川关上水龙头，甩了甩菜叶上的水，走过来把青菜放在砧板上。\n\n两个人之间隔着电磁炉。\n\n“面你吃多少？”韩川问。\n\n“正常就行。”\n\n韩川拆开那包挂面，抽了一小把出来，顿了顿，又抽了一小把。他把面放进沸水里，用筷子搅了两下。\n\n夏知把碗放在锅边。两只碗现在都在她面前。\n\n韩川搅面的动作没停。手机还扣在料理台那头，屏幕朝下，黑色的手机壳和深色的台面几乎融为一体。\n\n“青菜要现在放还是等会儿？”夏知问。\n\n“等面煮到一半再放。”\n\n“行。”\n\n她没走。韩川也没再说“不用帮忙”。他把砧板上的青菜切成两段，刀落在木板上的声音很干脆。锅里的面条在沸水里慢慢散开，白色的水汽往上蒸。\n\n夏知拿起筷子，把两只碗里的筷子都摆正了一下。\n\n韩川把青菜拨进锅里。菜叶子一碰到沸水就软下去，颜色变深。他用筷子把菜和面搅在一起，然后从碗架上取了一只漏勺。\n\n“碗。”\n\n夏知把第一只碗推过去。韩川捞了一碗面，又捞了些青菜，浇了两勺面汤。他把碗推回来，又去捞第二碗。\n\n夏知端起第一碗面，转身放到餐桌上。\n\n她回来的时候，第二碗也已经盛好了。锅里还剩一点汤底，韩川关了火。\n\n料理台上，手机还是扣着的。\n\n夏知端起第二碗面。\n\n“筷子。”韩川说。\n\n“拿了。”\n\n她端着碗走向餐桌。韩川跟在她后面，手里什么都没拿。两个人坐下来的时候，桌上的两碗面还在冒热气。\n\n手机留在厨房里，扣在料理台边上，屏幕朝下。",
+  "input_tokens": 1385,
+  "output_tokens": 625,
+  "latency_ms": 24085,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "702c279ac9e76950aa968166097e8f04f7ef96b769bee79d1a81fa186e2693f2",
+  "validation": {
+    "character_count": 972,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "banned_sentence_hits": {},
+    "second_confirmation_hits": [],
+    "environment_coda_hits": [],
+    "stop_marker_first_char": null,
+    "post_stop_character_count": null,
+    "tempo_final_line_mismatch": false,
+    "manual_review_required": [
+      "viewpoint_violation",
+      "cross_mind_assertion",
+      "other_character_motive_as_fact",
+      "true_stop_state_position",
+      "visible_state_transition_count",
+      "relationship_or_meaning_summary",
+      "shared_atmosphere_declaration",
+      "narrator_correction_with_backstage_fact"
+    ]
+  },
+  "text_path": "cases\\ROMANCE-02\\drafts\\c-3.txt"
+}

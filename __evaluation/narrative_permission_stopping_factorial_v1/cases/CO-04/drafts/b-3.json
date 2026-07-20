@@ -1,0 +1,64 @@
+{
+  "candidate_id": "f5c21779-26c4-46fd-9071-d2f4a84f494b",
+  "attempt_number": 1,
+  "group": "B",
+  "replica": 3,
+  "permission_policy": "STRICT_LIMITED",
+  "stop_policy": "CURRENT",
+  "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+    "policy_metadata": {
+      "group": "B",
+      "permission_policy": "STRICT_LIMITED",
+      "stop_policy": "CURRENT",
+      "policy_version": "narrative-permission-stop-v1",
+      "policy_hash": "a42fb8f38620720ad1dda5407ffa44c03e929f1b34d89ecb5fbf1b5ea7325c24",
+      "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+      "permission_instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+      "stop_instruction_hash": null,
+      "seed": null
+    },
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "篮球场边那一片水泥地上散着几个球，有个篮球滚到了跑道边缘，离路远不到三米。\n\n路远站在休息区的长凳旁边，手指扣着裤缝。那个男生已经走到篮球场外围的白线附近，再走十几米就进场了。水壶的蓝色提环挂在他右手的小指上，晃一下，撞一下他的膝盖外侧。\n\n路远咽了口唾沫。嗓子发紧。\n\n他弯腰把脚边那个篮球捡起来，两手托着，像要传给谁。操场上有人在跳绳，有人在打羽毛球，没人注意他。他把球往地上一拍，运了两下，然后手腕一抖——不是往篮架方向，是往那个男生的脚边。\n\n篮球弹在地上，闷闷地跳了两下，滚过去。\n\n球撞上男生的运动鞋后跟。\n\n男生停下来，低头看了一眼。他转过身，弯腰，用左手把篮球捞起来，右手还拎着那个蓝色水壶。\n\n路远已经往那边走了，脚步不快，像只是去捡球。他走到男生面前两步远的地方，伸出手，掌心朝上，等着接球。\n\n男生把篮球递过来。\n\n路远接过球，没退开。他的视线从男生的脸往下移，停在那个水壶上。壶身侧面贴着一张褪色的卡通贴纸，边角已经翘起来了。\n\n男生顺着他的目光低头看。\n\n路远没说话，只是把篮球夹在胳膊底下，另一只手指了指水壶，又指了指自己。\n\n男生愣了一下，把水壶举到眼前看了看。他转了一下壶身，看到那张贴纸，又看了看路远。\n\n他把水壶递过来。\n\n路远伸手接住。壶身还是凉的，握柄上有一点湿。他把它拿在手里，往后退了一步。\n\n男生挠了挠后脑勺，转身往篮球场走了。",
+  "raw_response": "篮球场边那一片水泥地上散着几个球，有个篮球滚到了跑道边缘，离路远不到三米。\n\n路远站在休息区的长凳旁边，手指扣着裤缝。那个男生已经走到篮球场外围的白线附近，再走十几米就进场了。水壶的蓝色提环挂在他右手的小指上，晃一下，撞一下他的膝盖外侧。\n\n路远咽了口唾沫。嗓子发紧。\n\n他弯腰把脚边那个篮球捡起来，两手托着，像要传给谁。操场上有人在跳绳，有人在打羽毛球，没人注意他。他把球往地上一拍，运了两下，然后手腕一抖——不是往篮架方向，是往那个男生的脚边。\n\n篮球弹在地上，闷闷地跳了两下，滚过去。\n\n球撞上男生的运动鞋后跟。\n\n男生停下来，低头看了一眼。他转过身，弯腰，用左手把篮球捞起来，右手还拎着那个蓝色水壶。\n\n路远已经往那边走了，脚步不快，像只是去捡球。他走到男生面前两步远的地方，伸出手，掌心朝上，等着接球。\n\n男生把篮球递过来。\n\n路远接过球，没退开。他的视线从男生的脸往下移，停在那个水壶上。壶身侧面贴着一张褪色的卡通贴纸，边角已经翘起来了。\n\n男生顺着他的目光低头看。\n\n路远没说话，只是把篮球夹在胳膊底下，另一只手指了指水壶，又指了指自己。\n\n男生愣了一下，把水壶举到眼前看了看。他转了一下壶身，看到那张贴纸，又看了看路远。\n\n他把水壶递过来。\n\n路远伸手接住。壶身还是凉的，握柄上有一点湿。他把它拿在手里，往后退了一步。\n\n男生挠了挠后脑勺，转身往篮球场走了。",
+  "input_tokens": 1461,
+  "output_tokens": 392,
+  "latency_ms": 16205,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "b531168b46a3e16de6a9328486a99b30c7e7d99d00a33b0e0dd02d7360856c91",
+  "validation": {
+    "character_count": 587,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "banned_sentence_hits": {},
+    "second_confirmation_hits": [],
+    "environment_coda_hits": [],
+    "stop_marker_first_char": null,
+    "post_stop_character_count": null,
+    "tempo_final_line_mismatch": false,
+    "manual_review_required": [
+      "viewpoint_violation",
+      "cross_mind_assertion",
+      "other_character_motive_as_fact",
+      "true_stop_state_position",
+      "visible_state_transition_count",
+      "relationship_or_meaning_summary",
+      "shared_atmosphere_declaration",
+      "narrator_correction_with_backstage_fact"
+    ]
+  },
+  "text_path": "cases\\CO-04\\drafts\\b-3.txt"
+}

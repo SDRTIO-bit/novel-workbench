@@ -1,0 +1,1 @@
+﻿{"jsonrpc":"2.0","id":20,"method":"tools/call","params":{"name":"create_chapter","arguments":{"project_id":"4c8d77e3-ec87-44dd-bffa-161eefc5cacf","title":"最后一课"}}}

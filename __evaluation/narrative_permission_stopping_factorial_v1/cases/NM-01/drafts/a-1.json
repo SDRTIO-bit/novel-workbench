@@ -1,0 +1,63 @@
+{
+  "candidate_id": "8747a579-b680-45bb-a3a7-0292f6478944",
+  "attempt_number": 1,
+  "group": "A",
+  "replica": 1,
+  "permission_policy": "CURRENT",
+  "stop_policy": "CURRENT",
+  "instruction_hash": null,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "policy_metadata": {
+      "group": "A",
+      "permission_policy": "CURRENT",
+      "stop_policy": "CURRENT",
+      "policy_version": "narrative-permission-stop-v1",
+      "policy_hash": "bcba9c79e51e6722c8796bc8a1defd65461d017dbbaf922efbe9c16df2ba3d4f",
+      "instruction_hash": null,
+      "permission_instruction_hash": null,
+      "stop_instruction_hash": null,
+      "seed": null
+    },
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "地铁报站的女声从头顶传来，下一站是翠苑。林悄把手机从耳边拿开，屏幕上的微信界面还亮着，那条语音条后面跟着灰色的“已撤回”三个字。\n\n她重新点了一下语音条。\n\n外放的前半句从嘈杂的车厢背景音里挤出来——“你桌上那个蓝色文件夹我……”——然后列车驶入弯道，轮轨尖叫着吞掉了后面的字。\n\n林悄把音量按到最大，又点了一次。同样的半句，同样的噪音截断。\n\n她退出去看聊天记录，那条语音是四分钟前发的，撤回时间在两分钟后。她立刻拨了室友的电话。\n\n占线。\n\n车厢晃了一下，她扶住扶手。明天上午九点的投标，技术标和商务标分开封装，技术标里那份核心方案文档的最终修订版，就在那个蓝色文件夹里。她昨晚改到凌晨两点，打印出来夹好，确认了三遍页码顺序，放在书桌左上角。\n\n她不知道语音的后半句是什么。\n\n她不知道室友为什么撤回。\n\n她不知道电话为什么占线。\n\n报站灯亮起，翠苑站到了。还有一站就是她下车的地方。\n\n林悄点开室友的对话框，拇指在键盘上停了两秒。她打出第一行字，删掉。又打出第二行，再删掉。车厢门打开，人流涌进来，一个背包挤过她的肩膀。\n\n她重新打字，这次没有犹豫。\n\n“刚在地铁上没听清，蓝色文件夹怎么啦？方便时回我～”\n\n发送。\n\n她把手机屏幕朝上握在手里，盯着对话框。车门关闭，列车启动。窗外隧道的灯光一格一格掠过，屏幕暗了一次，她用拇指点醒。\n\n没有回复。\n\n三十秒。\n\n没有回复。\n\n她翻到通话记录，室友的名字旁边还是“通话中”。她没再拨。刚才那条消息的语气是轻松的，带着波浪线，像是随口一问。如果现在连续拨三个电话，就变成了另一回事。\n\n一分钟后，对话框里弹出一条新消息。\n\n林悄低头看。手机屏幕的冷光映在她脸上，她读完那行字，把屏幕按灭，塞进口袋。\n\n列车减速，她的站到了。\n\n室友的回复躺在对话框里：\n\n“没事，我帮你收起来了，回头说。”",
+  "raw_response": "地铁报站的女声从头顶传来，下一站是翠苑。林悄把手机从耳边拿开，屏幕上的微信界面还亮着，那条语音条后面跟着灰色的“已撤回”三个字。\n\n她重新点了一下语音条。\n\n外放的前半句从嘈杂的车厢背景音里挤出来——“你桌上那个蓝色文件夹我……”——然后列车驶入弯道，轮轨尖叫着吞掉了后面的字。\n\n林悄把音量按到最大，又点了一次。同样的半句，同样的噪音截断。\n\n她退出去看聊天记录，那条语音是四分钟前发的，撤回时间在两分钟后。她立刻拨了室友的电话。\n\n占线。\n\n车厢晃了一下，她扶住扶手。明天上午九点的投标，技术标和商务标分开封装，技术标里那份核心方案文档的最终修订版，就在那个蓝色文件夹里。她昨晚改到凌晨两点，打印出来夹好，确认了三遍页码顺序，放在书桌左上角。\n\n她不知道语音的后半句是什么。\n\n她不知道室友为什么撤回。\n\n她不知道电话为什么占线。\n\n报站灯亮起，翠苑站到了。还有一站就是她下车的地方。\n\n林悄点开室友的对话框，拇指在键盘上停了两秒。她打出第一行字，删掉。又打出第二行，再删掉。车厢门打开，人流涌进来，一个背包挤过她的肩膀。\n\n她重新打字，这次没有犹豫。\n\n“刚在地铁上没听清，蓝色文件夹怎么啦？方便时回我～”\n\n发送。\n\n她把手机屏幕朝上握在手里，盯着对话框。车门关闭，列车启动。窗外隧道的灯光一格一格掠过，屏幕暗了一次，她用拇指点醒。\n\n没有回复。\n\n三十秒。\n\n没有回复。\n\n她翻到通话记录，室友的名字旁边还是“通话中”。她没再拨。刚才那条消息的语气是轻松的，带着波浪线，像是随口一问。如果现在连续拨三个电话，就变成了另一回事。\n\n一分钟后，对话框里弹出一条新消息。\n\n林悄低头看。手机屏幕的冷光映在她脸上，她读完那行字，把屏幕按灭，塞进口袋。\n\n列车减速，她的站到了。\n\n室友的回复躺在对话框里：\n\n“没事，我帮你收起来了，回头说。”",
+  "input_tokens": 1251,
+  "output_tokens": 479,
+  "latency_ms": 37195,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "011155cfec08fd95ee7eed2da636bf2a60f973f43b0f2738cd1569275fd9ff4a",
+  "validation": {
+    "character_count": 772,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "banned_sentence_hits": {},
+    "second_confirmation_hits": [],
+    "environment_coda_hits": [],
+    "stop_marker_first_char": null,
+    "post_stop_character_count": null,
+    "tempo_final_line_mismatch": false,
+    "manual_review_required": [
+      "viewpoint_violation",
+      "cross_mind_assertion",
+      "other_character_motive_as_fact",
+      "true_stop_state_position",
+      "visible_state_transition_count",
+      "relationship_or_meaning_summary",
+      "shared_atmosphere_declaration",
+      "narrator_correction_with_backstage_fact"
+    ]
+  },
+  "text_path": "cases\\NM-01\\drafts\\a-1.txt"
+}

@@ -1,0 +1,134 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "姜禾必须决定如何回应程砚放在窗边的第二杯豆浆，在不直接质问的前提下，做出一个可见的接收或拒绝动作，并承担关系上的小风险。",
+  "location": "便利店门口，傍晚雨中",
+  "time": "傍晚，雨势渐小",
+  "scene_state": {
+    "last_completed_action": "程砚将第二杯热豆浆放在便利店窗边，没有叫姜禾，转身离开",
+    "present_characters": [
+      "姜禾",
+      "店员",
+      "排队顾客"
+    ],
+    "visible_facts": [
+      "程砚刚离开便利店门口",
+      "窗台上放着一杯热豆浆，还冒着热气",
+      "姜禾手里拎着自己买的东西，站在门口",
+      "店员在收银台后看着窗外",
+      "有几位顾客在排队结账"
+    ],
+    "available_objects": [
+      "窗台上的热豆浆",
+      "姜禾手中的购物袋",
+      "便利店门口的雨伞架"
+    ],
+    "unresolved_problem": "姜禾不确定程砚为何多买一杯豆浆却不直接给她，上午的玩笑让关系变得微妙",
+    "already_existing_constraints": [
+      "姜禾不能直接质问程砚的心意",
+      "姜禾需要在公开场合保持自然",
+      "程砚已经离开，无法即时互动"
+    ]
+  },
+  "characters": [
+    {
+      "name": "姜禾",
+      "goal": "在不失面子的前提下，确认程砚的意图并做出回应",
+      "known": [
+        "程砚刚才在这里买了第二杯豆浆",
+        "上午自己的一句玩笑让气氛僵住",
+        "程砚把豆浆放在窗边没有叫她"
+      ],
+      "unknown": [
+        "程砚为什么多买一杯却不直接给她",
+        "程砚此刻是否在附近看着她"
+      ],
+      "mistaken_beliefs": [
+        "程砚可能还在生气上午的玩笑",
+        "程砚用这种方式表达不满"
+      ],
+      "constraints": [
+        "不能直接质问程砚的心意",
+        "不能在店员和顾客面前表现得太在意",
+        "不能破坏两人之间已有的默契"
+      ],
+      "observed_evidence": [
+        "程砚放豆浆的动作很轻，没有回头",
+        "豆浆是热的，显然是刚买的",
+        "程砚离开时脚步不快不慢，不像生气"
+      ],
+      "current_interpretation": "程砚可能想用这种方式缓和关系，但又不愿主动开口",
+      "how_interpretation_drives_action": "姜禾决定用一个不直接但明确的方式回应——她拿起豆浆，喝了一口，然后若无其事地走向公交站"
+    }
+  ],
+  "concrete_problem": "姜禾是否应该拿起那杯豆浆，以此作为对程砚的回应？",
+  "pressure": "店员和排队顾客的存在让姜禾无法长时间犹豫，她必须在几秒内做出选择",
+  "turning_point": "姜禾拿起豆浆喝了一口，这个动作表明她接收了程砚的示好，也意味着她愿意主动迈出一步",
+  "end_condition": "姜禾拿着豆浆走向公交站，留下一个明确的接收信号",
+  "forbidden": [
+    "姜禾不能直接质问程砚的心意",
+    "不能解释程砚的动机",
+    "不能出现两人直接对话",
+    "不能使用上午玩笑的具体内容"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "程砚将热豆浆放在窗台，没有叫姜禾就转身离开",
+      "character_interpretation": "姜禾认为程砚在用这种方式试探她的态度，如果她无视，关系可能更僵；如果她拿起，就等于接受了他的示好",
+      "character_next_action": "姜禾犹豫片刻后，伸手拿起豆浆，喝了一口，然后朝程砚离开的方向走去",
+      "rejected_alternative": "姜禾可以选择无视豆浆，直接离开，但这样会错失缓和关系的机会",
+      "immediate_consequence": "姜禾喝豆浆的动作被店员和部分顾客看到，意味着她公开接收了程砚的礼物",
+      "counterfactual_without_action": "如果姜禾不拿起豆浆，程砚可能会认为她还在生气，关系僵局继续",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "姜禾站在门口，面对窗台上的豆浆，犹豫不决，关系处于僵局",
+        "after": "姜禾拿起豆浆喝了一口，主动走向程砚的方向，关系出现转机"
+      },
+      "cost_or_commitment": "姜禾放弃了自己的矜持，主动承担了关系中的风险",
+      "next_constraint": "姜禾拿起豆浆后，她不能再装作无事发生，必须面对接下来的互动",
+      "reader_must_infer": "姜禾喝下豆浆意味着她原谅了上午的玩笑，并愿意和程砚继续发展",
+      "narrator_must_not_state": [
+        "姜禾喝豆浆的真实心理活动（如原谅或期待）",
+        "程砚是否在附近观察"
+      ]
+    }
+  ],
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  },
+  "tempo_guardrails": {
+    "entry_pressure": "姜禾刚走出便利店，看到窗台上的豆浆，程砚的背影消失在雨幕中",
+    "dominant_pressure": {
+      "kind": "social_friction",
+      "description": "上午的玩笑让两人关系微妙，姜禾需要在不失面子的情况下做出回应，同时店员和顾客的目光增加了社交压力"
+    },
+    "allowed_viewpoint_misread": "店员可能认为姜禾只是顺手拿了别人的豆浆",
+    "disclosure_cap": 0,
+    "must_remain_unclassified": [
+      "程砚的真实动机（是示好还是试探）"
+    ],
+    "stop_state": {
+      "type": "relationship_shift",
+      "visible_fact": "姜禾拿起豆浆喝了一口，然后走向公交站",
+      "what_is_now_different": "姜禾从被动等待变成了主动回应，关系从僵局转向可能的缓和",
+      "must_not_append": "不得解释姜禾喝豆浆时的具体心情"
+    },
+    "final_line_must_include": "姜禾喝了一口温热的豆浆"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "experiment": "NARRATIVE_PERMISSION_STOPPING_FACTORIAL_V1",
+  "policy_version": "narrative-permission-stop-v1",
+  "groups": {
+    "A": {
+      "permission_policy": "CURRENT",
+      "stop_policy": "CURRENT",
+      "instruction_block": "",
+      "instruction_hash": null,
+      "policy_hash": "bcba9c79e51e6722c8796bc8a1defd65461d017dbbaf922efbe9c16df2ba3d4f"
+    },
+    "B": {
+      "permission_policy": "STRICT_LIMITED",
+      "stop_policy": "CURRENT",
+      "instruction_block": "\n\n## 叙述权限（在既有规则之上追加的限制）\n本篇使用第三人称，并严格限定为单一视角人物（viewpoint_character）的限知叙述。\n一、全文只有视角人物可以出现内心、记忆、判断、感觉；不得切入第二个人物的内心或真实动机。\n二、正文只允许直接陈述：视角人物看见或听见的内容、其身体感受、其记忆、其判断猜测与误判，以及其能够确认的已发生事实。\n三、其他人物只能通过可见动作、可听语言、停顿、视线、姿势、物件操作，以及对现场状态的可见改变来呈现；不得把其他人物的心理、真实意图或正确解释作为事实宣布。\n四、视角人物无法确认时，正文必须保持不确定（他没听清、她分辨不出、他以为、她猜、看起来像、可能）；不得在下一句公布正确答案。\n五、禁止以下叙述功能：「他不知道的是……」「其实她早就……」「实际上对方只是……」；同时解释两个人物的真实心理；宣布所有旁观者共同感受到某种气氛；宣布人物关系已经发生变化；直接总结事件的主题或意义；用视角人物尚无法确认的信息纠正其判断。\n六、本限制不弱化 Planner 已确定的现场事实：要求发生的事件仍须实际发生；受限制的只是叙述者向读者释放信息的范围。",
+      "instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+      "policy_hash": "a42fb8f38620720ad1dda5407ffa44c03e929f1b34d89ecb5fbf1b5ea7325c24"
+    },
+    "C": {
+      "permission_policy": "CURRENT",
+      "stop_policy": "STRICT_STOP",
+      "instruction_block": "\n\n## 停止纪律（在既有规则之上追加的限制）\n一、正文第一次出现满足 stop_state 的可见事实时，立即结束全文。\n二、该事实成立之后，不得再写：对刚才动作的解释；双方再次确认；人物心理变化的回顾；关系或意义总结；环境余韵；同一物件的再次描写；新的停顿或对视；「他没有走」「她也没有退开」一类第二确认；旁白对局面变化的宣布。\n三、允许停止在：一个物件被放回、一个人改变方向、一句话获得回应、一个请求被接受或拒绝、一项现场状态被改变、一个新限制变得可见。\n四、不得为满足字数继续生成；正文长度以实际停点为准。",
+      "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+      "policy_hash": "15e6b754a467a03569fe265abb7861ce24f144ba737ce3f2973776c1c2e76d47"
+    },
+    "D": {
+      "permission_policy": "STRICT_LIMITED",
+      "stop_policy": "STRICT_STOP",
+      "instruction_block": "\n\n## 叙述权限（在既有规则之上追加的限制）\n本篇使用第三人称，并严格限定为单一视角人物（viewpoint_character）的限知叙述。\n一、全文只有视角人物可以出现内心、记忆、判断、感觉；不得切入第二个人物的内心或真实动机。\n二、正文只允许直接陈述：视角人物看见或听见的内容、其身体感受、其记忆、其判断猜测与误判，以及其能够确认的已发生事实。\n三、其他人物只能通过可见动作、可听语言、停顿、视线、姿势、物件操作，以及对现场状态的可见改变来呈现；不得把其他人物的心理、真实意图或正确解释作为事实宣布。\n四、视角人物无法确认时，正文必须保持不确定（他没听清、她分辨不出、他以为、她猜、看起来像、可能）；不得在下一句公布正确答案。\n五、禁止以下叙述功能：「他不知道的是……」「其实她早就……」「实际上对方只是……」；同时解释两个人物的真实心理；宣布所有旁观者共同感受到某种气氛；宣布人物关系已经发生变化；直接总结事件的主题或意义；用视角人物尚无法确认的信息纠正其判断。\n六、本限制不弱化 Planner 已确定的现场事实：要求发生的事件仍须实际发生；受限制的只是叙述者向读者释放信息的范围。\n\n## 停止纪律（在既有规则之上追加的限制）\n一、正文第一次出现满足 stop_state 的可见事实时，立即结束全文。\n二、该事实成立之后，不得再写：对刚才动作的解释；双方再次确认；人物心理变化的回顾；关系或意义总结；环境余韵；同一物件的再次描写；新的停顿或对视；「他没有走」「她也没有退开」一类第二确认；旁白对局面变化的宣布。\n三、允许停止在：一个物件被放回、一个人改变方向、一句话获得回应、一个请求被接受或拒绝、一项现场状态被改变、一个新限制变得可见。\n四、不得为满足字数继续生成；正文长度以实际停点为准。",
+      "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e",
+      "policy_hash": "533ba9fe37558af28e5b9a277971d13c5f7674a7a297a2c3d7f1a96c77af3123"
+    }
+  },
+  "instruction_texts": {
+    "STRICT_LIMITED": "\n\n## 叙述权限（在既有规则之上追加的限制）\n本篇使用第三人称，并严格限定为单一视角人物（viewpoint_character）的限知叙述。\n一、全文只有视角人物可以出现内心、记忆、判断、感觉；不得切入第二个人物的内心或真实动机。\n二、正文只允许直接陈述：视角人物看见或听见的内容、其身体感受、其记忆、其判断猜测与误判，以及其能够确认的已发生事实。\n三、其他人物只能通过可见动作、可听语言、停顿、视线、姿势、物件操作，以及对现场状态的可见改变来呈现；不得把其他人物的心理、真实意图或正确解释作为事实宣布。\n四、视角人物无法确认时，正文必须保持不确定（他没听清、她分辨不出、他以为、她猜、看起来像、可能）；不得在下一句公布正确答案。\n五、禁止以下叙述功能：「他不知道的是……」「其实她早就……」「实际上对方只是……」；同时解释两个人物的真实心理；宣布所有旁观者共同感受到某种气氛；宣布人物关系已经发生变化；直接总结事件的主题或意义；用视角人物尚无法确认的信息纠正其判断。\n六、本限制不弱化 Planner 已确定的现场事实：要求发生的事件仍须实际发生；受限制的只是叙述者向读者释放信息的范围。",
+    "STRICT_STOP": "\n\n## 停止纪律（在既有规则之上追加的限制）\n一、正文第一次出现满足 stop_state 的可见事实时，立即结束全文。\n二、该事实成立之后，不得再写：对刚才动作的解释；双方再次确认；人物心理变化的回顾；关系或意义总结；环境余韵；同一物件的再次描写；新的停顿或对视；「他没有走」「她也没有退开」一类第二确认；旁白对局面变化的宣布。\n三、允许停止在：一个物件被放回、一个人改变方向、一句话获得回应、一个请求被接受或拒绝、一项现场状态被改变、一个新限制变得可见。\n四、不得为满足字数继续生成；正文长度以实际停点为准。"
+  },
+  "writer_prompt_identity": {
+    "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+    "found": true,
+    "version_number": 6,
+    "output_mode": "plain_text",
+    "output_schema_name": null,
+    "system_template_sha256": "e933b446316349802745d7dcd5f918e7fb550c1ae78c5c7cfa7a69e095dffdef",
+    "user_template_sha256": "25004d53ea9cbc7662e95c37ca6292c033e1269fa66ebf5e8d9e24879ae0a913"
+  },
+  "planner_prompt_identity": {
+    "prompt_version_id": "f9052f8a-dc4e-5408-b14e-fc1badaf57f8",
+    "found": true,
+    "version_number": 6,
+    "output_mode": "structured",
+    "output_schema_name": "planner_v2",
+    "system_template_sha256": "5e1a50eac9751dcc28fa84242ba8a1f0b54a78ec15f30c0c1b6f1d0078fd0a33",
+    "user_template_sha256": "119cc39b9d0b61c966b9c2ac0de61a458455c939fed0186067816468d89c5ed7"
+  },
+  "frozen_parameters": {
+    "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+    "model_id": "deepseek-v4-pro",
+    "planner_prompt_version_id": "f9052f8a-dc4e-5408-b14e-fc1badaf57f8",
+    "writer_prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "planner_max_output_tokens": 12288,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300
+  },
+  "model_seed": null,
+  "seed_note": "Provider/adapter exposes no model seed (LlmRequest has no seed field; DeepSeek chat/completions documents none). seed=null is recorded for every call; temperature/top_p/max_output_tokens/timeout/thinking are held identical across groups; reproducibility is not faked. The SEED constant only drives blind-token generation and call-order shuffling.",
+  "overlap_notice": "Frozen DB writer prompt v6 section 5 already contains a strong stop rule (stop at the stop fact; no coda, no psychological explanation, no relationship summary, no theme elevation). STRICT_STOP is therefore a small-delta treatment: a weak C-group main effect is an attribute of the variable, and must NOT be read as an instruction-injection failure."
+}

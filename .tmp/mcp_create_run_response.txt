@@ -1,0 +1,3 @@
+event: message
+data: {"jsonrpc":"2.0","id":30,"result":{"content":[{"type":"text","text":"{\"id\":\"76a99772-c4ff-4096-a374-09fc55661da2\",\"status\":\"pending\",\"steps\":[{\"stage\":\"planner\",\"status\":\"pending\"},{\"stage\":\"writer\",\"status\":\"pending\"},{\"stage\":\"critic\",\"status\":\"pending\"},{\"stage\":\"reviser\",\"status\":\"pending\"},{\"stage\":\"judge\",\"status\":\"pending\"}]}"}],"structuredContent":{"id":"76a99772-c4ff-4096-a374-09fc55661da2","status":"pending","steps":[{"stage":"planner","status":"pending"},{"stage":"writer","status":"pending"},{"stage":"critic","status":"pending"},{"stage":"reviser","status":"pending"},{"stage":"judge","status":"pending"}]},"isError":false}}
+

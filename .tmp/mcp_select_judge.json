@@ -1,0 +1,1 @@
+﻿{"jsonrpc":"2.0","id":140,"method":"tools/call","params":{"name":"select_candidate","arguments":{"run_id":"76a99772-c4ff-4096-a374-09fc55661da2","stage":"judge","candidate_id":"31781eff-b12e-4615-809b-9aebac7f403b"}}}

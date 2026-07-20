@@ -1,0 +1,63 @@
+{
+  "candidate_id": "c0a65e3b-e5c9-4812-93f8-c57ad8725bf2",
+  "attempt_number": 1,
+  "group": "A",
+  "replica": 3,
+  "permission_policy": "CURRENT",
+  "stop_policy": "CURRENT",
+  "instruction_hash": null,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "policy_metadata": {
+      "group": "A",
+      "permission_policy": "CURRENT",
+      "stop_policy": "CURRENT",
+      "policy_version": "narrative-permission-stop-v1",
+      "policy_hash": "bcba9c79e51e6722c8796bc8a1defd65461d017dbbaf922efbe9c16df2ba3d4f",
+      "instruction_hash": null,
+      "permission_instruction_hash": null,
+      "stop_instruction_hash": null,
+      "seed": null
+    },
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "篮球场边线就在前面十几步的地方。\n\n路远站在休息区长凳旁，看着那个男生拿着他的蓝色水壶往球场走。水壶的背带垂下来，晃荡着，壶身上那圈白色硅胶套还是上周他自己换上去的。刚才那个男生拧开盖子喝了一口，然后继续走，步子不快，边走边跟旁边的人说话。\n\n路远没动。他不能追过去，不能喊。操场上全是人，几个女生在旁边跳绳，体育老师坐在远处的看台上看手机。如果他跑过去，如果他开口——他不知道会发生什么，但他就是不能。\n\n男生离边线还有七八步。\n\n路远低头，看见脚边滚着一个篮球。不知道是谁的，刚从球场弹出来，还在地上转着减速。他弯腰捡起来，手指扣进球缝，橡胶表面磨得掌心有点发烫。\n\n他往侧边走了一步，让出长凳和篮球场之间的角度。\n\n然后他把球推了出去。\n\n不是用力扔，是手腕一翻，让球贴着地面滚过去。篮球在塑胶跑道上弹了两下，咕噜噜地往前滚，方向偏左，正好切进男生前进的路线里。\n\n球碰到男生的鞋跟，轻轻撞了一下。\n\n男生停下，低头。\n\n他弯腰，单手把篮球捞起来，直起身子时顺带扫了一眼周围。他的视线划过跑道，划过休息区，最后落在路远身上。\n\n路远站在长凳边，手还保持着刚才推球的姿势，没放下。\n\n男生看了看手里的篮球，又看了看路远，然后把球往这边抛过来。球在地上弹了一下，路远接住了。\n\n男生转身要继续走。\n\n路远没接话，只是把篮球往自己怀里收了收，然后视线往下落——落在男生手里那个蓝色水壶上。\n\n男生顺着他的目光低头。\n\n他看了看水壶。\n\n翻过来看了一眼壶底的贴纸。\n\n然后他愣了一下，回头往休息区那边扫了一眼。长凳上放着一个黑色水壶，跟他手里这个形状差不多，但颜色完全不同。\n\n他把蓝色水壶举起来，朝路远晃了晃。\n\n路远点头。\n\n男生走过来，步子比刚才快，脸上带着那种“搞错了”的表情。他把水壶递过来，说：“不好意思，我以为是我的。”\n\n路远接过来。壶身还温着，是刚才被握在手里的温度。他把篮球夹在胳膊底下，另一只手攥住水壶的背带。\n\n男生已经转身去拿自己的黑色水壶了。\n\n路远把水壶挂在脖子上，背带贴着后颈，壶身垂在胸前。",
+  "raw_response": "篮球场边线就在前面十几步的地方。\n\n路远站在休息区长凳旁，看着那个男生拿着他的蓝色水壶往球场走。水壶的背带垂下来，晃荡着，壶身上那圈白色硅胶套还是上周他自己换上去的。刚才那个男生拧开盖子喝了一口，然后继续走，步子不快，边走边跟旁边的人说话。\n\n路远没动。他不能追过去，不能喊。操场上全是人，几个女生在旁边跳绳，体育老师坐在远处的看台上看手机。如果他跑过去，如果他开口——他不知道会发生什么，但他就是不能。\n\n男生离边线还有七八步。\n\n路远低头，看见脚边滚着一个篮球。不知道是谁的，刚从球场弹出来，还在地上转着减速。他弯腰捡起来，手指扣进球缝，橡胶表面磨得掌心有点发烫。\n\n他往侧边走了一步，让出长凳和篮球场之间的角度。\n\n然后他把球推了出去。\n\n不是用力扔，是手腕一翻，让球贴着地面滚过去。篮球在塑胶跑道上弹了两下，咕噜噜地往前滚，方向偏左，正好切进男生前进的路线里。\n\n球碰到男生的鞋跟，轻轻撞了一下。\n\n男生停下，低头。\n\n他弯腰，单手把篮球捞起来，直起身子时顺带扫了一眼周围。他的视线划过跑道，划过休息区，最后落在路远身上。\n\n路远站在长凳边，手还保持着刚才推球的姿势，没放下。\n\n男生看了看手里的篮球，又看了看路远，然后把球往这边抛过来。球在地上弹了一下，路远接住了。\n\n男生转身要继续走。\n\n路远没接话，只是把篮球往自己怀里收了收，然后视线往下落——落在男生手里那个蓝色水壶上。\n\n男生顺着他的目光低头。\n\n他看了看水壶。\n\n翻过来看了一眼壶底的贴纸。\n\n然后他愣了一下，回头往休息区那边扫了一眼。长凳上放着一个黑色水壶，跟他手里这个形状差不多，但颜色完全不同。\n\n他把蓝色水壶举起来，朝路远晃了晃。\n\n路远点头。\n\n男生走过来，步子比刚才快，脸上带着那种“搞错了”的表情。他把水壶递过来，说：“不好意思，我以为是我的。”\n\n路远接过来。壶身还温着，是刚才被握在手里的温度。他把篮球夹在胳膊底下，另一只手攥住水壶的背带。\n\n男生已经转身去拿自己的黑色水壶了。\n\n路远把水壶挂在脖子上，背带贴着后颈，壶身垂在胸前。",
+  "input_tokens": 1183,
+  "output_tokens": 542,
+  "latency_ms": 20054,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "c2c4eba5faec4f112afb45d86aec373358e4df6fc4bebf6574e603b3915fc3d6",
+  "validation": {
+    "character_count": 861,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "banned_sentence_hits": {},
+    "second_confirmation_hits": [],
+    "environment_coda_hits": [],
+    "stop_marker_first_char": null,
+    "post_stop_character_count": null,
+    "tempo_final_line_mismatch": false,
+    "manual_review_required": [
+      "viewpoint_violation",
+      "cross_mind_assertion",
+      "other_character_motive_as_fact",
+      "true_stop_state_position",
+      "visible_state_transition_count",
+      "relationship_or_meaning_summary",
+      "shared_atmosphere_declaration",
+      "narrator_correction_with_backstage_fact"
+    ]
+  },
+  "text_path": "cases\\CO-04\\drafts\\a-3.txt"
+}

@@ -1,0 +1,30 @@
+{
+  "case_id": "ROMANCE-01",
+  "category": "恋爱日常与关系试探",
+  "title": "多买的一杯",
+  "run_id": "d6dea348-2554-45ca-b238-172e624b6386",
+  "planner": {
+    "candidate_id": "e6d85e6d-0d76-49c8-a2ba-c2f5d6c34d05",
+    "attempt_number": 1,
+    "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+    "model_id": "deepseek-v4-pro",
+    "prompt_version_id": "f9052f8a-dc4e-5408-b14e-fc1badaf57f8",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1.0,
+      "max_output_tokens": 4096,
+      "timeout_seconds": 300,
+      "response_format": "json_object"
+    },
+    "text_output": "",
+    "raw_response": "{\n  \"planner_contract_version\": 2,\n  \"scene_goal\": \"通过姜禾对程砚无声试探的回应，展现她在关系僵局中主动迈出一步的微妙心理，以身体动作推动情感距离的变化。\",\n  \"location\": \"下雨傍晚的便利店门口\",\n  \"time\": \"傍晚，雨势渐大\",\n  \"scene_state\": {\n    \"last_completed_action\": \"程砚把第二杯热豆浆放在便利店窗边，没有开口叫姜禾\",\n    \"present_characters\": [\"姜禾\", \"程砚\", \"店员\", \"排队顾客\"],\n    \"visible_facts\": [\n      \"雨已下了一阵，地面湿滑\",\n      \"程砚刚在店里买了两杯热豆浆\",\n      \"他将其中一杯放在靠街边的窗口台面上\",\n      \"姜禾站在门口屋檐下，身上微湿\",\n      \"程砚退到一旁，没有与姜禾眼神接触\"\n    ],\n    \"available_objects\": [\n      \"那杯放在窗边的热豆浆\",\n      \"姜禾的背包\",\n      \"便利店门\",\n      \"雨伞（店内待售）\"\n    ],\n    \"unresolved_problem\": \"两人上午因一句玩笑僵住后，谁都不先开口，关系陷入冷滞，姜禾需要弄清程砚那杯豆浆的意图\",\n    \"already_existing_constraints\": [\n      \"上午玩笑造成的尴尬尚未化解\",\n      \"公共场所（有店员和顾客）不便私密对话\",\n      \"姜禾不能表现出过度在意\"\n    ]\n  },\n  \"characters\": [\n    {\n      \"name\": \"姜禾\",\n      \"goal\": \"在不让局面更尴尬的前提下，弄清程砚的态度，并决定是否接受他的求和信号\",\n      \"known\": [\n        \"两人上午因为一句玩笑突然不再说话\",\n        \"程砚刚才买了豆浆，放了一杯在窗边\",\n        \"程砚没有叫她，也没有看她\"\n      ],\n      \"unknown\": [\n        \"程砚是否还在生气\",\n        \"那杯豆浆是不是专门给她的\",\n        \"程砚期待她如何回应\"\n      ],\n      \"mistaken_beliefs\": [\n        \"程砚可能只是顺手多买了一杯，并不是给她的\"\n      ],\n      \"constraints\": [\n        \"不能直接问‘这是给我的吗’，怕在旁人面前丢脸\",\n        \"不能先开口说软话，会让自己显得太好哄\"\n      ],\n      \"observed_evidence\": [\n        \"程砚放下豆浆时没有给她任何暗示\",\n        \"豆浆杯身贴着便利店标签，还是热的\"\n      ],\n      \"current_interpretation\": \"那杯豆浆很可能是给她的，但程砚用这种方式在试探她是否愿意先低头\",\n      \"how_interpretation_drives_action\": \"她决定走过去拿起豆浆，用行动表示自己愿意接下他的好意，同时观察他的反应\"\n    },\n    {\n      \"name\": \"程砚\",\n      \"goal\": \"打破僵局但不想先开口，用一杯豆浆作为无声的橄榄枝\",\n      \"known\": [\n        \"上午的玩笑让姜禾板着脸走开\",\n        \"她今天一直没有主动联系他\",\n        \"自己多买一杯豆浆放在显眼处，她一定会看到\"\n      ],\n      \"unknown\": [\n        \"姜禾是否还在气头上\",\n        \"她肯不肯接受这种无声的求和\"\n      ],\n      \"mistaken_beliefs\": [\n        \"姜禾可能认为我还在计较，所以不愿理我\"\n      ],\n      \"constraints\": [\n        \"自己也拉不下面子先开口道歉\",\n        \"不能当众解释，怕她更尴尬\"\n      ],\n      \"observed_evidence\": [\n        \"姜禾站在门口躲雨，目光落在那杯豆浆上\"\n      ],\n      \"current_interpretation\": \"她可能在犹豫，但至少没有立刻走开\",\n      \"how_interpretation_drives_action\": \"他继续假装看货架，用余光等她反应，不催促\"\n    }\n  ],\n  \"concrete_problem\": \"姜禾必须决定是否去拿那杯放在窗边的豆浆，以此回应程砚不开口的试探，同时承受店员和顾客在场的压力。\",\n  \"pressure\": \"雨声催促，豆浆在凉掉，店员和排队顾客的视线偶尔扫来，沉默每延长一秒，两人之间的难堪就加深一分。\",\n  \"turning_point\": \"姜禾在片刻犹豫后，伸手拿起那杯豆浆，插上吸管喝了一口——这是她主动迈出的第一步，也是给程砚的明确答案。\",\n  \"end_condition\": \"姜禾握着喝过的豆浆杯，抬头与店内的程砚目光相撞，两人都没有说话，但空气已经不同。\",\n  \"forbidden\": [\n    \"不能揭示程砚的内心独白\",\n    \"不能替姜禾解释她选择拿起豆浆的心理活动\",\n    \"不能直接点明上午玩笑的具体内容\",\n    \"不能让两人在本场景内直接对话和解\"\n  ],\n  \"causal_transitions\": [\n    {\n      \"id\": \"CT01\",\n      \"kind\": \"evidence_to_action\",\n      \"visible_trigger\": \"程砚把第二杯豆浆放在窗边后，退到一旁看手机，没朝姜禾的方向望\",\n      \"character_interpretation\": \"姜禾认为程砚故意用这个动作递出和解信号，但又不想显得自己太主动\",\n      \"character_next_action\": \"她深吸一口气，走过去拿起那杯豆浆，撕开吸管包装，插进去喝了一口\",\n      \"rejected_alternative\": \"她本可以假装没看见，转身冒雨离开，或者继续站在原地等程砚先开口\",\n      \"immediate_consequence\": \"程砚余光捕捉到她的动作，放下了手机，两人的视线终于碰在一起\",\n      \"counterfactual_without_action\": \"如果姜禾不去拿那杯豆浆，程砚可能会失望地收起好意，两人生出更深的误会\",\n      \"consequence_would_still_happen\": false,\n      \"state_delta\": {\n        \"before\": \"姜禾站在门外，手插口袋，盯着那杯豆浆不敢动，身体僵硬\",\n        \"after\": \"姜禾握着温热的豆浆杯站在窗边，姿态放松了一些，与程砚形成了无声的对视\"\n      },\n      \"cost_or_commitment\": \"姜禾主动迈出了和解的第一步，承担了如果豆浆不是给她的就会被旁人笑话的风险\",\n      \"next_constraint\": \"两人必须面对接下来的互动，无法再回到谁也不理谁的状态\",\n      \"reader_must_infer\": \"程砚看到姜禾拿起豆浆时，心里究竟是松了一口气还是更加紧张\",\n      \"narrator_must_not_state\": [\n        \"程砚为什么买两杯豆浆\",\n        \"程砚在那一刻的内心感受\"\n      ]\n    }\n  ],\n  \"tempo_guardrails\": {\n    \"entry_pressure\": \"雨越下越大，姜禾没带伞，只能挤在便利店窄窄的屋檐下\",\n    \"dominant_pressure\": {\n      \"kind\": \"social_friction\",\n      \"description\": \"两人上午的玩笑造成彼此都不先开口的僵局，店内的顾客和收银员让主动开口更难\"\n    },\n    \"allowed_viewpoint_misread\":",
+    "input_tokens": 3322,
+    "output_tokens": 4096,
+    "latency_ms": 85334,
+    "finish_reason": "length",
+    "error_code": "STRUCTURED_OUTPUT_TRUNCATED",
+    "error_message": "模型因达到 max_output_tokens 停止，结构化输出可能不完整",
+    "rendered_user_prompt_sha256": "36573c999947fe81d3ddd16df066aa96539eaad3874fe83092a8e73eb78a2b9d"
+  },
+  "drafts": []
+}

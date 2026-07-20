@@ -1,0 +1,63 @@
+{
+  "candidate_id": "64ff9bdd-266a-4d07-b3df-29f4256736cc",
+  "attempt_number": 1,
+  "group": "A",
+  "replica": 1,
+  "permission_policy": "CURRENT",
+  "stop_policy": "CURRENT",
+  "instruction_hash": null,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "policy_metadata": {
+      "group": "A",
+      "permission_policy": "CURRENT",
+      "stop_policy": "CURRENT",
+      "policy_version": "narrative-permission-stop-v1",
+      "policy_hash": "bcba9c79e51e6722c8796bc8a1defd65461d017dbbaf922efbe9c16df2ba3d4f",
+      "instruction_hash": null,
+      "permission_instruction_hash": null,
+      "stop_instruction_hash": null,
+      "seed": null
+    },
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "苏叶蹲在自行车旁边，链条像死蛇一样耷拉在地上，沾着黑乎乎的油泥。她伸手碰了一下，指尖立刻染上一层黏腻的黑色。\n\n门口传来扳手拧螺丝的咔哒声。\n\n沈一凡蹲在他那辆山地车前面，袖子卷到手肘，手指套着沾满机油的棉线手套。他正把后轮的链条重新卡进齿轮里，动作很快，像是做过很多次。\n\n工具箱摊在他脚边，红色的铁皮盒子，里面扳手、钳子、螺丝刀挤在一起，金属碰撞的声音很轻。\n\n苏叶站起来，走到工具箱前面。她弯腰看了看，里面的工具她只认识扳手和螺丝刀，其他的叫不出名字。\n\n沈一凡没有抬头。他把链条在齿轮上转了一圈，拇指按着链节试松紧。\n\n苏叶蹲下来，从工具箱里拿起一把扳手。铁的，有点沉，握在手里凉凉的。\n\n她转了一下扳手的头部，那个调节螺丝也跟着转了半圈。\n\n“这个，”苏叶把扳手举到沈一凡视线能扫到的地方，“是用来紧链条的吗？”\n\n沈一凡的手停了。\n\n他抬起头，先看了她手里的扳手，又看了一眼门口那辆倒在地上的自行车，链条拖在地上。\n\n他摘掉右手的手套，接过她手里的扳手。\n\n“这个是调刹车片的。”他把扳手放回工具箱，从里面摸出另一把带钩子的工具，站起来，“链条掉了得用这个。”\n\n他往苏叶的自行车走过去，走了两步，回头看她一眼。\n\n“我来帮你看看。”",
+  "raw_response": "苏叶蹲在自行车旁边，链条像死蛇一样耷拉在地上，沾着黑乎乎的油泥。她伸手碰了一下，指尖立刻染上一层黏腻的黑色。\n\n门口传来扳手拧螺丝的咔哒声。\n\n沈一凡蹲在他那辆山地车前面，袖子卷到手肘，手指套着沾满机油的棉线手套。他正把后轮的链条重新卡进齿轮里，动作很快，像是做过很多次。\n\n工具箱摊在他脚边，红色的铁皮盒子，里面扳手、钳子、螺丝刀挤在一起，金属碰撞的声音很轻。\n\n苏叶站起来，走到工具箱前面。她弯腰看了看，里面的工具她只认识扳手和螺丝刀，其他的叫不出名字。\n\n沈一凡没有抬头。他把链条在齿轮上转了一圈，拇指按着链节试松紧。\n\n苏叶蹲下来，从工具箱里拿起一把扳手。铁的，有点沉，握在手里凉凉的。\n\n她转了一下扳手的头部，那个调节螺丝也跟着转了半圈。\n\n“这个，”苏叶把扳手举到沈一凡视线能扫到的地方，“是用来紧链条的吗？”\n\n沈一凡的手停了。\n\n他抬起头，先看了她手里的扳手，又看了一眼门口那辆倒在地上的自行车，链条拖在地上。\n\n他摘掉右手的手套，接过她手里的扳手。\n\n“这个是调刹车片的。”他把扳手放回工具箱，从里面摸出另一把带钩子的工具，站起来，“链条掉了得用这个。”\n\n他往苏叶的自行车走过去，走了两步，回头看她一眼。\n\n“我来帮你看看。”",
+  "input_tokens": 1182,
+  "output_tokens": 333,
+  "latency_ms": 19800,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "9b733f113787503b81184b8490b6fe80d706ecd34faa4081ff4e28dcc1ca341e",
+  "validation": {
+    "character_count": 523,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "banned_sentence_hits": {},
+    "second_confirmation_hits": [],
+    "environment_coda_hits": [],
+    "stop_marker_first_char": null,
+    "post_stop_character_count": null,
+    "tempo_final_line_mismatch": false,
+    "manual_review_required": [
+      "viewpoint_violation",
+      "cross_mind_assertion",
+      "other_character_motive_as_fact",
+      "true_stop_state_position",
+      "visible_state_transition_count",
+      "relationship_or_meaning_summary",
+      "shared_atmosphere_declaration",
+      "narrator_correction_with_backstage_fact"
+    ]
+  },
+  "text_path": "cases\\NM-04\\drafts\\a-1.txt"
+}

@@ -1,0 +1,7 @@
+{
+  "selected_issues": ["I02", "I05"],
+  "operation_by_issue": {
+    "I02": "ground_detail",
+    "I05": "rhythm_adjust"
+  }
+}

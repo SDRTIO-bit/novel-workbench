@@ -1,0 +1,63 @@
+{
+  "candidate_id": "27f6ed30-87d1-4f5e-a85e-136dddf653c7",
+  "attempt_number": 1,
+  "group": "A",
+  "replica": 3,
+  "permission_policy": "CURRENT",
+  "stop_policy": "CURRENT",
+  "instruction_hash": null,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "policy_metadata": {
+      "group": "A",
+      "permission_policy": "CURRENT",
+      "stop_policy": "CURRENT",
+      "policy_version": "narrative-permission-stop-v1",
+      "policy_hash": "bcba9c79e51e6722c8796bc8a1defd65461d017dbbaf922efbe9c16df2ba3d4f",
+      "instruction_hash": null,
+      "permission_instruction_hash": null,
+      "stop_instruction_hash": null,
+      "seed": null
+    },
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "水开的声音灌满厨房。\n\n夏知站在门口，看见韩川的手机屏幕在案板旁边亮起来。屏幕朝上，通知栏里躺着她的头像，消息预览只露出开头几个字——“昨晚忘了问你……”\n\n韩川从冰箱里拿出青菜，转过身，视线扫过屏幕。他的手顿了一下，然后把手机翻了个面，屏幕朝下扣在大理石台面上。\n\n手机背面朝上，黑色手机壳，什么也看不见了。\n\n韩川走到水槽前，拧开水龙头，开始洗菜。水声盖过了蒸汽的嘶嘶声。他没说话。\n\n夏知的手在门框上搭了一下。\n\n桌上两只碗，白瓷蓝边，并排放在电磁炉旁边。筷子已经摆好了，两双，尖头朝右。锅里的水在翻大泡，蒸汽把锅盖顶得咔咔响。\n\n她走进厨房。\n\n“需要帮忙吗？”\n\n韩川回头看了她一眼，手还在水槽里冲菜叶。“不用，马上好。”\n\n夏知走到桌边，拿起其中一只碗。碗是凉的，还没盛过东西。她把碗放在锅旁边，伸手去拿漏勺。\n\n韩川关了水龙头，甩了甩手上的水珠，从她手里接过漏勺。“我来捞面，你把青菜拿过来。”\n\n他说这话的时候没看她，眼睛盯着锅里翻滚的面条。但接漏勺的时候，他的手指擦过她的手背，凉的，还带着水。\n\n夏知转身去水槽边拿洗好的青菜。菜叶上还挂着水珠，她把菜篮端到灶台旁边。韩川正用漏勺把面捞进碗里，热气扑上来，他的眼镜片上蒙了一层白雾。\n\n他歪头在肩膀上蹭了一下镜片，没蹭干净。\n\n夏知伸手把青菜倒进剩下的面汤里。菜叶遇热立刻软下去，变成深绿色。她拿起筷子在锅里搅了两下，免得菜叶粘在一起。\n\n韩川把两碗面端到桌上。碗很烫，他放下之后搓了搓手指，然后拉开椅子坐下。\n\n夏知把焯好的青菜捞出来，分进两只碗里。筷子夹菜的时候，她看见韩川的手机还扣在那里，屏幕朝下，旁边溅了几滴水。\n\n她端着菜碗坐到韩川对面。\n\n韩川拿起筷子，在碗里拌了拌，挑起一筷头面吹了吹。蒸汽从他嘴边散开。\n\n“醋在那边。”他用筷子指了一下她手边的调料瓶。\n\n夏知把醋瓶拿过来，往自己碗里倒了一点。然后她把瓶子推到他那边。\n\n韩川接过去，也倒了一点。\n\n两个人开始吃面。手机还在桌上扣着。",
+  "raw_response": "水开的声音灌满厨房。\n\n夏知站在门口，看见韩川的手机屏幕在案板旁边亮起来。屏幕朝上，通知栏里躺着她的头像，消息预览只露出开头几个字——“昨晚忘了问你……”\n\n韩川从冰箱里拿出青菜，转过身，视线扫过屏幕。他的手顿了一下，然后把手机翻了个面，屏幕朝下扣在大理石台面上。\n\n手机背面朝上，黑色手机壳，什么也看不见了。\n\n韩川走到水槽前，拧开水龙头，开始洗菜。水声盖过了蒸汽的嘶嘶声。他没说话。\n\n夏知的手在门框上搭了一下。\n\n桌上两只碗，白瓷蓝边，并排放在电磁炉旁边。筷子已经摆好了，两双，尖头朝右。锅里的水在翻大泡，蒸汽把锅盖顶得咔咔响。\n\n她走进厨房。\n\n“需要帮忙吗？”\n\n韩川回头看了她一眼，手还在水槽里冲菜叶。“不用，马上好。”\n\n夏知走到桌边，拿起其中一只碗。碗是凉的，还没盛过东西。她把碗放在锅旁边，伸手去拿漏勺。\n\n韩川关了水龙头，甩了甩手上的水珠，从她手里接过漏勺。“我来捞面，你把青菜拿过来。”\n\n他说这话的时候没看她，眼睛盯着锅里翻滚的面条。但接漏勺的时候，他的手指擦过她的手背，凉的，还带着水。\n\n夏知转身去水槽边拿洗好的青菜。菜叶上还挂着水珠，她把菜篮端到灶台旁边。韩川正用漏勺把面捞进碗里，热气扑上来，他的眼镜片上蒙了一层白雾。\n\n他歪头在肩膀上蹭了一下镜片，没蹭干净。\n\n夏知伸手把青菜倒进剩下的面汤里。菜叶遇热立刻软下去，变成深绿色。她拿起筷子在锅里搅了两下，免得菜叶粘在一起。\n\n韩川把两碗面端到桌上。碗很烫，他放下之后搓了搓手指，然后拉开椅子坐下。\n\n夏知把焯好的青菜捞出来，分进两只碗里。筷子夹菜的时候，她看见韩川的手机还扣在那里，屏幕朝下，旁边溅了几滴水。\n\n她端着菜碗坐到韩川对面。\n\n韩川拿起筷子，在碗里拌了拌，挑起一筷头面吹了吹。蒸汽从他嘴边散开。\n\n“醋在那边。”他用筷子指了一下她手边的调料瓶。\n\n夏知把醋瓶拿过来，往自己碗里倒了一点。然后她把瓶子推到他那边。\n\n韩川接过去，也倒了一点。\n\n两个人开始吃面。手机还在桌上扣着。",
+  "input_tokens": 1235,
+  "output_tokens": 569,
+  "latency_ms": 16147,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "44e63dd6e0170a6007b0eb1312fcd156d0caccf89a8201b01b09587fcad3bf55",
+  "validation": {
+    "character_count": 835,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "banned_sentence_hits": {},
+    "second_confirmation_hits": [],
+    "environment_coda_hits": [],
+    "stop_marker_first_char": null,
+    "post_stop_character_count": null,
+    "tempo_final_line_mismatch": false,
+    "manual_review_required": [
+      "viewpoint_violation",
+      "cross_mind_assertion",
+      "other_character_motive_as_fact",
+      "true_stop_state_position",
+      "visible_state_transition_count",
+      "relationship_or_meaning_summary",
+      "shared_atmosphere_declaration",
+      "narrator_correction_with_backstage_fact"
+    ]
+  },
+  "text_path": "cases\\ROMANCE-02\\drafts\\a-3.txt"
+}

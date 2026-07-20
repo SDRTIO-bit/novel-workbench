@@ -1,0 +1,64 @@
+{
+  "candidate_id": "7fc433d5-3cbb-4a28-a082-d961e673c64c",
+  "attempt_number": 1,
+  "group": "D",
+  "replica": 3,
+  "permission_policy": "STRICT_LIMITED",
+  "stop_policy": "STRICT_STOP",
+  "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e",
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e",
+    "policy_metadata": {
+      "group": "D",
+      "permission_policy": "STRICT_LIMITED",
+      "stop_policy": "STRICT_STOP",
+      "policy_version": "narrative-permission-stop-v1",
+      "policy_hash": "533ba9fe37558af28e5b9a277971d13c5f7674a7a297a2c3d7f1a96c77af3123",
+      "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e",
+      "permission_instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+      "stop_instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+      "seed": null
+    },
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "周日早上七点四十，苏叶蹲在楼道口，盯着自己那辆自行车的后轮。\n\n链条从齿轮上整个滑脱下来，垂在地上，末端沾着黑色的油泥。她伸手碰了一下，指尖立刻染上一片黏腻的黑。她把手缩回来，在牛仔裤上蹭了蹭，没蹭干净。\n\n工具箱摊开在她右侧不到一米的地方。扳手、螺丝刀、内六角，还有一瓶链条润滑油，全都摆在灰色的帆布垫子上。沈一凡蹲在工具箱那边，正用一把小刷子清理他自己那辆车的齿轮缝隙。他的动作不快，但每一下都落得很准，刷完一个齿槽，拇指转一下踏板，接着刷下一个。链条绷在他车子的齿轮上，银白色的，干干净净。\n\n苏叶又看了一眼自己那根垂在地上的链条。她认得工具箱里那些东西——扳手是用来拧螺丝的，那个带钩子的工具大概是用来把链条勾回齿轮上的。她不确定。\n\n沈一凡没抬头。他把刷子搁在垫子上，拿起抹布擦手指，一根一根擦，从指根擦到指尖。\n\n苏叶站起来，往前走了一步，蹲下来，伸手从工具箱里拿起那把活动扳手。金属握在手里有点凉，比她想的重。她把扳手翻了个面，看着上面刻的刻度。\n\n“这个，”她说，“是用来紧链条的吗？”\n\n沈一凡抬起头。\n\n他先看了她手里的扳手，然后视线移到她脸上。他的眉毛动了一下，很轻。\n\n“不是。”他把抹布放到一边，手伸过来，从她手里把扳手抽走了。他的手指碰到她的掌心，干的，有点粗糙，沾着机油味。\n\n他把扳手放回工具箱，站起来。\n\n苏叶还蹲着，仰头看他。沈一凡已经朝她那辆自行车走过去了。他弯腰看了一眼垂在地上的链条，直起身，回头看她。\n\n“我来帮你看看。”",
+  "raw_response": "周日早上七点四十，苏叶蹲在楼道口，盯着自己那辆自行车的后轮。\n\n链条从齿轮上整个滑脱下来，垂在地上，末端沾着黑色的油泥。她伸手碰了一下，指尖立刻染上一片黏腻的黑。她把手缩回来，在牛仔裤上蹭了蹭，没蹭干净。\n\n工具箱摊开在她右侧不到一米的地方。扳手、螺丝刀、内六角，还有一瓶链条润滑油，全都摆在灰色的帆布垫子上。沈一凡蹲在工具箱那边，正用一把小刷子清理他自己那辆车的齿轮缝隙。他的动作不快，但每一下都落得很准，刷完一个齿槽，拇指转一下踏板，接着刷下一个。链条绷在他车子的齿轮上，银白色的，干干净净。\n\n苏叶又看了一眼自己那根垂在地上的链条。她认得工具箱里那些东西——扳手是用来拧螺丝的，那个带钩子的工具大概是用来把链条勾回齿轮上的。她不确定。\n\n沈一凡没抬头。他把刷子搁在垫子上，拿起抹布擦手指，一根一根擦，从指根擦到指尖。\n\n苏叶站起来，往前走了一步，蹲下来，伸手从工具箱里拿起那把活动扳手。金属握在手里有点凉，比她想的重。她把扳手翻了个面，看着上面刻的刻度。\n\n“这个，”她说，“是用来紧链条的吗？”\n\n沈一凡抬起头。\n\n他先看了她手里的扳手，然后视线移到她脸上。他的眉毛动了一下，很轻。\n\n“不是。”他把抹布放到一边，手伸过来，从她手里把扳手抽走了。他的手指碰到她的掌心，干的，有点粗糙，沾着机油味。\n\n他把扳手放回工具箱，站起来。\n\n苏叶还蹲着，仰头看他。沈一凡已经朝她那辆自行车走过去了。他弯腰看了一眼垂在地上的链条，直起身，回头看她。\n\n“我来帮你看看。”",
+  "input_tokens": 1610,
+  "output_tokens": 405,
+  "latency_ms": 26892,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "ec37a1052b6c418e1444b9abc19b66707de9f36bd89e7dcb9214c3c559d54353",
+  "validation": {
+    "character_count": 633,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "banned_sentence_hits": {},
+    "second_confirmation_hits": [],
+    "environment_coda_hits": [],
+    "stop_marker_first_char": null,
+    "post_stop_character_count": null,
+    "tempo_final_line_mismatch": false,
+    "manual_review_required": [
+      "viewpoint_violation",
+      "cross_mind_assertion",
+      "other_character_motive_as_fact",
+      "true_stop_state_position",
+      "visible_state_transition_count",
+      "relationship_or_meaning_summary",
+      "shared_atmosphere_declaration",
+      "narrator_correction_with_backstage_fact"
+    ]
+  },
+  "text_path": "cases\\NM-04\\drafts\\d-3.txt"
+}

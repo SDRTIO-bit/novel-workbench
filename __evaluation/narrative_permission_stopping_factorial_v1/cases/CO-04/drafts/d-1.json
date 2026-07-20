@@ -1,0 +1,64 @@
+{
+  "candidate_id": "ab39dfd4-da3d-4c1b-8c58-04654c876042",
+  "attempt_number": 1,
+  "group": "D",
+  "replica": 1,
+  "permission_policy": "STRICT_LIMITED",
+  "stop_policy": "STRICT_STOP",
+  "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e",
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e",
+    "policy_metadata": {
+      "group": "D",
+      "permission_policy": "STRICT_LIMITED",
+      "stop_policy": "STRICT_STOP",
+      "policy_version": "narrative-permission-stop-v1",
+      "policy_hash": "533ba9fe37558af28e5b9a277971d13c5f7674a7a297a2c3d7f1a96c77af3123",
+      "instruction_hash": "11c96e1f4275dd3198726a4ad92f92ec17ed5cc486345c285b72fb74521c1a8e",
+      "permission_instruction_hash": "f66ad78ea15de12a80a35860cd5c114c23f9e3047385995ea661ef3d5fa9272b",
+      "stop_instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+      "seed": null
+    },
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "篮球场边散落着一个篮球。\n\n路远站在单杠旁边，看着那个男生往篮球场方向走。男生穿着深蓝色运动短袖，左手拎着自己的水壶，右手拿着路远的蓝色运动水壶。男生走得不快，已经快到篮球场边线了。\n\n路远的手指攥紧又松开。\n\n他往篮球场的方向走了几步，弯腰捡起地上那个篮球。球面上沾着灰，他用右手托住球侧，往男生脚边的方向轻轻推了一下。\n\n篮球在塑胶地面上弹了两下，滚向男生的运动鞋。\n\n球碰到男生的鞋跟。\n\n男生停下脚步，低头看了一眼。他弯下腰，先把左手的水壶放在地上，然后用空出来的手捡起篮球。他直起身，视线扫过操场，看见路远站在几米外。\n\n“你的球？”男生问。\n\n路远点了下头。他的目光落在男生右手那个蓝色水壶上。壶身侧面有一道浅灰色的划痕，是开学第一天磕在桌角留下的。\n\n男生顺着他的视线低头看自己手里的水壶。\n\n男生愣了一下。\n\n他把水壶翻过来看了看壶底，又看了看自己脚边那个水壶。两个水壶颜色不一样，他脚边那个是深灰色的。\n\n“操。”男生说。\n\n他把路远的水壶递过来。\n\n路远伸手接住。壶身还带着对方掌心的温度。",
+  "raw_response": "篮球场边散落着一个篮球。\n\n路远站在单杠旁边，看着那个男生往篮球场方向走。男生穿着深蓝色运动短袖，左手拎着自己的水壶，右手拿着路远的蓝色运动水壶。男生走得不快，已经快到篮球场边线了。\n\n路远的手指攥紧又松开。\n\n他往篮球场的方向走了几步，弯腰捡起地上那个篮球。球面上沾着灰，他用右手托住球侧，往男生脚边的方向轻轻推了一下。\n\n篮球在塑胶地面上弹了两下，滚向男生的运动鞋。\n\n球碰到男生的鞋跟。\n\n男生停下脚步，低头看了一眼。他弯下腰，先把左手的水壶放在地上，然后用空出来的手捡起篮球。他直起身，视线扫过操场，看见路远站在几米外。\n\n“你的球？”男生问。\n\n路远点了下头。他的目光落在男生右手那个蓝色水壶上。壶身侧面有一道浅灰色的划痕，是开学第一天磕在桌角留下的。\n\n男生顺着他的视线低头看自己手里的水壶。\n\n男生愣了一下。\n\n他把水壶翻过来看了看壶底，又看了看自己脚边那个水壶。两个水壶颜色不一样，他脚边那个是深灰色的。\n\n“操。”男生说。\n\n他把路远的水壶递过来。\n\n路远伸手接住。壶身还带着对方掌心的温度。",
+  "input_tokens": 1611,
+  "output_tokens": 290,
+  "latency_ms": 16465,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "9a5969ec58a5832caf1036cbdae7d3a0543cbfa1001b313975334de13ab08b1d",
+  "validation": {
+    "character_count": 455,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "banned_sentence_hits": {},
+    "second_confirmation_hits": [],
+    "environment_coda_hits": [],
+    "stop_marker_first_char": null,
+    "post_stop_character_count": null,
+    "tempo_final_line_mismatch": false,
+    "manual_review_required": [
+      "viewpoint_violation",
+      "cross_mind_assertion",
+      "other_character_motive_as_fact",
+      "true_stop_state_position",
+      "visible_state_transition_count",
+      "relationship_or_meaning_summary",
+      "shared_atmosphere_declaration",
+      "narrator_correction_with_backstage_fact"
+    ]
+  },
+  "text_path": "cases\\CO-04\\drafts\\d-1.txt"
+}

@@ -1,0 +1,64 @@
+{
+  "candidate_id": "24f89d9d-0bb0-4135-9ebd-41ba72352915",
+  "attempt_number": 1,
+  "group": "C",
+  "replica": 2,
+  "permission_policy": "CURRENT",
+  "stop_policy": "STRICT_STOP",
+  "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+    "policy_metadata": {
+      "group": "C",
+      "permission_policy": "CURRENT",
+      "stop_policy": "STRICT_STOP",
+      "policy_version": "narrative-permission-stop-v1",
+      "policy_hash": "15e6b754a467a03569fe265abb7861ce24f144ba737ce3f2973776c1c2e76d47",
+      "instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+      "permission_instruction_hash": null,
+      "stop_instruction_hash": "6c96fcfaf568244302485f5e6e0bf8cf1bb0223aa5682924cf811525eb73f7e1",
+      "seed": null
+    },
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "周淇端着水杯走回座位时，脚步顿了一下。\n\n桌上只剩一支笔和她的水杯。摊开的考研单词书不见了。\n\n她下意识看向邻座——那个男生还在低头做题，左手压着自己的高数习题册，右手握着笔在草稿纸上划拉。他的书包搁在身旁的椅子上，拉链没有完全拉上，露出一截暗红色的书脊。\n\n暗红色。考研词汇红宝书。\n\n周淇放下水杯，弯腰坐回自己的位置。男生没有抬头。她盯着那截书脊看了三秒，确认封底边缘露出的一角白色纸条——那是她手写的租房合同草稿，折了两折夹在书里。\n\n男生翻了一页习题册，笔尖顿了顿，又继续写。他桌上的考研书摊开着，封面是绿色，新东方乱序版。不是红宝书。\n\n周淇把手放在桌沿上。\n\n不能翻他书包。不能喊管理员。不能拍他肩膀说同学你收错书了因为那等于承认自己盯着别人书包看了半天。\n\n男生的胳膊肘压住了书包带子。他做题时偶尔会翻自己桌上的绿皮书，但手从来没往书包里伸过。拉链开着的那一侧朝外，只要他站起来，书就有可能滑出来。但他没有站起来的意思。草稿纸已经写满半面。\n\n周淇的手指碰到了自己的水杯。\n\n杯子里还有大半杯温水。她拧开杯盖的动作很轻，然后手肘一歪——\n\n杯子倒了。\n\n水从杯口涌出来，沿着桌面铺开，越过她笔袋的边缘，朝男生书包的方向淌过去。一条水线迅速爬过两张桌子之间的缝隙，滴在男生书包的底部。\n\n周淇“啊”了一声，伸手去抓杯子。\n\n男生猛地抬头，顺着她的视线看向自己书包底下的水迹。他立刻把笔一扔，拎起书包翻了个面，拉开拉链往里看。\n\n书包口敞开了。\n\n暗红色的单词书露出来，封面朝上，和周淇桌上剩下的笔、水杯之间隔着一道还在蔓延的水痕。\n\n男生把书抽出来，翻开第一页。\n\n没有他的名字。扉页上写着“周淇”两个字，旁边还贴了一张便利贴，上面抄着今天的单词计划。\n\n他抬起头，手里举着那本书，看向周淇。",
+  "raw_response": "周淇端着水杯走回座位时，脚步顿了一下。\n\n桌上只剩一支笔和她的水杯。摊开的考研单词书不见了。\n\n她下意识看向邻座——那个男生还在低头做题，左手压着自己的高数习题册，右手握着笔在草稿纸上划拉。他的书包搁在身旁的椅子上，拉链没有完全拉上，露出一截暗红色的书脊。\n\n暗红色。考研词汇红宝书。\n\n周淇放下水杯，弯腰坐回自己的位置。男生没有抬头。她盯着那截书脊看了三秒，确认封底边缘露出的一角白色纸条——那是她手写的租房合同草稿，折了两折夹在书里。\n\n男生翻了一页习题册，笔尖顿了顿，又继续写。他桌上的考研书摊开着，封面是绿色，新东方乱序版。不是红宝书。\n\n周淇把手放在桌沿上。\n\n不能翻他书包。不能喊管理员。不能拍他肩膀说同学你收错书了因为那等于承认自己盯着别人书包看了半天。\n\n男生的胳膊肘压住了书包带子。他做题时偶尔会翻自己桌上的绿皮书，但手从来没往书包里伸过。拉链开着的那一侧朝外，只要他站起来，书就有可能滑出来。但他没有站起来的意思。草稿纸已经写满半面。\n\n周淇的手指碰到了自己的水杯。\n\n杯子里还有大半杯温水。她拧开杯盖的动作很轻，然后手肘一歪——\n\n杯子倒了。\n\n水从杯口涌出来，沿着桌面铺开，越过她笔袋的边缘，朝男生书包的方向淌过去。一条水线迅速爬过两张桌子之间的缝隙，滴在男生书包的底部。\n\n周淇“啊”了一声，伸手去抓杯子。\n\n男生猛地抬头，顺着她的视线看向自己书包底下的水迹。他立刻把笔一扔，拎起书包翻了个面，拉开拉链往里看。\n\n书包口敞开了。\n\n暗红色的单词书露出来，封面朝上，和周淇桌上剩下的笔、水杯之间隔着一道还在蔓延的水痕。\n\n男生把书抽出来，翻开第一页。\n\n没有他的名字。扉页上写着“周淇”两个字，旁边还贴了一张便利贴，上面抄着今天的单词计划。\n\n他抬起头，手里举着那本书，看向周淇。",
+  "input_tokens": 1454,
+  "output_tokens": 487,
+  "latency_ms": 24522,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "d7fd101f568908f0b433770587d04379aafae1e99c98bb39f9323548584f3005",
+  "validation": {
+    "character_count": 752,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "banned_sentence_hits": {},
+    "second_confirmation_hits": [],
+    "environment_coda_hits": [],
+    "stop_marker_first_char": null,
+    "post_stop_character_count": null,
+    "tempo_final_line_mismatch": false,
+    "manual_review_required": [
+      "viewpoint_violation",
+      "cross_mind_assertion",
+      "other_character_motive_as_fact",
+      "true_stop_state_position",
+      "visible_state_transition_count",
+      "relationship_or_meaning_summary",
+      "shared_atmosphere_declaration",
+      "narrator_correction_with_backstage_fact"
+    ]
+  },
+  "text_path": "cases\\NM-02\\drafts\\c-2.txt"
+}

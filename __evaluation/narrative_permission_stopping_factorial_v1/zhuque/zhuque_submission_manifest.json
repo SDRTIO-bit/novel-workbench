@@ -1,0 +1,9 @@
+{
+  "experiment_id": "NARRATIVE_PERMISSION_STOPPING_FACTORIAL_V1",
+  "source_commit": "94059c955d9d15fc04e518dd9429b0ca6421b51e",
+  "total_articles": 96,
+  "total_content_characters": 86768,
+  "separator": "five newline characters",
+  "submission_sha256": "10862cea65f5a20b982da39a503895c9adb72d918fca925c6107c6e0cea77d0b",
+  "generated_at": "2026-07-20T06:25:39+08:00"
+}

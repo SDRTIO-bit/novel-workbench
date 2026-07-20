@@ -1,0 +1,63 @@
+{
+  "candidate_id": "f6661310-c621-462c-ae74-c8f4ef549263",
+  "attempt_number": 1,
+  "group": "A",
+  "replica": 2,
+  "permission_policy": "CURRENT",
+  "stop_policy": "CURRENT",
+  "instruction_hash": null,
+  "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+  "model_id": "deepseek-v4-pro",
+  "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 4000,
+    "timeout_seconds": 300,
+    "policy_metadata": {
+      "group": "A",
+      "permission_policy": "CURRENT",
+      "stop_policy": "CURRENT",
+      "policy_version": "narrative-permission-stop-v1",
+      "policy_hash": "bcba9c79e51e6722c8796bc8a1defd65461d017dbbaf922efbe9c16df2ba3d4f",
+      "instruction_hash": null,
+      "permission_instruction_hash": null,
+      "stop_instruction_hash": null,
+      "seed": null
+    },
+    "thinking": "disabled",
+    "response_format": "text"
+  },
+  "text_output": "苏叶蹲在自行车旁边，手指捏着那条垂下来的链条，油污沾上了指尖。\n\n沈一凡就在两米外，扳手在他手里转动，链条一节一节地卡进齿轮槽。他的动作不快，但每一下都卡得刚好，像是做过很多次。\n\n工具箱摊在两人中间的地砖上，盖子敞着，梅花扳手、活动扳手、链条钳，一字排开。\n\n苏叶看了眼自己的车，链条从牙盘上完全脱出来，垂在后轮下面。她伸手试着拽了一下，链条卡在飞轮和车架之间，纹丝不动。\n\n沈一凡那边扳手又转了两圈，链条绷紧，他拨了一下踏板，后轮空转起来，声音顺畅。他蹲在地上，低着头，用抹布擦手指。\n\n苏叶站起来，走到工具箱边上，弯腰拿起一把扳手。\n\n扳手比想象中沉，握柄上有机油的味道。她翻了个面，扳口上刻着型号。\n\n“这个，”她开口，声音比预想的大了一点，“是用来紧链条的吗？”\n\n沈一凡抬起头。\n\n他看了一眼她手里的扳手，又看了一眼她身后的自行车，链条拖在地上。\n\n他把抹布搭在膝盖上，站起来，朝她走了两步，伸手接过那把扳手。\n\n“这个是调座管的。”他把扳手放回工具箱，拿起另一把，在手里掂了一下，“紧链条用这个。”\n\n他绕过她，走向那辆链条脱落的车，蹲下来看了一眼后轮的位置。\n\n“我来帮你看看。”",
+  "raw_response": "苏叶蹲在自行车旁边，手指捏着那条垂下来的链条，油污沾上了指尖。\n\n沈一凡就在两米外，扳手在他手里转动，链条一节一节地卡进齿轮槽。他的动作不快，但每一下都卡得刚好，像是做过很多次。\n\n工具箱摊在两人中间的地砖上，盖子敞着，梅花扳手、活动扳手、链条钳，一字排开。\n\n苏叶看了眼自己的车，链条从牙盘上完全脱出来，垂在后轮下面。她伸手试着拽了一下，链条卡在飞轮和车架之间，纹丝不动。\n\n沈一凡那边扳手又转了两圈，链条绷紧，他拨了一下踏板，后轮空转起来，声音顺畅。他蹲在地上，低着头，用抹布擦手指。\n\n苏叶站起来，走到工具箱边上，弯腰拿起一把扳手。\n\n扳手比想象中沉，握柄上有机油的味道。她翻了个面，扳口上刻着型号。\n\n“这个，”她开口，声音比预想的大了一点，“是用来紧链条的吗？”\n\n沈一凡抬起头。\n\n他看了一眼她手里的扳手，又看了一眼她身后的自行车，链条拖在地上。\n\n他把抹布搭在膝盖上，站起来，朝她走了两步，伸手接过那把扳手。\n\n“这个是调座管的。”他把扳手放回工具箱，拿起另一把，在手里掂了一下，“紧链条用这个。”\n\n他绕过她，走向那辆链条脱落的车，蹲下来看了一眼后轮的位置。\n\n“我来帮你看看。”",
+  "input_tokens": 1182,
+  "output_tokens": 321,
+  "latency_ms": 24467,
+  "finish_reason": "stop",
+  "error_code": null,
+  "error_message": null,
+  "rendered_user_prompt_sha256": "9b733f113787503b81184b8490b6fe80d706ecd34faa4081ff4e28dcc1ca341e",
+  "validation": {
+    "character_count": 498,
+    "validator_codes": [
+      "STOP_MARKER_LITERAL_MISS"
+    ],
+    "banned_sentence_hits": {},
+    "second_confirmation_hits": [],
+    "environment_coda_hits": [],
+    "stop_marker_first_char": null,
+    "post_stop_character_count": null,
+    "tempo_final_line_mismatch": false,
+    "manual_review_required": [
+      "viewpoint_violation",
+      "cross_mind_assertion",
+      "other_character_motive_as_fact",
+      "true_stop_state_position",
+      "visible_state_transition_count",
+      "relationship_or_meaning_summary",
+      "shared_atmosphere_declaration",
+      "narrator_correction_with_backstage_fact"
+    ]
+  },
+  "text_path": "cases\\NM-04\\drafts\\a-2.txt"
+}
