@@ -1,0 +1,24 @@
+{
+  "experiment": "STRICT_LIMITED_PLANNER_WRITER_FACTORIAL_V1",
+  "source_commit": "c457c6ba3b0c4e2aceaec31956ab8d866d3b6277",
+  "total_slots": 48,
+  "successful_articles": 26,
+  "failed_articles": 22,
+  "p2w9_count": 12,
+  "p2w10_count": 12,
+  "p3w9_count": 1,
+  "p3w10_count": 1,
+  "total_content_characters": 42565,
+  "separator": "five newline characters",
+  "separator_character_count": 5,
+  "submission_sha256": "95ae15dad5053cc588a66a00ef08d6077885e183f6dbd44221901f4fa8c48a55",
+  "boundaries_sha256": "aef8e6d03f77b9c75cb135704b3c46791d3328be1f7b322ffbdcede36e18adce",
+  "random_seed": 202607210,
+  "source_manifest_path": "manifest.json",
+  "generated_at": "2026-07-21T03:37:45+08:00",
+  "validation_checks": {
+    "no_xml_tags": true,
+    "no_draft_notes": true,
+    "boundaries_recoverable": true
+  }
+}

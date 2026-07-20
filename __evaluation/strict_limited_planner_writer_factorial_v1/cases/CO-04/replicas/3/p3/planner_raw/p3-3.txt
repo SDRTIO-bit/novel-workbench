@@ -1,0 +1,337 @@
+{
+  "planner_contract_version": 3,
+  "scene_goal": "路远在不直接接触或喊叫的情况下，让错拿水壶的男生发现错误并将水壶放回原位。",
+  "location": "学校操场，靠近篮球场和单杠区。",
+  "time": "下午体育课自由活动时间。",
+  "scene_state": {
+    "last_completed_action": "体育老师宣布自由活动，路远回到单杠区发现水壶不见了。",
+    "present_characters": [
+      "路远",
+      "错拿水壶的男生"
+    ],
+    "visible_facts": [
+      "路远的蓝色运动水壶在一个不认识的男生手里",
+      "男生正朝篮球场走，边走边喝了一口",
+      "操场上有其他同学在活动，但距离较远",
+      "路远站在单杠区，离男生约二十米"
+    ],
+    "available_objects": [
+      "路远的蓝色运动水壶（在男生手中）",
+      "单杠",
+      "地上的石子或小树枝",
+      "路远自己的书包（在单杠下）",
+      "其他同学的物品（水壶、衣服等，但较远）"
+    ],
+    "unresolved_problem": "男生拿着路远的水壶，路远必须在不引起尴尬或冲突的情况下纠正错误。",
+    "already_existing_constraints": [
+      "路远不能跑过去抢回水壶（性格内向，且可能引起冲突）",
+      "路远不能在操场上大声喊叫（会引人注目）",
+      "路远不认识那个男生，无法直接称呼",
+      "水壶是私人物品，直接指出可能让对方难堪"
+    ]
+  },
+  "characters": [
+    {
+      "name": "路远",
+      "goal": "让男生意识到水壶拿错了，并主动放回或归还。",
+      "known": [
+        "自己的蓝色运动水壶被一个陌生男生拿走了",
+        "男生喝了一口，可能没意识到水壶不是他的",
+        "自己不能直接跑过去或喊叫"
+      ],
+      "unknown": [
+        "男生是否也有类似的水壶",
+        "男生是否会注意到路远的行动",
+        "男生的性格和对错误的反应"
+      ],
+      "mistaken_beliefs": [
+        "男生可能只是拿错了，并非故意"
+      ],
+      "constraints": [
+        "不能直接接触男生或水壶",
+        "不能大声喊叫",
+        "不能引起周围同学注意"
+      ],
+      "observed_evidence": [
+        "男生拿着水壶朝篮球场走",
+        "男生喝了一口水",
+        "男生没有回头或检查水壶"
+      ],
+      "current_interpretation": "男生可能误以为水壶是他自己的，或者根本没注意。",
+      "how_interpretation_drives_action": "路远决定使用一个现场物件，制造一个轻微但明显的干扰，让男生停下来检查手中的水壶。"
+    },
+    {
+      "name": "错拿水壶的男生",
+      "goal": "去篮球场打球，可能顺便喝水。",
+      "known": [
+        "自己手里有一个水壶",
+        "水壶是蓝色的"
+      ],
+      "unknown": [
+        "这个水壶不是他的",
+        "水壶的主人正在看着他",
+        "路远的意图"
+      ],
+      "mistaken_beliefs": [
+        "他以为这个水壶是他自己的"
+      ],
+      "constraints": [
+        "他正在走路，注意力可能在篮球场上",
+        "他对周围环境可能不太敏感"
+      ],
+      "observed_evidence": [],
+      "current_interpretation": "他可能根本没意识到水壶有问题。",
+      "how_interpretation_drives_action": "他会继续走向篮球场，除非受到干扰。"
+    }
+  ],
+  "concrete_problem": "路远如何用一个现场物件让男生发现水壶不是他的，并让水壶回到正确位置？",
+  "pressure": "男生正在走远，如果不尽快行动，水壶会被带到篮球场，更难拿回。",
+  "turning_point": "路远捡起一颗石子，轻轻扔到男生前方几步远的地面上，发出轻微声响，男生停下脚步，低头查看，然后注意到手中的水壶。",
+  "end_condition": "男生检查水壶后，发现不是自己的，转身将水壶放回单杠附近，然后离开。",
+  "forbidden": [
+    "路远直接跑过去或喊叫",
+    "其他同学介入",
+    "男生生气或发生冲突",
+    "路远使用语言沟通（如悄悄话）",
+    "水壶损坏或丢失"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "男生拿着水壶继续走向篮球场，没有停下的迹象。",
+      "character_interpretation": "路远意识到男生完全没注意到水壶可能拿错了，必须制造一个外部干扰。",
+      "character_next_action": "路远从地上捡起一颗小石子，瞄准男生前方两米处的地面轻轻扔去。",
+      "rejected_alternative": "路远想过假装咳嗽或弄出其他声音，但担心太明显或引来别人注意。",
+      "immediate_consequence": "石子落地发出‘嗒’的一声，男生停下脚步，低头看向地面，然后注意到自己手里的水壶。",
+      "counterfactual_without_action": "如果路远什么都不做，男生会直接走到篮球场，水壶可能被混在其他物品中，更难找回。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "男生毫无察觉地走向篮球场，水壶在他手中。",
+        "after": "男生停下脚步，开始检查手中的水壶。"
+      },
+      "cost_or_commitment": "路远承担了被男生发现是他在扔石子的风险，但选择了最小干扰的方式。",
+      "next_constraint": "男生现在注意到了水壶，但路远不能进一步提示，必须让男生自己推理。",
+      "reader_must_infer": "石子是路远扔的，但男生可能不知道是谁干的。",
+      "narrator_must_not_state": [
+        "路远扔石子的动作被男生看到",
+        "男生立刻明白石子是路远扔的"
+      ]
+    },
+    {
+      "id": "CT02",
+      "kind": "evidence_to_action",
+      "visible_trigger": "男生检查水壶，发现水壶底部贴有姓名贴（或水壶款式与自己的不同）。",
+      "character_interpretation": "男生意识到这个水壶不是他的，可能是别人放在单杠区的。",
+      "character_next_action": "男生转身走回单杠区，将水壶放在单杠底座旁，然后离开。",
+      "rejected_alternative": "男生可以喊一声‘谁的水壶’，但他可能觉得尴尬，选择默默放回。",
+      "immediate_consequence": "水壶被放回单杠附近，路远可以等男生走远后取回。",
+      "counterfactual_without_action": "如果男生没有检查水壶，他可能继续拿着，或者喝完水后随手丢弃。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "男生拿着水壶，不确定是否是他的。",
+        "after": "水壶被放回单杠区地面，男生空手走向篮球场。"
+      },
+      "cost_or_commitment": "男生可能感到一丝尴尬，但迅速纠正了错误。",
+      "next_constraint": "路远必须等男生走远后才能去拿水壶，以免被发现。",
+      "reader_must_infer": "男生看到了水壶上的标记或认出了不是自己的款式，从而决定放回。",
+      "narrator_must_not_state": [
+        "男生内心在想什么",
+        "男生是否感到尴尬或生气"
+      ]
+    }
+  ],
+  "tempo_guardrails": {
+    "entry_pressure": "体育课自由活动刚开始，路远发现水壶被一个陌生男生拿走并喝了一口。",
+    "dominant_pressure": {
+      "kind": "resource_constraint",
+      "description": "时间正在流逝，男生越走越远，水壶可能被带离或混淆，路远必须迅速行动但手段有限。"
+    },
+    "allowed_viewpoint_misread": "路远可能认为男生是故意拿错，但实际上男生只是无心之失。",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "男生是否真的有一个类似的水壶",
+      "男生放回水壶时的内心活动"
+    ],
+    "stop_state": {
+      "type": "physical_change",
+      "visible_fact": "水壶被放在单杠底座旁的地面上，男生已经离开。",
+      "what_is_now_different": "水壶从男生手中回到了路远可以取回的位置，且没有引起冲突。",
+      "must_not_append": "不得描述路远取回水壶后的感受或后续动作。"
+    },
+    "final_line_must_include": "水壶在单杠下，像从未离开过。"
+  },
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true,
+    "pov_character_is_fixed": true,
+    "narration_permissions_are_separated": true,
+    "other_minds_are_backstage_only": true,
+    "no_viewpoint_switch": true,
+    "scene_capacity_is_honest": true,
+    "meaningful_beats_are_non_micro": true,
+    "target_length_has_real_fuel": true,
+    "interaction_changes_state": true,
+    "dialogue_does_not_repeat_shared_information": true,
+    "stop_state_is_not_early": true
+  },
+  "pov_contract": {
+    "pov_character": "路远",
+    "narration_mode": "third_person_limited",
+    "directly_narratable": [
+      "路远看到的操场景象",
+      "路远对水壶被拿走的瞬间记忆",
+      "路远的紧张和犹豫",
+      "路远观察男生的行动",
+      "路远捡起石子的触感",
+      "路远扔石子时的计算",
+      "路远看到男生停下时的释然",
+      "路远等待男生放回水壶的耐心"
+    ],
+    "pov_known_facts": [
+      "那个蓝色水壶是自己的",
+      "水壶底部有姓名贴",
+      "自己刚才把水壶放在单杠下",
+      "自己不能直接去要"
+    ],
+    "pov_unknown_facts": [
+      "男生是否也有蓝色水壶",
+      "男生什么时候会注意到",
+      "男生放回水壶后会怎么想"
+    ],
+    "allowed_viewpoint_misread": "路远可能短暂怀疑男生是故意拿的，但很快纠正为无心之失。",
+    "other_minds_backstage_only": [
+      {
+        "character": "错拿水壶的男生",
+        "hidden_goal_or_motive": "他只是想快点去打球，随手拿起以为是自己的水壶。",
+        "hidden_or_withheld_fact": "他确实有一个类似的蓝色水壶，但今天没带。",
+        "behavioral_expression": [
+          "男生走路匆忙，没有仔细看水壶",
+          "男生被石子干扰后停下来困惑地检查水壶",
+          "男生发现错误后，默默放回水壶，没有四处张望"
+        ],
+        "narrator_must_not_state": [
+          "男生的内心想法",
+          "男生是否感到尴尬",
+          "男生是否认出了路远"
+        ]
+      }
+    ],
+    "future_knowledge_forbidden": [
+      "路远之后是否会再见到这个男生",
+      "水壶之后是否还会被拿错"
+    ],
+    "relationship_summary_forbidden": [
+      "路远和男生之间形成了某种默契",
+      "两人从此认识"
+    ],
+    "viewpoint_switch_forbidden": true
+  },
+  "scene_capacity": {
+    "target_min_chars": 2000,
+    "scene_mode": "action",
+    "core_event": "路远用石子制造干扰，让男生发现水壶拿错并放回。",
+    "meaningful_beats": [
+      {
+        "id": "B1",
+        "trigger": "体育老师宣布自由活动，路远走向单杠区。",
+        "active_character": "路远",
+        "goal": "去单杠区休息喝水。",
+        "resistance_or_information_gap": "无",
+        "action_or_exchange": "路远走到单杠下，发现水壶不见了。",
+        "new_information": "水壶被一个陌生男生拿走了。",
+        "immediate_consequence": "路远愣住，开始观察男生。",
+        "state_delta": {
+          "before": "路远准备喝水。",
+          "after": "路远意识到水壶丢失，必须采取行动。"
+        },
+        "depends_on": [],
+        "cannot_merge_reason": "这是发现问题的起点，必须独立。"
+      },
+      {
+        "id": "B2",
+        "trigger": "看到男生拿着水壶边走边喝。",
+        "active_character": "路远",
+        "goal": "确认水壶是自己的，并决定如何应对。",
+        "resistance_or_information_gap": "距离远，不能喊叫，不能跑过去。",
+        "action_or_exchange": "路远快速思考可能的方法：扔石子、制造声音、等待。",
+        "new_information": "扔石子是最隐蔽且有效的方法。",
+        "immediate_consequence": "路远弯腰捡起一颗小石子。",
+        "state_delta": {
+          "before": "路远犹豫不决。",
+          "after": "路远有了具体行动计划。"
+        },
+        "depends_on": [
+          "B1"
+        ],
+        "cannot_merge_reason": "决策过程需要内心权衡，不能与行动合并。"
+      },
+      {
+        "id": "B3",
+        "trigger": "男生即将走出有效干扰范围。",
+        "active_character": "路远",
+        "goal": "用石子吸引男生注意而不被发现。",
+        "resistance_or_information_gap": "必须精确控制力度和落点。",
+        "action_or_exchange": "路远轻轻扔出石子，落在男生前方地面。",
+        "new_information": "石子声让男生停下。",
+        "immediate_consequence": "男生低头看地面，然后注意到手中的水壶。",
+        "state_delta": {
+          "before": "男生毫无察觉地走着。",
+          "after": "男生静止，开始检查水壶。"
+        },
+        "depends_on": [
+          "B2"
+        ],
+        "cannot_merge_reason": "行动和反应是两个独立事件。"
+      },
+      {
+        "id": "B4",
+        "trigger": "男生检查水壶，发现不是自己的。",
+        "active_character": "错拿水壶的男生",
+        "goal": "纠正错误。",
+        "resistance_or_information_gap": "不知道水壶是谁的，但记得在单杠区拿的。",
+        "action_or_exchange": "男生走回单杠区，将水壶放在地上。",
+        "new_information": "水壶回到原位。",
+        "immediate_consequence": "路远看到水壶被放回，松了口气。",
+        "state_delta": {
+          "before": "水壶在男生手中。",
+          "after": "水壶在单杠下地面。"
+        },
+        "depends_on": [
+          "B3"
+        ],
+        "cannot_merge_reason": "男生的行动是路远行动的间接结果，且视角仍在路远。"
+      }
+    ],
+    "estimated_narrative_capacity_min": 2200,
+    "estimated_narrative_capacity_max": 3200,
+    "capacity_sufficient": true,
+    "capacity_gap_reason": null,
+    "forbidden_padding": [
+      "详细描写其他同学的活动",
+      "路远回忆水壶的来历",
+      "男生打篮球的后续",
+      "路远喝水后的感受"
+    ]
+  },
+  "interaction_plan": {
+    "interaction_required": false,
+    "participants": [],
+    "character_positions": [],
+    "turning_exchanges": []
+  }
+}

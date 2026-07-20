@@ -1,0 +1,426 @@
+{
+  "planner_contract_version": 3,
+  "scene_goal": "夏知在厨房与韩川互动中，因手机消息和韩川的回避行为产生疑虑，在帮忙与离开之间做出选择，付出代价并留下可见后果。",
+  "location": "合租屋厨房",
+  "time": "傍晚，做饭时间",
+  "scene_state": {
+    "last_completed_action": "夏知走进厨房，看见韩川的手机屏幕亮起，显示她昨晚发的未读消息，韩川注意到后立即把手机扣在桌上，然后转身去洗菜。",
+    "present_characters": [
+      "夏知",
+      "韩川"
+    ],
+    "visible_facts": [
+      "韩川的手机屏幕亮起，显示夏知昨晚发的未读消息",
+      "韩川把手机扣在桌上",
+      "韩川转身去洗菜",
+      "桌上只有两只碗",
+      "炉灶上的水已经烧开"
+    ],
+    "available_objects": [
+      "韩川的手机（屏幕朝下扣在桌上）",
+      "两只碗",
+      "洗菜池里的蔬菜",
+      "烧开的水",
+      "炉灶",
+      "其他厨房用具"
+    ],
+    "unresolved_problem": "韩川没有回复夏知的消息，且当着她的面隐藏了手机，夏知不知该如何应对这种回避。",
+    "already_existing_constraints": [
+      "夏知不能偷看韩川的手机",
+      "夏知不能直接质问韩川为何没回消息",
+      "两人是合租关系，需维持表面礼貌"
+    ]
+  },
+  "characters": [
+    {
+      "name": "夏知",
+      "goal": "弄清楚韩川是否故意回避她，并决定自己接下来该如何与韩川相处。",
+      "known": [
+        "自己昨晚给韩川发了一条消息",
+        "韩川至今未回复",
+        "刚才看到手机屏幕亮起，显示自己的消息是未读状态",
+        "韩川在她面前扣下手机"
+      ],
+      "unknown": [
+        "韩川是否看到了消息",
+        "韩川扣下手机的真实原因",
+        "韩川对自己的态度"
+      ],
+      "mistaken_beliefs": [
+        "也许韩川只是没看到消息，不是故意不回"
+      ],
+      "constraints": [
+        "不能偷看手机",
+        "不能直接质问",
+        "需要维持合租的日常相处"
+      ],
+      "observed_evidence": [
+        "手机屏幕亮起，显示自己的未读消息",
+        "韩川快速扣下手机",
+        "韩川转身去洗菜，没有解释",
+        "桌上只有两只碗，似乎原本打算一起吃饭"
+      ],
+      "current_interpretation": "韩川可能看到了消息但不想回，或者不想让她发现他已读不回，所以扣下手机掩饰。",
+      "how_interpretation_drives_action": "夏知决定试探韩川的态度，通过提出帮忙或离开来观察他的反应，以此判断他是否在回避自己。"
+    },
+    {
+      "name": "韩川",
+      "goal": "避免与夏知就未读消息发生正面冲突，维持现状。",
+      "known": [
+        "自己昨晚看到了夏知的消息，但没回",
+        "刚才夏知可能看到了手机屏幕",
+        "自己急忙扣下手机"
+      ],
+      "unknown": [
+        "夏知是否看清了屏幕内容",
+        "夏知现在怎么想"
+      ],
+      "mistaken_beliefs": [
+        "也许夏知没有注意到手机屏幕"
+      ],
+      "constraints": [
+        "不想解释为何没回消息",
+        "不能直接赶走夏知",
+        "需要维持合租的和平"
+      ],
+      "observed_evidence": [
+        "夏知走进厨房",
+        "夏知可能看到了手机屏幕"
+      ],
+      "current_interpretation": "夏知可能已经发现他未读消息，他需要转移话题或装作没事发生。",
+      "how_interpretation_drives_action": "韩川通过专注于做饭、邀请夏知一起吃饭来转移注意力，避免讨论消息。"
+    }
+  ],
+  "concrete_problem": "夏知需要决定是继续留在厨房帮忙（可能面对尴尬），还是离开（可能让关系更僵），或者用其他行动试探韩川。",
+  "pressure": "水已烧开，做饭的时机正在流逝，夏知必须在短时间内做出反应，而韩川的回避态度增加了她的疑虑。",
+  "turning_point": "夏知选择留下来帮忙，但在帮忙过程中故意提到消息相关话题，韩川的反应让她确认了回避，从而调整自己的态度。",
+  "end_condition": "夏知以帮忙为代价，从韩川的回避反应中获得了足够的信息，决定暂时保持距离，离开厨房。",
+  "forbidden": [
+    "夏知偷看韩川的手机",
+    "夏知直接质问韩川为何没回消息",
+    "韩川解释为何没回消息",
+    "两人发生争吵",
+    "夏知离开合租屋",
+    "使用任何未来信息或预知",
+    "揭示韩川真实心理活动（通过旁白）"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "韩川把手机扣在桌上，转身去洗菜，没有提及消息。",
+      "character_interpretation": "韩川在故意回避消息的事，不想让她追问。",
+      "character_next_action": "夏知决定不提手机，而是问是否需要帮忙，通过共同做事来观察韩川的态度。",
+      "rejected_alternative": "夏知可以直接离开厨房，但那样会显得自己在意，且无法获得更多信息。",
+      "immediate_consequence": "韩川同意她帮忙，两人开始一起做饭，但气氛有些微妙。",
+      "counterfactual_without_action": "如果夏知不提帮忙直接离开，韩川可能会松一口气，但两人之间的隔阂会加深，夏知也无法确认韩川的态度。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "夏知站在厨房门口，韩川背对着她洗菜，手机扣在桌上。",
+        "after": "夏知进入厨房，开始帮忙洗菜，两人并肩站在水池边。"
+      },
+      "cost_or_commitment": "夏知付出了主动打破沉默的努力，并承担了可能被拒绝或冷落的风险。",
+      "next_constraint": "夏知必须在帮忙过程中保持自然，不能直接提及消息。",
+      "reader_must_infer": "韩川同意帮忙并非完全出于友好，可能也是为了掩饰不安。",
+      "narrator_must_not_state": [
+        "韩川内心的真实想法",
+        "韩川是否真的希望夏知留下"
+      ]
+    },
+    {
+      "id": "CT02",
+      "kind": "evidence_to_action",
+      "visible_trigger": "在帮忙时，夏知随口说了一句“昨晚发你的那个链接挺有意思的”，韩川只是“嗯”了一声，没有接话。",
+      "character_interpretation": "韩川明显在回避这个话题，他肯定看到了消息，但不想聊。",
+      "character_next_action": "夏知不再继续试探，转而专注手上的活，但动作变得有些生硬。",
+      "rejected_alternative": "夏知可以继续追问，但那会违反约束，且可能引发冲突。",
+      "immediate_consequence": "厨房里只剩下水声和切菜声，气氛更加尴尬。",
+      "counterfactual_without_action": "如果夏知不试探，她可能还会抱着“他只是没看到”的侥幸心理，但会一直内耗。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "两人有一搭没一搭地聊着做饭的事。",
+        "after": "对话中断，只有干活的声音。"
+      },
+      "cost_or_commitment": "夏知确认了韩川的回避，但付出了让气氛变僵的代价。",
+      "next_constraint": "夏知不能再主动提起任何与消息有关的事。",
+      "reader_must_infer": "韩川的‘嗯’并非没听清，而是刻意冷淡。",
+      "narrator_must_not_state": [
+        "韩川是否感到内疚",
+        "夏知是否感到伤心"
+      ]
+    },
+    {
+      "id": "CT03",
+      "kind": "evidence_to_action",
+      "visible_trigger": "饭快做好时，韩川说“要不你先去摆碗筷”，夏知看到桌上只有两只碗。",
+      "character_interpretation": "韩川原本就打算和她一起吃饭，但之前的回避让这个邀请变得别扭。",
+      "character_next_action": "夏知摆好碗筷，但以“突然不太饿”为由，只盛了一碗饭，然后离开厨房。",
+      "rejected_alternative": "夏知可以留下吃饭，假装什么都没发生，但那样会让自己更难受。",
+      "immediate_consequence": "韩川看着只有一碗饭的桌子，没有说话。",
+      "counterfactual_without_action": "如果夏知留下吃饭，两人可能会在沉默中吃完，关系表面维持，但夏知内心会更纠结。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "两人一起做饭，但气氛尴尬。",
+        "after": "夏知离开，厨房只剩韩川和一碗饭。"
+      },
+      "cost_or_commitment": "夏知放弃了与韩川共进晚餐的机会，用行动表达了自己的不满。",
+      "next_constraint": "夏知与韩川之间产生了新的距离，短期内难以若无其事地互动。",
+      "reader_must_infer": "夏知并非真的不饿，而是用离开作为对韩川回避的回应。",
+      "narrator_must_not_state": [
+        "韩川是否感到失落",
+        "夏知是否期待韩川挽留"
+      ]
+    }
+  ],
+  "tempo_guardrails": {
+    "entry_pressure": "水已经烧开，韩川在洗菜，夏知站在厨房门口，手机扣在桌上。",
+    "dominant_pressure": {
+      "kind": "social_friction",
+      "description": "两人之间的尴尬和未说破的消息问题主导了互动，时间压力（水开）只是背景。"
+    },
+    "allowed_viewpoint_misread": "夏知可能把韩川的‘嗯’理解为完全不在意，而实际上韩川可能只是不知如何回应。",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "韩川没回消息的真正原因",
+      "韩川对夏知的真实感觉"
+    ],
+    "stop_state": {
+      "type": "relationship_shift",
+      "visible_fact": "夏知只盛了一碗饭，离开厨房。",
+      "what_is_now_different": "夏知从试图接近转为主动保持距离，两人的关系从表面和谐进入冷战边缘。",
+      "must_not_append": "不得解释夏知离开后的心理活动或韩川的后续反应。"
+    }
+  },
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true,
+    "pov_character_is_fixed": true,
+    "narration_permissions_are_separated": true,
+    "other_minds_are_backstage_only": true,
+    "no_viewpoint_switch": true,
+    "scene_capacity_is_honest": true,
+    "meaningful_beats_are_non_micro": true,
+    "target_length_has_real_fuel": true,
+    "interaction_changes_state": true,
+    "dialogue_does_not_repeat_shared_information": true,
+    "stop_state_is_not_early": true
+  },
+  "pov_contract": {
+    "pov_character": "夏知",
+    "narration_mode": "third_person_limited",
+    "directly_narratable": [
+      "夏知看到的场景：手机屏幕、韩川的动作、厨房物品",
+      "夏知听到的声音：水声、切菜声、韩川的简短回应",
+      "夏知的身体感受和情绪：尴尬、疑虑、失望",
+      "夏知的回忆：昨晚发消息的情景",
+      "夏知基于观察形成的判断：韩川在回避"
+    ],
+    "pov_known_facts": [
+      "自己昨晚给韩川发了消息",
+      "消息至今未回复",
+      "刚才手机屏幕显示消息未读",
+      "韩川扣下手机"
+    ],
+    "pov_unknown_facts": [
+      "韩川是否看过消息",
+      "韩川为何不回",
+      "韩川扣手机的真实动机"
+    ],
+    "allowed_viewpoint_misread": "夏知可能把韩川的回避解读为讨厌自己，而实际上可能有其他原因。",
+    "other_minds_backstage_only": [
+      {
+        "character": "韩川",
+        "hidden_goal_or_motive": "不想让夏知知道自己已读不回，避免尴尬或冲突。",
+        "hidden_or_withheld_fact": "他看到了消息，但不知如何回复，所以一直拖着。",
+        "behavioral_expression": [
+          "快速扣下手机",
+          "转身洗菜避免眼神接触",
+          "用“嗯”敷衍夏知的试探",
+          "提议一起吃饭来转移话题"
+        ],
+        "narrator_must_not_state": [
+          "韩川感到内疚",
+          "韩川其实想回复但不敢",
+          "韩川对夏知有好感"
+        ]
+      }
+    ],
+    "future_knowledge_forbidden": [
+      "两人之后是否会和解",
+      "韩川最终是否会回复消息",
+      "这次事件对关系的长远影响"
+    ],
+    "relationship_summary_forbidden": [
+      "他们的关系变差了",
+      "两人之间产生了隔阂"
+    ],
+    "viewpoint_switch_forbidden": true
+  },
+  "scene_capacity": {
+    "target_min_chars": 2000,
+    "scene_mode": "interaction",
+    "core_event": "夏知在厨房与韩川互动，通过帮忙和试探，最终以离开表达不满。",
+    "meaningful_beats": [
+      {
+        "id": "B1",
+        "trigger": "夏知走进厨房，看到手机屏幕和韩川扣手机的动作。",
+        "active_character": "夏知",
+        "goal": "理解当前状况，决定如何反应。",
+        "resistance_or_information_gap": "韩川的回避行为制造了信息差，夏知不知他是否故意。",
+        "action_or_exchange": "夏知观察环境，注意到桌上两只碗，判断韩川原本打算一起吃饭。",
+        "new_information": "韩川可能并非完全排斥她，但行为矛盾。",
+        "immediate_consequence": "夏知决定不直接离开，而是试探性地提出帮忙。",
+        "state_delta": {
+          "before": "夏知刚进厨房，处于观望状态。",
+          "after": "夏知决定主动介入，提出帮忙。"
+        },
+        "depends_on": [],
+        "cannot_merge_reason": "这是夏知从被动观察到主动行动的关键转折，必须独立成节。"
+      },
+      {
+        "id": "B2",
+        "trigger": "夏知问“需要帮忙吗？”",
+        "active_character": "夏知",
+        "goal": "通过帮忙拉近距离，观察韩川反应。",
+        "resistance_or_information_gap": "韩川可能会拒绝，或者态度冷淡。",
+        "action_or_exchange": "韩川同意，让她洗菜。两人开始一起做饭，但对话很少。",
+        "new_information": "韩川没有拒绝，但也不热情。",
+        "immediate_consequence": "夏知确认韩川不想提消息，但愿意维持表面合作。",
+        "state_delta": {
+          "before": "两人各站一边，气氛尴尬。",
+          "after": "两人并肩干活，但缺乏交流。"
+        },
+        "depends_on": [
+          "B1"
+        ],
+        "cannot_merge_reason": "这是互动开始，必须展示韩川的初步回应，为后续试探铺垫。"
+      },
+      {
+        "id": "B3",
+        "trigger": "夏知在帮忙时自然提起“昨晚发你的那个链接挺有意思的”。",
+        "active_character": "夏知",
+        "goal": "试探韩川是否看到消息。",
+        "resistance_or_information_gap": "韩川可能会装傻或敷衍。",
+        "action_or_exchange": "韩川只是“嗯”了一声，没有接话。",
+        "new_information": "韩川明显在回避，确认他看到消息但不想聊。",
+        "immediate_consequence": "夏知停止试探，气氛变得更僵。",
+        "state_delta": {
+          "before": "两人还有简单交流。",
+          "after": "对话中断，只有干活的声音。"
+        },
+        "depends_on": [
+          "B2"
+        ],
+        "cannot_merge_reason": "这是核心试探，必须单独呈现以突出韩川的回避和夏知的确认。"
+      },
+      {
+        "id": "B4",
+        "trigger": "饭快好时，韩川让夏知去摆碗筷。",
+        "active_character": "夏知",
+        "goal": "决定是否留下吃饭。",
+        "resistance_or_information_gap": "之前的尴尬让夏知不想留下，但直接走可能太突兀。",
+        "action_or_exchange": "夏知看到两只碗，但只盛了一碗饭，说“突然不太饿”然后离开。",
+        "new_information": "夏知用行动表达了不满。",
+        "immediate_consequence": "韩川看着一碗饭，没有说话。",
+        "state_delta": {
+          "before": "两人还在厨房。",
+          "after": "夏知离开，韩川独自面对一碗饭。"
+        },
+        "depends_on": [
+          "B3"
+        ],
+        "cannot_merge_reason": "这是场景的高潮和结束动作，必须独立展示夏知的选择和后果。"
+      }
+    ],
+    "estimated_narrative_capacity_min": 2200,
+    "estimated_narrative_capacity_max": 2800,
+    "capacity_sufficient": true,
+    "capacity_gap_reason": null,
+    "forbidden_padding": [
+      "大段环境描写",
+      "夏知反复回忆消息内容",
+      "韩川做饭的冗长过程",
+      "静止的心理独白"
+    ]
+  },
+  "interaction_plan": {
+    "interaction_required": true,
+    "participants": [
+      "夏知",
+      "韩川"
+    ],
+    "character_positions": [
+      {
+        "character": "夏知",
+        "current_goal": "弄清楚韩川是否故意回避，并决定自己的应对。",
+        "opening_assumption": "韩川可能没看到消息，或者看到了但忙忘了。",
+        "hidden_or_withheld_information": "她非常在意韩川的回应，但不想表现得太明显。",
+        "cannot_accept": "韩川无视她的消息且不解释。",
+        "wants_from_other": "一个解释或至少是正常的交流。"
+      },
+      {
+        "character": "韩川",
+        "current_goal": "避免讨论消息，维持表面和平。",
+        "opening_assumption": "夏知可能没看清屏幕，可以蒙混过去。",
+        "hidden_or_withheld_information": "他看到了消息，但不知如何回复，所以逃避。",
+        "cannot_accept": "夏知直接质问或生气。",
+        "wants_from_other": "夏知不要提消息，像往常一样相处。"
+      }
+    ],
+    "turning_exchanges": [
+      {
+        "id": "E1",
+        "trigger": "夏知提出帮忙。",
+        "initiator": "夏知",
+        "initiator_goal": "通过帮忙来观察韩川。",
+        "speech_act": "询问",
+        "other_response_mode": "简短同意，但不主动说话。",
+        "new_information": "韩川不拒绝帮忙，但保持距离。",
+        "state_delta": {
+          "before": "夏知在门口犹豫。",
+          "after": "两人开始一起做饭。"
+        }
+      },
+      {
+        "id": "E2",
+        "trigger": "夏知提起消息。",
+        "initiator": "夏知",
+        "initiator_goal": "试探韩川是否看到消息。",
+        "speech_act": "陈述",
+        "other_response_mode": "敷衍的‘嗯’，不接话。",
+        "new_information": "韩川在回避，确认他看到消息。",
+        "state_delta": {
+          "before": "两人还有简单对话。",
+          "after": "对话中断，气氛变僵。"
+        }
+      },
+      {
+        "id": "E3",
+        "trigger": "韩川让夏知摆碗筷。",
+        "initiator": "韩川",
+        "initiator_goal": "用吃饭转移话题，恢复常态。",
+        "speech_act": "指令",
+        "other_response_mode": "夏知只盛一碗饭，借口离开。",
+        "new_information": "夏知用行动拒绝和解，表达不满。",
+        "state_delta": {
+          "before": "两人还在厨房。",
+          "after": "夏知离开，韩川独自留下。"
+        }
+      }
+    ]
+  }
+}

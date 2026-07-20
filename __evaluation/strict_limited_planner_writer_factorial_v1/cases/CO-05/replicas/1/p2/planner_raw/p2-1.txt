@@ -1,0 +1,158 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "向暖在快递架上发现写有自己名字但地址不符的包裹，她必须在不拆包裹、不拿走错误物品的前提下，使用现场物件标记或通知真正的收件人，并在过程中遭遇归属新事实，从而埋下后续线索。",
+  "location": "小区快递架",
+  "time": "傍晚，取件高峰期刚过",
+  "scene_state": {
+    "last_completed_action": "向暖在快递架上看到一个写有自己名字的包裹，但收件地址不是自己的楼栋。",
+    "present_characters": ["向暖"],
+    "visible_facts": [
+      "快递架上散落着几个未取走的包裹",
+      "其中一个包裹上写着收件人'向暖'",
+      "包裹上的地址是小区内另一栋楼",
+      "架子上还有一支马克笔和一卷胶带",
+      "旁边有公示栏和便签纸"
+    ],
+    "available_objects": [
+      "马克笔",
+      "胶带",
+      "便签纸",
+      "公示栏",
+      "其他未取包裹"
+    ],
+    "unresolved_problem": "如何在不拆包裹、不拿走错误物品的前提下，通知真正的收件人。",
+    "already_existing_constraints": [
+      "不能拆开包裹",
+      "不能把包裹拿回家",
+      "必须在现场解决"
+    ]
+  },
+  "characters": [
+    {
+      "name": "向暖",
+      "goal": "找到一种方式，让包裹到达真正的收件人手中，同时避免自己卷入麻烦。",
+      "known": [
+        "包裹上的收件人是'向暖'，但地址不是自己的楼栋",
+        "小区里可能有另一个叫'向暖'的人",
+        "快递架上有马克笔和便签纸"
+      ],
+      "unknown": [
+        "真正的收件人是谁，住在哪一户",
+        "包裹里是什么",
+        "为什么会出现同名不同地址的情况"
+      ],
+      "mistaken_beliefs": [
+        "也许只是快递员写错了地址，包裹其实是自己的"
+      ],
+      "constraints": [
+        "不能拆包裹",
+        "不能拿走不属于自己的东西",
+        "不能长时间逗留引起怀疑"
+      ],
+      "observed_evidence": [
+        "包裹上的地址是3栋502，而自己住在5栋201",
+        "包裹看起来很普通，没有特殊标记",
+        "架子上其他包裹都有完整的收件人信息"
+      ],
+      "current_interpretation": "这很可能是一个同名不同人的包裹，不是自己的。",
+      "how_interpretation_drives_action": "她决定留下一个便签，提醒真正的收件人核对地址，而不是直接拿走包裹。"
+    }
+  ],
+  "concrete_problem": "向暖必须决定：是直接离开不管，还是留下标记通知真正的收件人，以及如何标记才能既有效又不暴露自己的信息。",
+  "pressure": "取件高峰期已过，天色渐暗，向暖担心包裹放在架子上过夜不安全，但自己又无权处理。",
+  "turning_point": "向暖在便签上写下提醒后，突然发现包裹侧面有一行小字，暗示这个包裹可能与自己有关——她必须重新评估自己的判断，但已无法收回便签。",
+  "end_condition": "向暖留下便签后离开，但包裹上的新发现让她意识到事情并不简单，她决定回家后通过其他方式查证。",
+  "forbidden": [
+    "向暖拆开包裹",
+    "向暖拿走包裹",
+    "真正的收件人立即出现",
+    "向暖直接联系快递员",
+    "揭示包裹内容",
+    "揭示向暖过去的秘密"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "包裹上的地址明确写着3栋502，而向暖住在5栋201。",
+      "character_interpretation": "这不可能是自己的包裹，一定是同名不同人。",
+      "character_next_action": "她从公示栏取下一张便签纸，用马克笔写下'请核对收件人地址，3栋502的向暖'，并用胶带贴在包裹上。",
+      "rejected_alternative": "她本可以不管不顾直接离开，但担心包裹丢失或真正的收件人找不到。",
+      "immediate_consequence": "包裹上多了一个显眼的便签，引起了后来取件人的注意。",
+      "counterfactual_without_action": "如果向暖不贴便签，包裹可能被误拿或一直无人认领，真正的收件人可能错过重要物品。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "包裹上只有原始快递单，没有额外标记。",
+        "after": "包裹上贴有手写便签，提示核对地址。"
+      },
+      "cost_or_commitment": "向暖留下了自己的笔迹，如果被有心人看到，可能暴露她曾在此处停留。",
+      "next_constraint": "便签上的笔迹可能成为后续辨认的线索。",
+      "reader_must_infer": "向暖为什么如此在意一个不属于自己的包裹？仅仅因为同名吗？",
+      "narrator_must_not_state": [
+        "向暖内心真正的动机",
+        "包裹里的东西是否与向暖的过去有关"
+      ]
+    },
+    {
+      "id": "CT02",
+      "kind": "evidence_to_action",
+      "visible_trigger": "贴完便签后，向暖无意中看到包裹侧面有一行小字：'转5栋201向暖收'。",
+      "character_interpretation": "这个包裹原本可能是寄给自己的，但被错误地写了3栋的地址，又或者有人故意这样操作。",
+      "character_next_action": "她没有撕掉便签，而是用手机拍下包裹和那行小字，然后迅速离开。",
+      "rejected_alternative": "她本可以撕掉便签拿走包裹，但那会违反规则，而且可能打草惊蛇。",
+      "immediate_consequence": "向暖带着新的疑惑离开，包裹留在架子上，但她的手机里有了证据。",
+      "counterfactual_without_action": "如果她不拍照，那行小字可能被他人忽略或涂抹，她将失去重要线索。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "向暖只注意到包裹上的地址不符，认为与自己无关。",
+        "after": "她发现包裹可能与自己有关，但已留下便签，处于两难境地。"
+      },
+      "cost_or_commitment": "她必须承担包裹可能被他人取走的风险，同时自己无法立即验证。",
+      "next_constraint": "手机照片成为唯一证据，她必须找机会查证寄件人信息。",
+      "reader_must_infer": "那行小字是谁写的？是寄件人、快递员还是另有其人？",
+      "narrator_must_not_state": [
+        "小字的真正含义",
+        "向暖是否认识寄件人"
+      ]
+    }
+  ],
+  "tempo_guardrails": {
+    "entry_pressure": "向暖的手指悬在包裹上方，犹豫是否触碰这个写着自己名字的陌生包裹。",
+    "dominant_pressure": {
+      "kind": "information_gap",
+      "description": "包裹地址与向暖的住址不符，但收件人姓名相同，这种信息矛盾迫使她必须做出决定。"
+    },
+    "allowed_viewpoint_misread": "读者可能误以为向暖只是多管闲事，但实际上她内心有更深的不安。",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "向暖过去的秘密",
+      "包裹的真正寄件人",
+      "为什么会有转5栋201的小字"
+    ],
+    "stop_state": {
+      "type": "information_conflict",
+      "visible_fact": "包裹侧面出现'转5栋201向暖收'的小字，与快递单上的3栋502矛盾。",
+      "what_is_now_different": "向暖从确信包裹与自己无关，变成怀疑包裹可能原本就是寄给自己的，但已无法直接取走。",
+      "must_not_append": "不得解释小字的来源或向暖的下一步具体计划。"
+    },
+    "final_line_must_include": "她转身离开快递架，手机屏幕上的照片在暮色中亮得刺眼。"
+  },
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  }
+}

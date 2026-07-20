@@ -1,0 +1,210 @@
+[
+  {
+    "ordinal": 1,
+    "blind_id": "F2BEAC6C8E40",
+    "start_char": 0,
+    "end_char": 1777,
+    "character_count": 1777,
+    "text_path": "cases\\CO-05\\replicas\\1\\p2\\story\\p2w9-1.txt"
+  },
+  {
+    "ordinal": 2,
+    "blind_id": "95C1B22D5E15",
+    "start_char": 1782,
+    "end_char": 3172,
+    "character_count": 1390,
+    "text_path": "cases\\CO-04\\replicas\\1\\p2\\story\\p2w9-1.txt"
+  },
+  {
+    "ordinal": 3,
+    "blind_id": "BCB14432E2C5",
+    "start_char": 3177,
+    "end_char": 4841,
+    "character_count": 1664,
+    "text_path": "cases\\NM-03\\replicas\\3\\p2\\story\\p2w10-3.txt"
+  },
+  {
+    "ordinal": 4,
+    "blind_id": "EDA4523D6963",
+    "start_char": 4846,
+    "end_char": 5981,
+    "character_count": 1135,
+    "text_path": "cases\\CO-04\\replicas\\2\\p2\\story\\p2w10-2.txt"
+  },
+  {
+    "ordinal": 5,
+    "blind_id": "275ABA177218",
+    "start_char": 5986,
+    "end_char": 7814,
+    "character_count": 1828,
+    "text_path": "cases\\CO-04\\replicas\\1\\p2\\story\\p2w10-1.txt"
+  },
+  {
+    "ordinal": 6,
+    "blind_id": "5BC94FF5BA96",
+    "start_char": 7819,
+    "end_char": 9827,
+    "character_count": 2008,
+    "text_path": "cases\\CO-05\\replicas\\3\\p2\\story\\p2w10-3.txt"
+  },
+  {
+    "ordinal": 7,
+    "blind_id": "2A3AAF1D1A88",
+    "start_char": 9832,
+    "end_char": 11369,
+    "character_count": 1537,
+    "text_path": "cases\\ROMANCE-02\\replicas\\1\\p2\\story\\p2w9-1.txt"
+  },
+  {
+    "ordinal": 8,
+    "blind_id": "CEDC997886C9",
+    "start_char": 11374,
+    "end_char": 12843,
+    "character_count": 1469,
+    "text_path": "cases\\CO-05\\replicas\\2\\p2\\story\\p2w9-2.txt"
+  },
+  {
+    "ordinal": 9,
+    "blind_id": "ECE301B3C289",
+    "start_char": 12848,
+    "end_char": 14475,
+    "character_count": 1627,
+    "text_path": "cases\\NM-03\\replicas\\1\\p2\\story\\p2w10-1.txt"
+  },
+  {
+    "ordinal": 10,
+    "blind_id": "A0E28877E7AF",
+    "start_char": 14480,
+    "end_char": 15802,
+    "character_count": 1322,
+    "text_path": "cases\\CO-04\\replicas\\3\\p2\\story\\p2w10-3.txt"
+  },
+  {
+    "ordinal": 11,
+    "blind_id": "6DC591BE4883",
+    "start_char": 15807,
+    "end_char": 17374,
+    "character_count": 1567,
+    "text_path": "cases\\NM-03\\replicas\\3\\p2\\story\\p2w9-3.txt"
+  },
+  {
+    "ordinal": 12,
+    "blind_id": "14FAA56B2170",
+    "start_char": 17379,
+    "end_char": 18707,
+    "character_count": 1328,
+    "text_path": "cases\\CO-05\\replicas\\2\\p2\\story\\p2w10-2.txt"
+  },
+  {
+    "ordinal": 13,
+    "blind_id": "D65CA5FC4C00",
+    "start_char": 18712,
+    "end_char": 19796,
+    "character_count": 1084,
+    "text_path": "cases\\ROMANCE-02\\replicas\\2\\p2\\story\\p2w9-2.txt"
+  },
+  {
+    "ordinal": 14,
+    "blind_id": "72930FC39773",
+    "start_char": 19801,
+    "end_char": 21892,
+    "character_count": 2091,
+    "text_path": "cases\\CO-04\\replicas\\2\\p3\\story\\p3w10-2.txt"
+  },
+  {
+    "ordinal": 15,
+    "blind_id": "3C4F9342CE78",
+    "start_char": 21897,
+    "end_char": 24503,
+    "character_count": 2606,
+    "text_path": "cases\\ROMANCE-02\\replicas\\3\\p2\\story\\p2w10-3.txt"
+  },
+  {
+    "ordinal": 16,
+    "blind_id": "574B6227E9DC",
+    "start_char": 24508,
+    "end_char": 26523,
+    "character_count": 2015,
+    "text_path": "cases\\ROMANCE-02\\replicas\\3\\p2\\story\\p2w9-3.txt"
+  },
+  {
+    "ordinal": 17,
+    "blind_id": "8D291D2B0D23",
+    "start_char": 26528,
+    "end_char": 28328,
+    "character_count": 1800,
+    "text_path": "cases\\ROMANCE-02\\replicas\\2\\p2\\story\\p2w10-2.txt"
+  },
+  {
+    "ordinal": 18,
+    "blind_id": "BF2B7B12F1BC",
+    "start_char": 28333,
+    "end_char": 29575,
+    "character_count": 1242,
+    "text_path": "cases\\NM-03\\replicas\\2\\p2\\story\\p2w10-2.txt"
+  },
+  {
+    "ordinal": 19,
+    "blind_id": "7E3D2E541875",
+    "start_char": 29580,
+    "end_char": 30782,
+    "character_count": 1202,
+    "text_path": "cases\\CO-04\\replicas\\3\\p2\\story\\p2w9-3.txt"
+  },
+  {
+    "ordinal": 20,
+    "blind_id": "FD642E415286",
+    "start_char": 30787,
+    "end_char": 32681,
+    "character_count": 1894,
+    "text_path": "cases\\CO-05\\replicas\\3\\p2\\story\\p2w9-3.txt"
+  },
+  {
+    "ordinal": 21,
+    "blind_id": "85E7AEE8B958",
+    "start_char": 32686,
+    "end_char": 34508,
+    "character_count": 1822,
+    "text_path": "cases\\ROMANCE-02\\replicas\\1\\p2\\story\\p2w10-1.txt"
+  },
+  {
+    "ordinal": 22,
+    "blind_id": "F5A99A120060",
+    "start_char": 34513,
+    "end_char": 36282,
+    "character_count": 1769,
+    "text_path": "cases\\CO-04\\replicas\\2\\p2\\story\\p2w9-2.txt"
+  },
+  {
+    "ordinal": 23,
+    "blind_id": "B6B6160D87D8",
+    "start_char": 36287,
+    "end_char": 38142,
+    "character_count": 1855,
+    "text_path": "cases\\CO-05\\replicas\\1\\p2\\story\\p2w10-1.txt"
+  },
+  {
+    "ordinal": 24,
+    "blind_id": "A22D78403F6B",
+    "start_char": 38147,
+    "end_char": 39624,
+    "character_count": 1477,
+    "text_path": "cases\\CO-04\\replicas\\2\\p3\\story\\p3w9-2.txt"
+  },
+  {
+    "ordinal": 25,
+    "blind_id": "265DF4FAB35D",
+    "start_char": 39629,
+    "end_char": 41327,
+    "character_count": 1698,
+    "text_path": "cases\\NM-03\\replicas\\1\\p2\\story\\p2w9-1.txt"
+  },
+  {
+    "ordinal": 26,
+    "blind_id": "05402E0E7C1A",
+    "start_char": 41332,
+    "end_char": 42690,
+    "character_count": 1358,
+    "text_path": "cases\\NM-03\\replicas\\2\\p2\\story\\p2w9-2.txt"
+  }
+]

@@ -1,0 +1,169 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "通过夏知与韩川在厨房的短暂共处，展现两人之间因未回消息产生的微妙距离，让夏知在无法直接询问的情况下，通过观察和有限互动，重新评估韩川的态度，并做出一个体现她自尊与试探的微小行动。",
+  "location": "合租屋厨房",
+  "time": "傍晚，晚饭准备时间",
+  "scene_state": {
+    "last_completed_action": "韩川把手机扣在桌上，转身去洗菜，水已经烧开。",
+    "present_characters": [
+      "夏知",
+      "韩川"
+    ],
+    "visible_facts": [
+      "韩川的手机屏幕朝下扣在桌上，之前曾亮起并显示夏知的未读消息",
+      "灶台上的锅正冒着蒸汽，水已经沸腾",
+      "桌上摆着两只碗和未收拾的砧板",
+      "韩川正在水槽边洗菜，背对夏知"
+    ],
+    "available_objects": [
+      "韩川的手机",
+      "两只碗",
+      "砧板",
+      "洗好的菜",
+      "沸腾的锅",
+      "筷子",
+      "调味料"
+    ],
+    "unresolved_problem": "夏知不确定韩川是故意不看消息，还是没注意到，她无法直接询问，但需要决定是否继续留在这个略显尴尬的空间里。",
+    "already_existing_constraints": [
+      "夏知不能偷看韩川的手机",
+      "夏知不能直接质问韩川为何没回消息",
+      "两人是合租室友，需要维持表面的平和"
+    ]
+  },
+  "characters": [
+    {
+      "name": "夏知",
+      "goal": "在不暴露自己在意未回消息的前提下，试探韩川的态度，并决定自己接下来该如何自处。",
+      "known": [
+        "自己昨晚给韩川发了消息，但至今未收到回复",
+        "韩川刚才看到了手机亮起，却选择扣下手机去洗菜",
+        "厨房里只有两只碗，韩川可能原本只打算做自己的饭"
+      ],
+      "unknown": [
+        "韩川是否已经阅读了消息内容",
+        "韩川扣下手机的真实原因（是回避、没在意还是其他）",
+        "韩川是否愿意和她一起吃饭"
+      ],
+      "mistaken_beliefs": [
+        "韩川扣下手机的动作可能表示他不想搭理自己"
+      ],
+      "constraints": [
+        "不能偷看手机",
+        "不能直接问‘你为什么不回我消息’",
+        "不能表现出过度在意"
+      ],
+      "observed_evidence": [
+        "韩川的手机屏幕亮起，显示自己的消息预览，然后韩川把手机扣在桌上",
+        "韩川转身洗菜，动作自然，没有回头看她",
+        "桌上只有两只碗，没有多余的餐具"
+      ],
+      "current_interpretation": "韩川可能看到了消息但故意忽略，或者觉得做饭比回消息更优先，总之他此刻并没有把注意力放在自己身上。",
+      "how_interpretation_drives_action": "夏知决定不主动提起消息，而是通过帮忙准备晚餐来维持正常室友互动，同时观察韩川的反应，如果对方持续冷淡，她就找借口离开。"
+    },
+    {
+      "name": "韩川",
+      "goal": "平静地准备晚饭，避免因手机消息引发不必要的对话，维持合租生活的轻松氛围。",
+      "known": [
+        "夏知昨晚发了消息，自己还没来得及回复",
+        "夏知此刻就在厨房里",
+        "水开了，需要赶紧下面条"
+      ],
+      "unknown": [
+        "夏知是否注意到他扣手机的动作",
+        "夏知此刻的真实情绪",
+        "夏知是否会主动提起消息的事"
+      ],
+      "mistaken_beliefs": [
+        "只要自己不提起，未回消息这件事就可以暂时搁置"
+      ],
+      "constraints": [
+        "不能当着夏知的面查看或回复消息，以免显得刻意",
+        "不能解释为什么没回消息，因为还没想好措辞",
+        "不能赶夏知走"
+      ],
+      "observed_evidence": [
+        "夏知站在厨房门口，似乎刚进来",
+        "夏知的目光曾扫过他的手机"
+      ],
+      "current_interpretation": "夏知可能已经看到手机亮了，她也许在等一个解释，但自己还没准备好，不如先用做饭转移注意力。",
+      "how_interpretation_drives_action": "韩川继续埋头洗菜，假装专注于手头的事，如果夏知主动帮忙，他就顺其自然接受，但避免主动开启话题。"
+    }
+  ],
+  "concrete_problem": "夏知需要决定：是默默帮忙然后一起吃饭，还是找借口离开厨房，以回避可能因未回消息而产生的尴尬对峙。",
+  "pressure": "水已经烧开，做饭的流程不能等，但两人之间的沉默正在放大未回消息带来的紧张感。",
+  "turning_point": "夏知伸手去拿第三只碗，这个动作打破了韩川预设的‘只做自己饭’的局面，迫使韩川必须回应她的加入。",
+  "end_condition": "韩川接过夏知递来的碗，往锅里多下了一把面，虽然没有言语解释，但用行动默许了她的参与。",
+  "forbidden": [
+    "夏知偷看韩川的手机",
+    "夏知直接质问韩川为何不回消息",
+    "韩川主动解释未回消息的原因",
+    "两人直接讨论消息内容",
+    "任何外部巧合介入（如他人突然出现、手机意外响起等）",
+    "未回消息的真相在本场景中被揭示",
+    "韩川在本场景中回复消息",
+    "夏知情绪失控或表现出明显的委屈"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "韩川把手机扣在桌上后，转身去洗菜，没有看夏知一眼。",
+      "character_interpretation": "夏知认为韩川在回避与自己的交流，可能不想被打扰。",
+      "character_next_action": "夏知没有离开，而是走到碗柜前，拿出第三只碗，放在韩川原本摆好的两只碗旁边。",
+      "rejected_alternative": "夏知本可以转身离开厨房，但她选择留下，因为离开会显得自己心虚或生气。",
+      "immediate_consequence": "韩川听到拿碗的声响，回头看了一眼，然后默默从洗好的菜里多抓了一把，准备两人份。",
+      "counterfactual_without_action": "如果夏知直接离开，韩川会继续做自己的饭，两人将错失一次缓和关系的机会，未回消息的结会留到下次更尴尬的场合。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "桌上只有两只碗，暗示韩川只打算做自己的饭；夏知站在厨房门口，处于观望状态。",
+        "after": "桌上多了一只碗，韩川开始准备两人份的食材；夏知从旁观者变成了晚餐的参与者。"
+      },
+      "cost_or_commitment": "夏知放弃了直接离开的轻松选项，主动将自己置于可能被拒绝的境地；她必须承担如果韩川不接受第三只碗的尴尬。",
+      "next_constraint": "韩川接受了第三只碗，意味着两人必须一起吃饭，夏知不能中途离开，否则会显得更刻意。",
+      "reader_must_infer": "韩川回头看的瞬间，他已经明白了夏知想留下的意图，并且没有拒绝。",
+      "narrator_must_not_state": [
+        "夏知内心的忐忑程度",
+        "韩川是否真的看到了消息内容"
+      ]
+    }
+  ],
+  "tempo_guardrails": {
+    "entry_pressure": "水已经沸腾，韩川扣下手机去洗菜，夏知站在厨房门口，进退两难。",
+    "dominant_pressure": {
+      "kind": "social_friction",
+      "description": "未回消息造成的微妙尴尬主导了互动，两人都在避免成为第一个提起的人，这种社交摩擦比做饭的物理紧迫感更影响行为。"
+    },
+    "allowed_viewpoint_misread": "夏知可能把韩川专注于洗菜理解为冷漠，而实际上韩川只是在拖延。",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "韩川未回消息的真正原因",
+      "韩川对夏知的真实感觉"
+    ],
+    "stop_state": {
+      "type": "social_commitment",
+      "visible_fact": "韩川接过夏知递来的第三只碗，往锅里多下了一把面。",
+      "what_is_now_different": "两人从各自行动变成了共享晚餐的默契，未回消息的问题被暂时搁置，但形成了一种必须共同度过晚饭时间的约定。",
+      "must_not_append": "不得解释韩川为什么改变主意接受夏知留下。"
+    },
+    "final_line_must_include": ""
+  },
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  }
+}

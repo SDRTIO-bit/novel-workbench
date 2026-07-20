@@ -1,0 +1,184 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "路远在不直接冲突的情况下，利用现场物件让错拿水壶的男生主动归还水壶，且不让周围同学察觉异常。",
+  "location": "学校操场，靠近篮球场边缘的长椅区",
+  "time": "上午第三节课后，体育课自由活动时间",
+  "scene_state": {
+    "last_completed_action": "路远发现自己的蓝色运动水壶被一个不认识的男生拿起来喝了一口，男生正拿着水壶走向篮球场。",
+    "present_characters": [
+      "路远",
+      "错拿水壶的男生（暂名：张昊）",
+      "周围自由活动的同学（背景）"
+    ],
+    "visible_facts": [
+      "路远的水壶是蓝色运动款，瓶身有轻微划痕",
+      "张昊手里拿着同款蓝色水壶，已喝过一口",
+      "张昊的背包放在篮球场边的长椅上，拉链半开",
+      "路远手边有一卷体育课用的白色医用胶带"
+    ],
+    "available_objects": [
+      "路远的蓝色运动水壶（目前在张昊手中）",
+      "张昊的背包（长椅上）",
+      "体育课用的白色医用胶带（路远手边）",
+      "操场上的粉笔（可能用于划线）",
+      "路远的校服外套"
+    ],
+    "unresolved_problem": "水壶被张昊错拿并饮用，路远必须在不引起冲突和注意的情况下让水壶回到自己手中。",
+    "already_existing_constraints": [
+      "路远不能跑过去直接抢夺或大声呼喊",
+      "不能引起其他同学围观或询问",
+      "路远性格内向，不擅长主动社交"
+    ]
+  },
+  "characters": [
+    {
+      "name": "路远",
+      "goal": "让张昊发现水壶拿错并主动归还，自己保持低调。",
+      "known": [
+        "自己的水壶特征：蓝色，瓶身底部有一小块掉漆",
+        "张昊不是同班同学，之前没说过话",
+        "体育老师要求自由活动时保持安静"
+      ],
+      "unknown": [
+        "张昊是否注意到了水壶的细节差异",
+        "张昊的性格和反应"
+      ],
+      "mistaken_beliefs": [
+        "张昊可能只是口渴，并非故意拿错"
+      ],
+      "constraints": [
+        "不能直接冲突",
+        "不能大声喊叫",
+        "必须在短时间内解决，以免水壶被带远"
+      ],
+      "observed_evidence": [
+        "张昊手中的水壶与自己的同款，但瓶身没有掉漆痕迹",
+        "张昊的背包拉链上挂着一个蓝色钥匙扣，样式与水壶颜色呼应",
+        "长椅上散落着几支粉笔"
+      ],
+      "current_interpretation": "张昊可能也有一个相似的水壶，误以为长椅上的水壶是自己的。",
+      "how_interpretation_drives_action": "路远决定利用自己手边的白色医用胶带，在张昊的背包上做一个不显眼但能引起注意的标记，让张昊返回时产生疑惑，从而检查水壶。"
+    },
+    {
+      "name": "张昊",
+      "goal": "打完篮球前补充水分，然后去球场集合。",
+      "known": [
+        "自己有一个蓝色运动水壶",
+        "篮球场边有一排长椅，大家常放东西"
+      ],
+      "unknown": [
+        "自己拿错了水壶",
+        "水壶真正的主人就在附近"
+      ],
+      "mistaken_beliefs": [
+        "长椅上的蓝色水壶就是自己的"
+      ],
+      "constraints": [
+        "急着去球场，不会仔细检查水壶",
+        "如果发现拿错，可能会觉得尴尬"
+      ],
+      "observed_evidence": [
+        "长椅上有一个蓝色水壶，外观与自己的相似"
+      ],
+      "current_interpretation": "这个水壶就是自己的，因为位置和外观都对。",
+      "how_interpretation_drives_action": "拿起水壶喝了一口，然后拿着水壶走向篮球场。"
+    }
+  ],
+  "concrete_problem": "路远如何在不靠近、不喊叫的情况下，让张昊发现水壶拿错并主动归还？",
+  "pressure": "张昊正走向篮球场，一旦进入球场，水壶可能被随意放置，取回难度增加；同时路远必须在自由活动结束前解决。",
+  "turning_point": "路远将白色医用胶带悄悄贴在张昊背包的显眼位置，张昊返回长椅放水壶时发现胶带，进而检查背包和水壶，意识到拿错。",
+  "end_condition": "张昊主动将水壶放回长椅原处，路远在远处确认水壶归位。",
+  "forbidden": [
+    "路远直接跑过去抢回水壶",
+    "路远在操场上大声喊叫",
+    "其他同学介入帮忙",
+    "老师出面解决",
+    "路远使用手机等电子设备",
+    "张昊当场生气或冲突",
+    "路远事后向张昊解释（保留给后续）"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "张昊将水壶夹在腋下，边走边用另一只手翻看手机，背包仍留在长椅上。",
+      "character_interpretation": "路远判断张昊很可能会在进入球场前把水壶放回背包或长椅，但若无人提醒，他不会发现拿错。",
+      "character_next_action": "路远拿起手边的白色医用胶带，快速撕下一小段，走到张昊的背包旁，将胶带贴在背包正面显眼处，然后若无其事地走开。",
+      "rejected_alternative": "路远本可以趁张昊不注意，直接上前交换水壶，但那样可能被其他同学看到或引起张昊警觉。",
+      "immediate_consequence": "背包上多了一块白色胶带，与深色背包形成对比，成为视觉焦点。",
+      "counterfactual_without_action": "如果路远不行动，张昊会带着水壶进入篮球场，水壶可能被放在场边或与其他水壶混淆，路远更难取回。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "张昊的背包无标记，水壶被带离长椅区域。",
+        "after": "张昊的背包上出现白色胶带标记，水壶仍在张昊手中但尚未远离。"
+      },
+      "cost_or_commitment": "路远使用了胶带，并承担了短暂靠近背包的风险。",
+      "next_constraint": "张昊返回长椅时一定会注意到胶带，并产生疑问。",
+      "reader_must_infer": "路远为什么选择贴胶带而不是其他方式？",
+      "narrator_must_not_state": [
+        "路远内心的紧张程度",
+        "胶带的具体粘贴手法"
+      ]
+    },
+    {
+      "id": "CT02",
+      "kind": "constraint_to_choice",
+      "visible_trigger": "张昊走到篮球场边，准备放下水壶时，余光扫到长椅上自己的背包上多了一块白色胶带。",
+      "character_interpretation": "张昊觉得奇怪，以为是谁恶作剧或自己不小心沾上的，于是走回长椅查看。",
+      "character_next_action": "张昊放下水壶在长椅上，先检查背包胶带，然后下意识拿起水壶准备放回包里时，注意到水壶底部没有自己熟悉的划痕。",
+      "rejected_alternative": "张昊本可以忽略胶带，直接去打球，但胶带位置显眼，让他感到不自在。",
+      "immediate_consequence": "张昊发现水壶不是自己的，环顾四周，将水壶放回长椅原处，并寻找自己的水壶。",
+      "counterfactual_without_action": "如果张昊忽略胶带，他会带着路远的水壶进入球场，路远将失去取回机会。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "水壶在张昊手中，背包有胶带标记。",
+        "after": "水壶被放回长椅，张昊在寻找自己的水壶。"
+      },
+      "cost_or_commitment": "张昊暂时中断了自己的计划，并暴露了自己拿错水壶的事实。",
+      "next_constraint": "路远的水壶回到长椅，但张昊自己的水壶下落不明（可能也在附近）。",
+      "reader_must_infer": "张昊是否意识到胶带是有人故意贴的？",
+      "narrator_must_not_state": [
+        "张昊的内心活动",
+        "张昊是否尴尬"
+      ]
+    }
+  ],
+  "tempo_guardrails": {
+    "entry_pressure": "张昊拿着水壶已走出十米，路远必须立即行动。",
+    "dominant_pressure": {
+      "kind": "resource_constraint",
+      "description": "时间紧迫，张昊即将进入篮球场，水壶可能被转移；但真正限制路远的是他不能直接冲突的社交约束。"
+    },
+    "allowed_viewpoint_misread": "旁观者可能以为路远只是好心帮同学整理背包。",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "路远是否认识张昊",
+      "张昊自己的水壶到底在哪里"
+    ],
+    "stop_state": {
+      "type": "physical_change",
+      "visible_fact": "蓝色水壶被放回长椅原处，张昊转身在附近寻找。",
+      "what_is_now_different": "水壶位置从张昊手中变回长椅上，路远可以安全取回。",
+      "must_not_append": "不得描写路远取回水壶的过程"
+    },
+    "final_line_must_include": "水壶安静地立在长椅边缘，像从未离开过。"
+  },
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  }
+}

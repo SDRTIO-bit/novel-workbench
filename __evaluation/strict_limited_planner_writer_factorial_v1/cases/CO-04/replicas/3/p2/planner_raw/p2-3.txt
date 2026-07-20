@@ -1,0 +1,162 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "路远在体育课自由活动时，用现场物件间接让错拿他水壶的陌生男生发现错误，使水壶回到他自己身边，全程不能跑、不能喊。",
+  "location": "学校操场，篮球场边缘与自由活动区域交界处",
+  "time": "下午第一节体育课，自由活动时间，阳光充足",
+  "scene_state": {
+    "last_completed_action": "路远看到自己的蓝色运动水壶被一个不认识的男生拿起来喝了一口，男生正往篮球场方向走，手里还拿着水壶。",
+    "present_characters": [
+      "路远",
+      "陌生男生",
+      "体育老师（远处巡视）",
+      "其他自由活动的同学"
+    ],
+    "visible_facts": [
+      "路远的蓝色运动水壶在陌生男生手中",
+      "陌生男生刚喝过水，正走向篮球场",
+      "路远站在离男生约十米处，周围有同学在玩耍",
+      "操场上散落着体育器材：跳绳、羽毛球拍、一个瘪了的篮球"
+    ],
+    "available_objects": [
+      "路远自己的书包（放在操场边）",
+      "跳绳（附近同学刚用完）",
+      "羽毛球拍和羽毛球",
+      "瘪了的篮球",
+      "路远口袋里的纸巾",
+      "地上的一支粉笔（从体育老师那里滚落）"
+    ],
+    "unresolved_problem": "路远需要在不跑动、不喊叫的情况下，让陌生男生意识到水壶拿错了并归还。",
+    "already_existing_constraints": [
+      "路远不能跑过去直接要回水壶（性格内向，且怕引起冲突）",
+      "路远不能在操场上大声喊叫（体育课纪律，且怕丢脸）",
+      "陌生男生正走向篮球场，可能很快融入人群，水壶更难找回"
+    ]
+  },
+  "characters": [
+    {
+      "name": "路远",
+      "goal": "让陌生男生发现水壶拿错并放回原处，自己保持低调。",
+      "known": [
+        "自己的蓝色水壶被拿错",
+        "陌生男生外貌特征：穿红色球衣、背号7",
+        "附近可用的物件：粉笔、跳绳、羽毛球拍"
+      ],
+      "unknown": [
+        "陌生男生的名字和班级",
+        "陌生男生是否故意拿错",
+        "水壶被喝过后是否还能要回来"
+      ],
+      "mistaken_beliefs": [
+        "如果直接上前索要，对方可能会生气或嘲笑自己",
+        "用物件提醒可能不够明显，对方可能忽略"
+      ],
+      "constraints": [
+        "不能跑动（体育老师可能认为他在追逐打闹）",
+        "不能喊叫（喉咙不适，且不想引起全班注意）",
+        "必须快速行动，否则男生会走远"
+      ],
+      "observed_evidence": [
+        "陌生男生喝完后拧紧盖子，水壶外观与自己的一模一样",
+        "陌生男生走路时低头看手机，没有注意到水壶标签",
+        "地上有一支粉笔，距离自己两米"
+      ],
+      "current_interpretation": "陌生男生并非故意，只是没注意水壶不是他的；粉笔可以在地上画个箭头指向水壶位置，或者写下‘蓝色水壶’等字眼，但可能太慢。",
+      "how_interpretation_drives_action": "路远决定用粉笔在陌生男生必经之路的地上快速画一个水壶形状和箭头，指向自己脚边的书包（书包旁有相同的备用杯套），以此引起对方注意。"
+    },
+    {
+      "name": "陌生男生",
+      "goal": "去篮球场打球，可能口渴时随手拿了水壶。",
+      "known": [
+        "自己口渴，水壶是蓝色的",
+        "篮球场在操场另一端"
+      ],
+      "unknown": [
+        "水壶的真正主人是路远",
+        "路远正在想办法提醒他"
+      ],
+      "mistaken_beliefs": [
+        "这个蓝色水壶就是自己的（可能他也有一个相似的）"
+      ],
+      "constraints": [
+        "注意力在手机上，走路不看路",
+        "可能赶时间打球"
+      ],
+      "observed_evidence": [],
+      "current_interpretation": "无（尚未意识到问题）",
+      "how_interpretation_drives_action": "继续走向篮球场，没有查看水壶细节。"
+    }
+  ],
+  "concrete_problem": "路远如何在陌生男生走远前，用现场物件（如粉笔、跳绳）制造一个视觉提示，让男生主动检查水壶并发现错误？",
+  "pressure": "陌生男生正走向篮球场，时间紧迫；路远若行动太慢或太隐蔽，男生就会融入人群，水壶可能丢失。",
+  "turning_point": "路远捡起粉笔，在男生前方三米处的地上快速画出一个蓝色水壶的简笔画，并在旁边写了一个‘？’，然后退开。男生踩到图案前停下，低头看画，再看向自己手中的水壶，表情疑惑。",
+  "end_condition": "陌生男生看到地上的画后，检查水壶，发现标签上的名字不是自己的，转身寻找失主，路远举手示意，男生将水壶放在路远脚边并点头离开。",
+  "forbidden": [
+    "路远不能跑动或喊叫",
+    "不能出现其他同学直接帮忙传话",
+    "不能使用手机或电子设备",
+    "男生不能一开始就意识到错误（必须由路远的行动触发）",
+    "不能燃烧后续章节燃料：路远与陌生男生的后续交集、水壶标签上的秘密"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "路远看到地上有一支粉笔，距离自己两米，且陌生男生低头看手机，前方地面空旷。",
+      "character_interpretation": "路远认为如果在地上画一个与水壶相关的图案，男生低头时可能会看到，从而检查手中的水壶。",
+      "character_next_action": "路远快速走过去捡起粉笔，在陌生男生必经路径上画了一个蓝色水壶的轮廓，并在旁边写了一个问号。",
+      "rejected_alternative": "路远曾考虑用跳绳甩过去轻碰男生，但觉得太有攻击性，可能引发冲突。",
+      "immediate_consequence": "陌生男生走到图案前时，余光瞥见地面异常，停下脚步，低头看画，然后疑惑地看向手中的水壶。",
+      "counterfactual_without_action": "如果路远不行动，陌生男生会径直走进篮球场，将水壶放在场边，路远再想找回就需要进入篮球场询问，可能引发更多注意。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "陌生男生毫无察觉地走向篮球场，水壶即将离开路远的控制范围。",
+        "after": "陌生男生停下脚步，开始对比手中水壶和地面图案，产生怀疑。"
+      },
+      "cost_or_commitment": "路远暴露了自己是图案绘制者，如果男生不理解，可能会尴尬；同时路远放弃了直接索要的机会，选择了间接方式。",
+      "next_constraint": "男生停下后，路远必须等待男生自己发现，不能上前催促，否则可能前功尽弃。",
+      "reader_must_infer": "路远为什么选择画水壶而不是直接写字？因为他担心男生不看字，而图案更直观，且能快速完成。",
+      "narrator_must_not_state": [
+        "路远此刻的紧张程度",
+        "粉笔是体育老师故意留下的"
+      ]
+    }
+  ],
+  "tempo_guardrails": {
+    "entry_pressure": "陌生男生拿着水壶走向篮球场，离路远已有十米，且未注意到任何异常。",
+    "dominant_pressure": {
+      "kind": "social_friction",
+      "description": "时间紧迫，但路远的主要障碍是社交恐惧和不敢直接对峙，只能通过间接方式沟通。"
+    },
+    "allowed_viewpoint_misread": "路远可能误以为男生看到图案后仍会无视，从而准备放弃。",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "水壶标签上除了名字是否还有其他信息",
+      "陌生男生是否真的有一个一模一样的蓝色水壶"
+    ],
+    "stop_state": {
+      "type": "physical_change",
+      "visible_fact": "陌生男生将水壶放在路远脚边的地上，然后转身走向篮球场。",
+      "what_is_now_different": "水壶从陌生男生手中转移到了路远身边，物理位置恢复正确。",
+      "must_not_append": "不得描写路远和陌生男生有任何后续对话或眼神交流，水壶归还即结束。"
+    },
+    "final_line_must_include": "水壶回到了正确的位置。"
+  },
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  }
+}

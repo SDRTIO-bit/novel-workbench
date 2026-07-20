@@ -1,0 +1,270 @@
+{
+  "planner_contract_version": 3,
+  "scene_goal": "向暖在快递架上发现一个写着自己名字但地址不对的包裹，她必须在不能拆包、不能拿错的前提下，用现场物件标记并通知真正的收件人，最终在包裹归属出现新事实时结束。",
+  "location": "小区快递架",
+  "time": "傍晚",
+  "scene_state": {
+    "last_completed_action": "向暖在快递架上看到一个写有'向暖'的包裹，但收件地址不是自己的楼栋。",
+    "present_characters": ["向暖"],
+    "visible_facts": [
+      "快递架上有多个未取件包裹",
+      "其中一个包裹上写着'向暖'",
+      "收件地址不是向暖的楼栋",
+      "快递架旁有物业贴的取件通知模板和笔"
+    ],
+    "available_objects": [
+      "写有'向暖'的包裹",
+      "其他未取件包裹",
+      "快递架",
+      "物业取件通知模板",
+      "笔"
+    ],
+    "unresolved_problem": "包裹写着向暖的名字，但地址不对，她不能拆开验证，也不能拿错回家，需要确认真正收件人。",
+    "already_existing_constraints": [
+      "不能拆包裹",
+      "不能拿错包裹回家",
+      "必须在现场解决"
+    ]
+  },
+  "characters": [
+    {
+      "name": "向暖",
+      "goal": "在不违规的情况下，找到包裹的真正收件人并通知对方",
+      "known": [
+        "包裹上写着'向暖'",
+        "收件地址不是自己的楼栋",
+        "小区可能有同名的人"
+      ],
+      "unknown": [
+        "真正收件人的具体身份和楼栋",
+        "包裹内容是什么",
+        "为什么地址会写错"
+      ],
+      "mistaken_beliefs": [
+        "可能只是简单的地址笔误"
+      ],
+      "constraints": [
+        "不能拆包裹",
+        "不能拿错东西回家",
+        "必须使用现场物件标记或通知"
+      ],
+      "observed_evidence": [
+        "包裹上收件地址是其他楼栋",
+        "物业取件通知模板和笔在快递架旁"
+      ],
+      "current_interpretation": "快递员可能贴错了地址，需要通知物业或真正的收件人。",
+      "how_interpretation_drives_action": "她决定用物业的模板和笔写一张通知，贴在快递架上，指向这个包裹。"
+    }
+  ],
+  "concrete_problem": "如何在不拆包裹、不拿错的前提下，用现场物件标记这个包裹并通知真正的收件人？",
+  "pressure": "包裹可能被其他人误取，或者真正的收件人正在等待，但向暖不能直接联系对方。",
+  "turning_point": "向暖在写通知时，发现包裹侧面有一行被划掉的原地址，隐约可见是自己的楼栋号，她意识到可能是自己的包裹被误投后重新贴了错误地址。",
+  "end_condition": "向暖决定根据模糊的原始地址线索，将包裹带到物业处核实，而不是直接带回家。",
+  "forbidden": [
+    "拆开包裹",
+    "将包裹直接带回家",
+    "使用手机联系他人（除非物业）",
+    "揭示包裹内容",
+    "揭示真正收件人的完整身份（仅限地址线索）"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "包裹侧面有一行被划掉的原地址，隐约可见是向暖自己的楼栋号。",
+      "character_interpretation": "这个包裹原本可能是寄给她的，但地址被修改过，可能是快递员操作失误。",
+      "character_next_action": "她决定不写通知了，而是把包裹带到物业处，让物业根据系统记录核实。",
+      "rejected_alternative": "她可以继续写通知，但可能造成混淆，因为包裹可能原本就是她的。",
+      "immediate_consequence": "包裹被从快递架取下，转移到物业办公室，等待核实。",
+      "counterfactual_without_action": "如果她不行动，包裹可能被误取或留在架上无人认领。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "包裹在快递架上，归属不明",
+        "after": "包裹在物业处，归属待核实"
+      },
+      "cost_or_commitment": "她放弃了直接标记并离开的简单方案，选择花时间去物业交涉。",
+      "next_constraint": "必须通过物业核实才能取走包裹",
+      "reader_must_infer": "为什么快递员会修改地址？可能是分拣错误或系统问题。",
+      "narrator_must_not_state": [
+        "包裹内到底是什么",
+        "修改地址的人的真实意图"
+      ]
+    }
+  ],
+  "tempo_guardrails": {
+    "entry_pressure": "向暖看到包裹，但地址不对，她必须立即决定如何处理。",
+    "dominant_pressure": {
+      "kind": "information_gap",
+      "description": "缺少确认真正收件人的信息，但时间在流逝，包裹可能被误取。"
+    },
+    "allowed_viewpoint_misread": "向暖可能把划掉的地址误读为完全不同的楼栋，但实际是自己的。",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "包裹的真实内容",
+      "修改地址的具体原因"
+    ],
+    "stop_state": {
+      "type": "social_commitment",
+      "visible_fact": "向暖将包裹交给物业人员，并说明情况。",
+      "what_is_now_different": "包裹的归属问题从个人判断转移到了官方核实流程。",
+      "must_not_append": "不得描述物业核实的结果或向暖最终是否拿到包裹。"
+    },
+    "final_line_must_include": ""
+  },
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true,
+    "pov_character_is_fixed": true,
+    "narration_permissions_are_separated": true,
+    "other_minds_are_backstage_only": true,
+    "no_viewpoint_switch": true,
+    "scene_capacity_is_honest": true,
+    "meaningful_beats_are_non_micro": true,
+    "target_length_has_real_fuel": true,
+    "interaction_changes_state": true,
+    "dialogue_does_not_repeat_shared_information": true,
+    "stop_state_is_not_early": true
+  },
+  "pov_contract": {
+    "pov_character": "向暖",
+    "narration_mode": "third_person_limited",
+    "directly_narratable": [
+      "向暖的感官所见：快递架、包裹、地址标签、划掉的笔迹",
+      "向暖的内心活动：疑惑、犹豫、决定",
+      "向暖的行动：拿起包裹检查、写通知、去物业"
+    ],
+    "pov_known_facts": [
+      "包裹上写着自己的名字",
+      "收件地址不是自己的楼栋",
+      "物业有取件通知模板和笔"
+    ],
+    "pov_unknown_facts": [
+      "真正收件人的身份",
+      "包裹内容",
+      "地址修改的原因"
+    ],
+    "allowed_viewpoint_misread": "她可能最初认为只是简单的地址笔误，直到看到划掉的原始地址。",
+    "other_minds_backstage_only": [
+      {
+        "character": "物业人员",
+        "hidden_goal_or_motive": "按流程处理问题包裹，不想承担责任",
+        "hidden_or_withheld_fact": "他们可能知道快递员常犯的错误，但不会主动说。",
+        "behavioral_expression": [
+          "会询问向暖的详细信息",
+          "会建议留下包裹等待核实"
+        ],
+        "narrator_must_not_state": [
+          "物业人员对快递员的真实看法",
+          "物业人员是否相信向暖"
+        ]
+      }
+    ],
+    "future_knowledge_forbidden": [
+      "向暖最终是否拿到包裹",
+      "包裹内容是什么"
+    ],
+    "relationship_summary_forbidden": [
+      "向暖与物业人员的信任关系变化"
+    ],
+    "viewpoint_switch_forbidden": true
+  },
+  "scene_capacity": {
+    "target_min_chars": 2000,
+    "scene_mode": "discovery",
+    "core_event": "向暖在快递架上发现同名但地址不对的包裹，通过检查发现划掉的原始地址线索，决定将包裹交物业核实。",
+    "meaningful_beats": [
+      {
+        "id": "B1",
+        "trigger": "向暖看到包裹上的名字和错误地址",
+        "active_character": "向暖",
+        "goal": "确认包裹是否属于自己",
+        "resistance_or_information_gap": "不能拆包，地址不对",
+        "action_or_exchange": "她拿起包裹仔细查看标签，发现侧面有划掉的笔迹",
+        "new_information": "划掉的地址隐约是自己的楼栋号",
+        "immediate_consequence": "她怀疑包裹原本就是寄给自己的",
+        "state_delta": {
+          "before": "包裹归属完全未知",
+          "after": "有线索指向包裹可能属于自己"
+        },
+        "depends_on": ["B0"],
+        "cannot_merge_reason": "需要物理检查包裹才能获得新信息"
+      },
+      {
+        "id": "B2",
+        "trigger": "发现划掉的原始地址",
+        "active_character": "向暖",
+        "goal": "决定如何处理包裹",
+        "resistance_or_information_gap": "无法100%确认，直接拿走可能违规",
+        "action_or_exchange": "她决定不写通知，而是把包裹带到物业办公室",
+        "new_information": "物业人员表示可以暂存并联系快递员核实",
+        "immediate_consequence": "包裹被移交给物业，向暖留下联系方式",
+        "state_delta": {
+          "before": "包裹在向暖手中，归属不确定",
+          "after": "包裹在物业处，进入核实流程"
+        },
+        "depends_on": ["B1"],
+        "cannot_merge_reason": "必须由向暖主动做出选择并行动"
+      }
+    ],
+    "estimated_narrative_capacity_min": 2200,
+    "estimated_narrative_capacity_max": 3200,
+    "capacity_sufficient": true,
+    "capacity_gap_reason": null,
+    "forbidden_padding": [
+      "过多描述快递架外观",
+      "反复确认包裹标签",
+      "向暖在物业处长时间等待"
+    ]
+  },
+  "interaction_plan": {
+    "interaction_required": true,
+    "participants": ["向暖", "物业人员"],
+    "character_positions": [
+      {
+        "character": "向暖",
+        "current_goal": "让物业帮忙核实包裹归属",
+        "opening_assumption": "物业有快递记录，可以查到底单",
+        "hidden_or_withheld_information": "她内心怀疑包裹就是自己的",
+        "cannot_accept": "物业直接让她拿走包裹而不核实",
+        "wants_from_other": "物业提供核实服务或建议"
+      },
+      {
+        "character": "物业人员",
+        "current_goal": "按流程处理，避免责任",
+        "opening_assumption": "可能是快递员贴错单",
+        "hidden_or_withheld_information": "他们经常遇到类似情况，但不会主动透露快递员的习惯",
+        "cannot_accept": "向暖直接拿走包裹",
+        "wants_from_other": "向暖提供准确信息并留下联系方式"
+      }
+    ],
+    "turning_exchanges": [
+      {
+        "id": "E1",
+        "trigger": "向暖将包裹放到物业桌上，说明情况",
+        "initiator": "向暖",
+        "initiator_goal": "让物业相信包裹可能属于自己，需要核实",
+        "speech_act": "询问",
+        "other_response_mode": "物业人员查看包裹，表示需要登记并联系快递员",
+        "new_information": "物业有快递员联系方式，可以查询原始订单",
+        "state_delta": {
+          "before": "包裹归属问题悬而未决",
+          "after": "进入正式核实流程，向暖留下信息"
+        }
+      }
+    ]
+  }
+}

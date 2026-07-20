@@ -1,0 +1,9 @@
+{
+  "experiment": "STRICT_LIMITED_PLANNER_WRITER_FACTORIAL_V1",
+  "status": "completed",
+  "planner_calls": 24,
+  "writer_calls": 26,
+  "writer_drafts_expected": 48,
+  "final_texts": 26,
+  "wall_seconds": 2548.5
+}

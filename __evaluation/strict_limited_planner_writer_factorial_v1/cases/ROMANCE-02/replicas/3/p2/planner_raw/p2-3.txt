@@ -1,0 +1,150 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "通过夏知在厨房中的观察与选择，展现韩川对消息已读但未回的事实，让夏知在不能直接质问的约束下做出行动，从而推动两人关系发生微妙变化。",
+  "location": "合租屋厨房",
+  "time": "傍晚，准备晚餐时",
+  "scene_state": {
+    "last_completed_action": "韩川把手机扣在桌上，转身去洗菜",
+    "present_characters": ["夏知", "韩川"],
+    "visible_facts": [
+      "韩川的手机屏幕亮起，显示夏知昨晚发送的未读消息",
+      "韩川看到消息后将手机扣在桌上",
+      "灶台上的水已经烧开",
+      "桌上摆着两只碗"
+    ],
+    "available_objects": ["扣在桌上的手机", "两只碗", "正在烧的水", "洗菜池里的蔬菜", "砧板和刀具"],
+    "unresolved_problem": "韩川是否故意不回消息，以及夏知该如何面对这一情况",
+    "already_existing_constraints": [
+      "夏知不能偷看韩川的手机",
+      "夏知不能直接断言韩川为何没回消息",
+      "两人是合租室友，需维持基本礼貌"
+    ]
+  },
+  "characters": [
+    {
+      "name": "夏知",
+      "goal": "弄清楚韩川对那条消息的态度，同时保护自己的自尊",
+      "known": [
+        "自己昨晚给韩川发了消息",
+        "消息至今显示未读",
+        "韩川刚才把手机扣在桌上"
+      ],
+      "unknown": [
+        "韩川是否真的没有看到消息",
+        "韩川扣手机的真实原因"
+      ],
+      "mistaken_beliefs": [
+        "韩川可能故意忽视她的消息"
+      ],
+      "constraints": [
+        "不能偷看手机",
+        "不能直接质问对方为何没回",
+        "不能表现出过度在意"
+      ],
+      "observed_evidence": [
+        "手机屏幕亮起时显示了自己的未读消息",
+        "韩川看了一眼后把手机扣在桌上",
+        "韩川若无其事地去洗菜"
+      ],
+      "current_interpretation": "韩川看到了消息提醒，但选择不立即查看或回复，可能是在回避",
+      "how_interpretation_drives_action": "她决定用帮忙做饭作为试探，观察韩川的反应，并考虑是否要主动提及消息"
+    },
+    {
+      "name": "韩川",
+      "goal": "准备晚餐，同时处理因消息带来的尴尬",
+      "known": [
+        "夏知昨晚发了消息",
+        "自己尚未回复",
+        "夏知看到了手机屏幕"
+      ],
+      "unknown": [
+        "夏知是否注意到他扣手机的动作",
+        "夏知此刻的真实情绪"
+      ],
+      "mistaken_beliefs": [
+        "扣手机可以暂时避免尴尬"
+      ],
+      "constraints": [
+        "不能主动解释为何没回消息",
+        "不能显得太在意夏知的反应"
+      ],
+      "observed_evidence": [
+        "夏知走进厨房",
+        "夏知的目光扫过扣着的手机"
+      ],
+      "current_interpretation": "夏知可能已经看到了未读消息，但尚未发作",
+      "how_interpretation_drives_action": "他继续洗菜，用行动维持正常氛围，同时留意夏知的举动"
+    }
+  ],
+  "concrete_problem": "夏知在看到韩川扣下显示自己未读消息的手机后，是默默帮忙、找借口离开，还是用其他方式试探韩川的态度？",
+  "pressure": "水已经烧开，晚餐准备需要继续，但两人之间的信息差造成了无声的紧张。",
+  "turning_point": "夏知选择拿起另一只碗开始盛饭，并主动开口问韩川是否需要帮忙切菜，这个行动让韩川不得不做出回应，从而打破了沉默的僵局。",
+  "end_condition": "夏知和韩川开始一起准备晚餐，虽然消息的事情没有被提及，但两人的互动模式发生了改变，夏知不再被动等待。",
+  "forbidden": [
+    "夏知偷看韩川的手机",
+    "夏知直接质问韩川为何没回消息",
+    "韩川主动解释消息原因",
+    "任何外部巧合事件解决冲突"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "韩川把显示夏知未读消息的手机扣在桌上，然后去洗菜",
+      "character_interpretation": "夏知认为韩川故意忽视消息，但又不愿直接冲突，所以用扣手机来逃避",
+      "character_next_action": "夏知没有离开，而是拿起另一只碗开始盛饭，并问韩川是否需要帮忙切菜",
+      "rejected_alternative": "夏知本可以假装没看见，默默离开厨房，但她选择留下并主动介入",
+      "immediate_consequence": "韩川被夏知的主动打破了自己的逃避计划，他不得不回应夏知的帮忙请求，两人开始合作做饭",
+      "counterfactual_without_action": "如果夏知离开，厨房会只剩下韩川一人，消息的尴尬会继续悬置，两人当晚可能回避交流",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "夏知站在厨房门口犹豫，韩川背对着她洗菜，沉默笼罩",
+        "after": "夏知走到桌边拿起碗，韩川转头看她，两人开始对话"
+      },
+      "cost_or_commitment": "夏知放弃了被动等待和自我保护，选择主动面对可能的拒绝",
+      "next_constraint": "两人必须合作完成晚餐，不能再回避对方",
+      "reader_must_infer": "夏知主动帮忙不是因为不介意，而是因为她决定用行动试探韩川的真实态度",
+      "narrator_must_not_state": [
+        "夏知此刻内心的委屈程度",
+        "韩川是否真的故意不回消息"
+      ]
+    }
+  ],
+  "tempo_guardrails": {
+    "entry_pressure": "水已经烧开，韩川在洗菜，夏知走进厨房时正好看到手机屏幕亮起",
+    "dominant_pressure": {
+      "kind": "social_friction",
+      "description": "未读消息造成的尴尬和猜疑让两人之间产生微妙的紧张，任何行动都可能被解读为对消息的回应"
+    },
+    "allowed_viewpoint_misread": "夏知可能把韩川扣手机的动作理解为冷漠或厌恶，而实际上韩川可能只是不知所措",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "韩川未回消息的真正原因"
+    ],
+    "stop_state": {
+      "type": "relationship_shift",
+      "visible_fact": "夏知拿起碗盛饭，韩川把洗好的菜递给她切",
+      "what_is_now_different": "两人从各怀心事的沉默转为合作做事的互动，夏知从被动观察者变为主动参与者",
+      "must_not_append": "不得说明消息问题是否解决，也不得让韩川解释扣手机的原因"
+    },
+    "final_line_must_include": "水还在滚，但厨房里不再只有水声。"
+  },
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  }
+}

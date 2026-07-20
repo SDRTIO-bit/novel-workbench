@@ -1,0 +1,12 @@
+[
+  {
+    "pair_id": "A5304B3FEFBC_W10",
+    "text_x_path": "cases\\CO-04\\replicas\\2\\p3\\story\\p3w10-2.txt",
+    "text_y_path": "cases\\CO-04\\replicas\\2\\p2\\story\\p2w10-2.txt"
+  },
+  {
+    "pair_id": "A5304B3FEFBC_W9",
+    "text_x_path": "cases\\CO-04\\replicas\\2\\p2\\story\\p2w9-2.txt",
+    "text_y_path": "cases\\CO-04\\replicas\\2\\p3\\story\\p3w9-2.txt"
+  }
+]

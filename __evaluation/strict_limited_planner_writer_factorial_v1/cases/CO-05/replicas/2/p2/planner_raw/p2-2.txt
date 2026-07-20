@@ -1,0 +1,178 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "向暖在快递架上发现一个写着自己名字但地址不对的包裹，她必须在不拆包裹、不拿错东西的前提下，用现场物件标记或通知真正的收件人，并在此过程中触发对包裹归属的新认知。",
+  "location": "小区快递架",
+  "time": "傍晚，下班高峰期后",
+  "scene_state": {
+    "last_completed_action": "向暖下班后走到小区快递架，在架子上看到了写有自己名字的包裹。",
+    "present_characters": ["向暖", "路人甲（取快递的邻居）"],
+    "visible_facts": [
+      "快递架上有一个写有‘向暖’的包裹，但地址不是向暖的楼栋。",
+      "架子上还有其他未取件。",
+      "旁边有公共签字笔和便签纸。"
+    ],
+    "available_objects": [
+      "写有‘向暖’但地址不符的包裹",
+      "其他未取快递",
+      "公共签字笔",
+      "便签纸",
+      "快递架格子"
+    ],
+    "unresolved_problem": "这个包裹的真正收件人是谁？如何在不拆包裹、不拿错东西的前提下通知对方？",
+    "already_existing_constraints": [
+      "向暖不能拆包裹验证内容。",
+      "向暖不能把包裹带回家。",
+      "向暖只能使用现场物件。"
+    ]
+  },
+  "characters": [
+    {
+      "name": "向暖",
+      "goal": "找到包裹的真正收件人或安全地标记包裹，避免拿错。",
+      "known": [
+        "自己最近没有网购，也没人通知她有包裹。",
+        "包裹上的地址不是自己的楼栋。",
+        "快递架是公共区域，经常有人拿错快递。"
+      ],
+      "unknown": [
+        "包裹内是什么东西。",
+        "真正收件人是谁、是否也叫向暖或只是写错。",
+        "包裹为何出现在这里。"
+      ],
+      "mistaken_beliefs": [
+        "可能只是快递员贴错了面单。",
+        "也许小区里还有一个叫向暖的人。"
+      ],
+      "constraints": [
+        "不能拆包裹。",
+        "不能把包裹带走。",
+        "必须在现场找到通知方式。"
+      ],
+      "observed_evidence": [
+        "包裹上收件人姓名是‘向暖’，但地址是3栋，自己住在7栋。",
+        "快递架上有便签纸和笔。",
+        "旁边有一个邻居也在取快递，似乎对包裹不感兴趣。"
+      ],
+      "current_interpretation": "这个包裹可能属于另一个叫向暖的人，或者地址写错了，但贸然拿走可能造成误会。",
+      "how_interpretation_drives_action": "她决定用便签纸写一个提示，贴在包裹上，让真正收件人看到后联系自己或快递员。"
+    },
+    {
+      "name": "路人甲",
+      "goal": "取自己的快递，然后离开。",
+      "known": [
+        "自己的快递特征。",
+        "快递架是公共取件点。"
+      ],
+      "unknown": [
+        "这个包裹的真正归属。",
+        "向暖的意图。"
+      ],
+      "mistaken_beliefs": [
+        "这个包裹就是向暖的，她只是在犹豫。"
+      ],
+      "constraints": [
+        "只关心自己的快递，不会主动介入。"
+      ],
+      "observed_evidence": [
+        "向暖拿着一个包裹反复查看，又放下。"
+      ],
+      "current_interpretation": "她可能拿错了或者不想要。",
+      "how_interpretation_drives_action": "路人甲取走自己的快递后离开，没有与向暖交流。"
+    }
+  ],
+  "concrete_problem": "向暖如何在不拆包裹、不带走包裹的情况下，利用现场物件标记这个包裹，以便真正收件人能看到并处理？",
+  "pressure": "快递架是公共区域，包裹可能被其他人误拿或偷走，时间拖得越久风险越大。",
+  "turning_point": "向暖在便签上写下‘此包裹收件人向暖，但地址非本栋，请真正收件人联系快递员或微信xxx’，贴到包裹上后，她注意到包裹侧面有一行小字：‘生日礼物，祝开心’，这让她意识到包裹可能是有人特意放在这里的，而那个‘向暖’可能并不存在。",
+  "end_condition": "向暖将贴好便签的包裹放回原处，并拍下照片，准备发到小区业主群询问。",
+  "forbidden": [
+    "向暖拆开包裹。",
+    "向暖把包裹带回家。",
+    "向暖直接联系快递公司查询寄件人信息（她选择先标记）。",
+    "包裹真正收件人出现并直接与向暖交流。",
+    "揭示包裹的具体内容。"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "快递架上放着一支公共签字笔和一叠便签纸。",
+      "character_interpretation": "她可以用便签纸写一个提示贴在包裹上，这样真正收件人看到后会明白。",
+      "character_next_action": "向暖拿起便签纸和笔，写下一行字：‘此包裹收件人向暖，但地址非本栋，请真正收件人联系快递员或微信xxx’。",
+      "rejected_alternative": "她也可以选择把包裹交给物业，但物业已下班，且她不想让包裹离开自己的视线。",
+      "immediate_consequence": "包裹上多了一张醒目的便签，上面有明确的提示信息。",
+      "counterfactual_without_action": "如果她不标记，包裹可能被其他人当成普通快递误拿，或者一直无人处理。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "包裹上只有快递面单，无任何额外标记。",
+        "after": "包裹上贴有手写便签，提示收件人联系。"
+      },
+      "cost_or_commitment": "向暖暴露了自己的微信号在公共区域，可能收到陌生人的添加请求。",
+      "next_constraint": "她必须留意微信是否有陌生人添加，且不能立即离开现场，需观察是否有人取走包裹。",
+      "reader_must_infer": "向暖写的微信号可能是小号或临时号，她有一定的隐私保护意识。",
+      "narrator_must_not_state": [
+        "向暖的真实微信号是什么。",
+        "她是否真的希望有人联系她。"
+      ]
+    },
+    {
+      "id": "CT02",
+      "kind": "evidence_to_action",
+      "visible_trigger": "包裹侧面有一行小字：‘生日礼物，祝开心’。",
+      "character_interpretation": "这可能是有人故意放在这里的，而那个‘向暖’可能只是一个虚构的收件人，或者是寄件人记错了地址。",
+      "character_next_action": "向暖拿出手机拍下包裹和便签的照片，准备发到小区业主群询问是否有人认识寄件人或知道情况。",
+      "rejected_alternative": "她也可以直接撕掉便签，把包裹放回原处不管，但那样就失去了找到真相的机会。",
+      "immediate_consequence": "包裹的状态被记录下来，信息将在业主群扩散。",
+      "counterfactual_without_action": "如果她不拍照发群，包裹可能会一直留在架子上，直到被清理或误拿，真相无法推进。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "包裹仅有便签提示，无其他记录。",
+        "after": "包裹被拍照，信息即将进入小区公共讨论空间。"
+      },
+      "cost_or_commitment": "向暖将自己的困惑公开化，可能引来不必要的关注或误解。",
+      "next_constraint": "她必须编辑一条合适的消息发到群里，且不能透露过多个人信息。",
+      "reader_must_infer": "向暖对‘生日礼物’这个细节感到一丝不安，可能与自己有关。",
+      "narrator_must_not_state": [
+        "向暖是否在期待这个礼物。",
+        "寄件人的身份。"
+      ]
+    }
+  ],
+  "tempo_guardrails": {
+    "entry_pressure": "向暖站在快递架前，手里拿着那个写着自己名字但地址不对的包裹，犹豫不决。",
+    "dominant_pressure": {
+      "kind": "information_gap",
+      "description": "她不知道包裹的真正归属，也无法立即验证，但包裹暴露在公共区域的风险在增加。"
+    },
+    "allowed_viewpoint_misread": "路人甲可能以为向暖在偷拿别人的快递。",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "包裹内的具体物品。",
+      "寄件人的真实身份。"
+    ],
+    "stop_state": {
+      "type": "information_conflict",
+      "visible_fact": "向暖拍下包裹照片，手机屏幕显示业主群编辑框。",
+      "what_is_now_different": "包裹从单纯的实物问题变成了一个需要社区介入的信息问题，向暖从被动发现转为主动寻求答案。",
+      "must_not_append": "不得写出她是否真的发送了消息。"
+    },
+    "final_line_must_include": "她点开业主群，开始打字。"
+  },
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  }
+}

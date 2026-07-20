@@ -1,0 +1,111 @@
+{
+  "experiment": "STRICT_LIMITED_PLANNER_WRITER_FACTORIAL_V1",
+  "git_commit": "c457c6ba3b0c4e2aceaec31956ab8d866d3b6277",
+  "seed": 202607210,
+  "model_seed": null,
+  "seed_note": "Provider/adapter exposes no model seed (LlmRequest has no seed field; DeepSeek chat/completions documents none). seed=null is recorded for every call; temperature/top_p/max_output_tokens/timeout are held identical across groups; reproducibility is not faked. The SEED constant only drives blind-token generation and call-order shuffling.",
+  "replicas_per_group": 3,
+  "case_ids": [
+    "NM-03",
+    "ROMANCE-02",
+    "CO-04",
+    "CO-05"
+  ],
+  "target_length": 2000,
+  "planner_groups": {
+    "P2": "Planner v2 默认场景规划 (planner_v2)",
+    "P3": "Planner v3 Strict Limited Capacity Planner (planner_v3)"
+  },
+  "writer_groups": {
+    "W9": "Writer v9 Sacrificial Preflight Fusion v9 (xml_story, writer_brief)",
+    "W10": "Writer v10 Sacrificial Preflight Fusion Strict Limited v10 (xml_story, writer_brief_v3)"
+  },
+  "factorial_groups": {
+    "P2W9": "Planner v2 + Writer v9",
+    "P2W10": "Planner v2 + Writer v10",
+    "P3W9": "Planner v3 + Writer v9",
+    "P3W10": "Planner v3 + Writer v10"
+  },
+  "p2_prompt_version_id": "e18941b1-661d-4ff4-bf07-b6ac2f86022c",
+  "p3_prompt_version_id": "3804f847-974f-426a-bf04-9ec1eaff906a",
+  "w9_prompt_version_id": "c63c7152-9aad-4c1b-8248-ba845ac5cc7a",
+  "w10_prompt_version_id": "3ccfde72-a776-48c9-baea-a5496a084aba",
+  "p2_profile_id": "0d223bf8-3fe3-43a0-a7f0-e165d918a1a7",
+  "p3_profile_id": "c6628905-19d0-4d7f-bd00-690379ebbe0f",
+  "w9_profile_id": "2f807d19-f785-4b9b-84af-949be13db358",
+  "w10_profile_id": "cff89fb0-02be-4b96-b47d-9f08513ff769",
+  "frozen_parameters": {
+    "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+    "model_id": "deepseek-v4-pro",
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 6000,
+    "timeout_seconds": 300
+  },
+  "source_databases": [
+    "__evaluation/sacrificial_preflight_fusion_v9_feasibility_v1_NM-03.sqlite3",
+    "__evaluation/sacrificial_preflight_fusion_v9_feasibility_v1_ROMANCE-02.sqlite3",
+    "__evaluation/sacrificial_preflight_fusion_v9_feasibility_v1_CO-04.sqlite3",
+    "__evaluation/sacrificial_preflight_fusion_v9_feasibility_v1_CO-05.sqlite3"
+  ],
+  "execution_model": "scene-level parallelism (4 concurrent scenes); replicas sequential within scene; planners sequential within replica; writers sequential within planner; ALL stages execute live LLM calls",
+  "rules": [
+    "24 Planner calls (P2 × 12 + P3 × 12); 48 Writer calls; 72 total.",
+    "Planner call order randomized per (case_id, replica).",
+    "Writer call order randomized per (case_id, replica, planner_group).",
+    "No Critic/Reviser/Judge. No retry. No filtering. All failures preserved.",
+    "W9 uses writer_brief mode; W10 uses writer_brief_v3 mode.",
+    "xml_story parse failure: error_code recorded; no LLM repair.",
+    "seed=null for every model call; other parameters held identical.",
+    "max_output_tokens=6000 is an experiment-level override for ALL groups."
+  ],
+  "status": "completed",
+  "p2_prompt_identity": {
+    "prompt_version_id": "e18941b1-661d-4ff4-bf07-b6ac2f86022c",
+    "found": true,
+    "version_number": 7,
+    "output_mode": "structured",
+    "output_schema_name": "planner_v2",
+    "system_template_sha256": "5e1a50eac9751dcc28fa84242ba8a1f0b54a78ec15f30c0c1b6f1d0078fd0a33",
+    "user_template_sha256": "119cc39b9d0b61c966b9c2ac0de61a458455c939fed0186067816468d89c5ed7"
+  },
+  "p3_prompt_identity": {
+    "prompt_version_id": "3804f847-974f-426a-bf04-9ec1eaff906a",
+    "found": true,
+    "version_number": 2,
+    "output_mode": "structured",
+    "output_schema_name": "planner_v3",
+    "system_template_sha256": "a83114e7bd3c0a0f6190f2e59ebb01841d38bfd1e7b0ab75322373f02bd39b9c",
+    "user_template_sha256": "119cc39b9d0b61c966b9c2ac0de61a458455c939fed0186067816468d89c5ed7"
+  },
+  "w9_prompt_identity": {
+    "prompt_version_id": "c63c7152-9aad-4c1b-8248-ba845ac5cc7a",
+    "found": true,
+    "version_number": 2,
+    "output_mode": "xml_story",
+    "output_schema_name": null,
+    "system_template_sha256": "70ab3074a388fe688d2d4c0d08990cebe5f1d0df4afd33d1bad15f631e8a273d",
+    "user_template_sha256": "eadf4137a9f95730820a0afae538bc76a3a6a406cf017f358b6255e921ec909b"
+  },
+  "w10_prompt_identity": {
+    "prompt_version_id": "3ccfde72-a776-48c9-baea-a5496a084aba",
+    "found": true,
+    "version_number": 2,
+    "output_mode": "xml_story",
+    "output_schema_name": null,
+    "system_template_sha256": "5b8a615cfdbde1c96d1215645f4eb4afa9298e61d77cc1f31a97e19d321135ac",
+    "user_template_sha256": "eadf4137a9f95730820a0afae538bc76a3a6a406cf017f358b6255e921ec909b"
+  },
+  "post_generation_assertions": {
+    "checks": {
+      "writer_slots": false,
+      "per_case_12": false,
+      "per_case_group_3": false
+    },
+    "all_passed": false,
+    "drafts_total": 26,
+    "queued_texts": 26,
+    "expected_texts": 48
+  },
+  "wall_seconds": 2548.5
+}

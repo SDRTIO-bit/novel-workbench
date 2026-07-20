@@ -1,0 +1,135 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "向暖在小区快递架上发现一个写着自己名字的包裹，但收件地址不是自己的楼栋。她必须在不能拆包裹验证、不能拿错东西回家的前提下，用一个现场物件标记或通知真正的收件人，并在过程中揭露包裹归属的新事实。",
+  "location": "小区快递架",
+  "time": "傍晚，取件高峰期刚过",
+  "scene_state": {
+    "last_completed_action": "向暖下班回到小区，习惯性走向快递架查看自己的包裹",
+    "present_characters": ["向暖"],
+    "visible_facts": [
+      "快递架上堆着十余个未取走的包裹",
+      "其中一个包裹上写着'向暖'，但地址是3栋502，而向暖住在5栋",
+      "包裹不大，约一本书大小，包装严密",
+      "架子上还有快递单、记号笔、便签纸等杂物"
+    ],
+    "available_objects": [
+      "写错地址的包裹",
+      "快递架上的其他包裹",
+      "快递单和记号笔",
+      "便签纸",
+      "向暖的手机"
+    ],
+    "unresolved_problem": "向暖无法确认这个包裹是否属于自己，也不能直接拿走或拆开",
+    "already_existing_constraints": [
+      "不能拆开包裹验证内容物",
+      "不能拿走不属于自己的包裹",
+      "必须尽快决定如何处理，以免真正的收件人错过"
+    ]
+  },
+  "characters": [
+    {
+      "name": "向暖",
+      "goal": "在不违反规则的情况下，确定包裹的正确归属，并确保真正的收件人能拿到它",
+      "known": [
+        "自己的名字是向暖，住在5栋",
+        "快递架上有一个写着自己名字但地址不同的包裹",
+        "不能拆包裹或直接拿走"
+      ],
+      "unknown": [
+        "包裹里是什么",
+        "真正的收件人是谁，是否同名同姓",
+        "为什么地址会写错"
+      ],
+      "mistaken_beliefs": [
+        "可能只是快递员贴错了单子，包裹其实是自己的",
+        "或许小区里没有另一个叫向暖的人"
+      ],
+      "constraints": [
+        "不能拆包裹",
+        "不能拿错东西回家",
+        "必须用现场物件处理",
+        "不能长时间守在快递架旁"
+      ],
+      "observed_evidence": [
+        "包裹上的收件人姓名与自己的名字完全一致",
+        "地址是3栋502，而自己住在5栋",
+        "快递单上的笔迹和打印信息清晰",
+        "架子上有便签纸和记号笔"
+      ],
+      "current_interpretation": "这很可能是一个同名同姓的人的包裹，快递员混淆了楼栋；但如果贸然拿走，可能构成侵占；必须想办法通知真正的收件人。",
+      "how_interpretation_drives_action": "她决定用便签纸写一张提示，贴在包裹上，引导真正的收件人联系自己或注意地址错误，同时拍照留证。"
+    }
+  ],
+  "concrete_problem": "向暖必须在快递架前，用现场的便签纸和记号笔，写下一张既不会泄露隐私、又能让真正收件人注意到地址错误的提示，并决定将提示贴在哪里最有效。",
+  "pressure": "天色渐暗，取件的人越来越少，向暖担心真正的收件人可能明天才会来取，而包裹如果在架子上过夜可能丢失或被人错拿。",
+  "turning_point": "向暖在写便签时，发现包裹侧面有一行极小的铅笔字，写着'转交5栋向暖'——这暗示包裹原本就是寄给自己的，但有人刻意改了收件地址。",
+  "end_condition": "向暖用便签纸覆盖了原快递单上的错误地址，并在旁边写下'原单地址有误，请联系5栋向暖'，然后拍照发给物业，带着包裹离开。",
+  "forbidden": [
+    "拆开包裹验证内容物",
+    "直接拿走包裹而不留任何标记",
+    "使用手机以外的外部工具",
+    "向其他角色求助（本章无其他角色）",
+    "揭示包裹内物品的具体信息"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "包裹侧面有一行极小的铅笔字：'转交5栋向暖'",
+      "character_interpretation": "这个包裹原本就是寄给自己的，但有人故意改成了3栋502的地址，可能是想制造误会或测试自己的反应。",
+      "character_next_action": "向暖决定不直接拿走，而是用便签纸覆盖错误地址，并写下提示，同时拍照作为证据。",
+      "rejected_alternative": "她本可以忽略铅笔字，直接按原计划贴便签通知'3栋向暖'，但那样可能让真正的意图被掩盖。",
+      "immediate_consequence": "包裹上的错误地址被覆盖，新的提示指向向暖自己，她掌握了主动权。",
+      "counterfactual_without_action": "如果她不修改地址，包裹可能被3栋502的人取走，或者被退回，她将永远不知道寄件人的真实意图。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "包裹上的地址是3栋502，向暖不确定归属",
+        "after": "包裹上的地址被覆盖为指向5栋向暖，向暖确认包裹属于自己"
+      },
+      "cost_or_commitment": "她承担了修改快递单可能带来的争议风险，并承诺向物业说明情况。",
+      "next_constraint": "必须向物业报备修改快递单的行为，并提供照片证据",
+      "reader_must_infer": "寄件人是谁？为什么要用这种方式寄包裹？",
+      "narrator_must_not_state": [
+        "铅笔字的确切笔迹特征",
+        "向暖是否立刻猜到了寄件人身份"
+      ]
+    }
+  ],
+  "tempo_guardrails": {
+    "entry_pressure": "向暖站在快递架前，手指停在那个写着自己名字的包裹上，地址却不是自己的楼栋。",
+    "dominant_pressure": {
+      "kind": "information_gap",
+      "description": "向暖无法确认包裹的真正归属，而时间流逝可能让包裹被错拿或丢失，迫使她必须快速做出标记决定。"
+    },
+    "allowed_viewpoint_misread": "向暖可能以为这只是一个单纯的快递员失误，而忽略了铅笔字背后的意图。",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "寄件人的真实身份",
+      "包裹内物品的具体信息"
+    ],
+    "stop_state": {
+      "type": "physical_change",
+      "visible_fact": "包裹上的错误地址被便签纸覆盖，新写上'原单地址有误，请联系5栋向暖'",
+      "what_is_now_different": "包裹的归属从模糊状态变为明确指向向暖，且她留下了公开的标记和证据。",
+      "must_not_append": "不得描写向暖拆开包裹或看到内容物"
+    }
+  },
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  }
+}

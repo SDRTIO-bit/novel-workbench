@@ -1,0 +1,328 @@
+{
+  "planner_contract_version": 3,
+  "scene_goal": "向暖在小区快递架上发现一个写着自己名字但地址不对的包裹，她必须在不能拆包、不能拿错的情况下，用现场物件标记或通知，最终在包裹归属出现新事实时停止。",
+  "location": "小区快递架",
+  "time": "傍晚，下班/放学高峰后",
+  "scene_state": {
+    "last_completed_action": "向暖下班回家，路过快递架时看到自己的名字。",
+    "present_characters": ["向暖"],
+    "visible_facts": [
+      "快递架上有一个写着'向暖'的包裹，但收件地址不是向暖住的楼栋。",
+      "包裹不大，架子上还有其他未取件。",
+      "快递架位于小区入口附近，光线一般。"
+    ],
+    "available_objects": ["向暖的手机", "一支笔（向暖包里）", "便利贴（向暖包里）", "快递架上的其他包裹", "快递架本身"],
+    "unresolved_problem": "向暖不能拆包验证，也不能拿错回家，但她需要确认包裹归属或通知真正收件人。",
+    "already_existing_constraints": [
+      "向暖不能拆开包裹。",
+      "向暖不能把包裹带回家。",
+      "向暖不能长时间逗留引起误会。"
+    ]
+  },
+  "characters": [
+    {
+      "name": "向暖",
+      "goal": "安全地确认包裹归属或通知真正收件人，避免拿错。",
+      "known": [
+        "自己叫向暖。",
+        "自己的准确楼栋和房号。",
+        "包裹上的收件地址不是自己的。",
+        "小区快递架是公共区域，常有错拿。"
+      ],
+      "unknown": [
+        "包裹里是什么。",
+        "真正的收件人是谁。",
+        "为什么包裹会写错地址。"
+      ],
+      "mistaken_beliefs": [
+        "可能只是同名同姓的巧合，与自己无关。"
+      ],
+      "constraints": [
+        "不能拆包验证。",
+        "不能把包裹带回家。",
+        "不能长时间守在快递架旁。"
+      ],
+      "observed_evidence": [
+        "包裹上'向暖'两个字是打印体，不是手写。",
+        "收件地址是小区另一栋楼。",
+        "包裹表面没有明显的破损或特殊标记。"
+      ],
+      "current_interpretation": "这是另一个向暖的包裹，但地址写错，可能真正收件人就在附近楼栋。",
+      "how_interpretation_drives_action": "她决定先用便利贴写个提醒贴在包裹上，然后拍照发小区群询问，而不是直接拿走。"
+    }
+  ],
+  "concrete_problem": "向暖如何在不拆包、不拿错的前提下，用现场物件标记包裹并通知真正收件人？",
+  "pressure": "包裹可能被其他人错拿，向暖必须在有限时间内采取行动，同时避免自己成为拿错包裹的可疑人物。",
+  "turning_point": "向暖决定用便利贴标记包裹并拍照发群，这一选择使她从一个旁观者变成了主动解决问题的参与者，但同时也暴露了自己在小区群里的存在。",
+  "end_condition": "向暖在群里收到一条回复，确认包裹属于另一个向暖，且对方提供了正确的楼栋信息，包裹归属出现新事实。",
+  "forbidden": [
+    "向暖拆开包裹。",
+    "向暖把包裹带回家。",
+    "直接出现真正收件人当面取件。",
+    "向暖通过快递单号查询隐私信息。",
+    "向暖长时间逗留引起保安注意。",
+    "本章揭示包裹内容。",
+    "本章揭示为什么地址写错。",
+    "向暖与真正收件人产生深度对话。"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "包裹上打印的收件人姓名'向暖'和错误的楼栋号。",
+      "character_interpretation": "向暖认为这是另一个同名人的包裹，地址可能写错，真正收件人可能就在小区里。",
+      "character_next_action": "她从包里拿出便利贴和笔，写上'此包裹收件人向暖，地址非本栋，请核对后取件'，贴在包裹上。",
+      "rejected_alternative": "她本想直接拿走包裹再慢慢找失主，但意识到拿错包裹可能被视为偷窃。",
+      "immediate_consequence": "包裹被标记，其他取件人能看到提醒，向暖也留下了自己的笔迹。",
+      "counterfactual_without_action": "如果没有标记，包裹可能被其他人错拿，或者一直留在架上无人认领。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "包裹无标记，向暖没有采取任何行动。",
+        "after": "包裹上贴有便利贴，向暖的手机相册里多了一张包裹照片。"
+      },
+      "cost_or_commitment": "向暖消耗了便利贴和笔迹，并主动在公共区域留下个人痕迹。",
+      "next_constraint": "向暖必须关注包裹是否被正确取走，不能一走了之。",
+      "reader_must_infer": "向暖的笔迹可能成为后续识别的线索，或者便利贴可能被其他人撕掉。",
+      "narrator_must_not_state": [
+        "向暖内心是否希望这个包裹与自己有关。",
+        "便利贴是否会被真正收件人看到。"
+      ]
+    },
+    {
+      "id": "CT02",
+      "kind": "constraint_to_choice",
+      "visible_trigger": "小区群里有人回复'是我，我是向暖，谢谢提醒'",
+      "character_interpretation": "向暖确认包裹属于另一个同名者，对方已经看到提醒。",
+      "character_next_action": "她在群里回复'不客气，请尽快取走'，然后离开快递架。",
+      "rejected_alternative": "她本想继续追问对方具体楼栋或包裹内容，但意识到这侵犯隐私。",
+      "immediate_consequence": "包裹归属明确，向暖的任务完成。",
+      "counterfactual_without_action": "如果她不回复，对方可能不确定是否有人认领，导致包裹仍留在架上。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "包裹归属不确定，向暖还在快递架旁。",
+        "after": "包裹归属已确定，向暖离开快递架。"
+      },
+      "cost_or_commitment": "向暖在群里公开了自己的身份，与另一个向暖产生了间接联系。",
+      "next_constraint": "向暖未来可能再次遇到同名包裹，或者与另一个向暖产生交集。",
+      "reader_must_infer": "另一个向暖是否真的会来取件，以及两个向暖之间是否会有后续。",
+      "narrator_must_not_state": [
+        "另一个向暖的真实身份或背景。",
+        "向暖是否期待再次联系。"
+      ]
+    }
+  ],
+  "tempo_guardrails": {
+    "entry_pressure": "向暖看到包裹上自己的名字，但地址不对，她必须快速决定如何处理。",
+    "dominant_pressure": {
+      "kind": "information_gap",
+      "description": "包裹的真实归属未知，向暖缺少足够信息采取下一步行动，但时间压力（包裹可能被错拿）和社会压力（不能显得可疑）同时存在。"
+    },
+    "allowed_viewpoint_misread": "向暖可能把另一个向暖的群回复误读为冷漠或警惕，但实际上对方可能只是谨慎。",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "包裹内的物品。",
+      "地址写错的原因。",
+      "另一个向暖是否认识向暖。"
+    ],
+    "stop_state": {
+      "type": "information_conflict",
+      "visible_fact": "小区群里出现另一个向暖的回复，确认包裹归属。",
+      "what_is_now_different": "包裹从无名归属变成有明确主人，向暖从疑惑者变成知情者。",
+      "must_not_append": "不得描写向暖离开后的心情或后续行动。"
+    }
+  },
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true,
+    "pov_character_is_fixed": true,
+    "narration_permissions_are_separated": true,
+    "other_minds_are_backstage_only": true,
+    "no_viewpoint_switch": true,
+    "scene_capacity_is_honest": true,
+    "meaningful_beats_are_non_micro": true,
+    "target_length_has_real_fuel": true,
+    "interaction_changes_state": true,
+    "dialogue_does_not_repeat_shared_information": true,
+    "stop_state_is_not_early": true
+  },
+  "pov_contract": {
+    "pov_character": "向暖",
+    "narration_mode": "third_person_limited",
+    "directly_narratable": [
+      "向暖看到的包裹细节（姓名、地址、外观）。",
+      "向暖的内心推理和决策过程。",
+      "向暖在群里的发言和看到的回复。",
+      "向暖对环境的观察（快递架、周围是否有人）。",
+      "向暖的即时情绪（疑惑、谨慎、释然）。"
+    ],
+    "pov_known_facts": [
+      "自己的姓名和住址。",
+      "小区快递架的位置和规则。",
+      "自己从未丢失过包裹。"
+    ],
+    "pov_unknown_facts": [
+      "另一个向暖的真实身份。",
+      "包裹内容。",
+      "地址错误的原因。",
+      "另一个向暖是否故意写错地址。"
+    ],
+    "allowed_viewpoint_misread": "向暖可能误以为另一个向暖的回复语气冷淡，但无法确认对方真实态度。",
+    "other_minds_backstage_only": [
+      {
+        "character": "另一个向暖",
+        "hidden_goal_or_motive": "可能只是想取回自己的包裹，或者对同名者感到好奇。",
+        "hidden_or_withheld_fact": "另一个向暖是否知道向暖的存在，以及包裹地址为何写错。",
+        "behavioral_expression": [
+          "在群里回复时可能用词简洁或谨慎。",
+          "可能很快取走包裹，也可能拖延。"
+        ],
+        "narrator_must_not_state": [
+          "另一个向暖的真实想法。",
+          "另一个向暖是否故意接近向暖。"
+        ]
+      }
+    ],
+    "future_knowledge_forbidden": [
+      "两个向暖是否会见面。",
+      "包裹内容是否重要。",
+      "这次事件是否引发后续情节。"
+    ],
+    "relationship_summary_forbidden": [
+      "两个向暖之间的关系性质。",
+      "向暖对另一个向暖的总体评价。"
+    ],
+    "viewpoint_switch_forbidden": true
+  },
+  "scene_capacity": {
+    "target_min_chars": 2000,
+    "scene_mode": "discovery",
+    "core_event": "向暖在快递架上发现同名包裹，通过便利贴标记和群消息确认归属。",
+    "meaningful_beats": [
+      {
+        "id": "B1",
+        "trigger": "向暖看到快递架上有自己的名字。",
+        "active_character": "向暖",
+        "goal": "确认包裹是否属于自己。",
+        "resistance_or_information_gap": "地址不对，无法直接确认。",
+        "action_or_exchange": "向暖拿起包裹查看细节，又放回原处。",
+        "new_information": "收件地址是另一栋楼，包裹是打印标签。",
+        "immediate_consequence": "向暖陷入疑惑，并开始思考对策。",
+        "state_delta": {
+          "before": "向暖只是路过，未注意包裹。",
+          "after": "向暖发现了问题，并开始主动处理。"
+        },
+        "depends_on": [],
+        "cannot_merge_reason": "这是发现问题的起点，必须独立成拍。"
+      },
+      {
+        "id": "B2",
+        "trigger": "向暖意识到不能拆包或带走。",
+        "active_character": "向暖",
+        "goal": "找到安全标记包裹的方法。",
+        "resistance_or_information_gap": "手边没有专用工具，且不能破坏包裹。",
+        "action_or_exchange": "向暖从包里翻出便利贴和笔，写下提醒。",
+        "new_information": "向暖决定用文字提醒其他取件人。",
+        "immediate_consequence": "包裹被贴上便利贴，向暖拍照留证。",
+        "state_delta": {
+          "before": "包裹无标记，向暖无行动方案。",
+          "after": "包裹有标记，向暖准备下一步通知。"
+        },
+        "depends_on": ["B1"],
+        "cannot_merge_reason": "这是从思考到行动的转折，需要独立展示决策过程。"
+      },
+      {
+        "id": "B3",
+        "trigger": "向暖拍下包裹照片。",
+        "active_character": "向暖",
+        "goal": "通知真正收件人。",
+        "resistance_or_information_gap": "不知道收件人是谁，只能通过公共渠道。",
+        "action_or_exchange": "向暖在小区群里发照片并询问。",
+        "new_information": "向暖在群里公开了包裹信息。",
+        "immediate_consequence": "群成员看到消息，可能有人回应。",
+        "state_delta": {
+          "before": "只有向暖知道包裹问题。",
+          "after": "小区群成员知道包裹问题，等待回应。"
+        },
+        "depends_on": ["B2"],
+        "cannot_merge_reason": "通知是独立步骤，且引入群聊互动可能。"
+      },
+      {
+        "id": "B4",
+        "trigger": "群里有人回复'是我，我是向暖'。",
+        "active_character": "向暖",
+        "goal": "确认对方身份并完成交接。",
+        "resistance_or_information_gap": "无法完全确认对方是真正收件人，但群回复是唯一线索。",
+        "action_or_exchange": "向暖回复提醒对方取件，并准备离开。",
+        "new_information": "另一个向暖存在，且承认包裹。",
+        "immediate_consequence": "包裹归属确认，向暖的任务结束。",
+        "state_delta": {
+          "before": "包裹归属不明。",
+          "after": "包裹归属明确，向暖可以离开。"
+        },
+        "depends_on": ["B3"],
+        "cannot_merge_reason": "这是解决问题的关键回应，需要独立展示互动结果。"
+      }
+    ],
+    "estimated_narrative_capacity_min": 2200,
+    "estimated_narrative_capacity_max": 3200,
+    "capacity_sufficient": true,
+    "capacity_gap_reason": null,
+    "forbidden_padding": [
+      "向暖反复查看包裹外观。",
+      "向暖长时间心理描写无行动。",
+      "环境描写超过必要。",
+      "向暖离开后多余动作。"
+    ]
+  },
+  "interaction_plan": {
+    "interaction_required": true,
+    "participants": ["向暖", "另一个向暖（群聊）"],
+    "character_positions": [
+      {
+        "character": "向暖",
+        "current_goal": "安全通知真正收件人，避免自己拿错。",
+        "opening_assumption": "这是另一个同名人的包裹，地址写错。",
+        "hidden_or_withheld_information": "向暖自己的身份和住址（群聊中可能不公开）。",
+        "cannot_accept": "自己拿走包裹或拆包。",
+        "wants_from_other": "确认包裹归属并尽快取走。"
+      },
+      {
+        "character": "另一个向暖",
+        "current_goal": "取回自己的包裹，避免隐私泄露。",
+        "opening_assumption": "有人发现了我的包裹，可能是个好心邻居。",
+        "hidden_or_withheld_information": "为什么地址写错，以及是否认识向暖。",
+        "cannot_accept": "在群里透露过多个人信息。",
+        "wants_from_other": "希望对方不要拆包或私藏，等待自己取件。"
+      }
+    ],
+    "turning_exchanges": [
+      {
+        "id": "E1",
+        "trigger": "向暖在群里发包裹照片和询问。",
+        "initiator": "向暖",
+        "initiator_goal": "找到真正收件人。",
+        "speech_act": "询问",
+        "other_response_mode": "另一个向暖在群里回复，承认包裹是自己的。",
+        "new_information": "另一个向暖存在，且确认包裹归属。",
+        "state_delta": {
+          "before": "群内无人认领包裹。",
+          "after": "另一个向暖认领包裹，向暖得到回应。"
+        }
+      }
+    ]
+  }
+}

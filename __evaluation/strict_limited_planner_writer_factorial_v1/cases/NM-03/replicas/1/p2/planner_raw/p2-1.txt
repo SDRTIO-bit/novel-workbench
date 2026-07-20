@@ -1,0 +1,151 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "通过洗衣房滚筒状态的事实，拆穿方笛或老人其中一方的记忆错误，并展现方笛在冲突中的应对方式。",
+  "location": "小区自助洗衣房",
+  "time": "某个工作日下午",
+  "scene_state": {
+    "last_completed_action": "方笛走进洗衣房，发现一个老人在她以为还在运行的滚筒前等待。",
+    "present_characters": ["方笛", "老人"],
+    "visible_facts": [
+      "方笛的洗衣篮放在一台滚筒旁",
+      "那台滚筒的玻璃门紧闭，内部可见衣物",
+      "滚筒面板显示剩余时间00:00",
+      "老人站在滚筒前，手扶着洗衣篮"
+    ],
+    "available_objects": ["滚筒洗衣机", "洗衣篮", "衣物", "操作面板", "手机"],
+    "unresolved_problem": "方笛和老人对滚筒里的衣服属于谁、以及机器是否已经洗完存在分歧。",
+    "already_existing_constraints": [
+      "方笛不能与老人发生正面争吵",
+      "方笛不能强行打开滚筒门"
+    ]
+  },
+  "characters": [
+    {
+      "name": "方笛",
+      "goal": "弄清滚筒里的衣服是不是自己的，并拿回自己的衣物",
+      "known": [
+        "她记得自己设定了60分钟洗涤程序",
+        "她离开洗衣房大约40分钟",
+        "她认为滚筒应该还在运行"
+      ],
+      "unknown": [
+        "机器是否中途停电或出现故障",
+        "老人是否动过机器",
+        "自己的记忆是否准确"
+      ],
+      "mistaken_beliefs": [
+        "她坚信自己设定了60分钟，所以机器不可能已经洗完"
+      ],
+      "constraints": [
+        "不能与老人争吵",
+        "不能强行打开正在运行的机器（若真的在运行）",
+        "必须用事实而非情绪解决争执"
+      ],
+      "observed_evidence": [
+        "面板显示剩余时间00:00",
+        "滚筒玻璃上的水位很低，几乎看不到水",
+        "老人说机器早停了，里面是他的衣服"
+      ],
+      "current_interpretation": "面板显示00:00和水位低似乎表明机器已经停止并排水，这与她的记忆矛盾，但她不能确定是不是机器出了问题。",
+      "how_interpretation_drives_action": "她决定先查看面板其他状态（比如程序指示灯），或提出用手机查看洗衣房监控/支付记录，而不是直接争论。"
+    },
+    {
+      "name": "老人",
+      "goal": "尽快使用这台滚筒洗自己的衣服",
+      "known": [
+        "他来到洗衣房时这台滚筒已经停止",
+        "他认为里面的衣服是之前有人洗完没取走的",
+        "他等了一段时间，没人来取"
+      ],
+      "unknown": [
+        "方笛是衣服的主人",
+        "方笛设定的具体程序时间",
+        "方笛离开的确切时长"
+      ],
+      "mistaken_beliefs": [
+        "他可能误以为衣服是别人遗忘的，可以取出"
+      ],
+      "constraints": [
+        "不能未经允许取出他人衣物",
+        "不能与年轻人发生激烈冲突"
+      ],
+      "observed_evidence": [
+        "方笛走向这台滚筒",
+        "方笛表现出惊讶和困惑",
+        "方笛提到她记得设定了60分钟"
+      ],
+      "current_interpretation": "这个姑娘可能记错了时间，或者她的衣服在另一台机器里。",
+      "how_interpretation_drives_action": "他坚持说机器早停了，并建议方笛检查其他滚筒。"
+    }
+  ],
+  "concrete_problem": "方笛如何在不与老人争吵的情况下，用可见事实证明滚筒里的衣服属于谁？",
+  "pressure": "时间在流逝，老人越来越不耐烦，而方笛自己的记忆与机器显示状态冲突，她必须快速找到一个双方都能接受的验证方法。",
+  "turning_point": "方笛注意到滚筒玻璃上有一小块她熟悉的污渍，那是她上次洗衣服时沾上的颜料痕迹，从而确认里面的衣服是自己的。",
+  "end_condition": "方笛通过指出颜料污渍这一可见事实，让老人相信衣服是她的，老人让步并同意让她取出衣物。",
+  "forbidden": [
+    "方笛与老人发生激烈争吵",
+    "方笛强行打开滚筒门",
+    "引入第三方（如店员、监控）直接解决冲突",
+    "揭示方笛的记忆错误是长期问题（本期只聚焦当下事件）"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "滚筒面板显示剩余时间00:00，且水位极低",
+      "character_interpretation": "方笛意识到机器可能真的已经停止并完成了排水，这与她的记忆不符，但她不能确定是机器故障还是自己记错。",
+      "character_next_action": "她俯身仔细观察滚筒玻璃，寻找能证明衣物归属的细节。",
+      "rejected_alternative": "直接接受老人的说法，放弃争执。",
+      "immediate_consequence": "她在玻璃上发现了一块熟悉的颜料污渍，确认了衣物是自己的。",
+      "counterfactual_without_action": "如果她不主动寻找证据，就只能依赖记忆争论，冲突可能升级。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "方笛对衣物归属不确定，处于被动辩解状态",
+        "after": "方笛获得了确认衣物归属的可见证据，转为主动沟通"
+      },
+      "cost_or_commitment": "她必须承认自己的记忆可能有误，并接受机器确实已经停止的事实。",
+      "next_constraint": "方笛在老人面前暴露了自己记忆不准确的一面，可能影响老人对她的信任。",
+      "reader_must_infer": "颜料污渍是之前某次洗涤意外留下的，方笛记得这个细节。",
+      "narrator_must_not_state": [
+        "方笛内心对自己记忆力的怀疑程度",
+        "老人是否真的动过机器"
+      ]
+    }
+  ],
+  "tempo_guardrails": {
+    "entry_pressure": "老人已经等了一段时间，开始显得不耐烦，而方笛刚发现机器状态与记忆不符。",
+    "dominant_pressure": {
+      "kind": "information_gap",
+      "description": "方笛缺少决定下一步行动所必需的信息：滚筒里的衣服到底是不是她的？机器为什么显示00:00？"
+    },
+    "allowed_viewpoint_misread": "老人可能把方笛的困惑误解为她想插队或无理取闹。",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "方笛记忆错误的根本原因"
+    ],
+    "stop_state": {
+      "type": "social_commitment",
+      "visible_fact": "老人主动退后一步，让出滚筒前的空间，并说“那你取出来吧”。",
+      "what_is_now_different": "老人从坚持衣服是别人的转变为承认方笛的所有权，冲突得到解决。",
+      "must_not_append": "不得添加老人事后抱怨或方笛道歉的额外情节。"
+    }
+  },
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  }
+}

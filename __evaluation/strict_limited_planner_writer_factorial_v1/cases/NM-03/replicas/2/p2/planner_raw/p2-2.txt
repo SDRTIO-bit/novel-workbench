@@ -1,0 +1,154 @@
+{
+  "planner_contract_version": 2,
+  "scene_goal": "方笛在洗衣房与老人因滚筒归属发生争执，她必须通过观察滚筒状态来确认谁记错了，从而化解冲突。",
+  "location": "小区自助洗衣房",
+  "time": "傍晚",
+  "scene_state": {
+    "last_completed_action": "方笛走进洗衣房，发现一个老人站在她以为还在运行的滚筒前。",
+    "present_characters": [
+      "方笛",
+      "老人"
+    ],
+    "visible_facts": [
+      "滚筒已经停止转动",
+      "老人站在滚筒前，显得不耐烦",
+      "洗衣房内还有其他空着的机器"
+    ],
+    "available_objects": [
+      "停止的滚筒",
+      "滚筒面板",
+      "洗衣篮",
+      "其他洗衣机"
+    ],
+    "unresolved_problem": "滚筒里的衣服到底是谁的？",
+    "already_existing_constraints": [
+      "方笛不能与老人争吵",
+      "方笛不能强行打开正在运行的机器"
+    ]
+  },
+  "characters": [
+    {
+      "name": "方笛",
+      "goal": "确认滚筒里的衣服是自己的，并拿回衣服",
+      "known": [
+        "她记得设定的洗衣时间是一小时",
+        "现在才过去四十分钟",
+        "机器已经停了"
+      ],
+      "unknown": [
+        "机器是否真的提前结束了",
+        "老人是否在说谎"
+      ],
+      "mistaken_beliefs": [
+        "机器一定还在运行，因为时间没到"
+      ],
+      "constraints": [
+        "不能与老人发生直接冲突",
+        "不能强行打开滚筒门"
+      ],
+      "observed_evidence": [
+        "滚筒停止转动",
+        "老人声称机器早停了，里面是他的衣服",
+        "面板上可能显示的状态"
+      ],
+      "current_interpretation": "机器可能真的提前结束了，或者老人记错了。",
+      "how_interpretation_drives_action": "她决定检查滚筒面板上的状态显示，以确定机器是否完成了洗衣程序。"
+    },
+    {
+      "name": "老人",
+      "goal": "尽快使用洗衣机",
+      "known": [
+        "他看到机器停了",
+        "他认为里面的衣服是自己的"
+      ],
+      "unknown": [
+        "方笛的洗衣时间设定",
+        "机器是否中途故障"
+      ],
+      "mistaken_beliefs": [
+        "机器停了就意味着衣服洗好了，可以取出"
+      ],
+      "constraints": [
+        "不能强行打开别人的洗衣机",
+        "需要等待方笛确认"
+      ],
+      "observed_evidence": [
+        "方笛坚持说时间没到",
+        "方笛走向面板查看"
+      ],
+      "current_interpretation": "这个年轻女孩可能记错了时间，或者想占着机器。",
+      "how_interpretation_drives_action": "他站在一旁，等待方笛查看结果，准备据理力争。"
+    }
+  ],
+  "concrete_problem": "方笛如何在不与老人争吵的前提下，通过滚筒面板的状态证明衣服归属？",
+  "pressure": "老人不耐烦地等着，方笛感到时间紧迫，必须尽快解决争议，否则可能升级为争吵。",
+  "turning_point": "方笛发现面板显示洗衣程序已完成，这意味着她记错了时间，衣服确实是老人的。她必须承认错误并道歉。",
+  "end_condition": "方笛向老人道歉，并协助取出衣服，老人态度缓和，冲突化解。",
+  "forbidden": [
+    "方笛与老人争吵",
+    "方笛强行打开滚筒门",
+    "外部巧合介入（如突然停电、第三方出现）",
+    "使用手机查询洗衣记录等外部信息源"
+  ],
+  "causal_transitions": [
+    {
+      "id": "CT01",
+      "kind": "evidence_to_action",
+      "visible_trigger": "滚筒停止转动，面板显示“程序完成”字样。",
+      "character_interpretation": "机器确实已经完成了洗衣程序，自己记错了时间。",
+      "character_next_action": "方笛向老人承认错误，并主动打开滚筒门，确认里面的衣服是老人的。",
+      "rejected_alternative": "方笛可以选择继续争辩或无视面板信息，但她选择了相信证据。",
+      "immediate_consequence": "老人接受了道歉，冲突解除，方笛帮老人取出衣服。",
+      "counterfactual_without_action": "如果方笛不承认错误，老人会继续等待并可能引发争吵，洗衣房气氛紧张。",
+      "consequence_would_still_happen": false,
+      "state_delta": {
+        "before": "双方僵持，对衣物归属存在争议",
+        "after": "归属明确，冲突化解，方笛道歉"
+      },
+      "cost_or_commitment": "方笛放下了自己的面子，承认了错误。",
+      "next_constraint": "方笛必须等待下一轮洗衣，或者使用其他机器。",
+      "reader_must_infer": "方笛为什么会记错时间？是因为分心还是习惯性高估？",
+      "narrator_must_not_state": [
+        "方笛的内心后悔情绪",
+        "老人是否故意提前关机"
+      ]
+    }
+  ],
+  "tempo_guardrails": {
+    "entry_pressure": "老人已经等待了一段时间，显得焦躁，方笛一进门就面临质问。",
+    "dominant_pressure": {
+      "kind": "social_friction",
+      "description": "双方因资源（洗衣机）使用产生误解和对立，但核心是避免冲突升级，维护邻里和谐。"
+    },
+    "allowed_viewpoint_misread": "方笛可能把老人的急躁解读为蛮不讲理，但实际上老人只是等久了。",
+    "disclosure_cap": 1,
+    "must_remain_unclassified": [
+      "方笛记错时间的根本原因（如心理压力、习惯等）"
+    ],
+    "stop_state": {
+      "type": "social_commitment",
+      "visible_fact": "方笛帮老人把衣服从滚筒里拿出来，递给他。",
+      "what_is_now_different": "方笛从争执者转变为协助者，双方关系从对立变为友善。",
+      "must_not_append": "不得继续描写方笛的内心活动，或老人后续的洗衣过程。"
+    },
+    "final_line_must_include": ""
+  },
+  "chapter_contract_check": {
+    "function_aligned": true,
+    "must_deliver_covered": true,
+    "must_not_deliver_respected": true,
+    "main_change_enabled": true,
+    "main_payoff_prepared": true,
+    "ending_hook_established": true,
+    "causal_transitions_grounded": true,
+    "reader_inference_not_pre_resolved": true,
+    "scene_state_reconstructed": true,
+    "information_sources_legal": true,
+    "character_choice_is_real": true,
+    "consequence_is_counterfactual": true,
+    "state_delta_is_nonempty": true,
+    "next_constraint_is_new": true,
+    "stop_state_is_visible": true,
+    "stop_state_changes_future_actions": true
+  }
+}
