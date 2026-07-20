@@ -74,6 +74,26 @@ class CausalCheckResult(str, Enum):
     not_present = "not_present"
 
 
+class SceneMode(str, Enum):
+    interaction = "interaction"
+    action = "action"
+    discovery = "discovery"
+    mixed = "mixed"
+
+
+class SpeechAct(str, Enum):
+    ask = "询问"
+    probe = "试探"
+    challenge = "质疑"
+    refuse = "拒绝"
+    withhold = "隐瞒"
+    bargain = "条件交换"
+    deflect = "答非所问"
+    command = "命令"
+    promise = "承诺"
+    redirect = "转移话题"
+
+
 class PlannerContractFieldStatus(str, Enum):
     """四态判断：用于 Planner 合同核验"""
     present = "present"  # 字段完整存在
@@ -324,6 +344,322 @@ class SceneState(BaseModel):
     already_existing_constraints: list[str] = Field(default_factory=list)
 
 
+# ── Planner v3 models ──────────────────────────────────────────────────
+
+
+class OtherMindBackstage(BaseModel):
+    """One other character whose true mental state is backstage-only."""
+    model_config = ConfigDict(extra="forbid")
+
+    character: str = Field(min_length=1)
+    hidden_goal_or_motive: str = ""
+    hidden_or_withheld_fact: str = ""
+    behavioral_expression: list[str] = Field(default_factory=list, min_length=1)
+    narrator_must_not_state: list[str] = Field(default_factory=list, min_length=1)
+
+
+class PovContract(BaseModel):
+    """Strict third-person-limited viewpoint contract."""
+    model_config = ConfigDict(extra="forbid")
+
+    pov_character: str = Field(min_length=1)
+    narration_mode: Literal["third_person_limited"] = "third_person_limited"
+    directly_narratable: list[str] = Field(default_factory=list)
+    pov_known_facts: list[str] = Field(default_factory=list)
+    pov_unknown_facts: list[str] = Field(default_factory=list)
+    allowed_viewpoint_misread: str = ""
+    other_minds_backstage_only: list[OtherMindBackstage] = Field(default_factory=list)
+    future_knowledge_forbidden: list[str] = Field(default_factory=list)
+    relationship_summary_forbidden: list[str] = Field(default_factory=list)
+    viewpoint_switch_forbidden: bool = True
+
+    @model_validator(mode="after")
+    def check_narration_mode(self):
+        if self.narration_mode != "third_person_limited":
+            raise ValueError("narration_mode must be third_person_limited")
+        return self
+
+    @model_validator(mode="after")
+    def check_viewpoint_switch(self):
+        if not self.viewpoint_switch_forbidden:
+            raise ValueError("viewpoint_switch_forbidden must be true")
+        return self
+
+    @model_validator(mode="after")
+    def check_backstage_not_in_directly_narratable(self):
+        directly = set(self.directly_narratable)
+        for om in self.other_minds_backstage_only:
+            if om.hidden_goal_or_motive and om.hidden_goal_or_motive in directly:
+                raise ValueError(
+                    f"hidden_goal_or_motive for {om.character} must not be in directly_narratable"
+                )
+        return self
+
+    @model_validator(mode="after")
+    def check_unknown_not_in_directly_narratable(self):
+        directly = set(self.directly_narratable)
+        unknown = set(self.pov_unknown_facts)
+        overlap = directly & unknown
+        if overlap:
+            raise ValueError(
+                f"pov_unknown_facts must not be in directly_narratable: {overlap}"
+            )
+        return self
+
+
+class MeaningfulBeat(BaseModel):
+    """One genuine narrative beat with independent causal weight."""
+    model_config = ConfigDict(extra="forbid")
+
+    id: str = Field(min_length=1)
+    trigger: str = Field(min_length=1)
+    active_character: str = Field(min_length=1)
+    goal: str = Field(min_length=1)
+    resistance_or_information_gap: str = ""
+    action_or_exchange: str = Field(min_length=1)
+    new_information: str = ""
+    immediate_consequence: str = Field(min_length=1)
+    state_delta: StateDelta
+    depends_on: list[str] = Field(default_factory=list)
+    cannot_merge_reason: str = Field(min_length=1)
+
+
+class SceneCapacity(BaseModel):
+    """Honest scene capacity assessment."""
+    model_config = ConfigDict(extra="forbid")
+
+    target_min_chars: int = Field(ge=1000)
+    scene_mode: SceneMode
+    core_event: str = Field(min_length=1)
+    meaningful_beats: list[MeaningfulBeat] = Field(min_length=1, max_length=12)
+    estimated_narrative_capacity_min: int = Field(ge=0)
+    estimated_narrative_capacity_max: int = Field(ge=0)
+    capacity_sufficient: bool
+    capacity_gap_reason: str | None = None
+    forbidden_padding: list[str] = Field(default_factory=list)
+
+    @model_validator(mode="after")
+    def check_capacity_logic(self):
+        if self.capacity_sufficient and self.capacity_gap_reason:
+            raise ValueError(
+                "capacity_gap_reason must be null when capacity_sufficient is true"
+            )
+        if self.estimated_narrative_capacity_min > self.estimated_narrative_capacity_max:
+            raise ValueError(
+                "estimated_narrative_capacity_min must not exceed max"
+            )
+        return self
+
+
+class CharacterPosition(BaseModel):
+    """One participant's stance in an interaction."""
+    model_config = ConfigDict(extra="forbid")
+
+    character: str = Field(min_length=1)
+    current_goal: str = Field(min_length=1)
+    opening_assumption: str = ""
+    hidden_or_withheld_information: str = ""
+    cannot_accept: str = ""
+    wants_from_other: str = ""
+
+
+class TurningExchange(BaseModel):
+    """One exchange that changes the situation."""
+    model_config = ConfigDict(extra="forbid")
+
+    id: str = Field(min_length=1)
+    trigger: str = Field(min_length=1)
+    initiator: str = Field(min_length=1)
+    initiator_goal: str = Field(min_length=1)
+    speech_act: SpeechAct
+    other_response_mode: str = Field(min_length=1)
+    new_information: str = Field(min_length=1)
+    state_delta: StateDelta
+
+
+class InteractionPlan(BaseModel):
+    """Interaction-driven progression plan."""
+    model_config = ConfigDict(extra="forbid")
+
+    interaction_required: bool
+    participants: list[str] = Field(default_factory=list)
+    character_positions: list[CharacterPosition] = Field(default_factory=list)
+    turning_exchanges: list[TurningExchange] = Field(default_factory=list)
+
+    @model_validator(mode="after")
+    def check_interaction_required_coherence(self):
+        if self.interaction_required:
+            if len(self.participants) < 2:
+                raise ValueError("participants must have at least 2 when interaction_required is true")
+            if len(self.turning_exchanges) < 3:
+                raise ValueError("turning_exchanges must have at least 3 when interaction_required is true")
+        return self
+
+
+class PlannerV3ChapterContractCheck(BaseModel):
+    """Extended chapter contract check for v3."""
+    model_config = ConfigDict(extra="forbid")
+
+    function_aligned: bool = False
+    must_deliver_covered: bool = False
+    must_not_deliver_respected: bool = False
+    main_change_enabled: bool = False
+    main_payoff_prepared: bool = False
+    ending_hook_established: bool = False
+    causal_transitions_grounded: bool = False
+    reader_inference_not_pre_resolved: bool = False
+    scene_state_reconstructed: bool = False
+    information_sources_legal: bool = False
+    character_choice_is_real: bool = False
+    consequence_is_counterfactual: bool = False
+    state_delta_is_nonempty: bool = False
+    next_constraint_is_new: bool = False
+    stop_state_is_visible: bool = False
+    stop_state_changes_future_actions: bool = False
+    # v3 additions
+    pov_character_is_fixed: bool = False
+    narration_permissions_are_separated: bool = False
+    other_minds_are_backstage_only: bool = False
+    no_viewpoint_switch: bool = False
+    scene_capacity_is_honest: bool = False
+    meaningful_beats_are_non_micro: bool = False
+    target_length_has_real_fuel: bool = False
+    interaction_changes_state: bool = False
+    dialogue_does_not_repeat_shared_information: bool = False
+    stop_state_is_not_early: bool = False
+
+
+class PlannerV3Output(BaseModel):
+    """Planner v3 output with strict limited POV, scene capacity, and interaction planning."""
+    model_config = ConfigDict(extra="forbid")
+
+    planner_contract_version: Literal[3]
+    scene_goal: str = ""
+    location: str = ""
+    time: str = ""
+    scene_state: SceneState | None = None
+    characters: list[dict[str, Any]] = []
+    concrete_problem: str = ""
+    pressure: str = ""
+    turning_point: str = ""
+    end_condition: str = ""
+    forbidden: list[str] = []
+    causal_transitions: list[CausalTransition] = Field(default_factory=list, max_length=3)
+    chapter_contract_check: PlannerV3ChapterContractCheck = Field(
+        default_factory=PlannerV3ChapterContractCheck
+    )
+    tempo_guardrails: TempoGuardrails | None = None
+    # v3 additions
+    pov_contract: PovContract
+    scene_capacity: SceneCapacity
+    interaction_plan: InteractionPlan | None = None
+
+    @model_validator(mode="before")
+    @classmethod
+    def normalize_common_llm_shapes(cls, value):
+        if not isinstance(value, dict):
+            return value
+        normalized = dict(value)
+        # Delegate to PlannerOutput's normalizer for shared fields
+        base = PlannerOutput.normalize_common_llm_shapes(normalized)
+        return base
+
+    @field_validator("forbidden", mode="before")
+    @classmethod
+    def normalize_grouped_forbidden(cls, value):
+        if not isinstance(value, dict):
+            return value
+        flattened: list[str] = []
+        for group in value.values():
+            if isinstance(group, list):
+                flattened.extend(str(item) for item in group)
+            elif group is not None:
+                flattened.append(str(group))
+        return flattened
+
+    @field_validator("pressure", mode="before")
+    @classmethod
+    def normalize_pressure_list(cls, value):
+        if isinstance(value, list):
+            return "；".join(str(item) for item in value)
+        return value
+
+    @model_validator(mode="after")
+    def check_transition_ids(self):
+        ids = [ct.id for ct in self.causal_transitions]
+        if len(ids) != len(set(ids)):
+            raise ValueError("causal_transitions ids must be unique")
+        for ct in self.causal_transitions:
+            if not ct.id.startswith("CT") or not ct.id[2:].isdigit():
+                raise ValueError(
+                    f"causal_transition id '{ct.id}' must follow format CT01, CT02, CT03"
+                )
+        return self
+
+    @model_validator(mode="after")
+    def validate_v3_contract(self):
+        errors: list[str] = []
+
+        # scene_capacity validations
+        sc = self.scene_capacity
+        beats = sc.meaningful_beats
+
+        if self.tempo_guardrails and self.tempo_guardrails.stop_state:
+            sc_min = sc.target_min_chars
+            if sc_min >= 2000 and len(beats) < 6:
+                errors.append(
+                    f"meaningful_beats must have at least 6 when target_min_chars >= 2000, "
+                    f"got {len(beats)}"
+                )
+
+        # Check every beat produces real state change
+        for beat in beats:
+            if beat.state_delta:
+                if _normalize_for_compare(beat.state_delta.before) == _normalize_for_compare(beat.state_delta.after):
+                    errors.append(f"meaningful_beat {beat.id}: state_delta.before and after must differ")
+
+        # Check cannot_merge_reason is substantial
+        insubstantial = {"为了丰富剧情", "为了增加字数", "为了铺垫", "让描写更细致"}
+        for beat in beats:
+            if beat.cannot_merge_reason.strip() in insubstantial:
+                errors.append(
+                    f"meaningful_beat {beat.id}: cannot_merge_reason must not be insubstantial"
+                )
+
+        # interaction_plan validations
+        ip = self.interaction_plan
+        if ip and ip.interaction_required:
+            if len(ip.participants) < 2:
+                errors.append("interaction_plan.participants must have at least 2")
+            if len(ip.turning_exchanges) < 3:
+                errors.append("interaction_plan.turning_exchanges must have at least 3")
+
+        # pov_contract validations
+        pc = self.pov_contract
+        if pc.narration_mode != "third_person_limited":
+            errors.append("pov_contract.narration_mode must be third_person_limited")
+        if not pc.viewpoint_switch_forbidden:
+            errors.append("pov_contract.viewpoint_switch_forbidden must be true")
+        if not pc.other_minds_backstage_only:
+            pass  # may be empty for single-character scenes
+        for om in pc.other_minds_backstage_only:
+            if not om.narrator_must_not_state:
+                errors.append(f"other_minds_backstage_only.{om.character}: narrator_must_not_state must have at least one item")
+
+        # chapter_contract_check - all fields must be true
+        cc = self.chapter_contract_check
+        failing = []
+        for name in PlannerV3ChapterContractCheck.model_fields:
+            if not getattr(cc, name):
+                failing.append(name)
+        if failing:
+            errors.append(f"chapter_contract_check: all fields must be true, failing: {failing}")
+
+        if errors:
+            raise ValueError(f"PLANNER_OUTPUT_CONTRACT_INVALID (v3): {'; '.join(errors)}")
+        return self
+
+
 class PlannerOutput(BaseModel):
     planner_contract_version: int = 1
     scene_goal: str = ""
@@ -439,7 +775,12 @@ class PlannerOutput(BaseModel):
         return self
 
 
-def validate_planner_output(data: dict, expected_version: int | None = None) -> PlannerOutput:
+def validate_planner_output(data: dict, expected_version: int | None = None):
+    """Validate planner output and return the appropriate model.
+
+    Returns PlannerV3Output when planner_contract_version is 3,
+    PlannerOutput otherwise.
+    """
     # When a workflow declares the contract version it expects, a missing
     # version field is a hard failure instead of a silent default to v1.
     if (
@@ -451,8 +792,16 @@ def validate_planner_output(data: dict, expected_version: int | None = None) -> 
             f"PLANNER_OUTPUT_CONTRACT_INVALID: planner_contract_version is required "
             f"(expected planner_contract_version={expected_version})"
         )
+
+    # Detect version from raw data before construction
+    raw_version = data.get("planner_contract_version") if isinstance(data, dict) else None
+    is_v3 = raw_version == 3
+
     try:
-        output = PlannerOutput(**data)
+        if is_v3:
+            output = PlannerV3Output(**data)
+        else:
+            output = PlannerOutput(**data)
     except Exception as e:
         raise ValueError(f"PLANNER_OUTPUT_CONTRACT_INVALID: {e}") from e
 
@@ -463,6 +812,10 @@ def validate_planner_output(data: dict, expected_version: int | None = None) -> 
             f"PLANNER_OUTPUT_CONTRACT_INVALID: expected planner_contract_version={expected_version}, "
             f"got {version}"
         )
+
+    # v3 validation is handled by PlannerV3Output model validators
+    if is_v3:
+        return output
     
     if version >= 2:
         errors = []

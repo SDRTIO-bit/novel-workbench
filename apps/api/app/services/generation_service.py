@@ -51,6 +51,8 @@ def _save_to_disk(title: str, text: str):
 # retain v1 compatibility.
 EXPECTED_PLANNER_CONTRACT_VERSION = 2
 PLANNER_V2_SCHEMA_NAME = "planner_v2"
+EXPECTED_PLANNER_V3_CONTRACT_VERSION = 3
+PLANNER_V3_SCHEMA_NAME = "planner_v3"
 EXPECTED_CRITIC_CONTRACT_VERSION = 2
 CRITIC_V2_SCHEMA_NAME = "critic_v2"
 CRITIC_EVIDENCE_V1_SCHEMA_NAME = "critic_evidence_v1"
@@ -67,8 +69,12 @@ NARRATIVE_BEHAVIOUR_V1 = (
 
 
 def _expected_planner_contract_version(stage: str, prompt_meta: dict | None) -> int | None:
-    if stage == "planner" and (prompt_meta or {}).get("output_schema_name") == PLANNER_V2_SCHEMA_NAME:
-        return EXPECTED_PLANNER_CONTRACT_VERSION
+    if stage == "planner":
+        schema = (prompt_meta or {}).get("output_schema_name")
+        if schema == PLANNER_V2_SCHEMA_NAME:
+            return EXPECTED_PLANNER_CONTRACT_VERSION
+        if schema == PLANNER_V3_SCHEMA_NAME:
+            return EXPECTED_PLANNER_V3_CONTRACT_VERSION
     return None
 
 
@@ -787,11 +793,21 @@ class GenerationService:
         brief = ctx.get("variables", {}).get("writer_brief")
         if not brief:
             return
+        # Serialize brief dict to text
+        if isinstance(brief, dict):
+            brief_lines = [f"{key}: {value}" for key, value in brief.items()
+                           if key not in ("v3_blocks", "mode")]
+            brief_text = "\n".join(brief_lines)
+        else:
+            brief_text = str(brief)
         prompt_addition = (
             "\n\n## Writer Brief（只含现场行动信息）\n"
-            f"{brief}\n\n"
+            f"{brief_text}\n\n"
             "只输出场景正文；用可见行动处理这个具体麻烦，并在 stop_state 成立处停止。"
         )
+        # Append v3 blocks if present
+        if isinstance(brief, dict) and brief.get("v3_blocks"):
+            prompt_addition += f"\n\n{brief['v3_blocks']}"
         if writer_behavior_mode == "narrative_behaviour_v1":
             prompt_addition += NARRATIVE_BEHAVIOUR_V1
         if instruction_block:
