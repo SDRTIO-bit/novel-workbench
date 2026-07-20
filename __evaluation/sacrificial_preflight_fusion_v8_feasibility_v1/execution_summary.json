@@ -1,0 +1,9 @@
+{
+  "experiment": "SACRIFICIAL_PREFLIGHT_FUSION_V8_FEASIBILITY_V1",
+  "status": "completed",
+  "planner_calls": 0,
+  "writer_calls": 24,
+  "writer_drafts_expected": 24,
+  "final_texts": 24,
+  "wall_seconds": 267.9
+}

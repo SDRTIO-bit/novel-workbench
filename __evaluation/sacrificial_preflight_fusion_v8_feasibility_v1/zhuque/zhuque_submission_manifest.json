@@ -1,0 +1,22 @@
+{
+  "experiment": "SACRIFICIAL_PREFLIGHT_FUSION_V8_FEASIBILITY_V1",
+  "source_commit": "b6fdc085715d7fb0b176091f34587627512fa42d",
+  "total_slots": 24,
+  "successful_articles": 24,
+  "failed_articles": 0,
+  "p7_count": 12,
+  "f8_count": 12,
+  "total_content_characters": 41517,
+  "separator": "five newline characters",
+  "separator_character_count": 5,
+  "submission_sha256": "0382a743718ff8574d3ae6b51216a73e08f795dbc27bc9038631cb7d8f07ffc1",
+  "boundaries_sha256": "ab3f55bf3ddd542337a3f3bd652c94f0904f2b478fad4b90c09d644d263c1508",
+  "random_seed": 202607208,
+  "source_manifest_path": "manifest.json",
+  "generated_at": "2026-07-20T21:55:02+08:00",
+  "validation_checks": {
+    "no_xml_tags": true,
+    "no_draft_notes": true,
+    "boundaries_recoverable": true
+  }
+}

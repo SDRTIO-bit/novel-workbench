@@ -1,0 +1,69 @@
+SACRIFICIAL_PREFLIGHT_FUSION_V8_FEASIBILITY_V1 — DRY-RUN (no model calls, no Planner calls)
+
+Scenes: 4 | Groups: ['P7', 'F8'] | Replicas: 3
+Slots: 24 texts = 4 scenes x 2 groups x 3 replicas
+Model calls: 24 Writer (0 Planner — reuse frozen)
+
+── Pre-generation assertions ──
+  cases=4 -> True
+  groups=2 -> True
+  replicas=3 -> True
+  writer_slots=24 -> True
+
+── Groups ──
+  P7: Writer v7 'Sacrificial Preflight v7' (xml_story)
+  F8: Writer v8 'Sacrificial Preflight Fusion v8' (xml_story)
+
+── Frozen parameters (identical across both groups) ──
+  provider_id = 34c14b6b-7231-432a-96b2-8272329b828d
+  model_id = deepseek-v4-pro
+  planner_prompt_version_id = f9052f8a-dc4e-5408-b14e-fc1badaf57f8
+  temperature = 0.7
+  top_p = 1.0
+  max_output_tokens = 6000
+  timeout_seconds = 300
+
+── Seed ──
+  Provider/adapter exposes no model seed (LlmRequest has no seed field; DeepSeek chat/completions documents none). seed=null is recorded for every call; temperature/top_p/max_output_tokens/timeout are held identical across groups; reproducibility is not faked. The SEED constant only drives blind-token generation and call-order shuffling.
+
+── Both groups: target_length=2000, write_mode=new_chapter ──
+  No extra instructions. No length patches. No anti-AI patches.
+  The ONLY delta is the Writer prompt version.
+
+── Scenes (Planner frozen from SACRIFICIAL_PREFLIGHT_FEASIBILITY_V1) ──
+  [NM-03] 城市日常 《洗衣房的滚筒》 planner=FOUND
+      replica 1: F8 → P7
+      replica 2: P7 → F8
+      replica 3: F8 → P7
+  [ROMANCE-02] 恋爱日常 《未读消息》 planner=FOUND
+      replica 1: F8 → P7
+      replica 2: P7 → F8
+      replica 3: P7 → F8
+  [CO-04] 校园日常 《操场上错拿的水壶》 planner=FOUND
+      replica 1: P7 → F8
+      replica 2: F8 → P7
+      replica 3: P7 → F8
+  [CO-05] 日常任务 《快递架上的同名包裹》 planner=FOUND
+      replica 1: P7 → F8
+      replica 2: F8 → P7
+      replica 3: F8 → P7
+
+── Output paths ──
+  root: E:\3\novel-workbench\__evaluation\sacrificial_preflight_fusion_v8_feasibility_v1
+  cases/<CASE>/{planner_frozen.json, writer_brief.txt, result.json}
+  cases/<CASE>/{raw_xml, draft_notes, story, metadata}/
+  manifest.json | execution_summary.json | validation_summary.json
+  blind_review_queue.json | blind_mapping.private.json
+  zhuque/
+
+── Failure discipline ──
+  Frozen Planner missing: abort entire run immediately.
+  Writer failures: recorded as-is; no retry; other slots continue.
+  xml_story parse failure: error_code recorded; no LLM repair.
+  No filtering based on length, TEMPO mismatch, or content.
+
+── Zhuque packing ──
+  Generated automatically after run completes.
+  24 articles, anonymous shuffled, 5-newline separator.
+  draft_notes and XML tags excluded from submission.
+  Blind boundaries verified by character-range recovery.
