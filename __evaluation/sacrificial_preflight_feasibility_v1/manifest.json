@@ -1,0 +1,75 @@
+{
+  "experiment": "SACRIFICIAL_PREFLIGHT_FEASIBILITY_V1",
+  "git_commit": "8bcc6f388bd13147edb26bd3c693dd369c09c8d2",
+  "seed": 20260720,
+  "model_seed": null,
+  "seed_note": "Provider/adapter exposes no model seed (LlmRequest has no seed field; DeepSeek chat/completions documents none). seed=null is recorded for every call; temperature/top_p/max_output_tokens/timeout are held identical across groups; reproducibility is not faked. The SEED constant only drives blind-token generation and call-order shuffling.",
+  "replicas_per_group": 3,
+  "case_ids": [
+    "NM-03",
+    "ROMANCE-02",
+    "CO-04",
+    "CO-05"
+  ],
+  "groups": {
+    "A": "Writer v6 baseline (plain_text, minimal length instruction)",
+    "P": "Writer v7 Sacrificial Preflight (xml_story, draft_notes + story)"
+  },
+  "writer_v6_prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "writer_v7_prompt_version_id": "d4e661d4-1156-46d1-b94b-26ee500d5cb2",
+  "frozen_parameters": {
+    "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+    "model_id": "deepseek-v4-pro",
+    "writer_v6_prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+    "planner_prompt_version_id": "f9052f8a-dc4e-5408-b14e-fc1badaf57f8",
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 6000,
+    "timeout_seconds": 300
+  },
+  "group_A_instruction_hash": "484d1b4d455f1c6261db2f9d146a6dca606e8e0d26862d41616e97a50c403bac",
+  "source_planner_experiment": "SACRIFICIAL_ERROR_CHANNEL_FEASIBILITY_V1",
+  "execution_model": "scene-level parallelism (4 concurrent scenes, each with its own isolated SQLite copy); writers sequential within a scene; NO Planner calls — frozen Planner reused from previous experiment",
+  "rules": [
+    "ZERO Planner calls; frozen Planner outputs reused from SACRIFICIAL_ERROR_CHANNEL_FEASIBILITY_V1.",
+    "2 groups x 3 replicas per scene; stratified-random A/P call order per replica.",
+    "No Critic/Reviser/Judge. No retry. No filtering. All failures preserved.",
+    "Group P: xml_story mode; generation_service extracts <story>; raw_response preserved with <draft_notes>.",
+    "Group P xml_story parse failure: error_code recorded; no LLM repair.",
+    "seed=null for every model call; other parameters held identical.",
+    "max_output_tokens=6000 is an experiment-level override for BOTH groups; product defaults untouched."
+  ],
+  "status": "completed",
+  "writer_v6_prompt_identity": {
+    "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+    "found": true,
+    "version_number": 6,
+    "output_mode": "plain_text",
+    "output_schema_name": null,
+    "system_template_sha256": "e933b446316349802745d7dcd5f918e7fb550c1ae78c5c7cfa7a69e095dffdef",
+    "user_template_sha256": "25004d53ea9cbc7662e95c37ca6292c033e1269fa66ebf5e8d9e24879ae0a913"
+  },
+  "writer_v7_prompt_identity": {
+    "prompt_version_id": "d4e661d4-1156-46d1-b94b-26ee500d5cb2",
+    "found": true,
+    "version_number": 1,
+    "output_mode": "xml_story",
+    "output_schema_name": null,
+    "system_template_sha256": "d04fa952a6ba5e185f71dc889a8a6b80eec9aed2643f307538c2f878beddf9cb",
+    "user_template_sha256": "fbbf67a431f4f5984f1f73949403141f594cdce9452df22b551fb415961f2c7b"
+  },
+  "post_generation_assertions": {
+    "checks": {
+      "writer_slots": true,
+      "group_A_texts": true,
+      "group_P_texts": true,
+      "per_case_6": true,
+      "per_case_group_3": true
+    },
+    "all_passed": true,
+    "drafts_total": 24,
+    "queued_texts": 24,
+    "expected_texts": 24
+  },
+  "wall_seconds": 154.6
+}

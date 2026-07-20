@@ -1,0 +1,62 @@
+[
+  {
+    "pair_id": "609708A5738C",
+    "text_x_path": "cases\\CO-04\\raw\\p-1.txt",
+    "text_y_path": "cases\\CO-04\\raw\\a-1.txt"
+  },
+  {
+    "pair_id": "67C2C5ACD9D3",
+    "text_x_path": "cases\\NM-03\\raw\\p-2.txt",
+    "text_y_path": "cases\\NM-03\\raw\\a-2.txt"
+  },
+  {
+    "pair_id": "A3B1720ED781",
+    "text_x_path": "cases\\NM-03\\raw\\a-1.txt",
+    "text_y_path": "cases\\NM-03\\raw\\p-1.txt"
+  },
+  {
+    "pair_id": "11B54E9C9445",
+    "text_x_path": "cases\\CO-05\\raw\\p-3.txt",
+    "text_y_path": "cases\\CO-05\\raw\\a-3.txt"
+  },
+  {
+    "pair_id": "847E912F40D2",
+    "text_x_path": "cases\\CO-04\\raw\\a-2.txt",
+    "text_y_path": "cases\\CO-04\\raw\\p-2.txt"
+  },
+  {
+    "pair_id": "D8598362B5C9",
+    "text_x_path": "cases\\ROMANCE-02\\raw\\p-1.txt",
+    "text_y_path": "cases\\ROMANCE-02\\raw\\a-1.txt"
+  },
+  {
+    "pair_id": "72E9FA7F56B4",
+    "text_x_path": "cases\\CO-05\\raw\\a-1.txt",
+    "text_y_path": "cases\\CO-05\\raw\\p-1.txt"
+  },
+  {
+    "pair_id": "2655948353C3",
+    "text_x_path": "cases\\CO-04\\raw\\a-3.txt",
+    "text_y_path": "cases\\CO-04\\raw\\p-3.txt"
+  },
+  {
+    "pair_id": "AC19A5CE1660",
+    "text_x_path": "cases\\ROMANCE-02\\raw\\a-2.txt",
+    "text_y_path": "cases\\ROMANCE-02\\raw\\p-2.txt"
+  },
+  {
+    "pair_id": "B6CBACB3FA54",
+    "text_x_path": "cases\\CO-05\\raw\\p-2.txt",
+    "text_y_path": "cases\\CO-05\\raw\\a-2.txt"
+  },
+  {
+    "pair_id": "7A6E587B77A0",
+    "text_x_path": "cases\\ROMANCE-02\\raw\\p-3.txt",
+    "text_y_path": "cases\\ROMANCE-02\\raw\\a-3.txt"
+  },
+  {
+    "pair_id": "6C2146FC7656",
+    "text_x_path": "cases\\NM-03\\raw\\p-3.txt",
+    "text_y_path": "cases\\NM-03\\raw\\a-3.txt"
+  }
+]

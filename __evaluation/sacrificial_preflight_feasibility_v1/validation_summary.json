@@ -1,0 +1,400 @@
+{
+  "experiment": "SACRIFICIAL_PREFLIGHT_FEASIBILITY_V1",
+  "post_generation_assertions": {
+    "checks": {
+      "writer_slots": true,
+      "group_A_texts": true,
+      "group_P_texts": true,
+      "per_case_6": true,
+      "per_case_group_3": true
+    },
+    "all_passed": true,
+    "drafts_total": 24,
+    "queued_texts": 24,
+    "expected_texts": 24
+  },
+  "drafts": [
+    {
+      "case_id": "NM-03",
+      "group": "A",
+      "replica": 1,
+      "error_code": null,
+      "tempo_final_line_mismatch": false,
+      "raw_character_count": 1262,
+      "text_character_count": 1262,
+      "draft_notes_character_count": 0,
+      "instruction_hash": "484d1b4d455f1c6261db2f9d146a6dca606e8e0d26862d41616e97a50c403bac",
+      "rendered_user_prompt_sha256": "ce7f0a6c87f2071d0c8fff92c1b98401bc022aa9b657783dbb88946d2c3c50c5",
+      "text_length_shortfall": true,
+      "validator_codes": [
+        "TEXT_LENGTH_SHORTFALL"
+      ]
+    },
+    {
+      "case_id": "NM-03",
+      "group": "P",
+      "replica": 1,
+      "error_code": null,
+      "tempo_final_line_mismatch": false,
+      "raw_character_count": 1935,
+      "text_character_count": 1220,
+      "draft_notes_character_count": 665,
+      "instruction_hash": null,
+      "rendered_user_prompt_sha256": "8d2fb9fa9937e8f0eaf63e2fc1b7668d8ed2d159b9ecead3fa43199914e6a913",
+      "text_length_shortfall": true,
+      "validator_codes": [
+        "TEXT_LENGTH_SHORTFALL"
+      ]
+    },
+    {
+      "case_id": "NM-03",
+      "group": "A",
+      "replica": 2,
+      "error_code": null,
+      "tempo_final_line_mismatch": false,
+      "raw_character_count": 1271,
+      "text_character_count": 1271,
+      "draft_notes_character_count": 0,
+      "instruction_hash": "484d1b4d455f1c6261db2f9d146a6dca606e8e0d26862d41616e97a50c403bac",
+      "rendered_user_prompt_sha256": "ce7f0a6c87f2071d0c8fff92c1b98401bc022aa9b657783dbb88946d2c3c50c5",
+      "text_length_shortfall": true,
+      "validator_codes": [
+        "TEXT_LENGTH_SHORTFALL"
+      ]
+    },
+    {
+      "case_id": "NM-03",
+      "group": "P",
+      "replica": 2,
+      "error_code": null,
+      "tempo_final_line_mismatch": false,
+      "raw_character_count": 2234,
+      "text_character_count": 1520,
+      "draft_notes_character_count": 664,
+      "instruction_hash": null,
+      "rendered_user_prompt_sha256": "8d2fb9fa9937e8f0eaf63e2fc1b7668d8ed2d159b9ecead3fa43199914e6a913",
+      "text_length_shortfall": true,
+      "validator_codes": [
+        "TEXT_LENGTH_SHORTFALL"
+      ]
+    },
+    {
+      "case_id": "NM-03",
+      "group": "A",
+      "replica": 3,
+      "error_code": null,
+      "tempo_final_line_mismatch": false,
+      "raw_character_count": 1320,
+      "text_character_count": 1320,
+      "draft_notes_character_count": 0,
+      "instruction_hash": "484d1b4d455f1c6261db2f9d146a6dca606e8e0d26862d41616e97a50c403bac",
+      "rendered_user_prompt_sha256": "ce7f0a6c87f2071d0c8fff92c1b98401bc022aa9b657783dbb88946d2c3c50c5",
+      "text_length_shortfall": true,
+      "validator_codes": [
+        "TEXT_LENGTH_SHORTFALL"
+      ]
+    },
+    {
+      "case_id": "NM-03",
+      "group": "P",
+      "replica": 3,
+      "error_code": null,
+      "tempo_final_line_mismatch": false,
+      "raw_character_count": 2479,
+      "text_character_count": 1753,
+      "draft_notes_character_count": 676,
+      "instruction_hash": null,
+      "rendered_user_prompt_sha256": "8d2fb9fa9937e8f0eaf63e2fc1b7668d8ed2d159b9ecead3fa43199914e6a913",
+      "text_length_shortfall": true,
+      "validator_codes": [
+        "TEXT_LENGTH_SHORTFALL"
+      ]
+    },
+    {
+      "case_id": "ROMANCE-02",
+      "group": "P",
+      "replica": 1,
+      "error_code": null,
+      "tempo_final_line_mismatch": false,
+      "raw_character_count": 2093,
+      "text_character_count": 1463,
+      "draft_notes_character_count": 582,
+      "instruction_hash": null,
+      "rendered_user_prompt_sha256": "a81c3111aad84329686527b2db24d93773fca158a196c98fa5cc3393baa60acf",
+      "text_length_shortfall": true,
+      "validator_codes": [
+        "TEXT_LENGTH_SHORTFALL"
+      ]
+    },
+    {
+      "case_id": "ROMANCE-02",
+      "group": "A",
+      "replica": 1,
+      "error_code": null,
+      "tempo_final_line_mismatch": false,
+      "raw_character_count": 974,
+      "text_character_count": 974,
+      "draft_notes_character_count": 0,
+      "instruction_hash": "484d1b4d455f1c6261db2f9d146a6dca606e8e0d26862d41616e97a50c403bac",
+      "rendered_user_prompt_sha256": "376f377bd716eb75ef4fd6b55c294cf5a1fd6099ea6877d209d4ca07ca63f7c0",
+      "text_length_shortfall": true,
+      "validator_codes": [
+        "TEXT_LENGTH_SHORTFALL"
+      ]
+    },
+    {
+      "case_id": "ROMANCE-02",
+      "group": "A",
+      "replica": 2,
+      "error_code": null,
+      "tempo_final_line_mismatch": false,
+      "raw_character_count": 1597,
+      "text_character_count": 1597,
+      "draft_notes_character_count": 0,
+      "instruction_hash": "484d1b4d455f1c6261db2f9d146a6dca606e8e0d26862d41616e97a50c403bac",
+      "rendered_user_prompt_sha256": "376f377bd716eb75ef4fd6b55c294cf5a1fd6099ea6877d209d4ca07ca63f7c0",
+      "text_length_shortfall": true,
+      "validator_codes": [
+        "TEXT_LENGTH_SHORTFALL"
+      ]
+    },
+    {
+      "case_id": "ROMANCE-02",
+      "group": "P",
+      "replica": 2,
+      "error_code": null,
+      "tempo_final_line_mismatch": false,
+      "raw_character_count": 1794,
+      "text_character_count": 1042,
+      "draft_notes_character_count": 703,
+      "instruction_hash": null,
+      "rendered_user_prompt_sha256": "a81c3111aad84329686527b2db24d93773fca158a196c98fa5cc3393baa60acf",
+      "text_length_shortfall": true,
+      "validator_codes": [
+        "TEXT_LENGTH_SHORTFALL"
+      ]
+    },
+    {
+      "case_id": "ROMANCE-02",
+      "group": "P",
+      "replica": 3,
+      "error_code": null,
+      "tempo_final_line_mismatch": false,
+      "raw_character_count": 1909,
+      "text_character_count": 1234,
+      "draft_notes_character_count": 627,
+      "instruction_hash": null,
+      "rendered_user_prompt_sha256": "a81c3111aad84329686527b2db24d93773fca158a196c98fa5cc3393baa60acf",
+      "text_length_shortfall": true,
+      "validator_codes": [
+        "TEXT_LENGTH_SHORTFALL"
+      ]
+    },
+    {
+      "case_id": "ROMANCE-02",
+      "group": "A",
+      "replica": 3,
+      "error_code": null,
+      "tempo_final_line_mismatch": false,
+      "raw_character_count": 1196,
+      "text_character_count": 1196,
+      "draft_notes_character_count": 0,
+      "instruction_hash": "484d1b4d455f1c6261db2f9d146a6dca606e8e0d26862d41616e97a50c403bac",
+      "rendered_user_prompt_sha256": "376f377bd716eb75ef4fd6b55c294cf5a1fd6099ea6877d209d4ca07ca63f7c0",
+      "text_length_shortfall": true,
+      "validator_codes": [
+        "TEXT_LENGTH_SHORTFALL"
+      ]
+    },
+    {
+      "case_id": "CO-04",
+      "group": "A",
+      "replica": 1,
+      "error_code": null,
+      "tempo_final_line_mismatch": false,
+      "raw_character_count": 683,
+      "text_character_count": 683,
+      "draft_notes_character_count": 0,
+      "instruction_hash": "484d1b4d455f1c6261db2f9d146a6dca606e8e0d26862d41616e97a50c403bac",
+      "rendered_user_prompt_sha256": "2c409f1815b044dd72556e93c5082df724868b889c831e4507b6591caf4dec52",
+      "text_length_shortfall": true,
+      "validator_codes": [
+        "TEXT_LENGTH_SHORTFALL"
+      ]
+    },
+    {
+      "case_id": "CO-04",
+      "group": "P",
+      "replica": 1,
+      "error_code": null,
+      "tempo_final_line_mismatch": false,
+      "raw_character_count": 2055,
+      "text_character_count": 1378,
+      "draft_notes_character_count": 629,
+      "instruction_hash": null,
+      "rendered_user_prompt_sha256": "1a423852a2b18cd7321b9cc4ad9799366c63172f3207a5d1af451e7cc421d5e5",
+      "text_length_shortfall": true,
+      "validator_codes": [
+        "TEXT_LENGTH_SHORTFALL"
+      ]
+    },
+    {
+      "case_id": "CO-04",
+      "group": "A",
+      "replica": 2,
+      "error_code": null,
+      "tempo_final_line_mismatch": false,
+      "raw_character_count": 1101,
+      "text_character_count": 1101,
+      "draft_notes_character_count": 0,
+      "instruction_hash": "484d1b4d455f1c6261db2f9d146a6dca606e8e0d26862d41616e97a50c403bac",
+      "rendered_user_prompt_sha256": "2c409f1815b044dd72556e93c5082df724868b889c831e4507b6591caf4dec52",
+      "text_length_shortfall": true,
+      "validator_codes": [
+        "TEXT_LENGTH_SHORTFALL"
+      ]
+    },
+    {
+      "case_id": "CO-04",
+      "group": "P",
+      "replica": 2,
+      "error_code": null,
+      "tempo_final_line_mismatch": false,
+      "raw_character_count": 2967,
+      "text_character_count": 2327,
+      "draft_notes_character_count": 592,
+      "instruction_hash": null,
+      "rendered_user_prompt_sha256": "1a423852a2b18cd7321b9cc4ad9799366c63172f3207a5d1af451e7cc421d5e5",
+      "text_length_shortfall": false,
+      "validator_codes": []
+    },
+    {
+      "case_id": "CO-04",
+      "group": "A",
+      "replica": 3,
+      "error_code": null,
+      "tempo_final_line_mismatch": false,
+      "raw_character_count": 1174,
+      "text_character_count": 1174,
+      "draft_notes_character_count": 0,
+      "instruction_hash": "484d1b4d455f1c6261db2f9d146a6dca606e8e0d26862d41616e97a50c403bac",
+      "rendered_user_prompt_sha256": "2c409f1815b044dd72556e93c5082df724868b889c831e4507b6591caf4dec52",
+      "text_length_shortfall": true,
+      "validator_codes": [
+        "TEXT_LENGTH_SHORTFALL"
+      ]
+    },
+    {
+      "case_id": "CO-04",
+      "group": "P",
+      "replica": 3,
+      "error_code": null,
+      "tempo_final_line_mismatch": false,
+      "raw_character_count": 1978,
+      "text_character_count": 1399,
+      "draft_notes_character_count": 531,
+      "instruction_hash": null,
+      "rendered_user_prompt_sha256": "1a423852a2b18cd7321b9cc4ad9799366c63172f3207a5d1af451e7cc421d5e5",
+      "text_length_shortfall": true,
+      "validator_codes": [
+        "TEXT_LENGTH_SHORTFALL"
+      ]
+    },
+    {
+      "case_id": "CO-05",
+      "group": "P",
+      "replica": 1,
+      "error_code": null,
+      "tempo_final_line_mismatch": false,
+      "raw_character_count": 2206,
+      "text_character_count": 1365,
+      "draft_notes_character_count": 792,
+      "instruction_hash": null,
+      "rendered_user_prompt_sha256": "d19f8cae0fb392582008bc0754de5e80f00f24beacdbff443bb7d0482cb8f828",
+      "text_length_shortfall": true,
+      "validator_codes": [
+        "TEXT_LENGTH_SHORTFALL"
+      ]
+    },
+    {
+      "case_id": "CO-05",
+      "group": "A",
+      "replica": 1,
+      "error_code": null,
+      "tempo_final_line_mismatch": false,
+      "raw_character_count": 1439,
+      "text_character_count": 1439,
+      "draft_notes_character_count": 0,
+      "instruction_hash": "484d1b4d455f1c6261db2f9d146a6dca606e8e0d26862d41616e97a50c403bac",
+      "rendered_user_prompt_sha256": "41dfc5a487e52adeb5b3552131c22ce325b90f43bc9dda6ea4bc779a770ca4bf",
+      "text_length_shortfall": true,
+      "validator_codes": [
+        "TEXT_LENGTH_SHORTFALL"
+      ]
+    },
+    {
+      "case_id": "CO-05",
+      "group": "A",
+      "replica": 2,
+      "error_code": null,
+      "tempo_final_line_mismatch": false,
+      "raw_character_count": 1287,
+      "text_character_count": 1287,
+      "draft_notes_character_count": 0,
+      "instruction_hash": "484d1b4d455f1c6261db2f9d146a6dca606e8e0d26862d41616e97a50c403bac",
+      "rendered_user_prompt_sha256": "41dfc5a487e52adeb5b3552131c22ce325b90f43bc9dda6ea4bc779a770ca4bf",
+      "text_length_shortfall": true,
+      "validator_codes": [
+        "TEXT_LENGTH_SHORTFALL"
+      ]
+    },
+    {
+      "case_id": "CO-05",
+      "group": "P",
+      "replica": 2,
+      "error_code": null,
+      "tempo_final_line_mismatch": false,
+      "raw_character_count": 1768,
+      "text_character_count": 1127,
+      "draft_notes_character_count": 593,
+      "instruction_hash": null,
+      "rendered_user_prompt_sha256": "d19f8cae0fb392582008bc0754de5e80f00f24beacdbff443bb7d0482cb8f828",
+      "text_length_shortfall": true,
+      "validator_codes": [
+        "TEXT_LENGTH_SHORTFALL"
+      ]
+    },
+    {
+      "case_id": "CO-05",
+      "group": "P",
+      "replica": 3,
+      "error_code": null,
+      "tempo_final_line_mismatch": false,
+      "raw_character_count": 1746,
+      "text_character_count": 1096,
+      "draft_notes_character_count": 602,
+      "instruction_hash": null,
+      "rendered_user_prompt_sha256": "d19f8cae0fb392582008bc0754de5e80f00f24beacdbff443bb7d0482cb8f828",
+      "text_length_shortfall": true,
+      "validator_codes": [
+        "TEXT_LENGTH_SHORTFALL"
+      ]
+    },
+    {
+      "case_id": "CO-05",
+      "group": "A",
+      "replica": 3,
+      "error_code": null,
+      "tempo_final_line_mismatch": false,
+      "raw_character_count": 1607,
+      "text_character_count": 1607,
+      "draft_notes_character_count": 0,
+      "instruction_hash": "484d1b4d455f1c6261db2f9d146a6dca606e8e0d26862d41616e97a50c403bac",
+      "rendered_user_prompt_sha256": "41dfc5a487e52adeb5b3552131c22ce325b90f43bc9dda6ea4bc779a770ca4bf",
+      "text_length_shortfall": true,
+      "validator_codes": [
+        "TEXT_LENGTH_SHORTFALL"
+      ]
+    }
+  ]
+}

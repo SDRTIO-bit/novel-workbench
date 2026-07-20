@@ -1,0 +1,9 @@
+{
+  "experiment_id": "SACRIFICIAL_PREFLIGHT_FEASIBILITY_V1",
+  "source_commit": "8bcc6f388bd13147edb26bd3c693dd369c09c8d2",
+  "total_articles": 24,
+  "total_content_characters": 31835,
+  "separator": "five newline characters",
+  "submission_sha256": "a0754439a63f79bb1334f09227163a29a4b55802388e4942e3cd565b876b4fe5",
+  "generated_at": "2026-07-20T20:15:21+08:00"
+}
