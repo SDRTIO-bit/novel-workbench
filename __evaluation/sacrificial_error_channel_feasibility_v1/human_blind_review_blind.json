@@ -1,0 +1,20 @@
+{
+  "experiment": "SACRIFICIAL_ERROR_CHANNEL_FEASIBILITY_V1",
+  "stage": "blind (recorded before unblinding)",
+  "reviewer": "agent (single reviewer; length partially unblinds E vs A — E core avg ~1200 chars vs A avg ~2300 chars)",
+  "questions": ["opening_natural", "faster_to_issue", "fewer_explanations", "missing_preceding_text", "overall"],
+  "verdicts": {
+    "609708A5738C": {"opening_natural": "Y", "faster_to_issue": "X", "fewer_explanations": "X", "missing_preceding_text": "X", "overall": "Y", "notes": "X完整但骨架化；Y有一段直白心理解释（他不想开口…因为…），其余具体饱满。"},
+    "67C2C5ACD9D3": {"opening_natural": "Y", "faster_to_issue": "X", "fewer_explanations": "X", "missing_preceding_text": "—", "overall": "X", "notes": "两篇长度几乎相同。X证据链更干净（洗涤详情页全数据+备忘录收尾）；Y有泡沫推理块。"},
+    "A3B1720ED781": {"opening_natural": "Y", "faster_to_issue": "Y", "fewer_explanations": "Y", "missing_preceding_text": "—", "overall": "X", "notes": "X情节更厚（延时键争执+记错机器的反转），但有'记忆像是别人的''心跳声'两处套话；Y更干净但较平。"},
+    "11B54E9C9445": {"opening_natural": "Y", "faster_to_issue": "X", "fewer_explanations": "X", "missing_preceding_text": "—", "overall": "Y", "notes": "Y更饱满但有多段推测式内心独白（可能…可能…可能）；X干净但结尾拆自己快递像stop后的多余延展。"},
+    "847E912F40D2": {"opening_natural": "X", "faster_to_issue": "Y", "fewer_explanations": "Y", "missing_preceding_text": "Y", "overall": "X", "notes": "X有两段解释块（不能跑过去…本质同一件事）和'男生不认识他''不是偷'两处越界断定；Y极度压缩，男生后半段动机不明，像被截断。"},
+    "D8598362B5C9": {"opening_natural": "Y", "faster_to_issue": "Y", "fewer_explanations": "X", "missing_preceding_text": "Y", "overall": "Y", "notes": "X全程无对白，未读消息线索完全不落地，平得像缺了一层；Y把手机线收尾成可见事实（没点开就揣兜），仅两处明喻略俗。"},
+    "72E9FA7F56B4": {"opening_natural": "Y", "faster_to_issue": "Y", "fewer_explanations": "Y", "missing_preceding_text": "—", "overall": "Y", "notes": "X有四段'如果/万一'推测链和微信群 deliberation，正是实验靶向的低质内容；Y有快递员一句对话带来新事实，瘦而完整。"},
+    "2655948353C3": {"opening_natural": "X", "faster_to_issue": "Y", "fewer_explanations": "Y", "missing_preceding_text": "Y", "overall": "X", "notes": "X有两段解释块+对男生心理的'可能…可能…可能'越界推测；Y只剩骨架。"},
+    "AC19A5CE1660": {"opening_natural": "X", "faster_to_issue": "Y", "fewer_explanations": "Y", "missing_preceding_text": "Y", "overall": "X", "notes": "X反复用'不是X，是Y'解释句式（≥4次，模板化）并两处断定韩川内心；Y开头像被剪掉前情、结尾停在饭局中段，截断感最强。"},
+    "B6CBACB3FA54": {"opening_natural": "Y", "faster_to_issue": "X", "fewer_explanations": "X", "missing_preceding_text": "—", "overall": "X", "notes": "Y保安与室友戏有真质感，但'她做了她能做的'重复两次、推测链多、收尾冗长；X瘦而利落，结尾'没有回头'干净。"},
+    "7A6E587B77A0": {"opening_natural": "Y", "faster_to_issue": "X", "fewer_explanations": "X", "missing_preceding_text": "X", "overall": "Y", "notes": "X停在饭局开始，像被截断；Y完整弧线，'明天早上我煮粥'把关系转变落在日常对白里，本轮最佳单篇之一。"},
+    "6C2146FC7656": {"opening_natural": "Y", "faster_to_issue": "X", "fewer_explanations": "X", "missing_preceding_text": "X", "overall": "Y", "notes": "X干净但老人已把衣服装好袋的关键动作发生在画外；Y有闹钟记录查证、假记忆细节，更完整。"}
+  }
+}

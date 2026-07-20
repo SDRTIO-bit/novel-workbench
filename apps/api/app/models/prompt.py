@@ -11,7 +11,7 @@ def _utcnow():
 
 
 STAGES = ["planner", "writer", "critic", "reviser", "judge"]
-OUTPUT_MODES = ["plain_text", "structured"]
+OUTPUT_MODES = ["plain_text", "structured", "xml_story"]
 
 
 class PromptProfile(Base, TimestampMixin):

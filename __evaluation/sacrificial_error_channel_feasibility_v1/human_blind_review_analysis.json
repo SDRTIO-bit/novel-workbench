@@ -1,0 +1,175 @@
+{
+  "experiment": "SACRIFICIAL_ERROR_CHANNEL_FEASIBILITY_V1",
+  "stage": "unblinded analysis",
+  "per_pair": [
+    {
+      "pair_id": "609708A5738C",
+      "case_id": "CO-04",
+      "replica": 1,
+      "opening_natural": "A",
+      "faster_to_issue": "E",
+      "fewer_explanations": "E",
+      "missing_preceding_text": "E",
+      "overall": "A"
+    },
+    {
+      "pair_id": "67C2C5ACD9D3",
+      "case_id": "NM-03",
+      "replica": 2,
+      "opening_natural": "A",
+      "faster_to_issue": "E",
+      "fewer_explanations": "E",
+      "missing_preceding_text": "—",
+      "overall": "E"
+    },
+    {
+      "pair_id": "A3B1720ED781",
+      "case_id": "NM-03",
+      "replica": 1,
+      "opening_natural": "E",
+      "faster_to_issue": "E",
+      "fewer_explanations": "E",
+      "missing_preceding_text": "—",
+      "overall": "A"
+    },
+    {
+      "pair_id": "11B54E9C9445",
+      "case_id": "CO-05",
+      "replica": 3,
+      "opening_natural": "A",
+      "faster_to_issue": "E",
+      "fewer_explanations": "E",
+      "missing_preceding_text": "—",
+      "overall": "A"
+    },
+    {
+      "pair_id": "847E912F40D2",
+      "case_id": "CO-04",
+      "replica": 2,
+      "opening_natural": "A",
+      "faster_to_issue": "E",
+      "fewer_explanations": "E",
+      "missing_preceding_text": "E",
+      "overall": "A"
+    },
+    {
+      "pair_id": "D8598362B5C9",
+      "case_id": "ROMANCE-02",
+      "replica": 1,
+      "opening_natural": "A",
+      "faster_to_issue": "A",
+      "fewer_explanations": "E",
+      "missing_preceding_text": "A",
+      "overall": "A"
+    },
+    {
+      "pair_id": "72E9FA7F56B4",
+      "case_id": "CO-05",
+      "replica": 1,
+      "opening_natural": "E",
+      "faster_to_issue": "E",
+      "fewer_explanations": "E",
+      "missing_preceding_text": "—",
+      "overall": "E"
+    },
+    {
+      "pair_id": "2655948353C3",
+      "case_id": "CO-04",
+      "replica": 3,
+      "opening_natural": "A",
+      "faster_to_issue": "E",
+      "fewer_explanations": "E",
+      "missing_preceding_text": "E",
+      "overall": "A"
+    },
+    {
+      "pair_id": "AC19A5CE1660",
+      "case_id": "ROMANCE-02",
+      "replica": 2,
+      "opening_natural": "A",
+      "faster_to_issue": "E",
+      "fewer_explanations": "E",
+      "missing_preceding_text": "E",
+      "overall": "A"
+    },
+    {
+      "pair_id": "B6CBACB3FA54",
+      "case_id": "CO-05",
+      "replica": 2,
+      "opening_natural": "A",
+      "faster_to_issue": "E",
+      "fewer_explanations": "E",
+      "missing_preceding_text": "—",
+      "overall": "E"
+    },
+    {
+      "pair_id": "7A6E587B77A0",
+      "case_id": "ROMANCE-02",
+      "replica": 3,
+      "opening_natural": "A",
+      "faster_to_issue": "E",
+      "fewer_explanations": "E",
+      "missing_preceding_text": "E",
+      "overall": "A"
+    },
+    {
+      "pair_id": "6C2146FC7656",
+      "case_id": "NM-03",
+      "replica": 3,
+      "opening_natural": "A",
+      "faster_to_issue": "E",
+      "fewer_explanations": "E",
+      "missing_preceding_text": "E",
+      "overall": "A"
+    }
+  ],
+  "aggregate": {
+    "opening_natural": {
+      "A": 10,
+      "E": 2,
+      "—": 0
+    },
+    "faster_to_issue": {
+      "A": 1,
+      "E": 11,
+      "—": 0
+    },
+    "fewer_explanations": {
+      "A": 0,
+      "E": 12,
+      "—": 0
+    },
+    "missing_preceding_text": {
+      "A": 1,
+      "E": 6,
+      "—": 5
+    },
+    "overall": {
+      "A": 9,
+      "E": 3,
+      "—": 0
+    }
+  },
+  "overall_by_scenario": {
+    "CO-04": [
+      "A",
+      "A",
+      "A"
+    ],
+    "NM-03": [
+      "E",
+      "A",
+      "A"
+    ],
+    "CO-05": [
+      "A",
+      "E",
+      "E"
+    ],
+    "ROMANCE-02": [
+      "A",
+      "A",
+      "A"
+    ]
+  }
+}

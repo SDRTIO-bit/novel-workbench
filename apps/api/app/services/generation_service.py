@@ -86,6 +86,30 @@ def _response_format_for_prompt(prompt_meta: dict | None) -> str:
     )
 
 
+_STORY_RE = re.compile(r"<story>(.*?)</story>", re.DOTALL | re.IGNORECASE)
+
+
+def _extract_story_from_xml_response(raw_response: str) -> tuple[str, str | None]:
+    """Extract <story> content from XML-formatted Writer output.
+
+    Returns (story_text, None) on success, or ("", error_code) on failure.
+    Never calls an LLM — deterministic regex extraction only.
+    """
+    open_pos = raw_response.lower().find("<story>")
+    close_pos = raw_response.lower().find("</story>")
+    if open_pos == -1:
+        return "", "XML_STORY_OPEN_TAG_MISSING"
+    if close_pos == -1 or close_pos < open_pos:
+        return "", "XML_STORY_CLOSING_TAG_MISSING"
+    match = _STORY_RE.search(raw_response)
+    if not match:
+        return "", "XML_STORY_EXTRACTION_FAILED"
+    story_text = match.group(1).strip()
+    if not story_text:
+        return "", "XML_STORY_EMPTY"
+    return story_text, None
+
+
 class GenerationService:
     def __init__(self, session: AsyncSession):
         self.session = session
@@ -461,9 +485,23 @@ class GenerationService:
                         step.status = "failed"
                         run.status = "completed"
             else:
-                text_output = raw_response
-                step.status = "completed"
-                run.status = "completed"
+                output_mode = (ctx.get("prompt_meta") or {}).get("output_mode", "plain_text")
+                if output_mode == "xml_story":
+                    story_text, extract_error = _extract_story_from_xml_response(raw_response)
+                    if extract_error:
+                        error_code = extract_error
+                        error_message = f"Story extraction failed: {extract_error}"
+                        step.status = "failed"
+                        run.status = "completed"
+                        text_output = ""
+                    else:
+                        text_output = story_text
+                        step.status = "completed"
+                        run.status = "completed"
+                else:
+                    text_output = raw_response
+                    step.status = "completed"
+                    run.status = "completed"
 
             if not error_code and stage in ("writer", "reviser"):
                 try:

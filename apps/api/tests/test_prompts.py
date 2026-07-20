@@ -154,7 +154,9 @@ class TestPromptList:
         resp = api_client.get("/api/prompts")
         data = resp.json()
         builtins = [p for p in data if p["is_builtin"]]
-        assert len(builtins) == 5
+        assert len(builtins) >= 5
+        stages = {p["stage"] for p in builtins}
+        assert stages == {"planner", "writer", "critic", "reviser", "judge"}
 
 
 class TestPromptVersions:
