@@ -210,6 +210,10 @@ class GenerationService:
             params["compiled_brief_hash"] = override.pop("_compiled_brief_hash")
         if "_instruction_hash" in override:
             params["instruction_hash"] = override.pop("_instruction_hash")
+        if "_policy_metadata" in override:
+            # Opaque experiment-metadata passthrough: persisted verbatim into
+            # candidate params; the service never interprets its content.
+            params["policy_metadata"] = override.pop("_policy_metadata")
         await self._append_judge_selection_envelope(run_id, stage, ctx)
         step.input_snapshot_json = ctx["input_snapshot_hash"]
 
