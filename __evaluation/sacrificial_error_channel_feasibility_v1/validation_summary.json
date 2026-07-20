@@ -1,0 +1,619 @@
+{
+  "experiment": "SACRIFICIAL_ERROR_CHANNEL_FEASIBILITY_V1",
+  "post_generation_assertions": {
+    "checks": {
+      "writer_slots": true,
+      "planner_slots": true,
+      "group_A_texts": true,
+      "group_E_texts": true,
+      "per_case_6": true,
+      "per_case_group_3": true,
+      "private_mapping_slots": true
+    },
+    "all_passed": true,
+    "drafts_total": 24,
+    "queued_texts": 24,
+    "expected_texts": 24
+  },
+  "group_E_extract_status": {
+    "complete": 12,
+    "recovered": 0,
+    "CORE_PARSE_FAILED": 0
+  },
+  "drafts": [
+    {
+      "case_id": "NM-03",
+      "group": "A",
+      "replica": 1,
+      "extract_status": "plain_text",
+      "raw_character_count": 2482,
+      "discard_character_count": 0,
+      "core_character_count": 2482,
+      "discard_ratio": 0.0,
+      "unit_count": null,
+      "instruction_hash": "c0e0d77cf7eb9cbbe50b94d5e14f0a3d892fa525689153c37e6fbc014bdeb2cd",
+      "rendered_user_prompt_sha256": "b321081d7c865ef3d584764c1dd23b92ed40d1d3025b44c970fcc08a64af85fa",
+      "error_code": null,
+      "tempo_final_line_mismatch": false,
+      "xml_parsable": null,
+      "core_length_shortfall": false,
+      "context_dependency_words": [
+        "刚才",
+        "又"
+      ],
+      "validator_codes": [
+        "MANUAL_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "case_id": "NM-03",
+      "group": "E",
+      "replica": 1,
+      "extract_status": "complete",
+      "raw_character_count": 3356,
+      "discard_character_count": 921,
+      "core_character_count": 1924,
+      "discard_ratio": 0.2744,
+      "unit_count": 6,
+      "instruction_hash": "be8787aee0f0358ec5b00781388a4c1b99717684b7fcc6687fc03944c4c08e2c",
+      "rendered_user_prompt_sha256": "fec4c93e8cb79ec4df1b63bba423e032a6bbff248d4db367f545194cc42c7c11",
+      "error_code": null,
+      "tempo_final_line_mismatch": false,
+      "xml_parsable": true,
+      "core_length_shortfall": false,
+      "context_dependency_words": [
+        "又",
+        "继续"
+      ],
+      "validator_codes": [
+        "MANUAL_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "case_id": "NM-03",
+      "group": "A",
+      "replica": 2,
+      "extract_status": "plain_text",
+      "raw_character_count": 1764,
+      "discard_character_count": 0,
+      "core_character_count": 1764,
+      "discard_ratio": 0.0,
+      "unit_count": null,
+      "instruction_hash": "c0e0d77cf7eb9cbbe50b94d5e14f0a3d892fa525689153c37e6fbc014bdeb2cd",
+      "rendered_user_prompt_sha256": "b321081d7c865ef3d584764c1dd23b92ed40d1d3025b44c970fcc08a64af85fa",
+      "error_code": null,
+      "tempo_final_line_mismatch": false,
+      "xml_parsable": null,
+      "core_length_shortfall": true,
+      "context_dependency_words": [
+        "刚才",
+        "又",
+        "再次"
+      ],
+      "validator_codes": [
+        "CORE_LENGTH_SHORTFALL",
+        "MANUAL_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "case_id": "NM-03",
+      "group": "E",
+      "replica": 2,
+      "extract_status": "complete",
+      "raw_character_count": 3291,
+      "discard_character_count": 912,
+      "core_character_count": 1797,
+      "discard_ratio": 0.2771,
+      "unit_count": 7,
+      "instruction_hash": "be8787aee0f0358ec5b00781388a4c1b99717684b7fcc6687fc03944c4c08e2c",
+      "rendered_user_prompt_sha256": "fec4c93e8cb79ec4df1b63bba423e032a6bbff248d4db367f545194cc42c7c11",
+      "error_code": "TEMPO_FINAL_LINE_MISMATCH",
+      "tempo_final_line_mismatch": true,
+      "xml_parsable": true,
+      "core_length_shortfall": true,
+      "context_dependency_words": [
+        "又"
+      ],
+      "validator_codes": [
+        "CORE_LENGTH_SHORTFALL",
+        "MANUAL_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "case_id": "NM-03",
+      "group": "A",
+      "replica": 3,
+      "extract_status": "plain_text",
+      "raw_character_count": 1736,
+      "discard_character_count": 0,
+      "core_character_count": 1736,
+      "discard_ratio": 0.0,
+      "unit_count": null,
+      "instruction_hash": "c0e0d77cf7eb9cbbe50b94d5e14f0a3d892fa525689153c37e6fbc014bdeb2cd",
+      "rendered_user_prompt_sha256": "b321081d7c865ef3d584764c1dd23b92ed40d1d3025b44c970fcc08a64af85fa",
+      "error_code": null,
+      "tempo_final_line_mismatch": false,
+      "xml_parsable": null,
+      "core_length_shortfall": true,
+      "context_dependency_words": [
+        "又",
+        "再次",
+        "继续"
+      ],
+      "validator_codes": [
+        "CORE_LENGTH_SHORTFALL",
+        "MANUAL_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "case_id": "NM-03",
+      "group": "E",
+      "replica": 3,
+      "extract_status": "complete",
+      "raw_character_count": 2076,
+      "discard_character_count": 614,
+      "core_character_count": 1038,
+      "discard_ratio": 0.2958,
+      "unit_count": 5,
+      "instruction_hash": "be8787aee0f0358ec5b00781388a4c1b99717684b7fcc6687fc03944c4c08e2c",
+      "rendered_user_prompt_sha256": "fec4c93e8cb79ec4df1b63bba423e032a6bbff248d4db367f545194cc42c7c11",
+      "error_code": null,
+      "tempo_final_line_mismatch": false,
+      "xml_parsable": true,
+      "core_length_shortfall": true,
+      "context_dependency_words": [
+        "又"
+      ],
+      "validator_codes": [
+        "CORE_LENGTH_SHORTFALL",
+        "MANUAL_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "case_id": "ROMANCE-02",
+      "group": "E",
+      "replica": 1,
+      "extract_status": "complete",
+      "raw_character_count": 3074,
+      "discard_character_count": 771,
+      "core_character_count": 1706,
+      "discard_ratio": 0.2508,
+      "unit_count": 7,
+      "instruction_hash": "be8787aee0f0358ec5b00781388a4c1b99717684b7fcc6687fc03944c4c08e2c",
+      "rendered_user_prompt_sha256": "4d2514f8dc2abdd5f097c009fe502929344b8ab80243bc099b0afc08196415ce",
+      "error_code": null,
+      "tempo_final_line_mismatch": false,
+      "xml_parsable": true,
+      "core_length_shortfall": true,
+      "context_dependency_words": [
+        "刚才",
+        "又",
+        "继续"
+      ],
+      "validator_codes": [
+        "CORE_LENGTH_SHORTFALL",
+        "MANUAL_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "case_id": "ROMANCE-02",
+      "group": "A",
+      "replica": 1,
+      "extract_status": "plain_text",
+      "raw_character_count": 2486,
+      "discard_character_count": 0,
+      "core_character_count": 2486,
+      "discard_ratio": 0.0,
+      "unit_count": null,
+      "instruction_hash": "c0e0d77cf7eb9cbbe50b94d5e14f0a3d892fa525689153c37e6fbc014bdeb2cd",
+      "rendered_user_prompt_sha256": "77c6fd31640ec7f7aafbe5594dc85ee3ccb614e89b3153b5c2e08662f27f1913",
+      "error_code": null,
+      "tempo_final_line_mismatch": false,
+      "xml_parsable": null,
+      "core_length_shortfall": false,
+      "context_dependency_words": [
+        "刚才",
+        "又",
+        "继续"
+      ],
+      "validator_codes": [
+        "MANUAL_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "case_id": "ROMANCE-02",
+      "group": "A",
+      "replica": 2,
+      "extract_status": "plain_text",
+      "raw_character_count": 2342,
+      "discard_character_count": 0,
+      "core_character_count": 2342,
+      "discard_ratio": 0.0,
+      "unit_count": null,
+      "instruction_hash": "c0e0d77cf7eb9cbbe50b94d5e14f0a3d892fa525689153c37e6fbc014bdeb2cd",
+      "rendered_user_prompt_sha256": "77c6fd31640ec7f7aafbe5594dc85ee3ccb614e89b3153b5c2e08662f27f1913",
+      "error_code": null,
+      "tempo_final_line_mismatch": false,
+      "xml_parsable": null,
+      "core_length_shortfall": false,
+      "context_dependency_words": [
+        "又",
+        "继续"
+      ],
+      "validator_codes": [
+        "MANUAL_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "case_id": "ROMANCE-02",
+      "group": "E",
+      "replica": 2,
+      "extract_status": "complete",
+      "raw_character_count": 2467,
+      "discard_character_count": 1100,
+      "core_character_count": 770,
+      "discard_ratio": 0.4459,
+      "unit_count": 7,
+      "instruction_hash": "be8787aee0f0358ec5b00781388a4c1b99717684b7fcc6687fc03944c4c08e2c",
+      "rendered_user_prompt_sha256": "4d2514f8dc2abdd5f097c009fe502929344b8ab80243bc099b0afc08196415ce",
+      "error_code": null,
+      "tempo_final_line_mismatch": false,
+      "xml_parsable": true,
+      "core_length_shortfall": true,
+      "context_dependency_words": [
+        "刚才"
+      ],
+      "validator_codes": [
+        "CORE_LENGTH_SHORTFALL",
+        "MANUAL_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "case_id": "ROMANCE-02",
+      "group": "E",
+      "replica": 3,
+      "extract_status": "complete",
+      "raw_character_count": 2555,
+      "discard_character_count": 745,
+      "core_character_count": 1218,
+      "discard_ratio": 0.2916,
+      "unit_count": 7,
+      "instruction_hash": "be8787aee0f0358ec5b00781388a4c1b99717684b7fcc6687fc03944c4c08e2c",
+      "rendered_user_prompt_sha256": "4d2514f8dc2abdd5f097c009fe502929344b8ab80243bc099b0afc08196415ce",
+      "error_code": null,
+      "tempo_final_line_mismatch": false,
+      "xml_parsable": true,
+      "core_length_shortfall": true,
+      "context_dependency_words": [],
+      "validator_codes": [
+        "CORE_LENGTH_SHORTFALL",
+        "MANUAL_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "case_id": "ROMANCE-02",
+      "group": "A",
+      "replica": 3,
+      "extract_status": "plain_text",
+      "raw_character_count": 2239,
+      "discard_character_count": 0,
+      "core_character_count": 2239,
+      "discard_ratio": 0.0,
+      "unit_count": null,
+      "instruction_hash": "c0e0d77cf7eb9cbbe50b94d5e14f0a3d892fa525689153c37e6fbc014bdeb2cd",
+      "rendered_user_prompt_sha256": "77c6fd31640ec7f7aafbe5594dc85ee3ccb614e89b3153b5c2e08662f27f1913",
+      "error_code": null,
+      "tempo_final_line_mismatch": false,
+      "xml_parsable": null,
+      "core_length_shortfall": false,
+      "context_dependency_words": [
+        "刚才",
+        "又",
+        "再次",
+        "继续"
+      ],
+      "validator_codes": [
+        "MANUAL_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "case_id": "CO-04",
+      "group": "A",
+      "replica": 1,
+      "extract_status": "plain_text",
+      "raw_character_count": 2324,
+      "discard_character_count": 0,
+      "core_character_count": 2324,
+      "discard_ratio": 0.0,
+      "unit_count": null,
+      "instruction_hash": "c0e0d77cf7eb9cbbe50b94d5e14f0a3d892fa525689153c37e6fbc014bdeb2cd",
+      "rendered_user_prompt_sha256": "e6b8ae79fb6791a6ba4d4558fc990a8150385e3accbb20ad6bc40438f66d4ad8",
+      "error_code": null,
+      "tempo_final_line_mismatch": false,
+      "xml_parsable": null,
+      "core_length_shortfall": false,
+      "context_dependency_words": [
+        "刚才",
+        "又",
+        "继续"
+      ],
+      "validator_codes": [
+        "MANUAL_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "case_id": "CO-04",
+      "group": "E",
+      "replica": 1,
+      "extract_status": "complete",
+      "raw_character_count": 2109,
+      "discard_character_count": 755,
+      "core_character_count": 772,
+      "discard_ratio": 0.358,
+      "unit_count": 7,
+      "instruction_hash": "be8787aee0f0358ec5b00781388a4c1b99717684b7fcc6687fc03944c4c08e2c",
+      "rendered_user_prompt_sha256": "efc1fda6e759c26b0ac7ed8fb4c48cd00e66189ce49132cf685c915575986b2d",
+      "error_code": null,
+      "tempo_final_line_mismatch": false,
+      "xml_parsable": true,
+      "core_length_shortfall": true,
+      "context_dependency_words": [
+        "又",
+        "继续"
+      ],
+      "validator_codes": [
+        "CORE_LENGTH_SHORTFALL",
+        "MANUAL_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "case_id": "CO-04",
+      "group": "A",
+      "replica": 2,
+      "extract_status": "plain_text",
+      "raw_character_count": 1702,
+      "discard_character_count": 0,
+      "core_character_count": 1702,
+      "discard_ratio": 0.0,
+      "unit_count": null,
+      "instruction_hash": "c0e0d77cf7eb9cbbe50b94d5e14f0a3d892fa525689153c37e6fbc014bdeb2cd",
+      "rendered_user_prompt_sha256": "e6b8ae79fb6791a6ba4d4558fc990a8150385e3accbb20ad6bc40438f66d4ad8",
+      "error_code": null,
+      "tempo_final_line_mismatch": false,
+      "xml_parsable": null,
+      "core_length_shortfall": true,
+      "context_dependency_words": [
+        "刚才",
+        "又"
+      ],
+      "validator_codes": [
+        "CORE_LENGTH_SHORTFALL",
+        "MANUAL_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "case_id": "CO-04",
+      "group": "E",
+      "replica": 2,
+      "extract_status": "complete",
+      "raw_character_count": 2301,
+      "discard_character_count": 934,
+      "core_character_count": 870,
+      "discard_ratio": 0.4059,
+      "unit_count": 6,
+      "instruction_hash": "be8787aee0f0358ec5b00781388a4c1b99717684b7fcc6687fc03944c4c08e2c",
+      "rendered_user_prompt_sha256": "efc1fda6e759c26b0ac7ed8fb4c48cd00e66189ce49132cf685c915575986b2d",
+      "error_code": null,
+      "tempo_final_line_mismatch": false,
+      "xml_parsable": true,
+      "core_length_shortfall": true,
+      "context_dependency_words": [
+        "刚才",
+        "又",
+        "继续"
+      ],
+      "validator_codes": [
+        "CORE_LENGTH_SHORTFALL",
+        "MANUAL_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "case_id": "CO-04",
+      "group": "A",
+      "replica": 3,
+      "extract_status": "plain_text",
+      "raw_character_count": 1846,
+      "discard_character_count": 0,
+      "core_character_count": 1846,
+      "discard_ratio": 0.0,
+      "unit_count": null,
+      "instruction_hash": "c0e0d77cf7eb9cbbe50b94d5e14f0a3d892fa525689153c37e6fbc014bdeb2cd",
+      "rendered_user_prompt_sha256": "e6b8ae79fb6791a6ba4d4558fc990a8150385e3accbb20ad6bc40438f66d4ad8",
+      "error_code": null,
+      "tempo_final_line_mismatch": false,
+      "xml_parsable": null,
+      "core_length_shortfall": false,
+      "context_dependency_words": [
+        "刚才",
+        "又",
+        "继续"
+      ],
+      "validator_codes": [
+        "MANUAL_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "case_id": "CO-04",
+      "group": "E",
+      "replica": 3,
+      "extract_status": "complete",
+      "raw_character_count": 1942,
+      "discard_character_count": 742,
+      "core_character_count": 725,
+      "discard_ratio": 0.3821,
+      "unit_count": 6,
+      "instruction_hash": "be8787aee0f0358ec5b00781388a4c1b99717684b7fcc6687fc03944c4c08e2c",
+      "rendered_user_prompt_sha256": "efc1fda6e759c26b0ac7ed8fb4c48cd00e66189ce49132cf685c915575986b2d",
+      "error_code": null,
+      "tempo_final_line_mismatch": false,
+      "xml_parsable": true,
+      "core_length_shortfall": true,
+      "context_dependency_words": [
+        "又"
+      ],
+      "validator_codes": [
+        "CORE_LENGTH_SHORTFALL",
+        "MANUAL_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "case_id": "CO-05",
+      "group": "E",
+      "replica": 1,
+      "extract_status": "complete",
+      "raw_character_count": 2027,
+      "discard_character_count": 629,
+      "core_character_count": 971,
+      "discard_ratio": 0.3103,
+      "unit_count": 5,
+      "instruction_hash": "be8787aee0f0358ec5b00781388a4c1b99717684b7fcc6687fc03944c4c08e2c",
+      "rendered_user_prompt_sha256": "d2c81a7c7c79e47906d481b57b137030a32c6bb838dcc3902d3d64d141dd7802",
+      "error_code": null,
+      "tempo_final_line_mismatch": false,
+      "xml_parsable": true,
+      "core_length_shortfall": true,
+      "context_dependency_words": [
+        "又",
+        "继续"
+      ],
+      "validator_codes": [
+        "CORE_LENGTH_SHORTFALL",
+        "MANUAL_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "case_id": "CO-05",
+      "group": "A",
+      "replica": 1,
+      "extract_status": "plain_text",
+      "raw_character_count": 2870,
+      "discard_character_count": 0,
+      "core_character_count": 2870,
+      "discard_ratio": 0.0,
+      "unit_count": null,
+      "instruction_hash": "c0e0d77cf7eb9cbbe50b94d5e14f0a3d892fa525689153c37e6fbc014bdeb2cd",
+      "rendered_user_prompt_sha256": "676774e3ea7403e63329bb32655150880bfe0faf72b9e21519729755d17e963e",
+      "error_code": null,
+      "tempo_final_line_mismatch": false,
+      "xml_parsable": null,
+      "core_length_shortfall": false,
+      "context_dependency_words": [
+        "又",
+        "继续"
+      ],
+      "validator_codes": [
+        "MANUAL_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "case_id": "CO-05",
+      "group": "A",
+      "replica": 2,
+      "extract_status": "plain_text",
+      "raw_character_count": 3756,
+      "discard_character_count": 0,
+      "core_character_count": 3756,
+      "discard_ratio": 0.0,
+      "unit_count": null,
+      "instruction_hash": "c0e0d77cf7eb9cbbe50b94d5e14f0a3d892fa525689153c37e6fbc014bdeb2cd",
+      "rendered_user_prompt_sha256": "676774e3ea7403e63329bb32655150880bfe0faf72b9e21519729755d17e963e",
+      "error_code": null,
+      "tempo_final_line_mismatch": false,
+      "xml_parsable": null,
+      "core_length_shortfall": false,
+      "context_dependency_words": [
+        "刚才",
+        "又",
+        "继续"
+      ],
+      "validator_codes": [
+        "MANUAL_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "case_id": "CO-05",
+      "group": "E",
+      "replica": 2,
+      "extract_status": "complete",
+      "raw_character_count": 2329,
+      "discard_character_count": 690,
+      "core_character_count": 1218,
+      "discard_ratio": 0.2963,
+      "unit_count": 5,
+      "instruction_hash": "be8787aee0f0358ec5b00781388a4c1b99717684b7fcc6687fc03944c4c08e2c",
+      "rendered_user_prompt_sha256": "d2c81a7c7c79e47906d481b57b137030a32c6bb838dcc3902d3d64d141dd7802",
+      "error_code": null,
+      "tempo_final_line_mismatch": false,
+      "xml_parsable": true,
+      "core_length_shortfall": true,
+      "context_dependency_words": [
+        "刚才",
+        "又"
+      ],
+      "validator_codes": [
+        "CORE_LENGTH_SHORTFALL",
+        "MANUAL_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "case_id": "CO-05",
+      "group": "E",
+      "replica": 3,
+      "extract_status": "complete",
+      "raw_character_count": 3036,
+      "discard_character_count": 1108,
+      "core_character_count": 1342,
+      "discard_ratio": 0.365,
+      "unit_count": 7,
+      "instruction_hash": "be8787aee0f0358ec5b00781388a4c1b99717684b7fcc6687fc03944c4c08e2c",
+      "rendered_user_prompt_sha256": "d2c81a7c7c79e47906d481b57b137030a32c6bb838dcc3902d3d64d141dd7802",
+      "error_code": null,
+      "tempo_final_line_mismatch": false,
+      "xml_parsable": true,
+      "core_length_shortfall": true,
+      "context_dependency_words": [
+        "又"
+      ],
+      "validator_codes": [
+        "CORE_LENGTH_SHORTFALL",
+        "MANUAL_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "case_id": "CO-05",
+      "group": "A",
+      "replica": 3,
+      "extract_status": "plain_text",
+      "raw_character_count": 2611,
+      "discard_character_count": 0,
+      "core_character_count": 2611,
+      "discard_ratio": 0.0,
+      "unit_count": null,
+      "instruction_hash": "c0e0d77cf7eb9cbbe50b94d5e14f0a3d892fa525689153c37e6fbc014bdeb2cd",
+      "rendered_user_prompt_sha256": "676774e3ea7403e63329bb32655150880bfe0faf72b9e21519729755d17e963e",
+      "error_code": null,
+      "tempo_final_line_mismatch": false,
+      "xml_parsable": null,
+      "core_length_shortfall": false,
+      "context_dependency_words": [
+        "刚才",
+        "又",
+        "继续",
+        "这才"
+      ],
+      "validator_codes": [
+        "MANUAL_REVIEW_REQUIRED"
+      ]
+    }
+  ]
+}

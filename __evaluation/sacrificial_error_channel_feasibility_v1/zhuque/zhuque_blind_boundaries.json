@@ -1,0 +1,194 @@
+[
+  {
+    "ordinal": 1,
+    "blind_id": "C5C127047BE2",
+    "start_char": 0,
+    "end_char": 772,
+    "character_count": 772,
+    "text_path": "cases\\CO-04\\core\\e-1.txt"
+  },
+  {
+    "ordinal": 2,
+    "blind_id": "F5058F0AF5AA",
+    "start_char": 777,
+    "end_char": 1502,
+    "character_count": 725,
+    "text_path": "cases\\CO-04\\core\\e-3.txt"
+  },
+  {
+    "ordinal": 3,
+    "blind_id": "9C40EE2FB887",
+    "start_char": 1507,
+    "end_char": 3993,
+    "character_count": 2486,
+    "text_path": "cases\\ROMANCE-02\\raw\\a-1.txt"
+  },
+  {
+    "ordinal": 4,
+    "blind_id": "8EBA83560D40",
+    "start_char": 3998,
+    "end_char": 5704,
+    "character_count": 1706,
+    "text_path": "cases\\ROMANCE-02\\core\\e-1.txt"
+  },
+  {
+    "ordinal": 5,
+    "blind_id": "6B9C60741311",
+    "start_char": 5709,
+    "end_char": 8051,
+    "character_count": 2342,
+    "text_path": "cases\\ROMANCE-02\\raw\\a-2.txt"
+  },
+  {
+    "ordinal": 6,
+    "blind_id": "27C9B22FA663",
+    "start_char": 8056,
+    "end_char": 10926,
+    "character_count": 2870,
+    "text_path": "cases\\CO-05\\raw\\a-1.txt"
+  },
+  {
+    "ordinal": 7,
+    "blind_id": "F6C4C434A24D",
+    "start_char": 10931,
+    "end_char": 12149,
+    "character_count": 1218,
+    "text_path": "cases\\CO-05\\core\\e-2.txt"
+  },
+  {
+    "ordinal": 8,
+    "blind_id": "43B0BA81AAE4",
+    "start_char": 12154,
+    "end_char": 14636,
+    "character_count": 2482,
+    "text_path": "cases\\NM-03\\raw\\a-1.txt"
+  },
+  {
+    "ordinal": 9,
+    "blind_id": "AF18E3EDFD49",
+    "start_char": 14641,
+    "end_char": 17252,
+    "character_count": 2611,
+    "text_path": "cases\\CO-05\\raw\\a-3.txt"
+  },
+  {
+    "ordinal": 10,
+    "blind_id": "76CF3B36E4EB",
+    "start_char": 17257,
+    "end_char": 18295,
+    "character_count": 1038,
+    "text_path": "cases\\NM-03\\core\\e-3.txt"
+  },
+  {
+    "ordinal": 11,
+    "blind_id": "0D4760DFA3D9",
+    "start_char": 18300,
+    "end_char": 20002,
+    "character_count": 1702,
+    "text_path": "cases\\CO-04\\raw\\a-2.txt"
+  },
+  {
+    "ordinal": 12,
+    "blind_id": "DD7A2728E5F5",
+    "start_char": 20007,
+    "end_char": 21853,
+    "character_count": 1846,
+    "text_path": "cases\\CO-04\\raw\\a-3.txt"
+  },
+  {
+    "ordinal": 13,
+    "blind_id": "6F26F7763FDD",
+    "start_char": 21858,
+    "end_char": 23782,
+    "character_count": 1924,
+    "text_path": "cases\\NM-03\\core\\e-1.txt"
+  },
+  {
+    "ordinal": 14,
+    "blind_id": "F1F4C80FCC3A",
+    "start_char": 23787,
+    "end_char": 25584,
+    "character_count": 1797,
+    "text_path": "cases\\NM-03\\core\\e-2.txt"
+  },
+  {
+    "ordinal": 15,
+    "blind_id": "EF3C6F50B16D",
+    "start_char": 25589,
+    "end_char": 26560,
+    "character_count": 971,
+    "text_path": "cases\\CO-05\\core\\e-1.txt"
+  },
+  {
+    "ordinal": 16,
+    "blind_id": "4976C93ECDC0",
+    "start_char": 26565,
+    "end_char": 27435,
+    "character_count": 870,
+    "text_path": "cases\\CO-04\\core\\e-2.txt"
+  },
+  {
+    "ordinal": 17,
+    "blind_id": "8469781E467B",
+    "start_char": 27440,
+    "end_char": 29204,
+    "character_count": 1764,
+    "text_path": "cases\\NM-03\\raw\\a-2.txt"
+  },
+  {
+    "ordinal": 18,
+    "blind_id": "CA82B274ECB0",
+    "start_char": 29209,
+    "end_char": 30427,
+    "character_count": 1218,
+    "text_path": "cases\\ROMANCE-02\\core\\e-3.txt"
+  },
+  {
+    "ordinal": 19,
+    "blind_id": "F76A36172240",
+    "start_char": 30432,
+    "end_char": 32756,
+    "character_count": 2324,
+    "text_path": "cases\\CO-04\\raw\\a-1.txt"
+  },
+  {
+    "ordinal": 20,
+    "blind_id": "A2E17ED6B666",
+    "start_char": 32761,
+    "end_char": 36517,
+    "character_count": 3756,
+    "text_path": "cases\\CO-05\\raw\\a-2.txt"
+  },
+  {
+    "ordinal": 21,
+    "blind_id": "BE936E46BE90",
+    "start_char": 36522,
+    "end_char": 37292,
+    "character_count": 770,
+    "text_path": "cases\\ROMANCE-02\\core\\e-2.txt"
+  },
+  {
+    "ordinal": 22,
+    "blind_id": "964ECDF06CC8",
+    "start_char": 37297,
+    "end_char": 38639,
+    "character_count": 1342,
+    "text_path": "cases\\CO-05\\core\\e-3.txt"
+  },
+  {
+    "ordinal": 23,
+    "blind_id": "9305803BE2FD",
+    "start_char": 38644,
+    "end_char": 40883,
+    "character_count": 2239,
+    "text_path": "cases\\ROMANCE-02\\raw\\a-3.txt"
+  },
+  {
+    "ordinal": 24,
+    "blind_id": "A1AF33F23DB9",
+    "start_char": 40888,
+    "end_char": 42624,
+    "character_count": 1736,
+    "text_path": "cases\\NM-03\\raw\\a-3.txt"
+  }
+]

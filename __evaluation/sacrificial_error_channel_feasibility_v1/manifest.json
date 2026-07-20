@@ -1,0 +1,82 @@
+{
+  "experiment": "SACRIFICIAL_ERROR_CHANNEL_FEASIBILITY_V1",
+  "git_commit": "1068797374222b7b0c98abcbd46b040575f1cb7c",
+  "seed": 20260720,
+  "model_seed": null,
+  "seed_note": "Provider/adapter exposes no model seed (LlmRequest has no seed field; DeepSeek chat/completions documents none). seed=null is recorded for every call; temperature/top_p/max_output_tokens/timeout are held identical across groups; reproducibility is not faked. The SEED constant only drives blind-token generation and call-order shuffling.",
+  "replicas_per_group": 3,
+  "case_ids": [
+    "NM-03",
+    "ROMANCE-02",
+    "CO-04",
+    "CO-05"
+  ],
+  "groups": {
+    "A": "length-matched baseline (minimal length instruction, plain prose)",
+    "E": "sacrificial error channel (5–7 units; only concatenated core retained)"
+  },
+  "writer_input_mode": "writer_brief",
+  "writer_behavior_mode": null,
+  "writer_prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+  "planner_prompt_version_id": "f9052f8a-dc4e-5408-b14e-fc1badaf57f8",
+  "frozen_parameters": {
+    "provider_id": "34c14b6b-7231-432a-96b2-8272329b828d",
+    "model_id": "deepseek-v4-pro",
+    "planner_prompt_version_id": "f9052f8a-dc4e-5408-b14e-fc1badaf57f8",
+    "writer_prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "planner_max_output_tokens": 12288,
+    "max_output_tokens": 6000,
+    "timeout_seconds": 300
+  },
+  "instruction_hashes": {
+    "A": "c0e0d77cf7eb9cbbe50b94d5e14f0a3d892fa525689153c37e6fbc014bdeb2cd",
+    "E": "be8787aee0f0358ec5b00781388a4c1b99717684b7fcc6687fc03944c4c08e2c"
+  },
+  "execution_model": "scene-level parallelism (4 concurrent scenes, each with its own isolated SQLite copy); writers sequential within a scene; all hash/boundary/blind artifacts are per-slot deterministic and order-independent",
+  "rules": [
+    "One Planner call per scene; all 6 Writers share the frozen Planner output.",
+    "2 groups x 3 replicas per scene; stratified-random A/E call order per replica.",
+    "No Critic/Reviser/Judge. No retry. No filtering. All failures preserved.",
+    "Group E: no LLM XML repair; no silent raw-XML fallback; CORE_PARSE_FAILED recorded.",
+    "Planner hard failure aborts the entire run; no per-scene makeup runs.",
+    "seed=null for every model call; other parameters held identical.",
+    "max_output_tokens=6000 is an experiment-level override for BOTH groups; product defaults untouched."
+  ],
+  "status": "completed",
+  "writer_prompt_identity": {
+    "prompt_version_id": "f7760cd8-8048-4f3c-839c-e33333eb96fb",
+    "found": true,
+    "version_number": 6,
+    "output_mode": "plain_text",
+    "output_schema_name": null,
+    "system_template_sha256": "e933b446316349802745d7dcd5f918e7fb550c1ae78c5c7cfa7a69e095dffdef",
+    "user_template_sha256": "25004d53ea9cbc7662e95c37ca6292c033e1269fa66ebf5e8d9e24879ae0a913"
+  },
+  "planner_prompt_identity": {
+    "prompt_version_id": "f9052f8a-dc4e-5408-b14e-fc1badaf57f8",
+    "found": true,
+    "version_number": 6,
+    "output_mode": "structured",
+    "output_schema_name": "planner_v2",
+    "system_template_sha256": "5e1a50eac9751dcc28fa84242ba8a1f0b54a78ec15f30c0c1b6f1d0078fd0a33",
+    "user_template_sha256": "119cc39b9d0b61c966b9c2ac0de61a458455c939fed0186067816468d89c5ed7"
+  },
+  "post_generation_assertions": {
+    "checks": {
+      "writer_slots": true,
+      "planner_slots": true,
+      "group_A_texts": true,
+      "group_E_texts": true,
+      "per_case_6": true,
+      "per_case_group_3": true,
+      "private_mapping_slots": true
+    },
+    "all_passed": true,
+    "drafts_total": 24,
+    "queued_texts": 24,
+    "expected_texts": 24
+  },
+  "wall_seconds": 298.0
+}

@@ -1,0 +1,9 @@
+{
+  "experiment_id": "SACRIFICIAL_ERROR_CHANNEL_FEASIBILITY_V1",
+  "source_commit": "1068797374222b7b0c98abcbd46b040575f1cb7c",
+  "total_articles": 24,
+  "total_content_characters": 42509,
+  "separator": "five newline characters",
+  "submission_sha256": "0dd4fcc9aaf060a5a83e8a087975dcd50b9023c94a7698ba7c8dd8202519c0f8",
+  "generated_at": "2026-07-20T16:46:15+08:00"
+}

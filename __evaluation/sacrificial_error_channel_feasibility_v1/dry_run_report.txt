@@ -1,0 +1,106 @@
+SACRIFICIAL_ERROR_CHANNEL_FEASIBILITY_V1 — DRY-RUN (no model calls)
+
+Scenes: 4 | Groups: ['A', 'E'] | Replicas: 3
+Slots: 24 texts = 4 scenes x 2 groups x 3 replicas
+Model calls: 4 Planner + 24 Writer = 28 (hard cap 28)
+
+── Pre-generation assertions ──
+  cases=4 -> True
+  groups=2 -> True
+  replicas=3 -> True
+  writer_slots=24 -> True
+  planner_slots=4 -> True
+
+── Frozen parameters (identical across both groups) ──
+  provider_id = 34c14b6b-7231-432a-96b2-8272329b828d
+  model_id = deepseek-v4-pro
+  planner_prompt_version_id = f9052f8a-dc4e-5408-b14e-fc1badaf57f8
+  writer_prompt_version_id = f7760cd8-8048-4f3c-839c-e33333eb96fb
+  temperature = 0.7
+  top_p = 1.0
+  planner_max_output_tokens = 12288
+  max_output_tokens = 6000
+  timeout_seconds = 300
+  writer_input_mode = writer_brief   writer_behavior_mode = None
+
+── Seed ──
+  Provider/adapter exposes no model seed (LlmRequest has no seed field; DeepSeek chat/completions documents none). seed=null is recorded for every call; temperature/top_p/max_output_tokens/timeout are held identical across groups; reproducibility is not faked. The SEED constant only drives blind-token generation and call-order shuffling.
+
+── Group deltas (the ONLY differences between groups) ──
+  A: length-matched instruction  sha256=c0e0d77cf7eb9cbbe50b94d5e14f0a3d892fa525689153c37e6fbc014bdeb2cd
+  E: sacrificial channel instruction sha256=be8787aee0f0358ec5b00781388a4c1b99717684b7fcc6687fc03944c4c08e2c
+
+── Group A instruction (verbatim) ──
+## 篇幅要求（在既有规则之上追加）
+输出一篇可以独立阅读的完整场景正文，保留字数目标为 1800–2200 字。不得通过重复动作、解释含义、或在 stop_state 之后延展内容来凑字数。
+
+── Group E instruction (verbatim) ──
+## 献祭式错误通道（在既有规则之上追加的输出格式）
+本场景改为按「叙事单元」输出。全文输出 5–7 个叙事单元，严格使用以下 XML 结构：
+
+<unit id="1">
+<discard reason="类型">
+可删除内容
+</discard>
+<core>
+正式正文
+</core>
+</unit>
+
+一、discard 的任务：在每个局部叙事时刻，先输出你最容易产生、但不应进入最终正文的低质量表达——直白解释当下人物心理、把其他人物的动机当成事实陈述、未经现场证据证实的推断、氛围概括、关系变化总结、陈词滥调的修辞、重复确认、stop_state 触发后的多余收束。
+二、discard 的 reason 只能使用以下八种：mind_explanation / cross_mind / atmosphere_summary / relationship_summary / cliche_expression / unverified_inference / repeated_confirmation / post_stop_coda。
+三、discard 禁止：引入新人物、新地点、新物件、新证据；创设新的背景事实；改动时间线；完成关键动作；解决核心问题；发生不可逆事件；创设后续 core 所依赖的信息。discard 只能承载「错误表达候选」，不能承载「故事事实」。
+四、core 必须：与同一 unit 的 discard 处理同一个局部叙事时刻；不是把 discard 换一种说法改写；不复用 discard 的错误叙事功能；不依赖 discard 才能被理解；不引用 discard 独有的信息；不假定 discard 中的内容已经发生；通过动作、对话、物件与可见后果推进；完成 Planner 要求的核心事件；全部 core 拼接后构成连续完整的正文；stop_state 触发后停止生成。
+五、字数目标：discard 合计 700–1000 字；core 合计 1800–2200 字；XML 标签不计入字数。
+六、你展示的不是分析过程。discard 是最终输出格式中可删除的低质量文本，不是思维链。
+
+── Scenes and per-replica call orders ──
+  [NM-03] 城市日常 《洗衣房的滚筒》
+      instruction: 小区自助洗衣房里，方笛认为自己那台滚筒还没洗完——她记得设定的是一小时，现在才过去四十分钟。旁边等着用机器的老人说机器早停了，里面是他的衣服。方笛不能跟老人争，也不能直接把滚筒门拉开。滚筒玻璃上的水位和面板上的状态会证明谁记错了。她必须用一个可见事实处理这个争执。停在机器状态拆穿其中一方判断的事实。
+      replica 1: A → E
+      replica 2: A → E
+      replica 3: A → E
+  [ROMANCE-02] 恋爱日常 《未读消息》
+      instruction: 合租屋厨房里，夏知看见韩川的手机亮起自己昨晚的未读消息，韩川却先把手机扣在桌上去洗菜。水已经开了，桌上只有两只碗。夏知不能偷看手机，也不能断言对方为何没回；她需要根据可见事实选择继续帮忙、离开或提出别的行动，并让代价和后果落在现场。
+      replica 1: E → A
+      replica 2: A → E
+      replica 3: E → A
+  [CO-04] 校园日常 《操场上错拿的水壶》
+      instruction: 体育课自由活动时，路远发现自己的蓝色运动水壶被一个不认识的男生拿起来喝了一口。那个男生正往篮球场方向走，手里还拿着水壶。路远不能跑过去抢回来，也不能在操场上喊。他必须用一个现场物件让对方发现。停在水壶回到正确位置的事实。
+      replica 1: A → E
+      replica 2: A → E
+      replica 3: A → E
+  [CO-05] 日常任务 《快递架上的同名包裹》
+      instruction: 小区快递架上，向暖发现一个写着'向暖'的包裹——但收件地址不是自己的楼栋。真正的收件人可能就在附近。包裹不大，架子上还有其他未取件。向暖不能拆包裹验证，也不能拿错的东西回家。她必须用一个现场物件标记或通知。停在包裹归属出现新事实。
+      replica 1: E → A
+      replica 2: A → E
+      replica 3: E → A
+
+── Output paths ──
+  root: E:\3\novel-workbench\__evaluation\sacrificial_error_channel_feasibility_v1
+  cases/<CASE>/{planner.json, result.json, raw/, discard/, core/}
+  blind_review_queue.json | blind_mapping.private.json | manifest.json
+  validation_summary.json | execution_summary.json | dry_run_report.txt
+  zhuque/{zhuque_submission_all.txt, zhuque_blind_boundaries.json, zhuque_submission_manifest.json}
+
+── Hash strategy ──
+  instruction_hash: sha256 of the exact instruction block appended to the prompt
+  rendered_user_prompt_sha256: sha256 of the final user prompt per candidate
+  zhuque_submission_all.txt: whole-file sha256 in zhuque_submission_manifest.json
+  prompt identity: version_number + template sha256 of planner/writer prompt rows
+
+── Cost upper bound ──
+  Planner: 4 x max 12288 output tokens = 49152
+  Writer: 24 x max 6000 output tokens = 144000
+  Total output-token ceiling ≈ 193152
+
+── Failure discipline ──
+  Planner hard failure: abort entire run, status=aborted, no zhuque files.
+  Writer failures: recorded as-is; no retry; other slots continue.
+  Group E with no extractable core: CORE_PARSE_FAILED; raw XML is NEVER
+  silently used as final prose; no LLM repair; no regeneration.
+
+── Execution ──
+  Scene-level parallelism: 4 concurrent scenes, sequential writers within a scene.
+  Each scene writes to its own isolated SQLite copy.
+  All hash/boundary/blind artifacts are per-slot deterministic and order-independent.
