@@ -660,6 +660,141 @@ class PlannerV3Output(BaseModel):
         return self
 
 
+# ── Chapter Architect v1 (architect_romcom skeleton + P2 transplants) ──
+
+
+class ChapterPosition(BaseModel):
+    """章节定位：类型 + 读者回报 + 钩子需求"""
+    model_config = ConfigDict(extra="forbid")
+
+    type: str = Field(min_length=1)  # 开幕章/日常章/事件章/关系章/党争章
+    reader_payoff: str = Field(min_length=1)  # 笑/糖/推进
+    hook_requirement: str = ""  # 必须有强钩子/可弱钩子/不需要钩子
+
+
+class ContentSummary(BaseModel):
+    """麦基五段式：起因→发展→转折→高潮→结尾"""
+    model_config = ConfigDict(extra="forbid")
+
+    cause: str = Field(min_length=1, max_length=80)
+    development: str = Field(min_length=1, max_length=80)
+    turning_point: str = Field(min_length=1, max_length=80)
+    climax: str = Field(min_length=1, max_length=80)
+    ending: str = Field(min_length=1, max_length=80)
+
+
+class PlotLines(BaseModel):
+    """情节线"""
+    model_config = ConfigDict(extra="forbid")
+
+    main_line: str = Field(min_length=1, max_length=100)
+    emotion_line: str = Field(min_length=1, max_length=100)
+    logic_line: str = ""  # 原因→行动→结果→后果
+    comedy_line: str = ""
+
+
+class CharacterPlan(BaseModel):
+    """角色规划：最少信息权限字段"""
+    model_config = ConfigDict(extra="forbid")
+
+    name: str = Field(min_length=1)
+    goal: str = ""
+    # P2 transplant: information boundary
+    known: list[str] = Field(default_factory=list)
+    unknown: list[str] = Field(default_factory=list)
+    withheld: str = ""  # 角色在本章隐瞒的信息
+    cannot_accept: str = ""
+    # P2 transplant: observed → interpreted → action chain
+    observed_evidence: str = ""  # 本章关键观察
+    current_assumption: str = ""  # 基于证据的判断
+    drives_action: str = ""  # 判断如何推动行动
+
+
+class NarrativeAction(BaseModel):
+    """叙事动作：目标 + 阻碍 + 局面变化。不写执行过程。"""
+    model_config = ConfigDict(extra="forbid")
+
+    goal: str = Field(min_length=1, max_length=80)
+    obstacle: str = Field(min_length=1, max_length=80)
+    action_or_interaction: str = Field(min_length=1, max_length=80)
+    state_change: str = Field(min_length=1, max_length=80)
+
+
+class NarrationBoundary(BaseModel):
+    """P2 transplant: 前后台信息隔离"""
+    model_config = ConfigDict(extra="forbid")
+
+    reader_must_infer: list[str] = Field(default_factory=list)
+    narrator_must_not_state: list[str] = Field(default_factory=list)
+    viewpoint_note: str = ""  # POV 注意
+
+
+class EndingDesign(BaseModel):
+    """P2 transplant: 可见停止状态 + 章尾收束"""
+    model_config = ConfigDict(extra="forbid")
+
+    visible_closing_state: str = Field(min_length=1)  # stop_state
+    hook_type: str = Field(min_length=1)  # 笑点收束/关系暗示/动作定格/对话尾韵/日常延续
+    hook_detail: str = ""
+    hook_strength: Literal["strong", "medium", "weak"] = "medium"
+    must_not_append: list[str] = Field(default_factory=list)  # stop 后禁止追加
+
+
+class CapacityCheck(BaseModel):
+    """容量检查：不做假估算，只回答是否够"""
+    model_config = ConfigDict(extra="forbid")
+
+    target_range: str = "2000-2600"
+    capacity_sufficient: bool
+    capacity_reason: str = ""
+    forbidden_padding: list[str] = Field(default_factory=list)
+
+
+class ChapterArchitectOutput(BaseModel):
+    """章节建筑师 v1：architect_romcom 骨架 + P2 信息合法性/前后台隔离/停止纪律移植。
+
+    硬约束：
+    - 总自然语言 ≤ 1600 中文字符
+    - narrative_actions 只允许 2—4 项
+    - 不分配单项字数、不写 before/after、不写 cannot_merge_reason
+    - 不写具体对白、微表情、逐步动作
+    - 不枚举 speech_act、不要求 25 个 bool 全 true
+    """
+    model_config = ConfigDict(extra="forbid")
+
+    architect_contract_version: Literal[1]
+    chapter_position: ChapterPosition
+    content_summary: ContentSummary
+    core_event: str = Field(min_length=1, max_length=120)
+    plot_lines: PlotLines
+    characters: list[CharacterPlan] = Field(min_length=1, max_length=5)
+    narration_boundary: NarrationBoundary
+    narrative_actions: list[NarrativeAction] = Field(min_length=2, max_length=4)
+    ending_design: EndingDesign
+    capacity_check: CapacityCheck
+
+    @model_validator(mode="after")
+    def validate_minimal_contract(self):
+        errors: list[str] = []
+        # content_summary all five required
+        cs = self.content_summary
+        for field_name in ("cause", "development", "turning_point", "climax", "ending"):
+            if not getattr(cs, field_name).strip():
+                errors.append(f"content_summary.{field_name} must not be empty")
+        # narrative_actions: 2-4
+        na = self.narrative_actions
+        if len(na) < 2:
+            errors.append("narrative_actions must have at least 2 entries")
+        if len(na) > 4:
+            errors.append("narrative_actions must have at most 4 entries")
+        # ending_design hook_type required
+        if not self.ending_design.hook_type.strip():
+            errors.append("ending_design.hook_type must not be empty")
+        if errors:
+            raise ValueError(f"CHAPTER_ARCHITECT_CONTRACT_INVALID: {'; '.join(errors)}")
+        return self
+
+
 class PlannerOutput(BaseModel):
     planner_contract_version: int = 1
     scene_goal: str = ""
@@ -776,11 +911,20 @@ class PlannerOutput(BaseModel):
 
 
 def validate_planner_output(data: dict, expected_version: int | None = None):
-    """Validate planner output and return the appropriate model.
+    """Validate planner/architect output and return the appropriate model.
 
-    Returns PlannerV3Output when planner_contract_version is 3,
-    PlannerOutput otherwise.
+    Returns:
+    - ChapterArchitectOutput when architect_contract_version is present
+    - PlannerV3Output when planner_contract_version is 3
+    - PlannerOutput otherwise
     """
+    # Chapter Architect v1: uses architect_contract_version instead of planner_contract_version
+    if isinstance(data, dict) and "architect_contract_version" in data:
+        try:
+            return ChapterArchitectOutput(**data)
+        except Exception as e:
+            raise ValueError(f"CHAPTER_ARCHITECT_CONTRACT_INVALID: {e}") from e
+
     # When a workflow declares the contract version it expects, a missing
     # version field is a hard failure instead of a silent default to v1.
     if (

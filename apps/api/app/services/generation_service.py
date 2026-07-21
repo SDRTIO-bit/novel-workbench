@@ -53,6 +53,7 @@ EXPECTED_PLANNER_CONTRACT_VERSION = 2
 PLANNER_V2_SCHEMA_NAME = "planner_v2"
 EXPECTED_PLANNER_V3_CONTRACT_VERSION = 3
 PLANNER_V3_SCHEMA_NAME = "planner_v3"
+CHAPTER_ARCHITECT_V1_SCHEMA_NAME = "chapter_architect_v1"
 EXPECTED_CRITIC_CONTRACT_VERSION = 2
 CRITIC_V2_SCHEMA_NAME = "critic_v2"
 CRITIC_EVIDENCE_V1_SCHEMA_NAME = "critic_evidence_v1"
@@ -795,9 +796,14 @@ class GenerationService:
             return
         # Serialize brief dict to text
         if isinstance(brief, dict):
-            brief_lines = [f"{key}: {value}" for key, value in brief.items()
-                           if key not in ("v3_blocks", "mode")]
-            brief_text = "\n".join(brief_lines)
+            mode = brief.get("mode", "")
+            if mode == "chapter_architect":
+                # Chapter Architect: use the pre-formatted architect_brief text directly
+                brief_text = brief.get("architect_brief", "")
+            else:
+                brief_lines = [f"{key}: {value}" for key, value in brief.items()
+                               if key not in ("v3_blocks", "mode", "architect_brief")]
+                brief_text = "\n".join(brief_lines)
         else:
             brief_text = str(brief)
         prompt_addition = (

@@ -167,6 +167,8 @@ def compile_writer_input(scene_plan: dict[str, Any] | None, mode: str) -> dict[s
         return compile_writer_brief(plan)
     if mode == "writer_brief_v3":
         return compile_writer_brief_v3(plan)
+    if mode == "chapter_architect":
+        return compile_chapter_architect_brief(plan)
     if mode == "narrative_behaviour_brief":
         return compile_writer_brief_c(plan)
     raise ValueError(f"unsupported writer input mode: {mode}")
@@ -432,3 +434,147 @@ def compile_writer_brief(scene_plan: dict[str, Any] | None) -> dict[str, Any]:
         final_line_must_include=_text(guardrails.get("final_line_must_include")),
     )
     return brief.model_dump()
+
+
+def _detect_chapter_architect(plan: dict[str, Any]) -> bool:
+    """Return True when the plan carries architect_contract_version."""
+    return "architect_contract_version" in plan
+
+
+def compile_chapter_architect_brief(scene_plan: dict[str, Any] | None) -> dict[str, Any]:
+    """Deterministic WriterBrief from Chapter Architect output.
+
+    Formats the nine architect blocks into Writer-readable text:
+    chapter story, narrative actions, character info, narration boundary,
+    ending design, and capacity check.  No LLM — pure string formatting.
+    """
+    plan = scene_plan if isinstance(scene_plan, dict) else {}
+
+    cs = plan.get("content_summary", {}) or {}
+    pl = plan.get("plot_lines", {}) or {}
+    chars = plan.get("characters", []) or []
+    nb = plan.get("narration_boundary", {}) or {}
+    na = plan.get("narrative_actions", []) or []
+    ed = plan.get("ending_design", {}) or {}
+    cap = plan.get("capacity_check", {}) or {}
+    cp = plan.get("chapter_position", {}) or {}
+
+    blocks: list[str] = []
+
+    # ── Chapter Story ──
+    lines = ["=== CHAPTER_STORY ===", ""]
+    lines.append(f"CHAPTER_TYPE: {_text(cp.get('type'))}")
+    lines.append(f"READER_PAYOFF: {_text(cp.get('reader_payoff'))}")
+    lines.append("")
+    lines.append(f"CORE_EVENT: {_text(plan.get('core_event'))}")
+    lines.append("")
+    lines.append("CONTENT_SUMMARY:")
+    lines.append(f"  cause: {_text(cs.get('cause'))}")
+    lines.append(f"  development: {_text(cs.get('development'))}")
+    lines.append(f"  turning_point: {_text(cs.get('turning_point'))}")
+    lines.append(f"  climax: {_text(cs.get('climax'))}")
+    lines.append(f"  ending: {_text(cs.get('ending'))}")
+    lines.append("")
+    lines.append("PLOT_LINES:")
+    lines.append(f"  main: {_text(pl.get('main_line'))}")
+    lines.append(f"  emotion: {_text(pl.get('emotion_line'))}")
+    if pl.get("logic_line"):
+        lines.append(f"  logic: {_text(pl.get('logic_line'))}")
+    if pl.get("comedy_line"):
+        lines.append(f"  comedy: {_text(pl.get('comedy_line'))}")
+    blocks.append("\n".join(lines))
+
+    # ── Narrative Actions ──
+    if na:
+        lines = ["=== NARRATIVE_ACTIONS ===", ""]
+        for i, action in enumerate(na):
+            if not isinstance(action, dict):
+                continue
+            lines.append(f"A{i+1}:")
+            lines.append(f"  goal: {_text(action.get('goal'))}")
+            lines.append(f"  obstacle: {_text(action.get('obstacle'))}")
+            lines.append(f"  action: {_text(action.get('action_or_interaction'))}")
+            lines.append(f"  state_change: {_text(action.get('state_change'))}")
+            lines.append("")
+        blocks.append("\n".join(lines))
+
+    # ── Characters ──
+    if chars:
+        lines = ["=== CHARACTERS ===", ""]
+        for c in chars:
+            if not isinstance(c, dict):
+                continue
+            lines.append(f"{_text(c.get('name'))}:")
+            lines.append(f"  goal: {_text(c.get('goal'))}")
+            known = _strings(c.get("known"))
+            if known:
+                lines.append(f"  known: {'; '.join(known)}")
+            unknown = _strings(c.get("unknown"))
+            if unknown:
+                lines.append(f"  unknown: {'; '.join(unknown)}")
+            if c.get("withheld"):
+                lines.append(f"  withheld: {_text(c.get('withheld'))}")
+            if c.get("cannot_accept"):
+                lines.append(f"  cannot_accept: {_text(c.get('cannot_accept'))}")
+            # P2 transplant: observation → assumption → action chain
+            oe = _text(c.get("observed_evidence"))
+            ca = _text(c.get("current_assumption"))
+            da = _text(c.get("drives_action"))
+            if oe or ca or da:
+                lines.append(f"  observed: {oe}")
+                lines.append(f"  assumes: {ca}")
+                lines.append(f"  therefore: {da}")
+            lines.append("")
+        blocks.append("\n".join(lines))
+
+    # ── Narration Boundary ──
+    lines = ["=== NARRATION_BOUNDARY ===", ""]
+    reader_infer = _strings(nb.get("reader_must_infer"))
+    if reader_infer:
+        lines.append("READER_MUST_INFER:")
+        for item in reader_infer:
+            lines.append(f"  - {item}")
+        lines.append("")
+    narrator_not = _strings(nb.get("narrator_must_not_state"))
+    if narrator_not:
+        lines.append("NARRATOR_MUST_NOT_STATE:")
+        for item in narrator_not:
+            lines.append(f"  - {item}")
+        lines.append("")
+    vn = _text(nb.get("viewpoint_note"))
+    if vn:
+        lines.append(f"VIEWPOINT: {vn}")
+    lines.append("")
+    lines.append("前台只写POV人物能感知的内容。后台信息只用于控制角色行为，不得由旁白直接说出。")
+    blocks.append("\n".join(lines))
+
+    # ── Ending Design ──
+    lines = ["=== ENDING_DESIGN ===", ""]
+    lines.append(f"STOP_WHEN: {_text(ed.get('visible_closing_state'))}")
+    lines.append(f"HOOK_TYPE: {_text(ed.get('hook_type'))}")
+    if ed.get("hook_detail"):
+        lines.append(f"HOOK: {_text(ed.get('hook_detail'))}")
+    must_not = _strings(ed.get("must_not_append"))
+    if must_not:
+        lines.append("MUST_NOT_APPEND:")
+        for item in must_not:
+            lines.append(f"  - {item}")
+    blocks.append("\n".join(lines))
+
+    # ── Capacity ──
+    lines = ["=== CAPACITY ===", ""]
+    lines.append(f"SUFFICIENT: {'true' if cap.get('capacity_sufficient') else 'false'}")
+    if cap.get("capacity_reason"):
+        lines.append(f"REASON: {_text(cap.get('capacity_reason'))}")
+    fp = _strings(cap.get("forbidden_padding"))
+    if fp:
+        lines.append("FORBIDDEN_PADDING:")
+        for item in fp:
+            lines.append(f"  - {item}")
+    if not cap.get("capacity_sufficient"):
+        lines.append("")
+        lines.append("容量不足：只写完真实事件。宁可短于目标，不写水文。")
+    blocks.append("\n".join(lines))
+
+    architect_text = "\n\n".join(blocks)
+    return {"mode": "chapter_architect", "architect_brief": architect_text}
