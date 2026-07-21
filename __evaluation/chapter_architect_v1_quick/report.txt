@@ -1,0 +1,29 @@
+=== Chapter Architect v1 Quick Experiment (v2) ===
+Scenes: 4 | Planners: P2 + A1 | Writers: W9 + W10
+Valid stories: 16 | Total chars: 27616
+Zhuque SHA256: 4de6cac064fd08a0afe9c869d198aff895342e893ed0d48047d083c109257b6d
+Zhuque path: E:\3\novel-workbench\__evaluation\chapter_architect_v1_quick\zhuque_submission_v2.txt
+
+── Per-group ──
+  P2W9: n=4 mean=1653 min=1340 max=1900
+  P2W10: n=4 mean=1669 min=1118 max=2390
+  A1W9: n=4 mean=1789 min=1402 max=2342
+  A1W10: n=4 mean=1791 min=1298 max=2058
+
+── Articles ──
+  1. [NM-03_P2W9] 1883 chars
+  2. [NM-03_P2W10] 1909 chars
+  3. [NM-03_A1W9] 1785 chars
+  4. [NM-03_A1W10] 1298 chars
+  5. [ROMANCE-02_P2W9] 1340 chars
+  6. [ROMANCE-02_P2W10] 2390 chars
+  7. [ROMANCE-02_A1W9] 2342 chars
+  8. [ROMANCE-02_A1W10] 1904 chars
+  9. [CO-04_P2W9] 1492 chars
+  10. [CO-04_P2W10] 1118 chars
+  11. [CO-04_A1W9] 1402 chars
+  12. [CO-04_A1W10] 1906 chars
+  13. [CO-05_P2W9] 1900 chars
+  14. [CO-05_P2W10] 1260 chars
+  15. [CO-05_A1W9] 1629 chars
+  16. [CO-05_A1W10] 2058 chars

@@ -696,7 +696,7 @@ class GenerationService:
         )
 
         for prev_stage in self._previous_stages(stage):
-            prev_step = await self.repo.get_step(run.id, prev_stage)
+            prev_step = next((s for s in run.steps if s.stage == prev_stage), None)
             if not prev_step or not prev_step.selected_candidate_id:
                 continue
             prev_candidate = next(
