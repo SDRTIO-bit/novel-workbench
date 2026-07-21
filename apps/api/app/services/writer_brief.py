@@ -512,18 +512,22 @@ def compile_chapter_architect_brief(scene_plan: dict[str, Any] | None) -> dict[s
             unknown = _strings(c.get("unknown"))
             if unknown:
                 lines.append(f"  unknown: {'; '.join(unknown)}")
-            if c.get("withheld"):
-                lines.append(f"  withheld: {_text(c.get('withheld'))}")
+            withheld = _strings(c.get("withheld"))
+            if withheld:
+                lines.append(f"  withheld: {'; '.join(withheld)}")
             if c.get("cannot_accept"):
                 lines.append(f"  cannot_accept: {_text(c.get('cannot_accept'))}")
             # P2 transplant: observation → assumption → action chain
-            oe = _text(c.get("observed_evidence"))
+            oe = _strings(c.get("observed_evidence"))
             ca = _text(c.get("current_assumption"))
             da = _text(c.get("drives_action"))
             if oe or ca or da:
-                lines.append(f"  observed: {oe}")
-                lines.append(f"  assumes: {ca}")
-                lines.append(f"  therefore: {da}")
+                if oe:
+                    lines.append(f"  observed: {'; '.join(oe)}")
+                if ca:
+                    lines.append(f"  assumes: {ca}")
+                if da:
+                    lines.append(f"  therefore: {da}")
             lines.append("")
         blocks.append("\n".join(lines))
 

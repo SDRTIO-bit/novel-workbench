@@ -702,10 +702,10 @@ class CharacterPlan(BaseModel):
     # P2 transplant: information boundary
     known: list[str] = Field(default_factory=list)
     unknown: list[str] = Field(default_factory=list)
-    withheld: str = ""  # 角色在本章隐瞒的信息
+    withheld: list[str] = Field(default_factory=list)  # 角色在本章隐瞒的信息
     cannot_accept: str = ""
     # P2 transplant: observed → interpreted → action chain
-    observed_evidence: str = ""  # 本章关键观察
+    observed_evidence: list[str] = Field(default_factory=list)  # 本章关键观察
     current_assumption: str = ""  # 基于证据的判断
     drives_action: str = ""  # 判断如何推动行动
 
@@ -738,6 +738,19 @@ class EndingDesign(BaseModel):
     hook_detail: str = ""
     hook_strength: Literal["strong", "medium", "weak"] = "medium"
     must_not_append: list[str] = Field(default_factory=list)  # stop 后禁止追加
+
+    @field_validator("hook_strength", mode="before")
+    @classmethod
+    def normalize_hook_strength(cls, value):
+        if isinstance(value, str):
+            v = value.strip()
+            if v in ("强", "强钩子", "strong"):
+                return "strong"
+            if v in ("中", "中等", "medium"):
+                return "medium"
+            if v in ("弱", "弱钩子", "weak"):
+                return "weak"
+        return value
 
 
 class CapacityCheck(BaseModel):
