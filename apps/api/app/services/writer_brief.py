@@ -158,10 +158,26 @@ def validate_writer_brief(data: dict[str, Any]) -> WriterBrief:
     return WriterBrief.model_validate(data)
 
 
-def compile_writer_input(scene_plan: dict[str, Any] | None, mode: str) -> dict[str, Any]:
-    """Return the sole Writer-visible planning payload for an experiment arm."""
+def compile_writer_input(
+    scene_plan: dict[str, Any] | None,
+    mode: str,
+    *,
+    focus_character: str | None = None,
+) -> dict[str, Any]:
+    """Return the sole Writer-visible planning payload for an experiment arm.
+
+    Args:
+        scene_plan: The raw planner output dict.
+        mode: One of ``complete_planner``, ``writer_brief``, ``writer_brief_v3``,
+            ``chapter_architect``, ``narrative_behaviour_brief``, or
+            ``narrative_projection``.
+        focus_character: Required for ``narrative_projection`` mode.  Ignored for
+            all other modes.  Must be an exact match to a ``name`` in
+            ``scene_plan["characters"]``.
+    """
     plan = scene_plan if isinstance(scene_plan, dict) else {}
     if mode == "complete_planner":
+        # focus_character is accepted but deliberately ignored for complete_planner
         return plan
     if mode == "writer_brief":
         return compile_writer_brief(plan)
@@ -171,6 +187,8 @@ def compile_writer_input(scene_plan: dict[str, Any] | None, mode: str) -> dict[s
         return compile_chapter_architect_brief(plan)
     if mode == "narrative_behaviour_brief":
         return compile_writer_brief_c(plan)
+    if mode == "narrative_projection":
+        return compile_narrative_projection_brief(plan, focus_character=focus_character)
     raise ValueError(f"unsupported writer input mode: {mode}")
 
 
@@ -582,3 +600,237 @@ def compile_chapter_architect_brief(scene_plan: dict[str, Any] | None) -> dict[s
 
     architect_text = "\n\n".join(blocks)
     return {"mode": "chapter_architect", "architect_brief": architect_text}
+
+
+# ── Narrative Projection Compiler v1 ───────────────────────────────────
+
+_NP_FORBIDDEN_FIELDS: set[str] = {
+    "chapter_position",
+    "reader_payoff",
+    "hook_requirement",
+    "content_summary",
+    "plot_lines",
+    "reader_must_infer",
+    "hook_detail",
+    "hook_strength",
+    "capacity_check",
+    "capacity_reason",
+    "forbidden_padding",
+    "architect_contract_version",
+}
+
+_NP_FORBIDDEN_PHRASES: tuple[str, ...] = (
+    "模糊回答",
+    "转移话题",
+    "眼神回避",
+    "异常停顿",
+    "响应速度异常",
+)
+
+
+def _np_find_character(
+    characters: list[dict[str, Any]],
+    focus_name: str,
+) -> dict[str, Any]:
+    """Find a character by exact name match."""
+    for c in characters:
+        if isinstance(c, dict) and _text(c.get("name")) == focus_name:
+            return c
+    raise ValueError("NARRATIVE_PROJECTION_FOCUS_NOT_FOUND")
+
+
+def compile_narrative_projection_brief(
+    scene_plan: dict[str, Any] | None,
+    *,
+    focus_character: str | None = None,
+) -> dict[str, Any]:
+    """Deterministic Narrative Projection compiler for Chapter Architect v1 output.
+
+    Re-organises A1 fields into five blocks: NARRATION_ACCESS,
+    FOREGROUND_KNOWLEDGE, BACKSTAGE_BEHAVIOR_ONLY,
+    PLANNED_STATE_DELTAS, and STOP_STATE.
+
+    Raises ValueError with a ``NARRATIVE_PROJECTION_*`` error code on
+    invalid input.  Never calls an LLM, never invents facts.
+    """
+    plan = scene_plan if isinstance(scene_plan, dict) else {}
+
+    # ── Input validation ──
+    if not plan:
+        raise ValueError("NARRATIVE_PROJECTION_PLAN_MISSING")
+
+    characters: list[dict[str, Any]] = plan.get("characters", []) or []
+    if not isinstance(characters, list):
+        characters = []
+    if not characters:
+        raise ValueError("NARRATIVE_PROJECTION_CHARACTERS_MISSING")
+
+    if not focus_character or not focus_character.strip():
+        raise ValueError("NARRATIVE_PROJECTION_FOCUS_MISSING")
+
+    focus_char = _np_find_character(characters, focus_character.strip())
+
+    narrative_actions: list[dict[str, Any]] = (
+        plan.get("narrative_actions", []) or []
+    )
+    if not isinstance(narrative_actions, list) or not narrative_actions:
+        raise ValueError("NARRATIVE_PROJECTION_ACTIONS_MISSING")
+
+    ending_design: dict[str, Any] = plan.get("ending_design", {}) or {}
+    visible_closing = _text(ending_design.get("visible_closing_state"))
+    if not visible_closing:
+        raise ValueError("NARRATIVE_PROJECTION_STOP_STATE_MISSING")
+
+    nb: dict[str, Any] = plan.get("narration_boundary", {}) or {}
+
+    # ── Build blocks ──
+    blocks: list[str] = []
+
+    # ── 1. NARRATION_ACCESS ──
+    lines = ["=== NARRATION_ACCESS ===", ""]
+    lines.append("CURRENT_FOCUS:")
+    lines.append(f"{focus_character}")
+    lines.append("")
+
+    lines.append("DIRECT_INTERNAL_ACCESS:")
+    lines.append(f"- {focus_character}当前明确意识到的感受、判断与猜测")
+    lines.append(f"- {focus_character}基于已有证据形成的暂时判断或误判")
+    lines.append("")
+
+    lines.append("OBSERVABLE_ONLY:")
+    for c in characters:
+        if not isinstance(c, dict):
+            continue
+        name = _text(c.get("name"))
+        if name and name != focus_character:
+            lines.append(f"- {name}")
+    lines.append("")
+
+    lines.append("FORBIDDEN_DIRECT_ACCESS:")
+    lines.append("- 其他人物未说出口的心理与真实动机")
+    lines.append("- 多人共同感受")
+    lines.append("- 关系意义总结")
+    narrator_not = _strings(nb.get("narrator_must_not_state"))
+    for item in narrator_not:
+        lines.append(f"- {item}")
+    blocks.append("\n".join(lines))
+
+    # ── 2. FOREGROUND_KNOWLEDGE ──
+    lines = ["=== FOREGROUND_KNOWLEDGE ===", ""]
+
+    known = _strings(focus_char.get("known"))
+    lines.append("KNOWN:")
+    if known:
+        for item in known:
+            lines.append(f"- {item}")
+    else:
+        lines.append("- (none)")
+    lines.append("")
+
+    assumption = _text(focus_char.get("current_assumption"))
+    lines.append("SUSPECTED_OR_MISTAKEN:")
+    if assumption:
+        lines.append(f"- {assumption}")
+    else:
+        lines.append("- (none)")
+    lines.append("")
+
+    unknown = _strings(focus_char.get("unknown"))
+    lines.append("UNKNOWN:")
+    if unknown:
+        for item in unknown:
+            lines.append(f"- {item}")
+    else:
+        lines.append("- (none)")
+    lines.append("")
+
+    evidence = _strings(focus_char.get("observed_evidence"))
+    lines.append("EVIDENCE:")
+    if evidence:
+        for item in evidence:
+            lines.append(f"- {item}")
+    else:
+        lines.append("- (none)")
+    blocks.append("\n".join(lines))
+
+    # ── 3. BACKSTAGE_BEHAVIOR_ONLY ──
+    other_chars = [
+        c for c in characters
+        if isinstance(c, dict) and _text(c.get("name")) != focus_character
+    ]
+    if other_chars:
+        for oc in other_chars:
+            name = _text(oc.get("name"))
+            goal = _text(oc.get("goal"))
+            withheld = _strings(oc.get("withheld"))
+            cannot_accept = _text(oc.get("cannot_accept"))
+            current_assumption = _text(oc.get("current_assumption"))
+            drives_action = _text(oc.get("drives_action"))
+
+            lines = ["=== BACKSTAGE_BEHAVIOR_ONLY ===", ""]
+            lines.append("CHARACTER:")
+            lines.append(f"{name}")
+            lines.append("")
+
+            lines.append("BEHAVIOR_OBJECTIVE:")
+            lines.append(f"{goal}" if goal else "(none)")
+            lines.append("")
+
+            lines.append("DO_NOT_VOLUNTARILY_DISCLOSE:")
+            if withheld:
+                for item in withheld:
+                    lines.append(f"- {item}")
+            else:
+                lines.append("- (none)")
+            lines.append("")
+
+            lines.append("CANNOT_ACCEPT:")
+            lines.append(f"{cannot_accept}" if cannot_accept else "(none)")
+            lines.append("")
+
+            lines.append("PRIVATE_ASSUMPTION_FOR_BEHAVIOR_ONLY:")
+            lines.append(f"{current_assumption}" if current_assumption else "(none)")
+            lines.append("")
+
+            lines.append("BEHAVIOR_DIRECTION:")
+            lines.append(f"{drives_action}" if drives_action else "(none)")
+            lines.append("")
+
+            lines.append("EXECUTION_RULE:")
+            lines.append("- 上述内容只用于控制该角色的选择、回答和行动。")
+            lines.append("- 不得由旁白直接宣布。")
+            lines.append("- 不得把隐藏目标或内部判断同义改写成心理解释。")
+            blocks.append("\n".join(lines))
+
+    # ── 4. PLANNED_STATE_DELTAS ──
+    lines = ["=== PLANNED_STATE_DELTAS ===", ""]
+    for i, action in enumerate(narrative_actions):
+        if not isinstance(action, dict):
+            continue
+        lines.append(f"MOVE {i+1}:")
+        lines.append(f"- GOAL: {_text(action.get('goal'))}")
+        lines.append(f"- RESISTANCE: {_text(action.get('obstacle'))}")
+        lines.append(f"- CHOICE_OR_INTERACTION: {_text(action.get('action_or_interaction'))}")
+        lines.append(f"- BACKSTAGE_TARGET_DELTA: {_text(action.get('state_change'))}")
+        lines.append(f"- REALIZATION_RULE:")
+        lines.append(f"  只能通过对白、选择、行动或可见后果实现。")
+        lines.append(f"  不得把TARGET_DELTA原句或同义总结直接写入旁白。")
+        lines.append("")
+    blocks.append("\n".join(lines))
+
+    # ── 5. STOP_STATE ──
+    must_not = _strings(ending_design.get("must_not_append"))
+    lines = ["=== STOP_STATE ===", ""]
+    lines.append("STOP_WHEN:")
+    lines.append(f"{visible_closing}")
+    lines.append("")
+    lines.append("MUST_NOT_APPEND:")
+    for item in must_not:
+        lines.append(f"- {item}")
+    lines.append("- 不总结人物关系意义")
+    lines.append("- 不在停止事实成立后追加无关生活流程")
+    blocks.append("\n".join(lines))
+
+    projection_text = "\n\n".join(blocks)
+    return {"mode": "narrative_projection", "architect_brief": projection_text}
+

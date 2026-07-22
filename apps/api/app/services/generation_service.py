@@ -734,7 +734,9 @@ class GenerationService:
                         else:
                             try:
                                 ctx_req.writer_brief = compile_writer_input(
-                                    ctx_req.scene_plan, writer_input_mode
+                                    ctx_req.scene_plan,
+                                    writer_input_mode,
+                                    focus_character=override.get("focus_character"),
                                 )
                             except ValueError as brief_error:
                                 raise bad_request(
@@ -797,8 +799,8 @@ class GenerationService:
         # Serialize brief dict to text
         if isinstance(brief, dict):
             mode = brief.get("mode", "")
-            if mode == "chapter_architect":
-                # Chapter Architect: use the pre-formatted architect_brief text directly
+            if mode in ("chapter_architect", "narrative_projection"):
+                # Chapter Architect / Narrative Projection: use the pre-formatted architect_brief text directly
                 brief_text = brief.get("architect_brief", "")
             else:
                 brief_lines = [f"{key}: {value}" for key, value in brief.items()
