@@ -1,0 +1,9 @@
+{
+  "case_id": "CO-05",
+  "replica": 3,
+  "stage": "stage2",
+  "actual_head": "a990542789583602bd0978329dd11a5f7c7a5926",
+  "planner_output_sha256": "97d49cfa4a331d114e4f745f7a853588ad04043b0ff6432b200021ea9356c08d",
+  "planner_latency_ms": 21110,
+  "run_id": "759e3ba7-7637-4ca3-9fbc-22423bea076f"
+}

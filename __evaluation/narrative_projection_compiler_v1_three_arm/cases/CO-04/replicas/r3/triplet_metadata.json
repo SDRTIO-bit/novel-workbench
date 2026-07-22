@@ -1,0 +1,30 @@
+{
+  "case_id": "CO-04",
+  "replica": 3,
+  "stage": "stage2",
+  "planner_output_sha256": "de077b8dfabb6491f5ebb38a39fb56a05ce183117c7ff56dfc9c541d596c6fb7",
+  "execution_order": [
+    "C",
+    "F",
+    "N"
+  ],
+  "arms": {
+    "C": {
+      "writer_input_sha256": "05299e4c163d6444bf358bf1fbc537ae2811e3f9646899fd204d08686d0e1984",
+      "error": null,
+      "story_chars": 1859
+    },
+    "F": {
+      "writer_input_sha256": "de077b8dfabb6491f5ebb38a39fb56a05ce183117c7ff56dfc9c541d596c6fb7",
+      "error": null,
+      "story_chars": 1546
+    },
+    "N": {
+      "writer_input_sha256": "077450384bf7909880a6c1bff929ba88e322dccddb9f32dfac64cef2107ce8c9",
+      "error": null,
+      "story_chars": 1690
+    }
+  },
+  "planner_sha_consistent": true,
+  "valid": true
+}

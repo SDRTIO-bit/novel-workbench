@@ -1,0 +1,12 @@
+{
+  "arm": "C",
+  "mode": "chapter_architect",
+  "writer_input_sha256": "ebca9c27b46de30562082386026450b2a8c616e61530dfa65ee5a7dfdd708400",
+  "raw_response_sha256": "cd52b609447990347ad2bebe1c0607de10eb10f74d3b2d40c5f44f94163ff511",
+  "story_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "story_chars": 0,
+  "draft_notes_chars": 0,
+  "error_code": "XML_STORY_CLOSING_TAG_MISSING",
+  "finish_reason": "stop",
+  "latency_ms": 67979
+}

@@ -1,0 +1,200 @@
+{
+  "CO-04_r1_X": {
+    "case_id": "CO-04",
+    "replica": 1,
+    "arm": "F",
+    "label": "X"
+  },
+  "CO-04_r1_Y": {
+    "case_id": "CO-04",
+    "replica": 1,
+    "arm": "C",
+    "label": "Y"
+  },
+  "CO-04_r1_Z": {
+    "case_id": "CO-04",
+    "replica": 1,
+    "arm": "N",
+    "label": "Z"
+  },
+  "CO-04_r2_Z": {
+    "case_id": "CO-04",
+    "replica": 2,
+    "arm": "F",
+    "label": "Z"
+  },
+  "CO-04_r2_Y": {
+    "case_id": "CO-04",
+    "replica": 2,
+    "arm": "C",
+    "label": "Y"
+  },
+  "CO-04_r2_X": {
+    "case_id": "CO-04",
+    "replica": 2,
+    "arm": "N",
+    "label": "X"
+  },
+  "CO-04_r3_Y": {
+    "case_id": "CO-04",
+    "replica": 3,
+    "arm": "F",
+    "label": "Y"
+  },
+  "CO-04_r3_X": {
+    "case_id": "CO-04",
+    "replica": 3,
+    "arm": "C",
+    "label": "X"
+  },
+  "CO-04_r3_Z": {
+    "case_id": "CO-04",
+    "replica": 3,
+    "arm": "N",
+    "label": "Z"
+  },
+  "CO-05_r1_Y": {
+    "case_id": "CO-05",
+    "replica": 1,
+    "arm": "F",
+    "label": "Y"
+  },
+  "CO-05_r1_Z": {
+    "case_id": "CO-05",
+    "replica": 1,
+    "arm": "C",
+    "label": "Z"
+  },
+  "CO-05_r1_X": {
+    "case_id": "CO-05",
+    "replica": 1,
+    "arm": "N",
+    "label": "X"
+  },
+  "CO-05_r3_Z": {
+    "case_id": "CO-05",
+    "replica": 3,
+    "arm": "F",
+    "label": "Z"
+  },
+  "CO-05_r3_Y": {
+    "case_id": "CO-05",
+    "replica": 3,
+    "arm": "C",
+    "label": "Y"
+  },
+  "CO-05_r3_X": {
+    "case_id": "CO-05",
+    "replica": 3,
+    "arm": "N",
+    "label": "X"
+  },
+  "HONEST-01_r2_Y": {
+    "case_id": "HONEST-01",
+    "replica": 2,
+    "arm": "F",
+    "label": "Y"
+  },
+  "HONEST-01_r2_X": {
+    "case_id": "HONEST-01",
+    "replica": 2,
+    "arm": "C",
+    "label": "X"
+  },
+  "HONEST-01_r2_Z": {
+    "case_id": "HONEST-01",
+    "replica": 2,
+    "arm": "N",
+    "label": "Z"
+  },
+  "MULTI-01_r3_X": {
+    "case_id": "MULTI-01",
+    "replica": 3,
+    "arm": "F",
+    "label": "X"
+  },
+  "MULTI-01_r3_Z": {
+    "case_id": "MULTI-01",
+    "replica": 3,
+    "arm": "C",
+    "label": "Z"
+  },
+  "MULTI-01_r3_Y": {
+    "case_id": "MULTI-01",
+    "replica": 3,
+    "arm": "N",
+    "label": "Y"
+  },
+  "NM-03_r1_Z": {
+    "case_id": "NM-03",
+    "replica": 1,
+    "arm": "F",
+    "label": "Z"
+  },
+  "NM-03_r1_Y": {
+    "case_id": "NM-03",
+    "replica": 1,
+    "arm": "C",
+    "label": "Y"
+  },
+  "NM-03_r1_X": {
+    "case_id": "NM-03",
+    "replica": 1,
+    "arm": "N",
+    "label": "X"
+  },
+  "NM-03_r2_X": {
+    "case_id": "NM-03",
+    "replica": 2,
+    "arm": "F",
+    "label": "X"
+  },
+  "NM-03_r2_Y": {
+    "case_id": "NM-03",
+    "replica": 2,
+    "arm": "C",
+    "label": "Y"
+  },
+  "NM-03_r2_Z": {
+    "case_id": "NM-03",
+    "replica": 2,
+    "arm": "N",
+    "label": "Z"
+  },
+  "ROMANCE-02_r1_Z": {
+    "case_id": "ROMANCE-02",
+    "replica": 1,
+    "arm": "F",
+    "label": "Z"
+  },
+  "ROMANCE-02_r1_X": {
+    "case_id": "ROMANCE-02",
+    "replica": 1,
+    "arm": "C",
+    "label": "X"
+  },
+  "ROMANCE-02_r1_Y": {
+    "case_id": "ROMANCE-02",
+    "replica": 1,
+    "arm": "N",
+    "label": "Y"
+  },
+  "ROMANCE-02_r2_Z": {
+    "case_id": "ROMANCE-02",
+    "replica": 2,
+    "arm": "F",
+    "label": "Z"
+  },
+  "ROMANCE-02_r2_Y": {
+    "case_id": "ROMANCE-02",
+    "replica": 2,
+    "arm": "C",
+    "label": "Y"
+  },
+  "ROMANCE-02_r2_X": {
+    "case_id": "ROMANCE-02",
+    "replica": 2,
+    "arm": "N",
+    "label": "X"
+  }
+}

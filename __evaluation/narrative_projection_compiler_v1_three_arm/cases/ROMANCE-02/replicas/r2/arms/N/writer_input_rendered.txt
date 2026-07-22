@@ -1,0 +1,103 @@
+=== NARRATION_ACCESS ===
+
+CURRENT_FOCUS:
+夏知
+
+DIRECT_INTERNAL_ACCESS:
+- 夏知当前明确意识到的感受、判断与猜测
+- 夏知基于已有证据形成的暂时判断或误判
+
+OBSERVABLE_ONLY:
+- 韩川
+
+FORBIDDEN_DIRECT_ACCESS:
+- 其他人物未说出口的心理与真实动机
+- 多人共同感受
+- 关系意义总结
+- 韩川对夏知的确切感情
+- 消息的具体内容
+
+=== FOREGROUND_KNOWLEDGE ===
+
+KNOWN:
+- 昨晚给韩川发了消息
+- 韩川手机亮起时显示了自己的消息
+
+SUSPECTED_OR_MISTAKEN:
+- 韩川看到了消息但不想回应，可能有意保持距离。
+
+UNKNOWN:
+- 韩川是否看到了消息
+- 韩川为何不回复
+
+EVIDENCE:
+- 韩川把手机扣在桌上
+- 桌上只有两只碗
+- 韩川婉拒她加菜的提议
+
+=== BACKSTAGE_BEHAVIOR_ONLY ===
+
+CHARACTER:
+韩川
+
+BEHAVIOR_OBJECTIVE:
+维持表面的自然相处，避免现在就谈论消息内容。
+
+DO_NOT_VOLUNTARILY_DISCLOSE:
+- 他需要思考的具体原因
+- 他对夏知的真实感觉
+
+CANNOT_ACCEPT:
+在没想清楚前被迫回应消息
+
+PRIVATE_ASSUMPTION_FOR_BEHAVIOR_ONLY:
+夏知可能已经猜到他的回避，但不会直接逼问。
+
+BEHAVIOR_DIRECTION:
+韩川用洗菜和准备晚餐来转移注意力，避免眼神接触。
+
+EXECUTION_RULE:
+- 上述内容只用于控制该角色的选择、回答和行动。
+- 不得由旁白直接宣布。
+- 不得把隐藏目标或内部判断同义改写成心理解释。
+
+=== PLANNED_STATE_DELTAS ===
+
+MOVE 1:
+- GOAL: 夏知想通过帮忙洗菜自然切入话题，试探韩川对消息的反应。
+- RESISTANCE: 韩川专注于洗菜，不主动开启对话，回避眼神接触。
+- CHOICE_OR_INTERACTION: 夏知拿起另一把菜帮忙，两人并肩站在水槽前，偶尔手臂轻碰。
+- BACKSTAGE_TARGET_DELTA: 氛围从尴尬转为微妙，夏知确认韩川在刻意回避，但无法突破。
+- REALIZATION_RULE:
+  只能通过对白、选择、行动或可见后果实现。
+  不得把TARGET_DELTA原句或同义总结直接写入旁白。
+
+MOVE 2:
+- GOAL: 韩川想完成晚餐准备，避免在厨房发生直接冲突。
+- RESISTANCE: 夏知的存在和帮忙让他无法完全忽略她的试探。
+- CHOICE_OR_INTERACTION: 韩川在水开时手忙脚乱，差点烫到，夏知提醒，他简短道谢并继续摆碗。
+- BACKSTAGE_TARGET_DELTA: 紧张气氛短暂缓和，但韩川只摆两只碗的行为让夏知更加确定这是两人份。
+- REALIZATION_RULE:
+  只能通过对白、选择、行动或可见后果实现。
+  不得把TARGET_DELTA原句或同义总结直接写入旁白。
+
+MOVE 3:
+- GOAL: 夏知想通过主动提出加菜来明确韩川的态度，决定自己是留是走。
+- RESISTANCE: 韩川婉拒，表示菜已足够，并避开她的目光。
+- CHOICE_OR_INTERACTION: 夏知放下手中的菜，直接问是否需要帮忙加个菜，韩川摇头说不用。
+- BACKSTAGE_TARGET_DELTA: 夏知完全确认韩川在保持距离，决定离开厨房，避免更尴尬的局面。
+- REALIZATION_RULE:
+  只能通过对白、选择、行动或可见后果实现。
+  不得把TARGET_DELTA原句或同义总结直接写入旁白。
+
+
+=== STOP_STATE ===
+
+STOP_WHEN:
+夏知离开厨房，韩川在她转身后拿起手机看了一眼，但未叫住她。
+
+MUST_NOT_APPEND:
+- 韩川追出去或叫住夏知
+- 夏知回头或看到韩川看手机
+- 不总结人物关系意义
+- 不在停止事实成立后追加无关生活流程

@@ -1,0 +1,8 @@
+{
+  "experiment": "NARRATIVE_PROJECTION_COMPILER_V1_THREE_ARM",
+  "head": "a990542789583602bd0978329dd11a5f7c7a5926",
+  "stage2": {
+    "total_triplets": 12,
+    "valid_triplets": 10
+  }
+}

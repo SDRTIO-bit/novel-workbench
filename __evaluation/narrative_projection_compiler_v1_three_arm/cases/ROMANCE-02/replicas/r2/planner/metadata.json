@@ -1,0 +1,9 @@
+{
+  "case_id": "ROMANCE-02",
+  "replica": 2,
+  "stage": "stage2",
+  "actual_head": "a990542789583602bd0978329dd11a5f7c7a5926",
+  "planner_output_sha256": "0498967a5abfb66605c40ca9b356cbdbba76ad94eb1c0e680f7213af9420e648",
+  "planner_latency_ms": 24290,
+  "run_id": "877f1368-7716-4f85-a5db-780f09f788ed"
+}

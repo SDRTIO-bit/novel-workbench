@@ -1,0 +1,23 @@
+{
+  "experiment": "NARRATIVE_PROJECTION_COMPILER_V1_THREE_ARM",
+  "head": "a990542789583602bd0978329dd11a5f7c7a5926",
+  "seed": 20260721,
+  "stages": {
+    "stage1": {
+      "valid_triplets": 4
+    },
+    "stage2": {
+      "valid_triplets": 11
+    }
+  },
+  "total_valid_triplets": 11,
+  "planner_failures": 0,
+  "writer_failures": 2,
+  "frozen_params": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_output_tokens": 6000,
+    "timeout_seconds": 300,
+    "model_id": "deepseek-v4-pro"
+  }
+}

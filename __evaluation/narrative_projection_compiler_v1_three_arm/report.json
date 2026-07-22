@@ -1,0 +1,32 @@
+{
+  "head": "a990542789583602bd0978329dd11a5f7c7a5926",
+  "valid_triplets": 11,
+  "planner_failures": [],
+  "writer_failures": [
+    "HONEST-01/r1",
+    "NM-03/r3"
+  ],
+  "arm_stats": {
+    "F": {
+      "n": 11,
+      "mean": 1970,
+      "min": 978,
+      "max": 2825,
+      "total": 21677
+    },
+    "C": {
+      "n": 11,
+      "mean": 2061,
+      "min": 1523,
+      "max": 2432,
+      "total": 22679
+    },
+    "N": {
+      "n": 11,
+      "mean": 1762,
+      "min": 1194,
+      "max": 2711,
+      "total": 19389
+    }
+  }
+}

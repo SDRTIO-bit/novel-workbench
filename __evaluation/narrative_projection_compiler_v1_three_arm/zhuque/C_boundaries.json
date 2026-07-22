@@ -1,0 +1,68 @@
+[
+  {
+    "case_id": "CO-04",
+    "replica": 1,
+    "start": 0,
+    "end": 2204
+  },
+  {
+    "case_id": "CO-04",
+    "replica": 2,
+    "start": 2209,
+    "end": 4316
+  },
+  {
+    "case_id": "CO-04",
+    "replica": 3,
+    "start": 4321,
+    "end": 6180
+  },
+  {
+    "case_id": "CO-05",
+    "replica": 1,
+    "start": 6185,
+    "end": 8452
+  },
+  {
+    "case_id": "CO-05",
+    "replica": 3,
+    "start": 8457,
+    "end": 10805
+  },
+  {
+    "case_id": "HONEST-01",
+    "replica": 2,
+    "start": 10810,
+    "end": 13140
+  },
+  {
+    "case_id": "MULTI-01",
+    "replica": 3,
+    "start": 13145,
+    "end": 15577
+  },
+  {
+    "case_id": "NM-03",
+    "replica": 1,
+    "start": 15582,
+    "end": 17596
+  },
+  {
+    "case_id": "NM-03",
+    "replica": 2,
+    "start": 17601,
+    "end": 19661
+  },
+  {
+    "case_id": "ROMANCE-02",
+    "replica": 1,
+    "start": 19666,
+    "end": 21189
+  },
+  {
+    "case_id": "ROMANCE-02",
+    "replica": 2,
+    "start": 21194,
+    "end": 22729
+  }
+]

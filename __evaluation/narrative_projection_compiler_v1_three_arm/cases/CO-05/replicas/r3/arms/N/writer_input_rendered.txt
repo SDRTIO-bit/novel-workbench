@@ -1,0 +1,101 @@
+=== NARRATION_ACCESS ===
+
+CURRENT_FOCUS:
+向暖
+
+DIRECT_INTERNAL_ACCESS:
+- 向暖当前明确意识到的感受、判断与猜测
+- 向暖基于已有证据形成的暂时判断或误判
+
+OBSERVABLE_ONLY:
+- 邻居（未具名）
+
+FORBIDDEN_DIRECT_ACCESS:
+- 其他人物未说出口的心理与真实动机
+- 多人共同感受
+- 关系意义总结
+- 另一个向暖的具体身份或背景
+- 包裹内的物品是什么
+
+=== FOREGROUND_KNOWLEDGE ===
+
+KNOWN:
+- 包裹上写着自己的名字但地址不对
+- 自己不能拆包裹或带走
+
+SUSPECTED_OR_MISTAKEN:
+- 小区里存在另一个“向暖”，且可能就在附近。
+
+UNKNOWN:
+- 真正的收件人具体是谁、在哪
+- 包裹内是什么物品
+
+EVIDENCE:
+- 包裹上的地址是另一栋楼
+- 架子上有其他未取件
+
+=== BACKSTAGE_BEHAVIOR_ONLY ===
+
+CHARACTER:
+邻居（未具名）
+
+BEHAVIOR_OBJECTIVE:
+BACKSTAGE_ONLY: 只是日常经过，随口闲聊。
+
+DO_NOT_VOLUNTARILY_DISCLOSE:
+- 那个向暖的具体身份细节
+
+CANNOT_ACCEPT:
+不适用
+
+PRIVATE_ASSUMPTION_FOR_BEHAVIOR_ONLY:
+眼前的人在找自己的快递。
+
+BEHAVIOR_DIRECTION:
+主动搭话，提及自己所知的同名住户信息。
+
+EXECUTION_RULE:
+- 上述内容只用于控制该角色的选择、回答和行动。
+- 不得由旁白直接宣布。
+- 不得把隐藏目标或内部判断同义改写成心理解释。
+
+=== PLANNED_STATE_DELTAS ===
+
+MOVE 1:
+- GOAL: 确认包裹的真正归属或找到联系方式。
+- RESISTANCE: 无法拆包裹，也无直接联系方式。
+- CHOICE_OR_INTERACTION: 向暖检查包裹外观，寻找收件人电话或门牌号等额外信息。
+- BACKSTAGE_TARGET_DELTA: 发现地址只写到楼栋，无具体门牌或电话。
+- REALIZATION_RULE:
+  只能通过对白、选择、行动或可见后果实现。
+  不得把TARGET_DELTA原句或同义总结直接写入旁白。
+
+MOVE 2:
+- GOAL: 在不拿走包裹的前提下标记或通知收件人。
+- RESISTANCE: 手边无笔纸，且不能破坏包裹。
+- CHOICE_OR_INTERACTION: 向暖从随身物品中找到可写的东西（如口红、便签），在包裹上贴了提示字条。
+- BACKSTAGE_TARGET_DELTA: 包裹上多了一个指向收件人的临时标记。
+- REALIZATION_RULE:
+  只能通过对白、选择、行动或可见后果实现。
+  不得把TARGET_DELTA原句或同义总结直接写入旁白。
+
+MOVE 3:
+- GOAL: 获取更多关于同名者的信息。
+- RESISTANCE: 自己无法主动询问每个人。
+- CHOICE_OR_INTERACTION: 一位邻居路过搭话，向暖顺势询问是否认识该地址的“向暖”。
+- BACKSTAGE_TARGET_DELTA: 得知某栋某户确实有一个“向暖”，并了解到其大致特征。
+- REALIZATION_RULE:
+  只能通过对白、选择、行动或可见后果实现。
+  不得把TARGET_DELTA原句或同义总结直接写入旁白。
+
+
+=== STOP_STATE ===
+
+STOP_WHEN:
+向暖知道了另一个“向暖”的楼栋和特征，并决定下一步行动（如亲自去确认或通过物业转告）。
+
+MUST_NOT_APPEND:
+- 向暖与另一个向暖直接见面或对话
+- 包裹被打开或取走
+- 不总结人物关系意义
+- 不在停止事实成立后追加无关生活流程

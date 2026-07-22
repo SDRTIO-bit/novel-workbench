@@ -1,0 +1,200 @@
+[
+  {
+    "id": "MULTI-01_r3_Z",
+    "case_id": "MULTI-01",
+    "replica": 3,
+    "label": "Z"
+  },
+  {
+    "id": "ROMANCE-02_r2_X",
+    "case_id": "ROMANCE-02",
+    "replica": 2,
+    "label": "X"
+  },
+  {
+    "id": "CO-04_r1_Y",
+    "case_id": "CO-04",
+    "replica": 1,
+    "label": "Y"
+  },
+  {
+    "id": "CO-04_r1_Z",
+    "case_id": "CO-04",
+    "replica": 1,
+    "label": "Z"
+  },
+  {
+    "id": "HONEST-01_r2_Y",
+    "case_id": "HONEST-01",
+    "replica": 2,
+    "label": "Y"
+  },
+  {
+    "id": "CO-05_r1_X",
+    "case_id": "CO-05",
+    "replica": 1,
+    "label": "X"
+  },
+  {
+    "id": "CO-04_r1_X",
+    "case_id": "CO-04",
+    "replica": 1,
+    "label": "X"
+  },
+  {
+    "id": "CO-04_r2_Y",
+    "case_id": "CO-04",
+    "replica": 2,
+    "label": "Y"
+  },
+  {
+    "id": "MULTI-01_r3_Y",
+    "case_id": "MULTI-01",
+    "replica": 3,
+    "label": "Y"
+  },
+  {
+    "id": "MULTI-01_r3_X",
+    "case_id": "MULTI-01",
+    "replica": 3,
+    "label": "X"
+  },
+  {
+    "id": "CO-04_r3_Z",
+    "case_id": "CO-04",
+    "replica": 3,
+    "label": "Z"
+  },
+  {
+    "id": "NM-03_r2_Z",
+    "case_id": "NM-03",
+    "replica": 2,
+    "label": "Z"
+  },
+  {
+    "id": "HONEST-01_r2_X",
+    "case_id": "HONEST-01",
+    "replica": 2,
+    "label": "X"
+  },
+  {
+    "id": "CO-04_r2_X",
+    "case_id": "CO-04",
+    "replica": 2,
+    "label": "X"
+  },
+  {
+    "id": "NM-03_r2_X",
+    "case_id": "NM-03",
+    "replica": 2,
+    "label": "X"
+  },
+  {
+    "id": "CO-04_r3_X",
+    "case_id": "CO-04",
+    "replica": 3,
+    "label": "X"
+  },
+  {
+    "id": "CO-05_r1_Z",
+    "case_id": "CO-05",
+    "replica": 1,
+    "label": "Z"
+  },
+  {
+    "id": "ROMANCE-02_r1_X",
+    "case_id": "ROMANCE-02",
+    "replica": 1,
+    "label": "X"
+  },
+  {
+    "id": "CO-04_r2_Z",
+    "case_id": "CO-04",
+    "replica": 2,
+    "label": "Z"
+  },
+  {
+    "id": "CO-04_r3_Y",
+    "case_id": "CO-04",
+    "replica": 3,
+    "label": "Y"
+  },
+  {
+    "id": "CO-05_r3_Y",
+    "case_id": "CO-05",
+    "replica": 3,
+    "label": "Y"
+  },
+  {
+    "id": "NM-03_r1_Y",
+    "case_id": "NM-03",
+    "replica": 1,
+    "label": "Y"
+  },
+  {
+    "id": "ROMANCE-02_r1_Y",
+    "case_id": "ROMANCE-02",
+    "replica": 1,
+    "label": "Y"
+  },
+  {
+    "id": "HONEST-01_r2_Z",
+    "case_id": "HONEST-01",
+    "replica": 2,
+    "label": "Z"
+  },
+  {
+    "id": "ROMANCE-02_r2_Z",
+    "case_id": "ROMANCE-02",
+    "replica": 2,
+    "label": "Z"
+  },
+  {
+    "id": "NM-03_r2_Y",
+    "case_id": "NM-03",
+    "replica": 2,
+    "label": "Y"
+  },
+  {
+    "id": "NM-03_r1_Z",
+    "case_id": "NM-03",
+    "replica": 1,
+    "label": "Z"
+  },
+  {
+    "id": "CO-05_r3_X",
+    "case_id": "CO-05",
+    "replica": 3,
+    "label": "X"
+  },
+  {
+    "id": "ROMANCE-02_r2_Y",
+    "case_id": "ROMANCE-02",
+    "replica": 2,
+    "label": "Y"
+  },
+  {
+    "id": "ROMANCE-02_r1_Z",
+    "case_id": "ROMANCE-02",
+    "replica": 1,
+    "label": "Z"
+  },
+  {
+    "id": "CO-05_r3_Z",
+    "case_id": "CO-05",
+    "replica": 3,
+    "label": "Z"
+  },
+  {
+    "id": "NM-03_r1_X",
+    "case_id": "NM-03",
+    "replica": 1,
+    "label": "X"
+  },
+  {
+    "id": "CO-05_r1_Y",
+    "case_id": "CO-05",
+    "replica": 1,
+    "label": "Y"
+  }
+]

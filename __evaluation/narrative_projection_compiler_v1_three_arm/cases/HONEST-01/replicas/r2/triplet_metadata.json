@@ -1,0 +1,30 @@
+{
+  "case_id": "HONEST-01",
+  "replica": 2,
+  "stage": "stage2",
+  "planner_output_sha256": "4119e2f7876d8358f72629d37db35803cba2a626a2e754a956e442b8bdda8b09",
+  "execution_order": [
+    "N",
+    "F",
+    "C"
+  ],
+  "arms": {
+    "N": {
+      "writer_input_sha256": "690455036587a5262b98772aa7360b1b71336558cc6a9b28cb7e976fb25d8c25",
+      "error": null,
+      "story_chars": 1194
+    },
+    "F": {
+      "writer_input_sha256": "4119e2f7876d8358f72629d37db35803cba2a626a2e754a956e442b8bdda8b09",
+      "error": null,
+      "story_chars": 2012
+    },
+    "C": {
+      "writer_input_sha256": "219728e33764f43fbbb6d5d3569157b0df68ea8aee057e31ad6a1d3a0a4fde40",
+      "error": null,
+      "story_chars": 2330
+    }
+  },
+  "planner_sha_consistent": true,
+  "valid": true
+}

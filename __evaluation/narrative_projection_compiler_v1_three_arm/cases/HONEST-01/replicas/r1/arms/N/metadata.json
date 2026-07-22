@@ -1,0 +1,12 @@
+{
+  "arm": "N",
+  "mode": "narrative_projection",
+  "writer_input_sha256": "22b791210ae0ad9aa17901356afde3d010f5d7141efe0e08b7eee9bc88847e43",
+  "raw_response_sha256": "2dc2ab4bbe71d4fe28ad988a5187b72df2abf14b0643c005d5e5e1fbd99efbb0",
+  "story_sha256": "2973ef0d62adbf1a397cb1b5c3433a44baf8e7d8969f5cb382b97ca524b850ff",
+  "story_chars": 2596,
+  "draft_notes_chars": 1512,
+  "error_code": null,
+  "finish_reason": "stop",
+  "latency_ms": 57550
+}

@@ -1,0 +1,30 @@
+{
+  "case_id": "NM-03",
+  "replica": 2,
+  "stage": "stage2",
+  "planner_output_sha256": "1e02001d843242cf3a9b0381a9c85c6a032ddcf81142554011b803e73537eafa",
+  "execution_order": [
+    "F",
+    "N",
+    "C"
+  ],
+  "arms": {
+    "F": {
+      "writer_input_sha256": "1e02001d843242cf3a9b0381a9c85c6a032ddcf81142554011b803e73537eafa",
+      "error": null,
+      "story_chars": 2825
+    },
+    "N": {
+      "writer_input_sha256": "bc35aa3c236b3c3916340cd99bc907e66c77f4831e58eee44b8fb48cb284e55b",
+      "error": null,
+      "story_chars": 2711
+    },
+    "C": {
+      "writer_input_sha256": "21c654c9e8790cb6bc3e3b791c87dde7156052c1cb839b5e414d4d0cccba4d27",
+      "error": null,
+      "story_chars": 2060
+    }
+  },
+  "planner_sha_consistent": true,
+  "valid": true
+}

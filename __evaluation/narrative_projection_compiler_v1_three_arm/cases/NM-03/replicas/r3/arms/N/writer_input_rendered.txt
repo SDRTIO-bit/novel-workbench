@@ -1,0 +1,98 @@
+=== NARRATION_ACCESS ===
+
+CURRENT_FOCUS:
+方笛
+
+DIRECT_INTERNAL_ACCESS:
+- 方笛当前明确意识到的感受、判断与猜测
+- 方笛基于已有证据形成的暂时判断或误判
+
+OBSERVABLE_ONLY:
+- 老人
+
+FORBIDDEN_DIRECT_ACCESS:
+- 其他人物未说出口的心理与真实动机
+- 多人共同感受
+- 关系意义总结
+- 方笛的记忆是否真的出错，或存在外部干预。
+- 老人衣服的具体细节与方笛记忆的关联。
+
+=== FOREGROUND_KNOWLEDGE ===
+
+KNOWN:
+- 自己设定的洗衣程序为一小时，现在才过去四十分钟。
+
+SUSPECTED_OR_MISTAKEN:
+- 机器故障或老人说谎。
+
+UNKNOWN:
+- 机器实际运行时间，以及是否有人中途干预。
+
+EVIDENCE:
+- 滚筒已停止转动，面板显示程序结束，滚筒内衣物状态与记忆不符。
+
+=== BACKSTAGE_BEHAVIOR_ONLY ===
+
+CHARACTER:
+老人
+
+BEHAVIOR_OBJECTIVE:
+取回自己洗好的衣服，避免争执。
+
+DO_NOT_VOLUNTARILY_DISCLOSE:
+- (none)
+
+CANNOT_ACCEPT:
+无。
+
+PRIVATE_ASSUMPTION_FOR_BEHAVIOR_ONLY:
+方笛记错了时间。
+
+BEHAVIOR_DIRECTION:
+平静地指出机器已停，并打开滚筒取衣。
+
+EXECUTION_RULE:
+- 上述内容只用于控制该角色的选择、回答和行动。
+- 不得由旁白直接宣布。
+- 不得把隐藏目标或内部判断同义改写成心理解释。
+
+=== PLANNED_STATE_DELTAS ===
+
+MOVE 1:
+- GOAL: 方笛试图证明自己记忆的洗衣时间正确。
+- RESISTANCE: 滚筒已停止，老人声称里面是他的衣服。
+- CHOICE_OR_INTERACTION: 方笛观察滚筒玻璃上的水位和面板状态，与记忆对比。
+- BACKSTAGE_TARGET_DELTA: 发现面板显示程序结束，水位不符预期，认知开始动摇。
+- REALIZATION_RULE:
+  只能通过对白、选择、行动或可见后果实现。
+  不得把TARGET_DELTA原句或同义总结直接写入旁白。
+
+MOVE 2:
+- GOAL: 方笛希望阻止老人打开滚筒，以维持自己的判断。
+- RESISTANCE: 老人有权取衣，且方笛没有实质证据阻止。
+- CHOICE_OR_INTERACTION: 方笛犹豫时，老人直接打开滚筒取出衣物。
+- BACKSTAGE_TARGET_DELTA: 衣物状态证实老人所言，方笛的记忆被直接推翻。
+- REALIZATION_RULE:
+  只能通过对白、选择、行动或可见后果实现。
+  不得把TARGET_DELTA原句或同义总结直接写入旁白。
+
+MOVE 3:
+- GOAL: 方笛试图在事实面前重新建立认知平衡。
+- RESISTANCE: 证据确凿，无法再坚持原有记忆。
+- CHOICE_OR_INTERACTION: 方笛独自面对空滚筒，反复回想投放衣物的细节。
+- BACKSTAGE_TARGET_DELTA: 开始怀疑自己对时间的感知，为后续异常发现埋下心理伏笔。
+- REALIZATION_RULE:
+  只能通过对白、选择、行动或可见后果实现。
+  不得把TARGET_DELTA原句或同义总结直接写入旁白。
+
+
+=== STOP_STATE ===
+
+STOP_WHEN:
+方笛站在空滚筒前，神情困惑，内心开始质疑自己的时间感。
+
+MUST_NOT_APPEND:
+- 方笛直接说出“我记忆出问题了”之类的结论。
+- 任何解释记忆偏差原因的信息。
+- 不总结人物关系意义
+- 不在停止事实成立后追加无关生活流程

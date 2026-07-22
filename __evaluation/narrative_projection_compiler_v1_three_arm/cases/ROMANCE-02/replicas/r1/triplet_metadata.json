@@ -1,0 +1,30 @@
+{
+  "case_id": "ROMANCE-02",
+  "replica": 1,
+  "stage": "stage2",
+  "planner_output_sha256": "f24468a1d1d0097e14a16478be68019d620fd1cbdddc92bdce54b33c580050a1",
+  "execution_order": [
+    "C",
+    "N",
+    "F"
+  ],
+  "arms": {
+    "C": {
+      "writer_input_sha256": "9bd81766fb8b93546d8dadd7a465f36ee448fc7de431c689a341599bbfad2f48",
+      "error": null,
+      "story_chars": 1523
+    },
+    "N": {
+      "writer_input_sha256": "46724be968e92a4438c978e85caf48d10db49bff0090b86fc100e583a670e82d",
+      "error": null,
+      "story_chars": 1615
+    },
+    "F": {
+      "writer_input_sha256": "f24468a1d1d0097e14a16478be68019d620fd1cbdddc92bdce54b33c580050a1",
+      "error": null,
+      "story_chars": 1770
+    }
+  },
+  "planner_sha_consistent": true,
+  "valid": true
+}

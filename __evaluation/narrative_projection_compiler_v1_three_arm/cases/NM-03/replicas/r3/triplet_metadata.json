@@ -1,0 +1,30 @@
+{
+  "case_id": "NM-03",
+  "replica": 3,
+  "stage": "stage2",
+  "planner_output_sha256": "ecec186b7b3a831bbb4e3cb76b0c940af6445a1647592114668b48cd99906b52",
+  "execution_order": [
+    "C",
+    "F",
+    "N"
+  ],
+  "arms": {
+    "C": {
+      "writer_input_sha256": "8f9534b3388c7047d4ee5aacc517c1171147ce962dc04874681d44b24310fbb4",
+      "error": null,
+      "story_chars": 2470
+    },
+    "F": {
+      "writer_input_sha256": "ecec186b7b3a831bbb4e3cb76b0c940af6445a1647592114668b48cd99906b52",
+      "error": "XML_STORY_CLOSING_TAG_MISSING",
+      "story_chars": 0
+    },
+    "N": {
+      "writer_input_sha256": "fe7a3668fd883c070358fde8ec5607ab80534c185f1a19897ab4c545a9810a5a",
+      "error": null,
+      "story_chars": 2986
+    }
+  },
+  "planner_sha_consistent": true,
+  "valid": false
+}

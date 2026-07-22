@@ -1,0 +1,26 @@
+=== NARRATIVE_PROJECTION_COMPILER_V1_THREE_ARM — stage2 ===
+HEAD: a990542789583602bd0978329dd11a5f7c7a5926
+Total triplets: 12
+Valid complete triplets: 10
+Invalid/incomplete: 2
+
+── Per-arm stats ──
+  F (Full JSON): n=10 mean=1975 min=978 max=2825 errors=0
+  C (Chapter Architect Compiler): n=10 mean=2041 min=1523 max=2432 errors=0
+  N (Narrative Projection Compiler): n=10 mean=1760 min=1194 max=2711 errors=0
+
+── Valid triplets ──
+  NM-03 r1: F=2577 C=2014 N=1950 order=F→C→N
+  NM-03 r2: F=2825 C=2060 N=2711 order=F→N→C
+  ROMANCE-02 r1: F=1770 C=1523 N=1615 order=C→N→F
+  ROMANCE-02 r2: F=1112 C=1535 N=1903 order=N→F→C
+  CO-04 r1: F=1791 C=2204 N=1256 order=F→C→N
+  CO-04 r2: F=978 C=2107 N=1586 order=F→N→C
+  CO-04 r3: F=1546 C=1859 N=1690 order=C→F→N
+  CO-05 r3: F=2336 C=2348 N=1853 order=N→C→F
+  MULTI-01 r3: F=2811 C=2432 N=1842 order=C→F→N
+  HONEST-01 r2: F=2012 C=2330 N=1194 order=N→F→C
+
+── Invalid/incomplete triplets ──
+  NM-03 r3: valid=False
+  HONEST-01 r1: valid=False

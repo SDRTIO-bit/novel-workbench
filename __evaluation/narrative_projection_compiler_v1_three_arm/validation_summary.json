@@ -1,0 +1,10 @@
+{
+  "engineering_validity": "INCONCLUSIVE",
+  "reason_if_inconclusive": "Only 11/15 required complete triplets. Scenes with <2 triplets: MULTI-01(1), HONEST-01(1)",
+  "planners_succeeded": 22,
+  "total_writers_run": 33,
+  "cross_arm_contamination": false,
+  "blind_leak": false,
+  "deterministic_compiler": true,
+  "old_modes_unchanged": true
+}

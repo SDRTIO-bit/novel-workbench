@@ -1,0 +1,9 @@
+{
+  "experiment": "NARRATIVE_PROJECTION_COMPILER_V1_THREE_ARM",
+  "zhuque_files": {
+    "F": "E:\\3\\novel-workbench\\__evaluation\\narrative_projection_compiler_v1_three_arm\\zhuque\\F.txt",
+    "C": "E:\\3\\novel-workbench\\__evaluation\\narrative_projection_compiler_v1_three_arm\\zhuque\\C.txt",
+    "N": "E:\\3\\novel-workbench\\__evaluation\\narrative_projection_compiler_v1_three_arm\\zhuque\\N.txt",
+    "all_randomized": "E:\\3\\novel-workbench\\__evaluation\\narrative_projection_compiler_v1_three_arm\\zhuque\\all_randomized.txt"
+  }
+}

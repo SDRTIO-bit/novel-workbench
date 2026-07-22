@@ -1,0 +1,15 @@
+=== NARRATIVE_PROJECTION_COMPILER_V1_THREE_ARM — stage1 ===
+HEAD: a990542789583602bd0978329dd11a5f7c7a5926
+Total triplets: 4
+Valid: 4
+
+── Per-arm stats ──
+  F: n=4 mean=2040 min=1645 max=2519
+  C: n=4 mean=1910 min=1619 max=2267
+  N: n=4 mean=1838 min=1736 max=2074
+
+── Valid triplets ──
+  CO-04 r1: F=2080 C=1619 N=1753 order=C→F→N
+  CO-05 r1: F=1919 C=2267 N=1789 order=F→C→N
+  NM-03 r1: F=2519 C=1754 N=1736 order=F→C→N
+  ROMANCE-02 r1: F=1645 C=2002 N=2074 order=F→N→C

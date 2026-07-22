@@ -1,0 +1,6 @@
+{
+  "case_id": "CO-05",
+  "actual_head": "a990542789583602bd0978329dd11a5f7c7a5926",
+  "planner_output_sha256": "89cb1792963d674cf91287d24539015bfb3e466e421acbfc1c6655543bf26b2b",
+  "note": "retry v3"
+}

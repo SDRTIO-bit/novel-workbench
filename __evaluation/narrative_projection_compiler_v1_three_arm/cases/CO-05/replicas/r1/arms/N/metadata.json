@@ -1,0 +1,8 @@
+{
+  "arm": "N",
+  "mode": "narrative_projection",
+  "story_chars": 1789,
+  "error": null,
+  "writer_input_sha256": "772b7dedf62690ed96cd05b31d9706e0b308cd722632673932f4d3aefee9e5cc",
+  "planner_output_sha256": "89cb1792963d674cf91287d24539015bfb3e466e421acbfc1c6655543bf26b2b"
+}

@@ -1,0 +1,12 @@
+{
+  "arm": "F",
+  "mode": "complete_planner",
+  "writer_input_sha256": "a11d0cfe221d139ab79f466ae44646c4c9574944ac5011503d5b8b7c4eeb8fe5",
+  "raw_response_sha256": "3659f9f0b8ce20e55df162f063b106788af2cf556f65a9a1869f419f0b6a22ed",
+  "story_sha256": "c8edabc2f29b776242ed43a5aca0a6b757336460605d1aa74dd188987884d95f",
+  "story_chars": 2577,
+  "draft_notes_chars": 1950,
+  "error_code": null,
+  "finish_reason": "stop",
+  "latency_ms": 59381
+}

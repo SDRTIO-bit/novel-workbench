@@ -1,0 +1,38 @@
+{
+  "case_id": "CO-05",
+  "replica": 1,
+  "planner_output_sha256": "89cb1792963d674cf91287d24539015bfb3e466e421acbfc1c6655543bf26b2b",
+  "execution_order": [
+    "F",
+    "C",
+    "N"
+  ],
+  "planner_sha_consistent": true,
+  "valid": true,
+  "arms": {
+    "F": {
+      "arm": "F",
+      "mode": "complete_planner",
+      "story_chars": 1919,
+      "error": null,
+      "writer_input_sha256": "89cb1792963d674cf91287d24539015bfb3e466e421acbfc1c6655543bf26b2b",
+      "planner_output_sha256": "89cb1792963d674cf91287d24539015bfb3e466e421acbfc1c6655543bf26b2b"
+    },
+    "C": {
+      "arm": "C",
+      "mode": "chapter_architect",
+      "story_chars": 2267,
+      "error": null,
+      "writer_input_sha256": "0de3a488a875e9032d501a865681ff4c8dd7ac240a723fa46e58600b52f1b3f8",
+      "planner_output_sha256": "89cb1792963d674cf91287d24539015bfb3e466e421acbfc1c6655543bf26b2b"
+    },
+    "N": {
+      "arm": "N",
+      "mode": "narrative_projection",
+      "story_chars": 1789,
+      "error": null,
+      "writer_input_sha256": "772b7dedf62690ed96cd05b31d9706e0b308cd722632673932f4d3aefee9e5cc",
+      "planner_output_sha256": "89cb1792963d674cf91287d24539015bfb3e466e421acbfc1c6655543bf26b2b"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "case_id": "MULTI-01",
+  "replica": 3,
+  "stage": "stage2",
+  "actual_head": "a990542789583602bd0978329dd11a5f7c7a5926",
+  "planner_output_sha256": "981d6a46e4fc6cb530670ee2d5e86d0d88d74aff14ebcaa50bba10e279a6700f",
+  "planner_latency_ms": 25417,
+  "run_id": "a05cab11-7894-4f2b-bc12-8add0918d21d"
+}

@@ -1,0 +1,101 @@
+=== NARRATION_ACCESS ===
+
+CURRENT_FOCUS:
+林子
+
+DIRECT_INTERNAL_ACCESS:
+- 林子当前明确意识到的感受、判断与猜测
+- 林子基于已有证据形成的暂时判断或误判
+
+OBSERVABLE_ONLY:
+- 同事
+
+FORBIDDEN_DIRECT_ACCESS:
+- 其他人物未说出口的心理与真实动机
+- 多人共同感受
+- 关系意义总结
+- 同事修改时的具体想法
+- 林子对同事的最终评价
+
+=== FOREGROUND_KNOWLEDGE ===
+
+KNOWN:
+- PPT原版内容
+- 下午有截止时间
+
+SUSPECTED_OR_MISTAKEN:
+- 同事是出于好意，但修改并不专业。
+
+UNKNOWN:
+- 同事具体改了哪些内容
+- 同事醒来后会如何反应
+
+EVIDENCE:
+- PPT被大幅修改
+- 同事趴在桌上熟睡
+
+=== BACKSTAGE_BEHAVIOR_ONLY ===
+
+CHARACTER:
+同事
+
+BEHAVIOR_OBJECTIVE:
+BACKSTAGE_ONLY: 帮助林子减轻工作负担，展示自己的能力。
+
+DO_NOT_VOLUNTARILY_DISCLOSE:
+- (none)
+
+CANNOT_ACCEPT:
+(none)
+
+PRIVATE_ASSUMPTION_FOR_BEHAVIOR_ONLY:
+(none)
+
+BEHAVIOR_DIRECTION:
+(none)
+
+EXECUTION_RULE:
+- 上述内容只用于控制该角色的选择、回答和行动。
+- 不得由旁白直接宣布。
+- 不得把隐藏目标或内部判断同义改写成心理解释。
+
+=== PLANNED_STATE_DELTAS ===
+
+MOVE 1:
+- GOAL: 快速评估PPT的修改程度和质量
+- RESISTANCE: 同事熟睡无法询问，且时间紧迫
+- CHOICE_OR_INTERACTION: 林子逐一检查PPT的修改痕迹，对比原版内容
+- BACKSTAGE_TARGET_DELTA: 林子明确了哪些修改可用，哪些必须回退
+- REALIZATION_RULE:
+  只能通过对白、选择、行动或可见后果实现。
+  不得把TARGET_DELTA原句或同义总结直接写入旁白。
+
+MOVE 2:
+- GOAL: 在截止时间前完成PPT修正
+- RESISTANCE: 无法全部重做，必须取舍
+- CHOICE_OR_INTERACTION: 林子开始操作回退错误修改，保留合理部分
+- BACKSTAGE_TARGET_DELTA: PPT恢复到可接受状态，但仍有瑕疵
+- REALIZATION_RULE:
+  只能通过对白、选择、行动或可见后果实现。
+  不得把TARGET_DELTA原句或同义总结直接写入旁白。
+
+MOVE 3:
+- GOAL: 准备与同事沟通修改问题的方式
+- RESISTANCE: 担心伤害同事感情，且同事未醒
+- CHOICE_OR_INTERACTION: 林子构思委婉的反馈措辞，同时打开版本历史准备最后操作
+- BACKSTAGE_TARGET_DELTA: 沟通策略形成，但尚未实施；同事翻身打断
+- REALIZATION_RULE:
+  只能通过对白、选择、行动或可见后果实现。
+  不得把TARGET_DELTA原句或同义总结直接写入旁白。
+
+
+=== STOP_STATE ===
+
+STOP_WHEN:
+林子打开版本历史界面，同事趴在桌上翻了个身。
+
+MUST_NOT_APPEND:
+- 同事醒来后的对话
+- 林子完成PPT的最终结果
+- 不总结人物关系意义
+- 不在停止事实成立后追加无关生活流程

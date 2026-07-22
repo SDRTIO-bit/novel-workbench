@@ -1,0 +1,266 @@
+[
+  {
+    "id": "MULTI-01_r3_Z",
+    "case_id": "MULTI-01",
+    "replica": 3,
+    "label": "Z",
+    "start": 0,
+    "end": 2432
+  },
+  {
+    "id": "ROMANCE-02_r2_X",
+    "case_id": "ROMANCE-02",
+    "replica": 2,
+    "label": "X",
+    "start": 2437,
+    "end": 4340
+  },
+  {
+    "id": "CO-04_r1_Y",
+    "case_id": "CO-04",
+    "replica": 1,
+    "label": "Y",
+    "start": 4345,
+    "end": 6549
+  },
+  {
+    "id": "CO-04_r1_Z",
+    "case_id": "CO-04",
+    "replica": 1,
+    "label": "Z",
+    "start": 6554,
+    "end": 7810
+  },
+  {
+    "id": "HONEST-01_r2_Y",
+    "case_id": "HONEST-01",
+    "replica": 2,
+    "label": "Y",
+    "start": 7815,
+    "end": 9827
+  },
+  {
+    "id": "CO-05_r1_X",
+    "case_id": "CO-05",
+    "replica": 1,
+    "label": "X",
+    "start": 9832,
+    "end": 11621
+  },
+  {
+    "id": "CO-04_r1_X",
+    "case_id": "CO-04",
+    "replica": 1,
+    "label": "X",
+    "start": 11626,
+    "end": 13417
+  },
+  {
+    "id": "CO-04_r2_Y",
+    "case_id": "CO-04",
+    "replica": 2,
+    "label": "Y",
+    "start": 13422,
+    "end": 15529
+  },
+  {
+    "id": "MULTI-01_r3_Y",
+    "case_id": "MULTI-01",
+    "replica": 3,
+    "label": "Y",
+    "start": 15534,
+    "end": 17376
+  },
+  {
+    "id": "MULTI-01_r3_X",
+    "case_id": "MULTI-01",
+    "replica": 3,
+    "label": "X",
+    "start": 17381,
+    "end": 20192
+  },
+  {
+    "id": "CO-04_r3_Z",
+    "case_id": "CO-04",
+    "replica": 3,
+    "label": "Z",
+    "start": 20197,
+    "end": 21887
+  },
+  {
+    "id": "NM-03_r2_Z",
+    "case_id": "NM-03",
+    "replica": 2,
+    "label": "Z",
+    "start": 21892,
+    "end": 24603
+  },
+  {
+    "id": "HONEST-01_r2_X",
+    "case_id": "HONEST-01",
+    "replica": 2,
+    "label": "X",
+    "start": 24608,
+    "end": 26938
+  },
+  {
+    "id": "CO-04_r2_X",
+    "case_id": "CO-04",
+    "replica": 2,
+    "label": "X",
+    "start": 26943,
+    "end": 28529
+  },
+  {
+    "id": "NM-03_r2_X",
+    "case_id": "NM-03",
+    "replica": 2,
+    "label": "X",
+    "start": 28534,
+    "end": 31359
+  },
+  {
+    "id": "CO-04_r3_X",
+    "case_id": "CO-04",
+    "replica": 3,
+    "label": "X",
+    "start": 31364,
+    "end": 33223
+  },
+  {
+    "id": "CO-05_r1_Z",
+    "case_id": "CO-05",
+    "replica": 1,
+    "label": "Z",
+    "start": 33228,
+    "end": 35495
+  },
+  {
+    "id": "ROMANCE-02_r1_X",
+    "case_id": "ROMANCE-02",
+    "replica": 1,
+    "label": "X",
+    "start": 35500,
+    "end": 37023
+  },
+  {
+    "id": "CO-04_r2_Z",
+    "case_id": "CO-04",
+    "replica": 2,
+    "label": "Z",
+    "start": 37028,
+    "end": 38006
+  },
+  {
+    "id": "CO-04_r3_Y",
+    "case_id": "CO-04",
+    "replica": 3,
+    "label": "Y",
+    "start": 38011,
+    "end": 39557
+  },
+  {
+    "id": "CO-05_r3_Y",
+    "case_id": "CO-05",
+    "replica": 3,
+    "label": "Y",
+    "start": 39562,
+    "end": 41910
+  },
+  {
+    "id": "NM-03_r1_Y",
+    "case_id": "NM-03",
+    "replica": 1,
+    "label": "Y",
+    "start": 41915,
+    "end": 43929
+  },
+  {
+    "id": "ROMANCE-02_r1_Y",
+    "case_id": "ROMANCE-02",
+    "replica": 1,
+    "label": "Y",
+    "start": 43934,
+    "end": 45549
+  },
+  {
+    "id": "HONEST-01_r2_Z",
+    "case_id": "HONEST-01",
+    "replica": 2,
+    "label": "Z",
+    "start": 45554,
+    "end": 46748
+  },
+  {
+    "id": "ROMANCE-02_r2_Z",
+    "case_id": "ROMANCE-02",
+    "replica": 2,
+    "label": "Z",
+    "start": 46753,
+    "end": 47865
+  },
+  {
+    "id": "NM-03_r2_Y",
+    "case_id": "NM-03",
+    "replica": 2,
+    "label": "Y",
+    "start": 47870,
+    "end": 49930
+  },
+  {
+    "id": "NM-03_r1_Z",
+    "case_id": "NM-03",
+    "replica": 1,
+    "label": "Z",
+    "start": 49935,
+    "end": 52512
+  },
+  {
+    "id": "CO-05_r3_X",
+    "case_id": "CO-05",
+    "replica": 3,
+    "label": "X",
+    "start": 52517,
+    "end": 54370
+  },
+  {
+    "id": "ROMANCE-02_r2_Y",
+    "case_id": "ROMANCE-02",
+    "replica": 2,
+    "label": "Y",
+    "start": 54375,
+    "end": 55910
+  },
+  {
+    "id": "ROMANCE-02_r1_Z",
+    "case_id": "ROMANCE-02",
+    "replica": 1,
+    "label": "Z",
+    "start": 55915,
+    "end": 57685
+  },
+  {
+    "id": "CO-05_r3_Z",
+    "case_id": "CO-05",
+    "replica": 3,
+    "label": "Z",
+    "start": 57690,
+    "end": 60026
+  },
+  {
+    "id": "NM-03_r1_X",
+    "case_id": "NM-03",
+    "replica": 1,
+    "label": "X",
+    "start": 60031,
+    "end": 61981
+  },
+  {
+    "id": "CO-05_r1_Y",
+    "case_id": "CO-05",
+    "replica": 1,
+    "label": "Y",
+    "start": 61986,
+    "end": 63905
+  }
+]

@@ -1,0 +1,157 @@
+=== NARRATION_ACCESS ===
+
+CURRENT_FOCUS:
+苏瑾
+
+DIRECT_INTERNAL_ACCESS:
+- 苏瑾当前明确意识到的感受、判断与猜测
+- 苏瑾基于已有证据形成的暂时判断或误判
+
+OBSERVABLE_ONLY:
+- 阿杰
+- 老周
+- 小唐
+
+FORBIDDEN_DIRECT_ACCESS:
+- 其他人物未说出口的心理与真实动机
+- 多人共同感受
+- 关系意义总结
+- 苏瑾的迟到原因
+- 成员们对苏瑾的真实评价
+- 乐队未来的命运
+
+=== FOREGROUND_KNOWLEDGE ===
+
+KNOWN:
+- 自己迟到了15分钟
+- 乐队成员都在排练室
+
+SUSPECTED_OR_MISTAKEN:
+- 成员们对自己的迟到感到不满，气氛紧张。
+
+UNKNOWN:
+- 乐队成员刚才聊了什么
+- 成员们对自己迟到的真实态度
+
+EVIDENCE:
+- 所有人抬头但无人说话
+- 老周在调音但节奏断续
+- 小唐刷手机不抬头
+- 阿杰翻谱子却未翻页
+
+=== BACKSTAGE_BEHAVIOR_ONLY ===
+
+CHARACTER:
+阿杰
+
+BEHAVIOR_OBJECTIVE:
+BACKSTAGE_ONLY: 维护乐队纪律，对苏瑾的迟到感到失望，但不想直接冲突。
+
+DO_NOT_VOLUNTARILY_DISCLOSE:
+- 对苏瑾的真正评价
+
+CANNOT_ACCEPT:
+苏瑾的迟到影响乐队进度。
+
+PRIVATE_ASSUMPTION_FOR_BEHAVIOR_ONLY:
+苏瑾不重视乐队排练。
+
+BEHAVIOR_DIRECTION:
+阿杰用沉默和冷淡的态度表达不满，翻谱子掩饰内心烦躁。
+
+EXECUTION_RULE:
+- 上述内容只用于控制该角色的选择、回答和行动。
+- 不得由旁白直接宣布。
+- 不得把隐藏目标或内部判断同义改写成心理解释。
+
+=== BACKSTAGE_BEHAVIOR_ONLY ===
+
+CHARACTER:
+老周
+
+BEHAVIOR_OBJECTIVE:
+BACKSTAGE_ONLY: 保持中立，希望排练顺利进行，但不愿介入冲突。
+
+DO_NOT_VOLUNTARILY_DISCLOSE:
+- 自己对苏瑾迟到的看法
+
+CANNOT_ACCEPT:
+乐队因个人问题解散。
+
+PRIVATE_ASSUMPTION_FOR_BEHAVIOR_ONLY:
+苏瑾的迟到引发了团队矛盾。
+
+BEHAVIOR_DIRECTION:
+老周继续调音，避免眼神接触，试图用音乐缓和气氛。
+
+EXECUTION_RULE:
+- 上述内容只用于控制该角色的选择、回答和行动。
+- 不得由旁白直接宣布。
+- 不得把隐藏目标或内部判断同义改写成心理解释。
+
+=== BACKSTAGE_BEHAVIOR_ONLY ===
+
+CHARACTER:
+小唐
+
+BEHAVIOR_OBJECTIVE:
+BACKSTAGE_ONLY: 对排练漠不关心，更关注自己的事，但不愿成为焦点。
+
+DO_NOT_VOLUNTARILY_DISCLOSE:
+- 自己对乐队的热情程度
+
+CANNOT_ACCEPT:
+被卷入冲突。
+
+PRIVATE_ASSUMPTION_FOR_BEHAVIOR_ONLY:
+苏瑾的迟到让排练更无聊。
+
+BEHAVIOR_DIRECTION:
+小唐继续刷手机，用漠不关心的态度置身事外。
+
+EXECUTION_RULE:
+- 上述内容只用于控制该角色的选择、回答和行动。
+- 不得由旁白直接宣布。
+- 不得把隐藏目标或内部判断同义改写成心理解释。
+
+=== PLANNED_STATE_DELTAS ===
+
+MOVE 1:
+- GOAL: 苏瑾试图通过观察成员行为判断气氛。
+- RESISTANCE: 成员们刻意回避眼神和言语交流。
+- CHOICE_OR_INTERACTION: 苏瑾扫视每个人的动作：老周调音、小唐刷手机、阿杰翻谱子。
+- BACKSTAGE_TARGET_DELTA: 苏瑾意识到气氛紧张，决定用行动打破沉默。
+- REALIZATION_RULE:
+  只能通过对白、选择、行动或可见后果实现。
+  不得把TARGET_DELTA原句或同义总结直接写入旁白。
+
+MOVE 2:
+- GOAL: 苏瑾想用音乐重新连接乐队。
+- RESISTANCE: 成员们没有主动配合的迹象，阿杰仍背对苏瑾。
+- CHOICE_OR_INTERACTION: 苏瑾拿起吉他，调弦准备，等待第一个和弦的时机。
+- BACKSTAGE_TARGET_DELTA: 苏瑾的举动吸引了成员的注意，但无人响应，气氛更加微妙。
+- REALIZATION_RULE:
+  只能通过对白、选择、行动或可见后果实现。
+  不得把TARGET_DELTA原句或同义总结直接写入旁白。
+
+MOVE 3:
+- GOAL: 苏瑾希望通过第一个和弦启动排练。
+- RESISTANCE: 和弦响起后，成员们的反应可能揭示矛盾。
+- CHOICE_OR_INTERACTION: 苏瑾弹奏第一个和弦，老周随后加入鼓点，小唐放下手机拿起贝斯，阿杰缓缓转身。
+- BACKSTAGE_TARGET_DELTA: 排练开始，但互动中透露出未解决的紧张，苏瑾感到被接纳但仍有隔阂。
+- REALIZATION_RULE:
+  只能通过对白、选择、行动或可见后果实现。
+  不得把TARGET_DELTA原句或同义总结直接写入旁白。
+
+
+=== STOP_STATE ===
+
+STOP_WHEN:
+苏瑾弹奏第一个和弦后，乐队开始演奏，但阿杰的歌声延迟加入，老周的鼓点略显生硬。
+
+MUST_NOT_APPEND:
+- 成员们直接讨论苏瑾的迟到
+- 苏瑾解释迟到原因
+- 乐队突然和谐演奏
+- 不总结人物关系意义
+- 不在停止事实成立后追加无关生活流程

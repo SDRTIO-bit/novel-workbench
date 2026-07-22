@@ -1,0 +1,92 @@
+=== NARRATION_ACCESS ===
+
+CURRENT_FOCUS:
+路远
+
+DIRECT_INTERNAL_ACCESS:
+- 路远当前明确意识到的感受、判断与猜测
+- 路远基于已有证据形成的暂时判断或误判
+
+OBSERVABLE_ONLY:
+- 陌生男生
+
+FORBIDDEN_DIRECT_ACCESS:
+- 其他人物未说出口的心理与真实动机
+- 多人共同感受
+- 关系意义总结
+- 路远内心的直接独白：“我讨厌别人碰我的东西。”
+- 男生放回水壶后的具体去向
+
+=== FOREGROUND_KNOWLEDGE ===
+
+KNOWN:
+- 男生错拿了他的水壶并喝了一口
+- 自己不能跑过去或喊叫
+
+SUSPECTED_OR_MISTAKEN:
+- 如果制造一个明显的信号，男生可能会检查水壶并意识到错误。
+
+UNKNOWN:
+- 男生是谁
+- 男生是否会意识到错误
+
+EVIDENCE:
+- 男生拿着水壶走向篮球场
+- 操场上有其他同学活动
+
+=== BACKSTAGE_BEHAVIOR_ONLY ===
+
+CHARACTER:
+陌生男生
+
+BEHAVIOR_OBJECTIVE:
+去篮球场打球，可能口渴想喝水。
+
+DO_NOT_VOLUNTARILY_DISCLOSE:
+- 对错拿水壶的尴尬
+
+CANNOT_ACCEPT:
+当众承认自己拿错（但最终被迫面对）
+
+PRIVATE_ASSUMPTION_FOR_BEHAVIOR_ONLY:
+水壶可能是自己的，直到发现异样。
+
+BEHAVIOR_DIRECTION:
+被信号吸引，检查水壶，发现不是自己的，放回原处。
+
+EXECUTION_RULE:
+- 上述内容只用于控制该角色的选择、回答和行动。
+- 不得由旁白直接宣布。
+- 不得把隐藏目标或内部判断同义改写成心理解释。
+
+=== PLANNED_STATE_DELTAS ===
+
+MOVE 1:
+- GOAL: 引起男生的注意，让他检查水壶
+- RESISTANCE: 不能直接呼喊或跑动，且距离较远
+- CHOICE_OR_INTERACTION: 路远用钥匙反射阳光，在男生脚边投下一个移动的光斑
+- BACKSTAGE_TARGET_DELTA: 男生注意到光斑，停下脚步，低头查看，发现水壶不是自己的
+- REALIZATION_RULE:
+  只能通过对白、选择、行动或可见后果实现。
+  不得把TARGET_DELTA原句或同义总结直接写入旁白。
+
+MOVE 2:
+- GOAL: 让水壶回到自己手中
+- RESISTANCE: 男生可能只是放下水壶离开，或不确定如何归还
+- CHOICE_OR_INTERACTION: 路远保持目光接触，微微抬手示意水壶是自己的
+- BACKSTAGE_TARGET_DELTA: 男生将水壶放回原处，路远走过去取回水壶
+- REALIZATION_RULE:
+  只能通过对白、选择、行动或可见后果实现。
+  不得把TARGET_DELTA原句或同义总结直接写入旁白。
+
+
+=== STOP_STATE ===
+
+STOP_WHEN:
+路远拿回水壶，站在操场边，看着男生走远，水壶口残留陌生触感。
+
+MUST_NOT_APPEND:
+- 路远直接表达对男生的厌恶或评价
+- 男生返回道歉或进一步互动
+- 不总结人物关系意义
+- 不在停止事实成立后追加无关生活流程

@@ -1,0 +1,30 @@
+{
+  "case_id": "HONEST-01",
+  "replica": 1,
+  "stage": "stage2",
+  "planner_output_sha256": "deba7df07d83d285c3a89083dcfdbd96d306dec6f4e72cdb3a7b97cfd27b6d13",
+  "execution_order": [
+    "C",
+    "N",
+    "F"
+  ],
+  "arms": {
+    "C": {
+      "writer_input_sha256": "ebca9c27b46de30562082386026450b2a8c616e61530dfa65ee5a7dfdd708400",
+      "error": "XML_STORY_CLOSING_TAG_MISSING",
+      "story_chars": 0
+    },
+    "N": {
+      "writer_input_sha256": "22b791210ae0ad9aa17901356afde3d010f5d7141efe0e08b7eee9bc88847e43",
+      "error": null,
+      "story_chars": 2596
+    },
+    "F": {
+      "writer_input_sha256": "deba7df07d83d285c3a89083dcfdbd96d306dec6f4e72cdb3a7b97cfd27b6d13",
+      "error": null,
+      "story_chars": 2851
+    }
+  },
+  "planner_sha_consistent": true,
+  "valid": false
+}

@@ -1,0 +1,30 @@
+{
+  "case_id": "MULTI-01",
+  "replica": 3,
+  "stage": "stage2",
+  "planner_output_sha256": "981d6a46e4fc6cb530670ee2d5e86d0d88d74aff14ebcaa50bba10e279a6700f",
+  "execution_order": [
+    "C",
+    "F",
+    "N"
+  ],
+  "arms": {
+    "C": {
+      "writer_input_sha256": "0bebc00ac0f3b547a8ae69a5ff992bdd7e16191cd6e4abbedbf671483f1c4d4f",
+      "error": null,
+      "story_chars": 2432
+    },
+    "F": {
+      "writer_input_sha256": "981d6a46e4fc6cb530670ee2d5e86d0d88d74aff14ebcaa50bba10e279a6700f",
+      "error": null,
+      "story_chars": 2811
+    },
+    "N": {
+      "writer_input_sha256": "82061585460081d25b5372721a53396dc447e9bf3f3004c055b6f5a5706672dc",
+      "error": null,
+      "story_chars": 1842
+    }
+  },
+  "planner_sha_consistent": true,
+  "valid": true
+}

@@ -1,0 +1,104 @@
+=== NARRATION_ACCESS ===
+
+CURRENT_FOCUS:
+方笛
+
+DIRECT_INTERNAL_ACCESS:
+- 方笛当前明确意识到的感受、判断与猜测
+- 方笛基于已有证据形成的暂时判断或误判
+
+OBSERVABLE_ONLY:
+- 老人
+
+FORBIDDEN_DIRECT_ACCESS:
+- 其他人物未说出口的心理与真实动机
+- 多人共同感受
+- 关系意义总结
+- 方笛的记忆错误是性格缺陷所致。
+- 老人内心对方笛的评价。
+- 争执的胜负意义。
+
+=== FOREGROUND_KNOWLEDGE ===
+
+KNOWN:
+- 她记得设定了一小时，才过去四十分钟。
+- 老人声称机器已停，里面是他的衣服。
+
+SUSPECTED_OR_MISTAKEN:
+- 机器还在运行，里面的衣物是自己的。
+
+UNKNOWN:
+- 机器实际运行时间可能短于设定。
+- 老人的衣物确实在机器里。
+
+EVIDENCE:
+- 滚筒玻璃上的水位。
+- 面板显示的状态。
+
+=== BACKSTAGE_BEHAVIOR_ONLY ===
+
+CHARACTER:
+老人
+
+BEHAVIOR_OBJECTIVE:
+使用洗衣机，取出自己的衣物。
+
+DO_NOT_VOLUNTARILY_DISCLOSE:
+- 他可能已经等待了一段时间。
+- 他对方笛的固执感到不耐烦。
+
+CANNOT_ACCEPT:
+方笛继续占用机器，不承认事实。
+
+PRIVATE_ASSUMPTION_FOR_BEHAVIOR_ONLY:
+方笛在无理取闹，机器早已结束。
+
+BEHAVIOR_DIRECTION:
+坚持机器已停，要求方笛让出。
+
+EXECUTION_RULE:
+- 上述内容只用于控制该角色的选择、回答和行动。
+- 不得由旁白直接宣布。
+- 不得把隐藏目标或内部判断同义改写成心理解释。
+
+=== PLANNED_STATE_DELTAS ===
+
+MOVE 1:
+- GOAL: 方笛试图说服老人机器还在运行，里面是自己的衣服。
+- RESISTANCE: 老人坚持机器已停，衣物是他的，且周围无第三方证明。
+- CHOICE_OR_INTERACTION: 方笛与老人言语争论，各自陈述理由。
+- BACKSTAGE_TARGET_DELTA: 争论无果，双方陷入僵局，气氛紧张。
+- REALIZATION_RULE:
+  只能通过对白、选择、行动或可见后果实现。
+  不得把TARGET_DELTA原句或同义总结直接写入旁白。
+
+MOVE 2:
+- GOAL: 方笛寻找客观证据，以证明自己正确。
+- RESISTANCE: 她必须接受机器状态可能显示自己错误。
+- CHOICE_OR_INTERACTION: 方笛提议并引导老人一起查看滚筒水位和面板状态。
+- BACKSTAGE_TARGET_DELTA: 证据显示机器早已停止，水位不符洗衣过程，方笛意识到自己错了。
+- REALIZATION_RULE:
+  只能通过对白、选择、行动或可见后果实现。
+  不得把TARGET_DELTA原句或同义总结直接写入旁白。
+
+MOVE 3:
+- GOAL: 方笛化解冲突，让出机器。
+- RESISTANCE: 内心尴尬和自尊心受损。
+- CHOICE_OR_INTERACTION: 方笛向老人道歉，承认错误，并协助老人取出衣物。
+- BACKSTAGE_TARGET_DELTA: 争执结束，老人开始使用机器，方笛退到一旁反思。
+- REALIZATION_RULE:
+  只能通过对白、选择、行动或可见后果实现。
+  不得把TARGET_DELTA原句或同义总结直接写入旁白。
+
+
+=== STOP_STATE ===
+
+STOP_WHEN:
+方笛坐在洗衣房角落，看着老人操作机器，内心反思记忆偏差，同时注意到门外有人影闪过，似乎与她有关。
+
+MUST_NOT_APPEND:
+- 方笛对门外人影的直接反应或追踪。
+- 揭示人影身份的线索。
+- 方笛立即忘记争执的释然感。
+- 不总结人物关系意义
+- 不在停止事实成立后追加无关生活流程

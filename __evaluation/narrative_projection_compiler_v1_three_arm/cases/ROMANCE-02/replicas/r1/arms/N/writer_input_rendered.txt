@@ -1,0 +1,98 @@
+=== NARRATION_ACCESS ===
+
+CURRENT_FOCUS:
+夏知
+
+DIRECT_INTERNAL_ACCESS:
+- 夏知当前明确意识到的感受、判断与猜测
+- 夏知基于已有证据形成的暂时判断或误判
+
+OBSERVABLE_ONLY:
+- 韩川
+
+FORBIDDEN_DIRECT_ACCESS:
+- 其他人物未说出口的心理与真实动机
+- 多人共同感受
+- 关系意义总结
+- 韩川的内心想法
+- 消息的具体内容
+- 两人关系的明确状态
+
+=== FOREGROUND_KNOWLEDGE ===
+
+KNOWN:
+- 自己昨晚发了消息
+- 韩川手机亮起时她看到了自己的消息预览
+- 韩川扣手机去洗菜
+
+SUSPECTED_OR_MISTAKEN:
+- 韩川有意回避消息，可能不想单独面对她。
+
+UNKNOWN:
+- 韩川是否已读消息
+- 韩川为什么没回复
+- 韩川对两人关系的真实想法
+
+EVIDENCE:
+- 手机亮起的消息是自己的
+- 韩川立刻扣手机
+- 桌上只有两只碗
+
+=== BACKSTAGE_BEHAVIOR_ONLY ===
+
+CHARACTER:
+韩川
+
+BEHAVIOR_OBJECTIVE:
+BACKSTAGE_ONLY: 暂时回避消息，不想在当下讨论敏感话题，但希望夏知留下。
+
+DO_NOT_VOLUNTARILY_DISCLOSE:
+- 没回复的真实原因
+- 对夏知的真实感情
+
+CANNOT_ACCEPT:
+夏知直接质问或离开，破坏他维持现状的企图。
+
+PRIVATE_ASSUMPTION_FOR_BEHAVIOR_ONLY:
+夏知会追问消息，他需要转移话题。
+
+BEHAVIOR_DIRECTION:
+通过准备食物和模糊回应来拖延或转移注意力。
+
+EXECUTION_RULE:
+- 上述内容只用于控制该角色的选择、回答和行动。
+- 不得由旁白直接宣布。
+- 不得把隐藏目标或内部判断同义改写成心理解释。
+
+=== PLANNED_STATE_DELTAS ===
+
+MOVE 1:
+- GOAL: 试探韩川对消息的态度
+- RESISTANCE: 韩川回避直接交流，忙着洗菜
+- CHOICE_OR_INTERACTION: 夏知主动帮忙摆放碗筷，借机观察韩川的反应
+- BACKSTAGE_TARGET_DELTA: 韩川仍不提及消息，夏知确认他在刻意回避
+- REALIZATION_RULE:
+  只能通过对白、选择、行动或可见后果实现。
+  不得把TARGET_DELTA原句或同义总结直接写入旁白。
+
+MOVE 2:
+- GOAL: 打破僵局，迫使韩川回应
+- RESISTANCE: 韩川继续用做饭转移话题
+- CHOICE_OR_INTERACTION: 夏知提出要离开或帮忙做其他事，给韩川一个挽留或解释的机会
+- BACKSTAGE_TARGET_DELTA: 韩川表现出挽留或继续回避，关系紧张度升级
+- REALIZATION_RULE:
+  只能通过对白、选择、行动或可见后果实现。
+  不得把TARGET_DELTA原句或同义总结直接写入旁白。
+
+
+=== STOP_STATE ===
+
+STOP_WHEN:
+夏知站在厨房门口，手里拿着未放下的碗，韩川背对着她关火，两人之间的空气凝滞。
+
+MUST_NOT_APPEND:
+- 韩川的解释或告白
+- 消息内容的揭示
+- 夏知的最终情感决断
+- 不总结人物关系意义
+- 不在停止事实成立后追加无关生活流程

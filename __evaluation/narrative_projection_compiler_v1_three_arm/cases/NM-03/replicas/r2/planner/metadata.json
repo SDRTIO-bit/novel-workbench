@@ -1,0 +1,9 @@
+{
+  "case_id": "NM-03",
+  "replica": 2,
+  "stage": "stage2",
+  "actual_head": "a990542789583602bd0978329dd11a5f7c7a5926",
+  "planner_output_sha256": "1e02001d843242cf3a9b0381a9c85c6a032ddcf81142554011b803e73537eafa",
+  "planner_latency_ms": 20752,
+  "run_id": "fa83fa72-9863-46d7-b8c7-8c61890c0ee5"
+}

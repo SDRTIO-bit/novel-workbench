@@ -1,0 +1,9 @@
+{
+  "case_id": "HONEST-01",
+  "replica": 1,
+  "stage": "stage2",
+  "actual_head": "a990542789583602bd0978329dd11a5f7c7a5926",
+  "planner_output_sha256": "deba7df07d83d285c3a89083dcfdbd96d306dec6f4e72cdb3a7b97cfd27b6d13",
+  "planner_latency_ms": 21064,
+  "run_id": "25a7b181-614c-4058-92d1-459ad74a8a01"
+}
